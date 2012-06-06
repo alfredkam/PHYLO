@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'helveticathin';
+    src: url('../../font_files/helveticaneueltstd-th-helv.eot');
+    src: url('../../font_files/helveticaneueltstd-th-helv.eot?#iefix') format('embedded-opentype'),
+         url('../../font_files/helveticaneueltstd-th-helv.woff') format('woff'),
+         url('../../font_files/helveticaneueltstd-th-helv.ttf') format('truetype'),
+         url('../../font_files/helveticaneueltstd-th-helv.svg#HelveticaNeueLTStd35Thin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-family: 'helveticathin', Helvetica, Arial, sans-serif;
+	color:white;
+	background-color: black;
+	padding:0px;
+	margin: 0px;
+}
+#gameBoard {
+	position: absolute;
+	display:inline-block;
+	left: 183px;
+	width:841px;
+	top:0px;
+}
+#bg {
+	position:absolute;
+	display:inline-block;	
+}
+#movingParts {
+	position: absolute;
+	display:inline-block;
+	z-index: 10;	
+}
+
+#tree {
+	top:0px;
+	position: relative;
+	display:inline-block;
+	width: 178px;	
+	height: 340px;
+}
+.sequence {
+	height:32px;
+	width:32px;
+	position:absolute;
+	display:inline-block;
+	border:1px solid white;
+	z-index: 11;
+}
+.row {
+	width: 841px;
+	position:relative;
+	height:34px;
+}
+
+.bgCell {
+	position:absolute;
+	height: 32px;
+	width: 32px;
+	background-color: black;
+	display:inline-block;
+	border: 1px white solid;
+}
+.bgRow {
+	position:relative;
+	display:inline-block;
+	margin 0px;
+	padding: 0px;
+	width:841px;
+	height:30px;
+}
+
+.red-line {
+	display:none;
+	background-color: #EF4136;
+	width:100%;
+	top:12px;
+	height:10px;
+	position: absolute;
+	position:10;
+}
+#dump {
+	color:white;
+}
