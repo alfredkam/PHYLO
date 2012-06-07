@@ -3,6 +3,8 @@
 		current : -1,
 		last : 0,
 		round : function() {	
+			//for testing
+			this.current = this.last;
 			if(this.current <=this.last){
 				this.current+=1;
 				this.set(this.current);
