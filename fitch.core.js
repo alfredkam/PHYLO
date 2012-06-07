@@ -117,10 +117,10 @@
 		
 		scoreRecurse : function(stage) {
 			if ($.phylo.tree[stage].child == 0) {
-				var a = $.sequence.nuc($.sequence.track[$.phylo.tree[stage].node1]);
-				var b = $.sequence.nuc($.sequence.track[$.phylo.tree[stage].node2]);
+				var a = $.sequence.nucarray($.sequence.track[$.phylo.tree[stage].node1]);
+				var b = $.sequence.nucarray($.sequence.track[$.phylo.tree[stage].node2]);
 			} else if ($.phylo.tree[stage].child == 1) {
-				var a = $.sequence.nuc($.sequence.track[$.phylo.tree[stage].node1]);
+				var a = $.sequence.nucarray($.sequence.track[$.phylo.tree[stage].node1]);
 				var b = $.phylo.tree[$.phylo.tree[stage].node2].ancestor;
 			} else {
 				var a = $.phylo.tree[$.phylo.tree[stage].node1].ancestor;
