@@ -3,6 +3,9 @@
 	$.sequence = {
 		//retrives repsective nucleotide
 		nuc : function(x) {
+			if (x == "x") {
+				return "x";
+			}
 			return this.nucleotide[x];
 		}, 
 		//retrives an array of nucleotide

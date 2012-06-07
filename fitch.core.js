@@ -11,8 +11,8 @@
 		},
 
 		getLen : function(stage) {
+			return $.phylo.seqLen;
 			var self = this;
-			console.log(stage);
 			if ($.phylo.tree[stage].child >= 2) {
 				return self.getLen($.phylo.tree[stage].node1);
 			} else {
@@ -24,7 +24,6 @@
 			var self = this;
 			var stage = $.stage.current;
 			var len = self.getLen(stage);
-			$.phylo.tree[stage].ancestor = [];
 			for(var i=0;i<len;i++) {
 				if (DEBUG) {
 					console.log("Forward-backward pass at index "+i);
@@ -36,8 +35,9 @@
 				else if (x.length == 1 || x.indexOf("x") != 0) { 
 					$.phylo.tree[stage].ancestor[i] = x[0];
 				}
-				else
+				else {
 					$.phylo.tree[stage].ancestor[i] = x[1];
+				}
 				if($.phylo.tree[stage].child >= 2) {
 					self.backward($.phylo.tree[stage].node1,$.phylo.tree[stage].ancestor[i],i);
 				}
@@ -49,7 +49,7 @@
 		},
 		
 		backward : function (stage, fixed, i) {
-			var x = $.phylo.tree[stage].ancestorSet;
+			var x = $.phylo.tree[stage].ancestorSet[i];
 			if(x.length < 1) {
 				$.phylo.tree[stage].ancestor[i] = "x";
 			}
@@ -76,13 +76,16 @@
 
 		forward : function (stage, position) {
 			var self = this;
-			$.phylo.tree[stage].ancestor = [];
+			if (position == 0) {
+				$.phylo.tree[stage].ancestor = [];
+				$.phylo.tree[stage].ancestorSet = [];
+			}
 			if($.phylo.tree[stage].child == 2) {
-				var x = self.forward($.phylo.tree[stage].node2,position);
-				var y = self.forward($.phylo.tree[stage].node1,position);
+				var x = $.fitch.forward($.phylo.tree[stage].node2,position);
+				var y = $.fitch.forward($.phylo.tree[stage].node1,position);
 				var a = [];
 				var b = [];
-				for(var i=0;i<x.length;i++) 
+				for(var i=0;i<x.length;i++) {
 					if(a.indexOf(x[i]) == -1)
 						a.push(x[i]);
 					for(var j=0;j<y.length;j++) {
@@ -91,28 +94,29 @@
 						if(a.indexOf(y[j]) == -1)
 							a.push(y[j]);
 					}
+				}
 				if(b.length < 1)
-					$.phylo.tree[stage].ancestorSet = a;
+					$.phylo.tree[stage].ancestorSet[position] = a;
 				else
-					$.phylo.tree[stage].ancestorSet = b;
+					$.phylo.tree[stage].ancestorSet[position] = b;
 				
 			} else if($.phylo.tree[stage].child == 1) {
 				var x = self.forward($.phylo.tree[stage].node2,position);
 				var y = $.sequence.nuc($.sequence.track[$.phylo.tree[stage].node1][position]);
 				if(x.indexOf(y) > -1) {
-					$.phylo.tree[stage].ancestorSet = [y];
+					$.phylo.tree[stage].ancestorSet[position] = [y];
 				} else {
-					$.phylo.tree[stage].ancestorSet = x.concat([y]);
+					$.phylo.tree[stage].ancestorSet[position] = x.concat([y]);
 				}
 			} else  {
 				var x = $.sequence.nuc($.sequence.track[$.phylo.tree[stage].node1][position]);
 				var y = $.sequence.nuc($.sequence.track[$.phylo.tree[stage].node2][position]);
 				if(y == x)
-					$.phylo.tree[stage].ancestorSet = [x];
+					$.phylo.tree[stage].ancestorSet[position] = [x];
 			 	else 
-					$.phylo.tree[stage].ancestorSet = [x,y];
+					$.phylo.tree[stage].ancestorSet[position] = [x,y];
 			}
-			return $.phylo.tree[stage].ancestorSet;
+			return $.phylo.tree[stage].ancestorSet[position];
 		},
 		
 		scoreRecurse : function(stage) {
@@ -177,15 +181,16 @@
 
 			logA = trace($.phylo.tree[stage].ancestor, a, logA);
 			logB = trace($.phylo.tree[stage].ancestor, b, logB);
-
-			var score = 	logA.match	*	weight.match	+
+			
+			var score =
+					logA.match		*	weight.match	+
 					logA.mismatch	*	weight.mismatch	+
-					logA.open	*	weight.open	+
-					logA.extend	*	weight.extend	+
-					logB.match	*	weight.match	+
+					logA.open		*	weight.open		+
+					logA.extend		*	weight.extend	+
+					logB.match		*	weight.match	+
 					logB.mismatch	*	weight.mismatch	+
-					logB.open	*	weight.open	+
-					logB.extend	*	weight.extend;
+					logB.open		*	weight.open		+
+					logB.extend		*	weight.extend;
 			if ($.phylo.tree[stage].child >= 2) {
 				score += $.fitch.scoreRecurse($.phylo.tree[stage].node1);
 			}
@@ -193,6 +198,8 @@
 				score += $.fitch.scoreRecurse($.phylo.tree[stage].node2);
 			}
 			$.phylo.tree[stage].score = score;
+			$.phylo.tree[stage].logA = logA;
+			$.phylo.tree[stage].logB = logB;
 			return score;
 		},
 		
