@@ -1,6 +1,22 @@
 (function() {
 	var doc = document, win = window;
 	$.sequence = {
+		//retrives repsective nucleotide
+		nuc : function(x) {
+			return this.nucleotide[x];
+		}, 
+		//retrives an array of nucleotide
+		nucArray : function(arr) {
+			var reArr = [];
+			for(var i in arr) {
+				if(arr[i] == "x") {
+					reArr.push("x");
+				} else {
+					reArr.push(this.nuc(arr[i]));
+				}
+			}	
+			return reArr;
+		},
 		createCache : function() {
 			var arr = [];		
 			for(var i=0, y=10, x = $.phylo.seqLen; i<y*x;i++) {
@@ -20,10 +36,12 @@
 			var str = "";
 			this.posList = [];
 			this.posListReverse = [];
+			this.nucleotide = [];
 
 			for(var i=0, y=10, x = $.phylo.seqLen;i<y*x;i++) {
 				this.posList.push(0);
 				this.posListReverse.push(0);
+				this.nulceotide.push(0);
 			}
 
 			for(var i=0;i<seq.length;i++) {
@@ -33,6 +51,7 @@
 					var c = seq[i].charAt(j);
 					if(c !=  "_") {
 						this.posList[i*$.phylo.seqLen+counter] = counter;	
+						this.nucleotide[i*$.phylo.seqLen+counter] = seq[i].charAt(j);
 						str+="<div class='sequence' id='"+(i*25+counter)+"' style='left:"+(this.calcPos(j))+"px;background-color:"+this.color(this.translate(c))+"'></div>";
 						counter++;
 					}
