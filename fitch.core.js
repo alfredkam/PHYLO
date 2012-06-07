@@ -10,16 +10,18 @@
 		},
 
 		getLen : function(stage) {
+			var self = this;
 			console.log(stage);
 			if ($.phylo.tree[stage].child >= 2) {
-				return getLen($.phylo.tree[stage].node1);
+				return self.getLen($.phylo.tree[stage].node1);
 			} else {
 				return $.sequence.track[$.phylo.tree[stage].node1].length;
 			}
 		},
 		forwardBackward : function() {
+			var self = this;
 			var stage = $.stage.current;
-			var len = $.fitch.getLen(stage);
+			var len = self.getLen(stage);
 			$.phylo.tree[stage].ancestor = [];
 			for(var i=0;i<len;i++) {
 				if (DEBUG) {
@@ -35,10 +37,10 @@
 				else
 					$.phylo.tree[stage].ancestor[i] = x[1];
 				if($.phylo.tree.child >= 2) {
-					$.fitch.backward($.phylo.tree.node1,$.phylo.tree[stage].ancestor[i],i);
+					self.backward($.phylo.tree.node1,$.phylo.tree[stage].ancestor[i],i);
 				}
 				if($.phylo.tree.child >= 1) {
-					$.fitch.backward($.phylo.tree.node2,$.phylo.tree[stage].ancestor[i],i);
+					self.backward($.phylo.tree.node2,$.phylo.tree[stage].ancestor[i],i);
 				}
 			}
 			return;			
@@ -61,18 +63,19 @@
 				$.phylo.tree[stage].ancestor[i] = x[1];
 			}
 			if(tree.child >= 2) {
-				this.backwards($.phylo.tree[stage].node1,$.phylo.tree[stage].ancestor[i],i);
+				self.backwards($.phylo.tree[stage].node1,$.phylo.tree[stage].ancestor[i],i);
 			}
 			if(tree.child >= 1) {
-				this.backwards($.phylo.tree[stage].node2,$.phylo.tree[stage].ancestor[i],i);
+				self.backwards($.phylo.tree[stage].node2,$.phylo.tree[stage].ancestor[i],i);
 			}
 			return;
 		},
 
 		forward : function (stage, position) {
+			var self = this;
 			if($.phylo.tree[stage].child == 2) {
-				var x = $.fitch.forward($.phylo.tree[stage].node2,position);
-				var y = $.fitch.forward($.phylo.tree[stage].node1,position);
+				var x = self.forward($.phylo.tree[stage].node2,position);
+				var y = self.forward($.phylo.tree[stage].node1,position);
 				var a = [];
 				var b = [];
 				for(var i=0;i<x.length;i++) 
@@ -90,7 +93,7 @@
 					$.phylo.tree[stage].ancestorSet = b;
 				
 			} else if($.phylo.tree[stage].child == 1) {
-				var x = $.fitch.forward($.phylo.tree[stage].node2,position);
+				var x = self.forward($.phylo.tree[stage].node2,position);
 				var y = $.sequence.track[$.phylo.tree[stage].node1][position];
 				if(x.indexOf(y) > -1) {
 					$.phylo.tree[stage].ancestorSet = [y];
