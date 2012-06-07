@@ -3,6 +3,7 @@
 		algo : function() {
 
 		},
+		
 		score : function() {
 			$.fitch.forwardBackward();
 			var score = $.fitch.scoreRecurse($.stage.current);
@@ -18,6 +19,7 @@
 				return $.sequence.track[$.phylo.tree[stage].node1].length;
 			}
 		},
+		
 		forwardBackward : function() {
 			var self = this;
 			var stage = $.stage.current;
@@ -36,15 +38,16 @@
 				}
 				else
 					$.phylo.tree[stage].ancestor[i] = x[1];
-				if($.phylo.tree.child >= 2) {
-					self.backward($.phylo.tree.node1,$.phylo.tree[stage].ancestor[i],i);
+				if($.phylo.tree[stage].child >= 2) {
+					self.backward($.phylo.tree[stage].node1,$.phylo.tree[stage].ancestor[i],i);
 				}
-				if($.phylo.tree.child >= 1) {
-					self.backward($.phylo.tree.node2,$.phylo.tree[stage].ancestor[i],i);
+				if($.phylo.tree[stage].child >= 1) {
+					self.backward($.phylo.tree[stage].node2,$.phylo.tree[stage].ancestor[i],i);
 				}
 			}
 			return;			
 		},
+		
 		backward : function (stage, fixed, i) {
 			var x = $.phylo.tree[stage].ancestorSet;
 			if(x.length < 1) {
@@ -62,17 +65,18 @@
 			else {
 				$.phylo.tree[stage].ancestor[i] = x[1];
 			}
-			if(tree.child >= 2) {
-				self.backwards($.phylo.tree[stage].node1,$.phylo.tree[stage].ancestor[i],i);
+			if($.phylo.tree[stage].child >= 2) {
+				$.fitch.backward($.phylo.tree[stage].node1,$.phylo.tree[stage].ancestor[i],i);
 			}
-			if(tree.child >= 1) {
-				self.backwards($.phylo.tree[stage].node2,$.phylo.tree[stage].ancestor[i],i);
+			if($.phylo.tree[stage].child >= 1) {
+				$.fitch.backward($.phylo.tree[stage].node2,$.phylo.tree[stage].ancestor[i],i);
 			}
 			return;
 		},
 
 		forward : function (stage, position) {
 			var self = this;
+			$.phylo.tree[stage].ancestor = [];
 			if($.phylo.tree[stage].child == 2) {
 				var x = self.forward($.phylo.tree[stage].node2,position);
 				var y = self.forward($.phylo.tree[stage].node1,position);
@@ -110,6 +114,7 @@
 			}
 			return $.phylo.tree[stage].ancestorSet;
 		},
+		
 		scoreRecurse : function(stage) {
 			if ($.phylo.tree[stage].child == 0) {
 				var a = $.sequence.track[$.phylo.tree[stage].node1];
@@ -121,11 +126,6 @@
 				var a = $.phylo.tree[$.phylo.tree[stage].node1].ancestor;
 				var b = $.phylo.tree[$.phylo.tree[stage].node2].ancestor;
 			}
-
-			console.log("scoreRecure: Stage");
-			console.log(stage);
-			console.log(a);
-			conosle.log(b);
 
 			var log = function() {
 				this.match = 0;
@@ -187,14 +187,15 @@
 					logB.open	*	weight.open	+
 					logB.extend	*	weight.extend;
 			if ($.phylo.tree[stage].child >= 2) {
-				score += scoreRecurse($.phylo.tree[stage].node1);
+				score += $.fitch.scoreRecurse($.phylo.tree[stage].node1);
 			}
 			if ($.phylo.tree[stage].child >= 1) {
-				score += scoreRecurse($.phylo.tree[stage].node2);
+				score += $.fitch.scoreRecurse($.phylo.tree[stage].node2);
 			}
 			$.phylo.tree[stage].score = score;
 			return score;
 		},
+		
 		ancestor : [],
 		bestTrack : [],
 		bestScore : []
