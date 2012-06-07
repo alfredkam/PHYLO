@@ -41,7 +41,7 @@
 			for(var i=0, y=10, x = $.phylo.seqLen;i<y*x;i++) {
 				this.posList.push(0);
 				this.posListReverse.push(0);
-				this.nulceotide.push(0);
+				this.nucleotide.push(0);
 			}
 
 			for(var i=0;i<seq.length;i++) {
