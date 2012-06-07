@@ -122,6 +122,11 @@
 				var b = $.phylo.tree[$.phylo.tree[stage].node2].ancestor;
 			}
 
+			console.log("scoreRecure: Stage");
+			console.log(stage);
+			console.log(a);
+			conosle.log(b);
+
 			var log = function() {
 				this.match = 0;
 				this.mismatch = 0;
