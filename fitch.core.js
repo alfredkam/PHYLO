@@ -10,6 +10,7 @@
 		},
 
 		getLen : function(stage) {
+			console.log(stage);
 			if ($.phylo.tree[stage].child >= 2) {
 				return getLen($.phylo.tree[stage].node1);
 			} else {
