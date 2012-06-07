@@ -98,15 +98,15 @@
 				
 			} else if($.phylo.tree[stage].child == 1) {
 				var x = self.forward($.phylo.tree[stage].node2,position);
-				var y = $.sequence.track[$.phylo.tree[stage].node1][position];
+				var y = $.sequence.nuc($.sequence.track[$.phylo.tree[stage].node1][position]);
 				if(x.indexOf(y) > -1) {
 					$.phylo.tree[stage].ancestorSet = [y];
 				} else {
 					$.phylo.tree[stage].ancestorSet = x.concat([y]);
 				}
 			} else  {
-				var x = $.sequence.track[$.phylo.tree[stage].node1][position];
-				var y = $.sequence.track[$.phylo.tree[stage].node2][position];
+				var x = $.sequence.nuc($.sequence.track[$.phylo.tree[stage].node1][position]);
+				var y = $.sequence.nuc($.sequence.track[$.phylo.tree[stage].node2][position]);
 				if(y == x)
 					$.phylo.tree[stage].ancestorSet = [x];
 			 	else 
@@ -117,10 +117,10 @@
 		
 		scoreRecurse : function(stage) {
 			if ($.phylo.tree[stage].child == 0) {
-				var a = $.sequence.track[$.phylo.tree[stage].node1];
-				var b = $.sequence.track[$.phylo.tree[stage].node2];
+				var a = $.sequence.nuc($.sequence.track[$.phylo.tree[stage].node1]);
+				var b = $.sequence.nuc($.sequence.track[$.phylo.tree[stage].node2]);
 			} else if ($.phylo.tree[stage].child == 1) {
-				var a = $.sequence.track[$.phylo.tree[stage].node1];
+				var a = $.sequence.nuc($.sequence.track[$.phylo.tree[stage].node1]);
 				var b = $.phylo.tree[$.phylo.tree[stage].node2].ancestor;
 			} else {
 				var a = $.phylo.tree[$.phylo.tree[stage].node1].ancestor;
