@@ -3,12 +3,11 @@
 		algo : function() {
 
 		},
-		
-				score : function() {
+		score : function() {
 			$.fitch.forwardBackward();
 			var score = $.fitch.scoreRecurse($.stage.current);
 			return score;
-	};
+		},
 
 		getLen : function(stage) {
 			if ($.phylo.tree[stage].child >= 2) {
@@ -16,7 +15,7 @@
 			} else {
 				return $.sequence.track[$.phylo.tree[stage].node1].length;
 			}
-
+		},
 		forwardbackward : function() {
 			var stage = $.stage.current;
 			var len = $.fitch.getLen(stage);
@@ -42,8 +41,7 @@
 				}
 			}
 			return;			
-	};
-
+		},
 		backward : function (stage, fixed, i) {
 			var x = $.phylo.tree[stage].ancestorSet;
 			if(x.length < 1) {
@@ -68,7 +66,7 @@
 				this.backwards($.phylo.tree[stage].node2,$.phylo.tree[stage].ancestor[i],i);
 			}
 			return;
-	};
+		},
 
 		forward : function (stage, position) {
 			if($.phylo.tree[stage].child == 2) {
@@ -107,8 +105,7 @@
 					$.phylo.tree[stage].ancestorSet = [x,y];
 			}
 			return $.phylo.tree[stage].ancestorSet;
-	};
-
+		},
 		scoreRecurse : function(stage) {
 			if ($.phylo.tree[stage].child == 0) {
 				var a = $.sequence.track[$.phylo.tree[stage].node1];
@@ -188,9 +185,7 @@
 			}
 			$.phylo.tree[stage].score = score;
 			return score;
-	};
-	
-		score : 0,
+		},
 		ancestor : [],
 		bestTrack : [],
 		bestScore : []
