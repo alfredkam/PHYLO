@@ -16,7 +16,7 @@
 				return $.sequence.track[$.phylo.tree[stage].node1].length;
 			}
 		},
-		forwardbackward : function() {
+		forwardBackward : function() {
 			var stage = $.stage.current;
 			var len = $.fitch.getLen(stage);
 			$.phylo.tree[stage].ancestor = [];
@@ -90,7 +90,7 @@
 				
 			} else if($.phylo.tree[stage].child == 1) {
 				var x = $.fitch.forward($.phylo.tree[stage].node2,position);
-				var y = $.sequence.track[$.phylo.tree[stage]node1][position];
+				var y = $.sequence.track[$.phylo.tree[stage].node1][position];
 				if(x.indexOf(y) > -1) {
 					$.phylo.tree[stage].ancestorSet = [y];
 				} else {

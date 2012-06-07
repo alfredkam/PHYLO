@@ -14,5 +14,8 @@
 			$("#gameBoard").html("<div id='bg'>"+str+"</div>");
 			
 		},	
+		score : function(x) {
+			$("#scoreBoard").html("Score: "+ x);
+		}
 	};	
 })();

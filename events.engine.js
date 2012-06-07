@@ -18,7 +18,7 @@
 										$.events.untouch(document, "move");
 										$.events.untouch(document, "end");
 										$.physics.snap();
-										console.log($.fitch.score());
+										$.board.score($.fitch.score());
 									}
 								});
 							}
