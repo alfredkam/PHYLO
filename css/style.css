@@ -160,7 +160,7 @@ body {
 	z-index:3;
 }
 .hidden {
-	display:none;
+	visibility : hidden;
 }
 .blocked {
 	opacity: 0.8;
