@@ -122,23 +122,23 @@
 			}
 		},
 		intify : function(numstring) {
-			console.log(numstring);
 			if (numstring == 'x')
 				return numstring;
 			else
-				return numstring;//parseInt(numstring);
+				return parseInt(numstring);
 		},
 		randomize : function(seq) {
+			console.log(seq);
 			var arr = [];
 			var tmp;
 			//sequence = arr
 			for(var i=0;i<seq.length;i++) {
 				tmp = [];
 				for(var j=0;j<$.phylo.seqLen;j++) {
-					if(seq[i].charAt(j) == "_")
+					if(seq[i][j] == "_")
 						tmp.push("x");
 					else {
-						tmp.push((seq[i].charAt(j)=="")?"x":seq[i].charAt(j));
+						tmp.push((seq[i][j]=="")?"x":seq[i][j]);
 					}
 				}		
 				arr.push(tmp);
@@ -147,9 +147,10 @@
 			//randomize arr
 			for(var i=0;i<arr.length;i++) {
 				tmp = arr[i].toString().split('x,').join('').split(',');
-				while( (a=tmp.length)<arr.length)
+				while( (a=tmp.length)<$.phylo.seqLen)
 					tmp.splice(Math.floor(Math.random()*a),0,'x');
-				tmp = tmp.map(this.intify);
+				console.log(tmp);
+				tmp = tmp.map($.sequence.intify);
 				console.log(tmp);
 				arr[i] = tmp.slice(0);
 			}	
