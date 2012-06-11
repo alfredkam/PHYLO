@@ -5,7 +5,32 @@
 			    var safe = [];
 			    var format = [];//this.format;
 			    var buildTree = function(j,c) {
-				if(j.name.constructor.toString().indexOf("Array") == -1) {
+			    	if (j.branchset == undefined) {
+					return j.name;
+				} else {
+					var x = j.branchset[0];
+					var y = j.branchset[1];
+					if (x.branchset == undefined && y.branchset == undefined) {
+						var d = { "lv" : i++, "depth" : c, "child" : 0, "node1" : k++, "node2" : k++, "p1": x.name, "p2" : y.name};
+					} else if (x.branchset == undefined) {
+						var d = { "lv" : -1, "depth" : c, "child" : 1, "node1" : k++, "node2" : -1, "p1" : x.name};
+						d.node2 = buildTree(y,c+1).lv;
+						d.lv = i++;
+					} else if (y.branchset == undefined) {
+						var d = { "lv" : -1, "depth" : c, "child" : 1, "node1" : -1, "node2" : -1, "p1" : y.name};
+						d.node2 = buildTree(x,c+1).lv;
+						d.node1 = k++;
+						d.lv = i++;
+					} else {
+						var d = { "lv" : -1, "depth": c, "child" : 2, "node1" : -1, "node2" : -1};
+						d.node1 = buildTree(x,c+1).lv;
+						d.node2 = buildTree(y,c+1).lv;
+						d.lv = i++;
+					}
+					format.push(d);
+					return d;
+				}
+/*				if(j.name.constructor.toString().indexOf("Array") == -1) {
 				    if(j.name != "") { 
 					return j.name;
 				    }
@@ -82,7 +107,7 @@
 						return d;
 					    }
 				    }
-				return "";
+				return "";*/
 			    }
 			buildTree(tree,0);
 			return format;
