@@ -18,7 +18,11 @@
 										$.events.untouch(document, "move");
 										$.events.untouch(document, "end");
 										$.physics.snap();
-										$.board.score($.fitch.score());
+										var score = $.fitch.score();
+										$.board.score(score);
+										if(score >=$.sequence.par){
+											$.stage.round();
+										}
 									}
 								});
 							}

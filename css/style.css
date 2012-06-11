@@ -159,3 +159,10 @@ body {
 	left:283px;
 	z-index:3;
 }
+.hidden {
+	display:none;
+}
+.blocked {
+	opacity: 0.8;
+	visibility:hidden;
+}
