@@ -92,6 +92,7 @@ body {
 	display:inline-block;
 	float:left;
 	right:0px;
+	z-index:2;
 }
 .nodeImg {
 	width: 20px;
@@ -99,6 +100,7 @@ body {
 	background-color: white;
 	position:absolute;
 	display:inline-block;
+	z-index:2;
 }
 .nodeImg:hover {
 	background-color: #EF4136; 
@@ -106,8 +108,12 @@ body {
 .hLine, .vLine {
 	background-color:white;	
 	position:absolute;
+	z-index:1;
 }
 .hLine {
 	height:2px;
+}
+.vLine {
+	width: 2px;
 }
 

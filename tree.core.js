@@ -138,10 +138,10 @@
 					var hLeft = n.depth*34+34*.3;
 					var hTop_1 = n.node1*34 + 34/2 - 2;
 					var hTop_2 = n.node2*34 + 34/2 - 2;
-					str+= "<div class='vLine'></div>";
+					var vTop_1 = Math.abs(hTop_2-hTop_1);
+					str+= "<div class='vLine' style='top:"+hTop_1+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
 					str+= "<div class='hLine' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
 					//build bot		
-					str+= "<div class='vLine'></div>";
 					str+= "<div class='hLine' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
 				} else if(n.child == 1) {
 					var hLeft = n.depth*34+34*.3;
@@ -149,7 +149,9 @@
 					var hTop_1 = n.node1*34 + 34/2 - 2;
 					var hTop_2 = dist.top;
 					var hWidth = 34*Math.abs((n.depth-dist.depth));
-				
+					var vTop_1 = Math.abs(hTop_2-hTop_1);
+					
+					str+= "<div class='vLine' style='top:"+(hTop_2>hTop_1?hTop_1:hTop_2)+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
 					str+= "<div class='hLine' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
 					str+= "<div class='hLine' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(hWidth)+"px'></div>";
 					
@@ -162,7 +164,9 @@
 					var hWidth_1 = 34* Math.abs((n.depth-dist_1.depth));
 					var hTop_2 = dist_2.top;
 					var hWidth_2 = 34*Math.abs((n.depth-dist_2.depth));
+					var vTop_1 = hTop_2 - hTop_1;
 					
+					str+= "<div class='vLine' style='top:"+(hTop_1)+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
 					str+= "<div class='hLine' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(hWidth_1)+"px'></div>";
 					str+= "<div class='hLine' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(hWidth_2)+"px'></div>";
 				}
