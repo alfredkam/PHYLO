@@ -177,3 +177,11 @@ body {
 	width:841px;
 	height:34px;
 }
+#splash {
+	position: absolute;
+	top: 80px;
+	z-index: 11;	
+	color: #EF4136;
+	left: 400px;
+	font-size:100px;
+}

@@ -42,6 +42,7 @@
 					addClass(tree.node2);
 				}
 			}
+			this.splash(x);
 			show(x);
 			addClass(x);
 			window.setTimeout(function() {
@@ -65,5 +66,12 @@
 			$.board.score($.fitch.score());
 		},
 		end : false,
+		splash: function(x) {
+			$("#splash").html("Stage "+x).show();
+			window.setTimeout(function(){
+				$("#splash").fadeOut("fast");
+			},300);
+			
+		}
 	};
 })();
