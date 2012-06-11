@@ -26,12 +26,19 @@ window.DEBUG = true;
 				$.board.build();
 				$.sequence.build($.phylo.get.sequence);
 				$.sequence.prepareTracking($.phylo.get.sequence);
+				$.phylo.origin = $.sequence.track.slice(0);
 				var random = $.sequence.randomize($.sequence.track);
 				$.sequence.prepareTracking(random);
 				$.phylo.domCache = $.sequence.createCache();
 				$.physics.snapRandom();
-				if(DEBUG)
+
+				if(DEBUG) {
+					console.log("original")
+					console.log($.phylo.origin);
+					console.log("tracked");
+					console.log($.sequence.track);
 					console.log($.phylo.tree);
+				}
 				$.stage.last = $.phylo.tree[$.phylo.tree.length-1].lv;
 				$.splash.countDown(function() {
 					//start game

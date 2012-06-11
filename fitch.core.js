@@ -1,9 +1,5 @@
 (function(){
 	$.fitch = {
-		algo : function() {
-
-		},
-		
 		score : function() {
 			// forwardBackward does a tree traversal for each sequence nucleotide, forwardBackward2 does a sequence traversal for each tree node.
 			// Not sure which is faster

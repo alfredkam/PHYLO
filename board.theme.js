@@ -15,7 +15,26 @@
 			
 		},	
 		score : function(x) {
-			$("#scoreBoard").html("Score: "+ x);
+			$("#userScore").html("Score: "+ x);
+			if(x > 0) {
+				$("#userDraw").css({
+					width: x,
+					backgroundColor: "#FFFFFF",
+					left: 100,
+				});
+			} else {
+				$("#userDraw").css({
+					width: Math.abs(x),
+					left : x+100,
+					backgroundColor: "#EF4136",
+				});
+			}
+		},
+		par : function(x) {
+			$("#parScore").html("Par: "+ x);
+			$("#parDraw").css({
+				left:100+x,
+			});
 		}
 	};	
 })();

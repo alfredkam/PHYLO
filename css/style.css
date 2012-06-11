@@ -15,6 +15,12 @@ body {
 	background-color: black;
 	padding:0px;
 	margin: 0px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 #gameBoard {
 	position: absolute;
@@ -117,3 +123,39 @@ body {
 	width: 2px;
 }
 
+#scoreDraw {
+	left: 183px;
+	position:relative;
+	width:800px;
+}
+
+#userDraw {
+	background-color:white;
+	height:40px;
+	width:0px;
+	left:100px;
+	position:relative;
+	z-index:2;
+}
+
+#parDraw {
+	background-color:red;
+	height:42px;
+	width:2px;
+	position:absolute;
+	top:0px;
+	z-index:3;
+}
+#scoreLine {
+	background-color:white;
+	width:841px;
+	height: 1px;
+}
+#base0 {
+	background-color:white;
+	width:2px;
+	height:40px;
+	position:absolute;
+	left:283px;
+	z-index:3;
+}
