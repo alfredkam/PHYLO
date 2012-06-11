@@ -24,8 +24,9 @@ window.DEBUG = true;
 					console.log($.phylo);
 				$.phylo.tree = $.tree.build($.phylo.get.tree);
 				$.board.build();
-				$.sequence.build($.phylo.get.sequence);
-				$.sequence.prepareTracking($.phylo.get.sequence);
+				var random = $.sequence.randomize($.phylo.get.sequence);
+				$.sequence.build(random);
+				$.sequence.prepareTracking(random);
 				if(DEBUG)
 					console.log($.phylo.tree);
 				$.stage.last = $.phylo.tree[$.phylo.tree.length-1].lv;
