@@ -46,7 +46,7 @@ body {
 	width: 178px;	
 	height: 340px;
 }
-.sequence {
+.sequence , .ancestor {
 	height:32px;
 	width:32px;
 	position:absolute;
@@ -165,4 +165,15 @@ body {
 .blocked {
 	opacity: 0.8;
 	visibility:hidden;
+}
+#bg {
+	visibility:hidden;
+}
+#ancestorSeq {
+	position:relative;
+	top:-38px;
+	left:183px;
+	display:none;
+	width:841px;
+	height:34px;
 }

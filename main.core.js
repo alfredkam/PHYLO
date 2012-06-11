@@ -3,6 +3,7 @@ window.DEBUG = true;
 	$(document).ready(function() {
 	
 		$.main = {
+			//configuration
 			init : function() {
 				$.phylo = {
 					seqLen : 25,
@@ -13,7 +14,10 @@ window.DEBUG = true;
 				$.protocal.read();
 				$.protocal.request();
 			},
+			//call back on protocal complete
+			//sets the layout and activates the game
 			callBack : function() {
+				//sets the gameBoard to be nonMovable on touch devices.
 				$.events.touch("#gameBoard",{
 					start: function(e) {
 					}, move : function(e) {
@@ -44,7 +48,8 @@ window.DEBUG = true;
 					//start game
 					$.stage.end = false;
 					$.stage.round();	
-					$.helper.dump($.sequence.track);
+					if(DEBUG)
+						$.helper.dump($.sequence.track);
 				});
 			},
 		};

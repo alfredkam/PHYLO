@@ -1,6 +1,8 @@
 (function() {
 	//helper function
+	//contains all the quickies
 	$.helper =  {
+		//prints out the tracking grid
 		dump : function(grid) {
 			var data = "";
 			for(var i=0; i<grid.length;i++) {
@@ -12,6 +14,7 @@
 			$("#dump").html(data);
 
 		},
+		//retrives the http variables
 		get : function(pid) {
 			var $_GET = {};
 

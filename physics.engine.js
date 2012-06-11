@@ -124,7 +124,8 @@
 				domCache[id].left = $.sequence.calcPos(pos)+"px";//(pos*$.phylo.x)+"px";
 				track[getGridY(id)][pos] = id; 
 			});
-			$.helper.dump(track);
+			if(DEBUG)
+				$.helper.dump(track);
 		}
 	};
 })();

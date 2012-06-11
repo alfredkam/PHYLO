@@ -164,20 +164,20 @@
 				if(tree.child == 0) {
 					data+="<div class='ancestorImg' style='top:"+(tree.node1)*34+"px'><img src=''/></div>";	
 					data+="<div class='ancestorImg' style='top:"+(tree.node2)*34+"px'><img src=''/></div>";	
-					data+="<div class='nodeImg' style='left:"+(tree.depth)*34+"px;top:"+((tree.node1+.5)*34+7)+"px'></div>";
+					data+="<div class='nodeImg' id='node"+stage+"' style='left:"+(tree.depth)*34+"px;top:"+((tree.node1+.5)*34+7)+"px'></div>";
 					data+=buildAngle(tree);
 					return;
 				} else if(tree.child == 1) {
 					var x = (tree.node1+getAvg(tree.node2))/2;
 					x = x*34 + 7;
 					data+="<div class='ancestorImg' style='top:"+(tree.node1)*34+"px'><img src=''/></div>";	
-					data+="<div class='nodeImg' style='left:"+(tree.depth)*34+"px;top:"+x+"px'></div>";
+					data+="<div class='nodeImg' id='node"+stage+"' style='left:"+(tree.depth)*34+"px;top:"+x+"px'></div>";
 					data+=buildAngle(tree);
 					build(tree.node2);
 				} else if(tree.child == 2) {
 					var x = (getAvg(tree.node1)+getAvg(tree.node2))/2;
 					x = x*34+7;
-					data+="<div class='nodeImg' style='left:"+(tree.depth)*34+"px;top:"+x+"px'></div>";
+					data+="<div class='nodeImg' id='node"+stage+"' style='left:"+(tree.depth)*34+"px;top:"+x+"px'></div>";
 					data+=buildAngle(tree);
 					build(tree.node1);
 					build(tree.node2);
@@ -186,6 +186,23 @@
 			}
 			build(stage);
 			$("#tree").html(data);
+		
+			$(".nodeImg").hover(function() {
+				var id = $(this).attr("id").replace(/node/,"");
+				console.log($.phylo.tree[id].ancestor);
+				var seq= "";
+				for(var i=0;i<$.phylo.tree[id].ancestor.length;i++) {
+					var s = $.phylo.tree[id].ancestor[i];
+					var sequence = $.sequence;
+					if(s != "x" && s != 0) 
+						seq+="<div class='ancestor' style='background-color:"+sequence.color(sequence.translate(s))+";left:"+$.sequence.calcPos(i)+"px;'></div>";	
+				}
+				
+				$("#ancestorSeq").html(seq);
+				$("#ancestorSeq").show("slide",{direction : "left"},500);
+			},function() {
+				$("#ancestorSeq").hide();
+			});
 		},
 	};
 })();

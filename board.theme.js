@@ -16,6 +16,7 @@
 		},	
 		score : function(x) {
 			$("#userScore").html("Score: "+ x);
+			/*
 			if(x > 0) {
 				$("#userDraw").css({
 					width: x,
@@ -28,13 +29,14 @@
 					left : x+100,
 					backgroundColor: "#EF4136",
 				});
-			}
+			} */
 		},
 		par : function(x) {
 			$("#parScore").html("Par: "+ x);
-			$("#parDraw").css({
+		/*	$("#parDraw").css({
 				left:100+x,
 			});
+			*/
 		}
 	};	
 })();

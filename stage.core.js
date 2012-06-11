@@ -16,7 +16,6 @@
 			} 
 		}, 
 		set : function(x) {	
-			console.log(x);
 
 			//$(".row").addClass("current");
 			$.engine.deActive();
@@ -24,17 +23,30 @@
 			var show = function(n) {
 				var tree = $.phylo.tree[n];
 				if(tree.child == 0) {
-					$("#row"+tree.node1).show("fast").removeClass("hidden").addClass("current");
-					$("#row"+tree.node2).show("fast").removeClass("hidden").addClass("current");
+					$("#row"+tree.node1).show('slide',{direction: 'right'}, 500);
+					$("#row"+tree.node2).show('slide',{direction: 'right'}, 500);
 				} else if(tree.child == 1) {
-					$("#row"+tree.node1).show("fast").removeClass("hidden").addClass("current");
-					show(tree.node2);
+					$("#row"+tree.node1).show('slide',{direction: 'right'}, 500);
+				}
+			};
+			var addClass = function(n) {
+				var tree = $.phylo.tree[n];
+				if(tree.child == 0) {
+					$("#row"+tree.node1).removeClass("hidden").addClass("current");
+					$("#row"+tree.node2).removeClass("hidden").addClass("current");
+				} else if(tree.child == 1) {
+					$("#row"+tree.node1).removeClass("hidden").addClass("current");
+					addClass(tree.node2);
 				} else if(tree.child == 2){
-					show(tree.node1);
-					show(tree.node2);
+					addClass(tree.node1);
+					addClass(tree.node2);
 				}
 			}
 			show(x);
+			addClass(x);
+			window.setTimeout(function() {
+				$("#bg").css({visibility: "visible"});
+			},200);
 			$(".row").each(function() {
 				if($(this).hasClass("hidden") == false && $(this).hasClass("current") == false) {
 					$(this).addClass("blocked");
