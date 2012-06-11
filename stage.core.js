@@ -18,8 +18,6 @@
 		set : function(x) {
 			$(".row").addClass("current");
 			var x = $.phylo.tree[x];
-			if(DEBUG)
-				console.log(x);
 			$.engine.deActive();
 			$.engine.active();
 			$.tree.buildAncestor();

@@ -104,20 +104,99 @@
 		buildAncestor : function() {
 			var stage = $.stage.current;
 			var data = "";
-			
-			var build = function(stage) {
-				var tree = $.phylo.tree[stage];		
-				if(tree.child == 0) {
-					data+="<div class='ancestorImg'><img src=''/></div>";	
-					data+="<div class='ancestorImg'><img src=''/></div>";	
-				} else if(tree.child == 1) {
-					data+="<div class='ancestorImg'><img src=''/></div>";	
-					build(stage-1);
-				} else if(tree.child == 2) {
-
+			var getAvg = function(node){
+				var n = $.phylo.tree[node];
+				if(n.child == 0) {
+					return (n.node1+n.node2)/2;
+				} else if(n.child == 1) {
+					return(n.node1+getAvg(n.node2))/2;
+				} else if(n.child == 2) {
+					return(getAvg(n.node1)+getAvg(n.node2))/2;
 				}
+			};
+			var buildAngle = function(n) {
+				var str ="";
+				//change to collect from css
+				var getDist = function(_n,depth) {
+					var t = $.phylo.tree[_n];
+					if(t.child == 0) {
+						return { top : (t.node1+.5)*34+7+8, depth : t.depth};
+					} else if(t.child == 1) {
+						var x = (t.node1+getAvg(t.node2))/2;
+						x = x*34 + 7 + 8;
+						return { top : x, depth : t.depth};
+					} else if(t.child == 2) {
+						var x = (getAvg(t.node1)+getAvg(t.node2))/2;
+						x = x*34+7 + 8;
+						return { top : x, depth : t.depth};			
+					}
+				}
+				
+				var mWidth = 178;
+				if(n.child == 0) {
+					//build top
+					var hLeft = n.depth*34+34*.3;
+					var hTop_1 = n.node1*34 + 34/2 - 2;
+					var hTop_2 = n.node2*34 + 34/2 - 2;
+					str+= "<div class='vLine'></div>";
+					str+= "<div class='hLine' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
+					//build bot		
+					str+= "<div class='vLine'></div>";
+					str+= "<div class='hLine' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
+				} else if(n.child == 1) {
+					var hLeft = n.depth*34+34*.3;
+					var dist = getDist(n.node2);
+					var hTop_1 = n.node1*34 + 34/2 - 2;
+					var hTop_2 = dist.top;
+					var hWidth = 34*Math.abs((n.depth-dist.depth));
+				
+					str+= "<div class='hLine' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
+					str+= "<div class='hLine' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(hWidth)+"px'></div>";
+					
+				} else if(n.child == 2) {
+					var hLeft = n.depth*34+34*.3;
+					var dist_1 = getDist(n.node1);
+					var dist_2 = getDist(n.node2);
+							
+					var hTop_1 = dist_1.top;
+					var hWidth_1 = 34* Math.abs((n.depth-dist_1.depth));
+					var hTop_2 = dist_2.top;
+					var hWidth_2 = 34*Math.abs((n.depth-dist_2.depth));
+					
+					str+= "<div class='hLine' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(hWidth_1)+"px'></div>";
+					str+= "<div class='hLine' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(hWidth_2)+"px'></div>";
+				}
+			
+				return str;
+			};
+			var build = function(stage) {
+				var tree = $.phylo.tree[stage];					
+				if(tree.child == 0) {
+					data+="<div class='ancestorImg' style='top:"+(tree.node1)*34+"px'><img src=''/></div>";	
+					data+="<div class='ancestorImg' style='top:"+(tree.node2)*34+"px'><img src=''/></div>";	
+					data+="<div class='nodeImg' style='left:"+(tree.depth)*34+"px;top:"+((tree.node1+.5)*34+7)+"px'></div>";
+					data+=buildAngle(tree);
+					return;
+				} else if(tree.child == 1) {
+					var x = (tree.node1+getAvg(tree.node2))/2;
+					x = x*34 + 7;
+					data+="<div class='ancestorImg' style='top:"+(tree.node1)*34+"px'><img src=''/></div>";	
+					data+="<div class='nodeImg' style='left:"+(tree.depth)*34+"px;top:"+x+"px'></div>";
+					data+=buildAngle(tree);
+					build(tree.node2);
+				} else if(tree.child == 2) {
+					var x = (getAvg(tree.node1)+getAvg(tree.node2))/2;
+					x = x*34+7;
+					data+="<div class='nodeImg' style='left:"+(tree.depth)*34+"px;top:"+x+"px'></div>";
+					data+=buildAngle(tree);
+					build(tree.node1);
+					build(tree.node2);
+				}
+				return;
 			}
 			build(stage);
+			if(DEBUG)
+				console.log(data);
 			$("#tree").html(data);
 		},
 	};

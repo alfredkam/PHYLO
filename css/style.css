@@ -83,3 +83,31 @@ body {
 #dump {
 	color:white;
 }
+
+.ancestorImg {
+	width: 32px;
+	height: 32px;
+	background-color:white;
+	position: absolute;
+	display:inline-block;
+	float:left;
+	right:0px;
+}
+.nodeImg {
+	width: 20px;
+	height: 20px;
+	background-color: white;
+	position:absolute;
+	display:inline-block;
+}
+.nodeImg:hover {
+	background-color: #EF4136; 
+}
+.hLine, .vLine {
+	background-color:white;	
+	position:absolute;
+}
+.hLine {
+	height:2px;
+}
+
