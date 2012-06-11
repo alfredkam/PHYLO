@@ -28,10 +28,11 @@ window.DEBUG = true;
 				$.sequence.prepareTracking($.phylo.get.sequence);
 				var random = $.sequence.randomize($.sequence.track);
 				$.sequence.prepareTracking(random);
+				$.phylo.domCache = $.sequence.createCache();
+				$.physics.snapRandom();
 				if(DEBUG)
 					console.log($.phylo.tree);
 				$.stage.last = $.phylo.tree[$.phylo.tree.length-1].lv;
-				$.phylo.domCache = $.sequence.createCache();
 				$.splash.countDown(function() {
 					//start game
 					$.stage.end = false;

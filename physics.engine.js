@@ -86,6 +86,17 @@
 				}
 			}
 		},
+		snapRandom : function() {
+			var track = $.sequence.track;
+			var domCache = $.phylo.domCache;
+			for(var i=0;i<track.length;i++) {
+				for(var j=0;j<track[i].length;j++) {
+					if(track[i][j] != "x") {
+						domCache[track[i][j]].left = $.sequence.calcPos(j)+"px";
+					}
+				}	
+			}	
+		},
 		snap : function() {
 			var getGridY = function(f) {
 				var f = parseInt(f);

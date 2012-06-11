@@ -185,8 +185,6 @@
 				return;
 			}
 			build(stage);
-			if(DEBUG)
-				console.log(data);
 			$("#tree").html(data);
 		},
 	};

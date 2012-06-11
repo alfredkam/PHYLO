@@ -128,7 +128,6 @@
 				return parseInt(numstring);
 		},
 		randomize : function(seq) {
-			console.log(seq);
 			var arr = [];
 			var tmp;
 			//sequence = arr
@@ -149,14 +148,10 @@
 				tmp = arr[i].toString().split('x,').join('').split(',');
 				while( (a=tmp.length)<$.phylo.seqLen)
 					tmp.splice(Math.floor(Math.random()*a),0,'x');
-				console.log(tmp);
 				tmp = tmp.map($.sequence.intify);
-				console.log(tmp);
 				arr[i] = tmp.slice(0);
 			}	
 
-			console.log(arr);
-		
 			//sequence <- arr;
 			var seq = [];
 			for(var i=0;i<arr.length;i++) {
@@ -169,7 +164,6 @@
 				}
 				seq.push(tmp);
 			}		
-
 			return seq;
 		}
 	}
