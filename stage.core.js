@@ -86,6 +86,9 @@
 			//$.phylo.bestTrack = $.sequence.track.slice(0);
 			$.board.bestScore(score);
 			$.board.unapprove();
+			if($.phylo.bestScore == par) {
+				$.board.approve();
+			};
 		},
 		end : false,
 		splash: function(x) {
