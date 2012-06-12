@@ -4,7 +4,6 @@
 		last : 0,
 		round : function() {	
 			//for testing
-			console.log(this.current + " <> "+this.last);
 			if(this.current <this.last){
 				this.current+=1;
 				this.set(this.current);
@@ -45,9 +44,12 @@
 			this.splash(x);
 			show(x);
 			addClass(x);
-			window.setTimeout(function() {
-				$("#bg").css({visibility: "visible"});
-			},200);
+			if(x == 0) {
+				//window.setTimeout(function() {
+					//$("#bg").css({visibility: "visible"});
+					$("#bg").show("slide",{direction : "left"},400);
+				//},200);
+			}
 			$(".row").each(function() {
 				if($(this).hasClass("hidden") == false && $(this).hasClass("current") == false) {
 					$(this).addClass("blocked");
@@ -56,21 +58,41 @@
 			var x = $.phylo.tree[x];
 			$.engine.active();
 			$.tree.buildAncestor();
+			var tmp = [];
+			$.phylo.bestTrack = [];
+			for(var i=0;i<8;i++) {
+				var t = [];
+				for(var j=0;j<25;j++) 
+					t.push(0);
+				tmp.push(t);
+				$.phylo.bestTrack.push(t);
+			}
+					
+			$.helper.copy(tmp, $.sequence.track);
+			//var tmp = $.sequence.track.slice(0);
+			$.helper.copy($.sequence.track, $.phylo.origin);
+			//$.sequence.track = $.phylo.origin.slice(0);
 			//set par score
-			var tmp = $.sequence.track.slice(0);
-			$.sequence.track = $.phylo.origin.slice(0);
 			var par = $.fitch.score();
-			$.sequence.track = tmp.slice(0);
+			$.helper.copy($.sequence.track, tmp);
+			//$.sequence.track = tmp.slice(0);
 			$.sequence.par = par;
-			$.board.par(par);	
-			$.board.score($.fitch.score());
+			$.board.par(par);
+			var score = $.fitch.score();
+			$.board.score(score);
+			$.phylo.bestScore = score;
+			//
+			$.helper.copy($.phylo.bestTrack, $.sequence.track);
+			//$.phylo.bestTrack = $.sequence.track.slice(0);
+			$.board.bestScore(score);
+			$.board.unapprove();
 		},
 		end : false,
 		splash: function(x) {
 			$("#splash").html("Stage "+x).show();
 			window.setTimeout(function(){
 				$("#splash").fadeOut("fast");
-			},300);
+			},800);
 			
 		}
 	};

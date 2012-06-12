@@ -1,4 +1,4 @@
-window.DEBUG = true;
+window.DEBUG = false;
 (function() {
 	$(document).ready(function() {
 	
@@ -24,13 +24,27 @@ window.DEBUG = true;
 					}, end : function(e) {
 					}
 				});
+
+				$.board.startListener();
+
 				if(DEBUG)
 					console.log($.phylo);
 				$.phylo.tree = $.tree.build($.phylo.get.tree);
 				$.board.build();
 				$.sequence.build($.phylo.get.sequence);
 				$.sequence.prepareTracking($.phylo.get.sequence);
-				$.phylo.origin = $.sequence.track.slice(0);
+
+				$.phylo.origin = [];
+				for(var i=0;i<8;i++){
+					var t = [];
+					for(var j=0;j<25;j++) {
+						t.push(0);		
+					}
+					$.phylo.origin.push(t);
+				}
+
+				$.helper.copy($.phylo.origin, $.sequence.track);
+				//$.phylo.origin = $.sequence.track.slice(0);
 				var random = $.sequence.randomize($.sequence.track);
 				$.sequence.prepareTracking(random);
 				$.phylo.domCache = $.sequence.createCache();

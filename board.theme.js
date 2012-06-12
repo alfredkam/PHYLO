@@ -16,27 +16,65 @@
 		},	
 		score : function(x) {
 			$("#userScore").html("Score: "+ x);
-			/*
-			if(x > 0) {
-				$("#userDraw").css({
-					width: x,
-					backgroundColor: "#FFFFFF",
-					left: 100,
-				});
-			} else {
-				$("#userDraw").css({
-					width: Math.abs(x),
-					left : x+100,
-					backgroundColor: "#EF4136",
-				});
-			} */
+		},
+		bestScore : function(x) {
+			$("#bestScore").html("Best: "+ x);
 		},
 		par : function(x) {
 			$("#parScore").html("Par: "+ x);
-		/*	$("#parDraw").css({
-				left:100+x,
+		},
+		startListener: function() {
+			$("#volumeOff").hide();
+			$("#volumeOn").click(function() {
+				$("#volumeOn").hide();
+				$("#volumeOff").show();
 			});
-			*/
+			$("#volumeOff").click(function() {
+				$("#volumeOff").hide();
+				$("#volumeOn").show()
+			});
+			$("#cycle").click(function(){
+				$.helper.copy($.sequence.track, $.phylo.bestTrack);
+				//$.sequence.track = $.phylo.bestTrack.slice(0);
+				$.board.score($.phylo.bestScore);
+				$.physics.snapRandom();
+				
+			});
+			$("#star").click(function(){
+				if($(this).hasClass("pass")) {
+					$.stage.round();
+				}
+			});
+		},
+		approve : function() {
+			$("#star").addClass("pass");
+			$("#star").animate({
+				opacity: 1
+			},300, function(){
+				$("#star").animate({
+					opacity: 0.2
+				},300,function() {
+					$("#star").animate({
+						opacity: 1
+					},500,function() {
+						$("#star").animate({
+							opacity: 0.2
+						},300,function() {
+							$("#star").animate({
+								opacity: 1
+							},500,function(){
+
+							});	
+						});	
+					});
+				});
+			});
+		},
+		unapprove : function() {
+			$("#star").removeClass("pass");
+			$("#star").css({
+				opacity : 0.4
+			});
 		}
 	};	
 })();

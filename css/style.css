@@ -30,6 +30,7 @@ body {
 	top:0px;
 }
 #bg {
+	display:none;
 	position:absolute;
 	display:inline-block;	
 }
@@ -166,9 +167,6 @@ body {
 	opacity: 0.8;
 	visibility:hidden;
 }
-#bg {
-	visibility:hidden;
-}
 #ancestorSeq {
 	position:relative;
 	top:-38px;
@@ -184,4 +182,49 @@ body {
 	color: #EF4136;
 	left: 400px;
 	font-size:100px;
+}
+#bottomPanel {
+	width:1024px;
+	position:relative;
+	
+}
+#bottomPanel div{
+	display:inline-block;
+}
+#cycle img {
+	width: 33px;
+	height:33px;
+}
+#controlPanel {
+	width: 33px;
+	height:66px;
+	float:right;
+	position: relative;
+}
+
+#scorePanel {
+	float:right;
+	right:10px;
+	position:relative;
+	top:18px;
+}
+
+#scorePanel div {
+	display:block;
+}
+
+#volumePanel img {
+	width: 33px;
+}
+#volumePanel {
+	width: 33px;
+}
+#cycle:hover {
+	opacity: 1;
+}
+#cycle {
+	opacity: 0.4;
+}
+#star {
+	opacity: 0.4;
 }
