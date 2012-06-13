@@ -38,6 +38,8 @@
 				//$.sequence.track = $.phylo.bestTrack.slice(0);
 				$.board.score($.phylo.bestScore);
 				$.physics.snapRandom();
+				if($.phylo.bestScore >= $.sequence.par)
+					$.board.approve();
 				
 			});
 			$("#star").click(function(){
@@ -45,6 +47,7 @@
 					$.stage.round();
 				}
 			});
+			$.timer.start();
 		},
 		approve : function() {
 			$("#star").addClass("pass");
