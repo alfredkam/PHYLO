@@ -168,8 +168,8 @@ body {
 	visibility:hidden;
 }
 #ancestorSeq {
-	position:relative;
-	top:-38px;
+	position:absolute;
+	top:306px;
 	left:183px;
 	display:none;
 	width:841px;

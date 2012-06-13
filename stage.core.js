@@ -92,7 +92,7 @@
 		},
 		end : false,
 		splash: function(x) {
-			$("#splash").html("Stage "+x).show();
+			$("#splash").html("Stage "+(x+1)).show();
 			window.setTimeout(function(){
 				$("#splash").fadeOut("fast");
 			},800);

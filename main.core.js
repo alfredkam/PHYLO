@@ -25,7 +25,6 @@ window.DEBUG = false;
 					}
 				});
 
-				$.board.startListener();
 
 				if(DEBUG)
 					console.log($.phylo);
@@ -65,6 +64,7 @@ window.DEBUG = false;
 					if(DEBUG)
 						$.helper.dump($.sequence.track);
 				});
+				$.board.startListener();
 			},
 		};
 
