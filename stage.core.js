@@ -11,6 +11,8 @@
 				this.set(this.current);
 			} else {
 				this.end = true;
+				$.timer.stop();
+				$.endGame.init("win");
 				return "end game";
 			} 
 		}, 

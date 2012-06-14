@@ -1,4 +1,4 @@
-window.DEBUG = false;
+window.DEBUG = true;
 (function() {
 	$(document).ready(function() {
 	
@@ -11,8 +11,15 @@ window.DEBUG = false;
 					offSet : $("#gameBoard").css("left").replace(/px/,""),
 					height : $("#tree").css("height").replace(/px/,"")
 				};
-				$.protocal.read();
-				$.protocal.request();
+				if(window.DEBUG) {
+					$.protocal.read();
+					$.protocal.request();
+				} else {
+					$.lang.init(function() {
+						$.protocal.read();
+						$.protocal.request();
+					});
+				}
 			},
 			//call back on protocal complete
 			//sets the layout and activates the game

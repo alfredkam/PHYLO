@@ -39,7 +39,8 @@
 		},
 		update : function() {
 			if(this.timeElapsed >= (this.timeLimit)) {
-				clearInterval(this.canvasInterval);		
+				clearInterval(this.canvasInterval);	
+				$.endGame.init("lose");
 				//do something here
 			}
 
