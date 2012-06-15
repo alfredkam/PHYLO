@@ -40,5 +40,18 @@
 
 		},
 	}
+	window.common = {
+		exportSingleton : function(name, obj, attr) {
+			if(!window[name]) {
+				var g = window[name] = new obj;
+				for(var i=0;i<attr.length;i++) {
+					try {
+					g[attr[i][0]] = attr[i][1];
+					} catch(err) {
+					}
+				}
+			}
+		}
+	}
 })();
 

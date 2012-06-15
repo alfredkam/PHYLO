@@ -236,6 +236,7 @@ body {
 }
 /*end game */
 #endGame {
+	display:none;
 	position:absolute;
 	top:0px;	
 	background-color: black;

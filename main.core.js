@@ -1,4 +1,5 @@
-window.DEBUG = true;
+window.DEBUG = false;
+window.guest = "TEST DATA";
 (function() {
 	$(document).ready(function() {
 	
@@ -11,15 +12,11 @@ window.DEBUG = true;
 					offSet : $("#gameBoard").css("left").replace(/px/,""),
 					height : $("#tree").css("height").replace(/px/,"")
 				};
-				if(window.DEBUG) {
+				$.lang.init(function() {
 					$.protocal.read();
 					$.protocal.request();
-				} else {
-					$.lang.init(function() {
-						$.protocal.read();
-						$.protocal.request();
-					});
-				}
+					//$.endGame.init("lose");
+				});
 			},
 			//call back on protocal complete
 			//sets the layout and activates the game
