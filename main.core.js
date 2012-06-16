@@ -63,6 +63,7 @@ window.guest = "TEST DATA";
 				$.stage.last = $.phylo.tree[$.phylo.tree.length-1].lv;
 				$.splash.countDown(function() {
 					//start game
+					console.log("Asd");
 					$.stage.end = false;
 					$.stage.round();	
 					if(DEBUG)

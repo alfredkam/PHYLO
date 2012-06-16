@@ -34,8 +34,9 @@
 		},
 		numberUpdate : function() {
 			this.state-=1;
-			if(this.state == 0)
+			if(this.state == 0) {
 				clearInterval(this.numberInterval);
+			}
 		},
 		update : function() {
 			if(this.timeElapsed >= (this.timeLimit)) {
