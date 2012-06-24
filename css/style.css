@@ -76,6 +76,9 @@ body {
 #login:hover {
 	background-color: #A1A1A1;
 }
+#login-tag:hover {
+	color:#f1f2f3;
+}
 
 #logo {
 	font-size: 20px;
@@ -107,4 +110,19 @@ body {
 }
 #nav #credits div:hover {
 	background-color: orange;
+}
+
+#menu {
+	top:2px;
+	position:relative;
+	width:100%;
+	text-align:center;
+}
+
+#sandbox {
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	text-align:left;
+	border:1px solid #333;
 }
