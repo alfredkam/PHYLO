@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'helveticathin';
-    src: url('../../font_files/helveticaneueltstd-th-helv.eot');
-    src: url('../../font_files/helveticaneueltstd-th-helv.eot?#iefix') format('embedded-opentype'),
-         url('../../font_files/helveticaneueltstd-th-helv.woff') format('woff'),
-         url('../../font_files/helveticaneueltstd-th-helv.ttf') format('truetype'),
-         url('../../font_files/helveticaneueltstd-th-helv.svg#HelveticaNeueLTStd35Thin') format('svg');
+    src: url('../fonts/helveticaneueltstd-th-helv.eot');
+    src: url('../fonts/helveticaneueltstd-th-helv.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/helveticaneueltstd-th-helv.woff') format('woff'),
+         url('../fonts/helveticaneueltstd-th-helv.ttf') format('truetype'),
+         url('../fonts/helveticaneueltstd-th-helv.svg#HelveticaNeueLTStd35Thin') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -47,8 +47,10 @@ body {
 }
 
 #top-panel-right {
+	display:inline-block;
 	float:right;
 	position:relative;
+	right:0px;
 }
 
 #options-button img{
@@ -58,8 +60,6 @@ body {
 #options {
 	position:relative;
 	top:0px;
-	float:right;
-	right:0px;
 }
 #options-button {
 	padding:2px 2px 0px 2px;
@@ -67,6 +67,12 @@ body {
 }
 #options:hover {
 	background-color: #A1A1A1;
+}
+
+#login {
+	top:-9px;
+	position:relative;
+	left: 4px;
 }
 
 #login-tag {
