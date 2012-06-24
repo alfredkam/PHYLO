@@ -1,0 +1,262 @@
+#gameBoard {
+	position: absolute;
+	display:inline-block;
+	left: 183px;
+	width:841px;
+	top:0px;
+}
+#bg {
+	display:none;
+	position:absolute;
+	display:inline-block;	
+}
+#movingParts {
+	position: absolute;
+	display:inline-block;
+	z-index: 10;	
+}
+
+#tree {
+	top:0px;
+	position: relative;
+	display:inline-block;
+	width: 178px;	
+	height: 340px;
+}
+.sequence , .ancestor {
+	height:32px;
+	width:32px;
+	position:absolute;
+	display:inline-block;
+	border:1px solid white;
+	z-index: 11;
+}
+.row {
+	width: 841px;
+	position:relative;
+	height:34px;
+}
+
+.bgCell {
+	position:absolute;
+	height: 32px;
+	width: 32px;
+	background-color: black;
+	display:inline-block;
+	border: 1px white solid;
+}
+.bgRow {
+	position:relative;
+	display:inline-block;
+	margin 0px;
+	padding: 0px;
+	width:841px;
+	height:30px;
+}
+
+.red-line {
+	display:none;
+	background-color: #EF4136;
+	width:100%;
+	top:12px;
+	height:10px;
+	position: absolute;
+	position:10;
+}
+#dump {
+	color:white;
+}
+
+.ancestorImg {
+	width: 32px;
+	height: 32px;
+	background-color:white;
+	position: absolute;
+	display:inline-block;
+	float:left;
+	right:0px;
+	z-index:2;
+}
+.nodeImg {
+	width: 20px;
+	height: 20px;
+	background-color: white;
+	position:absolute;
+	display:inline-block;
+	z-index:2;
+}
+.nodeImg:hover {
+	background-color: #EF4136; 
+}
+.hLine, .vLine {
+	background-color:white;	
+	position:absolute;
+	z-index:1;
+}
+.hLine {
+	height:2px;
+}
+.vLine {
+	width: 2px;
+}
+
+#scoreDraw {
+	left: 183px;
+	position:relative;
+	width:800px;
+}
+
+#userDraw {
+	background-color:white;
+	height:40px;
+	width:0px;
+	left:100px;
+	position:relative;
+	z-index:2;
+}
+
+#parDraw {
+	background-color:red;
+	height:42px;
+	width:2px;
+	position:absolute;
+	top:0px;
+	z-index:3;
+}
+#scoreLine {
+	background-color:white;
+	width:841px;
+	height: 1px;
+}
+#base0 {
+	background-color:white;
+	width:2px;
+	height:40px;
+	position:absolute;
+	left:283px;
+	z-index:3;
+}
+.hidden {
+	visibility : hidden;
+}
+.blocked {
+	opacity: 0.8;
+	visibility:hidden;
+}
+#ancestorSeq {
+	position:absolute;
+	top:306px;
+	left:183px;
+	display:none;
+	width:841px;
+	height:34px;
+}
+#splash {
+	position: absolute;
+	top: 80px;
+	z-index: 11;	
+	color: #EF4136;
+	left: 400px;
+	font-size:100px;
+}
+#bottomPanel {
+	width:1024px;
+	position:relative;
+	
+}
+#bottomPanel div{
+	display:inline-block;
+}
+#cycle img {
+	width: 33px;
+	height:33px;
+}
+#controlPanel {
+	width: 33px;
+	height:66px;
+	float:right;
+	position: relative;
+}
+
+#scorePanel {
+	float:right;
+	right:20px;
+	position:relative;
+	top:18px;
+}
+
+#scorePanel div {
+	display:block;
+}
+
+#volumePanel img {
+	width: 33px;
+}
+#volumePanel {
+	width: 33px;
+}
+#cycle:hover {
+	opacity: 1;
+}
+#cycle {
+	opacity: 0.4;
+}
+#star {
+	opacity: 0.4;
+}
+#timerPanel {
+	position:relative;
+	float:right;
+	right:10px;
+	top:3px;
+}
+/*end game */
+#endGame {
+	display:none;
+	position:absolute;
+	top:0px;	
+	background-color: black;
+	z-index: 20;
+	width:100%;
+	height:100%;
+}
+
+#endGame-bg {
+	text-align:center;
+}
+
+#endGame-content {
+	position:relative;
+	top:20px;
+	background-color: #D3D3D3;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:left;
+	height: 450px;
+	width:900px;
+	border:5px solid white;
+	padding: 5px 10px;
+}
+
+#countDown {
+	position:absolute;
+	top:0px;
+	z-index:19;
+	text-align:center;
+	width:100%;
+	height:100%;
+	background-color:black;
+}
+#countDown-text {
+	text-align:left;
+	display:inline-block;
+	margin-left:auto;
+	margin-right: auto;
+	color: #EF4136;
+	position:relative;
+	top:20%;
+	font-size:70px;
+	z-index: 20;
+}	
+
+
