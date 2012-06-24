@@ -9,10 +9,17 @@
     font-style: normal;
 }
 
+a:link, a:visited, a:active {
+	text-decoration: none;
+	color:#333;
+}
+
 body {
 	font-family: 'helveticathin', Helvetica, Arial, sans-serif;
 	color:white;
-	background-color: black;
+	/* background-color: #1C1C1C; */
+	background-image: url(../img/light_paper.png);
+	background-repeat:repeat;
 	padding:0px;
 	margin: 0px;
 	-webkit-touch-callout: none;
@@ -21,4 +28,83 @@ body {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	min-width:1024px;
+}
+
+#game {
+	display:none;
+}
+
+#top-panel {
+	color: #333;
+	background-color:#f1f2f3;
+	position:relative;
+	width:100%;
+}
+
+#top-panel div{
+	display:inline-block;
+}
+
+#top-panel-right {
+	float:right;
+	position:relative;
+}
+
+#options-button img{
+	height:30px;
+	position:relative;
+}
+#options {
+	position:relative;
+	top:0px;
+	float:right;
+	right:0px;
+}
+#options-button {
+	padding:2px 2px 0px 2px;
+	border-left:1px solid #333;
+}
+#options:hover {
+	background-color: #A1A1A1;
+}
+
+#login-tag {
+	padding: 9px 10px;
+}
+
+#login:hover {
+	background-color: #A1A1A1;
+}
+
+#logo {
+	font-size: 20px;
+	padding:5px 10px;
+}
+
+#nav {
+	left:30px;
+	position:relative;
+}
+#nav div {
+	padding:9px 10px;
+	margin-right:10px;
+	position:relative;
+}
+
+#nav div:hover {
+	color: #f1f2f3;
+}
+#nav #play div:hover {
+	background-color: #71B2E2;
+}
+
+#nav #tutorial div:hover {
+	background-color: darkOrchid;
+}
+#nav #about div:hover {
+	background-color: green;
+}
+#nav #credits div:hover {
+	background-color: orange;
 }

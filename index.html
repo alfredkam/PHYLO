@@ -1,31 +1,39 @@
 <!doctype html>
 <html lang='UTF8'>
 	<head>
-		<meta name='viewport' content='width=device-width, inital-scale=1'>	
+		<meta name='viewport' content='width=device-width, initial-scale=1'>	
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<link rel='stylesheet' href='css/style.css'/>
-		<link ref='stylesheet' href='css/game.css'/>
+		<link rel='stylesheet' href='css/game.css'/>
 		<link rel='stylesheet' href='css/screen.css' media='screen'/>
 		<link rel='stylesheet' href='css/handheld.css' media='handheld'/>
 	</head>
 	<body>
-		<div id='top-pannel'>
-			<div id='logo'>PHYLO</div>
+		<div id='top-panel'>
+			<div id='logo'>PHYLO | Citizen Science</div>
 			<div id='nav'>
-				<div id='play'></div>
-				<div id='tutorial'></div>
-				<div id='about'></div>
-				<div id='credits'></div>
+				<a id='play' href=''><div></div></a>
+				<a id='tutorial' href=''><div></div></a>
+				<a id='about' href=''><div></div></a>
+				<a id='credits' href=''><div></div></a>
 			</div>
 			<div id='top-panel-right'>
-				<div id='login'>
-
-				</div>
 				<div id='options'>
+					<div id='options-button'>
+						<img src='img/options.png'/>
+					</div>
 					<div id='language'>
 	
 					</div>
 				</div>	
+				<div id='login'>
+					<div id='login-tag'>
+	
+					</div>
+					<div id='login-box'>
+
+					</div>
+				</div>
 			</div>	
 		</div>
 		<div id='game'>
@@ -90,21 +98,23 @@
 		<script src='js/jquery.1.7.2.js' type='text/javascript'></script>
 		<script src='js/jquery.mobile.1.0a2.js' type='text/javascript'></script>
 		<script src='js/jquery-ui.1.8.js' type='text/javascript'></script>
-		<script src='js/timer.theme.js' type='text/javascript'></script>
-		<script src='js/endGame.theme.js' type='text/javascript'></script>
-		<script src='js/physics.engine.js' type='text/javascript'></script>
-		<script src='js/events.engine.js' type='text/javascript'></script>
-		<script src='js/engine.core.js' type='text/javascript'></script>
-		<script src='js/stage.core.js' type='text/javascript'></script>
-		<script src='js/sequence.core.js' type='text/javascript'></script>
-		<script src='js/splash.theme.js' type='text/javascript'></script>
-		<script src='js/tree.core.js' type='text/javascript'></script>
-		<script src='js/newick.core.js' type='text/javascript'></script>
-		<script src='js/lang.module.js' type='text/javascript'></script>
-		<script src='js/helper.core.js' type='text/javascript'></script>
-		<script src='js/fitch.core.js' type='text/javascript'></script>
-		<script src='js/board.theme.js' type='text/javascript'></script>
-		<script src='js/protocal.core.js' type='text/javascript'></script>
-		<script src='js/main.core.js' type='text/javascript'></script>
+		<script src='js/menu/tailor.menu.js' type='text/javascript'></script>
+		<script src='js/menu/login.menu.js' type='text/javascript'></script>
+		<script src='js/game/timer.theme.js' type='text/javascript'></script>
+		<script src='js/game/endGame.theme.js' type='text/javascript'></script>
+		<script src='js/game/physics.engine.js' type='text/javascript'></script>
+		<script src='js/game/events.engine.js' type='text/javascript'></script>
+		<script src='js/game/engine.core.js' type='text/javascript'></script>
+		<script src='js/game/stage.core.js' type='text/javascript'></script>
+		<script src='js/game/sequence.core.js' type='text/javascript'></script>
+		<script src='js/game/splash.theme.js' type='text/javascript'></script>
+		<script src='js/game/tree.core.js' type='text/javascript'></script>
+		<script src='js/game/newick.core.js' type='text/javascript'></script>
+		<script src='js/game/lang.module.js' type='text/javascript'></script>
+		<script src='js/game/helper.core.js' type='text/javascript'></script>
+		<script src='js/game/fitch.core.js' type='text/javascript'></script>
+		<script src='js/game/board.theme.js' type='text/javascript'></script>
+		<script src='js/game/protocal.core.js' type='text/javascript'></script>
+		<script src='js/game/main.core.js' type='text/javascript'></script>
 	</body>
 </html>
