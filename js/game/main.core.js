@@ -5,7 +5,7 @@ window.guest = "TEST DATA";
 	
 		$.main = {
 			//configuration
-			init : function() {
+			init : function(setting) {
 				$.phylo = {
 					seqLen : 25,
 					x : 34,
@@ -13,7 +13,8 @@ window.guest = "TEST DATA";
 					height : $("#tree").css("height").replace(/px/,"")
 				};
 				$.lang.init(function() {
-					$.protocal.read();
+					$("#game").show();
+					$.protocal.read(setting);
 					$.protocal.request();
 					//$.endGame.init("lose");
 				});
@@ -63,7 +64,6 @@ window.guest = "TEST DATA";
 				$.stage.last = $.phylo.tree[$.phylo.tree.length-1].lv;
 				$.splash.countDown(function() {
 					//start game
-					console.log("Asd");
 					$.stage.end = false;
 					$.stage.round();	
 					if(DEBUG)

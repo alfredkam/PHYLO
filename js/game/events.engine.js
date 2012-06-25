@@ -73,10 +73,11 @@
 			var mouseDown = 'onmousedown' in document.documentElement;
 			var mouseMove= 'onmousemove' in document.documentElement;
 			var mouseUp = 'onmouseup' in document.documentElement;
+			var self = this;
 			if(fn.start != undefined) {
 				if(mouseDown)
 					$(element).mousedown(function(e) {
-						fn.start(e);			
+						fn.start(self.getFingerPos(e));			
 					});
 				if(touchStart)  {
 					$(element).touchstart(function(e) {
@@ -84,14 +85,14 @@
 						if(e.originalEvent.touches && e.originalEvent.touches.length) {
 							e = e.originalEvent.touches[0];
 						}
-						fn.start(e);
+						fn.start(self.getFingerPos(e));
 					});
 				}
 			}
 			if(fn.move !=undefined) {
 				if(mouseMove)
 					$(element).mousemove(function(e) {
-						fn.move(e);
+						fn.move(self.getFingerPos(e));
 					});
 				if(touchMove)
 					$(element).touchmove(function(e) {
@@ -99,13 +100,13 @@
 						if(e.originalEvent.touches && e.originalEvent.touches.length) {
 							e = e.originalEvent.touches[0];
 						}
-						fn.move(e);
+						fn.move(self.getFingerPos(e));
 					});
 			}			
 			if(fn.end !=undefined) {
 				if(mouseUp)
 					$(element).mouseup(function(e) {
-						fn.end(e);
+						fn.end(self.getFingerPos(e));
 					});
 				if(touchEnd)
 					$(element).touchend(function(e) {	
@@ -113,9 +114,16 @@
 						if(e.originalEvent.touches && e.originalEvent.touches.length) {
 							e = e.originalEvent.touches[0];
 						}
-						fn.end(e);	
+						fn.end(self.getFingerPos(e));	
 					});
 			}
 		},
+		getFingerPos : function(e) {
+			var canvas = document.getElementById("game");
+			var x = e.pageX - canvas.offsetLeft;
+			var y = e.pageY - canvas.offsetTop;
+			
+			return { pageX : x , pageY: y}		
+		}
 	}
 })();

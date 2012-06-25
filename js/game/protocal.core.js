@@ -1,9 +1,14 @@
 (function() {
 	var doc = document, win = window;
 	$.protocal = {
-		read : function() {
-			this.type = $.helper.get("type");
-			this.score = $.helper.get(this.type);
+		read : function(setting) {
+			if(setting == undefined) {
+				this.type = $.helper.get("type");
+				this.score = $.helper.get(this.type);
+			} else {
+				this.type == setting.type;
+				this.score = setting.hard;
+			}
 		},
 		request : function() {	
 		

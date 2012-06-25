@@ -31,8 +31,23 @@ body {
 	min-width:1024px;
 }
 
+/* disables the game */
 #game {
 	display:none;
+	width:1024px;
+	margin-left:auto;
+	margin-right:auto;
+	min-width:1024px;
+	text-align:left;
+	position:relative;
+	border:1px solid #333;
+	background-color:black;
+	top:0px;
+}
+.wrapper {
+	top:20px;
+	text-align:center;
+	position:relative;
 }
 
 #top-panel {
@@ -101,25 +116,28 @@ body {
 	position:relative;
 }
 
-#nav div:hover {
+#nav div:hover, #nav div.onSelect {
 	color: #f1f2f3;
 }
-#nav #play div:hover {
+#nav #play div:hover, #nav #play div.onSelect {
 	background-color: #71B2E2;
 }
 
-#nav #tutorial div:hover {
+#nav #tutorial div:hover, #nav #tutorial div.onSelect {
 	background-color: darkOrchid;
 }
-#nav #about div:hover {
+#nav #about div:hover, #nav #about div.onSelect {
 	background-color: green;
 }
-#nav #credits div:hover {
+#nav #credits div:hover, #nav #credits div.onSelect{
 	background-color: orange;
 }
 
+
+
+
 #menu {
-	top:2px;
+	top:20px;
 	position:relative;
 	width:100%;
 	text-align:center;
