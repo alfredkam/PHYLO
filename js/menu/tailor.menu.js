@@ -1,11 +1,16 @@
 (function() {
 	$.tailor = {
-		language : function() {
-			var self = this;
+		run : function(callback) {
 			$.lang.init(function() {
-				self.header();					
-				device.start();
-			});	
+				var wait = function() {
+
+					if(window.lang == undefined) {
+						window.setTimeout(function() { wait(); },100);	
+					} else 
+						callback();
+				};
+				wait();
+			});
 		},
 		header:  function() {
 			var l = window.lang;
@@ -15,9 +20,15 @@
 			$("#credits div").html(l.header["field 4"]);
 			$("#login-tag").html(l.body.play.gameselect.login["field 2"]);
 		},
+		init : function() {
+			var self = this;
+			$.lang.init(function() {
+				self.header();					
+			});
+		},
 	};
 
 	$(document).ready(function() {
-		$.tailor.language();		
+		$.tailor.init();		
 	});
 })();
