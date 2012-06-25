@@ -381,12 +381,18 @@
 								$.invalid.level();
 							} else {
 								$("#draw").hide();
-								//$("#frame").show();
+								/*$("#frame").show();
 								$("#menu").hide();
 								$("#input_box").hide();
 								var hash = window.location.hash.toUpperCase();
 								hash = hash.replace('#',"").toLowerCase();
 								document.getElementById('frame').src = 'http://phylo.cs.mcgill.ca/js/index2.html?lang='+hash+'&type=disease&disease='+id+'#home';
+								*/
+								$("#menu").hide();
+								$.main.init({
+									type: "disease",
+									num: id,		
+								});	
 							}
 							return;
 						});
@@ -432,11 +438,18 @@
 					if( 335+110*(i>=3?(i>=6?i-6:i-3):i) < eX && eX < 405+110*(i>=3?(i>=6?i-6:i-3):i) &&
 						150+(i>=3?(i>=6?200:100):0) < eY && eY < 220+(i>=3?(i>=6?200:100):0)) {
 						$("#draw").hide();		
+						/*
 						$("#frame").show();
 						var hash = window.location.hash.toUpperCase();
 						var id = diseaseList[i][1][Math.floor(Math.random()*diseaseList[i][1].length)];
 						hash = hash.replace('#',"").toLowerCase();
 						document.getElementById('frame').src = 'http://phylo.cs.mcgill.ca/js/index2.html?lang='+hash+'&type=disease&disease='+id+'#home';
+						*/
+						$("#menu").hide();
+						$.main.init({
+							type: "random",
+							num: id,		
+						});	
 						return;
 					}
 				};
@@ -485,12 +498,12 @@
 					if(100+70*i <eX && eX < 150+70*i  &&
 						150 < eY && eY< 200) {
 						$("#draw").hide();		
-						$("#menu").hide();
 						/*$("#frame").show();
 						var hash = window.location.hash.toUpperCase();
 						hash = hash.replace('#',"").toLowerCase();
 						document.getElementById('frame').src = 'http://phylo.cs.mcgill.ca/js/index2.html?lang='+hash+'&type=random&random='+i+'#home';
 						*/
+						$("#menu").hide();
 						$.main.init({
 							type: "random",
 							num: i,		
@@ -602,7 +615,7 @@
 
 		function getCursorPosition(e) {
 			var gCanvasElement = document.getElementById("sandbox");
-			var menu = document.getElementById("menu");
+			var menu = document.getElementById("mid-panel");
 			var x;
 			var y;
 			if (e.pageX || e.pageY) {

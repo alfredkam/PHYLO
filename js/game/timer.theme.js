@@ -78,6 +78,12 @@
 		stop : function() {
 			clearInterval(this.numberInterval);
 			clearInterval(this.canvasInterval);		
+			this.timeInterval = 5;
+			this.timeElapsed = 0;
+			this.timeLimit = 90000;
+			this.startAngle = -Math.PI/2;
+			this.canvasInterval = null;
+			this.state = 90;
 		}
 	};
 

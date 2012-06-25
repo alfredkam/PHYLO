@@ -4,8 +4,15 @@ window.guest = "TEST DATA";
 	$(document).ready(function() {
 	
 		$.main = {
+			//unbinds all the previous data
+			clear : function() {
+				$.timer.stop();
+				$.stage.current = -1;
+				
+			},
 			//configuration
 			init : function(setting) {
+				this.clear();
 				$.phylo = {
 					seqLen : 25,
 					x : 34,

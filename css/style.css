@@ -14,6 +14,10 @@ a:link, a:visited, a:active {
 	color:#333;
 }
 
+html, body {
+	height:100%;
+}
+
 body {
 	font-family: 'helveticathin', Helvetica, Arial, sans-serif;
 	color:white;
@@ -44,8 +48,11 @@ body {
 	background-color:black;
 	top:0px;
 }
-.wrapper {
+#mid-panel {
 	top:20px;
+	position:relative;
+}
+.wrapper {
 	text-align:center;
 	position:relative;
 }
@@ -55,6 +62,14 @@ body {
 	background-color:#f1f2f3;
 	position:relative;
 	width:100%;
+	-webkit-box-shadow: 0 6px 6px -6px #ccc;
+	   -moz-box-shadow: 0 6px 6px -6px #ccc;
+	    -ms-box-shadow: 0 6px 6px -6px #ccc;
+	 -khtml-box-shadow: 0 6px 6px -6px #ccc;
+	     -o-box-shadow: 0 6px 6px -6px #ccc;
+	   -moz-box-shadow: 0 6px 6px -6px #ccc;
+	        box-shadow: 0 6px 6px -6px #ccc;
+	
 }
 
 #top-panel div{
@@ -133,11 +148,7 @@ body {
 	background-color: orange;
 }
 
-
-
-
 #menu {
-	top:20px;
 	position:relative;
 	width:100%;
 	text-align:center;
@@ -150,3 +161,45 @@ body {
 	text-align:left;
 	border:1px solid #333;
 }
+
+#wrapper {
+	min-height:100%;
+	padding-bottom:150px;
+	height: auto !important;
+	height:100%;
+	margin:0 auto -150px;
+}	
+
+#footer, .push {
+	height:150px;	
+}
+
+
+#footer {
+	width:100%;
+	background-color:#f1f2f3;
+	clear:both;
+	color:#333;
+}
+#footer-content {
+	height:100px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:left;	
+	width:1024px;
+} 
+#copyright {
+	font-size: 14px;
+}
+#contribute {
+	font-size: 14px;	
+	padding-top:5px;
+	padding-bottom:5px;
+}
+#contribute a {
+	color:blue;
+}
+
+#sponsor {
+	padding-top:5px;
+}	
