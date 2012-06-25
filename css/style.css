@@ -99,6 +99,13 @@ body {
 	background-color: #A1A1A1;
 }
 
+#options:hover #option-list {
+	display:inline-block !important;
+}
+#option-list {
+	display:none !important;
+}
+
 #login {
 	top:-8px;
 	position:relative;
@@ -203,3 +210,164 @@ body {
 #sponsor {
 	padding-top:5px;
 }	
+
+#option-list {
+	color: #333;
+	position:absolute;
+	right: 0px;
+}	
+.option-list {
+	display:inline-block;
+	background-color:white;
+	padding:5px 10px;
+	border:1px solid #ccc;	
+}
+.option-list:hover {
+	background-color: #A1A1A1;
+	color:#f1f2f3;
+}
+
+#login {
+	top:-8px;
+	position:relative;
+	right:-4px;
+}
+
+#login-tag {
+	padding: 9px 10px;
+}
+
+#login:hover {
+	background-color: #A1A1A1;
+}
+#login-tag:hover {
+	color:#f1f2f3;
+}
+
+#logo {
+	font-size: 20px;
+	padding:5px 10px;
+}
+
+#nav {
+	left:30px;
+	position:relative;
+}
+#nav div {
+	padding:9px 10px;
+	margin-right:10px;
+	position:relative;
+}
+
+#nav div:hover, #nav div.onSelect {
+	color: #f1f2f3;
+}
+#nav #play div:hover, #nav #play div.onSelect {
+	background-color: #71B2E2;
+}
+
+#nav #tutorial div:hover, #nav #tutorial div.onSelect {
+	background-color: darkOrchid;
+}
+#nav #about div:hover, #nav #about div.onSelect {
+	background-color: green;
+}
+#nav #credits div:hover, #nav #credits div.onSelect{
+	background-color: orange;
+}
+
+#menu {
+	position:relative;
+	width:100%;
+	text-align:center;
+}
+
+#sandbox {
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	text-align:left;
+	border:1px solid #333;
+}
+
+#wrapper {
+	min-height:100%;
+	padding-bottom:150px;
+	height: auto !important;
+	height:100%;
+	margin:0 auto -150px;
+}	
+
+#footer, .push {
+	height:150px;	
+}
+
+
+#footer {
+	width:100%;
+	background-color:#f1f2f3;
+	clear:both;
+	color:#333;
+}
+#footer-content {
+	height:100px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:left;	
+	width:1024px;
+} 
+#copyright {
+	font-size: 14px;
+}
+#contribute {
+	font-size: 14px;	
+	padding-top:5px;
+	padding-bottom:5px;
+}
+#contribute a {
+	color:blue;
+}
+
+#sponsor {
+	padding-top:5px;
+}	
+
+#option-list {
+	color: #333;
+	position:absolute;
+	right: 0px;
+	z-index:30;
+}	
+.option-list{
+	display:inline-block;
+	background-color:white;
+	padding:5px 10px;
+	border:1px solid #ccc;	
+}
+.language-list {
+	text-align:center;
+}
+
+#language-list {
+	position:absolute;		
+	right: 90px;
+	top: 0px;
+	background-color: white;
+	border-top:1px solid #ccc;
+	display:none !important;
+}
+.language-list a div{
+	display:block !important;
+	border-right: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 5px 10px;
+}
+.language-list a div:hover {
+	background-color: #a1a1a1;
+	color:#f1f2f3;
+}
+#language:hover #language-list {
+	display: inline-block !important;
+}
+
