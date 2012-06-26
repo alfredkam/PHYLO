@@ -90,20 +90,19 @@ body {
 #options {
 	position:relative;
 	top:0px;
+	cursor:pointer;
 }
 #options-button {
 	padding:2px 2px 1px 2px;
 	border-left:1px solid #333;
 }
-#options:hover {
-	background-color: #A1A1A1;
+#options:hover, .dropDown-OnSelect {
+	background-color: #A1A1A1 !important;
+	color:#f1f2f3;
 }
 
-#options:hover #option-list {
-	display:inline-block !important;
-}
-#option-list {
-	display:none !important;
+#option-list div.dropDown-OnSelect {
+	border:1px solid #a1a1a1;
 }
 
 #login {
@@ -342,7 +341,7 @@ body {
 	display:inline-block;
 	background-color:white;
 	padding:5px 10px;
-	border:1px solid #ccc;	
+	border:1px solid white;	
 }
 .language-list {
 	text-align:center;
@@ -354,7 +353,6 @@ body {
 	top: 0px;
 	background-color: white;
 	border-top:1px solid #ccc;
-	display:none !important;
 }
 .language-list a div{
 	display:block !important;
@@ -367,7 +365,15 @@ body {
 	background-color: #a1a1a1;
 	color:#f1f2f3;
 }
-#language:hover #language-list {
-	display: inline-block !important;
-}
 
+.dropDownTriangle {
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid white;
+	position:absolute;
+	top: 30px;
+	z-index:29;
+	left:7px;
+}
