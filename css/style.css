@@ -51,6 +51,7 @@ body {
 #mid-panel {
 	top:20px;
 	position:relative;
+	min-height:600px;
 }
 .wrapper {
 	text-align:center;
@@ -193,14 +194,25 @@ body {
 	background-color:#eee;
 	clear:both;
 	color:#333;
+	padding-bottom:100px;
 }
 #footer-content {
 	height:100px;
 	margin-left:auto;
 	margin-right:auto;
-	text-align:left;	
 	width:1024px;
 } 
+#sponsor-img {
+	display:inline-block;
+	width:300px;
+	position:relative;
+	padding-top:20px;
+}
+
+#sponsor-img .nokia{
+	top:2px;
+	position:relative;
+}
 .option-list {
 	display:inline-block;
 	background-color:white;
@@ -247,7 +259,7 @@ body {
 
 #language-list {
 	position:absolute;		
-	right: 87px;
+	right: 78px;
 	top: 0px;
 	background-color: white;
 	border-top:1px solid #ccc;
