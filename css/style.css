@@ -201,6 +201,7 @@ body {
 	margin-left:auto;
 	margin-right:auto;
 	width:1024px;
+	padding:20px 0;
 } 
 #sponsor-img {
 	display:inline-block;
@@ -213,6 +214,7 @@ body {
 	top:2px;
 	position:relative;
 }
+
 .option-list {
 	display:inline-block;
 	background-color:white;
@@ -243,9 +245,6 @@ body {
 	color:blue;
 }
 
-#sponsor {
-	padding-top:5px;
-}	
 
 #option-list {
 	color: #333;
