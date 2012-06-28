@@ -190,7 +190,7 @@
 				else if (x[i].length == 1) { 
 					$.phylo.tree[stage].ancestor[i] = x[i][0];
 				}
-				else if (x[i].indexOf(fixed) > -1) {
+				else if (x[i].indexOf(fixed[i]) > -1) {
 					$.phylo.tree[stage].ancestor[i] = fixed[i];
 				}
 				else if (x[i].indexOf("x") != 0) {
@@ -245,7 +245,7 @@
 				for(var i=0;i<arr.length;i++) {
 					if (arr[i] == "x") {
 						if (seq[i] != "x") {
-							if (i != 0 && arr[i-1] == "x") {
+							if (i != 0 && arr[i-1] == "x" && seq[i-1] == "x") {
 								log.extend++;
 							}
 							else {
