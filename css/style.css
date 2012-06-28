@@ -58,6 +58,7 @@ body {
 }
 
 #top-panel {
+	height:36px;
 	color: #71B2E2;
 	background-color:#EEE;
 	position:relative;
@@ -103,9 +104,7 @@ body {
 
 
 #login {
-	top:-8px;
 	position:relative;
-	right:-4px;
 }
 
 #login-tag {
@@ -122,7 +121,7 @@ body {
 
 #logo {
 	font-size: 20px;
-	padding:5px 10px;
+	padding:8px 10px;
 	border:1px solid #eee;
 	cursor:pointer;
 }
@@ -136,12 +135,20 @@ body {
 	left:30px;
 	position:relative;
 }
+
+#nav ul {
+	list-style-type: none;
+}
+
+#nav ul li {
+	float:left;
+	margin-right:10px;
+}
 #nav a div {
 	color: #71B2E2;
 }
 #nav div {
 	padding:9px 10px;
-	margin-right:10px;
 	position:relative;
 }
 
@@ -273,11 +280,10 @@ body {
 #dropDown-logo {
 	position:absolute;
 	left:0px;
-	padding: 5px 10px;	
+	padding: 8px 10px;	
 	font-size:20px;
 	background-color:white;
 	top:37px;
-	width:200px;
 	z-index: 25;
 }
 #dropDown-logoTriangle {
