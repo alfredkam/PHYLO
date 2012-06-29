@@ -116,12 +116,29 @@ body {
 	padding: 9px 10px;
 }
 
-#login:hover {
+#login:hover, .login-OnSelect {
 	background-color: #E9E9E9;
 	border-left: 1px solid #ddd;
 }
 #login-tag:hover {
 	color:#777;
+}
+
+#login-box {
+	position:absolute;
+	z-index:30;
+	right:0px;
+	background-color:whitesmoke;
+	padding:5px 10px;
+	color:black;
+	border:1px solid #ccc;
+}
+.seperator {
+	height:2px;
+	width:100%;
+	background-color:#ddd;	
+	position:relative;
+	margin:2px 0;
 }
 
 #logo {
@@ -321,4 +338,5 @@ body {
 	background-color:#08c;
 	color:whitesmoke;
 }
+
 
