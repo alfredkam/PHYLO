@@ -39,6 +39,7 @@
 					_script.src = "lang/EN.js";
 					_script.type = "text/javascript";
 					document.getElementsByTagName("head")[0].appendChild(_script);
+					window.langOpt = "en";
 					
 					_script.onload = function() {
 						window.lang = window["ENscript"].lang[0];
@@ -47,7 +48,13 @@
 				};
 			} else {
 				//does the callback
-				callBack();
+				var wait = function() {
+					if(window.lang == undefined) 
+						setTimeout(function(){ wait(); },100);
+					else 
+						callBack();
+				}
+				wait();
 			}
 		},
 	}

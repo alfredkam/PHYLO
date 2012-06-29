@@ -53,6 +53,9 @@ body {
 	position:relative;
 	min-height:600px;
 }
+#mid-panel a {
+	color:white;
+}
 .wrapper {
 	text-align:center;
 	position:relative;
@@ -181,13 +184,18 @@ body {
 	padding-bottom:150px;
 	height: auto !important;
 	height:100%;
-	margin:0 auto -150px;
 }	
 
-#footer, .push {
-	height:150px;	
+.wrapper-inner {
+	text-align:left;
+	width:600px;
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
 }
 
+#footer, .push {
+}
 
 #footer {
 	width:100%;
