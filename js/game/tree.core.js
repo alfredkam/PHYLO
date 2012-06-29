@@ -115,6 +115,7 @@
 		buildAncestor : function() {
 			var stage = $.stage.current;
 			var data = "";
+			var self = this;
 			var getAvg = function(node){
 				var n = $.phylo.tree[node];
 				if(n.child == 0) {
@@ -144,6 +145,7 @@
 				}
 				
 				var mWidth = 178;
+				mWidth-=32;
 				if(n.child == 0) {
 					//build top
 					var hLeft = n.depth*34+34*.3;
@@ -186,16 +188,17 @@
 			};
 			var build = function(stage) {
 				var tree = $.phylo.tree[stage];					
+				console.log(tree);
 				if(tree.child == 0) {
-					data+="<div class='ancestorImg' style='top:"+(tree.node1)*34+"px'><img src=''/></div>";	
-					data+="<div class='ancestorImg' style='top:"+(tree.node2)*34+"px'><img src=''/></div>";	
+					data+="<div class='ancestorImg' style='top:"+(tree.node1)*34+"px'><img src=''/><img src='"+self.getImg(tree.p1)+"'/></div>";	
+					data+="<div class='ancestorImg' style='top:"+(tree.node2)*34+"px'><img src=''/><img src='"+self.getImg(tree.p2)+"'/></div>";	
 					data+="<div class='nodeImg' id='node"+stage+"' style='left:"+(tree.depth)*34+"px;top:"+((tree.node1+.5)*34+7)+"px'></div>";
 					data+=buildAngle(tree);
 					return;
 				} else if(tree.child == 1) {
 					var x = (tree.node1+getAvg(tree.node2))/2;
 					x = x*34 + 7;
-					data+="<div class='ancestorImg' style='top:"+(tree.node1)*34+"px'><img src=''/></div>";	
+					data+="<div class='ancestorImg' style='top:"+(tree.node1)*34+"px'><img src='"+self.getImg(tree.p1)+"'/></div>";	
 					data+="<div class='nodeImg' id='node"+stage+"' style='left:"+(tree.depth)*34+"px;top:"+x+"px'></div>";
 					data+=buildAngle(tree);
 					build(tree.node2);
@@ -229,5 +232,113 @@
 				$("#ancestorSeq").hide();
 			});
 		},
+		getImg : function(name) {
+			if(name == "thankyou") {
+				return this.ty; 
+			}
+			if(name == "hg19" || name == "GRCh37"){
+					
+					return this.collect("Human");
+					
+				}else if(name == "panTro2" || name == "gorGor1"){
+					
+					return this.collect("ape");
+					
+				}else if(name == "ponAbe2" || name == "rheMac2" ||
+						 name == "papHam1" || name == "calJac1" ||
+						 name == "tarSyr1" || name == "micMur1" ||
+						 name == "otoGar1"){
+					
+					return this.collect("Monkey");
+					
+				}else if(name == "tupBel1" || name == "mm9" ||
+						 name == "rn4" || name == "dipOrd1" ||
+						 name == "cavPor3" || name == "eriEur1" ||
+						 name == "sorAra1"){
+					
+					return this.collect("Mouse");
+								
+				}else if(name == "speTri1"){
+					
+					return this.collect("Squirell");
+					
+				}else if(name == "oryCun2"){
+					
+					return this.collect("Rabbit");
+					
+				}else if(name == "ochPri2"){
+					
+					return this.collect("Ram");
+					
+				}else if(name == "turTru2"){
+					
+					return this.collect("Dolphin");
+					
+				}else if(name == "bosTau4"){
+					
+					return this.collect("Cow");
+					
+				}else if(name == "equCab2"){
+					
+					return this.collect("Horse")
+					
+				}else if(name == "felCat3"){
+					
+					return this.collect("Cat");
+					
+				}else if(name == "canFam2"){
+					
+					return this.collect("Dog");
+					
+				}else if(name == "myLuc1" || name == "pteVam1"){
+					
+					return this.collect("bat");
+					
+				}else if(name == "loxAfr3"){
+					
+					return this.collect("Elephant");
+					
+				}else if(name == "proCap1" || name == "echTel1" ||
+						 name == "dasNov2" || name == "ornAna1"){
+					
+					return this.collect("Beaver");
+					
+				}else if(name == "choHof1"){
+					
+					return this.collect("Sloth");
+					
+				}else if(name == "macEug"){
+					
+					return this.collect("Kangaroo");
+					
+				}else if(name == "monDom5"){
+					
+					return this.collect("Opossum");
+					
+				}else if(name == "galGal3" || name == "taeGut1"){
+					
+					return this.collect("bird");
+					
+				}else if(name == "anoCar1"){
+					
+					return this.collect("Lizard");
+					
+				}else if(name == "xenTro2" || name == "tetNig2" ||
+						 name == "fr2" || name == "gasAcu1" ||
+						 name == "oryLat2" || name == "danRer6"){
+					
+					return this.collect("Fish");
+					
+				}else if(name == "petMar1"){
+					
+					return this.collect("Eel");
+					
+				}else{
+					return this.collect(name);
+				}
+		},
+		collect : function(name) {
+			return "img/animal/"+name+".png";
+		}
 	};
 })();

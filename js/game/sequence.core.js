@@ -33,7 +33,7 @@
 			return arr;
 		},
 		calcPos : function(pos) {
-			return 32*pos+(pos+1)*1.5;
+			return 32*pos+(pos+1)*1;
 		},
 		build : function(seq) {
 			var str = "";

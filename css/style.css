@@ -47,6 +47,7 @@ body {
 	border:1px solid #333;
 	background-color:black;
 	top:0px;
+	padding-top:20px;
 }
 #mid-panel {
 	top:20px;
