@@ -338,7 +338,7 @@
 				}
 		},
 		collect : function(name) {
-			return "img/animal/"+name+".png";
+			return "img/animal/"+name.toLowerCase()+".png";
 		}
 	};
 })();

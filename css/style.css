@@ -110,6 +110,7 @@ body {
 
 #login {
 	position:relative;
+	z-index:30;
 }
 
 #login-tag {
