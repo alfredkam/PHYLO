@@ -230,6 +230,11 @@ body {
 	width:1024px;
 	padding:20px 0;
 } 
+
+#sponsor-tag {
+	font-size:15px;
+	font-weight:bold;
+}
 #sponsor-img {
 	display:inline-block;
 	width:300px;
@@ -261,7 +266,7 @@ body {
 }
 
 #copyright {
-	font-size: 14px;
+	font-size: 12:px;
 }
 #contribute {
 	font-size: 14px;	

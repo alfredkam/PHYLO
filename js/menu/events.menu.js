@@ -33,6 +33,9 @@
 			$(this).addClass("dropDown-OnSelect");
 			$(".dropDownTriangle").show();
 			$("#option-list").show();
+
+			$("#login-box").hide();
+			$("#login").removeClass("login-OnSelect");
 		});
 		
 		$("#language").mouseover(function() {
@@ -52,6 +55,15 @@
 			$("#login-box").show();
 			$("#login-box").css("display","inline-block");
 			$(this).addClass("login-OnSelect");
+
+			
+			$("#option-list").hide();
+			$("#options-button .dropDownTriangle").hide();
+			$("#options-button").removeClass("dropDown-OnSelect");
+			
+			$("#language-list").hide();
+			$("#language").removeClass("dropDown-OptionOnSelect");
+			$(".dropDownTriangle").hide();
 
 		});
 		
