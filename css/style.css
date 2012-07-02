@@ -78,7 +78,7 @@ body {
 	
 }
 
-#top-panel div{
+#top-panel > div{
 	display:inline-block;
 }
 
@@ -87,6 +87,10 @@ body {
 	float:right;
 	position:relative;
 	right:0px;
+}
+
+#top-panel-right > div {
+	display:inline-block;
 }
 
 #options-button img{
@@ -126,6 +130,7 @@ body {
 }
 
 #login-box {
+	display:none;
 	position:absolute;
 	z-index:30;
 	right:0px;
@@ -283,12 +288,14 @@ body {
 	position:absolute;
 	right: 0px;
 	z-index:30;
+	display:none;
 }	
 .language-list {
 	text-align:center;
 }
 
 #language-list {
+	display:none;
 	position:absolute;		
 	right: 78px;
 	top: 0px;
@@ -305,6 +312,7 @@ body {
 }
 
 .dropDownTriangle {
+	display:none;
 	width: 0; 
 	height: 0; 
 	border-left: 10px solid transparent;
@@ -328,8 +336,10 @@ body {
 	background-color:white;
 	top:37px;
 	z-index: 25;
+	display:none;
 }
 #dropDown-logoTriangle {
+	display:none;
 	width: 0; 
 	height: 0; 
 	border-left: 10px solid transparent;
