@@ -2,12 +2,6 @@
 	
 	$(document).ready(function() {
 
-		/*
-		window.setTimeout(function() {
-			$("#dropDown-logoTriangle").hide();
-			$("#dropDown-logo").hide();
-		},100);
-		*/
 		$("html").click(function() {
 			$("#option-list").hide();
 			$("#options-button .dropDownTriangle").hide();

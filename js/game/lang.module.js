@@ -6,7 +6,7 @@
 			if($("#langFile").length == 0) {
 				var hash;
 				try {
-					hash = $.helper.get("lang").toString().toUpperCase();			
+					hash = $.helper.get("lang").toString().toUpperCase().replace(/!.*/,"");			
 				} catch(err) {
 					hash = "en";
 				}	

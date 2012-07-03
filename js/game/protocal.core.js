@@ -6,17 +6,19 @@
 				this.type = $.helper.get("type");
 				this.score = $.helper.get(this.type);
 			} else {
-				this.type == setting.type;
-				this.score = setting.hard;
+				console.log(setting);
+				var type = setting.type;
+				this.tp = 0;
+				this.score = setting.num;
+				this.tp = type;
 			}
 		},
-		request : function() {	
-		
+		request : function(setting) {	
 			var str ="";
 			var url = "../phpdb/phyloDB2.php";
-			var type = this.type;
+			var type = this.tp;
 			var score = this.score;
-
+	
 			if(type == "random") {
 				str+= "mode=1&diff="+score;
 
@@ -29,11 +31,14 @@
 				str+= "mode=2&id="+score;
 			}
 
+			console.log(str);
+
 			$.ajax({
 				url : url,
 				data : str,
 				type : "POST",
 			}).done(function(data) {
+				console.log(data);
 				data = data.replace("@","");
 				if(DEBUG)
 					console.log(data);
