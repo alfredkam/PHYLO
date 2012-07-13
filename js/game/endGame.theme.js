@@ -59,7 +59,9 @@
 					if(grid[i][j] == "x") {
 						str+="-";
 					} else {
+						try{
 						str+= this.convertColor(grid[i][j].backgroundColor);
+						} catch(err) {};
 					}
 				}
 				str+='"';

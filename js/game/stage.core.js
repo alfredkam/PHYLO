@@ -4,12 +4,13 @@
 		last : 0,
 		round : function() {	
 			//for testing
-			if(this.current <this.last){
+			console.log(this.current +"<>" +this.last);
+			if(this.current < this.last){
 				this.current+=1;
 				this.set(this.current);
 			} else if(this.current === this.last) {
-				this.set(this.current);
-			} else {
+				//this.set(this.current);
+		//	} else {
 				this.end = true;
 				$.timer.stop();
 				$.endGame.init("win");
@@ -87,10 +88,12 @@
 			$.helper.copy($.phylo.bestTrack, $.sequence.track);
 			//$.phylo.bestTrack = $.sequence.track.slice(0);
 			$.board.bestScore(score);
-			$.board.unapprove();
-			if($.phylo.bestScore == par) {
+			if(score >= par) {
 				$.board.approve();
-			};
+			} else {
+				$.board.unapprove();
+			}
+			$.board.stats();
 		},
 		end : false,
 		splash: function(x) {

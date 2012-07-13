@@ -20,6 +20,7 @@
 										$.physics.snap();
 										var score = $.fitch.score();
 										$.board.score(score);
+										$.board.stats();
 										if($.phylo.bestScore < score) {
 											$.phylo.bestScore = score;
 											$.helper.copy($.phylo.bestTrack, $.sequence.track);
@@ -32,6 +33,7 @@
 										} else {
 											$.board.unapprove();
 										}
+											
 									}
 								});
 							}

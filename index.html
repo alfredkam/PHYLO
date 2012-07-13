@@ -27,6 +27,10 @@
 						<a id='about' href='javascript:void(0);'><div>About</div></a>
 						</li><li>
 						<a id='credits' href='javascript:void(0);'><div>Credits</div></a>
+						</li><li>
+						<a id='ranking' href='javascript:void(0);'><div>Ranking</div></a>
+						</li><li>
+						<a id='achivements' href='javascript:void(0);'><div>Achivements</div></a>
 						</li>
 					</ul>
 				</div>
@@ -36,14 +40,18 @@
 							Login	
 						</div>
 						<div id='login-box'>
-							<div id='username-tag'>User Name</div><br>		
-							<input id='username' type='text' class='input-medium'/>
+							<div class='login-warning'>
+							</div>
+							<span class='email-holder'><input id='email' type='text' class='input-medium' placeholder='Email'/><br></span>
+							<input id='username' type='text' class='input-medium' placeholder='Username'/>
 							<br>
-							<div id='password-tag' type='password' class='input-medium'>Password</div>
-							<input id='password'/><br>
+							<input id='password' type='password' class='input-medium' placeholder='Password'/><br>
+							<button class='btn login-btn'>Log In</button>
+							<button class='btn btn-primary register-btn register-btn-shift'>Register</button>
+							<button class='btn btn-danger cancel-btn'>Cancel</button>
 							<br>
-							<button class='btn btn-primary'>Log In</button>
-							
+							<br>
+							<a>Forgot Password</a>
 						</div>
 					</div>
 					<div id='options'>
@@ -70,6 +78,7 @@
 									</div>			
 								</div>
 							</div>
+							<div id='logout' class='option-list'>Logout</div>
 						</div>
 					</div>	
 				</div>	

@@ -117,6 +117,11 @@ body {
 	z-index:30;
 }
 
+.login-warning {
+	color:red;
+	display:none;
+}
+
 #login-tag {
 	padding: 9px 10px;
 }
@@ -135,7 +140,7 @@ body {
 	z-index:30;
 	right:0px;
 	background-color:whitesmoke;
-	padding:5px 10px;
+	padding:10px 11px;
 	color:black;
 	border:1px solid #ccc;
 }
@@ -197,10 +202,32 @@ body {
 	background-color: orange;
 }
 
+#nav #ranking div:hover, #nav #credits div.onSelect{
+	background-color:#EF4136;
+}
+
+#nav #achivements div:hover, #nav #credits div.onSelect {
+	background-color: #71B2E2;
+}
+
 #menu {
 	position:relative;
 	width:100%;
 	text-align:center;
+}
+
+.register-btn {
+}
+.register-btn-shift {
+	float:right;
+}
+
+.email-holder {
+	display:none;
+}
+
+.cancel-btn {
+	display:none;
 }
 
 #wrapper {
@@ -253,13 +280,18 @@ body {
 }
 
 .option-list {
-	display:inline-block;
+	display:block;
 	background-color:white;
 	padding:5px 10px;
 }
 .option-list:hover {
 	background-color: #E9E9E9;
 	color:#777;
+}
+
+#logout:hover {
+	background-color: #08c;
+	color: whitesmoke;
 }
 
 #sandbox {

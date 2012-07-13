@@ -57,6 +57,12 @@
 			$(".dropDownTriangle").hide();
 
 		});
+
+		$("#logout").mouseover(function() {
+			$("#language-list").hide();
+			$("#language").removeClass("dropDown-OptionOnSelect");
+			$(".dropDownTriangle").hide();
+		});
 		
 
 	});

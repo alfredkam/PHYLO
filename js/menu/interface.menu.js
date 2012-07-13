@@ -470,7 +470,7 @@
 				ctx.restore();
 				ctx.closePath();
 				this.onOver = function(eX,eY) {
-					if(100+70*3 < eX && eX < 150+70*i &&
+					if(100+70*i < eX && eX < 150+70*i &&
 						150 < eY && eY< 200) {
 						ctx.beginPath();
 						ctx.save();

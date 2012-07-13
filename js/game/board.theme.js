@@ -23,6 +23,9 @@
 		par : function(x) {
 			$("#parScore").html("Par: "+ x);
 		},
+		stats : function() {
+			$("#statsPanel").html("Stats - Stage: "+($.stage.current+1)+"/"+($.stage.last+1));	
+		},
 		startListener: function() {
 			$("#volumeOff").hide();
 			$("#volumeOn").click(function() {
@@ -47,9 +50,11 @@
 					$.stage.round();
 				}
 			});
-			$.timer.start();
+	//		$.timer.start();
 		},
 		approve : function() {
+			this._upapproved = false;
+			var self = this;
 			$("#star").addClass("pass");
 			$("#star").animate({
 				opacity: 1
@@ -66,7 +71,12 @@
 							$("#star").animate({
 								opacity: 1
 							},500,function(){
-
+								if(self._unapproved == true) {
+									$("#star").removeClass("pass");
+									$("#star").css({
+										opacity : 0.4
+									});
+								}	
 							});	
 						});	
 					});
@@ -74,6 +84,7 @@
 			});
 		},
 		unapprove : function() {
+			this._unapproved = true;
 			$("#star").removeClass("pass");
 			$("#star").css({
 				opacity : 0.4

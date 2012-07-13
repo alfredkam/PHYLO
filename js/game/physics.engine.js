@@ -23,8 +23,9 @@
 					var x = e.pageX;
 					var y = ($.phylo.x*$.phylo.seqLen)+offSet;
 					var move = e.pageX+(c-.5)*$.phylo.x-offSet;
-					if(move >=  (25-posListReverse[pos])*$.phylo.x) {
-						move = (25-posListReverse[pos])*$.phylo.x;
+					//the right border boundary
+					if(move >=  (25-posListReverse[pos])*$.phylo.x-22) {
+						move = (25-posListReverse[pos])*$.phylo.x-22;
 					}
 					if(domCache[pos+1] != 0) {
 						if(domCache[pos+1] == undefined) {
@@ -116,9 +117,10 @@
 			}
 			$(".sequence").each(function() {
 				var id = $(this).attr("id");
-				var left = parseInt(domCache[id].left);
+				var left = parseInt(domCache[id].left)-1;
 				var pos = parseInt(left/$.phylo.x);
-				if(left%$.phylo.x > ($.phylo.x/2)) {
+			//	if(left%$.phylo.x >= ($.phylo.x/2)) {
+				if($.sequence.calcPos(pos)-left <= 0) {
 					pos+=1;
 				}
 				domCache[id].left = $.sequence.calcPos(pos)+"px";//(pos*$.phylo.x)+"px";
