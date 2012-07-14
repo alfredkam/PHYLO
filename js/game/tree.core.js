@@ -188,7 +188,7 @@
 			};
 			var build = function(stage) {
 				var tree = $.phylo.tree[stage];					
-				console.log(tree);
+				//console.log(tree);
 				if(tree.child == 0) {
 					data+="<div class='ancestorImg' style='top:"+(tree.node1)*34+"px'><img src=''/><img src='"+self.getImg(tree.p1)+"'/></div>";	
 					data+="<div class='ancestorImg' style='top:"+(tree.node2)*34+"px'><img src=''/><img src='"+self.getImg(tree.p2)+"'/></div>";	

@@ -55,6 +55,16 @@
 		approve : function() {
 			this._upapproved = false;
 			var self = this;
+			var unapprove_test = function() {
+				if(self._unapproved == true) {
+					$("#star").removeClass("pass");
+					$("#star").css({
+						opacity : 0.4
+					});
+					return true;
+				} 	
+				return false;
+			};
 			$("#star").addClass("pass");
 			$("#star").animate({
 				opacity: 1
@@ -71,12 +81,6 @@
 							$("#star").animate({
 								opacity: 1
 							},500,function(){
-								if(self._unapproved == true) {
-									$("#star").removeClass("pass");
-									$("#star").css({
-										opacity : 0.4
-									});
-								}	
 							});	
 						});	
 					});

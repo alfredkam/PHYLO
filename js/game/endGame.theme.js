@@ -1,5 +1,17 @@
 (function(){
 	$.endGame = {
+		new_init : function(status) {
+
+
+
+
+
+
+
+		},
+
+
+
 		init : function(status) {
 			var url = "../phpdb/phyloDB2.php";
 			var context="";

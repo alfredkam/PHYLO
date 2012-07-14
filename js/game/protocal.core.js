@@ -6,7 +6,7 @@
 				this.type = $.helper.get("type");
 				this.score = $.helper.get(this.type);
 			} else {
-				console.log(setting);
+				//console.log(setting);
 				var type = setting.type;
 				this.tp = 0;
 				this.score = setting.num;
@@ -31,7 +31,7 @@
 				str+= "mode=2&id="+score;
 			}
 
-			console.log(str);
+			//console.log(str);
 
 			$.ajax({
 				url : url,

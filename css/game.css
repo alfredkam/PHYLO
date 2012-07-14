@@ -205,6 +205,17 @@
 	display:block;
 }
 
+#runaway {
+	color:white;
+	font-size: 28px;
+	top:36px;
+	position:relative;
+	left:200px;
+}
+#runaway:hover {
+	color:red;
+}
+
 #volumePanel img {
 	width: 33px;
 }

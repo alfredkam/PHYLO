@@ -29,6 +29,7 @@
 			return $_GET[pid];
 		},
 		copy : function(a,b) {
+				/*
 			a = [];
 			for(var i=0;i<b.length;i++) {
 				var temp = [];
@@ -37,14 +38,22 @@
 				}
 				a.push(temp);
 			}
+			*/
 
-		/*
 			for(var i=0;i<b.length;i++) 
 				for(var j=0;j<b[i].length;j++) {
-					console.log(i+"<>"+j);
-					a[i][j] = b[i][j];
+					try {
+						a[i][j] = b[i][j];
+					} catch(err) {
+						try {
+							a[i].push(b[i][j]);
+						} catch (err) {
+							var temp = [];
+							temp.push(b[i][j]);
+							a.push(temp);
+						}
+					}
 				}
-				*/
 		},
 		setHash : function() {
 			

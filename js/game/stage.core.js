@@ -4,7 +4,6 @@
 		last : 0,
 		round : function() {	
 			//for testing
-			console.log(this.current +"<>" +this.last);
 			if(this.current < this.last){
 				this.current+=1;
 				this.set(this.current);
