@@ -1,5 +1,8 @@
 (function() {
 	$.page = {
+		ranking : function() {
+			this.protocal("content/ranking.html");
+		},
 		play : function() {
 			this.protocal("content/play.html");
 		},

@@ -22,6 +22,11 @@
 				$.lang.init(function() {
 					$.page.credits();
 				});
+			} else if(page == "ranking") {
+				this.selectTab(page);
+				$.lang.init(function() {
+					$.page.ranking();
+				});
 			}
 		},			
 		get : function() {

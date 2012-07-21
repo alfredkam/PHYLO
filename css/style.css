@@ -202,11 +202,11 @@ body {
 	background-color: orange;
 }
 
-#nav #ranking div:hover, #nav #credits div.onSelect{
+#nav #ranking div:hover, #nav #ranking div.onSelect{
 	background-color:#EF4136;
 }
 
-#nav #achivements div:hover, #nav #credits div.onSelect {
+#nav #achivements div:hover, #nav #achivements div.onSelect {
 	background-color: #71B2E2;
 }
 
