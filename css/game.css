@@ -257,13 +257,14 @@
 }
 
 #endGame-content {
+	color: #333;
 	position:relative;
 	top:20px;
 	background-color: #D3D3D3;
 	margin-left:auto;
 	margin-right:auto;
 	text-align:left;
-	height: 450px;
+	height: 400px;
 	width:900px;
 	border:5px solid #DDD;
 	padding: 5px 10px;
