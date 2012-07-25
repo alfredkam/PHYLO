@@ -12,7 +12,7 @@
 		//	} else {
 				this.end = true;
 				$.timer.stop();
-				$.endGame.new_init("win");
+				$.endGame.complete();
 				return "end game";
 			} 
 		}, 

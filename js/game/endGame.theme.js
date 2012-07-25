@@ -1,7 +1,6 @@
 (function(){
 	$.endGame = {
-		new_init : function(status) {
-			console.log(status);	
+		complete : function() {
 			$("#endGame").show();
 			
 			var msg = "";
@@ -15,6 +14,9 @@
 			$("#endGame-text").html(msg);
 				
 			$("#endGame-learnMore-content").html("This disease is related to diseases etc, you are helping...etc");
+
+		},
+		bail : function() {
 
 		},
 	}
