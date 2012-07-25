@@ -256,6 +256,10 @@
 	text-align:center;
 }
 
+#endGame-learnMore-tag {
+	cursor : pointer; 
+}
+
 #endGame-content {
 	color: #333;
 	position:relative;
@@ -268,6 +272,9 @@
 	width:900px;
 	border:5px solid #DDD;
 	padding: 5px 10px;
+}
+#endGame-learnMore-content {
+	border:1px solid #333;
 }
 
 #countDown {

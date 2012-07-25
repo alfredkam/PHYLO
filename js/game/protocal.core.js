@@ -1,6 +1,42 @@
 (function() {
 	var doc = document, win = window;
+	var url = "../phpdb/phyloDB2.php";
 	$.protocal = {
+		sendHighScore : function() {
+			var self = this;
+			var data = "mode=4&id="+$.phylo.id+"&user="+window.guest+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.bestScore;
+
+			$.ajax({
+				type : "POST",
+				url : url,
+				data : data 
+
+			}).done(function() {
+
+			}).fail(function() {
+				//if fail, should set up some protocal to resnd
+			});	
+		},
+		getPuzzleInfo : function() {
+			var data = "mode=3&id="+$.phylo.id;
+
+			$.ajax({
+				type : "POST",
+				url : url,
+				data : data	
+			}).done(function(re) {
+				var json = {};
+				try {
+					json = eval("["+re+"]")[0];
+				} catch (err) {
+					if(DEBUG)
+						console.log("@getPuzzleInfo error parsing");
+					return;
+				}
+			}).fail(function() {
+
+			});
+		},
 		read : function(setting) {
 			if(setting == undefined) {
 				this.type = $.helper.get("type");
@@ -15,7 +51,6 @@
 		},
 		request : function(setting) {	
 			var str ="";
-			var url = "../phpdb/phyloDB2.php";
 			var type = this.tp;
 			var score = this.score;
 	
