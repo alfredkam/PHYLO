@@ -3,6 +3,7 @@
 	var url = "../phpdb/phyloDB2.php";
 	$.protocal = {
 		sendHighScore : function() {
+
 			var self = this;
 			var data = "mode=4&id="+$.phylo.id+"&user="+window.guest+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.bestScore;
 
@@ -15,6 +16,7 @@
 
 			}).fail(function() {
 				//if fail, should set up some protocal to resnd
+				console.log(">> failed to send highscore");
 			});	
 		},
 		getPuzzleInfo : function() {

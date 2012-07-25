@@ -217,7 +217,7 @@
 		
 			$(".nodeImg").hover(function() {
 				var id = $(this).attr("id").replace(/node/,"");
-				console.log($.phylo.tree[id].ancestor);
+			//	console.log($.phylo.tree[id].ancestor);
 				var seq= "";
 				for(var i=0;i<$.phylo.tree[id].ancestor.length;i++) {
 					var s = $.phylo.tree[id].ancestor[i];

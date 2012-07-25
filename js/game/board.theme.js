@@ -15,13 +15,15 @@
 			
 		},	
 		score : function(x) {
+			$.phylo.currentScore = x;
 			$("#userScore").html("Score: "+ x);
 		},
 		bestScore : function(x) {
 			$("#bestScore").html("Best: "+ x);
 			
 			if($.stage.current == $.stage.last) {
-				$.protocal.sendHighScore();
+				if(x > $.sequence.par) 
+					$.protocal.sendHighScore();
 			}
 		},
 		par : function(x) {
@@ -57,18 +59,7 @@
 	//		$.timer.start();
 		},
 		approve : function() {
-			this._upapproved = false;
 			var self = this;
-			var unapprove_test = function() {
-				if(self._unapproved == true) {
-					$("#star").removeClass("pass");
-					$("#star").css({
-						opacity : 0.4
-					});
-					return true;
-				} 	
-				return false;
-			};
 			$("#star").addClass("pass");
 			$("#star").animate({
 				opacity: 1
@@ -85,6 +76,9 @@
 							$("#star").animate({
 								opacity: 1
 							},500,function(){
+								if($.phylo.currentScore < $.sequence.par) {
+									self.unapprove();
+								} 
 							});	
 						});	
 					});
@@ -92,7 +86,6 @@
 			});
 		},
 		unapprove : function() {
-			this._unapproved = true;
 			$("#star").removeClass("pass");
 			$("#star").css({
 				opacity : 0.4
