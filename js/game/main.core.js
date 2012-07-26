@@ -6,13 +6,14 @@ window.guest = "TEST DATA";
 		$.main = {
 			//unbinds all the previous data
 			clear : function() {
-	//			$.timer.stop();
+				$.timer.stop();
 				$.stage.current = -1;
-				
+				$("#countDown-text").html(3);
 			},
 			//configuration
 			init : function(setting) {
 				this.clear();
+				$.endGame.runAway();
 				$.phylo = {
 					seqLen : 25,
 					x : 34,

@@ -56,7 +56,17 @@
 	
 	$("a").click(function() {
 		if($(this).attr("href") == "javascript:void(0);") {
-			window.location.hash = "#!"+$(this).attr("id");		
+			var innerSelf = this;
+			if($.timer.active == true) {
+				$.helper.popUp("Are you sure you want to quite?",function(status) {
+					if(status == "ok") {
+						window.location.hash = "#!"+$(innerSelf).attr("id");		
+						$.timer.stop();
+					}
+				});			
+			} else {
+				window.location.hash = "#!"+$(this).attr("id");		
+			}
 		} else {
 			window.location.href = $(this).attr("href");
 		}

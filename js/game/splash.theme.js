@@ -2,6 +2,7 @@
 	$.splash = {
 		countDown : function(fn) {
 			var i=3;
+			$("#countDown-text").html(3);
 			$.splash.count = function() {
 				if(i==0) {
 					$("#countDown").fadeOut("fast");

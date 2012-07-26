@@ -29,17 +29,6 @@
 			return $_GET[pid];
 		},
 		copy : function(a,b) {
-				/*
-			a = [];
-			for(var i=0;i<b.length;i++) {
-				var temp = [];
-				for(var j=0;j<b[i].length;j++) {
-					temp.push(b[i][j]);	
-				}
-				a.push(temp);
-			}
-			*/
-
 			for(var i=0;i<b.length;i++) 
 				for(var j=0;j<b[i].length;j++) {
 					try {
@@ -55,11 +44,25 @@
 					}
 				}
 		},
-		setHash : function() {
-			
-		},
-		removeHash : function() {
+		popUp : function(msg,ans) {
+			$(".warning-bg").css({
+				height: $(document).height(),
+				width: $(document).width(),
+			});
+			$(".warning-bg").fadeIn();
+			$(".warning").fadeIn();
 
+			$(".warning-msg").html(msg);
+			$(".warning-ok").unbind().click(function() {
+				ans("ok");
+				$(".warning").fadeOut();
+				$(".warning-bg").fadeOut();
+			});
+			$(".warning-cancel").unbind().click(function() {
+				ans("cancel");
+				$(".warning").fadeOut();
+				$(".warning-bg").fadeOut();
+			});
 		},
 	}
 	window.common = {
