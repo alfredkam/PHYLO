@@ -37,7 +37,7 @@ window.guest = "TEST DATA";
 					}, end : function(e) {
 					}
 				});
-
+				var mouseMove = "onmousemove" in document.documentElement;
 
 				if(DEBUG)
 					console.log($.phylo);
@@ -76,6 +76,9 @@ window.guest = "TEST DATA";
 					$.stage.round();	
 					if(DEBUG)
 						$.helper.dump($.sequence.track);
+					if(mouseMove) {
+						$.multiSelect.active();
+					}
 				});
 				$.board.startListener();
 			},
