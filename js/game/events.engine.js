@@ -126,7 +126,13 @@
 			var canvas = document.getElementById("game");
 			var x = e.pageX - canvas.offsetLeft;
 			var y = e.pageY - canvas.offsetTop;
-			
+			return { pageX : x , pageY: y}		
+		},
+		//calculates the finger position for selecting multi grids
+		getMultiSelectFingerPos : function(e)  {
+			var canvas = document.getElementById("game");
+			var x = e.pageX - canvas.offsetLeft-5;
+			var y = e.pageY - canvas.offsetTop-65;
 			return { pageX : x , pageY: y}		
 		}
 	}
