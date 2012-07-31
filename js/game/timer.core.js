@@ -1,4 +1,5 @@
 (function() {
+	//counts how many seconds has passed
 	$.timer = {
 		elapsed : 0 ,
 		active : false,

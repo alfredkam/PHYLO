@@ -1,5 +1,6 @@
 (function() {
 	$.physics = {
+		//determine if moving left or right 
 		move : function(self,e) {
 			var prevPageX = parseInt($(self).css('left').replace(/px/,""));
 			var offSet = parseInt($.phylo.offSet);
@@ -11,6 +12,7 @@
 				this.shift(false,parseInt(self.id),e,0);
 			}
 		},
+		//updates the css of the cell that is moving left or right
 		shift : function(RIGHT, target, e, c) {
 			var domCache = $.phylo.domCache;
 			var pos = parseInt(target);
@@ -87,6 +89,7 @@
 				}
 			}
 		},
+		//snaps the cell after randomizing the grid
 		snapRandom : function() {
 			var track = $.sequence.track;
 			var domCache = $.phylo.domCache;
@@ -98,6 +101,7 @@
 				}	
 			}	
 		},
+		//snaps the cell after shifting
 		snap : function() {
 			var getGridY = function(f) {
 				var f = parseInt(f);

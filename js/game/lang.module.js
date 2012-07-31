@@ -1,5 +1,6 @@
 (function() {
 	$.lang = {
+		//initliaze and get the langauges file, then executes call back function
 		init : function(callBack) {
 			//checks if language file is already loaded.
 			//if not loaded, loaded it into the dom

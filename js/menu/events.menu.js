@@ -1,7 +1,6 @@
 (function(){
-	
+	//event listners for the menu	
 	$(document).ready(function() {
-
 		$("html").click(function() {
 			$("#option-list").hide();
 			$("#options-button .dropDownTriangle").hide();

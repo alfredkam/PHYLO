@@ -1,5 +1,6 @@
 (function() {
 	$.splash = {
+		//does the splash screen count down to start the game
 		countDown : function(fn) {
 			var i=3;
 			$("#countDown-text").html(3);

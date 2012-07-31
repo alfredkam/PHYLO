@@ -1,5 +1,6 @@
 (function(){
 	$.fitch = {
+		//calls to get the score
 		score : function() {
 			// forwardBackward does a tree traversal for each sequence nucleotide, forwardBackward2 does a sequence traversal for each tree node.
 			// Not sure which is faster
@@ -8,11 +9,11 @@
 			var score = $.fitch.scoreRecurse($.stage.current);
 			return score;
 		},
-
+		//gets the sequence length
 		getLen : function() {
 			return $.phylo.seqLen;
 		},
-		
+		//forward and backward pass	
 		forwardBackward : function() {
 			var stage = $.stage.current;
 			var len = $.fitch.getLen();
@@ -36,7 +37,7 @@
 			}
 			return;			
 		},
-
+		//forward pass
 		forward : function (stage, position) {
 			if (position == 0) {
 				$.phylo.tree[stage].ancestor = [];
@@ -80,7 +81,7 @@
 			}
 			return $.phylo.tree[stage].ancestorSet[position];
 		},
-
+		//backward pass
 		backward : function (stage, fixed, i) {
 			var x = $.phylo.tree[stage].ancestorSet[i];
 			if(x.length < 1) {
@@ -106,7 +107,7 @@
 			}
 			return;
 		},
-
+		//second version for forward and backward pass
 		forwardBackward2 : function() {
 			var stage = $.stage.current;
 			var len = $.fitch.getLen();
@@ -130,7 +131,7 @@
 			}
 			return;			
 		},
-
+		//second version for forward pass
 		forward2 : function (stage) {
 			var len = $.fitch.getLen();
 			$.phylo.tree[stage].ancestor = [];
@@ -179,7 +180,7 @@
 			}
 			return $.phylo.tree[stage].ancestorSet;
 		},
-		
+		//second version for backward pass	
 		backward2 : function (stage, fixed) {
 			var x = $.phylo.tree[stage].ancestorSet;
 			var len = $.fitch.getLen()
@@ -209,6 +210,7 @@
 			return;
 		},
 
+		//recursive function to score
 		scoreRecurse : function(stage) {
 			if ($.phylo.tree[stage].child == 0) {
 				var a = $.sequence.nucArray($.sequence.track[$.phylo.tree[stage].node1]);

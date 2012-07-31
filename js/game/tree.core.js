@@ -1,5 +1,6 @@
 (function() {
 	$.tree = {
+		//builds the tree
 		build :  function(tree) {
 			    var i=0,k=0;
 			    var safe = [];
@@ -112,6 +113,7 @@
 			buildTree(tree,0);
 			return format;
 		},
+		//builds the ancestor
 		buildAncestor : function() {
 			var stage = $.stage.current;
 			var data = "";
@@ -232,6 +234,7 @@
 				$("#ancestorSeq").hide();
 			});
 		},
+		//transalates the code to animal name
 		getImg : function(name) {
 			if(name == "thankyou") {
 				return this.ty; 
@@ -337,6 +340,7 @@
 					return this.collect(name);
 				}
 		},
+		//gets the image
 		collect : function(name) {
 			return "img/animal/"+name.toLowerCase()+".png";
 		}

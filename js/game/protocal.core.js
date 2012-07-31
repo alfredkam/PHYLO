@@ -2,6 +2,7 @@
 	var doc = document, win = window;
 	var url = "../phpdb/phyloDB2.php";
 	$.protocal = {
+		//sends highscroe to server
 		sendHighScore : function() {
 
 			var self = this;
@@ -19,6 +20,7 @@
 				console.log(">> failed to send highscore");
 			});	
 		},
+		//gets puzzle info
 		getPuzzleInfo : function() {
 			var data = "mode=3&id="+$.phylo.id;
 
@@ -39,6 +41,7 @@
 
 			});
 		},
+		//reads the settings
 		read : function(setting) {
 			if(setting == undefined) {
 				this.type = $.helper.get("type");
@@ -51,6 +54,7 @@
 				this.tp = type;
 			}
 		},
+		//replay with the previous puzzle
 		replay : function() {
 			var data = $.protocal.previousData;
 			if(DEBUG)
@@ -78,6 +82,7 @@
 			$.phylo.get.tree = tree;
 			$.main.callBack();
 		},
+		//request a new puzzle
 		request : function(setting) {	
 			var str ="";
 			var type = this.tp;
@@ -131,6 +136,7 @@
 				$.main.callBack();
 
 			}).fail(function() {
+			/* this part runs the dummy data */
 			//	var dummy = '{"level":{"attributes":{"id":"3071"},"sequence":["-----GAGGATCCAGC-----","-----GAGGCTCAAGC-----","TTTTGAAAACTAGATA-----","-----GGAGTCTAAAA-----","-----AGGCGCTAAAAACAAA","------GGAACTCCAA-----","-----AGGGCGAAAAC-----","-----AGGCTCCAATG-----"],"tree":"((((hg19,rheMac2),mm9),(bosTau4,(canFam2,pteVam1))),(loxAfr3,dasNov2));"}}';
 				var dummy = '{"level":{"attributes":{"id":"1926"},"sequence":["---agagtgactcccag----","----gagagatatagag----","---GGGTGAAGGGGTGG----","-TCGAGATTCCCCCGAAGACA","---agagtgacccccag----"],"tree":"((((hg19,rheMac2),mm9),canFam2),loxAfr3);"}} ';
 				console.log(">> Cannnot connect to database");

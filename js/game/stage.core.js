@@ -1,7 +1,10 @@
 (function() {
 	$.stage = {
+		//the current stage
 		current : -1,
+		//end stage
 		last : 0,
+		//initiates the next stage
 		round : function() {	
 			//for testing
 			if(this.current < this.last){
@@ -14,6 +17,7 @@
 				return "end game";
 			} 
 		}, 
+		//sets up the next stage
 		set : function(x) {	
 			if(x == 0)
 				$.timer.start();
@@ -92,7 +96,9 @@
 			}
 			$.board.stats();
 		},
+		//to tell if the game ended yet
 		end : false,
+		//the next stage splash notification
 		splash: function(x) {
 			$("#splash").html("Stage "+(x+1)).show();
 			window.setTimeout(function(){

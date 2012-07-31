@@ -20,6 +20,7 @@
 			}	
 			return reArr;
 		},
+		//creates a dom cache of the grids.
 		createCache : function() {
 			var arr = [];		
 			for(var i=0, y=10, x = $.phylo.seqLen; i<y*x;i++) {
@@ -32,9 +33,11 @@
 			});
 			return arr;
 		},
+		//calculates the cell position
 		calcPos : function(pos) {
 			return 32*pos+(pos+1)*1;
 		},
+		//builds the sequence
 		build : function(seq) {
 			var str = "";
 			this.posList = [];
@@ -68,6 +71,7 @@
 			} 
 			$("#gameBoard").append("<div id='movingParts'>"+str+"<div>");
 		},
+		//sets the color for the nucletide
 		color : function(x) {
 			switch(x) {
 				case 1: 
@@ -88,6 +92,7 @@
 			}
 			return color;
 		},
+		//determines the color for the nucletide
 		translate : function(x) {
 			if(x == "A") 
 				return 1;
@@ -102,7 +107,9 @@
 		buildRootAncester : function() {
 
 		},
+		//initialize tranking array
 		track : [],
+		//prepares the grid for tracking the sequence position in real time
 		prepareTracking : function(seq) {
 			this.track = [];
 			for(var i=0;i<seq.length;i++) {
@@ -121,12 +128,14 @@
 				this.track.push(arr);
 			}
 		},
+		//converts to number
 		intify : function(numstring) {
 			if (numstring == 'x')
 				return numstring;
 			else
 				return parseInt(numstring);
 		},
+		//randomize the location of the sequence
 		randomize : function(seq) {
 			var arr = [];
 			var tmp;

@@ -1,6 +1,8 @@
+/* this scripts generates the board features */
 (function() {
 	var doc = document, win = window;
 	$.board = {
+		//generates the grid 
 		build : function() {
 			var str = "";
 			for(var i=0;i<10;i++) {
@@ -14,10 +16,12 @@
 			$("#gameBoard").html("<div id='bg'>"+str+"</div>");
 			
 		},	
+		//updates and displays the score
 		score : function(x) {
 			$.phylo.currentScore = x;
 			$("#userScore").html("Score: "+ x);
 		},
+		//updates and displays the best score
 		bestScore : function(x) {
 			$("#bestScore").html("Best: "+ x);
 			
@@ -26,13 +30,17 @@
 					$.protocal.sendHighScore();
 			}
 		},
+		//displays the par
 		par : function(x) {
 			$("#parScore").html("Par: "+ x);
 		},
+		//displays the current stats
 		stats : function() {
 			$("#statsPanel").html("Stats - Stage: "+($.stage.current+1)+"/"+($.stage.last+1));	
 		},
+		//listens to events
 		startListener: function() {
+			//volume control
 			$("#volumeOff").hide();
 			$("#volumeOn").click(function() {
 				$("#volumeOn").hide();
@@ -42,6 +50,7 @@
 				$("#volumeOff").hide();
 				$("#volumeOn").show()
 			});
+			//roll back to best score
 			$("#cycle").click(function(){
 				$.helper.copy($.sequence.track, $.phylo.bestTrack);
 				//$.sequence.track = $.phylo.bestTrack.slice(0);
@@ -51,13 +60,14 @@
 					$.board.approve();
 				
 			});
+			//next stage
 			$("#star").click(function(){
 				if($(this).hasClass("pass")) {
 					$.stage.round();
 				}
 			});
-	//		$.timer.start();
 		},
+		//tinkers the css on the star
 		approve : function() {
 			var self = this;
 			$("#star").addClass("pass");
@@ -85,12 +95,14 @@
 				});
 			});
 		},
+		//tinkers the css on the star 
 		unapprove : function() {
 			$("#star").removeClass("pass");
 			$("#star").css({
 				opacity : 0.4
 			});
 		},
+		//builds json alignments of the current score
 		getJsonAlignments : function() {
 			var grid = $.phylo.domCache;	
 			var str = "[";
@@ -111,6 +123,7 @@
 			}
 			return '{ "alignments" : '+str+']}';
 		},
+		//translates the grid color to its respected nucletide
 		convertColor : function(color) {
 			if(color == "#71B2E2")
 				return "A";

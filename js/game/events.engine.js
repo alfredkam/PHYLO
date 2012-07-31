@@ -1,5 +1,6 @@
 (function(){
 	$.events = {
+		//cell moving listener
 		move : function() {
 			$(".current").each(function() {
 				var id = parseInt(this.id.replace(/row/,""));
@@ -40,6 +41,7 @@
 				});
 			});
 		},
+		//listener for un touch
 		untouch : function(element,type) {
 			var touchStart = 'ontouchstart' in document.documentElement;
 			var touchMove = 'ontouchmove' in document.documentElement;
@@ -66,6 +68,7 @@
 					$(element).unbind("touchend");
 			}
 		},
+		//listener for touch
 		touch : function(element, fn) {
 			var touchStart = 'ontouchstart' in document.documentElement;
 			var touchMove = 'ontouchmove' in document.documentElement;
@@ -118,6 +121,7 @@
 					});
 			}
 		},
+		//calculates the finger position
 		getFingerPos : function(e) {
 			var canvas = document.getElementById("game");
 			var x = e.pageX - canvas.offsetLeft;

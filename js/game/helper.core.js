@@ -28,6 +28,7 @@
 
 			return $_GET[pid];
 		},
+		//copies the array
 		copy : function(a,b) {
 			for(var i=0;i<b.length;i++) 
 				for(var j=0;j<b[i].length;j++) {
@@ -44,6 +45,7 @@
 					}
 				}
 		},
+		//alert box plugin
 		popUp : function(msg,ans) {
 			$(".warning-bg").css({
 				height: $(document).height(),
@@ -66,6 +68,7 @@
 		},
 	}
 	window.common = {
+		//used by the depreciated functions to export singleton
 		exportSingleton : function(name, obj, attr) {
 			if(!window[name]) {
 				var g = window[name] = new obj;
