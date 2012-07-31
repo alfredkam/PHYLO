@@ -59,7 +59,15 @@
 		},
 		//captures the select grids
 		capture : function() {
+			var box = {
+				X: $("#select").css("left"),
+				Y: $("#select").css("top"),
+				H: $("#select").css("height"),
+				W: $("#select").css("width"),
+			};	
+			$(".current > .sequence").each(function() {
 
+			});	
 		}
 	};	
 })();
