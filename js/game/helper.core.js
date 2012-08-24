@@ -81,5 +81,8 @@
 			}
 		}
 	}
+	String.prototype.toInt = function() {
+		return parseInt(this.replace(/px/,""));
+	};
 })();
 

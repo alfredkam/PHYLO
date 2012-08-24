@@ -273,6 +273,9 @@ body {
 	position:relative;
 	padding-top:20px;
 }
+#sponsor-img > div.row {
+	width:600px;
+}
 
 #sponsor-img .nokia{
 	top:2px;

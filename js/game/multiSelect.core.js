@@ -55,19 +55,47 @@
 				$(this).unbind("click");
 				//snaps the capture	
 				self.capture();
+				$("#selectBox").hide();
 			});
 		},
 		//captures the select grids
 		capture : function() {
 			var box = {
-				X: $("#select").css("left"),
-				Y: $("#select").css("top"),
-				H: $("#select").css("height"),
-				W: $("#select").css("width"),
+				X: parseInt($("#selectBox").css("left").replace(/px/,"")) - parseInt($("#tree").css("width").replace(/px/,""))-5,
+				Y: parseInt($("#selectBox").css("top").replace(/px/,"")),
+				H: parseInt($("#selectBox").css("height").replace(/px/,"")),
+				W: parseInt($("#selectBox").css("width").replace(/px/,"")),
 			};	
+			var select = {
+				X: 0,
+				Y: 0,
+				H: 0,
+				W: 0,
+			}
+			console.log(box);
 			$(".current > .sequence").each(function() {
-
+				//gets cordinates
+				var curr = {
+					X: parseInt($(this).css("left").replace(/px/,"")),
+					Y: parseInt($(this).offset().top),
+					H: parseInt($(this).css("height").replace(/px/,"")),
+					W: parseInt($(this).css("width").replace(/px/,""))
+				};
+				if(curr.Y  < box.Y && box.Y < curr.Y+curr.H) {
+					select.Y = curr.Y;							
+				}
+				if(curr.X < box.X && box.X < curr.X+curr.W) {
+					select.X = curr.X;							
+				}
+				//gets if in the box
+				if(box.Y < curr.Y && curr.Y < box.Y+box.H) {
+					select.H = curr.Y+curr.H; 
+				}
+				if(box.X < curr.X && curr.X < box.X+box.W) {
+					select.W = curr.X+curr.W;
+				}
 			});	
+			console.log(select);			
 		}
 	};	
 })();
