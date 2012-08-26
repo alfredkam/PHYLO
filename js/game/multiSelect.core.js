@@ -3,6 +3,7 @@
 		//statsthe multi select listener
 		active : function() {
 			var self= this;
+			$("#movingParts").append("<div id='chosenArea'></div>");
 			$("#game").unbind().dblclick(function(e) {
 				e = $.events.getMultiSelectFingerPos(e);
 				self.startTheEvents(e);								
@@ -62,40 +63,74 @@
 		capture : function() {
 			var box = {
 				X: parseInt($("#selectBox").css("left").replace(/px/,"")) - parseInt($("#tree").css("width").replace(/px/,""))-5,
-				Y: parseInt($("#selectBox").css("top").replace(/px/,"")),
+				Y: parseInt($("#selectBox").css("top").replace(/px/,"")) - 20,
 				H: parseInt($("#selectBox").css("height").replace(/px/,"")),
 				W: parseInt($("#selectBox").css("width").replace(/px/,"")),
 			};	
 			var select = {
-				X: 0,
-				Y: 0,
-				H: 0,
-				W: 0,
+				X: 1000,
+				Y: 1000,
+				H: -1,
+				W: -1,
 			}
-			console.log(box);
+			var list = [];
 			$(".current > .sequence").each(function() {
 				//gets cordinates
+				var row = parseInt($(this).parent().attr("id").replace(/row/,""));
 				var curr = {
 					X: parseInt($(this).css("left").replace(/px/,"")),
-					Y: parseInt($(this).offset().top),
+					Y: 34*row,
 					H: parseInt($(this).css("height").replace(/px/,"")),
 					W: parseInt($(this).css("width").replace(/px/,""))
 				};
-				if(curr.Y  < box.Y && box.Y < curr.Y+curr.H) {
-					select.Y = curr.Y;							
-				}
-				if(curr.X < box.X && box.X < curr.X+curr.W) {
-					select.X = curr.X;							
-				}
 				//gets if in the box
-				if(box.Y < curr.Y && curr.Y < box.Y+box.H) {
-					select.H = curr.Y+curr.H; 
-				}
-				if(box.X < curr.X && curr.X < box.X+box.W) {
-					select.W = curr.X+curr.W;
+				if(box.Y <= curr.Y && curr.Y+curr.H <= box.Y+box.H 
+				     && box.X <= curr.X && curr.X+curr.W <= box.X+box.W) {
+					list.push($(this).attr("id"));
+					if(curr.X < select.X) {
+						select.X = curr.X;
+					}	
+					if(curr.Y < select.Y) {
+						select.Y = curr.Y
+					}
+					if(curr.Y+curr.H > select.H) {
+						select.H = curr.Y+curr.H;
+					}
+					if(curr.X+curr.W > select.W) {
+						select.W = curr.X+curr.W;
+					}
 				}
 			});	
-			console.log(select);			
+			select.H -= select.Y;
+			select.W -= select.X;
+			if(list.length == 0) {
+				$("#chosenArea").hide();
+				return;
+			}
+			$("#chosenArea").css({
+				top : select.Y,
+				left : select.X,
+				width : select.W,
+				height : select.H,
+			});
+			$("#chosenArea").show();
+
+			//moving the red box
+			$.events.touch("#chosenArea", {
+				start: function(e) {
+					var offsetX = e.pageX - select.X;
+					$.events.touch(document,{
+						move: function(e) {
+							$("#chosenArea").css({
+								left: e.pageX-offsetX,	
+							});
+						},
+						end : function(e) {
+							$.events.untouch(document,"move");		
+						},
+					}); 
+				}
+			});
 		}
 	};	
 })();
