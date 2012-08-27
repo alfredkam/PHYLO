@@ -142,14 +142,12 @@
 					tellMeHowToMove.clear(e.pageX,offsetX);
 					$.events.touch(document,{
 						move: function(e) {
-							$("#chosenArea").css({
-								left: e.pageX-offsetX,	
-							});
-							for(var i = 0;i<list.length;i++) {
-								//console.log(select.W-tellMeHowToMove.calculation(list[i]));
-								$.physics.move(list[i], {
-									pageX : e.pageX, //-tellMeHowToMove.calculation(list[i]),
-									pageY : e.pageY
+							if ( $.physics.shift_select(list, {
+								old : parseInt($("#chosenArea").css("left").replace(/px/,"")),
+								new : e.pageX - offsetX,
+							}) ) { 
+								$("#chosenArea").css({
+									left: e.pageX-offsetX,	
 								});
 							}
 							

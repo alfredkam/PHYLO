@@ -1,5 +1,52 @@
 (function() {
 	$.physics = {
+		// moving multiple objects at once
+		shift_select : function(list,box) {
+			var left = true;
+			var posList = $.sequence.posList;
+			var posListReverse = $.sequence.posListReverse;
+			var domCache = $.phylo.domCache;
+			var limit = 0;
+			if(box.new - box.old > 0) {
+				left = false;
+			}
+			for(var cell in list) {
+				var prev = parseInt($(list[cell]).css("left").replace(/px/,""));		
+				var move = prev+ (box.new - box.old),
+				var pos = $(list[cell]).attr("id"); 
+				if(left) {
+					while(true) {
+						if(domCache[pos-1] == undefined) {
+							var move = domCache[pos].left + (box.new-box.old);
+							if(move < posList[pos]*$.phylo.x) {
+								//move = posList[pos]*$.phylo.x;
+								return false;
+							} 
+							break;
+						}
+						pos-=1;
+					}
+					
+				} else {
+					while (true) {
+						if(domCache[pos+1] == undefined) 
+							break;
+						if(move >=  (25-posListReverse[pos])*$.phylo.x-22) {
+							//move = (25-posListReverse[pos])*$.phylo.x-22;
+							return false;
+						}
+					}
+				}
+
+			}
+			for(var cell in list) {
+				var prev = parseInt($(list[cell]).css("left").replace(/px/,""));
+				$(list[cell]).css({
+					left : prev+ (box.new - box.old),
+				});
+			}
+			return true;
+		},
 		//determine if moving left or right 
 		move : function(self,e) {
 			var prevPageX = parseInt($(self).css('left').replace(/px/,""));
@@ -58,6 +105,7 @@
 					var move = e.pageX+(c-.5)*$.phylo.x-offSet;
 					if(x >= y) 
 						break;
+					//left boundary
 					if(move < posList[pos]*$.phylo.x) {
 						move = posList[pos]*$.phylo.x;
 					}
