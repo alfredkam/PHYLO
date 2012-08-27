@@ -75,6 +75,7 @@
 			}
 			var list = [];
 			$(".current > .sequence").each(function() {
+				var self = this;
 				//gets cordinates
 				var row = parseInt($(this).parent().attr("id").replace(/row/,""));
 				var curr = {
@@ -86,7 +87,7 @@
 				//gets if in the box
 				if(box.Y <= curr.Y && curr.Y+curr.H <= box.Y+box.H 
 				     && box.X <= curr.X && curr.X+curr.W <= box.X+box.W) {
-					list.push($(this).attr("id"));
+					list.push(self);
 					if(curr.X < select.X) {
 						select.X = curr.X;
 					}	
@@ -115,18 +116,47 @@
 			});
 			$("#chosenArea").show();
 
+			var tellMeHowToMove = {
+				clear : function(x,y) {
+					this.storage = [];	
+					this.offsetX = y;
+					this.pageX = x;
+				},
+				calculation : function(x) {	
+					if(this.storage[x] == null) {
+						var left = parseInt($(x).css("left").replace(/px/,""));
+						var diff = this.pageX-this.offsetX-left+select.W;
+						this.storage[x] = Math.abs(diff);
+					} else {
+						return this.storage[x];
+					}	
+				},
+				storage : []	
+			};
+
+
 			//moving the red box
 			$.events.touch("#chosenArea", {
 				start: function(e) {
 					var offsetX = e.pageX - select.X;
+					tellMeHowToMove.clear(e.pageX,offsetX);
 					$.events.touch(document,{
 						move: function(e) {
 							$("#chosenArea").css({
 								left: e.pageX-offsetX,	
 							});
+							for(var i = 0;i<list.length;i++) {
+								//console.log(select.W-tellMeHowToMove.calculation(list[i]));
+								$.physics.move(list[i], {
+									pageX : e.pageX, //-tellMeHowToMove.calculation(list[i]),
+									pageY : e.pageY
+								});
+							}
+							
 						},
 						end : function(e) {
 							$.events.untouch(document,"move");		
+							list = [];
 						},
 					}); 
 				}

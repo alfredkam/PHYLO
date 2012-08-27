@@ -3,6 +3,9 @@
 		ranking : function() {
 			this.protocal("content/ranking.html");
 		},
+		history : function() {
+			this.protocal("content/history.html");
+		},
 		play : function() {
 			this.protocal("content/play.html");
 		},

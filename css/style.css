@@ -206,7 +206,7 @@ body {
 	background-color:#EF4136;
 }
 
-#nav #achivements div:hover, #nav #achivements div.onSelect {
+#nav #history div:hover, #nav #history div.onSelect {
 	background-color: #71B2E2;
 }
 

@@ -27,6 +27,11 @@
 				$.lang.init(function() {
 					$.page.ranking();
 				});
+			} else if(page == "history") {
+				this.selectTab(page);
+				$.lang.init(function() {
+					$.page.history();
+				});
 			}
 		},			
 		get : function() {
