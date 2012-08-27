@@ -12,8 +12,9 @@
 			}
 			for(var cell in list) {
 				var prev = parseInt($(list[cell]).css("left").replace(/px/,""));		
-				var move = prev+ (box.new - box.old),
+				var move = prev+ (box.new - box.old);
 				var pos = $(list[cell]).attr("id"); 
+				/*
 				if(left) {
 					while(true) {
 						if(domCache[pos-1] == undefined) {
@@ -36,7 +37,7 @@
 							return false;
 						}
 					}
-				}
+				} */
 
 			}
 			for(var cell in list) {
