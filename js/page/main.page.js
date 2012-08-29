@@ -14,7 +14,15 @@
             
 		},
 		history : function() {
-			this.protocal("content/history.html");
+            $.ajax({
+                // FIXME: username variable
+				//url : "http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username=" + $username,
+                url : "content/history.html",
+				type : "post",
+			}).done(function(re) {
+                $("#mid-panel").html(re);
+                $.getScript("js/history.js");
+            });
 		},
 		play : function() {
 			this.protocal("content/play.html");
