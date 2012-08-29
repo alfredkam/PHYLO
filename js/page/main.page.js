@@ -3,8 +3,15 @@
 		ranking : function() {
             // FIXME? protocal use POST not GET
             //this.protocal("http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + window.langOpt.toUpperCase());
-            this.protocal("content/ranking.html");
-            $.getScript("js/ranking.js");            
+            $.ajax({
+				//url : "http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + window.langOpt.toUpperCase(),
+                url : "content/ranking.html",
+				type : "post",
+			}).done(function(re) {
+                $("#mid-panel").html(re);
+                $.getScript("js/ranking.js");
+            });
+            
 		},
 		history : function() {
 			this.protocal("content/history.html");
