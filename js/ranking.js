@@ -1,4 +1,4 @@
-(function() {
+//(function() {
     $(document).ready(function(){
         $('.dataTable').dataTable({
             "sPaginationType": "full_numbers",
@@ -27,7 +27,6 @@
             $("#showall").css("background-color","#CC0000");
             $("#showall").css("color","#fff");
         });
-
         $("#showmonth").click(function(){
             $("#alltime").hide();
             $("#weekly").hide();
@@ -39,7 +38,6 @@
             $("#showmonth").css("background-color","#CC0000");
             $("#showmonth").css("color","#fff");
         });
-
         $("#showweek").click(function(){
             $("#alltime").hide();
             $("#monthly").hide();
@@ -60,4 +58,4 @@
             $("#showall").css("background-color","#CC0000");
             $("#showall").css("color","#fff");
     });
-}
+//});
