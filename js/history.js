@@ -2,9 +2,20 @@
     $(document).ready(function(){
         $('.dataTable').dataTable({
             "sPaginationType": "full_numbers",
+            "aaSorting": [[ 1, "asc" ]],
             "oLanguage": {
                 "sUrl": "js/extra/datatable_" + window.langOpt.toUpperCase() + ".txt"
             },
+            "aoColumns": [
+                { "bVisible" : false },
+                { "iDataSort" : 0 },
+                null,
+                null,
+                null,
+                { "iDataSort" : 6 },
+                { "bVisible" : false, "bSearchable" : false }
+            ]
+
         });
 
         $("#showall").click(function(){
