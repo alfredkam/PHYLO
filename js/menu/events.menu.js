@@ -33,12 +33,13 @@
 			$(this).addClass("dropDown-OptionOnSelect");
 		});
 
+		/*
 		$("#logo").mouseover(function(event) {
 			event.stopPropagation();
 			$("#dropDown-logoTriangle").show();
 			$("#dropDown-logo").show();
 			$(this).addClass("logo-OnSelect");
-		});
+		}); */
 
 		$("#login").click(function() {
 			event.stopPropagation();

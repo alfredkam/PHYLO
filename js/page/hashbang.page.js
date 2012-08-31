@@ -1,8 +1,10 @@
 (function() {
+	//loads the page
 	$.hashbang = {
 		load : function(page) {
+			var self = this;
 			page = page.replace(/#/,"");
-			if(page == "" ^ page == "play") {
+			if(page == "" ^  page.search(/^play/) >= 0) {
 				this.selectTab("play");
 				$.lang.init(function() {
 					$.page.play();
@@ -34,9 +36,26 @@
 				});
 			}
 		},			
+		httpHashGet : function(pid) {
+			/*
+			var $_GET = {};
+			document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+			    function decode(s) {
+				return decodeURIComponent(s.split("+").join(" "));
+				}
+
+			    $_GET[decode(arguments[1])] = decode(arguments[2]);
+			});
+
+			return $_GET[pid];
+			*/
+			return 1111;	
+		},
+		//gets the current hashtag
 		get : function() {
 			return window.location.hash.replace(/^#!/,"");
 		},
+		//select tab
 		selectTab : function(tag) {
 			$("#nav a div").removeClass("onSelect");
 			$("#"+tag +" div").addClass("onSelect");
@@ -49,16 +68,19 @@
 		},
 	};
 
+	//when document is ready gets initial hashtag
+	/*
 	$(document).ready(function() {
 		$.hashbang.load($.hashbang.get());
-	});
+	}); */
 
-	
+	//initiate hashchange listener	
 	$(window).bind('hashchange', function() {
 			$.hashbang.load($.hashbang.get());	
 			$.tailor.init();
 	});
 	
+	//menu hyperlink listener
 	$("a").click(function() {
 		if($(this).attr("href") == "javascript:void(0);") {
 			var innerSelf = this;
@@ -67,10 +89,19 @@
 					if(status == "ok") {
 						window.location.hash = "#!"+$(innerSelf).attr("id");		
 						$.timer.stop();
+						//force change
+						if($(innerSelf).attr("id") == "play") {
+							$.hashbang.load($.hashbang.get());	
+							$.tailor.init();
+						}
 					}
 				});			
 			} else {
 				window.location.hash = "#!"+$(this).attr("id");		
+				if($(innerSelf).attr("id") == "play") {
+					$.hashbang.load($.hashbang.get());	
+					$.tailor.init();
+				}
 			}
 		} else {
 			window.location.href = $(this).attr("href");

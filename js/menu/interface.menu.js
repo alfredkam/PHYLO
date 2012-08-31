@@ -85,17 +85,11 @@
 			generate.background(settings);
 		}
 
-		
-
-		$(document).ready(function() {
-			//	init();	
-		});
 	})();
 	
 	(function() {
 		function g() {};
 		g.prototype.start = function() {
-			//$("#sandbox")>
 			$("#sandbox").html("");
 			var doc = document, win = window;
 			var settings = config.determineSettings();
@@ -107,6 +101,20 @@
 			//this.loadStroke(doc,win,settings);
 			this.loadMenu(doc,win,settings);
 			this.listenToReload();
+			/* temp fix */
+			var page = $.hashbang.get(); 
+			if(page.search(/autoStart/) >= 0) { 
+				var id = parseInt($.hashbang.httpHashGet("autoStart"));
+				if(isNaN(id))
+					return;
+				$("#draw").hide();
+				$("#menu").hide();
+				$.main.init({
+					type: "disease",
+					num: id,		
+				});
+			} 
+			
 		};
 		g.prototype.restart = function() {
 			var doc = document, win = window;
@@ -128,6 +136,8 @@
 			sandbox.appendChild(canvas);
 		};
 		//depreciated
+		/* but its a cool way to start a game */
+		/*
 		g.prototype.loadStroke = function(doc,win,settings) {
 			var ctx = doc.getElementById('draw').getContext('2d');
 			var selection = [];
@@ -201,7 +211,7 @@
 					selection[i].onUnbind();		
 				}
 			});
-		};
+		}; */
 
 		g.prototype.loadMenu = function(doc,win,settings) {
 			var f = this;
@@ -377,17 +387,9 @@
 							type : "POST",
 						}).done(function(data) {
 							if(data == "" ) {
-								//$.alertbox(msg);
 								$.invalid.level();
 							} else {
 								$("#draw").hide();
-								/*$("#frame").show();
-								$("#menu").hide();
-								$("#input_box").hide();
-								var hash = window.location.hash.toUpperCase();
-								hash = hash.replace('#',"").toLowerCase();
-								document.getElementById('frame').src = 'http://phylo.cs.mcgill.ca/js/index2.html?lang='+hash+'&type=disease&disease='+id+'#home';
-								*/
 								$("#menu").hide();
 								$.main.init({
 									type: "disease",
@@ -640,43 +642,4 @@
 				];
 		common.exportSingleton("device",g,attr);
 	})();
-	/*
-	(function() {
-		var doc = document, win = window;
-		$(doc).ready(function() {
-			$("#login_button").click(function(){
-				var login = lang.body.play.gameselect.login;
-				if($("#login_button div").html() == login["field 2"]) {
-					$("#login_box").toggle(function() { } );
-					if($("#login div").hasClass("onHover")) {
-						$("#login_button div").removeClass("onHover");	
-					} else {
-						$("#login_button div").addClass("onHover");
-					}
-				} else {
-					mcb.cookie.erase("PhyloLogin");
-					$("#login_button div").html(login["field 2"]);
-				}
-			});
-
-			$("#settings").click(function() {
-				$("#settings_box").toggle(function() { } );
-				if($("#settings div").hasClass("onHover")) {
-					$("#settings div").removeClass("onHover");	
-				} else {
-					$("#settings div").addClass("onHover");
-				}
-			});
-		});	
-	})();
-	*/
-	(function() {
-		//determined its a tablet / mobile
-		//spawns the instance	
-		/*
-		$(document).ready(function() {
-			device.start();
-		}); */
-	})();
-
 })()
