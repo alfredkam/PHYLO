@@ -364,7 +364,7 @@
 
 
 			var levelselect = function(ctx) {	
-				$("#input_box input").show();
+				$("#level_inputbox").show();
 				ctx.beginPath();
 				ctx.save();
 				ctx.fillStyle = "rgb(153,50,204)";
@@ -379,8 +379,7 @@
 				this.onClick = function(eX, eY) {
 					if(250 < eX && eX < 370 &&
 						220 < eY && eY < 270 ){
-						var id = $("#input_box input").val().trim();
-						
+						var id = $("#level_inputbox").val().trim();
 						$.ajax({
 							url : "../phpdb/phyloDB2.php", 
 							data : "mode=2&id="+id,
@@ -443,10 +442,10 @@
 						/*
 						$("#frame").show();
 						var hash = window.location.hash.toUpperCase();
-						var id = diseaseList[i][1][Math.floor(Math.random()*diseaseList[i][1].length)];
 						hash = hash.replace('#',"").toLowerCase();
 						document.getElementById('frame').src = 'http://phylo.cs.mcgill.ca/js/index2.html?lang='+hash+'&type=disease&disease='+id+'#home';
 						*/
+						var id = diseaseList[i][1][Math.floor(Math.random()*diseaseList[i][1].length)];
 						$("#menu").hide();
 						$.main.init({
 							type: "random",
@@ -583,7 +582,7 @@
 							}
 						});
 						banner.src = 'img/phylo_logo.png';
-						$("#input_box input").hide();
+						$("#level_inputbox").val("").hide();
 					}
 				};
 			};

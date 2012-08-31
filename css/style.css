@@ -36,6 +36,15 @@ body {
 }
 
 /* disables the game */
+#level_inputbox {
+	display:none;
+	position:relative;
+	top:-300px;
+	left:-155px;
+	font-size:25px;
+	z-index:100;
+}	
+
 #game {
 	display:none;
 	width:1024px;
@@ -433,4 +442,5 @@ body {
 .warning-cancel {
 	display:inline-block;
 }
+
 
