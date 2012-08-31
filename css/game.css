@@ -52,7 +52,8 @@
 	width: 32px;
 	background-color: black;
 	display:inline-block;
-	border: 1px #DDD solid;
+	border: 1px #383838 solid;
+	opacity:0.8;
 }
 .bgRow {
 	position:relative;
