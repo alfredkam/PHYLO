@@ -27,15 +27,36 @@
 					if(checkList(pos-1))
 						continue;
 					while(true) {
-						if(domCache[pos-1] == undefined) {
-							var child_move = parseInt(domCache[pos].left.replace(/px/,"")) + (box.new-box.old);
-							if(child_move < posList[pos]*$.phylo.x) {
-								if(child_move - posList[pos]*$.phylo.x < max_distance) 
-									max_distance = child_move - posList[pos]*$.phylo.x;
-							} else if(posList[pos]*$.phylo.x >= child_move) {
-								max_distance += (posList[pos]*$.phylo.x - child_move);
-							} 
-							break;
+						try {
+							if(domCache[pos-1].left == undefined) {
+								var child_move = parseInt(domCache[pos].left.replace(/px/,"")) + (box.new-box.old);
+								if(child_move <= 0){//posList[pos]*$.phylo.x) {
+									max_distance = parseInt(domCache[pos].left.replace(/px/,""));
+									if(parseInt(domCache[pos].left.replace(/px/,"")) <= 1)
+										max_distance = 0;
+								} 
+								break;
+							} else {
+								var child_move = parseInt(domCache[pos].left.replace(/px/,"")) + (box.new-box.old);
+								var child_move_inner = parseInt(domCache[pos-1].left.replace(/px/,""));
+								if(child_move_inner+$.phylo.x < child_move)
+									break;
+							}
+						} catch (err) {
+							if(domCache[pos-1] == undefined) {
+								var child_move = parseInt(domCache[pos].left.replace(/px/,"")) + (box.new-box.old);
+								if(child_move <= 0){//posList[pos]*$.phylo.x) {
+									max_distance = parseInt(domCache[pos].left.replace(/px/,""));
+									if(parseInt(domCache[pos].left.replace(/px/,"")) <= 1)
+										max_distance = 0;
+								} 
+								break;
+							 } else {
+								var child_move = parseInt(domCache[pos].left.replace(/px/,"")) + (box.new-box.old);
+								var child_move_inner = parseInt(domCache[pos-1].left.replace(/px/,""));
+								if(child_move_inner+$.phylo.x < child_move)
+									break;
+							}
 						}
 						pos-=1;
 					}
@@ -45,22 +66,29 @@
 					while (true) {
 						if(domCache[pos].left ==undefined ^ domCache[pos+1].left == undefined) { 
 							var child_move = parseInt(domCache[pos].left.replace(/px/,"")) + (box.new-box.old);
-							if(child_move >=  (25-posListReverse[pos])*$.phylo.x-22) {
-								if(max_distance > (child_move - (25-posListReverse[pos])*$.phylo.x-22))  
-									max_distance = child_move - (25-posListReverse[pos])*$.phylo.x-22 ;
-								
+							if(child_move >=  $.phylo.x*24) {
+								max_distance = $.phylo.x*25-parseInt(domCache[pos].left.replace(/px/,"")); 
+								if(parseInt(domCache[pos].left.replace(/px/,"")) >=793) {
+									max_distance = 0;
+								}
 							} 
 							break;
-						}
+						} else {
+							var child_move = parseInt(domCache[pos].left.replace(/px/,"")) + (box.new-box.old);
+							var child_move_inner = parseInt(domCache[pos+1].left.replace(/px/,""));
+							if(child_move_inner > child_move+$.phylo.x)
+								break;
+						} 
 						pos+=1;
 					}
 				}
 
 			}
-			console.log(left+ " "+ max_distance);
+			//console.log(left+ " "+ max_distance);
 			
 			if(max_distance == 0)
 				return;
+			
 			
 			
 			for(var cell in list) {

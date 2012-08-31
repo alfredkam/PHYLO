@@ -116,30 +116,10 @@
 			});
 			$("#chosenArea").show();
 
-			var tellMeHowToMove = {
-				clear : function(x,y) {
-					this.storage = [];	
-					this.offsetX = y;
-					this.pageX = x;
-				},
-				calculation : function(x) {	
-					if(this.storage[x] == null) {
-						var left = parseInt($(x).css("left").replace(/px/,""));
-						var diff = this.pageX-this.offsetX-left+select.W;
-						this.storage[x] = Math.abs(diff);
-					} else {
-						return this.storage[x];
-					}	
-				},
-				storage : []	
-			};
-
-
 			//moving the red box
 			$.events.touch("#chosenArea", {
 				start: function(e) {
 					var offsetX = e.pageX - select.X;
-					tellMeHowToMove.clear(e.pageX,offsetX);
 					$.events.touch(document,{
 						move: function(e) {
 							if ( $.physics.shift_select(list, {
@@ -154,7 +134,23 @@
 						},
 						end : function(e) {
 							$.events.untouch(document,"move");		
+							$.events.untouch("#chosenArea","start");
 							list = [];
+							$("#chosenArea").hide();
+							$.physics.snap();
+							var score = $.fitch.score();
+							$.board.score(score);
+							$.board.stats();
+							if($.phylo.bestScore < score) {
+								$.phylo.bestScore = score;
+								$.helper.copy($.phylo.bestTrack, $.sequence.track);
+								$.board.bestScore(score);
+							}
+							if(score >= $.sequence.par){
+								$.board.approve();
+							} else {
+								$.board.unapprove();
+							}
 						},
 					}); 
 				}
