@@ -37,19 +37,17 @@
 			}
 		},			
 		httpHashGet : function(pid) {
-			/*
 			var $_GET = {};
-			document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+			var hash = window.location.hash.replace(/#!play&/,"");
+			hash.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
 			    function decode(s) {
 				return decodeURIComponent(s.split("+").join(" "));
 				}
 
 			    $_GET[decode(arguments[1])] = decode(arguments[2]);
 			});
-
 			return $_GET[pid];
-			*/
-			return 1111;	
+			//return 1111;	
 		},
 		//gets the current hashtag
 		get : function() {
