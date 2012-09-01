@@ -46,7 +46,13 @@
 				}
 		},
 		//alert box plugin
-		popUp : function(msg,ans) {
+		popUp : function(msg,ans,op) {
+			if(op != undefined) {
+				if(op.cancel != undefined && op.cancel == false)
+					$(".warning-cancel").hide();
+			} else {
+				$(".warning-cancel").show();
+			}
 			$(".warning-bg").css({
 				height: $(document).height(),
 				width: $(document).width(),

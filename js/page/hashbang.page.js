@@ -36,6 +36,21 @@
 				});
 			}
 		},			
+		checkIfAutoStart : function() {
+			var page = $.hashbang.get(); 
+			if(page.search(/autoStart/) >= 0) { 
+				var id = parseInt($.hashbang.httpHashGet("autoStart"));
+				if(isNaN(id))
+					return;
+				$("#draw").hide();
+				$("#menu").hide();
+				$.main.init({
+					type: "disease",
+					num: id,		
+				});
+			} 
+		},
+		//treat hash like HTTP GET
 		httpHashGet : function(pid) {
 			var $_GET = {};
 			var hash = window.location.hash.replace(/#!play&/,"");

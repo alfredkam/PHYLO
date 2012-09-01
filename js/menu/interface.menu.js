@@ -102,19 +102,7 @@
 			this.loadMenu(doc,win,settings);
 			this.listenToReload();
 			/* temp fix */
-			var page = $.hashbang.get(); 
-			if(page.search(/autoStart/) >= 0) { 
-				var id = parseInt($.hashbang.httpHashGet("autoStart"));
-				if(isNaN(id))
-					return;
-				$("#draw").hide();
-				$("#menu").hide();
-				$.main.init({
-					type: "disease",
-					num: id,		
-				});
-			} 
-			
+			$.hashbang.checkIfAutoStart();
 		};
 		g.prototype.restart = function() {
 			var doc = document, win = window;
@@ -379,14 +367,28 @@
 				this.onClick = function(eX, eY) {
 					if(250 < eX && eX < 370 &&
 						220 < eY && eY < 270 ){
-						var id = $("#level_inputbox").val().trim();
+						var id = parseInt($("#level_inputbox").val().trim());
+						if(isNaN(id)) {
+							$.helper.popUp("Numbers Only!", function(status) {
+								
+							}, {
+								cancel : false,
+							});
+							return;
+						}
 						$.ajax({
 							url : "../phpdb/phyloDB2.php", 
 							data : "mode=2&id="+id,
 							type : "POST",
 						}).done(function(data) {
 							if(data == "" ) {
-								$.invalid.level();
+								//$.invalid.level();
+								$.helper.popUp("Invalid level!", function(status) {
+									
+								}, {
+									cancel : false,
+								});
+								
 							} else {
 								$("#draw").hide();
 								$("#menu").hide();
@@ -396,6 +398,14 @@
 								});	
 							}
 							return;
+						}).fail(function(data) {
+								$("#draw").hide();
+								$("#menu").hide();
+								$.main.init({
+									type: "disease",
+									num: id,		
+								});	
+
 						});
 					}	
 				};
