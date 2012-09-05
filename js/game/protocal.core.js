@@ -2,6 +2,35 @@
 	var doc = document, win = window;
 	var url = "../phpdb/phyloDB2.php";
 	$.protocal = {
+		//for login
+		login : function(username, password, fn) {
+			var mode = 7;
+			var data = "mode="+mode+"&user="+username+"&pass="+password;
+			$.ajax({
+				type: "POST",
+				url : url,
+				data : data,
+			}).done(function(re) {
+				fn(re);		
+			}).fail(function() {
+				$("div.login-warning").show().html("Could not connect to server, please try again later");
+			});
+		},
+		//for register
+		register : function(username, password, email, fn) {
+			var mode = 6;
+			var data = "mode="+mode+"&user="+username+"&pass="+password+"&email="+email;
+			$.ajax({
+				type: "POST",
+				url : url,
+				data : data,
+			}).done(function(re) {
+				fn(re);		
+			}).fail(function() {
+				$("div.login-warning").show().html("Could not connect to server, please try again later");
+			});
+		},
+		//sends end game score
 		sendEndGameScore : function(status,fn) {
 			var mode = 3;
 			if(status == "completed") {

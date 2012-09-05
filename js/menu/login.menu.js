@@ -1,6 +1,9 @@
 (function() {
 	$(document).ready(function() {
-		$(".login-btn").click(function() {
+		//hide logout on default
+		$("#logout").hide();
+		//login onclick event
+		var eClick = function() {
 			var name = $("#username").val().trim();
 			var password = $("#password").val().trim();
 			if((name == "" || password == "")) { 
@@ -10,21 +13,32 @@
 
 			$("div.login-warning").hide();
 
-			$.ajax({
-				url : "../phpdb/phyloDB2.php",
-				data: "mode=7&user"+name+"&pass"+password, 
-				type : "POST",
-			}).done(function(re) {
+			$.protocal.login(name, password, function(re) {
 				if(re == "succ") {
-
+					$(".login-btn").unbind("click");	
+					$("#login-tag").html("Welcome back "+name);
+					$("#logout").show();
+					window.guest = name;
 				} else {
-					//login failed
-				}
-			}).fail(function() {
-				$("div.login-warning").show().html("Could not connect to server, please try again later");
+					$("div.login-warning").show().html("Incorrect Username or Password");
+				}			
 			});
+		};
+		//login event
+		$(".login-btn").click(function() {
+			eClick();
 		});	
+		//logout event
+		$("#logout").click(function() {
+			window.guest = "Guest";
+			$("#logout").hide();
+			$(".login-btn").click(function() { 
+				eClick();
+			});
+			$("#login-tag").html("Login");
+		});
 
+		//register event
 		$(".register-btn").click(function() {
 			if($(".cancel-btn").css("display") == "none") {
 				$(".login-warning").hide();
@@ -33,7 +47,23 @@
 				$(".login-btn").hide();
 				$(".cancel-btn").show();
 			} else {
-				
+				var name = $("#username").val().trim();
+				var password = $("#password").val().trim();
+				var email = $("#email").val().trim();
+				if((name == "" || password == "") || email == "") { 
+					$("div.login-warning").show().html("Email or Username or Password is missing");
+					return;
+				} 
+				$.protocal.register(name, password, email, function(re) {
+					if(re == "succ") {
+						$(".login-btn").unbind("click");	
+						$("#login-tag").html("Welcome back "+name);
+						$("#logout").show();
+						window.guest = name;
+					} else {
+						$("div.login-warning").show().html("This username already exist");
+					}
+				});
 			}	
 		});
 		$(".cancel-btn").click(function() {
