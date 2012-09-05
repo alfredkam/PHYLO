@@ -3,11 +3,11 @@
 	$.endGame = {
 		//dusplays message of completing the game
 		complete : function() {
+			var self = this;
 			$.protocal.sendEndGameScore("completed", function(data) {
-				console.log(data);
-				this.events();
-				this.score();
-				var msg = "You have solved the puzzle";
+				self.events();
+				self.score("completed",data.best_score);
+				var msg = "<b>Congradulations!</b> You have solved the puzzle";
 				$("#endGame-text").html(msg);
 				$("#endGame-learnMore-content").html("This disease is related to diseases etc, you are helping...etc");
 				$("#endGame").fadeIn();
@@ -16,10 +16,11 @@
 		},
 		//displays message of bailing out
 		bail : function() {
+			var self = this;
 			$.protocal.sendEndGameScore("bail", function(data) {
-				this.events();
-				this.score();
-				var msg = "Sucks you couldnt sove it.";
+				self.events();
+				self.score("bail",data.best_score);
+				var msg = "GG! Sucks you couldnt sove it!";
 				$("#endGame-text").html(msg);
 				$("#endGame-learnMore-content").html("This disease is related to diseases etc, you are helping...etc");
 				$("#endGame").fadeIn();
@@ -27,13 +28,26 @@
 
 		},
 		//scores the game
-		score : function() {
+		score : function(status, highscore) {
 			//gets current score		
 			var setDefault = "<i class='icon-star-empty'></i><i class='icon-star-empty'></i><i class='icon-star-empty'></i>";	
 			$("#endGame-score-result").html(setDefault);
+			if(status == "bail")
+				return;
 			
 			var currentScore = $.phylo.currentScore;
 			var par = $.sequence.par;
+
+			if(par < currenScore && currentScore < highscore) {
+				setDefault = "<i class='icon-star'></i><i class='icon-star'></i><i class='icon-star-empty'></i>";	
+
+			} else if( highscore <= currentScore) {
+				setDefault = "<i class='icon-star'></i><i class='icon-star'></i><i class='icon-star'></i>";	
+
+			} else { //exactly par score
+				setDefault = "<i class='icon-star'></i><i class='icon-star-empty'></i><i class='icon-star-empty'></i>";	
+			}
+			$("#endGame-score-result").html(setDefault);
 		},
 		//events for the end game messages
 		//new game or replay game

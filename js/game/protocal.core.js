@@ -13,10 +13,15 @@
 				url : url,
 				data : data,
 			}).done(function(re) {
-				fn(re);			
+				var json = eval("["+re+"]")[0];
+				fn(json);			
 			}).fail(function() {
-				//fail to connect
 				console.log(">> failed to connect to database to submit end game score");
+				console.log(">> loading end game dummy data");
+				//fail to connect
+				var dummy = '{"0":"CONGENITAL PTOSIS","disease_link":"CONGENITAL PTOSIS","1":"67","play_count":"67","2":"13","fail_count":"13","3":"42","best_score":"42","4":"1375","running_score":"1375","5":"unki2aut","highscore_user":"unki2aut"}';
+				var json = eval("["+dummy+"]")[0];
+				fn(data);
 			});
 			
 		},
