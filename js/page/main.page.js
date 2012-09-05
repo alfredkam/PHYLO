@@ -1,10 +1,28 @@
 (function() {
 	$.page = {
 		ranking : function() {
-			this.protocal("content/ranking.html");
+            // FIXME? protocal use POST not GET
+            //this.protocal("http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + window.langOpt.toUpperCase());
+            $.ajax({
+				//url : "http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + window.langOpt.toUpperCase(),
+                url : "content/ranking.html",
+				type : "post",
+			}).done(function(re) {
+                $("#mid-panel").html(re);
+                $.getScript("js/ranking.js");
+            });
+            
 		},
 		history : function() {
-			this.protocal("content/history.html");
+            $.ajax({
+                // FIXME: username variable
+				//url : "http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username=" + $username,
+                url : "content/history.html",
+				type : "post",
+			}).done(function(re) {
+                $("#mid-panel").html(re);
+                $.getScript("js/history.js");
+            });
 		},
 		play : function() {
 			this.protocal("content/play.html");
