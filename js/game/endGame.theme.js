@@ -7,7 +7,7 @@
 			$.protocal.sendEndGameScore("completed", function(data) {
 				self.events();
 				self.score("completed",data.best_score);
-				var msg = "<b>Congradulations!</b> You have solved the puzzle";
+				var msg = "<b>Congratulations!</b> You have solved the puzzle";
 				$("#endGame-text").html(msg);
 				$("#endGame-learnMore-content").html("This disease is related to diseases etc, you are helping...etc");
 				$("#endGame").fadeIn();
@@ -20,7 +20,7 @@
 			$.protocal.sendEndGameScore("bail", function(data) {
 				self.events();
 				self.score("bail",data.best_score);
-				var msg = "GG! Sucks you couldnt sove it!";
+				var msg = "Too bad! You did not succeed to solve this puzzle!";
 				$("#endGame-text").html(msg);
 				$("#endGame-learnMore-content").html("This disease is related to diseases etc, you are helping...etc");
 				$("#endGame").fadeIn();
