@@ -38,7 +38,7 @@
 			var currentScore = $.phylo.currentScore;
 			var par = $.sequence.par;
 
-			if(par < currenScore && currentScore < highscore) {
+			if(par < currentScore && currentScore < highscore) {
 				setDefault = "<i class='icon-star'></i><i class='icon-star'></i><i class='icon-star-empty'></i>";	
 
 			} else if( highscore <= currentScore) {
