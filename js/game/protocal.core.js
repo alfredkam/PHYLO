@@ -2,6 +2,24 @@
 	var doc = document, win = window;
 	var url = "../phpdb/phyloDB2.php";
 	$.protocal = {
+		sendEndGameScore : function(status,fn) {
+			var mode = 3;
+			if(status == "completed") {
+				mode = 4;
+			}
+			var data = "mode="+mode+"&id="+$.phylo.id+"&user="+window.guest+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.currentScore;
+			$.ajax({
+				type: "POST",
+				url : url,
+				data : data,
+			}).done(function(re) {
+				fn(re);			
+			}).fail(function() {
+				//fail to connect
+				console.log(">> failed to connect to database to submit end game score");
+			});
+			
+		},
 		//sends highscroe to server
 		sendHighScore : function() {
 

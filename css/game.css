@@ -275,11 +275,28 @@
 	background-color: #D3D3D3;
 	margin-left:auto;
 	margin-right:auto;
-	text-align:left;
+	text-align:center;
 	height: 400px;
 	width:900px;
 	border:5px solid #DDD;
 	padding: 5px 10px;
+}
+#endGame-content div {
+	line-height:30px;
+}
+#endGame-score-tag {
+	font-size:30px;
+	font-weight:bold;
+}
+#endGame-score-result {
+	padding:15px 0px;
+}
+#endGame-score-result i {
+	font-size: 50px;
+	padding:0 15px;
+}
+#endGame-text {
+	font-size:30px;
 }
 #endGame-learnMore-content {
 	border:1px solid #333;
