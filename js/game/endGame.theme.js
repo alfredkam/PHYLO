@@ -7,7 +7,7 @@
 			$.protocal.sendEndGameScore("completed", function(data) {
 				self.events();
 				self.score("completed",data.best_score);
-				var msg = "<b>Congradulations!</b> You have solved the puzzle";
+				var msg = "<b>congratulations!</b> You have solved the puzzle";
 				$("#endGame-text").html(msg);
 				$("#endGame-learnMore-content").html("This disease is related to diseases etc, you are helping...etc");
 				$("#endGame").fadeIn();
