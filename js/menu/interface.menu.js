@@ -458,7 +458,7 @@
 						var id = diseaseList[i][1][Math.floor(Math.random()*diseaseList[i][1].length)];
 						$("#menu").hide();
 						$.main.init({
-							type: "random",
+							type: "disease",
 							num: id,		
 						});	
 						return;
