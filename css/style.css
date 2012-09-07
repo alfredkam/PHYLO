@@ -443,4 +443,6 @@ body {
 	display:inline-block;
 }
 
-
+.showInLogin {
+	display:none;
+}

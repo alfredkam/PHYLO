@@ -19,12 +19,13 @@
 					$("#login-tag").html("Welcome back "+name);
 					$("#logout").show();
 					window.guest = name;
+					$(".showInLogin").show();
 				} else {
 					$("div.login-warning").show().html("Incorrect Username or Password");
 				}			
 			});
 		};
-		//login event
+		//login click event
 		$(".login-btn").click(function() {
 			eClick();
 		});	
@@ -36,6 +37,7 @@
 				eClick();
 			});
 			$("#login-tag").html("Login");
+			$(".showInLogin").hide();
 		});
 
 		//register event
