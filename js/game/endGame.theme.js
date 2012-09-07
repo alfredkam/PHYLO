@@ -53,6 +53,7 @@
 		//new game or replay game
 		events : function() {
 			$("#endGame-new button").unbind().click(function() {
+				/*
 				$.main.clear();
 				$("#endGame").fadeOut();
 				$("#tree").html("");
@@ -60,6 +61,9 @@
 				$.protocal.request();
 				$("#countDown-text").html("<img src='img/loading.gif'/>");
 				$("#countDown").fadeIn();
+				*/
+				window.location.reload(true);
+				window.location.hash = "#!play";
 			});
 				
 			$("#endGame-replay button").unbind().click(function(){
