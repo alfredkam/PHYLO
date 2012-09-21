@@ -149,8 +149,9 @@
 	visibility : hidden;
 }
 .blocked {
-	opacity: 0.8;
-	visibility:hidden;
+	opacity: 0.6;
+	/*visibility:hidden;
+	*/
 }
 #ancestorSeq {
 	position:absolute;

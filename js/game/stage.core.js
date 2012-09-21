@@ -49,10 +49,7 @@
 			show(x);
 			addClass(x);
 			if(x == 0) {
-				//window.setTimeout(function() {
-					//$("#bg").css({visibility: "visible"});
-					$("#bg").show("slide",{direction : "left"},400);
-				//},200);
+				$("#bg").show("slide",{direction : "left"},400);
 			}
 			$(".row").each(function() {
 				if($(this).hasClass("hidden") == false && $(this).hasClass("current") == false) {
