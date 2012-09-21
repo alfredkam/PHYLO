@@ -34,6 +34,8 @@
 				$.lang.init(function() {
 					$.page.history();
 				});
+			} else if(page == "expert") {
+				window.location = "http://phylo.cs.mcgill.ca/dcanv";
 			}
 		},			
 		checkIfAutoStart : function() {

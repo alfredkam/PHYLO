@@ -1,5 +1,8 @@
 (function() {
 	$.page = {
+		expert : function() {
+			window.location = "http://phylo.cs.mcgill.ca/dcanv";
+		},
 		ranking : function() {
             // FIXME? protocal use POST not GET
             $.ajax({

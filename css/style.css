@@ -217,6 +217,9 @@ body {
 #nav #history div:hover, #nav #history div.onSelect {
 	background-color: #71B2E2;
 }
+#nav #expert div:hover, #nav #expert div.onSelect {
+	background-color: darkOrchid;
+}
 
 #menu {
 	position:relative;
