@@ -12,6 +12,7 @@
 			}).done(function(re) {
                 $("#mid-panel").html(re);
                 $.getScript("js/ranking.js");
+		$.hashbang.panelReady();
             });
             
 		},
@@ -23,6 +24,7 @@
 			}).done(function(re) {
                 $("#mid-panel").html(re);
                 $.getScript("js/history.js");
+		$.hashbang.panelReady();
             });
 		},
 		play : function() {

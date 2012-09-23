@@ -41,13 +41,11 @@
 				self.selectTab(page);
 				$.lang.init(function() {
 					$.page.ranking();
-					self.panelReady();
 				});
 			} else if(page == "history") {
 				self.selectTab(page);
 				$.lang.init(function() {
 					$.page.history();
-					self.panelReady();
 				});
 			} else if(page == "expert") {
 				window.location = "http://phylo.cs.mcgill.ca/dcanv";
