@@ -445,7 +445,19 @@ body {
 .warning-cancel {
 	display:inline-block;
 }
+/* end of warning */
 
 .showInLogin {
 	display:none;
 }
+
+/* extra - for screen transition */
+#loading-panel {
+	padding-top:150px;
+	text-align:center;
+}
+
+#mid-panel {
+	display:none;
+}
+

@@ -1,38 +1,53 @@
 (function() {
 	//loads the page
 	$.hashbang = {
+		panelNotReady : function() {
+			$("#mid-panel").hide();
+			$("#loading-panel").show();
+		},
+		panelReady : function() {
+			$("#mid-panel").show();
+			$("#loading-panel").hide();
+		},
 		load : function(page) {
 			var self = this;
 			page = page.replace(/#/,"");
+			self.panelNotReady();	
 			if(page == "" ^  page.search(/^play/) >= 0) {
-				this.selectTab("play");
+				self.selectTab("play");
 				$.lang.init(function() {
 					$.page.play();
+					self.panelReady();
 				});
 			} else if(page == "tutorial") {
-				this.selectTab(page);
+				self.selectTab(page);
 				$.lang.init(function() {
 					$.page.tutorial();
+					self.panelReady();
 				});
 			} else if(page == "about") {
-				this.selectTab(page);
+				self.selectTab(page);
 				$.lang.init(function() {
 					$.page.about();
+					self.panelReady();
 				});
 			} else if(page == "credits") {
-				this.selectTab(page);
+				self.selectTab(page);
 				$.lang.init(function() {
 					$.page.credits();
+					self.panelReady();
 				});
 			} else if(page == "ranking") {
-				this.selectTab(page);
+				self.selectTab(page);
 				$.lang.init(function() {
 					$.page.ranking();
+					self.panelReady();
 				});
 			} else if(page == "history") {
-				this.selectTab(page);
+				self.selectTab(page);
 				$.lang.init(function() {
 					$.page.history();
+					self.panelReady();
 				});
 			} else if(page == "expert") {
 				window.location = "http://phylo.cs.mcgill.ca/dcanv";
