@@ -11,7 +11,7 @@
 				type : "post",
 			}).done(function(re) {
                 $("#mid-panel").html(re);
-                $.getScript("js/ranking.js");
+                $.getScript("js/ranking/ranking.js");
 		$.hashbang.panelReady();
             });
             
@@ -23,7 +23,7 @@
 				type : "post",
 			}).done(function(re) {
                 $("#mid-panel").html(re);
-                $.getScript("js/history.js");
+                $.getScript("js/history/history.js");
 		$.hashbang.panelReady();
             });
 		},
