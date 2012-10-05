@@ -49,6 +49,12 @@
 				});
 			} else if(page == "expert") {
 				window.location = "http://phylo.cs.mcgill.ca/dcanv";
+			} else if(page == "rna") {
+				self.selectTab(page);
+				$.lang.init(function() {
+					$.page.rna();
+					self.panelReady();
+				});
 			}
 		},			
 		checkIfAutoStart : function() {

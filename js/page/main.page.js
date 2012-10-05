@@ -27,6 +27,9 @@
 		$.hashbang.panelReady();
             });
 		},
+		rna : function() {
+			this.protocal("content/rna.html");
+		},	
 		play : function() {
 			this.protocal("content/play.html");
 		},
