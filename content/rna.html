@@ -99,6 +99,8 @@
 		</div>
 		<script>
 			$.tailor.run(function() {
-				device.start();
+				$.rna.getPuzzle(function(x) {
+					$.rna.init(x);
+				});
 			});
 		</script>

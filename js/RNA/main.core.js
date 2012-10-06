@@ -2,18 +2,25 @@ window.DEBUG = false;
 window.guest = "TEST DATA";
 (function() {
 	$(document).ready(function() {
-	
-		$.main = {
+		$.rna = {
+			getPuzzle : function(init) {
+				var puzzle = {
+					p :"((((...))))",
+					p : "((..))",
+					p : "(((((.........)))))",
+					p : "(((.....)))"
+				};
+				init(puzzle);
+			
+			},
 			//unbinds all the previous data
 			clear : function() {
-				$.timer.stop();
 				$.stage.current = -1;
-				$("#countDown-text").html(3);
 			},
 			//configuration
 			init : function(setting) {
+				var self = this;
 				this.clear();
-				$.endGame.runAway();
 				$.phylo = {
 					seqLen : 25,
 					x : 34,
@@ -22,9 +29,11 @@ window.guest = "TEST DATA";
 				};
 				$.lang.init(function() {
 					$("#game").show();
-					$.protocal.read(setting);
-					$.protocal.request();
+					//$.protocal.read(setting);
+					//$.protocal.request();
 					//$.endGame.init("lose");
+					self.callBack();
+				
 				});
 			},
 			//call back on protocal complete
@@ -41,10 +50,13 @@ window.guest = "TEST DATA";
 
 				if(DEBUG)
 					console.log($.phylo);
-				$.phylo.tree = $.tree.build($.phylo.get.tree);
+				//$.phylo.tree = $.tree.build($.phylo.get.tree);
 				$.board.build();
-				$.sequence.build($.phylo.get.sequence);
-				$.sequence.prepareTracking($.phylo.get.sequence);
+				//$.sequence.build($.phylo.get.sequence);
+				//$.sequence.prepareTracking($.phylo.get.sequence);
+
+
+				$.sequence.build();
 
 				$.phylo.origin = [];
 				for(var i=0;i<8;i++){
@@ -55,21 +67,23 @@ window.guest = "TEST DATA";
 					$.phylo.origin.push(t);
 				}
 
-				$.helper.copy($.phylo.origin, $.sequence.track);
+			//	$.helper.copy($.phylo.origin, $.sequence.track);
 				//$.phylo.origin = $.sequence.track.slice(0);
-				var random = $.sequence.randomize($.sequence.track);
-				$.sequence.prepareTracking(random);
-				$.phylo.domCache = $.sequence.createCache();
-				$.physics.snapRandom();
+			//	var random = $.sequence.randomize($.sequence.track);
+			//	$.sequence.prepareTracking(random);
+			//	$.phylo.domCache = $.sequence.createCache();
+			//	$.physics.snapRandom();
 
 				if(DEBUG) {
+					/*
 					console.log("original")
 					console.log($.phylo.origin);
 					console.log("tracked");
 					console.log($.sequence.track);
 					console.log($.phylo.tree);
+					*/
 				}
-				$.stage.last = $.phylo.tree[$.phylo.tree.length-1].lv;
+			//	$.stage.last = $.phylo.tree[$.phylo.tree.length-1].lv;
 				$.splash.countDown(function() {
 					//start game
 					$.stage.end = false;
