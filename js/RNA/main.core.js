@@ -18,7 +18,7 @@ window.guest = "TEST DATA";
 				$.stage.current = -1;
 			},
 			//configuration
-			init : function(setting) {
+			init : function(code) {
 				var self = this;
 				this.clear();
 				$.phylo = {
@@ -32,6 +32,7 @@ window.guest = "TEST DATA";
 					//$.protocal.read(setting);
 					//$.protocal.request();
 					//$.endGame.init("lose");
+					$.rna.code = code;
 					self.callBack();
 				
 				});
@@ -55,8 +56,7 @@ window.guest = "TEST DATA";
 				//$.sequence.build($.phylo.get.sequence);
 				//$.sequence.prepareTracking($.phylo.get.sequence);
 
-
-				$.rna.sequence.build();
+				$.message.build($.rna.code);
 
 				$.phylo.origin = [];
 				for(var i=0;i<8;i++){
@@ -87,7 +87,7 @@ window.guest = "TEST DATA";
 				$.splash.countDown(function() {
 					//start game
 					$.stage.end = false;
-					$.stage.round();	
+					//$.stage.round();	
 					if(DEBUG)
 						$.helper.dump($.sequence.track);
 					if(mouseMove) {
