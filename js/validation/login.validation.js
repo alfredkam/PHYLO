@@ -11,6 +11,7 @@
 			$("#logout").show();
 			window.guest = name;
 			$(".showInLogin").show();
+			$("#login-box").hide();
 			$.cookie.create("username",name,365);
 		}
 
@@ -33,6 +34,7 @@
 					window.guest = name;
 					$(".showInLogin").show();
 					$.cookie.create("username",name,365);
+					$("#login-box").hide();
 				} else {
 					$("div.login-warning").show().html("Incorrect Username or Password");
 				}			
@@ -76,6 +78,7 @@
 						$("#login-tag").html("Welcome back "+name);
 						$("#logout").show();
 						window.guest = name;
+						$("#login-box").hide();
 					} else {
 						$("div.login-warning").show().html("This username already exist");
 					}
