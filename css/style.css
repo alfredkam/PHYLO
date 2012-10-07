@@ -189,6 +189,10 @@ body {
 	position:relative;
 }
 
+#nav.span6 {
+	width:500px !important;
+}
+
 #nav div:hover, #nav div.onSelect {
 	color: #f1f2f3;
 }
