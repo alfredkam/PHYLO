@@ -10,6 +10,17 @@
 			if(box.new - box.old > 0) {
 				left = false;
 			}
+			//update data to check if the selected obj pivot exceeded the maximum board length 
+			var obj_w = parseInt(box.obj.css("width").replace(/px/,""));
+			if(left) {
+				if(box.new < 0) {
+					box.new = box.old;
+				}
+			} else {
+				if(box.new + obj_w > $.sequence.calcPos(25))
+					box.new = $.sequence.calcPos(25) - obj_w;
+			}
+
 			//check if in list
 			var checkList = function(id) {
 				for(var cell in list) {
@@ -31,8 +42,9 @@
 							if(domCache[pos-1].left == undefined) {
 								var child_move = parseInt(domCache[pos].left.replace(/px/,"")) + (box.new-box.old);
 								if(child_move <= 0){//posList[pos]*$.phylo.x) {
-									max_distance = parseInt(domCache[pos].left.replace(/px/,""));
-									if(parseInt(domCache[pos].left.replace(/px/,"")) <= 1)
+									//max_distance = parseInt(domCache[pos].left.replace(/px/,""));
+									max_distance = box.new - box.old - parseInt(domCache[pos].left.replace(/px/,""));
+									if(parseInt(domCache[pos].left.replace(/px/,"")) <= $.sequence.calcPos(0))
 										max_distance = 0;
 								} 
 								break;
@@ -88,6 +100,7 @@
 			if(max_distance == 0)
 				return;
 
+			//set the new obj position
 			box.obj.css({
 				left: box.new,
 			});
