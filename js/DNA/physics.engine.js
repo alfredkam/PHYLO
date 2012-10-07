@@ -66,12 +66,12 @@
 					while (true) {
 						if(domCache[pos].left ==undefined ^ domCache[pos+1].left == undefined) { 
 							var child_move = parseInt(domCache[pos].left.replace(/px/,"")) + (box.new-box.old);
-							if(child_move >=  $.phylo.x*24) {
-								max_distance = $.phylo.x*25-parseInt(domCache[pos].left.replace(/px/,"")); 
-								if(parseInt(domCache[pos].left.replace(/px/,"")) >=793) {
+							if(child_move >=  $.sequence.calcPos(24)) {
+								max_distance = $.sequence.calcPos(24)-parseInt(domCache[pos].left.replace(/px/,"")); 
+								if(parseInt(domCache[pos].left.replace(/px/,"")) >= $.sequence.calcPos(25)) {
 									max_distance = 0;
 								}
-							} 
+							}
 							break;
 						} else {
 							var child_move = parseInt(domCache[pos].left.replace(/px/,"")) + (box.new-box.old);
