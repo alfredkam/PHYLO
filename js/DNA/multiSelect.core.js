@@ -85,9 +85,48 @@
 					W: parseInt($(this).css("width").replace(/px/,""))
 				};
 				//gets if in the box
+				/*
 				if(box.Y <= curr.Y && curr.Y+curr.H <= box.Y+box.H 
 				     && box.X <= curr.X && curr.X+curr.W <= box.X+box.W) {
+				*/
+				if(
+					(	//when red box inside the cell
+						curr.Y <= box.Y && box.Y+box.H <= curr.Y+curr.H 
+				     		&& curr.X <= box.X && box.X+box.W <= curr.X+curr.W
+					) 	^
+					(	//capturing it when redbox area greater then selected cells
+						box.Y <= curr.Y && curr.Y+curr.H <= box.Y+box.H 
+				     		&& box.X <= curr.X && curr.X+curr.W <= box.X+box.W
+
+					)	^
+					( 	//top
+						curr.Y <= box.Y && box.Y <= curr.Y+curr.H
+						&& curr.X <= box.X && box.X <= curr.X+curr.W
+					)	^
+					(	//bottom
+						curr.Y >= box.Y && curr.Y <= box.H+box.Y
+						&& curr.X <= box.X && box.X <= curr.X+curr.W
+					)	^
+					(	//bottom
+						curr.Y <= box.Y && box.Y <= curr.H+curr.Y
+						&& curr.X <= box.X && box.X <= curr.X+curr.W
+					)	^
+					(	//capture left
+						curr.Y <= box.Y && box.Y <= curr.Y+curr.H
+						&& curr.X <= box.X && box.X <= curr.X+curr.W
+					)	^
+					(	//capture right
+						curr.Y <= box.Y && box.Y <= curr.Y+curr.H
+						&& curr.X >= box.X && box.X+box.W >= curr.X
+					)	^
+					(	//capture right
+						curr.Y <= box.Y && box.Y <= curr.Y+curr.H
+						&& curr.X <= box.X && box.X <= curr.X+curr.W
+					)
+				) {
 					list.push(self);
+					console.log("in");
+
 					if(curr.X < select.X) {
 						select.X = curr.X;
 					}	
@@ -100,6 +139,7 @@
 					if(curr.X+curr.W > select.W) {
 						select.W = curr.X+curr.W;
 					}
+
 				}
 			});	
 			select.H -= select.Y;
