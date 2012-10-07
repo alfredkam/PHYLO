@@ -89,38 +89,25 @@
 					(	//when red box inside the cell
 						curr.Y <= box.Y && box.Y+box.H <= curr.Y+curr.H 
 				     		&& curr.X <= box.X && box.X+box.W <= curr.X+curr.W
-					) 	^
+					)	||
 					(	//capturing it when redbox area greater then selected cells
-						box.Y <= curr.Y && curr.Y+curr.H <= box.Y+box.H 
-				     		&& box.X <= curr.X && curr.X+curr.W <= box.X+box.W
-
-					)	^
-					( 	//top
-						curr.Y <= box.Y && box.Y <= curr.Y+curr.H
+						box.Y <= curr.Y && curr.Y <= box.Y+box.H 
+				     		&& box.X <= curr.X && curr.X <= box.X+box.W
+					)	||
+					(	//top left corner
+						curr.Y <= box.Y && box.Y <= curr.Y+curr.H 
 						&& curr.X <= box.X && box.X <= curr.X+curr.W
-					)	^
-					(	//bottom
-						curr.Y >= box.Y && curr.Y <= box.H+box.Y
-						&& curr.X <= box.X && box.X <= curr.X+curr.W
-					)	^
-					(	//bottom
-						curr.Y <= box.Y && box.Y <= curr.H+curr.Y
-						&& curr.X <= box.X && box.X <= curr.X+curr.W
-					)	^
-					(	//bottom
-						box.Y <= curr.H+curr.Y && box.H+box.Y <= curr.H+curr.Y
+					)	||
+					(	//top right corner
+						curr.Y <= box.Y && box.Y <= curr.Y+curr.H 
 						&& curr.X <= box.X+box.W && box.X+box.W <= curr.X+curr.W
-					)	^
-					(	//capture left
-						curr.Y <= box.Y && box.Y <= curr.Y+curr.H
-						&& curr.X <= box.X && box.X <= curr.X+curr.W
-					)	^
-					(	//capture right
-						curr.Y <= box.Y && box.Y <= curr.Y+curr.H
-						&& curr.X >= box.X && box.X+box.W >= curr.X
-					)	^
-					(	//capture right
-						curr.Y <= box.Y && box.Y <= curr.Y+curr.H
+					)	||
+					(	//top middle
+						curr.Y <= box.Y && box.Y <= curr.Y+curr.H 
+						&& box.X <= curr.X && curr.X <= box.X+box.W
+					)	||
+					(	//bottom left
+						box.Y <= curr.Y && curr.Y <= box.Y+box.H
 						&& curr.X <= box.X && box.X <= curr.X+curr.W
 					)
 				) {
@@ -162,15 +149,11 @@
 					var offsetX = e.pageX - select.X;
 					$.events.touch(document,{
 						move: function(e) {
-							if ( $.physics.shift_select(list, {
+							$.physics.shift_select(list, {
 								old : parseInt($("#chosenArea").css("left").replace(/px/,"")),
 								new : e.pageX - offsetX,
-							}) ) { 
-								$("#chosenArea").css({
-									left: e.pageX-offsetX,	
-								});
-							}
-							
+								obj : $("#chosenArea") 
+							});
 						},
 						end : function(e) {
 							$.events.untouch(document,"move");		

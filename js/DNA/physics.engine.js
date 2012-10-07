@@ -87,6 +87,11 @@
 			
 			if(max_distance == 0)
 				return;
+
+			box.obj.css({
+				left: box.new,
+			});
+			
 			
 			for(var cell in list) {
 				var prev = parseInt($(list[cell]).css("left").replace(/px/,""));		
@@ -178,6 +183,10 @@
 					}
 				}
 			}
+			/*
+			box.obj.css({
+				left : box.obj.new	
+			}); */
 			return true;
 		},
 		//determine if moving left or right 
