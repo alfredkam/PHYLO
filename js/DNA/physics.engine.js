@@ -84,12 +84,9 @@
 				}
 
 			}
-			//console.log(left+ " "+ max_distance);
 			
 			if(max_distance == 0)
 				return;
-			
-			
 			
 			for(var cell in list) {
 				var prev = parseInt($(list[cell]).css("left").replace(/px/,""));		
