@@ -85,10 +85,6 @@
 					W: parseInt($(this).css("width").replace(/px/,""))
 				};
 				//gets if in the box
-				/*
-				if(box.Y <= curr.Y && curr.Y+curr.H <= box.Y+box.H 
-				     && box.X <= curr.X && curr.X+curr.W <= box.X+box.W) {
-				*/
 				if(
 					(	//when red box inside the cell
 						curr.Y <= box.Y && box.Y+box.H <= curr.Y+curr.H 
@@ -110,6 +106,10 @@
 					(	//bottom
 						curr.Y <= box.Y && box.Y <= curr.H+curr.Y
 						&& curr.X <= box.X && box.X <= curr.X+curr.W
+					)	^
+					(	//bottom
+						box.Y <= curr.H+curr.Y && box.H+box.Y <= curr.H+curr.Y
+						&& curr.X <= box.X+box.W && box.X+box.W <= curr.X+curr.W
 					)	^
 					(	//capture left
 						curr.Y <= box.Y && box.Y <= curr.Y+curr.H
