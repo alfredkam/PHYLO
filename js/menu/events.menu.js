@@ -28,7 +28,14 @@
 			$("#login").removeClass("login-OnSelect");
 		});
 		
-		$("#language").mouseover(function() {
+		$("#language").mouseover(function(event) {
+			event.stopPropagation();
+			$("#language-list").show();
+			$(this).addClass("dropDown-OptionOnSelect");
+		});
+
+		$("#language").click(function(event) {
+			event.stopPropagation();
 			$("#language-list").show();
 			$(this).addClass("dropDown-OptionOnSelect");
 		});
@@ -57,7 +64,7 @@
 			$(".dropDownTriangle").hide();
 
 		});
-
+		
 		$("#logout").mouseover(function() {
 			$("#language-list").hide();
 			$("#language").removeClass("dropDown-OptionOnSelect");
