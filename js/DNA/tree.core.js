@@ -140,7 +140,7 @@
 			}
 			build(stage);
 			//check if tree is disjoint
-			if($.stage.current+1 <= $.stage.last && ($.stage.current-1) > 0) {
+			if($.stage.current+1 <= $.stage.last && ($.stage.current-1) >= 0) {
 				var c_tree = $.phylo.tree[$.stage.current+1];
 				if(c_tree.child == 2 )
 					build($.stage.current-1);
