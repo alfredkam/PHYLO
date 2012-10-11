@@ -50,18 +50,22 @@
 
 		$("#login").click(function() {
 			event.stopPropagation();
-			$("#login-box").show();
-			$("#login-box").css("display","inline-block");
-			$(this).addClass("login-OnSelect");
+			if($("#login-tag").html().search(/Welcome/) > -1) {
+	
+			} else {
+				$("#login-box").show();
+				$("#login-box").css("display","inline-block");
+				$(this).addClass("login-OnSelect");
 
-			
-			$("#option-list").hide();
-			$("#options-button .dropDownTriangle").hide();
-			$("#options-button").removeClass("dropDown-OnSelect");
-			
-			$("#language-list").hide();
-			$("#language").removeClass("dropDown-OptionOnSelect");
-			$(".dropDownTriangle").hide();
+				
+				$("#option-list").hide();
+				$("#options-button .dropDownTriangle").hide();
+				$("#options-button").removeClass("dropDown-OnSelect");
+				
+				$("#language-list").hide();
+				$("#language").removeClass("dropDown-OptionOnSelect");
+				$(".dropDownTriangle").hide();
+			}
 
 		});
 		
