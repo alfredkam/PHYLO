@@ -159,7 +159,7 @@
 				data : str,
 				type : "POST",
 			}).done(function(data) {
-				console.log(data);
+				//console.log(data);
 				data = data.replace("@","");
 				$.protocal.previousData = data;
 				if(DEBUG)
