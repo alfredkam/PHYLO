@@ -278,6 +278,9 @@
 			var logB = trace($.phylo.tree[stage].ancestor, b);
 
 			var score = tabulate(logA) + tabulate(logB);
+			if(stage == $.stage.current) {
+				console.log("crunched the numbers" +  logA +  logB);
+			}
 
 			if ($.phylo.tree[stage].child >= 2) {
 				score += $.fitch.scoreRecurse($.phylo.tree[stage].node1);
