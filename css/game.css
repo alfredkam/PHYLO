@@ -1,12 +1,3 @@
-#game {
-	background-color:black;
-	background: linear-gradient(-28deg, black 0%, #3D3D3D 95%);
-	background: -o-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
-	background: -ms-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
-	background: -khtml-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
-	background: -moz-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
-	background: -webkit-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
-}
 
 #gameBoard {
 	position: absolute;
