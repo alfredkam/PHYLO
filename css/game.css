@@ -184,6 +184,10 @@
 	color:white;
 	position:relative;
 }
+.gap {
+	padding-left:20px;
+}
+
 #cycle img {
 	width: 33px;
 	height:33px;
@@ -345,3 +349,5 @@
 #endGame-learnMore-content {
 	display:none;
 }
+
+

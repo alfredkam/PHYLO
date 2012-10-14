@@ -279,7 +279,12 @@
 
 			var score = tabulate(logA) + tabulate(logB);
 			if(stage == $.stage.current) {
-				console.log("crunched the numbers" +  logA +  logB);
+				if($.stage.stats == undefined)
+					$.stage.stats = {};
+				$.stage.stats.match = parseInt(logA.match) + parseInt(logB.match);
+				$.stage.stats.mismatch = parseInt(logA.mismatch)+parseInt(logB.mismatch);
+				$.stage.stats.open = parseInt(logA.open) + parseInt(logB.open);
+				$.stage.stats.extend = parseInt(logA.extend) + parseInt(logB.extend);
 			}
 
 			if ($.phylo.tree[stage].child >= 2) {

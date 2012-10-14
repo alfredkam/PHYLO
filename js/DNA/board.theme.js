@@ -36,7 +36,10 @@
 		},
 		//displays the current stats
 		stats : function() {
-			$("#statsPanel").html("Stats - Stage: "+($.stage.current+1)+"/"+($.stage.last+1));	
+			if($.stage.stats == undefined)
+				$("#statsPanel").html("Stats - Stage: "+($.stage.current+1)+"/"+($.stage.last+1));
+			else
+				$("#statsPanel").html("Stats - Stage: "+($.stage.current+1)+"/"+($.stage.last+1) + "<span class='gap'></span>Match: "+$.stage.stats.match+"<span class='gap'></span>Mismatch: "+$.stage.stats.mismatch+"<span class='gap'></span>Open: "+$.stage.stats.open+"<span class='gap'></span>Extend: "+$.stage.stats.extend);
 		},
 		//listens to events
 		startListener: function() {
