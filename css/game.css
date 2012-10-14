@@ -1,3 +1,13 @@
+#game {
+	background-color:black;
+	background: linear-gradient(-28deg, black 0%, #3D3D3D 95%);
+	background: -o-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
+	background: -ms-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
+	background: -khtml-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
+	background: -moz-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
+	background: -webkit-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
+}
+
 #gameBoard {
 	position: absolute;
 	display:inline-block;
@@ -50,9 +60,9 @@
 	position:absolute;
 	height: 32px;
 	width: 32px;
-	background-color: black;
+	background-color: white;
 	display:inline-block;
-	border: 1px #383838 solid;
+	border: 1px black solid;
 	opacity:0.8;
 }
 .bgRow {
