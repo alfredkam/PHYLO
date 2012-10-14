@@ -55,6 +55,10 @@ body {
 	background: -webkit-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
 }
 
+.customize {
+	display:none;
+}
+
 #game {
 	display:none;
 	width:1024px;
@@ -314,8 +318,8 @@ body {
 	padding:5px 10px;
 }
 .option-list:hover {
-	background-color: #E9E9E9;
-	color:#777;
+	background-color: #08c;
+	color: whitesmoke;
 }
 
 #logout:hover {
