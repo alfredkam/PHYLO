@@ -65,7 +65,6 @@ body {
 	height:100%;
 	width:100%;
 	background-color:black;
-	opacity:0.90;
 }
 .customize.customize-wrapper {
 	top:100px;
@@ -76,18 +75,76 @@ body {
 	margin-right:auto;
 	position:relative;
 }
+.customize .customize-title {
+	font-size:50px;
+	margin-bottom:5px;
+	text-align:left;
+}
 .customize .customize-tab .span2 {
-	color:black;
-	background-color:whitesmoke;
+	color:white;
+	background-color:#333;
 	font-size:20px;
 	padding: 5px 10px;
 }
+
+.customize .customize-theme .span4, .customize .customize-theme .span5 {
+	height:300px;
+}
+.colorpad {
+	height:300px;
+}
+.colorCell {
+	height:32px;
+	width:32px;
+	border:1px black solid;
+}
+
+.customize-dnaColor .row div{
+	display:inline-block;
+	text-align:center;
+	font-size: 20px;
+}
+.customize-dnaColor .customize-title, .customize-boardColor .customize-title {
+	color: black;
+	font-size: 20px;
+}
+.customize-boardColor {
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.customize-theme-onpick {
+	border:2px red solid !important;
+}
+
+.colorA {
+	background-color: #71B2E2;
+}
+
+.colorG {
+	background-color: #9932CC;
+}
+
+.colorC {
+	background-color: #008000;
+}
+
+.colorT {
+	background-color: #FFA500;
+}
 .customize .customize-body{
+	text-align:left;
 	background-color:whitesmoke;	
+	border:1px #ccc solid;
 	min-height:300px;
+}
+.customize-tab-onselect, .customize-tab a:hover {
+	background-color: whitesmoke !important; 
+	color:black !important;
 }
 
 .customize .customize-buttons {
+	color:white;
 	margin-top:10px;
 }
 

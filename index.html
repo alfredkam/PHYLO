@@ -38,22 +38,55 @@
 		<div class='wrapper'>
 			<div class='customize customize-bg'></div>
 			<div class='customize customize-wrapper'>
+				<div class='row customize-title'>
+					Customize
+				</div>
 				<div class='customize-tab'>
 					<div class='row'>
-						<div class='span2'>
-							<a>Theme</a>
-						</div>
-						<div class='span2'>
-							<a>Music</a>
-						</div>
+						<a href='javascript:void(0)' class='customize-tab-onselect span2'>Theme</a>
+						<a href='javascript:void(0)' class='span2'>Music</a>
 					</div>
 				</div>
 				<div class='customize-body'>
 					<div class='row'>
 						<div class='customize-theme'>
+							<div class='span4' >
+								<div class='customize-boardColor'>
+									<div class='row customize-title'>
+											Board Color:
+									</div>
+									<div class='row'>
+										<div class='bgCell customize-theme-cell customize-theme-onpick'>
+										</div>
+									</div>
+								</div>
+								<div class='customize-dnaColor'>
+									<div class='customize-title row'>
+										DNA Color:
+									</div>
+									<div class='row'>
+										<div class='colorCell customize-theme-cell colorA'>
+											A
+										</div>
+										<div class='colorCell customize-theme-cell colorG '>
+											G
+										</div>
+										<div class='colorCell customize-theme-cell colorC'>
+											C
+										</div>
+										<div class='colorCell customize-theme-cell colorT'>
+											T
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='span5'>
+								<canvas id='colorpad'>
 
+								</canvas>
+							</div>
 						</div>
-						<div class='customize-sound'>
+						<div class='customize-music'>
 
 						</div>	
 					</div>
