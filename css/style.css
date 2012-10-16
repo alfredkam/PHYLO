@@ -55,9 +55,43 @@ body {
 	background: -webkit-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
 }
 
+/* theme controller css */
 .customize {
 	display:none;
+	position:absolute;
 }
+.customize.customize-bg {
+	z-index:200;
+	height:100%;
+	width:100%;
+	background-color:black;
+	opacity:0.90;
+}
+.customize.customize-wrapper {
+	top:100px;
+	z-index:201;
+	text-align:center;
+	width:700px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+}
+.customize .customize-tab .span2 {
+	color:black;
+	background-color:whitesmoke;
+	font-size:20px;
+	padding: 5px 10px;
+}
+.customize .customize-body{
+	background-color:whitesmoke;	
+	min-height:300px;
+}
+
+.customize .customize-buttons {
+	margin-top:10px;
+}
+
+/* end of theme controller css */
 
 #game {
 	display:none;
