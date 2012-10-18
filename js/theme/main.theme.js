@@ -1,5 +1,4 @@
 (function() {
-
 	$("#customize").click(function(event) {
 		event.stopPropagation();
 		$(".customize").show();
@@ -11,6 +10,42 @@
 
 	$(".customize-cancel").click(function() {
 		$(".customize").hide();
+		$(".colorCell").css({
+			backgroundColor: $.cookie.read("bg-cell")
+		});
+		$(".colorA").css({
+			backgroundColor: $.cookie.read("nuc-A")
+		});
+		$(".colorG").css({
+			backgroundColor: $.cookie.read("nuc-G")
+		});
+		$(".colorC").css({
+			backgroundColor: $.cookie.read("nuc-C")
+		});
+		$(".colorT").css({
+			backgroundColor: $.cookie.read("nuc-T")
+		});
+	});
+
+	$(".customize-save").click(function() {
+		$(".customize").hide();
+		var bg = $(".colorCell").css("background-color");
+		var A = $(".colorA").css("background-color");
+		var G = $(".colorG").css("background-color");
+		var C = $(".colorC").css("background-color");
+		var T = $(".colorT").css("background-color");
+		
+		$.cookie.create("bg-cell",bg,365);
+		$.cookie.create("nuc-A",A,365);
+		$.cookie.create("nuc-G",G,365);
+		$.cookie.create("nuc-C",C,365);
+		$.cookie.create("nuc-T",T,365);
+
+		$(".nuc-A").css({backgroundColor: A});
+		$(".nuc-G").css({backgroundColor: G});
+		$(".nuc-C").css({backgroundColor: C});
+		$(".nuc-T").css({backgroundColor: T});		
+		$(".bg-cell").css({backgroundColor: bg});
 	});
 		
 	$(".customize-tab a").click(function() {
@@ -34,13 +69,49 @@
 		$(this).addClass("customize-theme-onpick");
 	});
 
+	$(".customize-theme-reset").click(function() {
+		$(".colorCell").css({ backgroundColor:"white"});
+		$(".colorA").css({backgroundColor:"#71B2E2"});
+		$(".colorG").css({backgroundColor:"#9932CC"});
+		$(".colorC").css({backgroundColor:"#008000"});
+		$(".colorT").css({backgroundColor:"#FFA500"});
+	});
 
+})();
+
+(function() {
+
+	if($.cookie.read("colorCell")) {
+		$(".colorCell").css({backgroundColor : $.cookie.read("bg-cell")});
+	} else {
+		$.cookie.create("bg-cell","white",365);
+	}	
+
+	if($.cookie.read("nuc-A")) {
+		$(".nuc-A").css({backgroundColor : $.cookie.read("nuc-A") });
+	} else {
+		$.cookie.create("nuc-A","#71B2E2",365);
+	}
+	if($.cookie.read("nuc-G")) {
+		$(".nuc-G").css({backgroundColor : $.cookie.read("nuc-G")});
+	} else {
+		$.cookie.create("nuc-G","#9932CC",365);
+	}
+	if($.cookie.read("nuc-C")) {
+		$(".nuc-C").css({backgroundColor : $.cookie.read("nuc-C")});
+	} else {
+		$.cookie.create("nuc-C","#008000",365);	
+	}
+	if($.cookie.read("nuc-T")) {
+		$(".nuc-T").css({backgroundColor : $.cookie.read("nuc-T")});
+	} else {
+		$.cookie.create("nuc-T","#FFA500",365);
+	}
 })();
 
 
 (function() {
-		//color pad code from http://www.html5canvastutorials.com/labs/html5-canvas-color-picker/
-	
+		//color pad code from http://www.html5canvastutorials.com/labs/html5-canvas-color-picker/  ### modified to suit the requirements for this page
             function getMousePos(canvas, evt){
                 // get canvas position
                 var obj = canvas;

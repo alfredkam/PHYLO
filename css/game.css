@@ -65,6 +65,19 @@
 	height:29px;
 }
 
+.nuc-A {
+	background-color:#71B2E2; 
+}
+.nuc-G {
+	background-color: #9932CC;
+}
+.nuc-C {
+	background-color: #008000;
+}
+.nuc-T {
+	background-color: #FFA500;
+}
+
 .red-line {
 	display:none;
 	background-color: #EF4136;

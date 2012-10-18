@@ -103,6 +103,10 @@ body {
 .customize .customize-theme .span4, .customize .customize-theme .span5 {
 	height:300px;
 }
+.colorCell {
+	background-color: white;
+	opacity:0.2 !important;
+}
 .colorpad {
 	height:300px;
 }
