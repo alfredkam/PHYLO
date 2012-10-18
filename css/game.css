@@ -54,7 +54,7 @@
 	background-color: white;
 	display:inline-block;
 	border: 1px black solid;
-	opacity:0.8;
+	opacity:0.2;
 }
 .bgRow {
 	position:relative;
@@ -150,9 +150,7 @@
 	visibility : hidden;
 }
 .blocked {
-	opacity: 0.6;
-	/*visibility:hidden;
-	*/
+	opacity: 0.3;
 }
 #ancestorSeq {
 	position:absolute;
