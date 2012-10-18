@@ -56,9 +56,22 @@ body {
 }
 
 /* theme controller css */
+/* for now hidden for production */
+.tag-music {
+	display:none;
+}
+/* end of hidden */
+
+
 .customize {
 	display:none;
 	position:absolute;
+}
+.customize div {
+	opacity:1.0 !important;
+}
+.customize-music {
+	display:none;
 }
 .customize.customize-bg {
 	z-index:200;

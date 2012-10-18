@@ -54,7 +54,6 @@
 		//events for the end game messages
 		//new game or replay game
 		events : function() {
-			
 			$("#endGame-learnMore-content").hide();
 		
 			$("#endGame-learnMore-tag button").unbind().click(function() {
@@ -62,20 +61,8 @@
 
 				});
 			});
-			
-						
-
 
 			$("#endGame-new button").unbind().click(function() {
-				/*
-				$.main.clear();
-				$("#endGame").fadeOut();
-				$("#tree").html("");
-				$("#gameBoard").html("<img src='img/loading.gif'/>");
-				$.protocal.request();
-				$("#countDown-text").html("<img src='img/loading.gif'/>");
-				$("#countDown").fadeIn();
-				*/
 				window.location.reload(true);
 				window.location.hash = "#!play";
 			});
@@ -94,8 +81,10 @@
 		runAway : function() {
 			$("#runaway").unbind().click(function() {
 				$.helper.popUp("You sure you want to bail out from this puzzle?", function(status) {
-					if(status == "ok")
+					if(status == "ok") {
 						$.endGame.bail();
+						$.timer.active = false;
+					}
 				});
 			});	
 		}

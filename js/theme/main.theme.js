@@ -2,7 +2,6 @@
 
 	$("#customize").click(function(event) {
 		event.stopPropagation();
-		
 		$(".customize").show();
 		$(".customize-bg").css({
 			width: document.width,
@@ -19,6 +18,13 @@
 			$(this).removeClass("customize-tab-onselect");
 		});	
 		$(this).addClass("customize-tab-onselect");
+		if($(this).hasClass("tag-theme")) {
+			$(".customize-theme").show();
+			$(".customize-music").hide();
+		} else {
+			$(".customize-theme").hide();
+			$(".customize-music").show();
+		}
 	});
 
 	$(".customize-theme-cell").click(function() {
@@ -27,6 +33,7 @@
 		});
 		$(this).addClass("customize-theme-onpick");
 	});
+
 
 })();
 
