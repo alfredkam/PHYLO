@@ -28,7 +28,6 @@
 	});
 
 	$(".customize-save").click(function() {
-		$(".customize").hide();
 		var bg = $(".colorCell").css("background-color");
 		var A = $(".colorA").css("background-color");
 		var G = $(".colorG").css("background-color");
@@ -46,6 +45,7 @@
 		$(".nuc-C").css({backgroundColor: C});
 		$(".nuc-T").css({backgroundColor: T});		
 		$(".bg-cell").css({backgroundColor: bg});
+		$(".customize").hide();
 	});
 		
 	$(".customize-tab a").click(function() {
