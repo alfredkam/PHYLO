@@ -32,7 +32,6 @@
 
 		},
 		learnMore : function(json) {
-			console.log(json);
 			var context = "";
 			var endGameContext = lang.body.play.gameselect["end of game"];
 			context+= endGameContext["field 5"].replace("***","<label class='end-color'>"+$.phylo.id+"</label>") +
@@ -40,6 +39,7 @@
 						endGameContext["field 7"].replace("***","<label class='end-color'>"+json.best_score+"</label>")+"<br>"+
 						endGameContext["field 8"].replace("***","<label class='end-color'>"+Math.round(json.running_score/json.play_count)+"</label>") +"<br><br>"+
 						endGameContext["field 9"].replace("***","<label class='end-color'>"+json.highscore_user+"</label>");
+			return context;
 
 		},
 		//scores the game
