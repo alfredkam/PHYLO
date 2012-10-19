@@ -17,7 +17,7 @@ window.guest = "TEST DATA";
 				$.phylo = {
 					seqLen : 25,
 					x : 34,
-					offSet : $("#gameBoard").css("left").replace(/px/,""),
+					offSet : 0,//$("#gameBoard").css("left").replace(/px/,""),
 					height : $("#tree").css("height").replace(/px/,"")
 				};
 				$.lang.init(function() {

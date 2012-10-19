@@ -1,10 +1,9 @@
 
 #gameBoard {
-	position: absolute;
+	position: relative;
 	display:inline-block;
-	left: 183px;
 	width: 841px;
-	top: 0px;
+	top: -335px;
 	padding-top:20px;
 }
 #bg {
@@ -369,4 +368,9 @@
 	display:none;
 }
 
-
+/* css for score */
+#score {
+	position:relative;
+	display:block;
+}
+/* end of score */

@@ -124,7 +124,7 @@
 		//calculates the finger position
 		getFingerPos : function(e) {
 			var canvas = document.getElementById("game");
-			var x = e.pageX - canvas.offsetLeft;
+			var x = e.pageX - canvas.offsetLeft-185;
 			var y = e.pageY - canvas.offsetTop;
 			return { pageX : x , pageY: y}		
 		},
