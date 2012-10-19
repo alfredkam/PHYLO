@@ -116,8 +116,8 @@
 				var tree = $.phylo.tree[stage];					
 				//console.log(tree);
 				if(tree.child == 0) {
-					data+="<div class='ancestorImg' style='top:"+(tree.node1)*34+"px'><img src=''/><img src='"+self.getImg(tree.p1)+"'/></div>";	
-					data+="<div class='ancestorImg' style='top:"+(tree.node2)*34+"px'><img src=''/><img src='"+self.getImg(tree.p2)+"'/></div>";	
+					data+="<div class='ancestorImg' style='top:"+(tree.node1)*34+"px'><img src='"+self.getImg(tree.p1)+"'/></div>";	
+					data+="<div class='ancestorImg' style='top:"+(tree.node2)*34+"px'><img src='"+self.getImg(tree.p2)+"'/></div>";	
 					data+="<div class='nodeImg' id='node"+stage+"' style='left:"+(tree.depth)*34+"px;top:"+((tree.node1+.5)*34+7)+"px'></div>";
 					data+=buildAngle(tree);
 					return;
