@@ -107,24 +107,24 @@
 		},
 		//builds json alignments of the current score
 		getJsonAlignments : function() {
-			var grid = $.phylo.domCache;	
+			var self = this;
+			var track = $.sequence.track;
 			var str = "[";
-			for(var i=0;i<grid.length;i++) {
-				str+='"';
-				for(var j=0;j<grid[0].length;j++) {
-					if(grid[i][j] == "x") {
+			for(var i=0;i<track.length;i++) {
+				str+='{"';
+				for(var j=0;j<track[i].length;j++) {
+					if(track[i][j] == "x")
 						str+="-";
-					} else {
-						try{
-						str+= this.convertColor(grid[i][j].backgroundColor);
-						} catch(err) {};
-					}
+					else if(i!=0 && track[i][j] == 0)
+						str+="";
+					else
+						str+=self.convertColor($("#"+track[i][j]).css("backgroundColor"));
 				}
-				str+='"';
-				if(i<grid.length-2)
+				str+='"}';
+				if(i<track.length-2)
 					str+=',';
 			}
-			return '{ "alignments" : '+str+']}';
+			return '{"alignments" : '+str+']}';
 		},
 		//translates the grid color to its respected nucletide
 		convertColor : function(color) {
@@ -143,6 +143,14 @@
 			if(color == "rgb(113, 178, 226)")
 				return "A";
 			if(color == "rgb(255, 165, 0)")
+				return "T";
+			if(color == $(".nuc-A").css("backgroundColor"))
+				return "A";
+			if(color == $(".nuc-G").css("backgroundColor"))
+				return "G";
+			if(color == $(".nuc-C").css("backgroundColor"))	
+				return "C";
+			if(color == $(".nuc-T").css("backgroundColor"))
 				return "T";
 			return null;
 		},

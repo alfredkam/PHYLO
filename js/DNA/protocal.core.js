@@ -1,6 +1,6 @@
 (function() {
 	var doc = document, win = window;
-	var url = "../phpdb/phyloDB2.php";
+	var url = "../phpdb/phyloExpertDB.php";
 	$.protocal = {
 		//for login
 		login : function(username, password, fn) {
@@ -56,7 +56,6 @@
 		},
 		//sends highscroe to server
 		sendHighScore : function() {
-
 			var self = this;
 			var data = "mode=4&id="+$.phylo.id+"&user="+window.guest+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.bestScore;
 

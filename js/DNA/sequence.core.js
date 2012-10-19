@@ -20,7 +20,7 @@
 			}	
 			return reArr;
 		},
-		//creates a dom cache of the grids.
+		//creates a dom cache of the grids but only contains style
 		createCache : function() {
 			var arr = [];		
 			for(var i=0, y=10, x = $.phylo.seqLen; i<y*x;i++) {
@@ -30,6 +30,19 @@
 			$(".sequence").each(function() {
 				var id = $(this).attr("id");
 				arr[id] = document.getElementById(id).style;
+			});
+			return arr;
+		},
+		//creates a dom cache of the grid but includes parent
+		createCache2 : function() {
+			var arr = [];		
+			for(var i=0, y=10, x = $.phylo.seqLen; i<y*x;i++) {
+				arr.push(0);
+			}
+
+			$(".sequence").each(function() {
+				var id = $(this).attr("id");
+				arr[id] = document.getElementById(id);
 			});
 			return arr;
 		},

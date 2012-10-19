@@ -60,6 +60,7 @@ window.guest = "TEST DATA";
 				var random = $.sequence.randomize($.sequence.track);
 				$.sequence.prepareTracking(random);
 				$.phylo.domCache = $.sequence.createCache();
+				$.phylo.domCache2 = $.sequence.createCache2();
 				$.physics.snapRandom();
 
 				if(DEBUG) {
