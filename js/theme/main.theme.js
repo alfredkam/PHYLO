@@ -11,7 +11,7 @@
 	$(".customize-cancel").click(function() {
 		$(".customize").hide();
 		$(".colorCell").css({
-			backgroundColor: $.cookie.read("bg-cell")
+			backgroundColor: $.cookie.read("bgCell")
 		});
 		$(".colorA").css({
 			backgroundColor: $.cookie.read("nuc-A")
@@ -34,7 +34,7 @@
 		var C = $(".colorC").css("background-color");
 		var T = $(".colorT").css("background-color");
 		
-		$.cookie.create("bg-cell",bg,365);
+		$.cookie.create("bgCell",bg,365);
 		$.cookie.create("nuc-A",A,365);
 		$.cookie.create("nuc-G",G,365);
 		$.cookie.create("nuc-C",C,365);
@@ -44,7 +44,7 @@
 		$(".nuc-G").css({backgroundColor: G});
 		$(".nuc-C").css({backgroundColor: C});
 		$(".nuc-T").css({backgroundColor: T});		
-		$(".bg-cell").css({backgroundColor: bg});
+		$(".bgCell").css({backgroundColor: bg});
 		$(".customize").hide();
 	});
 		
@@ -82,9 +82,9 @@
 (function() {
 
 	if($.cookie.read("colorCell")) {
-		$(".colorCell").css({backgroundColor : $.cookie.read("bg-cell")});
+		$(".colorCell").css({backgroundColor : $.cookie.read("bgCell")});
 	} else {
-		$.cookie.create("bg-cell","white",365);
+		$.cookie.create("bgCell","white",365);
 	}	
 
 	if($.cookie.read("nuc-A")) {
