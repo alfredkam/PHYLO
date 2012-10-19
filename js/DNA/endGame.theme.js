@@ -38,7 +38,7 @@
 			context = endGameContext["field 5"].replace("***","<label class='end-color'>"+$.phylo.id+"</label>") +
 						" <label class='end-color'>"+json.disease_link+"</label>.  "+endGameContext["field 6"].replace("***","<label class='end-color'>"+json.play_count+"</label>").replace(".",".<br>").replace("***","<label class='end-color'>"+json.fail_count+"</label>")+
 						endGameContext["field 7"].replace("***","<label class='end-color'>"+json.best_score+"</label>")+" "+
-						endGameContext["field 8"].replace("***","<label class='end-color'>"+Math.round(json.running_score/json.play_count)+"</label>") +" "+
+						endGameContext["field 8"].replace("***","<label class='end-color'>"+Math.round(json.running_score/json.play_count)+"</label>") +" <br>"+
 						endGameContext["field 9"].replace("***","<label class='end-color'>"+json.highscore_user+"</label>");
 			} catch (err) {
 				context = "This disease is related to disease etc, you are helping...etc";
