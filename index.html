@@ -35,6 +35,85 @@
 				</div>
 			</div>
 		</div>
+		<div class='wrapper'>
+			<div class='customize customize-bg'></div>
+			<div class='customize customize-wrapper'>
+				<div class='row customize-title'>
+					Customize
+				</div>
+				<div class='customize-tab'>
+					<div class='row'>
+						<a href='javascript:void(0)' class='customize-tab-onselect span2 tag-theme'>Theme</a>
+						<a href='javascript:void(0)' class='span2 tag-music'>Music</a>
+					</div>
+				</div>
+				<div class='customize-body'>
+					<div class='row'>
+						<div class='customize-theme'>
+							<div class='span4' >
+								<div class='customize-boardColor'>
+									<div class='row customize-title'>
+											Board Color:
+									</div>
+									<div class='row'>
+										<div class='colorCell customize-theme-cell customize-theme-onpick'>
+										</div>
+									</div>
+								</div>
+								<div class='customize-dnaColor'>
+									<div class='customize-title row'>
+										DNA Color:
+									</div>
+									<div class='row'>
+										<div class='colorCell customize-theme-cell colorA'>
+											A
+										</div>
+										<div class='colorCell customize-theme-cell colorG '>
+											G
+										</div>
+										<div class='colorCell customize-theme-cell colorC'>
+											C
+										</div>
+										<div class='colorCell customize-theme-cell colorT'>
+											T
+										</div>
+									</div>
+								</div>
+								<div class='row'>
+									<br><br>
+									<a href='javascript:void(0);' class='customize-theme-reset btn-danger btn'>
+										Restore Default	
+									</a>	
+								</div>
+							</div>
+							<div class='span5'>
+								<canvas id='colorpad'>
+
+								</canvas>
+							</div>
+						</div>
+						<div class='customize-music'>
+							<div class='row customize-title'>
+								Current Music Theme	
+							</div>
+							<div class='row'>
+
+							</div>
+						</div>	
+					</div>
+				</div>
+				<div class='customize-buttons'>
+					<div class='row'>
+						<a href='javascript:void(0)' class='customize-save btn btn-primary offset4 span2'>
+							Save
+						</a>
+						<a href='javascript:void(0)' class='customize-cancel btn btn-primary span2'>
+							Cancel
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div id='wrapper'>
 			<div id='top-panel'>
 				<div id='logo' class='span3'>PHYLO | Citizen Science</div>
@@ -105,6 +184,7 @@
 									</div>			
 								</div>
 							</div>
+							<div id='customize' class='option-list'>Customize</div>
 							<div id='logout' class='option-list'>Logout</div>
 						</div>
 					</div>	
@@ -155,7 +235,7 @@
 		<!-- validation scripts -->
 		<script src='js/validation/cookie.validation.js' type='text/javascript'></script>
 		<script src='js/validation/login.validation.js' type='text/javascript'></script>
-		
+
 		<!-- DNA modules -->
 		<script src='js/DNA/helper.core.js' type='text/javascript'></script>
 		<script src='js/menu/tailor.menu.js' type='text/javascript'></script>
@@ -184,6 +264,9 @@
 		<!-- RNA module -->
 		<script src='js/RNA/main.core.js' type='text/javascript'></script>		
 		<script src='js/RNA/message.core.js' type='text/javascript'></script>		
+
+		<!-- theming module -->
+		<script src='js/theme/main.theme.js' type='text/javascript'></script>		
 	
 		<!-- menu / page loading modules -->
 		<script src='js/page/main.page.js' type='text/javascript'></script>

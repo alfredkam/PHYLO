@@ -58,7 +58,8 @@
 					if(c !=  "_") {
 						this.posList[i*$.phylo.seqLen+counter] = counter;	
 						this.nucleotide[i*$.phylo.seqLen+counter] = seq[i].charAt(j);
-						str+="<div class='sequence' id='"+(i*25+counter)+"' style='left:"+(this.calcPos(j))+"px;background-color:"+this.color(this.translate(c))+"'></div>";
+						//str+="<div class='sequence "+ this.colorTag(this.translate(c))+"' id='"+(i*25+counter)+"' style='left:"+(this.calcPos(j))+"px;background-color:"+this.color(this.translate(c))+"'></div>";
+						str+="<div class='sequence "+ this.colorTag(this.translate(c))+"' id='"+(i*25+counter)+"' style='left:"+(this.calcPos(j))+"px;'></div>";
 						counter++;
 					}
 				}	
@@ -71,8 +72,22 @@
 			} 
 			$("#gameBoard").append("<div id='movingParts'>"+str+"<div>");
 		},
+		//gets the color tag of respected nucletide 
+		colorTag : function(x) {	
+			if(x == 1) 
+				return "nuc-A";
+			if(x == 2)
+				return "nuc-G";
+			if(x == 3)
+				return "nuc-C";
+			if(x == 4)
+				return "nuc-T";
+		},		
+		//gets the 
 		//sets the color for the nucletide
 		color : function(x) {
+			return colorTag(x);
+		/*
 			switch(x) {
 				case 1: 
 					color = "#71B2E2";
@@ -91,6 +106,7 @@
 					break;
 			}
 			return color;
+			*/
 		},
 		//determines the color for the nucletide
 		translate : function(x) {

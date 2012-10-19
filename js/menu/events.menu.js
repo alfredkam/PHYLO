@@ -39,6 +39,7 @@
 			$("#language-list").show();
 			$(this).addClass("dropDown-OptionOnSelect");
 		});
+		
 
 		/*
 		$("#logo").mouseover(function(event) {
@@ -70,6 +71,11 @@
 		});
 		
 		$("#logout").mouseover(function() {
+			$("#language-list").hide();
+			$("#language").removeClass("dropDown-OptionOnSelect");
+			$(".dropDownTriangle").hide();
+		});
+		$("#customize").mouseover(function() {
 			$("#language-list").hide();
 			$("#language").removeClass("dropDown-OptionOnSelect");
 			$(".dropDownTriangle").hide();

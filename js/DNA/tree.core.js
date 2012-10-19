@@ -156,7 +156,7 @@
 					var s = $.phylo.tree[id].ancestor[i];
 					var sequence = $.sequence;
 					if(s != "x" && s != 0) 
-						seq+="<div class='ancestor' style='background-color:"+sequence.color(sequence.translate(s))+";left:"+$.sequence.calcPos(i)+"px;'></div>";	
+						seq+="<div class='ancestor "+$.sequence.colorTag($.sequence.translate(s))+"' style='left:"+$.sequence.calcPos(i)+"px;'></div>";	
 				}
 				
 				$("#ancestorSeq").html(seq);
