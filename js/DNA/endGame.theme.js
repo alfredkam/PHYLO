@@ -34,7 +34,7 @@
 		learnMore : function(json) {
 			console.log(json);
 			var context = "";
-			var endGameContext = lang[0].body.play.gameselect["end of game"];
+			var endGameContext = lang.body.play.gameselect["end of game"];
 			context+= endGameContext["field 5"].replace("***","<label class='end-color'>"+$.phylo.id+"</label>") +
 						" <label class='end-color'>"+json.disease_link+"</label>.<br><br>"+endGameContext["field 6"].replace("***","<label class='end-color'>"+json.play_count+"</label>").replace(".",".<br>").replace("***","<label class='end-color'>"+json.fail_count+"</label>") +"<br><br>"+
 						endGameContext["field 7"].replace("***","<label class='end-color'>"+json.best_score+"</label>")+"<br>"+
