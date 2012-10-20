@@ -112,8 +112,6 @@
 					)
 				) {
 					list.push(self);
-					console.log("in");
-
 					if(curr.X < select.X) {
 						select.X = curr.X;
 					}	
