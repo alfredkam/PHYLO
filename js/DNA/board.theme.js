@@ -25,7 +25,6 @@
 		//updates and displays the best score
 		bestScore : function(x) {
 			$("#bestScore").html("Best: "+ x);
-			
 			if($.stage.current == $.stage.last) {
 				if(x > $.sequence.par) 
 					$.protocal.sendHighScore();
@@ -71,7 +70,7 @@
 				}
 			});
 			//new scoring
-			$.html5.score.init();
+			//$.html5.score.init();
 		},
 		//tinkers the css on the star
 		approve : function() {
