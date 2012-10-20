@@ -10,7 +10,7 @@
 				//var msg = "<b>Congratulations!</b> You have solved the puzzle";
 				var msg = window.lang.body.play.gameselect["end of game"]["field 3"];
 				$("#endGame-text").html(msg);
-				$("#endGame-learnMore-content").html("This disease is related to diseases etc, you are helping...etc");
+				$("#endGame-learnMore-content").html(self.learnMore(data));
 				$("#endGame").fadeIn();
 			});
 
@@ -26,20 +26,24 @@
 				$("#endGame-text").html(msg);
 				//$("#endGame-learnMore-content").html("This disease is related to diseases etc, you are helping...etc");
 				console.log(data);
-				$("#endGame-learnMore-cotent").html(self.learnMore(data));
+				$("#endGame-learnMore-content").html(self.learnMore(data));
 				$("#endGame").fadeIn();
 			});
 
 		},
 		learnMore : function(json) {
-			console.log(json);
 			var context = "";
-			var endGameContext = lang[0].body.play.gameselect["end of game"];
-			context+= endGameContext["field 5"].replace("***","<label class='end-color'>"+f.roundID+"</label>") +
-						" <label class='end-color'>"+json.disease_link+"</label>.<br><br>"+endGameContext["field 6"].replace("***","<label class='end-color'>"+json.play_count+"</label>").replace(".",".<br>").replace("***","<label class='end-color'>"+json.fail_count+"</label>") +"<br><br>"+
-						endGameContext["field 7"].replace("***","<label class='end-color'>"+json.best_score+"</label>")+"<br>"+
-						endGameContext["field 8"].replace("***","<label class='end-color'>"+Math.round(json.running_score/json.play_count)+"</label>") +"<br><br>"+
+			try {
+			var endGameContext = lang.body.play.gameselect["end of game"];
+			context = endGameContext["field 5"].replace("***","<label class='end-color'>"+$.phylo.id+"</label>") +
+						" <label class='end-color'>"+json.disease_link+"</label>.  "+endGameContext["field 6"].replace("***","<label class='end-color'>"+json.play_count+"</label>").replace(".",".<br>").replace("***","<label class='end-color'>"+json.fail_count+"</label>")+
+						endGameContext["field 7"].replace("***","<label class='end-color'>"+json.best_score+"</label>")+" "+
+						endGameContext["field 8"].replace("***","<label class='end-color'>"+Math.round(json.running_score/json.play_count)+"</label>") +" <br>"+
 						endGameContext["field 9"].replace("***","<label class='end-color'>"+json.highscore_user+"</label>");
+			} catch (err) {
+				context = "This disease is related to disease etc, you are helping...etc";
+			} 
+			return context;
 
 		},
 		//scores the game

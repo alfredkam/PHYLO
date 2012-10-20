@@ -115,7 +115,7 @@
 	});
 	
 	//menu hyperlink listener
-	$("a").click(function() {
+	$("a.isTab").click(function() {
 		if($(this).attr("href") == "javascript:void(0);") {
 			var innerSelf = this;
 			if($.timer.active == true) {

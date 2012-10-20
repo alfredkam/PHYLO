@@ -11,7 +11,7 @@ All versions contains an offline mode with dummy data for development
 
 If you are using chrome for development, you will need to execute this in your terminal : 
 
-	open /Applications/Google\ Chrome.app --args --allow-file-access-from-files
+	open /Applications/Google\ Chrome.app --args --allow-file-access-from-files --allow-access-control-allow-origin
 
 This will tackle the cross domain issue when working locally. 
 

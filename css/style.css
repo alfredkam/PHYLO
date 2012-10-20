@@ -62,6 +62,11 @@ body {
 }
 /* end of hidden */
 
+a.btn {
+	color:white;
+	font-weight:bold;
+}
+
 
 .customize {
 	display:none;

@@ -317,6 +317,13 @@
 }
 #endGame-learnMore-content {
 	border:1px solid #333;
+	line-height:14px !important;
+}
+
+#endGame-learnMore-content label {
+	display:inline;
+	margin-bottom:0;
+	color: red;
 }
 
 #countDown {
