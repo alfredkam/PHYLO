@@ -509,11 +509,6 @@
 					if(100+70*i <eX && eX < 150+70*i  &&
 						150 < eY && eY< 200) {
 						$("#draw").hide();		
-						/*$("#frame").show();
-						var hash = window.location.hash.toUpperCase();
-						hash = hash.replace('#',"").toLowerCase();
-						document.getElementById('frame').src = 'http://phylo.cs.mcgill.ca/js/index2.html?lang='+hash+'&type=random&random='+i+'#home';
-						*/
 						$("#menu").hide();
 						$.main.init({
 							type: "random",

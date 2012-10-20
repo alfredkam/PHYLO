@@ -1,12 +1,20 @@
 (function() {
 	$.menu = {
-		settings : {
-			init : function() {
-
-			},
-		}
+		disableMenu : function() {
+				$("#draw").hide();
+				$("#menu").hide();
+				$.main.init({
+					type: "random",
+					num: 3,		
+				});	
+		},
 	};
 	$(document).ready(function() {
-		$.menu.settings.init();
+		if(window.DEV.disableMenu) {
+			window.setTimeout(function() {
+				$.menu.disableMenu();
+			},500);
+		}
 	});
 })();
+

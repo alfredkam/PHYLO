@@ -20,6 +20,7 @@
 		score : function(x) {
 			$.phylo.currentScore = x;
 			$("#userScore").html("Score: "+ x);
+			$.html5.score.setScore(x);
 		},
 		//updates and displays the best score
 		bestScore : function(x) {
@@ -69,6 +70,8 @@
 					$.stage.round();
 				}
 			});
+			//new scoring
+			$.html5.score.init();
 		},
 		//tinkers the css on the star
 		approve : function() {
