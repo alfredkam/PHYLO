@@ -15,9 +15,10 @@
 			var c = canvas.getContext("2d");
 			c.globalAlpha = 1;			
 			c.clearRect(0,0,self.settings.wBox,self.settings.hBox);
+			this.setBorder();
+			this.drawCurrent(c);
 			this.drawPar(c);
 			this.drawBest(c);
-			this.drawCurrent(c);
 			this.drawScale(c);
 		},
 		drawScale : function(c) {
@@ -29,7 +30,7 @@
 					if(self.midPoint == 4) {
 						change = (self.midPoint-i)*5;
 					} else {
-						change = (self.midPoint-i)*1.5;
+						change = (self.midPoint-i)*3;
 					}
 					c.moveTo(self.settings.w*i,0+change);
 					c.lineTo(self.settings.w*i,50-change);
@@ -79,10 +80,9 @@
 				}
 			}
 		},
-		drawPar : function(c) {
+		setBorder : function() {
 			var par = $.sequence.par;
 			var self = this;
-
 			if(par < 10) {
 				self.maxBorder = 30;
 				self.midPoint = 8; 
@@ -92,11 +92,15 @@
 				self.midPoint = 4;
 				self.minBorder = -30;
 			}
-
+		},
+		drawPar : function(c) {
+			var par = $.sequence.par;
+			var self = this;
 			var dist;
 			c.fillStyle = "#BD362F";
 			dist = self.getDistance(par);
-			c.fillRect(self.settings.w*self.midPoint,5,dist,5);
+			c.fillRect(self.settings.w*self.midPoint,8,dist,2);
+			c.fillRect(self.settings.w*self.midPoint+dist+((dist<0)?0:-2),2,2,7);
 		},
 		drawBest : function(c) {
 			var best = $.phylo.bestScore;				
@@ -106,7 +110,8 @@
 			var self = this;
 			dist = self.getDistance(best);
 			c.fillStyle = "#FFD700";
-			c.fillRect(self.settings.w*self.midPoint,35,dist,5);
+			c.fillRect(self.settings.w*self.midPoint,35,dist,2);
+			c.fillRect(self.settings.w*self.midPoint+dist+((dist<0)?0:-2),35,2,10);
 		},
 		drawCurrent : function(c) {
 			var curr = $.phylo.currentScore;
