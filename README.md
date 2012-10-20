@@ -1,11 +1,15 @@
 PHYLO
 =====
 
-PHYLO - DNA in Beta
+PHYLO nightly build can be found at 
 http://phylo.cs.mcgill.ca/nightly/index.html#!play
 
 PHYLO - RNA in pre-Alpha
 http://phylo.cs.mcgill.ca/nightly/index.html#!rna
+
+Master Branch contains the most recent experimental release
+
+Production Branch contains the most recent stable release
 
 All versions contains an offline mode with dummy data for development 
 
