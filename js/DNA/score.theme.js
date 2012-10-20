@@ -45,7 +45,7 @@
 			c.fillText("Best",16, 50);
 			c.font = "20pt Helvetica";
 			c.fillStyle = self.settings.current;
-			c.fillText($.phylo.currentScore,780,35);
+			c.fillText($.phylo.currentScore,770,35);
 			c.closePath();
 		},
 		drawScale : function(c) {
@@ -96,7 +96,12 @@
 			if(score < 0) {
 				var max = self.settings.w*self.midPoint;  
 				var min = self.settings.w*1;
-				return -1*(max-min)/(Math.abs(self.minBorder))*Math.abs(score);						
+				var x = -1*(max-min)/(Math.abs(self.minBorder))*Math.abs(score);						
+				if( -1*(max-min) > x ) {
+					return -1*(max-min) - 10;
+				} else 
+					return x;
+					
 			} else if(score >= 0 ) {
 				var min = self.settings.w*self.midPoint;
 				var max = self.settings.w*12;
