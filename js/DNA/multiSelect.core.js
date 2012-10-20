@@ -63,7 +63,7 @@
 		capture : function() {
 			var box = {
 				X: parseInt($("#selectBox").css("left").replace(/px/,"")) - parseInt($("#tree").css("width").replace(/px/,""))-5,
-				Y: parseInt($("#selectBox").css("top").replace(/px/,"")) - 20,
+				Y: parseInt($("#selectBox").css("top").replace(/px/,"")) - 70,
 				H: parseInt($("#selectBox").css("height").replace(/px/,"")),
 				W: parseInt($("#selectBox").css("width").replace(/px/,"")),
 			};	

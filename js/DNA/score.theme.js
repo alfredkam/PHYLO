@@ -4,7 +4,10 @@
 		settings : {
 			wBox: 827,
 			hBox: 50,
-			w : 827/12.5,
+			w : 827/13.5,
+			current : "#FF0000",
+			par : "#FFB6C1",
+			best : "#66CD00",
 		},
 		setScore : function(newScore) {
 			this.draw(newScore);			
@@ -23,22 +26,26 @@
 			this.drawKey(c);
 		},
 		drawKey : function(c) {
+			var self = this;
 			c.beginPath();	
-			c.fillStyle = "#BD362F";
+			c.fillStyle = self.settings.par;
 			c.fillRect(0,15,10,5);
 			c.font = "9pt Helvetica";
 			c.fillStyle = "white";
 			c.fillText("Par",16, 20);
-			c.fillStyle = "#71B2E2";
+			c.fillStyle = self.settings.current;
 			c.fillRect(0,30,10,5);	
 			c.font = "9pt Helvetica";
 			c.fillStyle = "white";
 			c.fillText("Score", 16, 35);
-			c.fillStyle = "#FFD700";
+			c.fillStyle = self.settings.best;
 			c.fillRect(0,45,10,5);
 			c.font = "9pt Helvetica";
 			c.fillStyle = "white";
 			c.fillText("Best",16, 50);
+			c.font = "20pt Helvetica";
+			c.fillStyle = self.settings.current;
+			c.fillText($.phylo.currentScore,780,35);
 			c.closePath();
 		},
 		drawScale : function(c) {
@@ -118,7 +125,7 @@
 			var self = this;
 			var dist;
 			c.beginPath();
-			c.fillStyle = "#BD362F";
+			c.fillStyle = self.settings.par;
 			dist = self.getDistance(par);
 			c.fillRect(self.settings.w*self.midPoint,8,dist,2);
 			c.fillRect(self.settings.w*self.midPoint+dist+((dist<0)?0:-2),2,2,7);
@@ -132,7 +139,7 @@
 			var self = this;
 			dist = self.getDistance(best);
 			c.beginPath();
-			c.fillStyle = "#FFD700";
+			c.fillStyle = self.settings.best;
 			c.fillRect(self.settings.w*self.midPoint,35,dist,2);
 			c.fillRect(self.settings.w*self.midPoint+dist+((dist<0)?0:-2),35,2,10);
 			c.closePath();
@@ -143,7 +150,7 @@
 			var self = this;
 			dist = self.getDistance(curr);
 			c.beginPath();
-			c.fillStyle = "#71B2E2";
+			c.fillStyle = self.settings.current;
 			c.fillRect(self.settings.w*self.midPoint,10,dist,25);
 			c.closePath();
 		},
