@@ -20,6 +20,26 @@
 			this.drawPar(c);
 			this.drawBest(c);
 			this.drawScale(c);
+			this.drawKey(c);
+		},
+		drawKey : function(c) {
+			c.beginPath();	
+			c.fillStyle = "#BD362F";
+			c.fillRect(0,15,10,5);
+			c.font = "9pt Helvetica";
+			c.fillStyle = "white";
+			c.fillText("Par",16, 20);
+			c.fillStyle = "#71B2E2";
+			c.fillRect(0,30,10,5);	
+			c.font = "9pt Helvetica";
+			c.fillStyle = "white";
+			c.fillText("Score", 16, 35);
+			c.fillStyle = "#FFD700";
+			c.fillRect(0,45,10,5);
+			c.font = "9pt Helvetica";
+			c.fillStyle = "white";
+			c.fillText("Best",16, 50);
+			c.closePath();
 		},
 		drawScale : function(c) {
 			var self = this;
@@ -97,10 +117,12 @@
 			var par = $.sequence.par;
 			var self = this;
 			var dist;
+			c.beginPath();
 			c.fillStyle = "#BD362F";
 			dist = self.getDistance(par);
 			c.fillRect(self.settings.w*self.midPoint,8,dist,2);
 			c.fillRect(self.settings.w*self.midPoint+dist+((dist<0)?0:-2),2,2,7);
+			c.closePath();
 		},
 		drawBest : function(c) {
 			var best = $.phylo.bestScore;				
@@ -109,17 +131,21 @@
 			var dist;
 			var self = this;
 			dist = self.getDistance(best);
+			c.beginPath();
 			c.fillStyle = "#FFD700";
 			c.fillRect(self.settings.w*self.midPoint,35,dist,2);
 			c.fillRect(self.settings.w*self.midPoint+dist+((dist<0)?0:-2),35,2,10);
+			c.closePath();
 		},
 		drawCurrent : function(c) {
 			var curr = $.phylo.currentScore;
 			var dist;
 			var self = this;
 			dist = self.getDistance(curr);
+			c.beginPath();
 			c.fillStyle = "#71B2E2";
 			c.fillRect(self.settings.w*self.midPoint,10,dist,25);
+			c.closePath();
 		},
 	};
 })();

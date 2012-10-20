@@ -43,6 +43,8 @@
 		},
 		//listens to events
 		startListener: function() {
+			//disable this
+			$("#scorePanel").hide();
 			//volume control
 			$("#volumeOff").hide();
 			$("#volumeOn").click(function() {

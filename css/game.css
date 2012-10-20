@@ -204,7 +204,8 @@
 	height:33px;
 }
 #controlPanel {
-	width: 33px;
+/*	width: 33px;
+		*/
 	height:66px;
 	float:right;
 	position: relative;
