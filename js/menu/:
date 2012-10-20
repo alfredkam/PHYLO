@@ -1,0 +1,16 @@
+(function() {
+	$.menu = {
+		disableMenu : function() {
+			$("#draw").hide();
+			$("#menu").hide();
+			$.main.init({
+				type: "random",
+				num: i,		
+			});	
+			console.log("asd");
+		},
+	};
+	$(document).ready(function() {
+		$.menu.disableMenu();
+	});
+})();
