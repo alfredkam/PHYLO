@@ -80,8 +80,8 @@
 			$.sequence.par = par;
 			$.board.par(par);
 			var score = $.fitch.score();
-			$.board.score(score);
 			$.phylo.bestScore = score;
+			$.board.score(score);
 			//
 			$.helper.copy($.phylo.bestTrack, $.sequence.track);
 			//$.phylo.bestTrack = $.sequence.track.slice(0);
