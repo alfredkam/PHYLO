@@ -59,11 +59,13 @@
 					if($.cookie.read("music-level") == 0) {
 						$("#volumeOn").hide();
 						$("#volumeOff").show();
+					} else {
+						$("#volumeOn").show();
+						$("#volumeOff").hide();
 					}
 				} catch (err) {
-
 				}
-			}
+			} 
 			$("#volumeOn").click(function() {
 				$.cookie.create("music-level",0,365);
 				document.getElementById("game-audio").volume=0;
