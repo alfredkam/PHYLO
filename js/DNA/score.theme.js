@@ -5,8 +5,8 @@
 			wBox: 827,
 			hBox: 50,
 			w : 827/13.5,
-			current : "#FF0000",
-			par : "#FFB6C1",
+			par : "#FF0000",
+			current : "#6495ED",
 			best : "#66CD00",
 		},
 		setScore : function(newScore) {
