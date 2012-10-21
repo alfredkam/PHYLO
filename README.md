@@ -30,3 +30,5 @@ This build includes options, it can be found at js/options.js
 	window.DEV.disableMenu //disables Menu
 	
 	window.DEV.disableSplash //disables Splash 
+	
+	window.DEV.disableMusic //disables the background music

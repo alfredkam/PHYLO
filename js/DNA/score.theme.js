@@ -5,8 +5,8 @@
 			wBox: 827,
 			hBox: 50,
 			w : 827/13.5,
-			current : "#FF0000",
-			par : "#FFB6C1",
+			par : "#FF0000",
+			current : "#6495ED",
 			best : "#66CD00",
 		},
 		setScore : function(newScore) {
@@ -29,23 +29,23 @@
 			var self = this;
 			c.beginPath();	
 			c.fillStyle = self.settings.par;
-			c.fillRect(0,15,10,5);
-			c.font = "9pt Helvetica";
+			c.fillRect(0,13,10,5);
+			c.font = "10.5pt Helvetica";
 			c.fillStyle = "white";
 			c.fillText("Par",16, 20);
 			c.fillStyle = self.settings.current;
-			c.fillRect(0,30,10,5);	
-			c.font = "9pt Helvetica";
+			c.fillRect(0,27,10,5);	
+			c.font = "10.5pt Helvetica";
 			c.fillStyle = "white";
 			c.fillText("Score", 16, 35);
 			c.fillStyle = self.settings.best;
-			c.fillRect(0,45,10,5);
-			c.font = "9pt Helvetica";
+			c.fillRect(0,42,10,5);
+			c.font = "10.5pt Helvetica";
 			c.fillStyle = "white";
 			c.fillText("Best",16, 50);
 			c.font = "20pt Helvetica";
 			c.fillStyle = self.settings.current;
-			c.fillText($.phylo.currentScore,780,35);
+			c.fillText($.phylo.currentScore,770,35);
 			c.closePath();
 		},
 		drawScale : function(c) {
@@ -96,7 +96,12 @@
 			if(score < 0) {
 				var max = self.settings.w*self.midPoint;  
 				var min = self.settings.w*1;
-				return -1*(max-min)/(Math.abs(self.minBorder))*Math.abs(score);						
+				var x = -1*(max-min)/(Math.abs(self.minBorder))*Math.abs(score);						
+				if( -1*(max-min) > x ) {
+					return -1*(max-min) - 10;
+				} else 
+					return x;
+					
 			} else if(score >= 0 ) {
 				var min = self.settings.w*self.midPoint;
 				var max = self.settings.w*12;
@@ -126,9 +131,16 @@
 			var dist;
 			c.beginPath();
 			c.fillStyle = self.settings.par;
+			c.strokeStyle = self.settings.par;
 			dist = self.getDistance(par);
-			c.fillRect(self.settings.w*self.midPoint,8,dist,2);
-			c.fillRect(self.settings.w*self.midPoint+dist+((dist<0)?0:-2),2,2,7);
+			c.moveTo(self.settings.w*self.midPoint+dist-5,0);
+			c.lineTo(self.settings.w*self.midPoint+dist+5,0);
+			c.lineTo(self.settings.w*self.midPoint+dist,5);
+			c.lineTo(self.settings.w*self.midPoint+dist-5,0);
+			c.stroke();
+			c.fill();
+			//c.fillRect(self.settings.w*self.midPoint,8,dist,2);
+			//c.fillRect(self.settings.w*self.midPoint+dist+((dist<0)?0:-2),2,2,7);
 			c.closePath();
 		},
 		drawBest : function(c) {
@@ -140,8 +152,15 @@
 			dist = self.getDistance(best);
 			c.beginPath();
 			c.fillStyle = self.settings.best;
-			c.fillRect(self.settings.w*self.midPoint,35,dist,2);
-			c.fillRect(self.settings.w*self.midPoint+dist+((dist<0)?0:-2),35,2,10);
+			c.strokeStyle = self.settings.best;
+			//c.fillRect(self.settings.w*self.midPoint,35,dist,2);
+			//c.fillRect(self.settings.w*self.midPoint+dist+((dist<0)?0:-2),35,2,10);
+			c.moveTo(self.settings.w*self.midPoint+dist-5,40);
+			c.lineTo(self.settings.w*self.midPoint+dist+5,40);
+			c.lineTo(self.settings.w*self.midPoint+dist,35);
+			c.lineTo(self.settings.w*self.midPoint+dist-5,40);
+			c.stroke();
+			c.fill();
 			c.closePath();
 		},
 		drawCurrent : function(c) {
