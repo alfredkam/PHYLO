@@ -166,8 +166,8 @@
 }
 #ancestorSeq {
 	position:absolute;
-	top:380px;
-	left:183px;
+	top:381px;
+	left:182px;
 	display:none;
 	width:841px;
 	height:34px;
@@ -191,7 +191,7 @@
 	display:inline-block;
 }
 #statsPanel {
-	left:250px;
+	left:340px;
 	color:white;
 	position:relative;
 	top:-15px
@@ -254,7 +254,7 @@
 	opacity: 0.4;
 }
 #star img{
-	width: 45px !important;
+	width: 40px !important;
 }
 #timerPanel {
 	display:none !important;
