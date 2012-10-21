@@ -51,6 +51,10 @@
 			if($.cookie.read("music-level")) {
 				try {
 					document.getElementById("game-audio").volume = $.cookie.read("music-level");
+					if($.cookie.read("music-level") == 0) {
+						$("#volumeOn").hide();
+						$("#volumeOff").show();
+					}
 				} catch (err) {
 
 				}
