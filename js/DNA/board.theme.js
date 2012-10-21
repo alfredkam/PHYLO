@@ -49,7 +49,9 @@
 			}
 			//cookie for music
 			if($.cookie.read("music-level")) {
+				window.setTimeout(function() {
 				document.getElementById("game-audio").volume = $.cookie.read("music-level");
+				},50);
 			}
 			//disable this
 			$("#scorePanel").hide();
