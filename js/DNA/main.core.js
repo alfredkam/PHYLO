@@ -1,5 +1,3 @@
-window.DEBUG = false;
-window.guest = "TEST DATA";
 (function() {
 	$(document).ready(function() {
 	
@@ -17,7 +15,7 @@ window.guest = "TEST DATA";
 				$.phylo = {
 					seqLen : 25,
 					x : 34,
-					offSet : $("#gameBoard").css("left").replace(/px/,""),
+					offSet : 0,//$("#gameBoard").css("left").replace(/px/,""),
 					height : $("#tree").css("height").replace(/px/,"")
 				};
 				$.lang.init(function() {
@@ -71,8 +69,8 @@ window.guest = "TEST DATA";
 					console.log($.phylo.tree);
 				}
 				$.stage.last = $.phylo.tree[$.phylo.tree.length-1].lv;
-				$.splash.countDown(function() {
-					//start game
+				if(window.DEV.disableSplash) {
+					$("#countDown").hide();
 					$.stage.end = false;
 					$.stage.round();	
 					if(DEBUG)
@@ -80,7 +78,18 @@ window.guest = "TEST DATA";
 					if(mouseMove) {
 						$.multiSelect.active();
 					}
-				});
+				} else {
+					$.splash.countDown(function() {
+						//start game
+						$.stage.end = false;
+						$.stage.round();	
+						if(DEBUG)
+							$.helper.dump($.sequence.track);
+						if(mouseMove) {
+							$.multiSelect.active();
+						}
+					});
+				}
 				$.board.startListener();
 			},
 		};

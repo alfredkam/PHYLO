@@ -20,13 +20,14 @@
 										$.events.untouch(document, "end");
 										$.physics.snap();
 										var score = $.fitch.score();
-										$.board.score(score);
-										$.board.stats();
 										if($.phylo.bestScore < score) {
 											$.phylo.bestScore = score;
 											$.helper.copy($.phylo.bestTrack, $.sequence.track);
 											$.board.bestScore(score);
 										}
+										$.board.score(score);
+										$.phylo.currentScore=score;
+										$.board.stats();
 										if(score >= $.sequence.par){
 											$.board.approve();
 										} else {
@@ -124,7 +125,7 @@
 		//calculates the finger position
 		getFingerPos : function(e) {
 			var canvas = document.getElementById("game");
-			var x = e.pageX - canvas.offsetLeft;
+			var x = e.pageX - canvas.offsetLeft-185;
 			var y = e.pageY - canvas.offsetTop;
 			return { pageX : x , pageY: y}		
 		},

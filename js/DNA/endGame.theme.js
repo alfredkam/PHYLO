@@ -48,6 +48,8 @@
 		},
 		//scores the game
 		score : function(status, highscore) {
+			//remove background music... make it stop!
+			$("#musicPlayerSpot").html("");
 			//gets current score		
 			var setDefault = "<i class='icon-star-empty'></i><i class='icon-star-empty'></i><i class='icon-star-empty'></i>";	
 			$("#endGame-score-result").html(setDefault);

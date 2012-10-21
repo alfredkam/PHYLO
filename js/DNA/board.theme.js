@@ -20,11 +20,11 @@
 		score : function(x) {
 			$.phylo.currentScore = x;
 			$("#userScore").html("Score: "+ x);
+			$.html5.score.setScore(x);
 		},
 		//updates and displays the best score
 		bestScore : function(x) {
 			$("#bestScore").html("Best: "+ x);
-			
 			if($.stage.current == $.stage.last) {
 				if(x > $.sequence.par) 
 					$.protocal.sendHighScore();
@@ -39,17 +39,39 @@
 			if($.stage.stats == undefined)
 				$("#statsPanel").html("Stats - Stage: "+($.stage.current+1)+"/"+($.stage.last+1));
 			else
-				$("#statsPanel").html("Stats - Stage: "+($.stage.current+1)+"/"+($.stage.last+1) + "<span class='gap'></span>Match: "+$.stage.stats.match+"<span class='gap'></span>Mismatch: "+$.stage.stats.mismatch+"<span class='gap'></span>Open: "+$.stage.stats.open+"<span class='gap'></span>Extend: "+$.stage.stats.extend);
+				$("#statsPanel").html("Stats - Stage: "+($.stage.current+1)+"/"+($.stage.last+1) + "<span class='gap'></span>Match: "+$.stage.stats.match+"<span class='gap'></span>Mismatch: "+$.stage.stats.mismatch+"<span class='gap'></span>Open: "+$.stage.stats.open+"<span class='gap'></span>Extend: "+$.stage.stats.extend +"<span class='gap'><span>Par: "+$.sequence.par);
 		},
 		//listens to events
 		startListener: function() {
+			//disables background music
+			if(window.DEV.disableMusic == false) {	
+				$("#musicPlayerSpot").html("<audio autoplay='autoplay' loop='loop' id='game-audio' preload='auto' autobuffer style='display:none'><source src='music/Valent%20-%20The%20Buckle.mp3' />Your browser does not support audio element</audio>");
+			}
+			//cookie for music
+			if($.cookie.read("music-level")) {
+				try {
+					document.getElementById("game-audio").volume = $.cookie.read("music-level");
+					if($.cookie.read("music-level") == 0) {
+						$("#volumeOn").hide();
+						$("#volumeOff").show();
+					}
+				} catch (err) {
+
+				}
+			}
+			//disable this
+			$("#scorePanel").hide();
 			//volume control
 			$("#volumeOff").hide();
 			$("#volumeOn").click(function() {
+				$.cookie.create("music-level",0,365);
+				document.getElementById("game-audio").volume=0;
 				$("#volumeOn").hide();
 				$("#volumeOff").show();
 			});
 			$("#volumeOff").click(function() {
+				$.cookie.create("music-level",1,365);
+				document.getElementById("game-audio").volume=1;
 				$("#volumeOff").hide();
 				$("#volumeOn").show()
 			});
@@ -69,6 +91,8 @@
 					$.stage.round();
 				}
 			});
+			//new scoring
+			//$.html5.score.init();
 		},
 		//tinkers the css on the star
 		approve : function() {

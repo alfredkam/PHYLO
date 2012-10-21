@@ -206,9 +206,9 @@
 		move : function(self,e) {
 			var prevPageX = parseInt($(self).css('left').replace(/px/,""));
 			var offSet = parseInt($.phylo.offSet);
-			if((e.pageX-offSet) - ($.phylo.x/2) > prevPageX) 	
+			if((e.pageX-offSet) - ($.phylo.x/2) > prevPageX) {	
 				this.shift(true,parseInt(self.id),e,0);
-			else if((e.pageX-offSet) - ($.phylo.x/2) == prevPageX) {
+			} else if((e.pageX-offSet) - ($.phylo.x/2) == prevPageX) {
 				return;
 			} else {
 				this.shift(false,parseInt(self.id),e,0);

@@ -1,10 +1,9 @@
 
 #gameBoard {
-	position: absolute;
+	position: relative;
 	display:inline-block;
-	left: 183px;
 	width: 841px;
-	top: 0px;
+	top: -335px;
 	padding-top:20px;
 }
 #bg {
@@ -167,8 +166,8 @@
 }
 #ancestorSeq {
 	position:absolute;
-	top:326px;
-	left:183px;
+	top:381px;
+	left:182px;
 	display:none;
 	width:841px;
 	height:34px;
@@ -192,9 +191,10 @@
 	display:inline-block;
 }
 #statsPanel {
-	left:147px;
+	left:330px;
 	color:white;
 	position:relative;
+	top:-15px
 }
 .gap {
 	padding-left:20px;
@@ -205,7 +205,8 @@
 	height:33px;
 }
 #controlPanel {
-	width: 33px;
+/*	width: 33px;
+		*/
 	height:66px;
 	float:right;
 	position: relative;
@@ -226,7 +227,7 @@
 #runaway {
 	color:white;
 	font-size: 28px;
-	top:36px;
+	top:-13px;
 	position:relative;
 	left:200px;
 }
@@ -241,7 +242,7 @@
 	width: 33px;
 	position:relative;
 	left: 180px;
-	top:30px;
+	top:-20px;
 }
 #cycle:hover {
 	opacity: 1;
@@ -251,6 +252,9 @@
 }
 #star {
 	opacity: 0.4;
+}
+#star img{
+	width: 40px !important;
 }
 #timerPanel {
 	display:none !important;
@@ -369,4 +373,10 @@
 	display:none;
 }
 
-
+/* css for score */
+#score {
+	position:relative;
+	display:block;
+	left:182px;
+}
+/* end of score */
