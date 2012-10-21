@@ -4,6 +4,12 @@
 		score : function() {
 			// forwardBackward does a tree traversal for each sequence nucleotide, forwardBackward2 does a sequence traversal for each tree node.
 			// Not sure which is faster
+			if($.stage.stats == undefined)
+				$.stage.stats = {};
+			$.stage.stats.match = 0
+			$.stage.stats.mismatch = 0;
+			$.stage.stats.open = 0; 
+			$.stage.stats.extend = 0;
 			$.fitch.forwardBackward();
 			//$.fitch.forwardBackward2();
 			var score = $.fitch.scoreRecurse($.stage.current);
@@ -278,14 +284,10 @@
 			var logB = trace($.phylo.tree[stage].ancestor, b);
 
 			var score = tabulate(logA) + tabulate(logB);
-			if(stage == $.stage.current) {
-				if($.stage.stats == undefined)
-					$.stage.stats = {};
-				$.stage.stats.match = parseInt(logA.match) + parseInt(logB.match);
-				$.stage.stats.mismatch = parseInt(logA.mismatch)+parseInt(logB.mismatch);
-				$.stage.stats.open = parseInt(logA.open) + parseInt(logB.open);
-				$.stage.stats.extend = parseInt(logA.extend) + parseInt(logB.extend);
-			}
+			$.stage.stats.match += parseInt(logA.match) + parseInt(logB.match);
+			$.stage.stats.mismatch += parseInt(logA.mismatch)+parseInt(logB.mismatch);
+			$.stage.stats.open += parseInt(logA.open) + parseInt(logB.open);
+			$.stage.stats.extend += parseInt(logA.extend) + parseInt(logB.extend);
 
 			if ($.phylo.tree[stage].child >= 2) {
 				score += $.fitch.scoreRecurse($.phylo.tree[stage].node1);
