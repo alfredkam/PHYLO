@@ -53,6 +53,7 @@
 				document.getElementById("game-audio").volume = $.cookie.read("music-level");
 				},50);
 			}
+			window.setTimeout(function() {
 			//disable this
 			$("#scorePanel").hide();
 			//volume control
@@ -69,6 +70,7 @@
 				$("#volumeOff").hide();
 				$("#volumeOn").show()
 			});
+			},50);
 			//roll back to best score
 			$("#cycle").click(function(){
 				$.helper.copy($.sequence.track, $.phylo.bestTrack);
