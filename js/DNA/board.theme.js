@@ -47,6 +47,11 @@
 			if(window.DEV.disableMusic == false) {	
 				$("#musicPlayerSpot").html("<audio autoplay='autoplay' loop='loop' id='game-audio' preload='auto' autobuffer style='display:none'><source src='music/Valent%20-%20The%20Buckle.mp3' />Your browser does not support audio element</audio>");
 			}
+
+			//disable this
+			$("#scorePanel").hide();
+			//volume control
+			$("#volumeOff").hide();
 			//cookie for music
 			if($.cookie.read("music-level")) {
 				try {
@@ -59,10 +64,6 @@
 
 				}
 			}
-			//disable this
-			$("#scorePanel").hide();
-			//volume control
-			$("#volumeOff").hide();
 			$("#volumeOn").click(function() {
 				$.cookie.create("music-level",0,365);
 				document.getElementById("game-audio").volume=0;
