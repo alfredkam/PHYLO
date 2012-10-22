@@ -9,7 +9,7 @@
 			current : "#6495ED",
 			best : "#66CD00",
 			prev : 0,
-			prevPar : 4
+			prevMid : 4
 		},
 		setScore : function(newScore) {
 			this.draw(newScore);			
@@ -39,15 +39,10 @@
 			c.globalAlpha = 1;			
 			c.clearRect(0,0,self.settings.wBox,self.settings.hBox);
 			this.setBorder();
-			this.drawDelay(c);
-			//this.drawCurrent(c);
-			//this.drawPar(c);
-			//this.drawBest(c);
-			//this.drawScale(c);
-			//this.drawKey(c);
+			this.drawScale2(c);
+			//this.drawDelay(c);
 			
 			this.settings.prev = $.phylo.currentScore;
-			this.settings.prevPar = $.sequence.par;
 		},
 		drawDelay : function(c) {
 			var self = this;
@@ -73,7 +68,6 @@
 				self.drawBest(c);
 				self.drawScale(c);
 				self.drawKey(c);
-				console.log(change);
 				if(diff < 0 && (prevDist+change) < dist) {
 					window.setTimeout(function(){ recurr(change) } , 1);
 				} else if(diff > 0 && (prevDist+change) > dist) {
@@ -90,7 +84,7 @@
 					self.drawKey(c);
 				}
 			}
-			window.setTimeout(function() { recurr(0) } ,1);
+			recurr(0);
 
 			
 			var prev = self.settings.prev;
@@ -122,9 +116,7 @@
 					c.closePath();
 				} 
 			};
-			window.setTimeout(function() { scoreDelay(0) } , 1);
-			
-
+			scoreDelay(0);
 		},
 		drawKey : function(c) {
 			var self = this;
@@ -150,6 +142,68 @@
 			c.fillText($.phylo.currentScore,770,35);
 			*/
 			c.closePath();
+		},
+		drawScale2 : function(c) {
+			var self = this;
+			if((self.midPoint - self.settings.prevMid) == 0 ) {
+				self.drawDelay(c);
+				return;
+			}
+			
+			var delay = function(curr) {
+				c.beginPath();
+				c.clearRect(0,0,765,self.settings.hBox);
+				for(var i=1;i<13;i++) {
+					if(i<=curr) {
+						var change;
+						if(curr == 4) {
+							change = (curr-i)*5;
+						} else {
+							change = (curr-i)*3;
+						}
+						c.moveTo(self.settings.w*i,0+change);
+						c.lineTo(self.settings.w*i,50-change);
+					} else {
+						var change;
+						if(curr == 4) { 
+							change = i*1.5;
+						} else {
+							change = ((i-curr))*5;
+						}
+						c.moveTo(self.settings.w*i,0+change);
+						c.lineTo(self.settings.w*i,50-change);
+					}
+					if(i==1) {
+						c.font = "9pt Helvetica";
+						c.fillStyle = "white";
+						c.fillText(self.minBorder,self.settings.w*i+3,50);
+					}
+					if(i==curr) {
+						c.font = "9pt Helvetica";
+						c.fillStyle = "white";
+						c.fillText("0",self.settings.w*i+3,50);
+					}
+					if(i==12) {
+						c.font = "9pt Helvetica";
+						c.fillStyle = "white";
+						c.fillText(self.maxBorder,self.settings.w*i+3,50);
+					}
+				}
+				c.strokeStyle = "white";
+				c.stroke();
+				c.closePath();
+				self.drawKey(c);
+				if(self.midPoint > self.settings.prevMid && curr != self.midPoint) {
+					window.setTimeout(function() { delay(curr+1) },20);
+				} else if(self.midPoint < self.settings.prevMid && curr != self.midPoint) {
+					window.setTimeout(function() { delay(curr-1) },20);
+				} else {
+					self.settings.prevMid = self.midPoint;
+					self.drawDelay(c);
+				}
+			}
+			delay(parseInt(self.settings.prevMid));
+
 		},
 		drawScale : function(c) {
 			var self = this;
