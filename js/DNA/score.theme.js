@@ -8,11 +8,14 @@
 			par : "#FF0000",
 			current : "#6495ED",
 			best : "#66CD00",
+			prev : 0,
+			prevPar : 4
 		},
 		setScore : function(newScore) {
 			this.draw(newScore);			
 		},
 		draw : function(score) {
+			/* //old way
 			var self = this;
 			var canvas = document.getElementById("score");
 			var c = canvas.getContext("2d");
@@ -24,6 +27,104 @@
 			this.drawBest(c);
 			this.drawScale(c);
 			this.drawKey(c);
+			
+			this.settings.prev = $.phylo.currentScore;
+			this.settings.prevPar = $.sequence.par;
+			*/
+
+			//give it 1s to complete all the drawings... 
+			var self = this;
+			var canvas = document.getElementById("score");
+			var c = canvas.getContext("2d");
+			c.globalAlpha = 1;			
+			c.clearRect(0,0,self.settings.wBox,self.settings.hBox);
+			this.setBorder();
+			this.drawDelay(c);
+			//this.drawCurrent(c);
+			//this.drawPar(c);
+			//this.drawBest(c);
+			//this.drawScale(c);
+			//this.drawKey(c);
+			
+			this.settings.prev = $.phylo.currentScore;
+			this.settings.prevPar = $.sequence.par;
+		},
+		drawDelay : function(c) {
+			var self = this;
+			var curr = $.phylo.currentScore;
+			var dist = self.getDistance(curr);
+			var prevDist = self.getDistance(self.settings.prev);
+			
+			var diff = prevDist - dist;
+			
+			//while(Math.round(prevDist+change) != Math.round(dist)) {
+			var recurr = function(change) {
+				c.beginPath();
+				c.clearRect(0,0,765,self.settings.hBox);
+				c.fillStyle = self.settings.current;
+				c.fillRect(self.settings.w*self.midPoint,5,prevDist + change,30);
+				c.closePath();
+				if(diff > 0) {
+					change -= 5;
+				} else {
+					change += 5;
+				}
+				self.drawPar(c);
+				self.drawBest(c);
+				self.drawScale(c);
+				self.drawKey(c);
+				console.log(change);
+				if(diff < 0 && (prevDist+change) < dist) {
+					window.setTimeout(function(){ recurr(change) } , 1);
+				} else if(diff > 0 && (prevDist+change) > dist) {
+					window.setTimeout(function(){ recurr(change) } , 1);
+				} else {
+					c.beginPath();
+					c.clearRect(0,0,765,self.settings.hBox);
+					c.fillStyle = self.settings.current;
+					c.fillRect(self.settings.w*self.midPoint,5, dist,30);
+					c.closePath();
+					self.drawPar(c);
+					self.drawBest(c);
+					self.drawScale(c);
+					self.drawKey(c);
+				}
+			}
+			window.setTimeout(function() { recurr(0) } ,1);
+
+			
+			var prev = self.settings.prev;
+			var current = $.phylo.currentScore;
+			var diff2 = prev - current;
+			
+			var scoreDelay = function(change) {
+				c.beginPath();
+				c.clearRect(765,0,62,50);
+				c.font = "20pt Helvetica";
+				c.fillStyle = self.settings.current;
+				c.fillText(prev+change,770,35);
+				c.closePath();
+				if(diff2 > 0) {
+					change -= 1;
+				} else {
+					change += 1;
+				}
+				if(diff2 < 0 && (prev+change) < current) {
+					window.setTimeout(function() { scoreDelay(change) } , 1 );	
+				} else if(diff > 0 && (prev+change) > current) {
+					window.setTimeout(function() { scoreDelay(change) } , 1 );	
+				} else {
+					c.beginPath();
+					c.clearRect(765,0,62,50);
+					c.font = "20pt Helvetica";
+					c.fillStyle = self.settings.current;
+					c.fillText(current,770,35);
+					c.closePath();
+				} 
+			};
+			window.setTimeout(function() { scoreDelay(0) } , 1);
+			
+
 		},
 		drawKey : function(c) {
 			var self = this;
@@ -43,9 +144,11 @@
 			c.font = "10.5pt Helvetica";
 			c.fillStyle = "white";
 			c.fillText("Best",16, 50);
+			/*
 			c.font = "20pt Helvetica";
 			c.fillStyle = self.settings.current;
 			c.fillText($.phylo.currentScore,770,35);
+			*/
 			c.closePath();
 		},
 		drawScale : function(c) {
@@ -139,22 +242,16 @@
 			c.lineTo(self.settings.w*self.midPoint+dist-5,0);
 			c.stroke();
 			c.fill();
-			//c.fillRect(self.settings.w*self.midPoint,8,dist,2);
-			//c.fillRect(self.settings.w*self.midPoint+dist+((dist<0)?0:-2),2,2,7);
 			c.closePath();
 		},
 		drawBest : function(c) {
 			var best = $.phylo.bestScore;				
-			if(best == undefined)
-				best = $.phylo.currentScore;
 			var dist;
 			var self = this;
 			dist = self.getDistance(best);
 			c.beginPath();
 			c.fillStyle = self.settings.best;
 			c.strokeStyle = self.settings.best;
-			//c.fillRect(self.settings.w*self.midPoint,35,dist,2);
-			//c.fillRect(self.settings.w*self.midPoint+dist+((dist<0)?0:-2),35,2,10);
 			c.moveTo(self.settings.w*self.midPoint+dist-5,40);
 			c.lineTo(self.settings.w*self.midPoint+dist+5,40);
 			c.lineTo(self.settings.w*self.midPoint+dist,35);
@@ -170,7 +267,7 @@
 			dist = self.getDistance(curr);
 			c.beginPath();
 			c.fillStyle = self.settings.current;
-			c.fillRect(self.settings.w*self.midPoint,10,dist,25);
+			c.fillRect(self.settings.w*self.midPoint,5,dist,30);
 			c.closePath();
 		},
 	};
