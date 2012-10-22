@@ -60,9 +60,9 @@
 				c.fillRect(self.settings.w*self.midPoint,5,prevDist + change,30);
 				c.closePath();
 				if(diff > 0) {
-					change -= 5;
+					change -= 8;
 				} else {
-					change += 5;
+					change += 8;
 				}
 				self.drawPar(c);
 				self.drawBest(c);
