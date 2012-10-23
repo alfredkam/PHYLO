@@ -3,8 +3,8 @@
 		event.stopPropagation();
 		$(".customize").show();
 		$(".customize-bg").css({
-			width: document.width,
-			height: document.height
+			width: $(document).width(),
+			height: $(document).height()
 		});
 	});
 
