@@ -1,4 +1,4 @@
-window.DEBUG = true;
+window.DEBUG = false;
 window.guest = "Anoymous";
 window.DEV = {
 	disableMenu : true,
