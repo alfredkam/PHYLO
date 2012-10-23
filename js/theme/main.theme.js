@@ -134,7 +134,7 @@
             
             function drawColorSquare(canvas, color, imageObj){
                 var colorSquareSize = 100;
-                var padding = 10;
+                var padding = 0;
                 var context = canvas.getContext("2d");
                 context.beginPath();
                 context.fillStyle = color;
@@ -145,7 +145,7 @@
             }
             
             function init(imageObj){
-                var padding = 10;
+                var padding = 0;
                 var canvas = document.getElementById("colorpad");
                 var context = canvas.getContext("2d");
                 var mouseDown = false;
@@ -153,19 +153,24 @@
                 context.strokeStyle = "#444";
                 context.lineWidth = 2;
                 
-                canvas.addEventListener("mousedown", function(){
+              /*  canvas.addEventListener("mousedown", function(){
                     mouseDown = true;
                 }, false);
                 
                 canvas.addEventListener("mouseup", function(){
                     mouseDown = false;
                 }, false);
+
                 
                 canvas.addEventListener("mousemove", function(evt){
+			*/
+		canvas.addEventListener("mousedown",function(evt) {
                     var mousePos = getMousePos(canvas, evt);
                     var color = undefined;
                     
-                    if (mouseDown &&
+                    //if (mouseDown &&
+		/*
+		if(
                     mousePos !== null &&
                     mousePos.x > padding &&
                     mousePos.x < padding + imageObj.width &&
@@ -183,7 +188,8 @@
                         var green = data[((imageObj.width * y) + x) * 4 + 1];
                         var blue = data[((imageObj.width * y) + x) * 4 + 2];
                         color = "rgb(" + red + "," + green + "," + blue + ")";
-                    }
+                 //   }
+			console.log(color);
                     
                     if (color) {
                        // drawColorSquare(canvas, color, imageObj);
