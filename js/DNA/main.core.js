@@ -55,8 +55,16 @@
 
 				$.helper.copy($.phylo.origin, $.sequence.track);
 				//$.phylo.origin = $.sequence.track.slice(0);
+				if(DEBUG) {
+					console.log("Before Random");
+					console.log($.sequence.track);
+				}
 				var random = $.sequence.randomize($.sequence.track);
 				$.sequence.prepareTracking(random);
+				if(DEBUG) {
+					console.log("Randomized Sequence");
+					console.log(random);
+				}
 				$.phylo.domCache = $.sequence.createCache();
 				$.physics.snapRandom();
 

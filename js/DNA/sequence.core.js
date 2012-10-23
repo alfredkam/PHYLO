@@ -168,6 +168,10 @@
 		randomize : function(seq) {
 			var arr = [];
 			var tmp;
+			if(DEBUG) {
+				console.log(">> in random 1");
+				console.log(seq);
+			}	
 			//sequence = arr
 			for(var i=0;i<seq.length;i++) {
 				tmp = [];
@@ -175,10 +179,21 @@
 					if(seq[i][j] == "_")
 						tmp.push("x");
 					else {
-						tmp.push((seq[i][j]=="")?"x":seq[i][j]);
+						if(seq[i][j].toString() == "") {
+							console.log("x");
+							tmp.push("x");
+						} else {
+							console.log(seq[i][j]);
+							tmp.push(seq[i][j]);
+						}
 					}
 				}		
 				arr.push(tmp);
+			}
+			
+			if(DEBUG) {
+				console.log(">> in random 2");
+				console.log(arr);
 			}
 
 			//randomize arr

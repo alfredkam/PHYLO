@@ -1,7 +1,7 @@
-window.DEBUG = false;
+window.DEBUG = true;
 window.guest = "Anoymous";
 window.DEV = {
-	disableMenu : false,
-	disableSplash : false,
-	disableMusic : false,
+	disableMenu : true,
+	disableSplash : true,
+	disableMusic : true,
 };
