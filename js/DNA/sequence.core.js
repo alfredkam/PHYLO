@@ -180,10 +180,8 @@
 						tmp.push("x");
 					else {
 						if(seq[i][j].toString() == "") {
-							console.log("x");
 							tmp.push("x");
 						} else {
-							console.log(seq[i][j]);
 							tmp.push(seq[i][j]);
 						}
 					}
