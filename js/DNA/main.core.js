@@ -55,10 +55,17 @@
 
 				$.helper.copy($.phylo.origin, $.sequence.track);
 				//$.phylo.origin = $.sequence.track.slice(0);
+				if(DEBUG) {
+					console.log("Before Random");
+					console.log($.sequence.track);
+				}
 				var random = $.sequence.randomize($.sequence.track);
 				$.sequence.prepareTracking(random);
+				if(DEBUG) {
+					console.log("Randomized Sequence");
+					console.log(random);
+				}
 				$.phylo.domCache = $.sequence.createCache();
-				$.phylo.domCache2 = $.sequence.createCache2();
 				$.physics.snapRandom();
 
 				if(DEBUG) {
@@ -69,6 +76,9 @@
 					console.log($.phylo.tree);
 				}
 				$.stage.last = $.phylo.tree[$.phylo.tree.length-1].lv;
+
+				$.customize.default();
+
 				if(window.DEV.disableSplash) {
 					$("#countDown").hide();
 					$.stage.end = false;

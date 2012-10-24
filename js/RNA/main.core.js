@@ -1,5 +1,3 @@
-window.DEBUG = false;
-window.guest = "TEST DATA";
 (function() {
 	$(document).ready(function() {
 		$.rna = {

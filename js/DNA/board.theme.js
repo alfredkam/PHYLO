@@ -36,10 +36,11 @@
 		},
 		//displays the current stats
 		stats : function() {
+			var ln = window.lang.body.play.gameselect["game board"];
 			if($.stage.stats == undefined)
-				$("#statsPanel").html("Stats - Stage: "+($.stage.current+1)+"/"+($.stage.last+1));
+				$("#statsPanel").html("Stats - "+ln["field 3"]+": "+($.stage.current+1)+"/"+($.stage.last+1));
 			else
-				$("#statsPanel").html("Stats - Stage: "+($.stage.current+1)+"/"+($.stage.last+1) + "<span class='gap'></span>Match: "+$.stage.stats.match+"<span class='gap'></span>Mismatch: "+$.stage.stats.mismatch+"<span class='gap'></span>Open: "+$.stage.stats.open+"<span class='gap'></span>Extend: "+$.stage.stats.extend +"<span class='gap'><span>Par: "+$.sequence.par);
+				$("#statsPanel").html("Stats - "+ln["field 3"]+": "+($.stage.current+1)+"/"+($.stage.last+1) + "<span class='gap'></span>"+ln["field 9"]+": "+$.stage.stats.match+"<span class='gap'></span>"+ln["field 10"]+": "+$.stage.stats.mismatch+"<span class='gap'></span>"+ln["field 11"]+": "+$.stage.stats.open+"<span class='gap'></span>"+ln["field 12"]+": "+$.stage.stats.extend +"<span class='gap'><span>"+ln["field 2"]+": "+$.sequence.par);
 		},
 		//listens to events
 		startListener: function() {
@@ -47,6 +48,11 @@
 			if(window.DEV.disableMusic == false) {	
 				$("#musicPlayerSpot").html("<audio autoplay='autoplay' loop='loop' id='game-audio' preload='auto' autobuffer style='display:none'><source src='music/Valent%20-%20The%20Buckle.mp3' />Your browser does not support audio element</audio>");
 			}
+
+			//disable this
+			$("#scorePanel").hide();
+			//volume control
+			$("#volumeOff").hide();
 			//cookie for music
 			if($.cookie.read("music-level")) {
 				try {
@@ -54,15 +60,13 @@
 					if($.cookie.read("music-level") == 0) {
 						$("#volumeOn").hide();
 						$("#volumeOff").show();
+					} else {
+						$("#volumeOn").show();
+						$("#volumeOff").hide();
 					}
 				} catch (err) {
-
 				}
-			}
-			//disable this
-			$("#scorePanel").hide();
-			//volume control
-			$("#volumeOff").hide();
+			} 
 			$("#volumeOn").click(function() {
 				$.cookie.create("music-level",0,365);
 				document.getElementById("game-audio").volume=0;

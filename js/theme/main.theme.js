@@ -3,8 +3,8 @@
 		event.stopPropagation();
 		$(".customize").show();
 		$(".customize-bg").css({
-			width: document.width,
-			height: document.height
+			width: $(document).width(),
+			height: $(document).height()
 		});
 	});
 
@@ -80,32 +80,41 @@
 })();
 
 (function() {
+	
+	$.customize = {
+		default : function() {
+			if($.cookie.read("bgCell")) {
+				$(".colorBG").css({backgroundColor : $.cookie.read("bgCell")});
+				$(".bgCell").css({backgroundColor : $.cookie.read("bgCell")});
+			} else {
+				$.cookie.create("bgCell","white",365);
+			}	
 
-	if($.cookie.read("colorCell")) {
-		$(".colorCell").css({backgroundColor : $.cookie.read("bgCell")});
-	} else {
-		$.cookie.create("bgCell","white",365);
-	}	
-
-	if($.cookie.read("nuc-A")) {
-		$(".nuc-A").css({backgroundColor : $.cookie.read("nuc-A") });
-	} else {
-		$.cookie.create("nuc-A","#71B2E2",365);
-	}
-	if($.cookie.read("nuc-G")) {
-		$(".nuc-G").css({backgroundColor : $.cookie.read("nuc-G")});
-	} else {
-		$.cookie.create("nuc-G","#9932CC",365);
-	}
-	if($.cookie.read("nuc-C")) {
-		$(".nuc-C").css({backgroundColor : $.cookie.read("nuc-C")});
-	} else {
-		$.cookie.create("nuc-C","#008000",365);	
-	}
-	if($.cookie.read("nuc-T")) {
-		$(".nuc-T").css({backgroundColor : $.cookie.read("nuc-T")});
-	} else {
-		$.cookie.create("nuc-T","#FFA500",365);
+			if($.cookie.read("nuc-A")) {
+				$(".nuc-A").css({backgroundColor : $.cookie.read("nuc-A") });
+				$(".colorA").css({backgroundColor : $.cookie.read("nuc-A") });
+			} else {
+				$.cookie.create("nuc-A","#71B2E2",365);
+			}
+			if($.cookie.read("nuc-G")) {
+				$(".nuc-G").css({backgroundColor : $.cookie.read("nuc-G")});
+				$(".colorG").css({backgroundColor : $.cookie.read("nuc-G")});
+			} else {
+				$.cookie.create("nuc-G","#9932CC",365);
+			}
+			if($.cookie.read("nuc-C")) {
+				$(".nuc-C").css({backgroundColor : $.cookie.read("nuc-C")});
+				$(".colorC").css({backgroundColor : $.cookie.read("nuc-C")});
+			} else {
+				$.cookie.create("nuc-C","#008000",365);	
+			}
+			if($.cookie.read("nuc-T")) {
+				$(".nuc-T").css({backgroundColor : $.cookie.read("nuc-T")});
+				$(".colorT").css({backgroundColor : $.cookie.read("nuc-T")});
+			} else {
+				$.cookie.create("nuc-T","#FFA500",365);
+			}
+		},
 	}
 })();
 
@@ -134,7 +143,7 @@
             
             function drawColorSquare(canvas, color, imageObj){
                 var colorSquareSize = 100;
-                var padding = 10;
+                var padding = 0;
                 var context = canvas.getContext("2d");
                 context.beginPath();
                 context.fillStyle = color;
@@ -145,7 +154,7 @@
             }
             
             function init(imageObj){
-                var padding = 10;
+                var padding = 0;
                 var canvas = document.getElementById("colorpad");
                 var context = canvas.getContext("2d");
                 var mouseDown = false;
@@ -153,19 +162,24 @@
                 context.strokeStyle = "#444";
                 context.lineWidth = 2;
                 
-                canvas.addEventListener("mousedown", function(){
+              /*  canvas.addEventListener("mousedown", function(){
                     mouseDown = true;
                 }, false);
                 
                 canvas.addEventListener("mouseup", function(){
                     mouseDown = false;
                 }, false);
+
                 
                 canvas.addEventListener("mousemove", function(evt){
+			*/
+		canvas.addEventListener("mousedown",function(evt) {
                     var mousePos = getMousePos(canvas, evt);
                     var color = undefined;
                     
-                    if (mouseDown &&
+                    //if (mouseDown &&
+		/*
+		if(
                     mousePos !== null &&
                     mousePos.x > padding &&
                     mousePos.x < padding + imageObj.width &&
@@ -183,7 +197,8 @@
                         var green = data[((imageObj.width * y) + x) * 4 + 1];
                         var blue = data[((imageObj.width * y) + x) * 4 + 2];
                         color = "rgb(" + red + "," + green + "," + blue + ")";
-                    }
+                 //   }
+			console.log(color);
                     
                     if (color) {
                        // drawColorSquare(canvas, color, imageObj);

@@ -263,7 +263,7 @@
 						//determine scale
 						var scale = Math.sin(offset/settings.box()*1.3);
 						ctx.fillStyle = settings.color[i];
-					 	ctx.fillRect(x-5*scale,y-5*scale,settings.box()*(1+.3*scale),settings.box()*(1+.3*scale));	
+					 	ctx.fillRect(x-5*scale,y-5*scale,settings.box()*(1+.2*scale),settings.box()*(1+.2*scale));	
 						ctx.fillStyle = "white";
 						ctx.font = (19+6*scale)+"pt Helvetica";
 						ctx.fillText(menuStr[i],x+100,y+25);

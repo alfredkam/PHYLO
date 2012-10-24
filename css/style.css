@@ -98,6 +98,9 @@ a.btn {
 	margin-bottom:5px;
 	text-align:left;
 }
+.customize .customize-theme .row {
+	width:300px;
+}
 .customize .customize-tab .span2 {
 	color:white;
 	background-color:#333;
