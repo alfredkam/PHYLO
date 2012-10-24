@@ -11,7 +11,6 @@
 				for(j=0, arr = track[active[i]], len = track[active[i]].length;j< len;j++) {
 					if(ancestor[j].toString().toLowerCase() != "x" && ancestor[j] != 0 
 					&& (!$("#"+arr[j]).hasClass("nuc-"+ancestor[j].toString().toUpperCase()))) {
-						console.log(ancestor[j].toString());
 						$("#"+arr[j]).addClass("highlighter");
 					}
 				}
