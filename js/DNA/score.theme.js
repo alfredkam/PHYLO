@@ -14,8 +14,7 @@
 		setScore : function(newScore) {
 			this.draw(newScore);			
 		},
-		draw : function(score) {
-			/* //old way
+		draw_old : function(score) {
 			var self = this;
 			var canvas = document.getElementById("score");
 			var c = canvas.getContext("2d");
@@ -30,8 +29,9 @@
 			
 			this.settings.prev = $.phylo.currentScore;
 			this.settings.prevPar = $.sequence.par;
-			*/
-
+		},
+		draw : function(score) {
+			$.highlighter.set();
 			//give it 1s to complete all the drawings... 
 			var self = this;
 			var canvas = document.getElementById("score");
