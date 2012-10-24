@@ -76,6 +76,9 @@
 					console.log($.phylo.tree);
 				}
 				$.stage.last = $.phylo.tree[$.phylo.tree.length-1].lv;
+
+				$.customize.default();
+
 				if(window.DEV.disableSplash) {
 					$("#countDown").hide();
 					$.stage.end = false;
