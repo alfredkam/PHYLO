@@ -4,7 +4,7 @@
 		settings : {
 			wBox: 827,
 			hBox: 50,
-			w : 827/13.5,
+			w : 827/14.5,
 			par : "#FF0000",
 			current : "#6495ED",
 			best : "#66CD00",
@@ -26,7 +26,7 @@
 			this.drawPar(c);
 			this.drawBest(c);
 			this.drawScale(c);
-			this.drawKey(c);
+			this.dra4Key(c);
 			
 			this.settings.prev = $.phylo.currentScore;
 			this.settings.prevPar = $.sequence.par;
@@ -120,22 +120,23 @@
 		},
 		drawKey : function(c) {
 			var self = this;
+			var ln = window.lang.body.play.gameselect["game board"];
 			c.beginPath();	
 			c.fillStyle = self.settings.par;
 			c.fillRect(0,13,10,5);
 			c.font = "10.5pt Helvetica";
 			c.fillStyle = "white";
-			c.fillText("Par",16, 20);
+			c.fillText(ln["field 2"],16, 20);
 			c.fillStyle = self.settings.current;
 			c.fillRect(0,27,10,5);	
 			c.font = "10.5pt Helvetica";
 			c.fillStyle = "white";
-			c.fillText("Score", 16, 35);
+			c.fillText(ln["field 1"], 16, 35);
 			c.fillStyle = self.settings.best;
 			c.fillRect(0,42,10,5);
-			c.font = "10.5pt Helvetica";
+			c.font = "10pt Helvetica";
 			c.fillStyle = "white";
-			c.fillText("Best",16, 50);
+			c.fillText(ln["field 4"],16, 50);
 			/*
 			c.font = "20pt Helvetica";
 			c.fillStyle = self.settings.current;
@@ -153,10 +154,10 @@
 			var delay = function(curr) {
 				c.beginPath();
 				c.clearRect(0,0,765,self.settings.hBox);
-				for(var i=1;i<13;i++) {
+				for(var i=2;i<14;i++) {
 					if(i<=curr) {
 						var change;
-						if(curr == 4) {
+						if(curr == 5) {
 							change = (curr-i)*5;
 						} else {
 							change = (curr-i)*3;
@@ -165,7 +166,7 @@
 						c.lineTo(self.settings.w*i,50-change);
 					} else {
 						var change;
-						if(curr == 4) { 
+						if(curr == 5) { 
 							change = i*1.5;
 						} else {
 							change = ((i-curr))*5;
@@ -173,7 +174,7 @@
 						c.moveTo(self.settings.w*i,0+change);
 						c.lineTo(self.settings.w*i,50-change);
 					}
-					if(i==1) {
+					if(i==2) {
 						c.font = "9pt Helvetica";
 						c.fillStyle = "white";
 						c.fillText(self.minBorder,self.settings.w*i+3,50);
@@ -183,7 +184,7 @@
 						c.fillStyle = "white";
 						c.fillText("0",self.settings.w*i+3,50);
 					}
-					if(i==12) {
+					if(i==13) {
 						c.font = "9pt Helvetica";
 						c.fillStyle = "white";
 						c.fillText(self.maxBorder,self.settings.w*i+3,50);
@@ -208,10 +209,10 @@
 		drawScale : function(c) {
 			var self = this;
 			c.beginPath();
-			for(var i=1;i<13;i++) {
+			for(var i=2;i<14;i++) {
 				if(i<=self.midPoint) {
 					var change;
-					if(self.midPoint == 4) {
+					if(self.midPoint == 5) {
 						change = (self.midPoint-i)*5;
 					} else {
 						change = (self.midPoint-i)*3;
@@ -220,7 +221,7 @@
 					c.lineTo(self.settings.w*i,50-change);
 				} else {
 					var change;
-					if(self.midPoint == 4) { 
+					if(self.midPoint == 5) { 
 						change = i*1.5;
 					} else {
 						change = ((i-self.midPoint))*5;
@@ -228,7 +229,7 @@
 					c.moveTo(self.settings.w*i,0+change);
 					c.lineTo(self.settings.w*i,50-change);
 				}
-				if(i==1) {
+				if(i==2) {
 					c.font = "9pt Helvetica";
 					c.fillStyle = "white";
 					c.fillText(self.minBorder,self.settings.w*i+3,50);
@@ -238,7 +239,7 @@
 					c.fillStyle = "white";
 					c.fillText("0",self.settings.w*i+3,50);
 				}
-				if(i==12) {
+				if(i==13) {
 					c.font = "9pt Helvetica";
 					c.fillStyle = "white";
 					c.fillText(self.maxBorder,self.settings.w*i+3,50);
@@ -252,7 +253,7 @@
 			var self = this;
 			if(score < 0) {
 				var max = self.settings.w*self.midPoint;  
-				var min = self.settings.w*1;
+				var min = self.settings.w*2;
 				var x = -1*(max-min)/(Math.abs(self.minBorder))*Math.abs(score);						
 				if( -1*(max-min) > x ) {
 					return -1*(max-min) - 10;
@@ -274,11 +275,11 @@
 			var self = this;
 			if(par < 10) {
 				self.maxBorder = 30;
-				self.midPoint = 8; 
+				self.midPoint = 9; 
 				self.minBorder = par - 50;
 			} else {
 				self.maxBorder = par+20;	
-				self.midPoint = 4;
+				self.midPoint = 5;
 				self.minBorder = -30;
 			}
 		},

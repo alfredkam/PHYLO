@@ -191,7 +191,8 @@
 	display:inline-block;
 }
 #statsPanel {
-	left:330px;
+	left:300px;
+	max-width:514px;
 	color:white;
 	position:relative;
 	top:-15px
