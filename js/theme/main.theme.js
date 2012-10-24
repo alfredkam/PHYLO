@@ -80,32 +80,36 @@
 })();
 
 (function() {
+	
+	$.customize = {
+		default : function() {
+			if($.cookie.read("colorCell")) {
+				$(".colorCell").css({backgroundColor : $.cookie.read("bgCell")});
+			} else {
+				$.cookie.create("bgCell","white",365);
+			}	
 
-	if($.cookie.read("colorCell")) {
-		$(".colorCell").css({backgroundColor : $.cookie.read("bgCell")});
-	} else {
-		$.cookie.create("bgCell","white",365);
-	}	
-
-	if($.cookie.read("nuc-A")) {
-		$(".nuc-A").css({backgroundColor : $.cookie.read("nuc-A") });
-	} else {
-		$.cookie.create("nuc-A","#71B2E2",365);
-	}
-	if($.cookie.read("nuc-G")) {
-		$(".nuc-G").css({backgroundColor : $.cookie.read("nuc-G")});
-	} else {
-		$.cookie.create("nuc-G","#9932CC",365);
-	}
-	if($.cookie.read("nuc-C")) {
-		$(".nuc-C").css({backgroundColor : $.cookie.read("nuc-C")});
-	} else {
-		$.cookie.create("nuc-C","#008000",365);	
-	}
-	if($.cookie.read("nuc-T")) {
-		$(".nuc-T").css({backgroundColor : $.cookie.read("nuc-T")});
-	} else {
-		$.cookie.create("nuc-T","#FFA500",365);
+			if($.cookie.read("nuc-A")) {
+				$(".nuc-A").css({backgroundColor : $.cookie.read("nuc-A") });
+			} else {
+				$.cookie.create("nuc-A","#71B2E2",365);
+			}
+			if($.cookie.read("nuc-G")) {
+				$(".nuc-G").css({backgroundColor : $.cookie.read("nuc-G")});
+			} else {
+				$.cookie.create("nuc-G","#9932CC",365);
+			}
+			if($.cookie.read("nuc-C")) {
+				$(".nuc-C").css({backgroundColor : $.cookie.read("nuc-C")});
+			} else {
+				$.cookie.create("nuc-C","#008000",365);	
+			}
+			if($.cookie.read("nuc-T")) {
+				$(".nuc-T").css({backgroundColor : $.cookie.read("nuc-T")});
+			} else {
+				$.cookie.create("nuc-T","#FFA500",365);
+			}
+		},
 	}
 })();
 

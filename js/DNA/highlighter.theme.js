@@ -6,7 +6,6 @@
 			var ancestor = $.phylo.tree[$.stage.current].ancestor;
 			var track = $.sequence.track;
 			var active = this.getActiveRows();
-			console.log(ancestor);
 			
 			for(var i=0;i < active.length;i++) {
 				for(j=0, arr = track[active[i]], len = track[active[i]].length;j< len;j++) {
