@@ -377,7 +377,7 @@
 							return;
 						}
 						$.ajax({
-							url : "../phpdb/phyloDB2.php", 
+							url : "../phpdb/phyloExpertDB.php", 
 							data : "mode=2&id="+id,
 							type : "POST",
 						}).done(function(data) {

@@ -52,25 +52,25 @@
                                         type: "POST",
                                         url : "http://phylo.cs.mcgill.ca/phpdb/passwdmanager.php",
                                         data : "username="+response.username+"&id="+response.id,
-                                      }).done(function(re) {
-                                              var password = re;
+                                      }).done(function(mypasswd) {
+                                              var password = mypasswd;
                                               $.protocal.login(name, password, function(re) {
-                                              if(re == "succ") {
-                                                //$(".login-btn").unbind("click");
-                                                //alert("Welcome back "+fullname);
-                                                $("#login-tag").html("You are logged as "+fullname);
-                                                $(".showlogin").hide();
-                                                $(".showlogout").show();
-                                                window.guest = name;
-                                                $(".showInLogin").show();
-                                                $.cookie.create("username",name,"fb",365);
-                                              } else {
-                                                // login not successful -> register users
-                                                if((name == "" || password == "") || email == "") {
+                                                if(re == "succ") {
+                                                  //$(".login-btn").unbind("click");
+                                                  //alert("Welcome back "+fullname);
+                                                  $("#login-tag").html("You are logged as "+fullname);
+                                                  $(".showlogin").hide();
+                                                  $(".showlogout").show();
+                                                  window.guest = name;
+                                                  $(".showInLogin").show();
+                                                  $.cookie.create("username",name,"fb",365);
+                                                } else {
+                                                  // login not successful -> register users
+                                                  if((name == "" || password == "") || email == "") {
                                                     $("div.login-warning").show().html("Email or Username or Password is missing");
                                                     return;
-                                                }
-                                                $.protocal.register(name, password, email, function(re) {
+                                                  }
+                                                  $.protocal.register(name, password, email, function(re) {
                                                     if(re == "succ") {
                                                         $(".login-btn").unbind("click");
                                                         $("#login-tag").html("Welcome back "+fullname);
@@ -80,8 +80,8 @@
                                                     } else {
                                                         $("div.login-warning").show().html("This username already exist");
                                                     }
-                                                });
-                                              }
+                                                  });
+                                                }
                                             });
                                           }).fail(function() {
                                                   $("div.login-warning").show().html("Could not connect to the server. Please try again later.");
