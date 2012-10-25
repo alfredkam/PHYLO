@@ -29,7 +29,7 @@
 			$.protocal.login(name, password, function(re) {
 				if(re == "succ") {
 					$(".login-btn").unbind("click");	
-					$("#login-tag").html("Welcome back "+name);
+					$("#login-tag").html("You are logged as "+name);
 					$("#logout").show();
 					window.guest = name;
 					$(".showInLogin").show();
@@ -56,14 +56,13 @@
                                               var password = mypasswd;
                                               $.protocal.login(name, password, function(re) {
                                                 if(re == "succ") {
-                                                  //$(".login-btn").unbind("click");
-                                                  //alert("Welcome back "+fullname);
+                                                  $(".login-btn").unbind("click");
                                                   $("#login-tag").html("You are logged as "+fullname);
-                                                  $(".showlogin").hide();
-                                                  $(".showlogout").show();
-                                                  window.guest = name;
+                                                  $("#logout").show();
                                                   $(".showInLogin").show();
-                                                  $.cookie.create("username",name,"fb",365);
+                                                  $("#login-box").hide();
+                                                  window.guest = name;
+                                                  $.cookie.create("username",name,365);
                                                 } else {
                                                   // login not successful -> register users
                                                   if((name == "" || password == "") || email == "") {
@@ -72,13 +71,15 @@
                                                   }
                                                   $.protocal.register(name, password, email, function(re) {
                                                     if(re == "succ") {
-                                                        $(".login-btn").unbind("click");
-                                                        $("#login-tag").html("Welcome back "+fullname);
-                                                        $("#logout").show();
-                                                        window.guest = name;
-                                                        $("#login-box").hide();
+                                                      $(".login-btn").unbind("click");
+                                                      $("#login-tag").html("You are logged as "+fullname);
+                                                      $("#logout").show();
+                                                      $(".showInLogin").show();
+                                                      $("#login-box").hide();
+                                                      window.guest = name;
+                                                      $.cookie.create("username",name,365);
                                                     } else {
-                                                        $("div.login-warning").show().html("This username already exist");
+                                                      $("div.login-warning").show().html("This username already exist");
                                                     }
                                                   });
                                                 }
