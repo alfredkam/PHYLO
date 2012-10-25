@@ -140,10 +140,20 @@
 			}
 			build(stage);
 			//check if tree is disjoint
+			//rewrite this part af algorithm
 			if($.stage.current+1 <= $.stage.last && ($.stage.current-1) >= 0) {
 				var c_tree = $.phylo.tree[$.stage.current+1];
-				if(c_tree.child == 2 )
+				if(c_tree.child == 2 ) {
+				//	build($.stage.current-1);
+					console.log(c_tree.node2 + " < > "+c_tree.node1);
+					if($.stage.current == c_tree.node1) {
+						build(c_tree.node2);
+					} else 
+						build(c_tree.node1);
+				} else if(c_tree.child == 1) {
 					build($.stage.current-1);
+				} 
+				//build($.stage.current-1);
 			}
 			//end of checking
 			$("#tree").html(data);
