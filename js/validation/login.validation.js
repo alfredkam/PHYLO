@@ -73,7 +73,7 @@
                                                 $.protocal.register(name, password, email, function(re) {
                                                     if(re == "succ") {
                                                         $(".login-btn").unbind("click");
-                                                        $("#login-tag").html("Welcome back "+name);
+                                                        $("#login-tag").html("Welcome back "+fullname);
                                                         $("#logout").show();
                                                         window.guest = name;
                                                         $("#login-box").hide();
