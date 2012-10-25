@@ -55,47 +55,44 @@
                                       }).done(function(re) {
                                               var password = re;
                                               $.protocal.login(name, password, function(re) {
-                                                if(re == "succ") {
-                                                    //$(".login-btn").unbind("click");
-                                                    alert("Welcome back "+fullname);
-                                                    $("#login-tag").html("You are logged as "+fullname);
-                                                    $(".showlogin").hide();
-                                                    $(".showlogout").show();
-                                                    window.guest = name;
-                                                    $(".showInLogin").show();
-                                                    $.cookie.create("username",name,"fb",365);
-                                                } else {
-                                                    var name = $("#username").val().trim();
-                                                    var password = $("#password").val().trim();
-                                                    var email = $("#email").val().trim();
-                                                    if((name == "" || password == "") || email == "") {
-                                                        $("div.login-warning").show().html("Email or Username or Password is missing");
-                                                        return;
-                                                    }
-                                                    $.protocal.register(name, password, email, function(re) {
-                                                        if(re == "succ") {
-                                                            $(".login-btn").unbind("click");
-                                                            $("#login-tag").html("Welcome back "+name);
-                                                            $("#logout").show();
-                                                            window.guest = name;
-                                                            $("#login-box").hide();
-                                                        } else {
-                                                            $("div.login-warning").show().html("This username already exist");
-                                                        }
-                                                    });
-                                                    alert("Incorrect Username or Password.");
+                                              if(re == "succ") {
+                                                //$(".login-btn").unbind("click");
+                                                //alert("Welcome back "+fullname);
+                                                $("#login-tag").html("You are logged as "+fullname);
+                                                $(".showlogin").hide();
+                                                $(".showlogout").show();
+                                                window.guest = name;
+                                                $(".showInLogin").show();
+                                                $.cookie.create("username",name,"fb",365);
+                                              } else {
+                                                // login not successful -> register users
+                                                if((name == "" || password == "") || email == "") {
+                                                    $("div.login-warning").show().html("Email or Username or Password is missing");
+                                                    return;
                                                 }
+                                                $.protocal.register(name, password, email, function(re) {
+                                                    if(re == "succ") {
+                                                        $(".login-btn").unbind("click");
+                                                        $("#login-tag").html("Welcome back "+name);
+                                                        $("#logout").show();
+                                                        window.guest = name;
+                                                        $("#login-box").hide();
+                                                    } else {
+                                                        $("div.login-warning").show().html("This username already exist");
+                                                    }
+                                                });
+                                              }
                                             });
                                           }).fail(function() {
-                                                  alert("Could not connect to the server. Please try again later.");
+                                                  $("div.login-warning").show().html("Could not connect to the server. Please try again later.");
                                               });
                             });
                       } else if (response.status === 'not_authorized') {
                         // not_authorized                                                                                                                         
-                        alert("Phylo has not been authenticated by Facebook. Please, confirm.");
+                        $("div.login-warning").show().html("Phylo has not been authorized by Facebook yet. Please, confirm.");
                     } else {
                         // not_logged_in                                                                                                                          
-                        alert("You must login to Facebook before login to Phylo.");
+                        $("div.login-warning").show().html("You must login to Facebook before login to Phylo.");
                     }
                 });
         };
