@@ -151,7 +151,8 @@
 					} else 
 						build(c_tree.node1);
 				} else if(c_tree.child == 1) {
-					build($.stage.current-1);
+					if(c_tree.node1 != $.stage.current-1 && c_tree.node2 != $.stage.current-1 )
+						build($.stage.current-1);
 				} 
 				//build($.stage.current-1);
 			}
