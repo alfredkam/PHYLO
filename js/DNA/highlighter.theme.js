@@ -9,9 +9,13 @@
 			
 			for(var i=0;i < active.length;i++) {
 				for(j=0, arr = track[active[i]], len = track[active[i]].length;j< len;j++) {
-					if(ancestor[j].toString().toLowerCase() != "x" && ancestor[j] != 0 
-					&& (!$("#"+arr[j]).hasClass("nuc-"+ancestor[j].toString().toUpperCase()))) {
-						$("#"+arr[j]).addClass("highlighter");
+					try {
+						if(ancestor[j].toString().toLowerCase() != "x" && ancestor[j] != 0 
+						&& (!$("#"+arr[j]).hasClass("nuc-"+ancestor[j].toString().toUpperCase()))) {
+							$("#"+arr[j]).addClass("highlighter");
+						}
+					} catch(err) {
+						console.log("Warning : Cell(s) fell off the chart");	
 					}
 				}
 			}	
