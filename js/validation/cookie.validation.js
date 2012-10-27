@@ -36,7 +36,10 @@
             var exdate = new Date();
             exdate.setDate(exdate.getDate() - 1 );
             var c_value="=; expires="+exdate.toUTCString();
+            console.log("remove cookie : "+c_name);
+            console.log("> "+this.check(c_name));
             document.cookie=c_name + "=" + c_value;
+            console.log("> "+this.check(c_name));
 		}
 	}
 
