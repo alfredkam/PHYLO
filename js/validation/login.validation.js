@@ -2,18 +2,61 @@
 	$(document).ready(function() {
 		//hide logout on default
 		$("#logout").hide();
-
-		//check if have cookie
-		if($.cookie.read("username")) {
-			$(".login-btn").unbind("click");	
-			var name = $.cookie.read("username");
-			$("#login-tag").html("Welcome back "+name);
-			$("#logout").show();
-			window.guest = name;
-			$(".showInLogin").show();
-			$("#login-box").hide();
-			$.cookie.create("username",name,365);
-		}
+                      
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '254079141380941', // App ID
+                channelUrl : '//phylo.cs.mcgill.ca/channel.html', // Channel File
+                status     : true, // check login status
+                cookie     : true, // enable cookies to allow the server to access the session
+                xfbml      : true  // parse XFBML
+            });
+            //check cookie
+            if($.cookie.read("username")) {
+                $(".login-btn").unbind("click");
+                var name = $.cookie.read("username");
+                var mode = $.cookie.read("loginmode");
+                var logid = $.cookie.read("id");
+                console.log(name+"//"+mode+"//"+logid);
+                if (mode=="classic") {
+                    $("#login-tag").html("You are logged as "+name);
+                } else if (mode=="fb") {
+                    // FB login. Must check account and cookie data match and then extract full name.
+                    FB.getLoginStatus(function(response) {
+                    if (response.status === 'connected') {
+                        // connected: we must check that account are the same
+                        FB.api('/me', function(response) {
+                            var fullname = response.name;
+                            var id = response.id;
+                            if (id==logid) {
+                                $("#login-tag").html("You are logged as "+fullname);
+                            } else {
+                                //bootbox.alert("Data conflict. Please, login again.");
+                                $.cookie.delete("username");
+                                $.cookie.delete("loginmode");
+                                $.cookie.delete("id");
+                                return;
+                            }
+                        });
+                    } else if (response.status === 'not_authorized') {
+                        // not_authorized
+                        $("div.login-warning").show().html("Phylo has not been authorized to connect with your Facebook account. Please, confirm.");
+                    } else {
+                        // not_logged_in
+                        $("div.login-warning").show().html("You are not logged in Facebook. Please, sign-in to Facebook and re-connect to Phylo.");
+                    }
+                    });
+                } else {
+                    console.log("Cannot find login mode");
+                    return;
+                }
+                $(".login-btn").unbind("click");
+                $("#logout").show();
+                window.guest = name;
+                $(".showInLogin").show();
+                $("#login-box").hide();
+            };
+        };
 
 		//login onclick event
 		var eClick = function() {
@@ -34,7 +77,9 @@
 					window.guest = name;
 					$(".showInLogin").show();
 					$.cookie.create("username",name,365);
-					$("#login-box").hide();
+                    $.cookie.create("loginmode","classic",365);
+                    $.cookie.create("id",-1,365);
+                    $("#login-box").hide();
 				} else {
 					$("div.login-warning").show().html("Incorrect Username or Password");
 				}			
@@ -63,6 +108,8 @@
                                                   $("#login-box").hide();
                                                   window.guest = name;
                                                   $.cookie.create("username",name,365);
+                                                  $.cookie.create("loginmode",loginmode,365);
+                                                  $.cookie.create("id",logid,365);
                                                 } else {
                                                   // login not successful -> register users
                                                   if((name == "" || password == "") || email == "") {
@@ -108,7 +155,9 @@
 		$("#logout").click(function() {
 			window.guest = "Guest";
 			$.cookie.delete("username");
-			$("#logout").hide();
+            $.cookie.delete("loginmode");
+            $.cookie.delete("id");
+            $("#logout").hide();
 			$(".login-btn").click(function() { 
 				eClick();
 			});
