@@ -143,11 +143,10 @@
                                                             $("#login-box").hide();
                                                             $(".login-btn").unbind("click");
                                                             $(".showInLogin").show();
+                                                        } else {
+                                                            $("div.login-warning").show().html("This username already exist");
                                                         }
-                                                    } else {
-                                                      $("div.login-warning").show().html("This username already exist");
-                                                    }
-                                                  });
+                                                    });
                                                 }
                                             });
                                           }).fail(function() {
