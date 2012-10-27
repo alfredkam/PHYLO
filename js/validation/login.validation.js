@@ -12,6 +12,7 @@
                 xfbml      : true  // parse XFBML
             });
             //check cookie
+            console.log("check cookie");
             if($.cookie.read("username")) {
                 $(".login-btn").unbind("click");
                 var name = $.cookie.read("username");
