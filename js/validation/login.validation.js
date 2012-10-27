@@ -32,30 +32,41 @@
                             if (c_logid==fb_logid) {
                                 $("#login-tag").html("You are logged as "+fullname);
                             } else {
-                                //bootbox.alert("Data conflict. Please, login again.");
-                                $.cookie.delete("username");
-                                $.cookie.delete("loginmode");
-                                $.cookie.delete("id");
-                                return;
+                               //bootbox.alert("Data conflict. Please, login again.");
+                               $.cookie.delete("username");
+                               $.cookie.delete("loginmode");
+                               $.cookie.delete("id");
+                               $("#logout").hide();
+                               window.guest = 'guest';
+                               $("#login-box").show();
+                               $(".login-btn").click(function() {
+                                                     eClick();
+                                                     });
+                               $("#login-tag").html("Login");
+                               $(".showInLogin").hide();
+                               return;
                             }
                         });
                     } else if (response.status === 'not_authorized') {
                         // not_authorized
                         $("div.login-warning").show().html("Phylo has not been authorized to connect with your Facebook account. Please, confirm.");
+                        return;
                     } else {
                         // not_logged_in
                         $("div.login-warning").show().html("You are not logged in Facebook. Please, sign-in to Facebook and re-connect to Phylo.");
+                        return;
                     }
                     });
                 } else {
                     console.log("Cannot find login mode");
                     return;
                 }
-                $(".login-btn").unbind("click");
                 $("#logout").show();
                 window.guest = name;
                 $(".showInLogin").show();
                 $("#login-box").hide();
+                $(".login-btn").unbind("click");
+                $(".showInLogin").show();
             };
         };
 
@@ -71,16 +82,17 @@
 			$("div.login-warning").hide();
 
 			$.protocal.login(name, password, function(re) {
-				if(re == "succ") {
-					$(".login-btn").unbind("click");	
+				if(re == "succ") {	
 					$("#login-tag").html("You are logged as "+name);
-					$("#logout").show();
-					window.guest = name;
-					$(".showInLogin").show();
 					$.cookie.create("username",name,365);
                     $.cookie.create("loginmode","classic",365);
                     $.cookie.create("id",-1,365);
+                    $("#logout").show();
+                    window.guest = name;
+                    $(".showInLogin").show();
                     $("#login-box").hide();
+                    $(".login-btn").unbind("click");
+                    $(".showInLogin").show();
 				} else {
 					$("div.login-warning").show().html("Incorrect Username or Password");
 				}			
@@ -103,32 +115,35 @@
                                               var password = mypasswd;
                                               $.protocal.login(name, password, function(re) {
                                                 if(re == "succ") {
-                                                  $(".login-btn").unbind("click");
-                                                  $("#login-tag").html("You are logged as "+fullname);
-                                                  $("#logout").show();
-                                                  $(".showInLogin").show();
-                                                  $("#login-box").hide();
-                                                  window.guest = name;
-                                                  $.cookie.create("username",name,365);
-                                                  $.cookie.create("loginmode",loginmode,365);
-                                                  $.cookie.create("id",logid,365);
+                                                    $("#login-tag").html("You are logged as "+fullname);
+                                                    $.cookie.create("username",name,365);
+                                                    $.cookie.create("loginmode",loginmode,365);
+                                                    $.cookie.create("id",logid,365);
+                                                    $("#logout").show();
+                                                    window.guest = name;
+                                                    $(".showInLogin").show();
+                                                    $("#login-box").hide();
+                                                    $(".login-btn").unbind("click");
+                                                    $(".showInLogin").show();
                                                 } else {
-                                                  // login not successful -> register users
-                                                  if((name == "" || password == "") || email == "") {
-                                                    $("div.login-warning").show().html("Email or Username or Password is missing");
-                                                    return;
-                                                  }
-                                                  $.protocal.register(name, password, email, function(re) {
-                                                    if(re == "succ") {
-                                                      $(".login-btn").unbind("click");
-                                                      $("#login-tag").html("You are logged as "+fullname);
-                                                      $("#logout").show();
-                                                      $(".showInLogin").show();
-                                                      $("#login-box").hide();
-                                                      window.guest = name;
-                                                      $.cookie.create("username",name,365);
-                                                      $.cookie.create("loginmode",loginmode,365);
-                                                      $.cookie.create("id",logid,365);
+                                                    // login not successful -> register users
+                                                    if((name == "" || password == "") || email == "") {
+                                                        $("div.login-warning").show().html("Email or Username or Password is missing");
+                                                        return;
+                                                    }
+                                                    $.protocal.register(name, password, email, function(re) {
+                                                        if(re == "succ") {
+                                                            $("#login-tag").html("You are logged as "+fullname);
+                                                            $.cookie.create("username",name,365);
+                                                            $.cookie.create("loginmode",loginmode,365);
+                                                            $.cookie.create("id",logid,365);
+                                                            $("#logout").show();
+                                                            window.guest = name;
+                                                            $(".showInLogin").show();
+                                                            $("#login-box").hide();
+                                                            $(".login-btn").unbind("click");
+                                                            $(".showInLogin").show();
+                                                        }
                                                     } else {
                                                       $("div.login-warning").show().html("This username already exist");
                                                     }
@@ -162,7 +177,9 @@
             $.cookie.delete("loginmode");
             $.cookie.delete("id");
             $("#logout").hide();
-			$(".login-btn").click(function() { 
+            window.guest = 'guest';
+            $("#login-box").show();
+			$(".login-btn").click(function() {
 				eClick();
 			});
 			$("#login-tag").html("Login");
