@@ -93,7 +93,7 @@
                                 var fullname = response.name;
                                 var name = response.username + "_fb_" + response.id;
                                 var loginmode = "fb";
-                                var logid = reponse.id;
+                                var logid = response.id;
                                 $.ajax({
                                         type: "POST",
                                         url : "http://phylo.cs.mcgill.ca/phpdb/passwdmanager.php",
@@ -126,6 +126,8 @@
                                                       $("#login-box").hide();
                                                       window.guest = name;
                                                       $.cookie.create("username",name,365);
+                                                      $.cookie.create("loginmode",loginmode,365);
+                                                      $.cookie.create("id",logid,365);
                                                     } else {
                                                       $("div.login-warning").show().html("This username already exist");
                                                     }
