@@ -27,7 +27,7 @@
                         // connected: we must check that account are the same
                         FB.api('/me', function(response) {
                             var fullname = response.name;
-                            var id = response.id;
+                            var logid = response.id;
                             if (id==logid) {
                                 $("#login-tag").html("You are logged as "+fullname);
                             } else {
