@@ -33,7 +33,7 @@
 		},
 		//c_name : name of cookie
 		delete : function (c_name) {
-			this.create(c_name,"",0);
+			document.create(c_name,"",0);
 		}	
 	}
 

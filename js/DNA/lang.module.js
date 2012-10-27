@@ -9,7 +9,7 @@
 				try {
 					hash = $.helper.get("lang").toString().toUpperCase().replace(/!.*/,"");			
 				} catch(err) {
-					hash = "en";
+					hash = "EN";
 				}	
 				
 				var script = document.createElement("script");
@@ -40,7 +40,7 @@
 					_script.src = "lang/EN.js";
 					_script.type = "text/javascript";
 					document.getElementsByTagName("head")[0].appendChild(_script);
-					window.langOpt = "en";
+					window.langOpt = "EN";
 					
 					_script.onload = function() {
 						window.lang = window["ENscript"].lang[0];
