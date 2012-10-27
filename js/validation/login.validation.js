@@ -17,7 +17,7 @@
                 $(".login-btn").unbind("click");
                 var name = $.cookie.read("username");
                 var mode = $.cookie.read("loginmode");
-                var c_logid = $.cookie.read("id");
+                var c_logid = $.cookie.read("logid");
                 console.log(name+"//"+mode+"//"+c_logid);
                 if (mode=="classic") {
                     $("#login-tag").html("You are logged as "+name);
@@ -35,7 +35,7 @@
                                //bootbox.alert("Data conflict. Please, login again.");
                                $.cookie.delete("username");
                                $.cookie.delete("loginmode");
-                               $.cookie.delete("id");
+                               $.cookie.delete("logid");
                                $("#logout").hide();
                                window.guest = 'guest';
                                $("#login-box").hide();
@@ -85,7 +85,7 @@
 					$("#login-tag").html("You are logged as "+name);
 					$.cookie.create("username",name,365);
                     $.cookie.create("loginmode","classic",365);
-                    $.cookie.create("id",-1,365);
+                    $.cookie.create("logid",-1,365);
                     $("#logout").show();
                     window.guest = name;
                     $("#login-box").hide();
@@ -116,7 +116,7 @@
                                                     $("#login-tag").html("You are logged as "+fullname);
                                                     $.cookie.create("username",name,365);
                                                     $.cookie.create("loginmode",loginmode,365);
-                                                    $.cookie.create("id",logid,365);
+                                                    $.cookie.create("logid",logid,365);
                                                     $("#logout").show();
                                                     window.guest = name;
                                                     $("#login-box").hide();
@@ -133,7 +133,7 @@
                                                             $("#login-tag").html("You are logged as "+fullname);
                                                             $.cookie.create("username",name,365);
                                                             $.cookie.create("loginmode",loginmode,365);
-                                                            $.cookie.create("id",logid,365);
+                                                            $.cookie.create("logid",logid,365);
                                                             $("#logout").show();
                                                             window.guest = name;
                                                             $("#login-box").hide();
@@ -171,7 +171,7 @@
             console.log("logout");
 			$.cookie.delete("username");
             $.cookie.delete("loginmode");
-            $.cookie.delete("id");
+            $.cookie.delete("logid");
             $("#logout").hide();
             window.guest = 'guest';
             $("#login-box").hide();
