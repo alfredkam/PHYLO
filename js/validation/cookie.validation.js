@@ -35,7 +35,7 @@
 		delete : function (c_name) {
             var exdate = new Date();
             exdate.setDate(exdate.getDate() - 1 );
-            var c_value="=; expires="+exdate.toUTCString());
+            var c_value="=; expires="+exdate.toUTCString();
             document.cookie=c_name + "=" + c_value;
 		}
 	}
