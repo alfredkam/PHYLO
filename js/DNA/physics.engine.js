@@ -44,6 +44,7 @@
 			var maxPos = 25;
 			if(left) {
 				//determine the left most boundary
+				var ithPos = 827;
 				for(var r in row) {
 					var nuc = track[r];
 					var counter = 0;
@@ -52,9 +53,10 @@
 						if(nuc[i] != "x") {
 							for(var j=0;j<list_nonObj.length;j++) {
 								if(nuc[i] == list_nonObj[j]) {
-									if(leastPos < counter) {
+									if(leastPos <= counter && ithPos > parseInt(domCache[list_nonObj[j]].left.replace(/px/,""))) {
 										leastPos = counter;
 										nucTemp = list_nonObj[j];
+										ithPos = parseInt(domCache[list_nonObj[j]].left.replace(/px/,""));
 									}
 									ifBreak = true;
 									break;
@@ -75,17 +77,19 @@
 			} else {
 				//right
 				//determine the right most boudary	
+				var ithPos = 0;
 				for(var r in row) {
 					var nuc = track[r];
-					var counter = 0;
+					var counter = 1;
 					var ifBreak = false;
 					for(var i=nuc.length-1;i>=0;i--) {
 						if(nuc[i] != "x") {
 							for(var j=$.phylo.seqLen-1; j >= 0; j--) {
 								if(nuc[i] == list_nonObj[j]) {
-									if(maxPos > counter) {
+									if(parseInt(domCache[list_nonObj[j]].left.replace(/px/,"")) > ithPos) {
 										maxPos = counter;
 										nucTemp = list_nonObj[j];
+										ithPos = parseInt(domCache[list_nonObj[j]].left.replace(/px/,""));
 									}
 									ifBreak = true;
 									break;
@@ -99,6 +103,7 @@
 				}
 
 				maxPos = $.phylo.seqLen - maxPos;
+			
 				var curr = domCache[nucTemp].left.replace(/px/,"");
 				var max = $.sequence.calcPos(maxPos);
 				var diff = max-curr;	
@@ -319,6 +324,8 @@
 						break;
 					}	
 				}
+		//		var i = parseInt($("#"+f).parent().attr("id").replace(/row/,""));
+				
 				return i;
 			};
 			var track = $.sequence.track;
@@ -332,12 +339,37 @@
 				var id = $(this).attr("id");
 				var left = parseInt(domCache[id].left)-1;
 				var pos = parseInt(left/$.phylo.x);
+				var row = getGridY(id);
 			//	if(left%$.phylo.x >= ($.phylo.x/2)) {
 				if($.sequence.calcPos(pos)-left <= 0) {
 					pos+=1;
 				}
-				domCache[id].left = $.sequence.calcPos(pos)+"px";//(pos*$.phylo.x)+"px";
-				track[getGridY(id)][pos] = id; 
+				//found new pos now check if correct assumption
+				if(track[row][pos] != "x") {
+					pos+=1;
+				}
+				//found it went out of array
+				if(pos >= $.phylo.seqLen) {
+					var i=track[row].length;
+					var temp = id;
+					while(i--) {
+						if(track[row][i] != "x") {
+							//temp = track[row][i];	
+							//track[row][i] = temp;  
+							temp = track[row][i];
+							track[row][i] = id;
+							domCache[id].left = $.sequence.calcPos(i)+"px";//(pos*$.phylo.x)+"px";
+							id = temp;
+						} else {
+							track[row][i] = id;	
+							domCache[id].left = $.sequence.calcPos(i)+"px";	
+							break;		
+						}
+					}
+				} else {
+					domCache[id].left = $.sequence.calcPos(pos)+"px";//(pos*$.phylo.x)+"px";
+					track[row][pos] = id; 
+				}
 			});
 			if(DEBUG)
 				$.helper.dump(track);
