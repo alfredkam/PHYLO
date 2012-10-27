@@ -1,11 +1,12 @@
 (function() {
 	$.physics = {
 		// moving multiple objects at once
-		shift_select : function(list,box) {
+		shift_select : function(list, list_nonObj, box) {
 			var left = true;
 			var posList = $.sequence.posList;
 			var posListReverse = $.sequence.posListReverse;
 			var domCache = $.phylo.domCache;
+			var track = $.sequence.track;
 			var max_distance = box.new-box.old;
 			if(box.new - box.old > 0) {
 				left = false;
@@ -29,80 +30,89 @@
 				}
 				return false;
 			}
-			//test assumtions and correct the assumption
-			for(var cell in list) {
-				var prev = parseInt($(list[cell]).css("left").replace(/px/,""));		
-				var move = prev+ (box.new - box.old);
-				var pos = parseInt($(list[cell]).attr("id")); 
-				if(left) {
-					if(checkList(pos-1))
-						continue;
-					while(true) {
-						try {
-							if(domCache[pos-1].left == undefined) {
-								var child_move = parseInt(domCache[pos].left.replace(/px/,"")) + (box.new-box.old);
-								if(child_move <= 0){//posList[pos]*$.phylo.x) {
-									//max_distance = parseInt(domCache[pos].left.replace(/px/,""));
-									max_distance = box.new - box.old - parseInt(domCache[pos].left.replace(/px/,""));
-									if(parseInt(domCache[pos].left.replace(/px/,"")) <= $.sequence.calcPos(0))
-										max_distance = 0;
-								} 
-								break;
-							} else {
-								var child_move = parseInt(domCache[pos].left.replace(/px/,"")) + (box.new-box.old);
-								var child_move_inner = parseInt(domCache[pos-1].left.replace(/px/,""));
-								if(child_move_inner+$.phylo.x < child_move)
+			//find its row			
+			var row = [];
+			for(var cell in list ) {
+				var r = $(list[cell]).parent().attr("id").toString().replace(/row/,"");
+				if(!(r in row)) {
+					row.push(r);
+				}
+			}
+
+			var leastPos = 0;
+			var nucTemp = 0;
+			var maxPos = 25;
+			if(left) {
+				//determine the left most boundary
+				for(var r in row) {
+					var nuc = track[r];
+					var counter = 0;
+					var ifBreak = false;
+					for(var i=0,len = nuc.length;i<len;i++) {
+						if(nuc[i] != "x") {
+							for(var j=0;j<list_nonObj.length;j++) {
+								if(nuc[i] == list_nonObj[j]) {
+									if(leastPos < counter) {
+										leastPos = counter;
+										nucTemp = list_nonObj[j];
+									}
+									ifBreak = true;
 									break;
-							}
-						} catch (err) {
-							if(domCache[pos-1] == undefined) {
-								var child_move = parseInt(domCache[pos].left.replace(/px/,"")) + (box.new-box.old);
-								if(child_move <= 0){//posList[pos]*$.phylo.x) {
-									max_distance = parseInt(domCache[pos].left.replace(/px/,""));
-									if(parseInt(domCache[pos].left.replace(/px/,"")) <= 1)
-										max_distance = 0;
-								} 
-								break;
-							 } else {
-								var child_move = parseInt(domCache[pos].left.replace(/px/,"")) + (box.new-box.old);
-								var child_move_inner = parseInt(domCache[pos-1].left.replace(/px/,""));
-								if(child_move_inner+$.phylo.x < child_move)
-									break;
-							}
-						}
-						pos-=1;
-					}
-				} else {
-					if(checkList(pos+1))
-						continue;
-					while (true) {
-						if(domCache[pos].left ==undefined ^ domCache[pos+1].left == undefined) { 
-							var child_move = parseInt(domCache[pos].left.replace(/px/,"")) + (box.new-box.old);
-							if(child_move >=  $.sequence.calcPos(24)) {
-								max_distance = $.sequence.calcPos(24)-parseInt(domCache[pos].left.replace(/px/,"")); 
-								if(parseInt(domCache[pos].left.replace(/px/,"")) >= $.sequence.calcPos(25)) {
-									max_distance = 0;
 								}
 							}
-							break;
-						} else {
-							var child_move = parseInt(domCache[pos].left.replace(/px/,"")) + (box.new-box.old);
-							var child_move_inner = parseInt(domCache[pos+1].left.replace(/px/,""));
-							if(child_move_inner > child_move+$.phylo.x)
+							if(ifBreak)
 								break;
-						} 
-						pos+=1;
+							counter+=1;
+						}
+					}
+				}
+				var curr = domCache[nucTemp].left.replace(/px/,"");
+				var min = $.sequence.calcPos(leastPos);
+				var diff = curr - min;	
+				if(parseInt(curr)+max_distance < min) {
+					max_distance = -1*diff;	
+				}
+			} else {
+				//right
+				//determine the right most boudary	
+				for(var r in row) {
+					var nuc = track[r];
+					var counter = 0;
+					var ifBreak = false;
+					for(var i=nuc.length-1;i>=0;i--) {
+						if(nuc[i] != "x") {
+							for(var j=$.phylo.seqLen-1; j >= 0; j--) {
+								if(nuc[i] == list_nonObj[j]) {
+									if(maxPos > counter) {
+										maxPos = counter;
+										nucTemp = list_nonObj[j];
+									}
+									ifBreak = true;
+									break;
+								}
+							}
+							if(ifBreak)
+								break;
+							counter+=1;
+						}
 					}
 				}
 
+				maxPos = $.phylo.seqLen - maxPos;
+				var curr = domCache[nucTemp].left.replace(/px/,"");
+				var max = $.sequence.calcPos(maxPos);
+				var diff = max-curr;	
+				if(parseInt(curr)+max_distance > max) {
+					max_distance = diff;	
+				}
 			}
-			
+
 			if(max_distance == 0)
 				return;
 
 			//set the new obj position
 			box.obj.css({
-				left: box.new,
+				left: box.old+max_distance,
 			});
 			
 			
@@ -196,10 +206,6 @@
 					}
 				}
 			}
-			/*
-			box.obj.css({
-				left : box.obj.new	
-			}); */
 			return true;
 		},
 		//determine if moving left or right 

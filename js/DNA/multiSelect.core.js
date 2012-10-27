@@ -74,6 +74,7 @@
 				W: -1,
 			}
 			var list = [];
+			var list2 = [];
 			$(".current > .sequence").each(function() {
 				var self = this;
 				//gets cordinates
@@ -112,6 +113,7 @@
 					)
 				) {
 					list.push(self);
+					list2.push($(self).attr("id"));
 					if(curr.X < select.X) {
 						select.X = curr.X;
 					}	
@@ -147,7 +149,7 @@
 					var offsetX = e.pageX - select.X;
 					$.events.touch(document,{
 						move: function(e) {
-							$.physics.shift_select(list, {
+							$.physics.shift_select(list,list2, {
 								old : parseInt($("#chosenArea").css("left").replace(/px/,"")),
 								new : e.pageX - offsetX,
 								obj : $("#chosenArea") 
@@ -157,6 +159,7 @@
 							$.events.untouch(document,"move");		
 							$.events.untouch("#chosenArea","start");
 							list = [];
+							list2 = [];
 							$("#chosenArea").hide();
 							$.physics.snap();
 							var score = $.fitch.score();
