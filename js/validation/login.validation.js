@@ -17,7 +17,7 @@
                 $(".login-btn").unbind("click");
                 var name = $.cookie.read("username");
                 var mode = $.cookie.read("loginmode");
-                var logid = $.cookie.read("id");
+                var c_logid = $.cookie.read("id");
                 console.log(name+"//"+mode+"//"+logid);
                 if (mode=="classic") {
                     $("#login-tag").html("You are logged as "+name);
@@ -28,8 +28,8 @@
                         // connected: we must check that account are the same
                         FB.api('/me', function(response) {
                             var fullname = response.name;
-                            var logid = response.id;
-                            if (id==logid) {
+                            var fb_logid = response.id;
+                            if (c_logid==fb_logid) {
                                 $("#login-tag").html("You are logged as "+fullname);
                             } else {
                                 //bootbox.alert("Data conflict. Please, login again.");
