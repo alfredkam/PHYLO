@@ -38,7 +38,7 @@
                                $.cookie.delete("id");
                                $("#logout").hide();
                                window.guest = 'guest';
-                               $("#login-box").show();
+                               $("#login-box").hide();
                                $(".login-btn").click(function() {
                                                      eClick();
                                                      });
@@ -63,7 +63,6 @@
                 }
                 $("#logout").show();
                 window.guest = name;
-                $(".showInLogin").show();
                 $("#login-box").hide();
                 $(".login-btn").unbind("click");
                 $(".showInLogin").show();
@@ -89,7 +88,6 @@
                     $.cookie.create("id",-1,365);
                     $("#logout").show();
                     window.guest = name;
-                    $(".showInLogin").show();
                     $("#login-box").hide();
                     $(".login-btn").unbind("click");
                     $(".showInLogin").show();
@@ -121,7 +119,6 @@
                                                     $.cookie.create("id",logid,365);
                                                     $("#logout").show();
                                                     window.guest = name;
-                                                    $(".showInLogin").show();
                                                     $("#login-box").hide();
                                                     $(".login-btn").unbind("click");
                                                     $(".showInLogin").show();
@@ -139,7 +136,6 @@
                                                             $.cookie.create("id",logid,365);
                                                             $("#logout").show();
                                                             window.guest = name;
-                                                            $(".showInLogin").show();
                                                             $("#login-box").hide();
                                                             $(".login-btn").unbind("click");
                                                             $(".showInLogin").show();
@@ -177,7 +173,7 @@
             $.cookie.delete("id");
             $("#logout").hide();
             window.guest = 'guest';
-            $("#login-box").show();
+            $("#login-box").hide();
 			$(".login-btn").click(function() {
 				eClick();
 			});
@@ -204,7 +200,7 @@
 				$.protocal.register(name, password, email, function(re) {
 					if(re == "succ") {
 						$(".login-btn").unbind("click");	
-						$("#login-tag").html("Welcome back "+name);
+						$("#login-tag").html("You are logged as "+name);
 						$("#logout").show();
 						window.guest = name;
 						$("#login-box").hide();
