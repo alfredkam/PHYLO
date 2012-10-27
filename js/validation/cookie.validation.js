@@ -13,16 +13,11 @@
 		//c_name : name of cookie
 		//value : the value to store
 		//exdays : expire date [int]
-        create : function(c_name, value, loginmode, days) {
-            var date = new Date();
-            date.setTime(date.getTime()+(days*24*60*60*1000));
-            var mylogin = " mode="+loginmode+";";
-            if (days) {
-                var expires = " expires="+date.toGMTString()+";";
-            } else {
-                var expires = "";
-            }
-            document.cookie = c_name+"="+value+";"+mylogin+expires+" path=/";
+        create : function(c_name, value, exdays) {
+            var exdate = new Date();
+            exdate.setDate(exdate.getDate()+exdays);
+            var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+            document.cookie=c_name + "=" + c_value;
         },
         //c_name : name of cookie
 		//returns value or null
