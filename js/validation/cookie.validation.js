@@ -33,8 +33,11 @@
 		},
 		//c_name : name of cookie
 		delete : function (c_name) {
-			document.create(c_name,"",0);
-		}	
+            var exdate = new Date();
+            exdate.setDate(exdate.getDate() - 1 );
+            var c_value="=; expires="+exdate.toUTCString());
+            document.cookie=c_name + "=" + c_value;
+		}
 	}
 
 })();
