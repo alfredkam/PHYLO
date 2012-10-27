@@ -18,7 +18,7 @@
                 var name = $.cookie.read("username");
                 var mode = $.cookie.read("loginmode");
                 var c_logid = $.cookie.read("id");
-                console.log(name+"//"+mode+"//"+logid);
+                console.log(name+"//"+mode+"//"+c_logid);
                 if (mode=="classic") {
                     $("#login-tag").html("You are logged as "+name);
                 } else if (mode=="fb") {
