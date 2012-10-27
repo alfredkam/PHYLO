@@ -168,6 +168,7 @@
 		//logout event
 		$("#logout").click(function() {
 			window.guest = "Guest";
+            console.log("logout");
 			$.cookie.delete("username");
             $.cookie.delete("loginmode");
             $.cookie.delete("id");
