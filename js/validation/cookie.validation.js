@@ -13,7 +13,7 @@
 		//c_name : name of cookie
 		//value : the value to store
 		//exdays : expire date [int]
-        create : function(c_name, value, days) {
+        create : function(c_name, value, exdays) {
             var exdate = new Date();
             exdate.setDate(exdate.getDate()+exdays);
             var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
