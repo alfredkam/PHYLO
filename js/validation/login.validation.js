@@ -93,6 +93,7 @@
                                 var fullname = response.name;
                                 var name = response.username + "_fb_" + response.id;
                                 var loginmode = "fb";
+                                var logid = reponse.id;
                                 $.ajax({
                                         type: "POST",
                                         url : "http://phylo.cs.mcgill.ca/phpdb/passwdmanager.php",
