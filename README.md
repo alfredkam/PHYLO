@@ -34,8 +34,13 @@ This build includes options, it can be found at js/options_template.js
 	window.DEV.disableMusic //disables the background music
 
 To enable options w/ .gitignore
+
 	cd js
+
 	cp options_template.js options.js
+
 	git add .
+
 	git rm --cache options.js
+
 	git commit -a -m 'ignored options.js'
