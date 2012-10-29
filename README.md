@@ -38,8 +38,8 @@ To enable options w/ .gitignore
 	cd js
 
 	cp options_template.js options.js
-
-	git add .
+	
+	git add .  
 
 	git rm --cache options.js
 
