@@ -33,14 +33,17 @@ This build includes options, it can be found at js/options_template.js
 	
 	window.DEV.disableMusic //disables the background music
 
-To enable options w/ .gitignore
+To enable options w/ .gitignore, in terminal
 
 	cd js
 
 	cp options_template.js options.js
 	
-	git add .  
+Now you can edit options.js to modify the development options
+
+Note: Do not delete options_template.js
+
+if options.js is tracked, ie - meaning git is tracking the changes, in terminal
 
 	git rm --cache options.js
-
-	git commit -a -m 'ignored options.js'
+	git commit -a -m 'untrack options.js'
