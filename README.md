@@ -21,7 +21,7 @@ This will tackle the cross domain issue when working locally.
 
 Current version supports browsers and mobile browsers with screen size bigger than 1024 * 768
 
-This build includes options, it can be found at js/options.js
+This build includes options, it can be found at js/options_template.js
 
 	window.DEBUG //enables debug log
 
@@ -32,3 +32,10 @@ This build includes options, it can be found at js/options.js
 	window.DEV.disableSplash //disables Splash 
 	
 	window.DEV.disableMusic //disables the background music
+
+To enable options w/ .gitignore
+	cd js
+	cp options_template.js options.js
+	git add .
+	git rm --cache options.js
+	git commit -a -m 'ignored options.js'
