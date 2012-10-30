@@ -3,9 +3,7 @@
 		$("#tabletPanel").hide("slide",{direction : "left"}, 500);
 
 		if($("#mid-panel").hasClass("forceDisplayNone")) {
-			$("#mid-panel").hide();
 			$("#mid-panel").removeClass("forceDisplayNone");	
-			
 		}
 		window.setTimeout(function() {
 		$(".tablet-back-btn").fadeIn();
