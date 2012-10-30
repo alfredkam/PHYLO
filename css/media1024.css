@@ -40,7 +40,10 @@
 		padding:0.8em 2em;
 	}
 	
-
+	a.tablet-grid:hover {
+		color:black;
+	}
+	
 	.tablet-grid > div > div {
 		display:inline-block;
 	}	
