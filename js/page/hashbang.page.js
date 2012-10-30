@@ -6,7 +6,7 @@
 			$("#loading-panel").show();
 		},
 		panelReady : function() {
-			$("#mid-panel").show();
+			$("#mid-panel").fadeIn();
 			$("#loading-panel").hide();
 		},
 		load : function(page) {
@@ -139,6 +139,29 @@
 			}
 		} else {
 			window.location.href = $(this).attr("href");
+		}
+	});
+
+	$("a.tablet-tab").click(function() {
+		var innerSelf = this;
+		if($.timer.active == true) {
+			$.helper.popUp("Are you sure you want to quite?",function(status) {
+				if(status == "ok") {
+					window.location.hash = "#!"+$(innerSelf).attr("name");		
+					$.timer.stop();
+					//force change
+					if($(innerSelf).attr("name") == "play") {
+						$.hashbang.load($.hashbang.get());	
+						$.tailor.init();
+					}
+				}
+			});			
+		} else {
+			window.location.hash = "#!"+$(this).attr("name");		
+			if($(innerSelf).attr("name") == "play") {
+				$.hashbang.load($.hashbang.get());	
+				$.tailor.init();
+			}
 		}
 	});
 
