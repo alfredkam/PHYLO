@@ -149,30 +149,25 @@
 		if($.timer.active == true) {
 			$.helper.popUp("Are you sure you want to quite?",function(status) {
 				if(status == "ok") {
-					window.location.hash = "#!"+$(innerSelf).attr("name");		
+				//	window.location.hash = "#!"+$(innerSelf).attr("name");		
 					$.timer.stop();
-					//force change
-					if($(innerSelf).attr("name") == "play") {
-						$.hashbang.load($.hashbang.get());	
-						$.tailor.init();
-					}
 					$(this).hide();
 					$("#mid-panel").hide();
 					$("#tabletPanel").show("slide",{direction:"left"},500);
 				}
 			});			
 		} else {
-			window.location.hash = "#!"+$(this).attr("name");		
-			if($(innerSelf).attr("name") == "play") {
-				$.hashbang.load($.hashbang.get());	
-				$.tailor.init();
-			}
 			$(this).hide();
 			$("#mid-panel").hide();
 			$("#tabletPanel").show("slide",{direction:"left"},500);
 		}
 	});
 	$("a.tablet-tab").click(function() {
+			var innerSelf = this;
+			if($(innerSelf).attr("name") == "play") {
+				$.hashbang.load($.hashbang.get());	
+				$.tailor.init();
+			}
 			window.location.hash = "#!"+$(this).attr("name");		
 			$("#tabletPanel").hide("slide",{direction : "left"}, 500);
 			if($("#mid-panel").hasClass("forceDisplayNone")) {
