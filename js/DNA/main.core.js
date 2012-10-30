@@ -19,7 +19,7 @@
 					height : $("#tree").css("height").replace(/px/,"")
 				};
 				$.lang.init(function() {
-					$("#gameBoad").html('<img src="img/loading.gif>');
+					$("#gameBoard").html('<img src="img/loading.gif>');
 					$("#game").show();
 					$.protocal.read(setting);
 					$.protocal.request();
