@@ -6,7 +6,15 @@
 			clear : function() {
 				$.timer.stop();
 				$.stage.current = -1;
-				$("#countDown-text").html(3);
+			//	$("#countDown-text").html(3);
+				$("#countDown-text").html('<img src="img/loading.gif>');
+				$("#countDown").show();
+				/*
+				$("#tree").html();
+				var canvas  = document.getElementById("score");
+				var c = canvas.getContext("2d");
+				c.clearRect(0,0,$.html5.score.settings.wBox, $.html5.score.settings.hBox);
+				*/
 			},
 			//configuration
 			init : function(setting) {
@@ -19,7 +27,6 @@
 					height : $("#tree").css("height").replace(/px/,"")
 				};
 				$.lang.init(function() {
-					$("#gameBoard").html('<img src="img/loading.gif>');
 					$("#game").show();
 					$.protocal.read(setting);
 					$.protocal.request();
