@@ -77,6 +77,11 @@
 		protocal : function(url) {
 			var self = this;
 			$.ajax({
+				statusCode : {
+					412 : function() {
+						console.log(">> Warning : Status Code 412; Retrying URL : "+url);
+					},
+				},	
 				url : url,
 				type : "post",
 			}).done(function(re) {
