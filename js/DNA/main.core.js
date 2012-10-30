@@ -19,6 +19,7 @@
 					height : $("#tree").css("height").replace(/px/,"")
 				};
 				$.lang.init(function() {
+					$("#gameBoad").html('<img src="img/loading.gif>');
 					$("#game").show();
 					$.protocal.read(setting);
 					$.protocal.request();
@@ -89,6 +90,7 @@
 						$.multiSelect.active();
 					}
 				} else {
+					$("#countDown").show();
 					$.splash.countDown(function() {
 						//start game
 						$.stage.end = false;
