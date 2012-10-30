@@ -55,6 +55,8 @@
 					$.page.rna();
 					self.panelReady();
 				});
+			} else if(page == "back") {
+				$("#loading-panel").hide();
 			}
 		},			
 		checkIfAutoStart : function() {
@@ -141,8 +143,8 @@
 			window.location.href = $(this).attr("href");
 		}
 	});
-
-	$("a.tablet-tab").click(function() {
+	//tablet
+	$("a.tablet-back-btn").click(function() {
 		var innerSelf = this;
 		if($.timer.active == true) {
 			$.helper.popUp("Are you sure you want to quite?",function(status) {
@@ -154,6 +156,9 @@
 						$.hashbang.load($.hashbang.get());	
 						$.tailor.init();
 					}
+					$(this).hide();
+					$("#mid-panel").hide();
+					$("#tabletPanel").show("slide",{direction:"left"},500);
 				}
 			});			
 		} else {
@@ -162,7 +167,20 @@
 				$.hashbang.load($.hashbang.get());	
 				$.tailor.init();
 			}
+			$(this).hide();
+			$("#mid-panel").hide();
+			$("#tabletPanel").show("slide",{direction:"left"},500);
 		}
+	});
+	$("a.tablet-tab").click(function() {
+			window.location.hash = "#!"+$(this).attr("name");		
+			$("#tabletPanel").hide("slide",{direction : "left"}, 500);
+			if($("#mid-panel").hasClass("forceDisplayNone")) {
+				$("#mid-panel").removeClass("forceDisplayNone");	
+			}
+			window.setTimeout(function() {
+			$(".tablet-back-btn").fadeIn();
+			},400);
 	});
 
 })();
