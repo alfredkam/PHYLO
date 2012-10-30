@@ -1,0 +1,80 @@
+@media (max-width: 1024px) {
+	body {
+		background-image:none;
+		background-color:black;
+	}
+	#top-panel {
+		display:none;
+	}	
+
+	#mid-panel {
+		display:none !important;
+	}
+
+	#tabletPanel {
+		display:block;
+		margin:3em 3em;
+	}
+	
+	#tabletPanel, #tabletPanel div{
+		line-height: normal;
+	}
+
+	.tablet-title {
+		font-size: 6em;
+		padding-bottom:0.2em;
+	}	
+	
+	.tablet-grid {
+		display:inline-block;
+		font-size:4em;
+	}
+
+	.tablet-grid  > div {
+		margin-bottom:0.1em;
+		text-align:center;
+	} 
+
+	.tablet-play-btn > div {
+		padding:0.8em 2em;
+	}
+	
+
+	.tablet-grid > div > div {
+		display:inline-block;
+	}	
+
+	.tablet-grid i {
+		display:inline-block;
+		width:auto;
+		height:auto;
+		line-height:normal;
+	}
+	.tablet-play-btn div {
+		position:relative;		
+	}
+	
+	.tablet-play-btn i.icon-stop {
+		top:0.17em;
+		position:relative;
+	}	
+	i.tablet-style-stroke {
+		position: absolute;
+		width:3em;
+		height:14px;
+		color:#333;
+		background-color: black;
+		top:0.45em;
+	}
+	.tablet-tutorial-btn > div {
+		padding:0.8em 2em;
+	}
+	.tablet-tutorial-btn i, .tablet-about-btn i, .tablet-credits-btn i, .tablet-ranking-btn i, .tablet-login-btn i, .tablet-settings-btn i{
+		top:0.17em;
+		position:relative;
+	}
+	.tablet-about-btn > div, .tablet-credits-btn > div, .tablet-ranking-btn > div, .tablet-login-btn > div, .tablet-settings-btn > div {
+		padding:0.8em 1em;
+	}
+	
+}
