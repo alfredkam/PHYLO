@@ -19,7 +19,12 @@ If you are using chrome for development, you will need to execute this in your t
 
 This will tackle the cross domain issue when working locally. 
 
-Current version supports browsers and mobile browsers with screen size bigger than 1024 * 768
+
+
+Current version supports browsers and mobile browsers with screen size bigger than 1024px * 768px
+Screen @ 1024px w/ cutomized UX
+
+
 
 This build includes options, it can be found at js/options_template.js
 
