@@ -80,6 +80,7 @@
 				statusCode : {
 					412 : function() {
 						console.log(">> Warning : Status Code 412; Retrying URL : "+url);
+						self.protocal(url);
 					},
 				},	
 				url : url,
