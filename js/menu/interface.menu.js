@@ -107,7 +107,7 @@
 		g.prototype.restart = function() {
 			var doc = document, win = window;
 			var settings = config.determineSettings();
-			this.loadBackground(doc,win,settings);
+			this.loadMenu(doc,win,settings);
 		};
 		g.prototype.loadBackground = function(doc,win,settings) {
 			
@@ -644,6 +644,6 @@
 				["start",proto.start],
 				["restart",proto.restart]
 				];
-		common.exportSingleton("device",g,attr);
+		common.exportSingleton("interactiveMenu",g,attr);
 	})();
 })()

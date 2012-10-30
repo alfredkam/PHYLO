@@ -85,6 +85,7 @@
 				//window.location.reload(true);
 				$("#game").hide();
 				$("#endGame").fadeOut();
+				interactiveMenu.restart();
 				$("#draw").show();
 				$("#menu").fadeIn();
 				//window.location.hash = "#!play";
