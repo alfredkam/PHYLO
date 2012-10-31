@@ -74,11 +74,9 @@
 									array('label'=>'Login', 'url'=>'#'),
 									'---',
 									array('label'=>'settings', 'url'=>'#', 'items'=>array(
-											array('label'=>'Action', 'url'=>'#'),
-											array('label'=>'Another action', 'url'=>'#'),
-											array('label'=>'Something else here', 'url'=>'#'),
-											'---',
-											array('label'=>'Separated link', 'url'=>'#'),
+											array('label'=>'Language', 'url'=>'#'),
+											array('label'=>'Customize', 'url'=>'#'),
+											
 									)),
 							),
 					),
