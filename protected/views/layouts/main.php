@@ -47,11 +47,11 @@
 									'htmlOptions'=>array('id'=>'nav', 'class'=>'span6'),
 
 									'items'=>array(
-											array('label'=>'Play', 'url'=>'#', 'active'=>true),
-											array('label'=>'Tutorial', 'url'=>'#'),
-											array('label'=>'About', 'url'=>'#'),
-											array('label'=>'Credits', 'url'=>'#'),
-											array('label'=>'Ranking', 'url'=>'#'),
+											array('label'=>'Play', 'url'=>'#play', 'active'=>true),
+											array('label'=>'Tutorial', 'url'=>'#tutorial'),
+											array('label'=>'About', 'url'=>'#about'),
+											array('label'=>'Credits', 'url'=>'#credits'),
+											array('label'=>'Ranking', 'url'=>'#ranking'),
 
 
 											/*
@@ -98,8 +98,7 @@
 		<div id="footer">
 			Copyright &copy;
 			<?php echo date('Y'); ?>
-			by My Company.<br /> All Rights Reserved.<br />
-			<?php echo Yii::powered(); ?>
+			by Alfred Kam, PHYLO, McGill CSB and McGill University<br /> All Rights Reserved.<br />
 		</div>
 		<!-- footer -->
 
