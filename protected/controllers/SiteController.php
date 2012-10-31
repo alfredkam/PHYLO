@@ -27,7 +27,7 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
+		// renders the view file 'protected/views/site/play.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('play');
 	}

@@ -52,18 +52,6 @@
 											array('label'=>'About', 'url'=>'#'),
 											array('label'=>'Credits', 'url'=>'#'),
 											array('label'=>'Ranking', 'url'=>'#'),
-
-
-											/*
-											 array('label'=>'Dropdown', 'url'=>'#', 'items'=>array(
-											 		array('label'=>'Action', 'url'=>'#'),
-											 		array('label'=>'Another action', 'url'=>'#'),
-											 		array('label'=>'Something else here', 'url'=>'#'),
-											 		'---',
-											 		array('label'=>'NAV HEADER'),
-											 		array('label'=>'Separated link', 'url'=>'#'),
-											 		array('label'=>'One more separated link', 'url'=>'#'),
-											 )*/
 									),
 							),
 					
@@ -96,10 +84,11 @@
 		<div class="clear"></div>
 
 		<div id="footer">
+			Want to contribute? <a href='https://github.com/McGill-CSB/PHYLO'>Click Here</a><br>
 			Copyright &copy;
 			<?php echo date('Y'); ?>
-			by My Company.<br /> All Rights Reserved.<br />
-			<?php echo Yii::powered(); ?>
+			by Alfred Kam, PHYLO, McGill CSB and McGill University.<br /> All Rights Reserved.<br />
+			
 		</div>
 		<!-- footer -->
 
@@ -107,4 +96,6 @@
 	<!-- page -->
 
 </body>
+
+
 </html>
