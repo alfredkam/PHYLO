@@ -107,7 +107,7 @@
 		g.prototype.restart = function() {
 			var doc = document, win = window;
 			var settings = config.determineSettings();
-			this.loadBackground(doc,win,settings);
+			this.loadMenu(doc,win,settings);
 		};
 		g.prototype.loadBackground = function(doc,win,settings) {
 			
@@ -596,13 +596,12 @@
 				selection.push(new cell(ctx,150,120+(50*i),i));
 			}
 
-			$('#draw').mousemove(function(e) {
+			$('#draw').unbind().mousemove(function(e) {
 				var k = getCursorPosition(e);
 				for(var i=0;i<selection.length;i++) {
 					selection[i].onOver(k[0],k[1]);		
 				}
-			});
-			$('#draw').click(function(e) {
+			}).click(function(e) {
 				var k = getCursorPosition(e);
 				for(var i=0;i<selection.length;i++) {
 					selection[i].onClick(k[0],k[1]);		
@@ -644,6 +643,6 @@
 				["start",proto.start],
 				["restart",proto.restart]
 				];
-		common.exportSingleton("device",g,attr);
+		common.exportSingleton("interactiveMenu",g,attr);
 	})();
 })()
