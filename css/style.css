@@ -337,7 +337,7 @@ a.btn {
 #nav #tutorial div:hover, #nav #tutorial div.onSelect, .tablet-tutorial-btn div, .tablet-settings-btn div {
 	background-color: darkOrchid;
 }
-#nav #about div:hover, #nav #about div.onSelect, .tablet-about-btn div {
+#nav #about div:hover, #nav #about div.onSelect, .tablet-about-btn div, .tablet-feedback-btn div {
 	background-color: green;
 }
 #nav #credits div:hover, #nav #credits div.onSelect, .tablet-credits-btn div {
