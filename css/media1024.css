@@ -72,8 +72,12 @@
 		top:0.17em;
 		position:relative;
 	}
-	.tablet-about-btn > div, .tablet-credits-btn > div, .tablet-ranking-btn > div, .tablet-login-btn > div, .tablet-settings-btn > div, .tablet-feedback-btn > div {
+	.tablet-about-btn > div, .tablet-credits-btn > div, .tablet-ranking-btn > div, .tablet-login-btn > div{
 		padding:0.8em 1em;
+	}
+	
+	.tablet-settings-btn > div, .tablet-feedback-btn > div {
+		padding:0.8em 1.89em;
 	}
 
 	/* back button */
