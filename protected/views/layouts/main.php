@@ -27,7 +27,6 @@
 	href="/css/style.css" />
 
 
-
 <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -53,7 +52,7 @@
 									'htmlOptions'=>array('id'=>'nav', 'class'=>'span6'),
 
 									'items'=>array(
-											array('label'=>'Play', 'url'=>'/index.php/play', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'play'),
+											array('label'=>'Play', 'url'=>'/index.php/play', 'active'=>(Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'play') ^ (Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'index')),
 											array('label'=>'Tutorial', 'url'=>'/index.php/tutorial', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'tutorial'),
 											array('label'=>'About', 'url'=>'/index.php/about', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'about'),
 											array('label'=>'Credits', 'url'=>'/index.php/credits', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'credits'),

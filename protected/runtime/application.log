@@ -7136,3 +7136,377 @@ Stack trace:
 REQUEST_URI=/index.php/img/animal/mouse.png
 HTTP_REFERER=http://localhost:8888/index.php/play
 ---
+2012/11/01 16:34:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/color_picker.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/color_picke...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/color_picker.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "music/Valent - The Buckle.mp3".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('music/Valent - ...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/music/Valent%20-%20The%20Buckle.mp3
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/human.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/huma...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/human.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/mouse.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/mous...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/mouse.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/dog.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/dog....')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/dog.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/mouse.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/mous...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/mouse.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/bat.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/bat....')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/bat.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/human.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/huma...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/human.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/cow.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/cow....')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/cow.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/human.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/huma...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/human.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/mouse.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/mous...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/mouse.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/dog.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/dog....')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/dog.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/bat.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/bat....')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/bat.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/human.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/huma...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/human.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/cow.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/cow....')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/cow.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/dog.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/dog....')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/dog.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/mouse.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/mous...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/mouse.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/bat.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/bat....')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/bat.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/elephant.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/elep...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/elephant.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/beaver.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/beav...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/beaver.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/cow.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/cow....')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/cow.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/bat.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/bat....')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/bat.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/mouse.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/mous...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/mouse.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/dog.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/dog....')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/dog.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:37:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/human.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/huma...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/human.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:38:06 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "credits".' in /Users/dark/Desktop/PHYLO/framework/web/CController.php:879
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CController.php(783): CController->renderPartial('credits', NULL, true)
+#1 /Users/dark/Desktop/PHYLO/protected/controllers/SiteController.php(48): CController->render('credits')
+#2 /Users/dark/Desktop/PHYLO/framework/web/actions/CInlineAction.php(50): SiteController->actionCredits()
+#3 /Users/dark/Desktop/PHYLO/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/dark/Desktop/PHYLO/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#5 /Users/dark/Desktop/PHYLO/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(283): CController->run('credits')
+#7 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('site/credits')
+#8 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php/credits
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:38:08 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "about".' in /Users/dark/Desktop/PHYLO/framework/web/CController.php:879
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CController.php(783): CController->renderPartial('about', NULL, true)
+#1 /Users/dark/Desktop/PHYLO/protected/controllers/SiteController.php(43): CController->render('about')
+#2 /Users/dark/Desktop/PHYLO/framework/web/actions/CInlineAction.php(50): SiteController->actionAbout()
+#3 /Users/dark/Desktop/PHYLO/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/dark/Desktop/PHYLO/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#5 /Users/dark/Desktop/PHYLO/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(283): CController->run('about')
+#7 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('site/about')
+#8 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php/about
+HTTP_REFERER=http://localhost:8888/index.php/credits
+---
+2012/11/01 16:38:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/color_picker.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/color_picke...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/color_picker.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:38:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "music/Valent - The Buckle.mp3".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('music/Valent - ...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/music/Valent%20-%20The%20Buckle.mp3
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:38:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/human.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/huma...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/human.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:38:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/animal/mouse.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/animal/mous...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/animal/mouse.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:38:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "content/play.html".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('content/play.ht...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/content/play.html
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:38:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ranking".' in /Users/dark/Desktop/PHYLO/framework/web/CController.php:484
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CController.php(271): CController->missingAction('ranking')
+#1 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(283): CController->run('ranking')
+#2 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('site/ranking')
+#3 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/ranking
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 16:38:38 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "about".' in /Users/dark/Desktop/PHYLO/framework/web/CController.php:879
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CController.php(783): CController->renderPartial('about', NULL, true)
+#1 /Users/dark/Desktop/PHYLO/protected/controllers/SiteController.php(43): CController->render('about')
+#2 /Users/dark/Desktop/PHYLO/framework/web/actions/CInlineAction.php(50): SiteController->actionAbout()
+#3 /Users/dark/Desktop/PHYLO/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/dark/Desktop/PHYLO/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#5 /Users/dark/Desktop/PHYLO/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(283): CController->run('about')
+#7 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('site/about')
+#8 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php/about
+HTTP_REFERER=http://localhost:8888/index.php/tutorial
+---
+2012/11/01 16:38:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ranking".' in /Users/dark/Desktop/PHYLO/framework/web/CController.php:484
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CController.php(271): CController->missingAction('ranking')
+#1 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(283): CController->run('ranking')
+#2 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('site/ranking')
+#3 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/ranking
+HTTP_REFERER=http://localhost:8888/index.php/about
+---
+2012/11/01 17:32:14 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "about".' in /Users/dark/Desktop/PHYLO/framework/web/CController.php:879
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CController.php(783): CController->renderPartial('about', NULL, true)
+#1 /Users/dark/Desktop/PHYLO/protected/controllers/SiteController.php(43): CController->render('about')
+#2 /Users/dark/Desktop/PHYLO/framework/web/actions/CInlineAction.php(50): SiteController->actionAbout()
+#3 /Users/dark/Desktop/PHYLO/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/dark/Desktop/PHYLO/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#5 /Users/dark/Desktop/PHYLO/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(283): CController->run('about')
+#7 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('site/about')
+#8 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php/about
+HTTP_REFERER=http://localhost:8888/
+---
+2012/11/01 17:32:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/color_picker.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/color_picke...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/color_picker.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
+2012/11/01 17:32:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/color_picker.png".' in /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('img/color_picke...')
+#1 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/img/color_picker.png
+HTTP_REFERER=http://localhost:8888/index.php/play
+---
