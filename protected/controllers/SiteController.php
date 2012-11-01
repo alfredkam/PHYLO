@@ -29,21 +29,25 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/play.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		
-		if(isset($_GET["page"]) && !empty($_GET["page"])) {
-			if($_GET["page"] == "play") {
-				$this->render('play');
-			} else if ($_GET["page"] == "tutorial") {
-				$this->render('tutorial');
-			} else {
-				$this->render('play');
-			}
-		} else {
-			$this->render('play');
-		}
+		$this->render('play');
 		
 	}
 	
+	public function actionPlay()
+	{
+		$this->render('play');
+	}
+	
+	public function actionAbout() 
+	{
+		$this->render('about');
+	}
+	
+	public function actionCredits() 
+	{
+		$this->render('credits');
+	}
+		
 	public function actionTutorial()
 	{
 		$this->render('tutorial');

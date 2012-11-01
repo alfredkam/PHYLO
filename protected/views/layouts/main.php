@@ -14,6 +14,10 @@
 	media="print" />
 <link rel="stylesheet" type="text/css"
 	href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css"
+	href="<?php echo Yii::app()->request->baseUrl; ?>/css/font-awesome.css" />
+<link rel="stylesheet" type="text/css"
+	href="<?php echo Yii::app()->request->baseUrl; ?>/css/font-awesome-ie7.css />
 
 <!--[if lt IE 8]>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
@@ -47,14 +51,13 @@
 									'htmlOptions'=>array('id'=>'nav', 'class'=>'span6'),
 
 									'items'=>array(
-											array('label'=>'Play', 'url'=>'?page=play', 'active'=>true),
-											array('label'=>'Tutorial', 'url'=> '?page=tutorial'),
-											array('label'=>'About', 'url'=>'?page=about'),
-											array('label'=>'Credits', 'url'=>'?page=credits'),
-											array('label'=>'Ranking', 'url'=>'?page=ranking'),
+											array('label'=>'Play', 'url'=>'/index.php/play', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'play'),
+											array('label'=>'Tutorial', 'url'=>'/index.php/tutorial', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'tutorial'),
+											array('label'=>'About', 'url'=>'/index.php/about', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'about'),
+											array('label'=>'Credits', 'url'=>'/index.php/credits', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'credits'),
+											array('label'=>'Ranking', 'url'=>'/index.php/ranking', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'ranking	'),
 									),
 							),
-					
 					array(
 							'class'=>'bootstrap.widgets.TbMenu',
 							'htmlOptions'=>array('class'=>'pull-right'),
@@ -80,7 +83,6 @@
 		<?php endif?>
 
 		<?php echo $content; ?>
-
 		<div class="clear"></div>
 
 		<div id="footer">
