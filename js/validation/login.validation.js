@@ -29,10 +29,6 @@
                             var fb_logid = response.id;
                             if (c_logid==fb_logid) {
                                 $("#login-tag").html("You are logged as "+fullname);
-                                FB.ui({
-                                    method: 'feed',
-                                    message: 'started playing Phylo. Have fun and help genetic research!',
-                                });
                             } else {
                                //bootbox.alert("Data conflict. Please, login again.");
                                $.cookie.delete("username");
@@ -141,6 +137,10 @@
                                                             $("#login-box").hide();
                                                             $(".login-btn").unbind("click");
                                                             $(".showInLogin").show();
+                                                            FB.ui({
+                                                                method: 'feed',
+                                                                message: 'started playing Phylo: http://phylo.cs.mcgill.ca\nHave fun and help genetic research!'
+                                                            });
                                                         } else {
                                                             $("div.login-warning").show().html("This username already exist");
                                                         }
