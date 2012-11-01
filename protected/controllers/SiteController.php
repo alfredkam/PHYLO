@@ -52,6 +52,11 @@ class SiteController extends Controller
 	{
 		$this->render('tutorial');
 	}
+	
+	public function actionRanking()
+	{
+		$this->render('ranking');
+	}
 
 	/**
 	 * This is the action to handle external exceptions.

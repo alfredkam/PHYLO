@@ -7510,3 +7510,46 @@ Stack trace:
 REQUEST_URI=/index.php/img/color_picker.png
 HTTP_REFERER=http://localhost:8888/index.php/play
 ---
+2012/11/01 18:02:23 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "credits".' in /Users/dark/Desktop/PHYLO/framework/web/CController.php:879
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CController.php(783): CController->renderPartial('credits', NULL, true)
+#1 /Users/dark/Desktop/PHYLO/protected/controllers/SiteController.php(48): CController->render('credits')
+#2 /Users/dark/Desktop/PHYLO/framework/web/actions/CInlineAction.php(50): SiteController->actionCredits()
+#3 /Users/dark/Desktop/PHYLO/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/dark/Desktop/PHYLO/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#5 /Users/dark/Desktop/PHYLO/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(283): CController->run('credits')
+#7 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('site/credits')
+#8 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php/credits
+HTTP_REFERER=http://localhost:8888/index.php
+---
+2012/11/01 18:04:08 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "about".' in /Users/dark/Desktop/PHYLO/framework/web/CController.php:879
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CController.php(783): CController->renderPartial('about', NULL, true)
+#1 /Users/dark/Desktop/PHYLO/protected/controllers/SiteController.php(43): CController->render('about')
+#2 /Users/dark/Desktop/PHYLO/framework/web/actions/CInlineAction.php(50): SiteController->actionAbout()
+#3 /Users/dark/Desktop/PHYLO/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/dark/Desktop/PHYLO/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#5 /Users/dark/Desktop/PHYLO/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(283): CController->run('about')
+#7 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('site/about')
+#8 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php/about
+HTTP_REFERER=http://localhost:8888/index.php/tutorial
+---
+2012/11/01 18:05:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ranking".' in /Users/dark/Desktop/PHYLO/framework/web/CController.php:484
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CController.php(271): CController->missingAction('ranking')
+#1 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(283): CController->run('ranking')
+#2 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('site/ranking')
+#3 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/ranking
+HTTP_REFERER=http://localhost:8888/index.php/credits
+---
