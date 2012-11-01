@@ -111,6 +111,7 @@
                                               var password = mypasswd;
                                               $.protocal.login(name, password, function(re) {
                                                 if(re == "succ") {
+                                                    console.log("login successful.");
                                                     $("#login-tag").html("You are logged as "+fullname);
                                                     $.cookie.create("username",name,365);
                                                     $.cookie.create("loginmode",loginmode,365);
@@ -128,6 +129,7 @@
                                                     }
                                                     $.protocal.register(name, password, email, function(re) {
                                                         if(re == "succ") {
+                                                            console.log("FB registration successful. username:"+name);
                                                             $("#login-tag").html("You are logged as "+fullname);
                                                             $.cookie.create("username",name,365);
                                                             $.cookie.create("loginmode",loginmode,365);
@@ -137,12 +139,28 @@
                                                             $("#login-box").hide();
                                                             $(".login-btn").unbind("click");
                                                             $(".showInLogin").show();
-                                                            //FB.ui({
-                                                            //    method: 'feed',
-                                                            //    message: 'started playing Phylo.'
-                                                            //});
-                                                            //alert('Welcome to Phylo. You are now registered.');
+                                                            // Post on FB wall
+                                                            var publish = {
+                                                            method: 'feed',
+                                                            message: 'started to play Phylo.',
+                                                            name: 'Connect',
+                                                            caption: 'Phylo -- Play your DNA.',
+                                                            description: (
+                                                                          'A challenging flash game in which every puzzle completed' +
+                                                                          'contributes to mapping diseases within human DNA.'
+                                                                          ),
+                                                            link: 'http://phylo.cs.mcgill.ca/',
+                                                            picture: 'http://phylo.cs.mcgill.ca/images/minilogo.png',
+                                                            actions: [
+                                                                      { name: 'phylo', link: 'http://phylo.cs.mcgill.ca' }
+                                                                      ],
+                                                            user_message_prompt: 'Share your thoughts about RELL'
+                                                            };
+                                                            
+                                                            FB.ui(publish, Log.info.bind('feed callback'));
+                                                                        
                                                         } else {
+                                                            console.log("FB registration failed.");
                                                             $("div.login-warning").show().html("This username already exist");
                                                         }
                                                     });
