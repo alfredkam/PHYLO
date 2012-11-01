@@ -50,6 +50,8 @@ return array(
 		// uncomment the following to enable URLs in path-format
 		
 		'urlManager'=>array(
+			'showScriptName' => false,
+			'urlSuffix' => '.php',
 			'urlFormat'=>'path',
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',

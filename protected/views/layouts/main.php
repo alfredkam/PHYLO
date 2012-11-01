@@ -47,11 +47,11 @@
 									'htmlOptions'=>array('id'=>'nav', 'class'=>'span6'),
 
 									'items'=>array(
-											array('label'=>'Play', 'url'=>'#', 'active'=>true),
-											array('label'=>'Tutorial', 'url'=>'#'),
-											array('label'=>'About', 'url'=>'#'),
-											array('label'=>'Credits', 'url'=>'#'),
-											array('label'=>'Ranking', 'url'=>'#'),
+											array('label'=>'Play', 'url'=>'?page=play', 'active'=>true),
+											array('label'=>'Tutorial', 'url'=> '?page=tutorial'),
+											array('label'=>'About', 'url'=>'?page=about'),
+											array('label'=>'Credits', 'url'=>'?page=credits'),
+											array('label'=>'Ranking', 'url'=>'?page=ranking'),
 									),
 							),
 					

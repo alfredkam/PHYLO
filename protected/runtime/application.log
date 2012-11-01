@@ -27,3 +27,76 @@ Stack trace:
 #24 {main}
 REQUEST_URI=/
 ---
+2012/10/31 22:06:16 [error] [php] Undefined index: page (/Users/dark/Desktop/PHYLO/protected/controllers/SiteController.php:33)
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CController.php(287): SiteController->runAction()
+#1 /Users/dark/Desktop/PHYLO/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#2 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(283): SiteController->run()
+#3 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#4 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#5 /Users/dark/Desktop/PHYLO/htdocs/index.php(14): CWebApplication->run()
+REQUEST_URI=/htdocs/index.php
+2012/10/31 22:08:55 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "tutorial".' in /Users/dark/Desktop/PHYLO/framework/web/CController.php:879
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CController.php(783): CController->renderPartial('tutorial', NULL, true)
+#1 /Users/dark/Desktop/PHYLO/protected/controllers/SiteController.php(37): CController->render('tutorial')
+#2 /Users/dark/Desktop/PHYLO/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#3 /Users/dark/Desktop/PHYLO/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/dark/Desktop/PHYLO/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#5 /Users/dark/Desktop/PHYLO/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(283): CController->run('')
+#7 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#8 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /Users/dark/Desktop/PHYLO/htdocs/index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/htdocs/index.php?page=tutorial
+HTTP_REFERER=http://localhost:8888/htdocs/index.php
+---
+2012/10/31 22:16:26 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/Users/dark/Desktop/PHYLO/assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in /Users/dark/Desktop/PHYLO/framework/web/CAssetManager.php:128
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CAssetManager.php(113): CAssetManager->setBasePath('/Users/dark/Des...')
+#1 /Users/dark/Desktop/PHYLO/framework/web/CAssetManager.php(235): CAssetManager->getBasePath()
+#2 /Users/dark/Desktop/PHYLO/protected/extensions/bootstrap/components/Bootstrap.php(328): CAssetManager->publish('/Users/dark/Des...', false, -1, false)
+#3 /Users/dark/Desktop/PHYLO/protected/extensions/bootstrap/components/Bootstrap.php(103): Bootstrap->getAssetsUrl()
+#4 /Users/dark/Desktop/PHYLO/protected/extensions/bootstrap/components/Bootstrap.php(84): Bootstrap->registerCoreCss()
+#5 /Users/dark/Desktop/PHYLO/framework/base/CModule.php(388): Bootstrap->init()
+#6 /Users/dark/Desktop/PHYLO/framework/base/CModule.php(493): CModule->getComponent('bootstrap')
+#7 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(146): CModule->preloadComponents()
+#8 /Users/dark/Desktop/PHYLO/framework/YiiBase.php(127): CApplication->__construct('protected/confi...')
+#9 /Users/dark/Desktop/PHYLO/framework/YiiBase.php(100): YiiBase::createApplication('CWebApplication', 'protected/confi...')
+#10 /Users/dark/Desktop/PHYLO/index.php(14): YiiBase::createWebApplication('protected/confi...')
+#11 {main}
+REQUEST_URI=/index.php
+---
+2012/10/31 22:16:29 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/Users/dark/Desktop/PHYLO/assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in /Users/dark/Desktop/PHYLO/framework/web/CAssetManager.php:128
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CAssetManager.php(113): CAssetManager->setBasePath('/Users/dark/Des...')
+#1 /Users/dark/Desktop/PHYLO/framework/web/CAssetManager.php(235): CAssetManager->getBasePath()
+#2 /Users/dark/Desktop/PHYLO/protected/extensions/bootstrap/components/Bootstrap.php(328): CAssetManager->publish('/Users/dark/Des...', false, -1, false)
+#3 /Users/dark/Desktop/PHYLO/protected/extensions/bootstrap/components/Bootstrap.php(103): Bootstrap->getAssetsUrl()
+#4 /Users/dark/Desktop/PHYLO/protected/extensions/bootstrap/components/Bootstrap.php(84): Bootstrap->registerCoreCss()
+#5 /Users/dark/Desktop/PHYLO/framework/base/CModule.php(388): Bootstrap->init()
+#6 /Users/dark/Desktop/PHYLO/framework/base/CModule.php(493): CModule->getComponent('bootstrap')
+#7 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(146): CModule->preloadComponents()
+#8 /Users/dark/Desktop/PHYLO/framework/YiiBase.php(127): CApplication->__construct('protected/confi...')
+#9 /Users/dark/Desktop/PHYLO/framework/YiiBase.php(100): YiiBase::createApplication('CWebApplication', 'protected/confi...')
+#10 /Users/dark/Desktop/PHYLO/index.php(14): YiiBase::createWebApplication('protected/confi...')
+#11 {main}
+REQUEST_URI=/index.php
+---
+2012/10/31 22:16:29 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/Users/dark/Desktop/PHYLO/assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in /Users/dark/Desktop/PHYLO/framework/web/CAssetManager.php:128
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CAssetManager.php(113): CAssetManager->setBasePath('/Users/dark/Des...')
+#1 /Users/dark/Desktop/PHYLO/framework/web/CAssetManager.php(235): CAssetManager->getBasePath()
+#2 /Users/dark/Desktop/PHYLO/protected/extensions/bootstrap/components/Bootstrap.php(328): CAssetManager->publish('/Users/dark/Des...', false, -1, false)
+#3 /Users/dark/Desktop/PHYLO/protected/extensions/bootstrap/components/Bootstrap.php(103): Bootstrap->getAssetsUrl()
+#4 /Users/dark/Desktop/PHYLO/protected/extensions/bootstrap/components/Bootstrap.php(84): Bootstrap->registerCoreCss()
+#5 /Users/dark/Desktop/PHYLO/framework/base/CModule.php(388): Bootstrap->init()
+#6 /Users/dark/Desktop/PHYLO/framework/base/CModule.php(493): CModule->getComponent('bootstrap')
+#7 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(146): CModule->preloadComponents()
+#8 /Users/dark/Desktop/PHYLO/framework/YiiBase.php(127): CApplication->__construct('protected/confi...')
+#9 /Users/dark/Desktop/PHYLO/framework/YiiBase.php(100): YiiBase::createApplication('CWebApplication', 'protected/confi...')
+#10 /Users/dark/Desktop/PHYLO/index.php(14): YiiBase::createWebApplication('protected/confi...')
+#11 {main}
+REQUEST_URI=/index.php
+---
