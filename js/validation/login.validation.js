@@ -12,7 +12,6 @@
                 xfbml      : true  // parse XFBML
             });
             //check cookie
-            console.log("check cookie");
             if($.cookie.read("username")) {
                 $(".login-btn").unbind("click");
                 var name = $.cookie.read("username");
@@ -30,6 +29,10 @@
                             var fb_logid = response.id;
                             if (c_logid==fb_logid) {
                                 $("#login-tag").html("You are logged as "+fullname);
+                                FB.ui({
+                                    method: 'feed',
+                                    message: 'started playing Phylo. Have fun and help genetic research!',
+                                });
                             } else {
                                //bootbox.alert("Data conflict. Please, login again.");
                                $.cookie.delete("username");
