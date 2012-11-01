@@ -82,8 +82,13 @@
 			});
 
 			$("#endGame-new button").unbind().click(function() {
-				window.location.reload(true);
-				window.location.hash = "#!play";
+				//window.location.reload(true);
+				$("#game").hide();
+				$("#endGame").fadeOut();
+				interactiveMenu.restart();
+				$("#draw").show();
+				$("#menu").fadeIn();
+				//window.location.hash = "#!play";
 			});
 				
 			$("#endGame-replay button").unbind().click(function(){

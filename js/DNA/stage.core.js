@@ -26,10 +26,10 @@
 			var show = function(n) {
 				var tree = $.phylo.tree[n];
 				if(tree.child == 0) {
-					$("#row"+tree.node1).show('slide',{direction: 'right'}, 500);
-					$("#row"+tree.node2).show('slide',{direction: 'right'}, 500);
+					$("#row"+tree.node1).show("slide",{direction: "right"}, 500);
+					$("#row"+tree.node2).show("slide",{direction: "right"}, 500);
 				} else if(tree.child == 1) {
-					$("#row"+tree.node1).show('slide',{direction: 'right'}, 500);
+					$("#row"+tree.node1).show("slide",{direction: "right"}, 500);
 				}
 			};
 			var addClass = function(n) {

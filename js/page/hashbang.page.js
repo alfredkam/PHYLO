@@ -6,7 +6,7 @@
 			$("#loading-panel").show();
 		},
 		panelReady : function() {
-			$("#mid-panel").show();
+			$("#mid-panel").fadeIn();
 			$("#loading-panel").hide();
 		},
 		load : function(page) {
@@ -55,6 +55,8 @@
 					$.page.rna();
 					self.panelReady();
 				});
+			} else if(page == "back") {
+				$("#loading-panel").hide();
 			}
 		},			
 		checkIfAutoStart : function() {
@@ -140,6 +142,40 @@
 		} else {
 			window.location.href = $(this).attr("href");
 		}
+	});
+	//tablet
+	$("a.tablet-back-btn").click(function() {
+		var innerSelf = this;
+		if($.timer.active == true) {
+			$.helper.popUp("Are you sure you want to quite?",function(status) {
+				if(status == "ok") {
+				//	window.location.hash = "#!"+$(innerSelf).attr("name");		
+					$.timer.stop();
+					$(this).hide();
+					$("#mid-panel").hide();
+					$("#tabletPanel").show("slide",{direction:"left"},500);
+				}
+			});			
+		} else {
+			$(this).hide();
+			$("#mid-panel").hide();
+			$("#tabletPanel").show("slide",{direction:"left"},500);
+		}
+	});
+	$("a.tablet-tab").click(function() {
+			var innerSelf = this;
+			if($(innerSelf).attr("name") == "play") {
+				$.hashbang.load($.hashbang.get());	
+				$.tailor.init();
+			}
+			window.location.hash = "#!"+$(this).attr("name");		
+			$("#tabletPanel").hide("slide",{direction : "left"}, 500);
+			if($("#mid-panel").hasClass("forceDisplayNone")) {
+				$("#mid-panel").removeClass("forceDisplayNone");	
+			}
+			window.setTimeout(function() {
+			$(".tablet-back-btn").fadeIn();
+			},400);
 	});
 
 })();

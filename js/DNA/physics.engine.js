@@ -340,25 +340,27 @@
 				var left = parseInt(domCache[id].left)-1;
 				var pos = parseInt(left/$.phylo.x);
 				var row = getGridY(id);
-			//	if(left%$.phylo.x >= ($.phylo.x/2)) {
+				//calculates assumtption
 				if($.sequence.calcPos(pos)-left <= 0) {
 					pos+=1;
 				}
-				//found new pos now check if correct assumption
-				if(track[row][pos] != "x") {
+				//check if out of [left] bound
+				if(pos < 0)
+					pos=0;
+				//check if assumption is correct if not fix it
+				while(track[row][pos] != "x") {
 					pos+=1;
 				}
-				//found it went out of array
+				//found it went out of [right] bound
 				if(pos >= $.phylo.seqLen) {
 					var i=track[row].length;
 					var temp = id;
+					//Note: this condition of while loop excutes the fasted
 					while(i--) {
 						if(track[row][i] != "x") {
-							//temp = track[row][i];	
-							//track[row][i] = temp;  
 							temp = track[row][i];
 							track[row][i] = id;
-							domCache[id].left = $.sequence.calcPos(i)+"px";//(pos*$.phylo.x)+"px";
+							domCache[id].left = $.sequence.calcPos(i)+"px";
 							id = temp;
 						} else {
 							track[row][i] = id;	
@@ -367,7 +369,7 @@
 						}
 					}
 				} else {
-					domCache[id].left = $.sequence.calcPos(pos)+"px";//(pos*$.phylo.x)+"px";
+					domCache[id].left = $.sequence.calcPos(pos)+"px";
 					track[row][pos] = id; 
 				}
 			});

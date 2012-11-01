@@ -145,7 +145,7 @@
 				var c_tree = $.phylo.tree[$.stage.current+1];
 				if(c_tree.child == 2 ) {
 				//	build($.stage.current-1);
-					console.log(c_tree.node2 + " < > "+c_tree.node1);
+					//console.log(c_tree.node2 + " < > "+c_tree.node1);
 					if($.stage.current == c_tree.node1) {
 						build(c_tree.node2);
 					} else 
