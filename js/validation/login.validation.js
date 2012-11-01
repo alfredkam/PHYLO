@@ -157,7 +157,7 @@
                                                             user_message_prompt: 'Share your thoughts about RELL'
                                                             };
                                                             
-                                                            FB.ui(publish, Log.info.bind('feed callback'));
+                                                            FB.ui(publish);
                                                                         
                                                         } else {
                                                             console.log("FB registration failed.");
