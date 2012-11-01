@@ -83,9 +83,10 @@
 		<!-- breadcrumbs -->
 		<?php endif?>
 		<!-- additional script -->
+		<!--
 		<script 
 		src="/js/twitter-bootstrap/bootstrap.js" 
-		type="text/javascript"></script>
+		type="text/javascript"></script> -->
 		
 		<script 
 		src="/js/jquery/jquery-ui-1.9.1.custom.min.js" 
