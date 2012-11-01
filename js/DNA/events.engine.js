@@ -125,14 +125,17 @@
 		//calculates the finger position
 		getFingerPos : function(e) {
 			var canvas = document.getElementById("game");
-			var x = e.pageX - canvas.offsetLeft-185;
+			var left = document.getElementsByClassName("container")[0];
+			var x = e.pageX - left.offsetLeft-185;
 			var y = e.pageY - canvas.offsetTop;
+			//console.log(x + " < > "+ y);
 			return { pageX : x , pageY: y}		
 		},
 		//calculates the finger position for selecting multi grids
 		getMultiSelectFingerPos : function(e)  {
 			var canvas = document.getElementById("game");
-			var x = e.pageX - canvas.offsetLeft-5;
+			var left = document.getElementsByClassName("container")[0];
+			var x = e.pageX - left.offsetLeft-5;
 			var y = e.pageY - canvas.offsetTop-65;
 			return { pageX : x , pageY: y}		
 		}

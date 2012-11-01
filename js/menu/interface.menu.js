@@ -619,7 +619,7 @@
 		};
 
 		function getCursorPosition(e) {
-			var gCanvasElement = document.getElementById("sandbox");
+			var gCanvasElement = document.getElementsByClassName("container")[0];
 			var menu = document.getElementById("mid-panel");
 			var x;
 			var y;

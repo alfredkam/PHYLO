@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'helveticathin';
-    src: url('../fonts/helveticaneueltstd-th-helv.eot');
-    src: url('../fonts/helveticaneueltstd-th-helv.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/helveticaneueltstd-th-helv.woff') format('woff'),
-         url('../fonts/helveticaneueltstd-th-helv.ttf') format('truetype'),
-         url('../fonts/helveticaneueltstd-th-helv.svg#HelveticaNeueLTStd35Thin') format('svg');
+    src: url('/fonts/helveticaneueltstd-th-helv.eot');
+    src: url('/fonts/helveticaneueltstd-th-helv.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/helveticaneueltstd-th-helv.woff') format('woff'),
+         url('/fonts/helveticaneueltstd-th-helv.ttf') format('truetype'),
+         url('/fonts/helveticaneueltstd-th-helv.svg#HelveticaNeueLTStd35Thin') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -401,9 +401,9 @@ a.btn {
 #footer {
     bottom:0%;
 	width:100%;
-	background-color:#eee;
+	/*background-color:#eee;*/
 	clear:both;
-	color:#333;
+	color:#eee;
 }
 #footer-content {
 	height:100px;
@@ -594,5 +594,11 @@ a.btn {
 #loading-panel {
 	padding-top:150px;
 	text-align:center;
+}
+
+/* override bootstrap */
+.container {
+	width:1024px !important;	
+}
 }
 

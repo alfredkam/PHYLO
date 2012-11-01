@@ -13,8 +13,6 @@
 	href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css"
 	media="print" />
 <link rel="stylesheet" type="text/css"
-	href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css" />
-<link rel="stylesheet" type="text/css"
 	href="/css/font-awesome.css" />
 <link rel="stylesheet" type="text/css"
 	href="/css/font-awesome-ie7.css" />
