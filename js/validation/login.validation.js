@@ -143,8 +143,8 @@
                                                             var publish = {
                                                             method: 'feed',
                                                             message: 'started to play Phylo.',
-                                                            name: 'Connect',
-                                                            caption: 'Phylo -- Play your DNA.',
+                                                            name: 'Phylo',
+                                                            caption: 'Play your DNA.',
                                                             description: (
                                                                           'A challenging flash game in which every puzzle completed' +
                                                                           'contributes to mapping diseases within human DNA.'
@@ -154,7 +154,6 @@
                                                             actions: [
                                                                       { name: 'phylo', link: 'http://phylo.cs.mcgill.ca' }
                                                                       ],
-                                                            user_message_prompt: 'Share your thoughts about RELL'
                                                             };
                                                             
                                                             FB.ui(publish);
