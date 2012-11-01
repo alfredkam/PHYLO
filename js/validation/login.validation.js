@@ -137,9 +137,11 @@
                                                             $("#login-box").hide();
                                                             $(".login-btn").unbind("click");
                                                             $(".showInLogin").show();
-                                                            FB.ui({ method: 'feed',
-                                                                message: 'started playing Phylo.'});
-                                                            alert('Welcome to Phylo. You are now registered.');
+                                                            //FB.ui({
+                                                            //    method: 'feed',
+                                                            //    message: 'started playing Phylo.'
+                                                            //});
+                                                            //alert('Welcome to Phylo. You are now registered.');
                                                         } else {
                                                             $("div.login-warning").show().html("This username already exist");
                                                         }
@@ -169,7 +171,6 @@
 		//logout event
 		$("#logout").click(function() {
 			window.guest = "Guest";
-            console.log("logout");
 			$.cookie.delete("username");
             $.cookie.delete("loginmode");
             $.cookie.delete("logid");
