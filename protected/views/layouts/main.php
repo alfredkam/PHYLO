@@ -15,16 +15,20 @@
 <link rel="stylesheet" type="text/css"
 	href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css" />
 <link rel="stylesheet" type="text/css"
-	href="<?php echo Yii::app()->request->baseUrl; ?>/css/font-awesome.css" />
+	href="/css/font-awesome.css" />
 <link rel="stylesheet" type="text/css"
-	href="<?php echo Yii::app()->request->baseUrl; ?>/css/font-awesome-ie7.css />
+	href="/css/font-awesome-ie7.css" />
 
 <!--[if lt IE 8]>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
 	<![endif]-->
 
+
+<!-- custom css -->
 <link rel="stylesheet" type="text/css"
-	href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" />
+	href="/css/style.css" />
+
+
 
 <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -81,10 +85,21 @@
 			)); ?>
 		<!-- breadcrumbs -->
 		<?php endif?>
+		<!-- additional script -->
+		<script 
+		src="/js/twitter-bootstrap/bootstrap.js" 
+		type="text/javascript"></script>
+		
+		<script 
+		src="/js/jquery/jquery-ui-1.9.1.custom.min.js" 
+		type="text/javascript"></script>
+		
+			<div id='mid-panel' class='forceDisplayNone'>	
+				<?php echo $content; ?>
+			</div>
 
-		<?php echo $content; ?>
 		<div class="clear"></div>
-
+		
 		<div id="footer">
 			Want to contribute? <a href='https://github.com/McGill-CSB/PHYLO'>Click Here</a><br>
 			Copyright &copy;
@@ -96,6 +111,12 @@
 
 	</div>
 	<!-- page -->
+	
+	<!-- additional script -->
+	<!-- login -->
+        <!-- validation scripts -->
+        <script src='/js/validation/cookie.validation.js' type='text/javascript'></script>
+        <script src='/js/validation/login.validation.js' type='text/javascript'></script>
 
 </body>
 
