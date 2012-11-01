@@ -1,20 +1,31 @@
-<?php
-/* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name;
+<div id='context'>
+
+</div>
+
+<?php
+	$getValue = "";
+	if(isset($_GET["lang"]) && !empty($_GET["lang"])) {
+				$getValue = strtoupper($_GET["lang"]);
+	} else {
+		$getValue = "EN";
+	}
 ?>
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+<script src='/js/DNA/helper.core.js' type='text/javascript'></script>
+<script src="/lang/<?php echo $getValue; ?>.js" type="text/javascript"></script>
 
-<p>Congratulations! You have successfully created your Yii application.</p>
-
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <code><?php echo __FILE__; ?></code></li>
-	<li>Layout file: <code><?php echo $this->getLayoutFile('main'); ?></code></li>
-</ul>
-
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
+<script type='text/javascript'>
+	(function(){
+			window.lang = <?php echo $getValue; ?>script.lang[0];
+			var about = window.lang.body.play.about;
+			console.log(about);
+			var str = "<div class='wrapper'><div class='wrapper-inner'>";
+			for(var i=1;i<=10;i+=2) {
+				str+="<h1>"+about["field "+i]+"</h1><p>"+about["field "+(i+1)]+"</p>";
+			}
+			str+="</div></div>";
+			$("#context").html(str);
+	})();
+			
+</script>

@@ -12,7 +12,7 @@
 			}).done(function(re) {
                 $("#mid-panel").html(re);
                 $.getScript("js/ranking/ranking.js");
-		$.hashbang.panelReady();
+                $.hashbang.panelReady();
             });
             
 		},
