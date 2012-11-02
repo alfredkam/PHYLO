@@ -106,8 +106,8 @@
                                                       { name: 'phylo', link: 'http://phylo.cs.mcgill.ca' }
                                                       ],
                                        };
+                                       FB.ui(publish);
                                    });
-                                   FB.ui(publish);
                                 } else {
                                    // FB ids does not match
                                    alert("You seem to have been disconnected from your Facebook account. Please, login again.");
