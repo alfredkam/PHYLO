@@ -87,21 +87,26 @@
                                 var fullname = response.name;
                                 var fb_logid = response.id;
                                 if (c_logid==fb_logid) {
-                                   // Post on FB wall
-                                   var publish = {
-                                        method: 'feed',
-                                        name: 'Phylo',
-                                        caption: 'Play your DNA.',
-                                        description: (
-                                            'has improved a DNA alignment' + 
-                                            '. Play Phylo and help genetic research too!'
-                                        ),
-                                        link: 'http://phylo.cs.mcgill.ca/',
-                                        picture: 'http://phylo.cs.mcgill.ca/images/minilogo.png',
-                                        actions: [
-                                                  { name: 'phylo', link: 'http://phylo.cs.mcgill.ca' }
-                                                  ],
-                                   };
+                                   // retrieve puzzle infos
+                                   var self = this;
+                                   $.protocal.sendEndGameScore("completed", function(data) {
+                                        var puzzle_disease = data.disease_link
+                                       // Post on FB wall
+                                       var publish = {
+                                            method: 'feed',
+                                            name: 'Phylo',
+                                            caption: 'Play your DNA.',
+                                            description: (
+                                                '@' + name + ' has improved a DNA alignment related to ' + puzzle_disease +
+                                                '. Play Phylo and help genetic research too!'
+                                            ),
+                                            link: 'http://phylo.cs.mcgill.ca/',
+                                            picture: 'http://phylo.cs.mcgill.ca/images/minilogo.png',
+                                            actions: [
+                                                      { name: 'phylo', link: 'http://phylo.cs.mcgill.ca' }
+                                                      ],
+                                       };
+                                   });
                                    FB.ui(publish);
                                 } else {
                                    // FB ids does not match
