@@ -63,18 +63,14 @@
 											array('label'=>'Login', 'url'=>'#'),
 
 											array('label'=>'settings', 'url'=>'#', 'items'=>array(
-													array('label'=>'Language', 'url'=>'#'),
+													array('label'=>'customize', 'url'=>'#customize'),
 
 													array('class'=>'bootstrap.widgets.TbDropdown',
-															'label'=>'customize',
+															'label'=>'language',
 															'items'=>array(array(
 																	'label'=>'test','url'=>'#'),
 															),
 													)
-
-
-
-
 											)),
 
 									),
