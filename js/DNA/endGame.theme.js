@@ -101,7 +101,12 @@
 				$.protocal.replay();
 				$("#countDown-text").html("<img src='img/loading.gif'/>");
 				$("#countDown").fadeIn();
-			});	
+			});
+ 
+            $("#endGame-share button").unbind().click(function(){
+                console.log("Click share event");
+                shareClick();
+            });
 		},
 		//a pop up message to check if really want to bail out from the game
 		runAway : function() {

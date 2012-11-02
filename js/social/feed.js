@@ -82,12 +82,7 @@
             return;
         }
     };
-    // feed click event
-    $(".btn-highscore-share").click(function() {
-        console.log("Click share event");
-        shareClick();
-    });
-});
+  });
 })();
  
  
