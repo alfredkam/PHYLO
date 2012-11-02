@@ -82,7 +82,7 @@
 
 									),
 							),
-							'<a class="btn btn-primary">test</a>',
+						
 					),
 			)); ?>
 		</div>
