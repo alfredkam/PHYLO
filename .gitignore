@@ -3,5 +3,3 @@
 .*.swo
 */.DS_Store
 .*
-/assets/*
-/htdocs/assets/*
