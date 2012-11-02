@@ -60,7 +60,8 @@
 									'class'=>'bootstrap.widgets.TbMenu',
 									'htmlOptions'=>array('class'=>'pull-right'),
 									'items'=>array(
-											array('label'=>'Login', 'url'=>'#'),
+											array('label'=>'Login', 'url'=>'#login'	
+											),
 
 											array('label'=>'settings', 'url'=>'#', 'items'=>array(
 													array('label'=>'customize', 'url'=>'#customize'),
@@ -87,6 +88,7 @@
 		<!-- breadcrumbs -->
 		<?php endif?>
 		<!-- additional script -->
+			<?php include_once 'panel.php'; ?>
 		<!--
 		<script 
 		src="/js/twitter-bootstrap/bootstrap.js" 

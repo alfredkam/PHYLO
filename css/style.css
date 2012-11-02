@@ -276,7 +276,7 @@ a.btn {
 	display:none;
 	position:absolute;
 	z-index:30;
-	right:0px;
+	right:80px;
 	background-color:whitesmoke;
 	padding:10px 11px;
 	color:black;
@@ -378,6 +378,10 @@ a.btn {
 .wrapper {
 	text-align:center;
 	position:relative;
+}
+
+.wrapper-absolute {
+	position:absolute;
 }
 
 #wrapper {
