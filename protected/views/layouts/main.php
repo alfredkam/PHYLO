@@ -61,19 +61,20 @@
 									'htmlOptions'=>array('class'=>'pull-right'),
 									'items'=>array(
 											array('label'=>'Login', 'url'=>'#'),
-											'---',
+
 											array('label'=>'settings', 'url'=>'#', 'items'=>array(
 													array('label'=>'Language', 'url'=>'#'),
-													//array('label'=>'Customize', 'url'=>'#customize'),
-													'<li><div class="dropdown">
-													<a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
-													Dropdown
-													<b class="caret"></b>
-													</a>
-													<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-													<li>test</li>
-													</ul>
-													</div></li>',
+
+													array('class'=>'bootstrap.widgets.TbDropdown',
+															'label'=>'customize',
+															'items'=>array(array(
+																	'label'=>'test','url'=>'#'),
+															),
+													)
+
+
+
+
 											)),
 
 									),
@@ -107,9 +108,10 @@
 		<div id="footer">
 			Want to contribute? <a href='https://github.com/McGill-CSB/PHYLO'>Click
 				Here</a><br> Copyright &copy; <?php echo date('Y'); ?> by Alfred
-				Kam, PHYLO, McGill CSB and McGill University.<br /> All Rights
-				Reserved.<br />
-		
+				Kam, PHYLO, McGill CSB and McGill University. 
+			
+			<br /> All Rights Reserved.<br />
+
 		</div>
 		<!-- footer -->
 

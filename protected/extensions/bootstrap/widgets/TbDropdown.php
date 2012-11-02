@@ -54,7 +54,6 @@ class TbDropdown extends TbBaseMenu
 			$item['url'] = '#';
 
 		$item['linkOptions']['tabindex'] = -1;
-
 		if (isset($item['url']))
 			return CHtml::link($item['label'], $item['url'], $item['linkOptions']);
 		else
