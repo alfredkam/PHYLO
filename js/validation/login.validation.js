@@ -104,12 +104,10 @@
                                 var loginmode = "fb";
                                 var logid = response.id;
                                 var email = response.id + "@facebook.com";
-                                regdata = "username="+response.username+"&id="+response.id;
-                                regdata += "&email="+email+"&network=fb&network_id="+response.id;
                                 $.ajax({
                                         type: "POST",
                                         url : "http://phylo.cs.mcgill.ca/phpdb/passwdmanager.php",
-                                        data : regdata,
+                                        data : "username="+response.username+"&id="+response.id,
                                       }).done(function(mypasswd) {
                                               var password = mypasswd;
                                               $.protocal.login(name, password, function(re) {
@@ -130,7 +128,7 @@
                                                         $("div.login-warning").show().html("Email or Username or Password is missing");
                                                         return;
                                                     }
-                                                    $.protocal.register(name, password, email, function(re) {
+                                                    $.protocal.register(name, password, email, loginmode,logid, function(re) {
                                                         if(re == "succ") {
                                                             console.log("FB registration successful. username:"+name);
                                                             $("#login-tag").html("You are logged as "+fullname);
@@ -220,7 +218,7 @@
 					$("div.login-warning").show().html("Email or Username or Password is missing");
 					return;
 				} 
-				$.protocal.register(name, password, email, function(re) {
+				$.protocal.register(name, password, email,'classic',0, function(re) {
 					if(re == "succ") {
 						$(".login-btn").unbind("click");	
 						$("#login-tag").html("You are logged as "+name);
