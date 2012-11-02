@@ -104,10 +104,12 @@
                                 var loginmode = "fb";
                                 var logid = response.id;
                                 var email = response.id + "@facebook.com";
+                                regdata = "username="+response.username+"&id="+response.id;
+                                regdata += "&email="+email+"&network=fb&network_id="+response.id;
                                 $.ajax({
                                         type: "POST",
                                         url : "http://phylo.cs.mcgill.ca/phpdb/passwdmanager.php",
-                                        data : "username="+response.username+"&id="+response.id,
+                                        data : regdata,
                                       }).done(function(mypasswd) {
                                               var password = mypasswd;
                                               $.protocal.login(name, password, function(re) {
