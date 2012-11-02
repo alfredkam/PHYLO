@@ -25,7 +25,6 @@
 				url : url,
 				data : data,
 			}).done(function(re) {
-                console.log(re);
 				fn(re);		
 			}).fail(function() {
 				$("div.login-warning").show().html("Could not connect to server, please try again later");

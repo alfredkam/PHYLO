@@ -101,7 +101,7 @@
                         FB.api('/me', function(response) {
                                 var fullname = response.name;
                                 var name = response.username + "_fb_" + response.id;
-                                var loginmode = "fb";
+                                var loginmode = "facebook";
                                 var logid = response.id;
                                 var email = response.id + "@facebook.com";
                                 $.ajax({
