@@ -1,7 +1,7 @@
 
 (function(){
 	$.endGame = {
-		//dusplays message of completing the game
+		//displays message of completing the game
 		complete : function() {
 			var self = this;
 			$.protocal.sendEndGameScore("completed", function(data) {
@@ -72,6 +72,10 @@
 			}
 			$("#endGame-score-result").html(setDefault);
 		},
+        // share highscore on social network
+        share : function(disease) {
+            alert(disease);
+        },
 		//events for the end game messages
 		//new game or replay game
 		events : function() {
@@ -105,7 +109,7 @@
  
             $("#endGame-share button").unbind().click(function(){
                 console.log("Click share event");
-                shareClick();
+                $.endGame.share('test');
             });
 		},
 		//a pop up message to check if really want to bail out from the game
