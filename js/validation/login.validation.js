@@ -269,7 +269,7 @@
         $(".my-fb-login-button").click(function() {
             fbClick();
         });
-        $(".btn-highscore-share").click(function() {
+        $("#btn-highscore-share").click(function() {
             console.log("Click share event");
             shareClick();
         });
