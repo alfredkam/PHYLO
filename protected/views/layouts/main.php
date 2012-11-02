@@ -31,7 +31,7 @@
 </head>
 
 <body>
-
+	
 	<div class="container" id="page">
 
 		<div id="header"></div>
@@ -65,16 +65,28 @@
 							'items'=>array(
 									array('label'=>'Login', 'url'=>'#'),
 									'---',
-									array('label'=>'settings', 'url'=>'#', 'items'=>array(
-											array('label'=>'Language', 'url'=>'#'),
-											array('label'=>'Customize', 'url'=>'#'),
-											
+									array('label'=>'settings', 'items'=>array(
+											array(
+													'url' => '#',
+													'dropDown' => true,
+													'label'=>'Language', 
+													'items' => array(
+														array('label' => 'English', 'url'=>'?lang=en'),
+														array('label' => '', 'url'=>'#')									
+												),
+											),
+											array(
+												'label'=>'Customize', 
+												'url'=>'#customize',
+												),
 									)),
 							),
 					),
 			),
 			)); ?>
 		</div>
+		
+		
 		<!-- mainmenu -->
 		<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -83,6 +95,9 @@
 		<!-- breadcrumbs -->
 		<?php endif?>
 		<!-- additional script -->
+		<?php
+			include_once "panel.php";
+		?>
 		<!--
 		<script 
 		src="/js/twitter-bootstrap/bootstrap.js" 
