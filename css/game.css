@@ -265,13 +265,10 @@
 	top:3px;
 }
 /*end game */
-#endGame-new, #endGame-replay {
+#endGame-new, #endGame-replay, #endGame-share {
 	margin-top:20px;
 	display:inline-block;
 }	
-#endGame-new {
-	margin-right:50px;
-}
 #endGame {
 	display:none;
 	position:absolute;

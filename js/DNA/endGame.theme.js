@@ -98,8 +98,8 @@
                                             name: 'Phylo',
                                             caption: 'Play your DNA.',
                                             description: (
-                                                '@' + FBusername + ' has improved a DNA alignment related to ' + puzzle_disease +
-                                                '. Play Phylo and help genetic research too!'
+                                                fullname + ' has improved a DNA alignment related to ' + puzzle_disease +
+                                                '. Play Phylo too and help genetic research!'
                                             ),
                                             link: 'http://phylo.cs.mcgill.ca/',
                                             picture: 'http://phylo.cs.mcgill.ca/images/minilogo.png',
