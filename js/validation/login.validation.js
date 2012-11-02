@@ -246,7 +246,21 @@
                     console.log("Login mode does not allow to share the highscore achievement.");
                     return;
                 }
-            };
+            } else {
+                alert("You seem to have been disconnected. Please, login again.");
+                $.cookie.delete("username");
+                $.cookie.delete("loginmode");
+                $.cookie.delete("logid");
+                $("#logout").hide();
+                window.guest = 'guest';
+                $("#login-box").hide();
+                $(".login-btn").click(function() {
+                    eClick();
+                });
+                $("#login-tag").html("Login");
+                $(".showInLogin").hide();
+                return;
+            }
         };
 		//login click event
 		$(".login-btn").click(function() {
@@ -256,7 +270,8 @@
             fbClick();
         });
         $(".btn-highscore-share").click(function() {
-            fbShareClick();
+            console.log("Click share event");
+            shareClick();
         });
 		//logout event
 		$("#logout").click(function() {
