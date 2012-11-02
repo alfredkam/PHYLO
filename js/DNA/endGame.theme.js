@@ -53,7 +53,7 @@
 			//gets current score		
 			var setDefault = "<i class='icon-star-empty'></i><i class='icon-star-empty'></i><i class='icon-star-empty'></i>";	
 			$("#endGame-score-result").html(setDefault);
-            $("#endGame-share").show();
+            $("#endGame-share").hide();
 			if(status == "bail")
 				return;
 			
@@ -65,7 +65,7 @@
                 $("#endGame-share").hide();
 			} else if( highscore <= currentScore) {
 				setDefault = "<i class='icon-star'></i><i class='icon-star'></i><i class='icon-star'></i>";	
-                $("#endGame-share").hide();
+                $("#endGame-share").show();
 			} else { //exactly par score
 				setDefault = "<i class='icon-star'></i><i class='icon-star-empty'></i><i class='icon-star-empty'></i>";	
                 $("#endGame-share").hide();
