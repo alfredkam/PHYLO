@@ -74,13 +74,86 @@
 		},
         // share highscore on social network
         share : function(disease) {
-            alert(disease);
+            if($.cookie.read("username")) {
+                var name = $.cookie.read("username");
+                var mode = $.cookie.read("loginmode");
+                var c_logid = $.cookie.read("logid");
+                if (mode=="facebook") {
+                    // Before proceeding, we must check account and cookie data match and then extract full name.
+                    FB.getLoginStatus(function(response) {
+                    if (response.status === 'connected') {
+                        // connected: we must check that account are the same
+                        FB.api('/me', function(response) {
+                            var fullname = response.name;
+                            var fb_logid = response.id;
+                            if (c_logid==fb_logid) {
+                               // Post on FB wall
+                               var publish = {
+                                    method: 'feed',
+                                    name: 'Phylo',
+                                    caption: 'Play your DNA.',
+                                    description: (
+                                        'has improved a DNA alignment related to :' + disease +
+                                        '. Play Phylo and help genetic research too!'
+                                    ),
+                                    link: 'http://phylo.cs.mcgill.ca/',
+                                    picture: 'http://phylo.cs.mcgill.ca/images/minilogo.png',
+                                    actions: [
+                                              { name: 'phylo', link: 'http://phylo.cs.mcgill.ca' }
+                                              ],
+                               };
+                          
+                               FB.ui(publish);
+                          
+                            } else {
+                               // something weird happened -> disconnect
+                               alert("You seem to have been disconnected from your Facebook account. Please, login again.");
+                               $.cookie.delete("username");
+                               $.cookie.delete("loginmode");
+                               $.cookie.delete("logid");
+                               $("#logout").hide();
+                               window.guest = 'guest';
+                               $("#login-box").hide();
+                               $(".login-btn").click(function() { eClick(); });
+                               $("#login-tag").html("Login");
+                               $(".showInLogin").hide();
+                               return;
+                            }
+                        });
+                    } else if (response.status === 'not_authorized') {
+                        // not_authorized
+                        alert("Phylo has not been authorized to connect with your Facebook account. Please, confirm.");
+                        return;
+                   } else {
+                        // not_logged_in
+                        alert("You are not logged in Facebook. Please, sign-in to Facebook and re-connect to Phylo.");
+                        return;
+                  }
+                });
+            } else {
+                console.log("Login mode does not allow to share the highscore achievement.");
+                return;
+            }
+        } else {
+            alert("You seem to have been disconnected. Please, login again.");
+            $.cookie.delete("username");
+            $.cookie.delete("loginmode");
+            $.cookie.delete("logid");
+            $("#logout").hide();
+            window.guest = 'guest';
+            $("#login-box").hide();
+            $(".login-btn").click(function() { eClick(); });
+            $("#login-tag").html("Login");
+            $(".showInLogin").hide();
+            return;
+        }
+ };
         },
 		//events for the end game messages
 		//new game or replay game
 		events : function() {
 			$("#endGame-learnMore-content").hide();
-		
+	
 			$("#endGame-learnMore-tag button").unbind().click(function() {
 				$("#endGame-learnMore-content").slideToggle("fast",function() {
 
