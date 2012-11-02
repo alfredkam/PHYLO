@@ -84,6 +84,7 @@
                         if (response.status === 'connected') {
                             // connected: we must check that account are the same
                             FB.api('/me', function(response) {
+                                var var FBusername = response.username;
                                 var fullname = response.name;
                                 var fb_logid = response.id;
                                 if (c_logid==fb_logid) {
@@ -97,7 +98,7 @@
                                             name: 'Phylo',
                                             caption: 'Play your DNA.',
                                             description: (
-                                                '@' + name + ' has improved a DNA alignment related to ' + puzzle_disease +
+                                                '@' + FBusername + ' has improved a DNA alignment related to ' + puzzle_disease +
                                                 '. Play Phylo and help genetic research too!'
                                             ),
                                             link: 'http://phylo.cs.mcgill.ca/',
