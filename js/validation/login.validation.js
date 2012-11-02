@@ -19,7 +19,7 @@
                 var c_logid = $.cookie.read("logid");
                 if (mode=="classic") {
                     $("#login-tag").html("You are logged as "+name);
-                } else if (mode=="fb") {
+                } else if (mode=="facebook") {
                     // FB login. Must check account and cookie data match and then extract full name.
                     FB.getLoginStatus(function(response) {
                     if (response.status === 'connected') {
@@ -188,7 +188,7 @@
                 var name = $.cookie.read("username");
                 var mode = $.cookie.read("loginmode");
                 var c_logid = $.cookie.read("logid");
-                if (mode=="fb") {
+                if (mode=="facebook") {
                     // FB login. Must check account and cookie data match and then extract full name.
                     FB.getLoginStatus(function(response) {
                         if (response.status === 'connected') {
