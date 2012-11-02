@@ -84,7 +84,7 @@
                         if (response.status === 'connected') {
                             // connected: we must check that account are the same
                             FB.api('/me', function(response) {
-                                var var FBusername = response.username;
+                                var FBusername = response.username;
                                 var fullname = response.name;
                                 var fb_logid = response.id;
                                 if (c_logid==fb_logid) {
