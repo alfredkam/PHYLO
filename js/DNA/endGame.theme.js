@@ -102,9 +102,7 @@
                                               { name: 'phylo', link: 'http://phylo.cs.mcgill.ca' }
                                               ],
                                };
-                          
                                FB.ui(publish);
-                          
                             } else {
                                // something weird happened -> disconnect
                                alert("You seem to have been disconnected from your Facebook account. Please, login again.");
@@ -124,30 +122,29 @@
                         // not_authorized
                         alert("Phylo has not been authorized to connect with your Facebook account. Please, confirm.");
                         return;
-                   } else {
+                    } else {
                         // not_logged_in
                         alert("You are not logged in Facebook. Please, sign-in to Facebook and re-connect to Phylo.");
                         return;
-                  }
+                    }
                 });
+                } else {
+                    console.log("Login mode does not allow to share the highscore achievement.");
+                    return;
+                }
             } else {
-                console.log("Login mode does not allow to share the highscore achievement.");
+                alert("You seem to have been disconnected. Please, login again.");
+                $.cookie.delete("username");
+                $.cookie.delete("loginmode");
+                $.cookie.delete("logid");
+                $("#logout").hide();
+                window.guest = 'guest';
+                $("#login-box").hide();
+                $(".login-btn").click(function() { eClick(); });
+                $("#login-tag").html("Login");
+                $(".showInLogin").hide();
                 return;
             }
-        } else {
-            alert("You seem to have been disconnected. Please, login again.");
-            $.cookie.delete("username");
-            $.cookie.delete("loginmode");
-            $.cookie.delete("logid");
-            $("#logout").hide();
-            window.guest = 'guest';
-            $("#login-box").hide();
-            $(".login-btn").click(function() { eClick(); });
-            $("#login-tag").html("Login");
-            $(".showInLogin").hide();
-            return;
-        }
- };
         },
 		//events for the end game messages
 		//new game or replay game
