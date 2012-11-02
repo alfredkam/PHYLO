@@ -64,7 +64,7 @@
 											'---',
 											array('label'=>'settings', 'url'=>'#', 'items'=>array(
 													array('label'=>'Language', 'url'=>'#'),
-													//array('label'=>'Customize', 'url'=>'#'),
+													//array('label'=>'Customize', 'url'=>'#customize'),
 													'<li><div class="dropdown">
 													<a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
 													Dropdown
@@ -74,10 +74,6 @@
 													<li>test</li>
 													</ul>
 													</div></li>',
-
-
-
-
 											)),
 
 									),
