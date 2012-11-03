@@ -185,8 +185,7 @@
 	width:1024px;
 	position:relative;
 	display:inline-block;
-	padding-top:10px;
-	padding-bottom:20px;
+	top:10px;
 }
 #bottomPanel div{
 	display:inline-block;
