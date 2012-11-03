@@ -6,22 +6,20 @@
 <meta name="language" content="en" />
 
 <!-- blueprint CSS framework -->
-<link rel="stylesheet" type="text/css"
-	href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css"
-	media="screen, projection" />
-<link rel="stylesheet" type="text/css"
-	href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css"
-	media="print" />
-<link rel="stylesheet" type="text/css" href="/css/font-awesome.css" />
-<link rel="stylesheet" type="text/css" href="/css/font-awesome-ie7.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>css/screen.css" media="screen, projection" />
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>css/print.css" media="print" />
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>css/font-awesome.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>css/font-awesome-ie7.css" />
 
 <!--[if lt IE 8]>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>css/ie.css" media="screen, projection" />
 	<![endif]-->
-
-
 <!-- custom css -->
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>css/style.css" />
+
+<!-- blueprint js framework -->
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>js/jquery/jquery.1.8.2.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>js/bootstrap/bootstrap.js"></script>
 
 
 <title><?php echo CHtml::encode($this->pageTitle); ?></title>
@@ -88,14 +86,9 @@
 		<!-- breadcrumbs -->
 		<?php endif?>
 		<!-- additional script -->
-			<?php include_once 'panel.php'; ?>
-		<!--
-		<script 
-		src="/js/twitter-bootstrap/bootstrap.js" 
-		type="text/javascript"></script> -->
+		<?php include_once 'panel.php'; ?>
 
-		<script src="/js/jquery/jquery-ui-1.9.1.custom.min.js"
-			type="text/javascript"></script>
+		<script src="<?php echo Yii::app()->request->baseUrl; ?>js/jquery/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
 
 		<div id='mid-panel'>
 			<?php echo $content; ?>
@@ -119,9 +112,8 @@
 	<!-- additional script -->
 	<!-- login -->
 	<!-- validation scripts -->
-	<script src='/js/validation/cookie.validation.js'
-		type='text/javascript'></script>
-	<script src='/js/validation/login.validation.js' type='text/javascript'></script>
+	<script src='<?php echo Yii::app()->request->baseUrl; ?>js/validation/cookie.validation.js' type='text/javascript'></script>
+	<script src='<?php echo Yii::app()->request->baseUrl; ?>js/validation/login.validation.js' type='text/javascript'></script>
 
 </body>
 

@@ -117,7 +117,7 @@
 
 
 		<!-- menu / page loading modules -->
-		<script src='/js/page/main.page.js' type='text/javascript'></script>
-		<script src='/js/page/hashbang.page.js' type='text/javascript'></script>
-		<script src='/js/menu/events.menu.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/page/main.page.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/page/hashbang.page.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/menu/events.menu.js' type='text/javascript'></script>
 		

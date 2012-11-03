@@ -1,42 +1,7 @@
 
-<link rel='stylesheet' href='/css/game.css'/>
+<link rel='stylesheet' href='<?php echo Yii::app()->request->baseUrl; ?>css/game.css'/>
 
-<!--
-<script 
-	src="/js/jquery/jquery.mobile.1.0a2.js" 
-	type="text/javascript"></script>
-	-->
-<!-- options -->
-<script src='/js/options_template.js' type='text/javascript'></script>
-<script src='/js/options.js' type='text/javascript'></script>
 
-<!-- DNA modules -->
-		<script src='/js/DNA/helper.core.js' type='text/javascript'></script>
-		<script src='/js/menu/tailor.menu.js' type='text/javascript'></script>
-		<script src='/js/menu/disease.menu.js' type='text/javascript'></script>
-		<script src='/js/DNA/timer.core.js' type='text/javascript'></script>
-		<script src='/js/DNA/endGame.theme.js' type='text/javascript'></script>
-		<script src='/js/DNA/physics.engine.js' type='text/javascript'></script>
-		<script src='/js/DNA/events.engine.js' type='text/javascript'></script>
-		<script src='/js/DNA/engine.core.js' type='text/javascript'></script>
-		<script src='/js/DNA/stage.core.js' type='text/javascript'></script>
-		<script src='/js/DNA/sequence.core.js' type='text/javascript'></script>
-		<script src='/js/DNA/splash.theme.js' type='text/javascript'></script>
-		<script src='/js/DNA/tree.core.js' type='text/javascript'></script>
-		<script src='/js/DNA/multiSelect.core.js' type='text/javascript'></script>
-		<script src='/js/DNA/newick.core.js' type='text/javascript'></script>
-		<script src='/js/DNA/lang.module.js' type='text/javascript'></script>
-		<script src='/js/DNA/fitch.core.js' type='text/javascript'></script>
-		<script src='/js/DNA/board.theme.js' type='text/javascript'></script>
-		<script src='/js/DNA/highlighter.theme.js' type='text/javascript'></script>
-		<script src='/js/DNA/protocal.core.js' type='text/javascript'></script>
-		<script src='/js/DNA/score.theme.js' type='text/javascript'></script>
-		<script src='/js/DNA/main.core.js' type='text/javascript'></script>
-		
-		<!-- game menu module-->
-		<script src='/js/menu/interface.menu.js' type='text/javascript'></script>
-		<script src='/js/menu/settings.menu.js' type='text/javascript'></script>	
-		
 <div id='menu'>
 			<div id='sandbox'>
 			</div>
@@ -138,9 +103,48 @@
 				</div>
 			</div>
 		</div>
-		<script>
+	
+		<!--
+<script 
+	src="<?php echo Yii::app()->request->baseUrl; ?>js/jquery/jquery.mobile.1.0a2.js" 
+	type="text/javascript"></script>
+	-->
+<!-- options -->
+<script src='<?php echo Yii::app()->request->baseUrl; ?>js/options_template.js' type='text/javascript'></script>
+<script src='<?php echo Yii::app()->request->baseUrl; ?>js/options.js' type='text/javascript'></script>
+
+<!-- DNA modules -->
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/helper.core.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/menu/tailor.menu.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/menu/disease.menu.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/timer.core.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/endGame.theme.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/physics.engine.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/events.engine.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/engine.core.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/stage.core.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/sequence.core.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/splash.theme.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/tree.core.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/multiSelect.core.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/newick.core.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/lang.module.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/fitch.core.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/board.theme.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/highlighter.theme.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/protocal.core.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/score.theme.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/DNA/main.core.js' type='text/javascript'></script>
+		
+		<!-- game menu module-->
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/menu/interface.menu.js' type='text/javascript'></script>
+		<script src='<?php echo Yii::app()->request->baseUrl; ?>js/menu/settings.menu.js' type='text/javascript'></script>	
+		
+			<script>
 			$.tailor.run(function() {
 				interactiveMenu.start();
 			});
 		</script>
+		
+		
 		

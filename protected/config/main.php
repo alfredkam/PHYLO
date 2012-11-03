@@ -46,8 +46,13 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
+		'request' => array(
+			'baseURL'=>'/',
+		),
+		'assetManager' => array(
+			'baseUrl' => '/assets/'
+		),
 		// uncomment the following to enable URLs in path-format
-		
 		'urlManager'=>array(
 			'showScriptName' => false,
 			'urlSuffix' => '.php',
