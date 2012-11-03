@@ -11,6 +11,7 @@
 							start: function(e) {
 								$.events.touch(document, {
 									move: function(e) {
+										$("#chosenArea").hide();
 										$("#red"+id).show("fast");
 										$.physics.move(self,e);
 									},

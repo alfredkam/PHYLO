@@ -9,6 +9,10 @@
 				self.startTheEvents(e);								
 			});	
 		},
+		//deactive it 
+		deactive : function() {
+			$("#game").unbind();	
+		},
 		//start the select capture
 		startTheEvents : function(e) {
 			var self = this;

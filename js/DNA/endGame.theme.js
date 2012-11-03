@@ -4,6 +4,7 @@
 		//displays message of completing the game
 		complete : function() {
 			var self = this;
+			$.multiSelect.deactive();
 			$.protocal.sendEndGameScore("completed", function(data) {
 				self.events();
 				self.score("completed",data.best_score);
@@ -18,6 +19,7 @@
 		//displays message of bailing out
 		bail : function() {
 			var self = this;
+			$.multiSelect.deactive();
 			$.protocal.sendEndGameScore("bail", function(data) {
 				self.events();
 				self.score("bail",data.best_score);
