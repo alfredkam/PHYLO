@@ -279,7 +279,7 @@ a.btn {
 #login-box {
 	display:none;
 	position:absolute;
-	z-index:30;
+	z-index:1000;
 	right:0px;
 	background-color:whitesmoke;
 	padding:10px 11px;
