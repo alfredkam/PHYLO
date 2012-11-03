@@ -201,6 +201,7 @@ a.btn {
 }
 
 #top-panel {
+	text-align:center;
 	height:36px;
 	color: #71B2E2;
 	background-color:#EEE;
@@ -262,14 +263,17 @@ a.btn {
 
 #login-tag {
 	padding: 9px 10px;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	max-width:109px;
+	overflow:hidden;
 }
 
-#login:hover, .login-OnSelect {
+
+.login-OnSelect {
+	color:#777;
 	background-color: #E9E9E9;
 	border-left: 1px solid #ddd;
-}
-#login-tag:hover {
-	color:#777;
 }
 
 #login-box {
@@ -303,7 +307,6 @@ a.btn {
 }
 
 #nav {
-	left:30px;
 	position:relative;
 }
 
@@ -313,7 +316,7 @@ a.btn {
 
 #nav ul li {
 	float:left;
-	margin-right:10px;
+	margin-right:5px;
 }
 #nav a div {
 	color: #71B2E2;
@@ -324,7 +327,7 @@ a.btn {
 }
 
 #nav.span6 {
-	width:520px !important;
+	width:490px !important;
 }
 
 #nav div:hover, #nav div.onSelect {
@@ -600,3 +603,7 @@ a.btn {
 	display:none;
 }
 
+/* overwrite boostrap */
+.container {
+	width:1024px solid;
+}	

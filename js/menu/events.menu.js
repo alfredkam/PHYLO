@@ -57,7 +57,6 @@
 				$("#login-box").show();
 				$("#login-box").css("display","inline-block");
 				$(this).addClass("login-OnSelect");
-
 				
 				$("#option-list").hide();
 				$("#options-button .dropDownTriangle").hide();
@@ -68,6 +67,12 @@
 				$(".dropDownTriangle").hide();
 			}
 
+		}).hover(function() {
+			if($("#login-tag").html().search(/Welcome/) < 0) {
+				$(this).addClass("login-OnSelect");
+			}	
+		}, function() {
+			$(this).removeClass("login-OnSelect");
 		});
 		
 		$("#logout").mouseover(function() {
