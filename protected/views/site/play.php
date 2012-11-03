@@ -1,6 +1,33 @@
 
 <link rel='stylesheet' href='<?php echo Yii::app()->request->baseUrl; ?>css/game.css'/>
 
+	<!-- modal -->
+		<?php $this->beginWidget('bootstrap.widgets.TbModal', array('id'=>'bailModal')); ?>
+ 		<div class="modal-body">
+ 			<p>You sure you want to quit?</p>
+ 		</div>
+ 		<div class="modal-footer">
+ 			<?php $this->widget('bootstrap.widgets.TbButton', array(
+ 				'type'=>'primary',
+ 				'label'=>'Yes',
+ 				'url'=>'javascript:void(0);',
+ 				'htmlOptions'=>array(
+ 					'data-dismiss'=>'bailModal',
+ 					'class'=>'bailConfirmed'
+ 				)
+ 			)); ?>
+ 			<?php $this->widget('bootstrap.widgets.TbButton', array(
+ 				'label' => 'Cancel',
+ 				'url' => 'javascript:void(0);',
+ 				'htmlOptions'=>array(
+ 					'data-dismiss'=>'bailModal'
+ 				)
+ 			));	?>
+ 		</div>
+ 		<?php $this->endWidget(); ?>
+ 	<!-- end of modal -->
+
+
 
 <div id='menu'>
 			<div id='sandbox'>
@@ -36,7 +63,7 @@
 							<img src='/img/speaker_on.png'/>
 						</div>
 					</div>
-					<div id='runaway' class='icon-signout'></div>
+					<a href='javascript:void(0);' data-toggle="#bailModal" data-dismiss="bailModal" id='runaway'><i class='icon-signout'></i></a>
 					<div id='controlPanel'>
 						<div id='star'>
 							<img src='/img/star.png'/>
@@ -65,6 +92,7 @@
 				<div id='dump'>
 
 				</div>
+			
 				<div id='endGame'>
 					<div id='endGame-bg'>
 						<div id='endGame-content'>

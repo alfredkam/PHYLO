@@ -12105,3 +12105,20 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/404
 ---
+2012/11/02 23:54:45 [error] [exception.CException] exception 'CException' with message 'SiteController contains improperly nested widget tags in its view "/Users/dark/Desktop/PHYLO/protected/views/site/play.php". A TbModal widget does not have an endWidget() call.' in /Users/dark/Desktop/PHYLO/framework/web/CBaseController.php:102
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CController.php(870): CBaseController->renderFile('/Users/dark/Des...', NULL, true)
+#1 /Users/dark/Desktop/PHYLO/framework/web/CController.php(783): CController->renderPartial('play', NULL, true)
+#2 /Users/dark/Desktop/PHYLO/protected/controllers/SiteController.php(38): CController->render('play')
+#3 /Users/dark/Desktop/PHYLO/framework/web/actions/CInlineAction.php(50): SiteController->actionPlay()
+#4 /Users/dark/Desktop/PHYLO/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /Users/dark/Desktop/PHYLO/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#6 /Users/dark/Desktop/PHYLO/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(283): CController->run('play')
+#8 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('site/play')
+#9 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/play
+HTTP_REFERER=http://localhost:8888/ranking
+---
