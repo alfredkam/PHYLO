@@ -3,4 +3,11 @@
 .*.swo
 */.DS_Store
 .*
+<<<<<<< HEAD
 js/.DS_Store
+=======
+>>>>>>> 8616dfe925410d9de6ffc230b40889a98e401bb0
+
+*.js
+
+*.js

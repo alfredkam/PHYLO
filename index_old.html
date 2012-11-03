@@ -1,0 +1,376 @@
+<!doctype html>
+<!-- written by Alfred Kam, McGill CSB -->
+<!-- a Yii Boostrap Release -->
+<html lang='UTF8'>
+	<head>
+        <title>PHYLO: Play your DNA!</title>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>	
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel='stylesheet' href='css/bootstrap.css'/>
+		<link rel='stylesheet' href='css/style.css'/>
+		<link rel='stylesheet' href='css/game.css'/>
+		<link media='only screen and (min-device-width: 481px) and (max-device-width: 1280px)' rel='stylesheet' href='css/media1024.css'/>
+		<!--<link rel='stylesheet' href='css/media1024.css'/>
+		-->
+		<link rel='stylesheet' href='css/media1280.css'/>
+		<link rel='stylesheet' href='css/font-awesome.css'/>
+		<link rel='stylesheet' href='css/font-awesome-ie7.css'/>
+		<link rel='stylesheet' href='css/ranking.css'/>
+	</head>
+	<body>        
+        <div id="fb-root"></div>
+		<div class='wrapper'>
+			<div class='warning-bg'></div>
+			<div class='warning-wrapper'>
+				<div class='warning'>
+					<div class='warning-content'>
+						<div class='warning-msg'>
+							Testing Warning Msg
+						</div>
+						<div class='warning-ok'>
+							<button class='btn'>Ok</button>
+						</div>
+						<div class='warning-cancel'>
+							<button class='btn btn-warning'>Cancel</button> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='wrapper'>
+			<div class='customize customize-bg'></div>
+			<div class='customize customize-wrapper'>
+				<div class='row customize-title'>
+					Customize
+				</div>
+				<div class='customize-tab'>
+					<div class='row'>
+						<a href='javascript:void(0)' class='customize-tab-onselect span2 tag-theme'>Theme</a>
+						<a href='javascript:void(0)' class='span2 tag-music'>Music</a>
+					</div>
+				</div>
+				<div class='customize-body'>
+					<div class='row'>
+						<div class='customize-theme'>
+							<div class='span4' >
+								<div class='customize-boardColor'>
+									<div class='row customize-title'>
+											Board Color:
+									</div>
+									<div class='row'>
+										<div class='colorCell customize-theme-cell customize-theme-onpick colorBG'>
+										</div>
+									</div>
+								</div>
+								<div class='customize-dnaColor'>
+									<div class='customize-title row'>
+										DNA Color:
+									</div>
+									<div class='row'>
+										<div class='colorCell customize-theme-cell colorA'>
+										</div>
+										<div class='colorCell customize-theme-cell colorG '>
+										</div>
+										<div class='colorCell customize-theme-cell colorC'>
+										</div>
+										<div class='colorCell customize-theme-cell colorT'>
+										</div>
+									</div>
+								</div>
+								<div class='row'>
+									<br><br>
+									<a href='javascript:void(0);' class='customize-theme-reset btn-danger btn'>
+										Restore Default	
+									</a>	
+								</div>
+							</div>
+							<div class='span5'>
+								<canvas id='colorpad' width='256' height='256'>
+
+								</canvas>
+							</div>
+						</div>
+						<div class='customize-music'>
+							<div class='row customize-title'>
+								Current Music Theme	
+							</div>
+							<div class='row'>
+
+							</div>
+						</div>	
+					</div>
+				</div>
+				<div class='customize-buttons'>
+					<div class='row'>
+						<a href='javascript:void(0)' class='customize-save btn btn-primary offset4 span2'>
+							Save
+						</a>
+						<a href='javascript:void(0)' class='customize-cancel btn btn-primary span2'>
+							Cancel
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id='wrapper'>
+			<div id='tabletPanel'>
+				<div class='tablet-title'> PHYLO | Citizen Science</div>
+				<div id='tablet-grid'>
+					<a class='tablet-grid tablet-play-btn tablet-tab' href=javascript:void(0);' name='play'>
+						<div>
+							<div>
+								<i class='tablet-style-stroke'></i>
+								<i class='icon-stop'></i>
+								<i class='icon-stop'></i>
+								<i class='icon-stop'></i>
+							</div>
+							<div>Play</div>
+						</div>
+					</a>
+					<a class='tablet-grid tablet-tutorial-btn tablet-tab' href=javascript:void(0);' name='tutorial'>
+						<div>
+							<div>
+								<i class='icon-circle-arrow-right'></i>
+							</div>
+							<div>Tutorial</div>
+						</div>
+					</a>
+					<a class='tablet-grid tablet-about-btn tablet-tab' href=javascript:void(0);' name='about'>
+						<div>
+							<div>
+								<i class='icon-info-sign'></i>
+							</div>
+							<div>About</div>
+						</div>
+					</a>
+					<a class='tablet-grid tablet-credits-btn tablet-tab' href=javascript:void(0);' name='credits'>
+						<div>
+							<div>
+								<i class='icon-beaker'></i>
+							</div>
+							<div>Credits</div>
+						</div>
+					</a>
+					<a class='tablet-grid tablet-ranking-btn tablet-tab' href=javascript:void(0);' name='ranking'>
+						<div>
+							<div>
+								<i class='icon-trophy'></i>
+							</div>
+							<div>Ranking</div>
+						</div>
+					</a>
+					<a class='tablet-grid tablet-login-btn' href=javascript:void(0);' name='login'>
+						<div>
+							<div>
+								<i class='icon-chevron-right'></i>
+							</div>
+							<div>Login</div>
+						</div>
+					</a>
+					<a class='tablet-grid tablet-settings-btn' href=javascript:void(0);' name='settings'>
+						<div>
+							<div>
+								<i class='icon-cogs'></i>
+							</div>
+							<div>Settings</div>
+						</div>
+					</a>
+					<a class='tablet-grid tablet-feedback-btn' href=javascript:void(0);' name='feedback'>
+						<div>
+							<div>
+								<i class='icon-comment'></i>
+							</div>
+							<div>Feedback</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div id='top-panel'>
+				<div id='logo' class='span3'>PHYLO | Citizen Science</div>
+				<a href="http://phylo.cs.mcgill.ca/bio/">
+					<div id='dropDown-logoTriangle'></div>
+					<div id='dropDown-logo' class='span3'>PHYLO | Research</div>
+				</a>
+				<div id='nav' class='span6'>
+					<ul>
+						<li>
+						<a id='play' class='isTab' href='javascript:void(0);' data-url='index.html?page=play'><div>Play</div></a>
+						</li><li>
+						<a id='tutorial' class='isTab' href='javascript:void(0);'><div>Tutorial</div></a>
+						</li><li>
+						<a id='about' class='isTab' href='javascript:void(0);'><div>About</div></a>
+						</li><li>
+						<a id='credits' class='isTab' href='javascript:void(0);'><div>Credits</div></a>
+						</li><li>
+						<a id='ranking' class='isTab' href='javascript:void(0);'><div>Ranking</div></a>
+						</li><li class='showInLogin'>
+						<a id='history' class='isTab' href='javascript:void(0);'><div>History</div></a>
+						</li><li class='showInLogin'>
+						<a id='expert' class='isTab' href='javascript:void(0);'><div>Expert</div></a>
+						</li>
+					</ul>
+				</div>
+				<div id='top-panel-right'>
+					<div id='login'>
+						<div id='login-tag'>
+							Login	
+						</div>
+						<div id='login-box'>
+							<div class='login-warning'>
+							</div>
+							<span class='email-holder'><input id='email' type='text' class='input-medium' placeholder='Email'/><br></span>
+							<input id='username' type='text' class='input-medium' placeholder='Username'/>
+							<br>
+							<input id='password' type='password' class='input-medium' placeholder='Password'/><br>
+							<button class='btn login-btn'>Log In</button>
+							<button class='btn btn-primary register-btn register-btn-shift'>Register</button>
+							<button class='btn btn-danger cancel-btn'>Cancel</button>
+							<br><br>
+                            Or login with: <a href="#"><img src="http://phylo.cs.mcgill.ca/images/facebook.png" class="my-fb-login-button"/></a>
+							<br><br>
+							<a href='http://phylo.cs.mcgill.ca/reset.php'>Forgot Password?</a>
+						</div>
+					</div>
+					<div id='options'>
+						<div id='options-button'>
+							<img src='img/options.png'/>
+						</div>
+						<div class='dropDownTriangle'></div>
+						<div id='option-list'>
+							<div id='language' class='option-list'>
+								<div id='language-tag'>
+									Language
+								</div>			
+								<div id='language-list'>
+									<div class='language-list'>
+										<a href='?lang=en' name='EN'><div>English</div></a>
+										<a href='?lang=sp' name='SP'><div>Español</div></a>
+										<a href='?lang=fr' name='FR'><div>Français</div></a>
+										<a href='?lang=ru' name='RU'><div>Pусский</div></a>
+										<a href='?lang=he' name='HE'><div>עברית</div></a>
+										<a href='?lang=ro' name='RO'><div>Român</div></a>
+										<a href='?lang=pt' name='PT'><div>Português</div></a>
+										<a href='?lang=cns' name='CNS'><div>中文简体</div></a>
+										<a href='?lang=cnt' name='CNT'><div>中文繁體</div></a>
+									</div>			
+								</div>
+							</div>
+							<div id='customize' class='option-list'>Customize</div>
+							<div id='logout' class='option-list'>Logout</div>
+						</div>
+					</div>	
+				</div>	
+			</div>
+			<div id='loading-panel'>
+				<img src='img/loading.gif'/>
+			</div>
+			<a class='tablet-grid tablet-back-btn' href='javascript:void(0);' name='back'>
+				<div>
+					<div>
+						<i class='icon-circle-arrow-left'></i>
+					</div>		
+					<div>Back</div>	
+				</div>
+			</a>
+			<div id='mid-panel' class='forceDisplayNone'>
+			</div>
+			<!--
+			<a class='tablet-grid tablet-back-btn' href='javascript:void(0);' name='back'>
+				<div>
+					<div>
+						<i class='icon-circle-arrow-left'></i>
+					</div>		
+					<div>Back</div>	
+				</div>
+			</a>
+			-->
+			<div id='push'></div>
+		</div>
+		<div id='footer'>
+			<div class='wrapper'>
+				<div id='contribute'>
+					Want to contribute? <a href='https://github.com/McGill-CSB/PHYLO'>Click Here</a>
+				</div>
+				<div id='copyright'>
+					 &#169; 2012 <a href='http://www.alfredkam.com'>Alfred kam</a>, PHYLO, <a href='http://csb.cs.mcgill.ca/'>McGill CSB</a> and <a href='http://www.mcgill.ca'>McGill University</a>
+				</div>	
+			</div>
+		</div>
+		<!-- jquery and bootstrap library -->
+		<script src='js/jquery/jquery.1.8.2.js' type='text/javascript'></script>
+		<script src='js/twitter-bootstrap/bootstrap.js' type='text/javascript'></script>
+		<script src='js/jquery/jquery.mobile.1.0a2.js' type='text/javascript'></script>
+		<script src='js/jquery/jquery-ui-1.9.1.custom.min.js' type='text/javascript'></script>
+
+		<!-- options -->
+		<script src='js/options_template.js' type='text/javascript'></script>
+		<script src='js/options.js' type='text/javascript'></script>
+
+		<!-- DNA modules -->
+		<script src='js/DNA/helper.core.js' type='text/javascript'></script>
+		<script src='js/menu/tailor.menu.js' type='text/javascript'></script>
+		<script src='js/menu/disease.menu.js' type='text/javascript'></script>
+		<script src='js/DNA/timer.core.js' type='text/javascript'></script>
+		<script src='js/DNA/endGame.theme.js' type='text/javascript'></script>
+		<script src='js/DNA/physics.engine.js' type='text/javascript'></script>
+		<script src='js/DNA/events.engine.js' type='text/javascript'></script>
+		<script src='js/DNA/engine.core.js' type='text/javascript'></script>
+		<script src='js/DNA/stage.core.js' type='text/javascript'></script>
+		<script src='js/DNA/sequence.core.js' type='text/javascript'></script>
+		<script src='js/DNA/splash.theme.js' type='text/javascript'></script>
+		<script src='js/DNA/tree.core.js' type='text/javascript'></script>
+		<script src='js/DNA/multiSelect.core.js' type='text/javascript'></script>
+		<script src='js/DNA/newick.core.js' type='text/javascript'></script>
+		<script src='js/DNA/lang.module.js' type='text/javascript'></script>
+		<script src='js/DNA/fitch.core.js' type='text/javascript'></script>
+		<script src='js/DNA/board.theme.js' type='text/javascript'></script>
+		<script src='js/DNA/highlighter.theme.js' type='text/javascript'></script>
+		<script src='js/DNA/protocal.core.js' type='text/javascript'></script>
+		<script src='js/DNA/score.theme.js' type='text/javascript'></script>
+		<script src='js/DNA/main.core.js' type='text/javascript'></script>
+		<!-- RNA module -->
+		<script src='js/RNA/main.core.js' type='text/javascript'></script>		
+		<script src='js/RNA/message.core.js' type='text/javascript'></script>		
+
+		<!-- theming module -->
+		<script src='js/theme/main.theme.js' type='text/javascript'></script>		
+
+		<!-- game menu module-->
+		<script src='js/menu/interface.menu.js' type='text/javascript'></script>
+		<script src='js/menu/settings.menu.js' type='text/javascript'></script>
+	
+		<!-- menu / page loading modules -->
+		<script src='js/page/main.page.js' type='text/javascript'></script>
+		<script src='js/page/hashbang.page.js' type='text/javascript'></script>
+		<script src='js/menu/events.menu.js' type='text/javascript'></script>
+
+		<!-- tablet scripts -->
+		<script src='js/tablet/main.js' type='text/javascript'></script>
+
+        <!-- login-->
+        <!-- validation scripts -->
+        <script src='js/validation/cookie.validation.js' type='text/javascript'></script>
+        <script src='js/validation/login.validation.js' type='text/javascript'></script>
+                                
+        <!-- FB stuff -->
+        <script>
+        // Load the SDK Asynchronously
+        (function(d){
+            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+            if (d.getElementById(id)) { return; }
+                js = d.createElement('script'); js.id = id; js.async = true;
+                js.src = "//connect.facebook.net/en_US/all.js";
+                ref.parentNode.insertBefore(js, ref);
+            }(document));
+        </script>
+                    
+                    
+		<!-- plugin for ranking table -->
+		<script type="text/javascript" language="javascript" src="js/jquery/jquery.dataTables.js"></script>
+
+		<!-- detect ie 8 and below -->
+		<script type='text/javascript' src='js/misc/detectIE.js'></script>
+		<!-- icons from Font Awesome - http://fortawesome.github.com/Font-Awesome -->
+
+	</body>
+</html>
