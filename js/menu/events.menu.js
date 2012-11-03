@@ -40,25 +40,14 @@
 			$(this).addClass("dropDown-OptionOnSelect");
 		});
 		
-
-		/*
-		$("#logo").mouseover(function(event) {
+		$("#login").click(function(event) {
 			event.stopPropagation();
-			$("#dropDown-logoTriangle").show();
-			$("#dropDown-logo").show();
-			$(this).addClass("logo-OnSelect");
-		}); */
-
-		$("#login").click(function() {
-			event.stopPropagation();
-			if($("#login-tag").html().search(/Welcome/) > -1) {
+			if($(this).html().search(/Welcome/) > -1) {
 	
 			} else {
 				$("#login-box").show();
 				$("#login-box").css("display","inline-block");
 				$(this).addClass("login-OnSelect");
-
-				
 				$("#option-list").hide();
 				$("#options-button .dropDownTriangle").hide();
 				$("#options-button").removeClass("dropDown-OnSelect");
@@ -68,6 +57,9 @@
 				$(".dropDownTriangle").hide();
 			}
 
+		});
+		$("#login-box").click(function(event){
+				event.stopPropagation();
 		});
 		
 		$("#logout").mouseover(function() {

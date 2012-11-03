@@ -1,52 +1,26 @@
+
+
+<div id='context'>
+
+</div>
+
+
+<?php
+	$getValue = "";
+	if(isset($_GET["lang"]) && !empty($_GET["lang"])) {
+				$getValue = strtoupper($_GET["lang"]);
+	} else {
+		$getValue = "EN";
+	}
+?>
+
+<script src='/js/DNA/helper.core.js' type='text/javascript'></script>
+<script src="/lang/<?php echo $getValue; ?>.js" type="text/javascript"></script>
+
+<script type='text/javascript'>
 (function() {
-	$.page = {
-		expert : function() {
-			window.location = "http://phylo.cs.mcgill.ca/dcanv";
-		},
-		ranking : function() {
-            // FIXME? protocal use POST not GET
-            $.ajax({
-				url : "http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + window.langOpt.toUpperCase(),
-                //url : "content/ranking.html",
-				type : "post",
-			}).done(function(re) {
-                $("#mid-panel").html(re);
-                $.getScript("js/ranking/ranking.js");
-                $.hashbang.panelReady();
-            });
-            
-		},
-		history : function() {
-            $.ajax({
-				url : "http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username=" + window.guest,
-                //url : "content/history.html",
-				type : "post",
-			}).done(function(re) {
-                $("#mid-panel").html(re);
-                $.getScript("js/history/history.js");
-		$.hashbang.panelReady();
-            });
-		},
-		rna : function() {
-			this.protocal("content/rna.html");
-		},	
-		play : function() {
-			this.protocal("content/play.html");
-		},
-		tutorial : function() {
-			$("#mid-panel").html('<div class="wrapper"><iframe src="http://phylo.cs.mcgill.ca/tutorial/'+window.langOpt.toUpperCase()+'/index.html" width="840" height="550" class="iframe-tutorial"></iframe></div>');
-		},
-		about : function() {
-			var about = window.lang.body.play.about;
-			var str = "<div class='wrapper'><div class='wrapper-inner'>";
-			for(var i=1;i<=10;i+=2) {
-				str+="<h1>"+about["field "+i]+"</h1><p>"+about["field "+(i+1)]+"</p>";
-			}
-			str+="</div></div>";
-			$("#mid-panel").html(str);
-		},
-		credits : function() {
-			var credits = window.lang.body.play.credit;
+		window.lang = <?php echo $getValue; ?>script.lang[0];
+		var credits = window.lang.body.play.credit;
 			var str = "<div class='wrapper'><div class='wrapper-inner'>";
 			str+= "<h2>"+credits["field 1"]+"</h2>"+
 				'<ul><li><a href="mailto:jerome.waldispuhl@mcgill.ca">Jérôme Waldispühl</a></li><li><a href="mailto:blanchem@mcb.mcgill.ca">Mathieu Blanchette</a></li></ul>'+
@@ -68,26 +42,9 @@
 				'<ul><li>Andrew Bogecho, Katherine Gombay, Kailesh Mussai, William Raillant-Clark, James Shubin, Ron Simpson.</li>  </ul>';
 			str+"</div></div>";
 
-			$("#mid-panel").html(str);
-
-		},
-		change : function(content) {
-			$("#mid-panel").html(content);
-		},
-		protocal : function(url) {
-			var self = this;
-			$.ajax({
-				statusCode : {
-					412 : function() {
-						console.log(">> Warning : Status Code 412; Retrying URL : "+url);
-						self.protocal(url);
-					},
-				},	
-				url : url,
-				type : "post",
-			}).done(function(re) {
-				self.change(re);	
-			});
-		},
-	};
+			$("#context").html(str);
+			
 })();
+
+</script>
+

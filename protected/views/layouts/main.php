@@ -5,22 +5,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="language" content="en" />
 
+
+
 <!-- blueprint CSS framework -->
-<link rel="stylesheet" type="text/css"
-	href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css"
-	media="screen, projection" />
-<link rel="stylesheet" type="text/css"
-	href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css"
-	media="print" />
-<link rel="stylesheet" type="text/css"
-	href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>css/screen.css" media="screen, projection" />
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>css/print.css" media="print" />
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>css/font-awesome.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>css/font-awesome-ie7.css" />
 
 <!--[if lt IE 8]>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>css/ie.css" media="screen, projection" />
 	<![endif]-->
-
-<link rel="stylesheet" type="text/css"
-	href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" />
 
 <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -28,7 +23,6 @@
 <body>
 
 	<div class="container" id="page">
-
 		<div id="header"></div>
 		<!-- header -->
 
@@ -47,40 +41,35 @@
 									'htmlOptions'=>array('id'=>'nav', 'class'=>'span6'),
 
 									'items'=>array(
-											array('label'=>'Play', 'url'=>'#play', 'active'=>true),
-											array('label'=>'Tutorial', 'url'=>'#tutorial'),
-											array('label'=>'About', 'url'=>'#about'),
-											array('label'=>'Credits', 'url'=>'#credits'),
-											array('label'=>'Ranking', 'url'=>'#ranking'),
-
-
-											/*
-											 array('label'=>'Dropdown', 'url'=>'#', 'items'=>array(
-											 		array('label'=>'Action', 'url'=>'#'),
-											 		array('label'=>'Another action', 'url'=>'#'),
-											 		array('label'=>'Something else here', 'url'=>'#'),
-											 		'---',
-											 		array('label'=>'NAV HEADER'),
-											 		array('label'=>'Separated link', 'url'=>'#'),
-											 		array('label'=>'One more separated link', 'url'=>'#'),
-											 )*/
+											array('label'=>'Play', 'url'=>'play', 'active'=>(Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'play') ^ (Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'index')),
+											array('label'=>'Tutorial', 'url'=>'tutorial', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'tutorial'),
+											array('label'=>'About', 'url'=>'about', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'about'),
+											array('label'=>'Credits', 'url'=>'credits', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'credits'),
+											array('label'=>'Ranking', 'url'=>'ranking', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'ranking'),
 									),
 							),
-					
-					array(
-							'class'=>'bootstrap.widgets.TbMenu',
-							'htmlOptions'=>array('class'=>'pull-right'),
-							'items'=>array(
-									array('label'=>'Login', 'url'=>'#'),
-									'---',
-									array('label'=>'settings', 'url'=>'#', 'items'=>array(
-											array('label'=>'Language', 'url'=>'#'),
-											array('label'=>'Customize', 'url'=>'#'),
-											
-									)),
+							array(
+									'class'=>'bootstrap.widgets.TbMenu',
+									'htmlOptions'=>array('class'=>'pull-right'),
+									'items'=>array(
+											array('label'=>'Login', 'url'=>'#login'	
+											),
+
+											array('label'=>'settings', 'url'=>'#', 'items'=>array(
+													array('label'=>'customize', 'url'=>'#customize'),
+
+													array('class'=>'bootstrap.widgets.TbDropdown',
+															'label'=>'language',
+															'items'=>array(array(
+																	'label'=>'test','url'=>'#'),
+															),
+													)
+											)),
+
+									),
 							),
+
 					),
-			),
 			)); ?>
 		</div>
 		<!-- mainmenu -->
@@ -90,20 +79,43 @@
 			)); ?>
 		<!-- breadcrumbs -->
 		<?php endif?>
+		<!-- additional script -->
+		<?php include_once 'panel.php'; ?>
+		<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>css/style.css" />
+		<script src="<?php echo Yii::app()->request->baseUrl; ?>js/jquery/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
 
-		<?php echo $content; ?>
+		<div id='mid-panel'>
+			<?php echo $content; ?>
+		</div>
 
 		<div class="clear"></div>
 
 		<div id="footer">
+<<<<<<< HEAD
 			Copyright &copy;
 			<?php echo date('Y'); ?>
 			by Alfred Kam, PHYLO, McGill CSB and McGill University<br /> All Rights Reserved.<br />
+=======
+			Want to contribute? <a class='btn btn-info' href='https://github.com/McGill-CSB/PHYLO'>Click
+				Here</a><br> Copyright &copy; <?php echo date('Y'); ?> by Alfred
+				Kam, PHYLO, McGill CSB and McGill University. 
+			
+			<br /> All Rights Reserved.<br />
+
+>>>>>>> d5e60fb7920687a72cff41ec91802313c8c6c1b2
 		</div>
 		<!-- footer -->
 
 	</div>
 	<!-- page -->
 
+	<!-- additional script -->
+	<!-- login -->
+	<!-- validation scripts -->
+	<script src='<?php echo Yii::app()->request->baseUrl; ?>js/validation/cookie.validation.js' type='text/javascript'></script>
+	<script src='<?php echo Yii::app()->request->baseUrl; ?>js/validation/login.validation.js' type='text/javascript'></script>
+
 </body>
+
+
 </html>

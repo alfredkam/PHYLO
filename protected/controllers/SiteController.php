@@ -27,9 +27,35 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
+		// renders the view file 'protected/views/site/play.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		$this->render('play');
+		
+	}
+	
+	public function actionPlay()
+	{
+		$this->render('play');
+	}
+	
+	public function actionAbout() 
+	{
+		$this->render('about');
+	}
+	
+	public function actionCredits() 
+	{
+		$this->render('credits');
+	}
+		
+	public function actionTutorial()
+	{
+		$this->render('tutorial');
+	}
+	
+	public function actionRanking()
+	{
+		$this->render('ranking');
 	}
 
 	/**

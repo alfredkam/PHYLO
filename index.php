@@ -1,9 +1,8 @@
 <?php
 
 // change the following paths if necessary
-define('YII_DEBUG',true);
-$yii=dirname(__FILE__).'/../framework/yii.php';
-$config='../protected/config/main.php';
+$yii=dirname(__FILE__).'/framework/yii.php';
+$config='protected/config/main.php';
 
 // remove the following lines when in production mode
 //defined('YII_DEBUG') or define('YII_DEBUG',true);

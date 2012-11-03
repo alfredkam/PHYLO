@@ -4981,3 +4981,19 @@ a.badge:hover {
 .invisible {
   visibility: hidden;
 }
+.nav li.dropdown ul.dropdown-menu li:HOVER ul {
+display:block; 
+position:absolute; 
+left:-10%;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+width:100%;
+}
+.nav li.dropdown ul.dropdown-menu ul {
+display: none;
+float:left;
+position: relative;
+top: auto;
+margin-top: 0px;
+}

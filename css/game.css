@@ -61,7 +61,7 @@
 	margin 0px;
 	padding: 0px;
 	width:841px;
-	height:29px;
+	height:34px;
 }
 
 .nuc-A {
@@ -195,7 +195,7 @@
 	max-width:534px;
 	color:white;
 	position:relative;
-	top:-15px
+	top: 6px
 }
 .gap {
 	padding-left:20px;
@@ -228,7 +228,7 @@
 #runaway {
 	color:white;
 	font-size: 28px;
-	top:-13px;
+	top:6px;
 	position:relative;
 	left:200px;
 }
@@ -243,7 +243,6 @@
 	width: 33px;
 	position:relative;
 	left: 180px;
-	top:-20px;
 }
 #cycle:hover {
 	opacity: 1;

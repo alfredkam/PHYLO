@@ -87,7 +87,10 @@
 				$.physics.snapRandom();
 				if($.phylo.bestScore >= $.sequence.par)
 					$.board.approve();
-				
+			});
+			
+			$("#runaway").click(function(){
+				console.log("clicked");
 			});
 			//next stage
 			$("#star").click(function(){

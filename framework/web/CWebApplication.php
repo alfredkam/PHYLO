@@ -91,7 +91,7 @@ class CWebApplication extends CApplication
 	 * checked to see if the request can be handled by one of the controllers in the map.
 	 * If not, a controller will be searched for under the {@link getControllerPath default controller path}.
 	 */
-	public $controllerMap=array();
+	public $controllerMap = array();
 	/**
 	 * @var array the configuration specifying a controller which should handle
 	 * all user requests. This is mainly used when the application is in maintenance mode
@@ -406,7 +406,7 @@ class CWebApplication extends CApplication
 	 * @return string the directory that contains the controller classes. Defaults to 'protected/controllers'.
 	 */
 	public function getControllerPath()
-	{
+	{	
 		if($this->_controllerPath!==null)
 			return $this->_controllerPath;
 		else
@@ -419,6 +419,7 @@ class CWebApplication extends CApplication
 	 */
 	public function setControllerPath($value)
 	{
+	
 		if(($this->_controllerPath=realpath($value))===false || !is_dir($this->_controllerPath))
 			throw new CException(Yii::t('yii','The controller path "{path}" is not a valid directory.',
 				array('{path}'=>$value)));

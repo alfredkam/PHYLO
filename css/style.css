@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'helveticathin';
-    src: url('../fonts/helveticaneueltstd-th-helv.eot');
-    src: url('../fonts/helveticaneueltstd-th-helv.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/helveticaneueltstd-th-helv.woff') format('woff'),
-         url('../fonts/helveticaneueltstd-th-helv.ttf') format('truetype'),
-         url('../fonts/helveticaneueltstd-th-helv.svg#HelveticaNeueLTStd35Thin') format('svg');
+    src: url('/fonts/helveticaneueltstd-th-helv.eot');
+    src: url('/fonts/helveticaneueltstd-th-helv.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/helveticaneueltstd-th-helv.woff') format('woff'),
+         url('/fonts/helveticaneueltstd-th-helv.ttf') format('truetype'),
+         url('/fonts/helveticaneueltstd-th-helv.svg#HelveticaNeueLTStd35Thin') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -19,8 +19,8 @@ html, body {
 }
 
 body {
-	font-family: 'helveticathin', Helvetica, Arial, sans-serif;
-	color:white;
+	font-family: 'helveticathin', Helvetica, Arial, sans-serif !important;
+	color:white !important;
 	/* background-color: #1C1C1C; */
 	background-image: url(../img/light_paper.png);
 	background-repeat:repeat;
@@ -195,6 +195,7 @@ a.btn {
 	top:20px;
 	position:relative;
 	min-height:600px;
+	z-index:1;
 }
 #mid-panel a {
 	color:white;
@@ -276,7 +277,7 @@ a.btn {
 	display:none;
 	position:absolute;
 	z-index:30;
-	right:0px;
+	right:75px;
 	background-color:whitesmoke;
 	padding:10px 11px;
 	color:black;
@@ -380,6 +381,10 @@ a.btn {
 	position:relative;
 }
 
+.wrapper-absolute {
+	position:absolute;
+}
+
 #wrapper {
 	height: auto !important;
 	height:100%;
@@ -399,11 +404,13 @@ a.btn {
 }
 
 #footer {
+	z-index:1000;
+	position: relative;
     bottom:0%;
 	width:100%;
-	background-color:#eee;
+	/*background-color:#eee;*/
 	clear:both;
-	color:#333;
+	color:#eee;
 }
 #footer-content {
 	height:100px;
@@ -596,7 +603,8 @@ a.btn {
 	text-align:center;
 }
 
-#mid-panel {
-	display:none;
+/* override bootstrap */
+.container{
+	width:1024px !important;	
 }
 

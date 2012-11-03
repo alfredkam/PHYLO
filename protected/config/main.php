@@ -20,7 +20,6 @@ return array(
 		'application.models.*',
 		'application.components.*',
 	),
-
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
 		/*
@@ -47,14 +46,22 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
+		'request' => array(
+			'baseURL'=>'/',
+		),
+		'assetManager' => array(
+			'baseUrl' => '/assets/'
+		),
 		// uncomment the following to enable URLs in path-format
-		
 		'urlManager'=>array(
+			'showScriptName' => false,
+			'urlSuffix' => '.php',
 			'urlFormat'=>'path',
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+				'<action:\w+>'=>'site/<action>',
 			),
 		),
 		
@@ -96,6 +103,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'phylo@cs.mcgill.ca',
 	),
 );
