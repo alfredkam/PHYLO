@@ -10,6 +10,7 @@
 	display:none;
 	position:absolute;
 	display:inline-block;	
+	line-height:normal;
 }
 #movingParts {
 	position: absolute;
@@ -18,7 +19,7 @@
 }
 
 #tree {
-	top:0px;
+	top:8px;
 	position: relative;
 	display:inline-block;
 	width: 178px;	
@@ -61,7 +62,7 @@
 	margin 0px;
 	padding: 0px;
 	width:841px;
-	height:29px;
+	height:31px;
 }
 
 .nuc-A {
@@ -184,8 +185,7 @@
 	width:1024px;
 	position:relative;
 	display:inline-block;
-	padding-top:10px;
-	padding-bottom:20px;
+	top:10px;
 }
 #bottomPanel div{
 	display:inline-block;
@@ -198,7 +198,7 @@
 	top:-15px
 }
 .gap {
-	padding-left:20px;
+	padding-left:15px;
 }
 
 #cycle img {

@@ -348,7 +348,7 @@
 				if(pos < 0)
 					pos=0;
 				//check if assumption is correct if not fix it
-				while(track[row][pos] != "x") {
+				while(track[row][pos] != "x" && pos < $.phylo.seqLen*2) {
 					pos+=1;
 				}
 				//found it went out of [right] bound
@@ -356,6 +356,7 @@
 					var i=track[row].length;
 					var temp = id;
 					//Note: this condition of while loop excutes the fasted
+					console.log(pos);
 					while(i--) {
 						if(track[row][i] != "x") {
 							temp = track[row][i];

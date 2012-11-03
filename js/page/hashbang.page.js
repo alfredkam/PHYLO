@@ -152,6 +152,7 @@
 				//	window.location.hash = "#!"+$(innerSelf).attr("name");		
 					$.timer.stop();
 					$(this).hide();
+					$(innerSelf).hide();
 					$("#mid-panel").hide();
 					$("#tabletPanel").show("slide",{direction:"left"},500);
 				}

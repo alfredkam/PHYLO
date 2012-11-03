@@ -5,16 +5,17 @@
         <title>PHYLO: Play your DNA!</title>
 		<meta name='viewport' content='width=device-width, initial-scale=1'>	
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!-- blue print css -->
 		<link rel='stylesheet' href='css/bootstrap.css'/>
-		<link rel='stylesheet' href='css/style.css'/>
-		<link rel='stylesheet' href='css/game.css'/>
-		<link media='only screen and (min-device-width: 481px) and (max-device-width: 1280px)' rel='stylesheet' href='css/media1024.css'/>
-		<!--<link rel='stylesheet' href='css/media1024.css'/>
-		-->
-		<link rel='stylesheet' href='css/media1280.css'/>
 		<link rel='stylesheet' href='css/font-awesome.css'/>
 		<link rel='stylesheet' href='css/font-awesome-ie7.css'/>
+		<!-- custom css -->
+		<link rel='stylesheet' href='css/style.css'/>
+		<link rel='stylesheet' href='css/game.css'/>
+		<link media='only screen and (min-device-width: 481px) and (max-device-width: 1280px)' rel='stylesheet' href='css/tablet.css'/>
+		<link rel='stylesheet' href='css/media1280.css'/>
 		<link rel='stylesheet' href='css/ranking.css'/>
+		<!-- icons from Font Awesome - http://fortawesome.github.com/Font-Awesome -->
 	</head>
 	<body>        
         <div id="fb-root"></div>
@@ -185,6 +186,7 @@
 				</div>
 			</div>
 			<div id='top-panel'>
+				<div class='container'>
 				<div id='logo' class='span3'>PHYLO | Citizen Science</div>
 				<a href="http://phylo.cs.mcgill.ca/bio/">
 					<div id='dropDown-logoTriangle'></div>
@@ -259,6 +261,7 @@
 						</div>
 					</div>	
 				</div>	
+				</div>
 			</div>
 			<div id='loading-panel'>
 				<img src='img/loading.gif'/>
@@ -287,19 +290,23 @@
 		</div>
 		<div id='footer'>
 			<div class='wrapper'>
-				<div id='contribute'>
-					Want to contribute? <a href='https://github.com/McGill-CSB/PHYLO'>Click Here</a>
+				<div id='contribute' class='footer-inner'>
+					Want to contribute? <a class='btn btn-info' href='https://github.com/McGill-CSB/PHYLO'>Click Here</a>
 				</div>
-				<div id='copyright'>
-					 &#169; 2012 <a href='http://www.alfredkam.com'>Alfred kam</a>, PHYLO, <a href='http://csb.cs.mcgill.ca/'>McGill CSB</a> and <a href='http://www.mcgill.ca'>McGill University</a>
+				<div id='copyright' class='footer-inner'>
+					 Copyright &#169; 2012 <a href='http://www.alfredkam.com'>Alfred kam</a>, <a href='http://phylo.cs.mcgill.ca'>PHYLO</a>, <a href='http://csb.cs.mcgill.ca/'>McGill CSB</a> and <a href='http://www.mcgill.ca'>McGill University</a><br>
+					All Rights Reserve
 				</div>	
+				</div>
 			</div>
 		</div>
-		<!-- jquery and bootstrap library -->
+		<!-- blue print js  -->
 		<script src='js/jquery/jquery.1.8.2.js' type='text/javascript'></script>
 		<script src='js/twitter-bootstrap/bootstrap.js' type='text/javascript'></script>
 		<script src='js/jquery/jquery.mobile.1.0a2.js' type='text/javascript'></script>
 		<script src='js/jquery/jquery-ui-1.9.1.custom.min.js' type='text/javascript'></script>
+
+		<!-- custom js -->
 
 		<!-- options -->
 		<script src='js/options_template.js' type='text/javascript'></script>
@@ -363,13 +370,11 @@
             }(document));
         </script>
                     
-                    
 		<!-- plugin for ranking table -->
 		<script type="text/javascript" language="javascript" src="js/jquery/jquery.dataTables.js"></script>
 
 		<!-- detect ie 8 and below -->
 		<script type='text/javascript' src='js/misc/detectIE.js'></script>
-		<!-- icons from Font Awesome - http://fortawesome.github.com/Font-Awesome -->
 
 	</body>
 </html>

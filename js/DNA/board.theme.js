@@ -44,6 +44,7 @@
 		},
 		//listens to events
 		startListener: function() {
+			var self = this;
 			//disables background music
 			if(window.DEV.disableMusic == false) {	
 				$("#musicPlayerSpot").html("<audio autoplay='autoplay' loop='loop' id='game-audio' preload='auto' autobuffer style='display:none'><source src='music/Valent%20-%20The%20Buckle.mp3' />Your browser does not support audio element</audio>");
@@ -83,10 +84,13 @@
 			$("#cycle").click(function(){
 				$.helper.copy($.sequence.track, $.phylo.bestTrack);
 				//$.sequence.track = $.phylo.bestTrack.slice(0);
-				$.board.score($.phylo.bestScore);
+				
+				var score = $.fitch.score();
+				$.board.score(score);
 				$.physics.snapRandom();
 				if($.phylo.bestScore >= $.sequence.par)
 					$.board.approve();
+				self.stats();
 				
 			});
 			//next stage
