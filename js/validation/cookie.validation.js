@@ -17,7 +17,7 @@
             var exdate = new Date();
             exdate.setDate(exdate.getDate()+exdays);
             var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
-            document.cookie=c_name + "=" + c_value + "; path=/";
+            document.cookie=c_name + "=" + c_value;
         },
         //c_name : name of cookie
 		//returns value or null
@@ -33,7 +33,13 @@
 		},
 		//c_name : name of cookie
 		delete : function (c_name) {
-            this.create(c_name,"",-1);
+            var exdate = new Date();
+            exdate.setDate(exdate.getDate() - 1 );
+            var c_value="=; expires="+exdate.toUTCString();
+            console.log("remove cookie : "+c_name);
+            console.log("> "+this.check(c_name));
+            document.cookie=c_name + "=" + c_value;
+            console.log("> "+this.check(c_name));
 		}
 	}
 
