@@ -1,11 +1,5 @@
 /* assume 1024 for tablets */
-@media only screen and (min-width:992px) {
-	.tablet-grid {
-		display:none;
-	}
-}
 
-@media only screen and (min-device-width: 481px) and (max-device-wdith:1280px) {  
 	body {
 		background-image:none;
 		background-color:black;
@@ -98,4 +92,3 @@
 		color:#08C;
 	}
 	
-}
