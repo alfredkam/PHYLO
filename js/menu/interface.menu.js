@@ -392,6 +392,8 @@
 							} else {
 								$("#draw").hide();
 								$("#menu").hide();
+								$("#level_inputbox").hide();
+								$("#level_inputbox").val("");
 								$.main.init({
 									type: "disease",
 									num: id,		
@@ -401,6 +403,8 @@
 						}).fail(function(data) {
 								$("#draw").hide();
 								$("#menu").hide();
+								$("#level_inputbox").hide();
+								$("#level_inputbox").val("");
 								$.main.init({
 									type: "disease",
 									num: id,		
