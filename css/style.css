@@ -604,8 +604,7 @@ a.btn {
 }
 
 /* override bootstrap */
-.container {
+.container{
 	width:1024px !important;	
-}
 }
 

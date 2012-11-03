@@ -5,6 +5,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="language" content="en" />
 
+
+
 <!-- blueprint CSS framework -->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>css/screen.css" media="screen, projection" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>css/print.css" media="print" />
@@ -15,10 +17,9 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>css/ie.css" media="screen, projection" />
 	<![endif]-->
 <!-- custom css -->
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>css/style.css" />
+
 
 <!-- blueprint js framework -->
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>js/jquery/jquery.1.8.2.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>js/bootstrap/bootstrap.js"></script>
 
 
@@ -28,7 +29,6 @@
 <body>
 
 	<div class="container" id="page">
-
 		<div id="header"></div>
 		<!-- header -->
 
@@ -47,11 +47,11 @@
 									'htmlOptions'=>array('id'=>'nav', 'class'=>'span6'),
 
 									'items'=>array(
-											array('label'=>'Play', 'url'=>'/index.php/play', 'active'=>(Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'play') ^ (Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'index')),
-											array('label'=>'Tutorial', 'url'=>'/index.php/tutorial', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'tutorial'),
-											array('label'=>'About', 'url'=>'/index.php/about', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'about'),
-											array('label'=>'Credits', 'url'=>'/index.php/credits', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'credits'),
-											array('label'=>'Ranking', 'url'=>'/index.php/ranking', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'ranking'),
+											array('label'=>'Play', 'url'=>'play', 'active'=>(Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'play') ^ (Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'index')),
+											array('label'=>'Tutorial', 'url'=>'tutorial', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'tutorial'),
+											array('label'=>'About', 'url'=>'about', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'about'),
+											array('label'=>'Credits', 'url'=>'credits', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'credits'),
+											array('label'=>'Ranking', 'url'=>'ranking', 'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'ranking'),
 									),
 							),
 							array(
@@ -87,7 +87,7 @@
 		<?php endif?>
 		<!-- additional script -->
 		<?php include_once 'panel.php'; ?>
-
+		<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>css/style.css" />
 		<script src="<?php echo Yii::app()->request->baseUrl; ?>js/jquery/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
 
 		<div id='mid-panel'>
