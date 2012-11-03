@@ -1,3 +1,4 @@
+
 (function(){
 	$.endGame = {
 		//dusplays message of completing the game
