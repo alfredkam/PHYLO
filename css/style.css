@@ -15,7 +15,7 @@ a:link, a:visited, a:active {
 }
 
 html, body {
-	height:100%;
+	min-height:100%;
 }
 
 body {
@@ -192,9 +192,9 @@ a.btn {
 	padding-top:20px;
 }
 #mid-panel {
-	top:20px;
+	top:20xp;
 	position:relative;
-	min-height:600px;
+	min-height:500px;
 }
 #mid-panel a {
 	color:white;
@@ -402,7 +402,8 @@ a.btn {
 }
 
 #footer {
-    bottom:0%;
+	position:relative;
+    bottom: 0px;
 	width:100%;
 	background-color:#eee;
 	clear:both;
@@ -413,7 +414,7 @@ a.btn {
 	margin-left:auto;
 	margin-right:auto;
 	width:1024px;
-	padding:20px 0;
+	padding:20px 10px;
 } 
 
 #sponsor-tag {
