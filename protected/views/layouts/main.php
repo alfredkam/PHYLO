@@ -16,12 +16,6 @@
 <!--[if lt IE 8]>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>css/ie.css" media="screen, projection" />
 	<![endif]-->
-<!-- custom css -->
-
-
-<!-- blueprint js framework -->
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>js/bootstrap/bootstrap.js"></script>
-
 
 <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>

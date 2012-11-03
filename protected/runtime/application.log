@@ -12095,3 +12095,13 @@ Stack trace:
 REQUEST_URI=/index.php/img/animal/human.png
 HTTP_REFERER=http://localhost:8888/index.php/play
 ---
+2012/11/02 23:26:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "404".' in /Users/dark/Desktop/PHYLO/framework/web/CController.php:484
+Stack trace:
+#0 /Users/dark/Desktop/PHYLO/framework/web/CController.php(271): CController->missingAction('404')
+#1 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(283): CController->run('404')
+#2 /Users/dark/Desktop/PHYLO/framework/web/CWebApplication.php(142): CWebApplication->runController('site/404')
+#3 /Users/dark/Desktop/PHYLO/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Users/dark/Desktop/PHYLO/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/404
+---

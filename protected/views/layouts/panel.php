@@ -111,7 +111,9 @@
 				});
 			})();
 		</script>
-		
+		<!-- blueprint js framework -->
+		<!--<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>js/bootstrap/bootstrap.js"></script>
+		-->
 		<!-- theming module -->
 		<script src='/js/theme/main.theme.js' type='text/javascript'></script>		
 
