@@ -33,17 +33,9 @@
 		<script src='/js/DNA/score.theme.js' type='text/javascript'></script>
 		<script src='/js/DNA/main.core.js' type='text/javascript'></script>
 		
-<!-- theming module -->
-		<script src='/js/theme/main.theme.js' type='text/javascript'></script>		
-
 		<!-- game menu module-->
 		<script src='/js/menu/interface.menu.js' type='text/javascript'></script>
 		<script src='/js/menu/settings.menu.js' type='text/javascript'></script>	
-		
-		<!-- menu / page loading modules -->
-		<script src='/js/page/main.page.js' type='text/javascript'></script>
-		<script src='/js/page/hashbang.page.js' type='text/javascript'></script>
-		<script src='/js/menu/events.menu.js' type='text/javascript'></script>
 		
 <div id='menu'>
 			<div id='sandbox'>

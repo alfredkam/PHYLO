@@ -97,14 +97,14 @@
 		<script src="/js/jquery/jquery-ui-1.9.1.custom.min.js"
 			type="text/javascript"></script>
 
-		<div id='mid-panel' class='forceDisplayNone'>
+		<div id='mid-panel'>
 			<?php echo $content; ?>
 		</div>
 
 		<div class="clear"></div>
 
 		<div id="footer">
-			Want to contribute? <a href='https://github.com/McGill-CSB/PHYLO'>Click
+			Want to contribute? <a class='btn btn-info' href='https://github.com/McGill-CSB/PHYLO'>Click
 				Here</a><br> Copyright &copy; <?php echo date('Y'); ?> by Alfred
 				Kam, PHYLO, McGill CSB and McGill University. 
 			

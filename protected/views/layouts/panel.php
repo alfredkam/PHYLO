@@ -1,37 +1,21 @@
 
-<script type="text/javascript">
-	//scripts to update tags
-	(function() {
-		//updates tag,
-		$("a").each(function(){
-			if($(this).attr("href") == "#customize") 
-			{
-				$(this).attr("href","javascript:void(0);");
-				$(this).attr("id","customize");
-			} else if($(this).attr("href") == "#login") {
-				$(this).attr("href","javascript:void(0);");
-				$(this).attr("id","login");	
-			}
-		});
-	})();
-</script>
 <div class='wrapper-absolute'>
 	<div class='container'>
-						<div id='login-box'>
-							<div class='login-warning'>
-							</div>
-							<span class='email-holder'><input id='email' type='text' class='input-medium' placeholder='Email'/><br></span>
-							<input id='username' type='text' class='input-medium' placeholder='Username'/>
-							<br>
-							<input id='password' type='password' class='input-medium' placeholder='Password'/><br>
-							<button class='btn login-btn'>Log In</button>
-							<button class='btn btn-primary register-btn register-btn-shift'>Register</button>
-							<button class='btn btn-danger cancel-btn'>Cancel</button>
-							<br><br>
-                            Or login with: <a href="#"><img src="http://phylo.cs.mcgill.ca/images/facebook.png" class="my-fb-login-button"/></a>
-							<br><br>
-							<a href='http://phylo.cs.mcgill.ca/reset.php'>Forgot Password?</a>
+			<div id='login-box'>
+						<div class='login-warning'>
 						</div>
+						<span class='email-holder'><input id='email' type='text' class='input-medium' placeholder='Email'/><br></span>
+						<input id='username' type='text' class='input-medium' placeholder='Username'/>
+						<br>
+						<input id='password' type='password' class='input-medium' placeholder='Password'/><br>
+						<button class='btn login-btn'>Log In</button>
+						<button class='btn btn-primary register-btn register-btn-shift'>Register</button>
+						<button class='btn btn-danger cancel-btn'>Cancel</button>
+						<br><br>
+                            Or login with: <a href="#"><img src="http://phylo.cs.mcgill.ca/images/facebook.png" class="my-fb-login-button"/></a>
+						<br><br>
+					<a href='http://phylo.cs.mcgill.ca/reset.php'>Forgot Password?</a>
+			</div>
 	</div>
 </div>
 
@@ -110,3 +94,30 @@
 				</div>
 			</div>
 		</div>
+		
+		<script type="text/javascript">
+			//scripts to update tags
+			(function() {
+				//updates tag,
+				$("a").each(function(){
+					if($(this).attr("href") == "#customize") 
+					{
+						$(this).attr("href","javascript:void(0);");
+						$(this).attr("id","customize");
+					} else if($(this).attr("href") == "#login") {
+						$(this).attr("href","javascript:void(0);");
+						$(this).attr("id","login");	
+					}
+				});
+			})();
+		</script>
+		
+		<!-- theming module -->
+		<script src='/js/theme/main.theme.js' type='text/javascript'></script>		
+
+
+		<!-- menu / page loading modules -->
+		<script src='/js/page/main.page.js' type='text/javascript'></script>
+		<script src='/js/page/hashbang.page.js' type='text/javascript'></script>
+		<script src='/js/menu/events.menu.js' type='text/javascript'></script>
+		
