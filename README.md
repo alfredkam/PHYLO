@@ -1,6 +1,8 @@
 PHYLO
 =====
 
+This BUILD is a yii-bootstrap 
+
 PHYLO nightly build can be found at 
 http://phylo.cs.mcgill.ca/nightly/index.html#!play
 

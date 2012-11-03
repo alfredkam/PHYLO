@@ -1,0 +1,29 @@
+2012/10/29 14:48:57 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbNavbar" is invalid. Make sure it points to an existing directory or file.' in /Users/arthurkam/git/PHYLO_mcgill/framework/YiiBase.php:343
+Stack trace:
+#0 /Users/arthurkam/git/PHYLO_mcgill/framework/web/CWidgetFactory.php(147): YiiBase::import('bootstrap.widge...', true)
+#1 /Users/arthurkam/git/PHYLO_mcgill/framework/web/CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 /Users/arthurkam/git/PHYLO_mcgill/framework/web/CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /Users/arthurkam/git/PHYLO_mcgill/protected/views/layouts/main.php(69): CBaseController->widget('bootstrap.widge...', Array)
+#4 /Users/arthurkam/git/PHYLO_mcgill/framework/web/CBaseController.php(127): require('/Users/arthurka...')
+#5 /Users/arthurkam/git/PHYLO_mcgill/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Users/arthurka...', Array, true)
+#6 /Users/arthurkam/git/PHYLO_mcgill/framework/web/widgets/CContentDecorator.php(77): CBaseController->renderFile('/Users/arthurka...', Array, true)
+#7 /Users/arthurkam/git/PHYLO_mcgill/framework/web/widgets/CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#8 /Users/arthurkam/git/PHYLO_mcgill/framework/web/widgets/COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#9 /Users/arthurkam/git/PHYLO_mcgill/framework/web/CBaseController.php(207): COutputProcessor->run()
+#10 /Users/arthurkam/git/PHYLO_mcgill/framework/web/CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#11 /Users/arthurkam/git/PHYLO_mcgill/protected/views/layouts/column1.php(6): CBaseController->endContent()
+#12 /Users/arthurkam/git/PHYLO_mcgill/framework/web/CBaseController.php(127): require('/Users/arthurka...')
+#13 /Users/arthurkam/git/PHYLO_mcgill/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Users/arthurka...', Array, true)
+#14 /Users/arthurkam/git/PHYLO_mcgill/framework/web/CController.php(785): CBaseController->renderFile('/Users/arthurka...', Array, true)
+#15 /Users/arthurkam/git/PHYLO_mcgill/protected/controllers/SiteController.php(32): CController->render('index')
+#16 /Users/arthurkam/git/PHYLO_mcgill/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#17 /Users/arthurkam/git/PHYLO_mcgill/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#18 /Users/arthurkam/git/PHYLO_mcgill/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#19 /Users/arthurkam/git/PHYLO_mcgill/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /Users/arthurkam/git/PHYLO_mcgill/framework/web/CWebApplication.php(283): CController->run('')
+#21 /Users/arthurkam/git/PHYLO_mcgill/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#22 /Users/arthurkam/git/PHYLO_mcgill/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#23 /Users/arthurkam/git/PHYLO_mcgill/htdocs/index.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/
+---
