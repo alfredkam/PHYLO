@@ -192,7 +192,7 @@ a.btn {
 	padding-top:20px;
 }
 #mid-panel {
-	top:20xp;
+	top:20px;
 	position:relative;
 	min-height:500px;
 }
@@ -398,16 +398,26 @@ a.btn {
 	padding-bottom:30px;
 }
 
+.footer-inner {
+	width:1024px;
+	text-align:left;
+	margin-left:auto;
+	margin-right:auto;
+	color: whitesmoke;
+}
+.footer-inner a {
+	color:whitesmoke;
+}
 #footer, .push {
 }
 
 #footer {
 	position:relative;
-    bottom: 0px;
+	bottom: 0px;
 	width:100%;
-	background-color:#eee;
 	clear:both;
-	color:#333;
+	padding-top:30px;
+	padding-bottom:10px;
 }
 #footer-content {
 	height:100px;
@@ -466,9 +476,6 @@ a.btn {
 	font-size: 14px;	
 	padding-top:5px;
 	padding-bottom:5px;
-}
-#contribute a {
-	color:blue;
 }
 
 
@@ -598,9 +605,11 @@ a.btn {
 #loading-panel {
 	padding-top:150px;
 	text-align:center;
+	min-height:300px;
 }
 
 #mid-panel {
+	
 	display:none;
 }
 
