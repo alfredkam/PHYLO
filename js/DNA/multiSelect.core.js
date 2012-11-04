@@ -135,6 +135,7 @@
 			});	
 			select.H -= select.Y;
 			select.W -= select.X;
+
 			if(list.length == 0) {
 				$("#chosenArea").hide();
 				return;

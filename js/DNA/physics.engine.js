@@ -6,7 +6,8 @@
 			var posList = $.sequence.posList;
 			var posListReverse = $.sequence.posListReverse;
 			var domCache = $.phylo.domCache;
-			var track = $.sequence.track;
+			var sequence_track = $.sequence.track;
+
 			var max_distance = box.new-box.old;
 			if(box.new - box.old > 0) {
 				left = false;
@@ -32,8 +33,8 @@
 			}
 			//find its row			
 			var row = [];
-			for(var cell in list ) {
-				var r = $(list[cell]).parent().attr("id").toString().replace(/row/,"");
+			for(var i=0, len = list.length;i<len;i++) {
+				var r = $(list[i]).parent().attr("id").toString().replace(/row/,"");
 				if(!(r in row)) {
 					row.push(r);
 				}
@@ -42,11 +43,12 @@
 			var leastPos = 0;
 			var nucTemp = 0;
 			var maxPos = 25;
+
 			if(left) {
 				//determine the left most boundary
 				var ithPos = 827;
-				for(var r in row) {
-					var nuc = track[r];
+				for(var r=0;r<row.length;r++) {
+					var nuc = sequence_track[r];
 					var counter = 0;
 					var ifBreak = false;
 					for(var i=0,len = nuc.length;i<len;i++) {
@@ -78,14 +80,14 @@
 				//right
 				//determine the right most boudary	
 				var ithPos = 0;
-				for(var r in row) {
-					var nuc = track[r];
+				for(var r=0;r<row.length;r++) {
+					var nuc = sequence_track[r];
 					var counter = 1;
 					var ifBreak = false;
 					for(var i=nuc.length-1;i>=0;i--) {
 						if(nuc[i] != "x") {
 							for(var j=$.phylo.seqLen-1; j >= 0; j--) {
-								if(nuc[i] == list_nonObj[j]) {
+								if(nuc[i] == list_nonObj[j] && nuc[i] != undefined) {
 									if(parseInt(domCache[list_nonObj[j]].left.replace(/px/,"")) > ithPos) {
 										maxPos = counter;
 										nucTemp = list_nonObj[j];
@@ -121,7 +123,8 @@
 			});
 			
 			
-			for(var cell in list) {
+			//for(var cell in list) {
+			for(var cell = 0, len = list.length;cell < len; cell++) {
 				var prev = parseInt($(list[cell]).css("left").replace(/px/,""));		
 				var move = prev+ (box.new - box.old);
 				var pos = parseInt($(list[cell]).attr("id")); 
@@ -356,7 +359,6 @@
 					var i=track[row].length;
 					var temp = id;
 					//Note: this condition of while loop excutes the fasted
-					console.log(pos);
 					while(i--) {
 						if(track[row][i] != "x") {
 							temp = track[row][i];
