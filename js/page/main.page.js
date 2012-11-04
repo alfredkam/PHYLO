@@ -11,7 +11,7 @@
 				type : "post",
 			}).done(function(re) {
                 $("#mid-panel").html(re);
-                $.getScript("js/ranking/ranking.js");
+                $.getScript("js/ranking/DT_bootstrap_ranking.js");
 		$.hashbang.panelReady();
             });
             
