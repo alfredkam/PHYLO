@@ -3,14 +3,14 @@
 .*.swo
 */.DS_Store
 .*
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 js/.DS_Store
-=======
->>>>>>> 8616dfe925410d9de6ffc230b40889a98e401bb0
 
-*.js
+# ignore yii dir during table ranking dev 
+htdocs/
+framework/
+protected/
 
-*.js
-=======
->>>>>>> 33df011a3f0264ad29e54f5a345cdd98bd29aada
+js/bootstrap/bootstrap.min.js
+
+js/bootstrap/bootstrap.js
