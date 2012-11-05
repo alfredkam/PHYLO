@@ -12,10 +12,22 @@
 		<!-- custom css -->
 		<link rel='stylesheet' href='css/style.css'/>
 		<link rel='stylesheet' href='css/game.css'/>
-		<link media='only screen and (min-device-width: 481px) and (max-device-width: 1024px)' rel='stylesheet' href='css/tablet.css'/>
+		<!--<link media='only screen and (min-device-width: 481px) and (max-device-width: 1024px)' rel='stylesheet' href='css/tablet.css'/>
+		-->
 		<link rel='stylesheet' href='css/media1280.css'/>
 		<link rel='stylesheet' href='css/ranking.css'/>
-        <link rel='stylesheet' href='css/DT_bootstrap.css'/>
+		<link rel='stylesheet' href='css/DT_bootstrap.css'/>
+		<script src='js/blueprint/yepnope.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+			var isTablet = navigator.userAgent.match(/iPad/i);
+			yepnope({
+				test : isTablet,
+				yep : 'css/tablet.css',
+				callback : function(url, result, key) {
+					console.log(url);
+				}
+			})
+		</script>
 		<!-- icons from Font Awesome - http://fortawesome.github.com/Font-Awesome -->
 	</head>
 	<body>        
