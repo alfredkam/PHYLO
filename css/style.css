@@ -387,8 +387,15 @@ a.btn {
 
 .wrapper {
 	text-align:center;
+	width:100%;
+	position:relative;
+
+}
+.wrapper-overlay {
+	text-align:center;
 	position:absolute;
 	width:100%;
+
 }
 
 #wrapper {
@@ -617,8 +624,8 @@ a.btn {
 }
 
 #mid-panel {
-	
 	display:none;
+	padding-bottom:10px;
 }
 
 /* overwrite boostrap */
