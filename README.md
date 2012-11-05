@@ -26,6 +26,7 @@ Screen @ 1024px w/ cutomized UX
 
 
 
+
 This build includes options, it can be found at js/options_template.js
 
 	window.DEBUG //enables debug log
