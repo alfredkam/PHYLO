@@ -19,7 +19,7 @@
 		<link rel='stylesheet' href='css/DT_bootstrap.css'/>
 		<script src='js/blueprint/yepnope.js' type='text/javascript'></script>
 		<script type='text/javascript'>
-			var isTablet = navigator.userAgent.match(/iPad/i);
+			var isTablet = navigator.userAgent.match(/(iPad|Android .* Chrome/[.0-9]* (?!Mobile)/i);
 			yepnope({
 				test : isTablet,
 				yep : 'css/tablet.css',
