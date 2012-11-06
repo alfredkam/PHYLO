@@ -184,6 +184,7 @@
 			eClick();
 		});
         $(".zocial.facebook").click(function() {
+            alert("HERE");
             socialLogin('Facebook');
         });
         $(".zocial.twitter").click(function() {
