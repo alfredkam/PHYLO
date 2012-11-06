@@ -54,7 +54,7 @@
         };
 
 		// Classic login onclick event
-		var eClick = function() {
+		var classicLogin = function() {
 			var name = $("#username").val().trim();
 			var password = $("#password").val().trim();
 			if((name == "" || password == "")) { 
@@ -116,9 +116,9 @@
                             $("div.login-warning").show().html("Missing data. Please, check your " + provider + " account.");
                                 return;
                         }
-                        $.protocal.register(name, password, email, loginmode,logid, function(re) {
+                        $.protocal.register(username, password, email, loginmode,logid, function(re) {
                             if(re == "succ") {
-                                console.log("FB registration successful. username:"+username);
+                                console.log(provider + " registration successful. username:"+username);
                                 $("#login-tag").html("You are logged as "+fullname);
                                 $.cookie.create("username",username,365);
                                 $.cookie.create("loginmode",loginmode,365);
@@ -147,7 +147,7 @@
                                 */
                             } else {
                                 console.log(provider + " registration failed.");
-                                $("div.login-warning").show().html("We are sorry. We cannot register you using your " + provider + "account.");
+                                $("div.login-warning").show().html("We are sorry. We cannot register you using your " + provider + " account.");
                             }
                         });
                     }
@@ -166,7 +166,7 @@
         };
 		//login click event
 		$(".login-btn").click(function() {
-			eClick();
+			classicLogin();
 		});
         $(".zocial.facebook").click(function() {
             socialLogin('Facebook');
