@@ -114,7 +114,7 @@
 			var canvas = doc.createElement('canvas');
 			var sandbox = doc.getElementById("sandbox");
 			canvas.id = 'draw';
-			canvas.style.position = "relative";
+			canvas.style.position = "absolute";
 			canvas.style.zIndex = 2;
 			canvas.style.top = 0;
 			canvas.style.left = 0;
@@ -443,14 +443,17 @@
 
 			var disease = function(ctx, items, i) {
 				var img = new Image();
+				var img_hover = new Image();
 				img.src = items[1];
+				img_hover.src = items[1].replace('.png', '_hover.png');
+				var hovered = false;
 				img.onload = function() {
 					ctx.beginPath();
 					ctx.drawImage(img, 335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
 					ctx.closePath();
 				};
 				this.onClick = function(eX, eY) {
-					if( 335+110*(i>=3?(i>=6?i-6:i-3):i) < eX && eX < 405+110*(i>=3?(i>=6?i-6:i-3):i) &&
+					if( 335+150*(i>=3?(i>=6?i-6:i-3):i) < eX && eX < 405+150*(i>=3?(i>=6?i-6:i-3):i) &&
 						150+(i>=3?(i>=6?200:100):0) < eY && eY < 220+(i>=3?(i>=6?200:100):0)) {
 						$("#draw").hide();		
 						/*
@@ -468,9 +471,23 @@
 						return;
 					}
 				};
-				this.onOver = function(eX, eY) {
-
-				};
+				    
+                this.onOver = function(eX, eY) {
+                    if( 335+110*(i>=3?(i>=6?i-6:i-3):i) < eX && eX < 405+110*(i>=3?(i>=6?i-6:i-3):i) &&
+                        150+(i>=3?(i>=6?200:100):0) < eY && eY < 220+(i>=3?(i>=6?200:100):0)) {
+                        ctx.beginPath();
+                        ctx.drawImage(img_hover, 335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
+                        ctx.closePath();
+                        hovered = true;
+                    } else {
+                    	if(hovered) {
+                    		ctx.beginPath();
+                        	ctx.drawImage(img, 335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
+                        	ctx.closePath();
+                        	hovered = false;
+                    	}
+                    }
+                };
 			};
 
 			var random = function(ctx, i) {
