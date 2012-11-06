@@ -3,48 +3,38 @@
 		//hide logout on default
 		$("#logout").hide();
                       
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId      : '254079141380941', // App ID
-                channelUrl : '//phylo.cs.mcgill.ca/channel.html', // Channel File
-                status     : true, // check login status
-                cookie     : true, // enable cookies to allow the server to access the session
-                xfbml      : true  // parse XFBML
-            });
-            //check cookie
-            if($.cookie.read("username")) {
-                $(".login-btn").unbind("click");
-                var name = $.cookie.read("username");
-                var mode = $.cookie.read("loginmode");
-                var c_logid = $.cookie.read("logid");
-                if (mode=="classic") {
-                    $("#login-tag").html("You are logged as "+name);
-                } else if (mode=="facebook") {
-                    // FB login. Must check account and cookie data match and then extract full name.
-                    FB.getLoginStatus(function(response) {
-                    if (response.status === 'connected') {
-                        // connected: we must check that account are the same
-                        FB.api('/me', function(response) {
-                            var fullname = response.name;
-                            var fb_logid = response.id;
-                            if (c_logid==fb_logid) {
-                                $("#login-tag").html("You are logged as "+fullname);
-                            } else {
-                               //bootbox.alert("Data conflict. Please, login again.");
-                               $.cookie.delete("username");
-                               $.cookie.delete("loginmode");
-                               $.cookie.delete("logid");
-                               $("#logout").hide();
-                               window.guest = 'guest';
-                               $("#login-box").hide();
-                               $(".login-btn").click(function() {
-                                                     eClick();
-                                                     });
-                               $("#login-tag").html("Login");
-                               $(".showInLogin").hide();
-                               return;
-                            }
-                        });
+        //check cookie
+        if($.cookie.read("username")) {
+            $(".login-btn").unbind("click");
+            var username = $.cookie.read("username");
+            var provider = $.cookie.read("loginmode");
+            var c_logid = $.cookie.read("logid");
+            if (provider=="classic") {
+                $("#login-tag").html("You are logged as "+username);
+            } else {
+                $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider,function(data){
+                    var status ='connected';
+                    if (status === 'connected') {
+                        // connected
+                        var userinfo = eval ("(" + data + ")");
+                        var fullname = userinfo.displayName;
+                        var net_logid = userinfo.identifier;
+                        var email = userinfo.email;
+                        if (c_logid==net_logid) {
+                            $("#login-tag").html("You are logged as "+fullname);
+                        } else {
+                            //bootbox.alert("Data conflict. Please, login again.");
+                            $.cookie.delete("username");
+                            $.cookie.delete("loginmode");
+                            $.cookie.delete("logid");
+                            $("#logout").hide();
+                            window.guest = 'guest';
+                            $("#login-box").hide();
+                            $(".login-btn").click(function() { eClick(); });
+                            $("#login-tag").html("Login");
+                            $(".showInLogin").hide();
+                            return;
+                        }
                     } else if (response.status === 'not_authorized') {
                         // not_authorized
                         $("div.login-warning").show().html("Phylo has not been authorized to connect with your Facebook account. Please, confirm.");
@@ -54,17 +44,13 @@
                         $("div.login-warning").show().html("You are not logged in Facebook. Please, sign-in to Facebook and re-connect to Phylo.");
                         return;
                     }
-                    });
-                } else {
-                    console.log("Cannot find login mode");
-                    return;
-                }
-                $("#logout").show();
-                window.guest = name;
-                $("#login-box").hide();
-                $(".login-btn").unbind("click");
-                $(".showInLogin").show();
-            };
+                });
+            }
+            $("#logout").show();
+            window.guest = username;
+            $("#login-box").hide();
+            $(".login-btn").unbind("click");
+            $(".showInLogin").show();
         };
 
 		// Classic login onclick event
@@ -82,7 +68,7 @@
 				if(re == "succ") {	
 					$("#login-tag").html("You are logged as "+name);
 					$.cookie.create("username",name,365);
-                    $.cookie.create("loginmode","classic",365);
+                    $.cookie.create("loginmode","Classic",365);
                     $.cookie.create("logid",-1,365);
                     $("#logout").show();
                     window.guest = name;
