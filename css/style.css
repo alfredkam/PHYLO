@@ -56,13 +56,14 @@ body {
 }	
 
 #draw {
-	background-color: black;
-	background: linear-gradient(-28deg, black 0%, #3D3D3D 95%);
+	background-color: #efefef;
+	/*background: linear-gradient(-28deg, black 0%, #3D3D3D 95%);
 	background: -o-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
 	background: -ms-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
 	background: -moz-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
 	background: -khtml-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
 	background: -webkit-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
+	*/
 }
 
 /* theme controller css */
@@ -633,3 +634,90 @@ a.btn {
 .container {
 	width:1024px solid;
 }	
+
+/* Eleyine's fixes, will synchronize with previous css later */
+
+/* HEADER CSS FIX */
+
+#wrapper {
+  padding-bottom:50px;
+}
+
+
+#top-panel-right {
+    position:absolute;
+    display:block;
+    height:100%;
+}
+
+#top-panel-right > div {
+   line-height:100%;
+   float:left;
+   height:100%;
+   line-height:35px;
+}
+
+#options{
+   width:35px;
+}
+
+#options-button{
+   padding-top:5px;
+   border:0px;
+}
+
+#top-panel{
+   background-color:white;
+   line-height: 10px;
+   float:right;
+   top:0px;
+   height:auto;
+}
+#logo {
+   padding:20px;
+   line-height: 16px;
+}
+
+#nav div{
+   padding:20px;
+   position:relative;
+   float:right;
+}
+
+#nav a div, #top-panel {
+   color: #6D6D6D;
+}
+
+#mid-panel{
+  top:70px;
+}
+
+/* BODY CSS */
+
+#wrapper {
+    background: url(../img/bg-light.png) no-repeat center 60px;
+    z-index:0;
+    height:500px;
+}
+
+body {
+    background: #f4f4f4 url(../img/bg.png);
+}
+
+/* FOOTER */
+
+footer {
+	color: #6D6D6D !important;
+	padding: 17px 0 5px 0;
+	background-color:white;
+	border-top: 1px solid #ddd;
+}
+
+footer a:link, footer a:visited, footer a:active  {
+	font-size:15px;
+    color: #aaa;
+}
+
+footer a:hover {
+    color: black ;
+}
