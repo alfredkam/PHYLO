@@ -182,8 +182,17 @@
 		$(".login-btn").click(function() {
 			eClick();
 		});
-        $(".my-fb-login-button").click(function() {
-            fbClick();
+        $(".zocial.facebook").click(function() {
+            socialLogin('Facebook');
+        });
+        $(".zocial.twitter").click(function() {
+            socialLogin('Twitter');
+        });
+        $(".zocial.google").click(function() {
+            socialLogin('Google');
+        });
+        $(".zocial.linkedin").click(function() {
+            socialLogin('LinkedIn');
         });
 		//logout event
 		$("#logout").click(function() {
