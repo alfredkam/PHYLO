@@ -98,7 +98,7 @@
         var socialLogin = function(provider) {
             $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider,function(data){
             var status ='connected';
-            if (response.status === 'connected') {
+            if (status === 'connected') {
                   // connected
                   alert("HERE 2");
                   var userinfo = eval ("(" + data + ")");
@@ -184,7 +184,6 @@
 			eClick();
 		});
         $(".zocial.facebook").click(function() {
-            alert("HERE 1");
             socialLogin('Facebook');
         });
         $(".zocial.twitter").click(function() {
