@@ -9,7 +9,7 @@
             var username = $.cookie.read("username");
             var provider = $.cookie.read("loginmode");
             var c_logid = $.cookie.read("logid");
-            if (provider=="classic") {
+            if (provider=="Classic") {
                 $("#login-tag").html("You are logged as "+username);
             } else {
                 $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider,function(data){
@@ -212,7 +212,7 @@
 					$("div.login-warning").show().html("Email or Username or Password is missing");
 					return;
 				} 
-				$.protocal.register(name, password, email,'classic',0, function(re) {
+				$.protocal.register(name, password, email,'Classic',0, function(re) {
 					if(re == "succ") {
 						$(".login-btn").unbind("click");	
 						$("#login-tag").html("You are logged as "+name);
