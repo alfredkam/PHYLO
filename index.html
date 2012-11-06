@@ -12,15 +12,31 @@
 		<!-- custom css -->
 		<link rel='stylesheet' href='css/style.css'/>
 		<link rel='stylesheet' href='css/game.css'/>
-		<link media='only screen and (min-device-width: 481px) and (max-device-width: 1280px)' rel='stylesheet' href='css/tablet.css'/>
+		<!--<link media='only screen and (min-device-width: 481px) and (max-device-width: 1024px)' rel='stylesheet' href='css/tablet.css'/>
+		-->
 		<link rel='stylesheet' href='css/media1280.css'/>
 		<link rel='stylesheet' href='css/ranking.css'/>
-        <link rel='stylesheet' href='css/DT_bootstrap.css'/>
+		<link rel='stylesheet' href='css/DT_bootstrap.css'/>
+		<script src='js/blueprint/yepnope.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+			var isTablet = navigator.userAgent.match(/(iPad|Android .* Chrome\/[.0-9]* (?!Mobile)|Opera Tablet|Android .* (?!Mobile)|Tablet)/i) != null;
+			yepnope({
+				test : isTablet,
+				yep : 'css/tablet.css',
+			})
+		</script>
 		<!-- icons from Font Awesome - http://fortawesome.github.com/Font-Awesome -->
-	</head>
+        <link href="http://oyanix.com/opensource/hybridauth/social_hub/public/zocial.css" rel="stylesheet" type="text/css" />
+        <style>
+            .zocial{
+                margin: 2px;
+                width: 200px;
+            }
+        </style>
+    </head>
 	<body>        
         <div id="fb-root"></div>
-		<div class='wrapper'>
+		<div class='wrapper-overlay'>
 			<div class='warning-bg'></div>
 			<div class='warning-wrapper'>
 				<div class='warning'>
@@ -38,7 +54,7 @@
 				</div>
 			</div>
 		</div>
-		<div class='wrapper'>
+		<div class='wrapper-overlay'>
 			<div class='customize customize-bg'></div>
 			<div class='customize customize-wrapper'>
 				<div class='row customize-title'>
@@ -227,8 +243,11 @@
 							<button class='btn login-btn'>Log In</button>
 							<button class='btn btn-primary register-btn register-btn-shift'>Register</button>
 							<button class='btn btn-danger cancel-btn'>Cancel</button>
-							<br><br>
-                            Or login with: <a href="javascript:void(0);"><img src="http://phylo.cs.mcgill.ca/images/facebook.png" class="my-fb-login-button"/></a>
+                            <br/><br/>
+                            <a href="#" class="zocial facebook">Signin with Facebook</a>
+                            <a href="#" class="zocial twitter">Signin with Twitter</a>
+                            <a href="#" class="zocial google">Signin with Google</a>
+                            <a href="#" class="zocial linkedin">Signin with LinkedIn</a>
 							<br><br>
 							<a href='http://phylo.cs.mcgill.ca/reset.php'>Forgot Password?</a>
 						</div>
