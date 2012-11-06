@@ -88,7 +88,7 @@
                   // connected
                   var userinfo = eval ("(" + data + ")");
                   var fullname = userinfo.displayName;
-                  var username = userinfo.firstName + "_" + userinfo.lastName + "_fb_" + userinfo.identifier;
+                  var username = provider + "_" + userinfo.identifier;
                   var loginmode = provider;
                   var logid = userinfo.identifier;
                   var email = userinfo.email;
