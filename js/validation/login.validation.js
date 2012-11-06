@@ -95,90 +95,88 @@
 			});
 		};
         // Facebook login onclick event
-        var fbClick = function() {
-            FB.getLoginStatus(function(response) {
-                    if (response.status === 'connected') {
-                        // connected                                                                                                                              
-                        FB.api('/me', function(response) {
-                                var fullname = response.name;
-                                var name = response.username + "_fb_" + response.id;
-                                var loginmode = "facebook";
-                                var logid = response.id;
-                                var email = response.id + "@facebook.com";
-                                $.ajax({
-                                        type: "POST",
-                                        url : "http://phylo.cs.mcgill.ca/phpdb/passwdmanager.php",
-                                        data : "username="+response.username+"&id="+response.id,
-                                      }).done(function(mypasswd) {
-                                              var password = mypasswd;
-                                              $.protocal.login(name, password, function(re) {
-                                                if(re == "succ") {
-                                                    console.log("login successful.");
-                                                    $("#login-tag").html("You are logged as "+fullname);
-                                                    $.cookie.create("username",name,365);
-                                                    $.cookie.create("loginmode",loginmode,365);
-                                                    $.cookie.create("logid",logid,365);
-                                                    $("#logout").show();
-                                                    window.guest = name;
-                                                    $("#login-box").hide();
-                                                    $(".login-btn").unbind("click");
-                                                    $(".showInLogin").show();
-                                                } else {
-                                                    // login not successful -> register users
-                                                    if((name == "" || password == "") || email == "") {
-                                                        $("div.login-warning").show().html("Email or Username or Password is missing");
-                                                        return;
-                                                    }
-                                                    $.protocal.register(name, password, email, loginmode,logid, function(re) {
-                                                        if(re == "succ") {
-                                                            console.log("FB registration successful. username:"+name);
-                                                            $("#login-tag").html("You are logged as "+fullname);
-                                                            $.cookie.create("username",name,365);
-                                                            $.cookie.create("loginmode",loginmode,365);
-                                                            $.cookie.create("logid",logid,365);
-                                                            $("#logout").show();
-                                                            window.guest = name;
-                                                            $("#login-box").hide();
-                                                            $(".login-btn").unbind("click");
-                                                            $(".showInLogin").show();
-                                                            // Post on FB wall
-                                                            var publish = {
-                                                            method: 'feed',
-                                                            message: 'started to play Phylo.',
-                                                            name: 'Phylo',
-                                                            caption: 'Play your DNA.',
-                                                            description: (
-                                                                          'A challenging flash game in which every puzzle completed' +
-                                                                          'contributes to mapping diseases within human DNA.'
-                                                                          ),
-                                                            link: 'http://phylo.cs.mcgill.ca/',
-                                                            picture: 'http://phylo.cs.mcgill.ca/images/minilogo.png',
-                                                            actions: [
-                                                                      { name: 'phylo', link: 'http://phylo.cs.mcgill.ca' }
-                                                                      ],
-                                                            };
-                                                            
-                                                            FB.ui(publish);
-                                                                        
-                                                        } else {
-                                                            console.log("FB registration failed.");
-                                                            $("div.login-warning").show().html("This username already exist");
-                                                        }
-                                                    });
-                                                }
-                                            });
-                                          }).fail(function() {
-                                                  $("div.login-warning").show().html("Could not connect to the server. Please try again later.");
-                                              });
-                            });
-                      } else if (response.status === 'not_authorized') {
-                        // not_authorized                                                                                                                         
-                        $("div.login-warning").show().html("Phylo has not been authorized by Facebook yet. Please, confirm.");
+        var socialLogin = function(provider) {
+            $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider,function(data){
+            var status ='connected';
+            if (response.status === 'connected') {
+                  // connected
+                  var userinfo = eval ("(" + data + ")");
+                  var fullname = userinfo.displayName;
+                  var username = userinfo.firstName + "_" + userinfo.lastName + "_fb_" + userinfo.identifier;
+                  var loginmode = provider;
+                  var logid = userinfo.identifier;
+                  var email = userinfo.email;
+                  $.ajax({
+                    type: "POST",
+                    url : "http://phylo.cs.mcgill.ca/phpdb/passwdmanager.php",
+                    data : "username="+response.username+"&id="+response.id,
+                  }).done(function(mypasswd) {
+                    var password = mypasswd;
+                    $.protocal.login(name, password, function(re) {
+                    if(re == "succ") {
+                        console.log("login successful.");
+                        $("#login-tag").html("You are logged as "+fullname);
+                        $.cookie.create("username",username,365);
+                        $.cookie.create("loginmode",loginmode,365);
+                        $.cookie.create("logid",logid,365);
+                        $("#logout").show();
+                        window.guest = username;
+                        $("#login-box").hide();
+                        $(".login-btn").unbind("click");
+                        $(".showInLogin").show();
                     } else {
-                        // not_logged_in                                                                                                                          
-                        $("div.login-warning").show().html("You must login to Facebook before login to Phylo.");
+                        // login not successful -> register users
+                        if((username == "" || password == "") || email == "") {
+                            $("div.login-warning").show().html("Missing data. Please, check your " + provider + " account".);
+                                return;
+                        }
+                        $.protocal.register(name, password, email, loginmode,logid, function(re) {
+                            if(re == "succ") {
+                                console.log("FB registration successful. username:"+name);
+                                $("#login-tag").html("You are logged as "+fullname);
+                                $.cookie.create("username",username,365);
+                                $.cookie.create("loginmode",loginmode,365);
+                                $.cookie.create("logid",logid,365);
+                                $("#logout").show();
+                                window.guest = username;
+                                $("#login-box").hide();
+                                $(".login-btn").unbind("click");
+                                $(".showInLogin").show();
+                                // TODO: Post on FB wall
+                                /*
+                                var publish = {
+                                    method: 'feed',
+                                    message: 'started to play Phylo.',
+                                    name: 'Phylo',
+                                    caption: 'Play your DNA.',
+                                    description: (
+                                        'A challenging flash game in which every puzzle completed' +
+                                        'contributes to mapping diseases within human DNA.'
+                                    ),
+                                    link: 'http://phylo.cs.mcgill.ca/',
+                                    picture: 'http://phylo.cs.mcgill.ca/images/minilogo.png',
+                                    actions: [{ name: 'phylo', link: 'http://phylo.cs.mcgill.ca' }],
+                                };
+                                FB.ui(publish);
+                                */
+                            } else {
+                                console.log(provider + " registration failed.");
+                                $("div.login-warning").show().html("We are sorry. We cannot register you using your " + provider + "account.");
+                            }
+                        });
                     }
                 });
+            }).fail(function() {
+                    $("div.login-warning").show().html("Could not connect to the server. Please try again later.");
+                });
+            } else if (status === 'not_authorized') {
+                // not_authorized
+                $("div.login-warning").show().html("Phylo has not been authorized by " + provider + " yet. Please, grant access first.");
+            } else {
+                // not_logged_in
+                $("div.login-warning").show().html("You must login to " + provider + " before login to Phylo.");
+            }
+        });
         };
 		//login click event
 		$(".login-btn").click(function() {
