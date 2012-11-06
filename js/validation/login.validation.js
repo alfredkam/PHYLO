@@ -109,7 +109,7 @@
                   $.ajax({
                     type: "POST",
                     url : "http://phylo.cs.mcgill.ca/phpdb/passwdmanager.php",
-                    data : "username="+username+"&id="+id,
+                    data : "username="+username+"&id="+logid,
                   }).done(function(mypasswd) {
                     var password = mypasswd;
                     $.protocal.login(name, password, function(re) {
@@ -132,7 +132,7 @@
                         }
                         $.protocal.register(name, password, email, loginmode,logid, function(re) {
                             if(re == "succ") {
-                                console.log("FB registration successful. username:"+name);
+                                console.log("FB registration successful. username:"+username);
                                 $("#login-tag").html("You are logged as "+fullname);
                                 $.cookie.create("username",username,365);
                                 $.cookie.create("loginmode",loginmode,365);
