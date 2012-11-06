@@ -100,7 +100,7 @@
             var status ='connected';
             if (response.status === 'connected') {
                   // connected
-                  alert("HERE");
+                  alert("HERE 2");
                   var userinfo = eval ("(" + data + ")");
                   var fullname = userinfo.displayName;
                   var username = userinfo.firstName + "_" + userinfo.lastName + "_fb_" + userinfo.identifier;
@@ -128,7 +128,7 @@
                     } else {
                         // login not successful -> register users
                         if((username == "" || password == "") || email == "") {
-                            $("div.login-warning").show().html("Missing data. Please, check your " + provider + " account".);
+                            $("div.login-warning").show().html("Missing data. Please, check your " + provider + " account.");
                                 return;
                         }
                         $.protocal.register(name, password, email, loginmode,logid, function(re) {
@@ -184,7 +184,7 @@
 			eClick();
 		});
         $(".zocial.facebook").click(function() {
-            alert("HERE");
+            alert("HERE 1");
             socialLogin('Facebook');
         });
         $(".zocial.twitter").click(function() {
