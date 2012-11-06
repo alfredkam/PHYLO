@@ -100,6 +100,7 @@
             var status ='connected';
             if (response.status === 'connected') {
                   // connected
+                  alert("HERE");
                   var userinfo = eval ("(" + data + ")");
                   var fullname = userinfo.displayName;
                   var username = userinfo.firstName + "_" + userinfo.lastName + "_fb_" + userinfo.identifier;
