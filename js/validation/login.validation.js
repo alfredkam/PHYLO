@@ -100,7 +100,6 @@
             var status ='connected';
             if (status === 'connected') {
                   // connected
-                  alert("HERE 2");
                   var userinfo = eval ("(" + data + ")");
                   var fullname = userinfo.displayName;
                   var username = userinfo.firstName + "_" + userinfo.lastName + "_fb_" + userinfo.identifier;
@@ -110,7 +109,7 @@
                   $.ajax({
                     type: "POST",
                     url : "http://phylo.cs.mcgill.ca/phpdb/passwdmanager.php",
-                    data : "username="+response.username+"&id="+response.id,
+                    data : "username="+username+"&id="+id,
                   }).done(function(mypasswd) {
                     var password = mypasswd;
                     $.protocal.login(name, password, function(re) {
