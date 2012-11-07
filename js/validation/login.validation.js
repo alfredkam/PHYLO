@@ -7,17 +7,18 @@
         if($.cookie.read("username")) {
             $(".login-btn").unbind("click");
             var username = $.cookie.read("username");
+            var fullname = $.cookie.read("fullname");
             var provider = $.cookie.read("loginmode");
             var c_logid = $.cookie.read("logid");
             if (provider=="Classic") {
                 $("#login-tag").html("You are logged as "+username);
             } else {
-                $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider,function(data){
-                    var status ='connected';
+                $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider,function(data,status){
+                    alert(status);
                     if (status === 'connected') {
                         // connected
                         var userinfo = eval ("(" + data + ")");
-                        var fullname = userinfo.displayName;
+                        // complete infos stored in cookie
                         var net_logid = userinfo.identifier;
                         var email = userinfo.email;
                         if (c_logid==net_logid) {
@@ -25,6 +26,7 @@
                         } else {
                             //bootbox.alert("Data conflict. Please, login again.");
                             $.cookie.delete("username");
+                            $.cookie.delete("fullname");
                             $.cookie.delete("loginmode");
                             $.cookie.delete("logid");
                             $("#logout").hide();
@@ -68,6 +70,7 @@
 				if(re == "succ") {	
 					$("#login-tag").html("You are logged as "+name);
 					$.cookie.create("username",name,365);
+                    $.cookie.create("fullname",name,365);
                     $.cookie.create("loginmode","Classic",365);
                     $.cookie.create("logid",-1,365);
                     $("#logout").show();
@@ -103,6 +106,7 @@
                         console.log("login successful.");
                         $("#login-tag").html("You are logged as "+fullname);
                         $.cookie.create("username",username,365);
+                        $.cookie.create("fullname",username,365);
                         $.cookie.create("loginmode",loginmode,365);
                         $.cookie.create("logid",logid,365);
                         $("#logout").show();
@@ -121,6 +125,7 @@
                                 console.log(provider + " registration successful. username:"+username);
                                 $("#login-tag").html("You are logged as "+fullname);
                                 $.cookie.create("username",username,365);
+                                $.cookie.create("fullname",fullname,365);
                                 $.cookie.create("loginmode",loginmode,365);
                                 $.cookie.create("logid",logid,365);
                                 $("#logout").show();
@@ -129,22 +134,6 @@
                                 $(".login-btn").unbind("click");
                                 $(".showInLogin").show();
                                 // TODO: Post on FB wall
-                                /*
-                                var publish = {
-                                    method: 'feed',
-                                    message: 'started to play Phylo.',
-                                    name: 'Phylo',
-                                    caption: 'Play your DNA.',
-                                    description: (
-                                        'A challenging flash game in which every puzzle completed' +
-                                        'contributes to mapping diseases within human DNA.'
-                                    ),
-                                    link: 'http://phylo.cs.mcgill.ca/',
-                                    picture: 'http://phylo.cs.mcgill.ca/images/minilogo.png',
-                                    actions: [{ name: 'phylo', link: 'http://phylo.cs.mcgill.ca' }],
-                                };
-                                FB.ui(publish);
-                                */
                             } else {
                                 console.log(provider + " registration failed.");
                                 $("div.login-warning").show().html("We are sorry. We cannot register you using your " + provider + " account.");
@@ -184,6 +173,7 @@
 		$("#logout").click(function() {
 			window.guest = "Guest";
 			$.cookie.delete("username");
+            $.cookie.delete("fullname");
             $.cookie.delete("loginmode");
             $.cookie.delete("logid");
             $("#logout").hide();

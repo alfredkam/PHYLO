@@ -78,12 +78,13 @@
         share : function() {
             if($.cookie.read("username")) {
                 var username = $.cookie.read("username");
+                var fullname = $.cookie.read("fullname");
                 var provider = $.cookie.read("loginmode");
                 var c_logid = $.cookie.read("logid");
                 if (provider=="Facebook") {
                     $.protocal.sendEndGameScore("completed", function(data) {
                         var puzzle_disease = data.disease_link;
-                        var message = "improved a DNA alignments related to \"" + puzzle_disease + "\". Play Phylo and help genetic research!";
+                        var message = fullname + "improved a DNA alignments related to \"" + puzzle_disease + "\". Play Phylo and help genetic research!";
                         var data = "provider="+provider+"&id="+c_logid+"&message="+password;
                         $.ajax({
                             type: "POST",
@@ -103,6 +104,7 @@
                 alert("You seem to have been disconnected. Please, login again.");
                 // delete cookie (just to be safe)
                 $.cookie.delete("username");
+                $.cookie.delete("fullname");
                 $.cookie.delete("loginmode");
                 $.cookie.delete("logid");
                 $("#logout").hide();
