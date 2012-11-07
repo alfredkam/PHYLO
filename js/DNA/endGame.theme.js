@@ -81,33 +81,20 @@
                 var provider = $.cookie.read("loginmode");
                 var c_logid = $.cookie.read("logid");
                 if (provider=="Facebook") {
-                    // FIXME
-                    status='connected';
-                    if (response.status === 'connected') {
-                        // connected: we must check that account are the same
-                        $.protocal.sendEndGameScore("completed", function(data) {
-                            var puzzle_disease = data.disease_link;
-                            var message = "improved a DNA alignments related to \"" + puzzle_disease + "\". Play Phylo and help genetic research!";
-                            var data = "provider="+mode+"&id="+username+"&message="+password;
-                            $.ajax({
-                                type: "POST",
-                                url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
-                                data : data,
-                            }).done(function(re) {
-                                alert("Your achievement has been posted!");
-                            }).fail(function() {
-                                alert("We are sorry. We have not been able to post your achievement.");
-                            });
+                    $.protocal.sendEndGameScore("completed", function(data) {
+                        var puzzle_disease = data.disease_link;
+                        var message = "improved a DNA alignments related to \"" + puzzle_disease + "\". Play Phylo and help genetic research!";
+                        var data = "provider="+mode+"&id="+username+"&message="+password;
+                        $.ajax({
+                            type: "POST",
+                            url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+                            data : data,
+                        }).done(function(re) {
+                            alert("Your achievement has been posted!");
+                        }).fail(function() {
+                            alert("We are sorry. We have not been able to post your achievement.");
                         });
-                    } else if (response.status === 'not_authorized') {
-                        // not_authorized
-                        alert("Phylo has not been authorized to connect with your Facebook account. Please, confirm.");
-                        return;
-                    } else {
-                        // not_logged_in
-                        alert("You are not logged in Facebook. Please, sign-in to Facebook and re-connect to Phylo.");
-                        return;
-                    }
+                    });
                 } else {
                     console.log("Provider " + provider + " is not supported.");
                     return;
