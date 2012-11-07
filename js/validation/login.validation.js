@@ -13,11 +13,9 @@
             if (provider=="Classic") {
                 $("#login-tag").html("You are logged as "+username);
             } else {
-                $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider,function(data,status){
-                    alert(status);
-                    if (status === 'connected') {
-                        // connected
-                        var userinfo = eval ("(" + data + ")");
+                $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider,function(data){
+                    var userinfo = eval ("(" + data + ")");
+                    if (userinfo.identifier) {
                         // complete infos stored in cookie
                         var net_logid = userinfo.identifier;
                         var email = userinfo.email;
@@ -37,13 +35,9 @@
                             $(".showInLogin").hide();
                             return;
                         }
-                    } else if (status === 'not_authorized') {
-                        // not_authorized
-                        $("div.login-warning").show().html("Phylo has not been authorized to connect with your " + provider + " account. Please, confirm.");
-                        return;
                     } else {
-                        // not_logged_in
-                        $("div.login-warning").show().html("You are not logged in " + provider + ". Please, sign-in and re-connect to Phylo.");
+                        // failed to connect
+                        $("div.login-warning").show().html(provider + " connection failed. Please, check that you are already connected to " + provider + ".");
                         return;
                     }
                 });
@@ -85,13 +79,12 @@
 		};
         // Facebook login onclick event
         var socialLogin = function(provider) {
-            $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider,function(data,status){
-            alert(status);
-            if (status === 'connected') {
+            $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider,function(data){
+            var userinfo = eval ("(" + data + ")");
+            if (userinfo.identifier) {
                   // connected
-                  var userinfo = eval ("(" + data + ")");
-                  var fullname = userinfo.displayName;
                   var username = provider + "_" + userinfo.identifier;
+                  var fullname = userinfo.displayName;
                   var loginmode = provider;
                   var logid = userinfo.identifier;
                   var email = userinfo.email;
@@ -122,7 +115,7 @@
                             }
                             $.protocal.register(username, password, email, loginmode,logid, function(re) {
                                 if(re == "succ") {
-                                    console.log(provider + " registration successful. username:"+username);
+                                    console.log(provider + " registration successful. username: "+username);
                                     $("#login-tag").html("You are logged as "+fullname);
                                     $.cookie.create("username",username,365);
                                     $.cookie.create("fullname",fullname,365);
@@ -144,12 +137,9 @@
                 }).fail(function() {
                     $("div.login-warning").show().html("Could not connect to the server. Please try again later.");
                 });
-            } else if (status === 'not_authorized') {
-                // not_authorized
-                $("div.login-warning").show().html("Phylo has not been authorized by " + provider + " yet. Please, grant access first.");
             } else {
-                // not_logged_in
-                $("div.login-warning").show().html("You must login to " + provider + " before login to Phylo.");
+                // not_authorized
+                $("div.login-warning").show().html(provider + " connection failed. Please, check that you are already connected to " + provider + ".");
             }
         });
         };
