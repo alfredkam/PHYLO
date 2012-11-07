@@ -84,7 +84,7 @@
                     $.protocal.sendEndGameScore("completed", function(data) {
                         var puzzle_disease = data.disease_link;
                         var message = "improved a DNA alignments related to \"" + puzzle_disease + "\". Play Phylo and help genetic research!";
-                        var data = "provider="+mode+"&id="+username+"&message="+password;
+                        var data = "provider="+provider+"&id="+c_logid+"&message="+password;
                         $.ajax({
                             type: "POST",
                             url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
