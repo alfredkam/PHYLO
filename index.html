@@ -19,11 +19,18 @@
 		<link rel='stylesheet' href='css/DT_bootstrap.css'/>
 		<script src='js/blueprint/yepnope.js' type='text/javascript'></script>
 		<script type='text/javascript'>
+			//loads tablet UX
 			var isTablet = navigator.userAgent.match(/(iPad|Android .* Chrome\/[.0-9]* (?!Mobile)|Opera Tablet|Android .* (?!Mobile)|Tablet)/i) != null;
 			yepnope({
 				test : isTablet,
 				yep : 'css/tablet.css',
-			})
+			});
+			//FF bug fix
+			var isFF = navigator.userAgent.match(/FireFox/i) != null;
+			yepnope({
+				test : isFF,
+				yep : 'css/FF_BugFix.css',
+			});	
 		</script>
 		<!-- icons from Font Awesome - http://fortawesome.github.com/Font-Awesome -->
         <link href="http://oyanix.com/opensource/hybridauth/social_hub/public/zocial.css" rel="stylesheet" type="text/css" />

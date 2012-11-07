@@ -49,7 +49,7 @@
 			$(this).addClass("logo-OnSelect");
 		}); */
 
-		$("#login").click(function() {
+		$("#login").click(function(event) {
 			event.stopPropagation();
 			if($("#login-tag").html().search(/Welcome/) > -1) {
 	

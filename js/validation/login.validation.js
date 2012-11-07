@@ -98,7 +98,7 @@
                     data : "username="+username+"&id="+logid,
                   }).done(function(mypasswd) {
                     var password = mypasswd;
-                    $.protocal.login(name, password, function(re) {
+                    $.protocal.login(username, password, function(re) {
                     if(re == "succ") {
                         console.log("login successful.");
                         $("#login-tag").html("You are logged as "+fullname);
