@@ -23,7 +23,12 @@
 			yepnope({
 				test : isTablet,
 				yep : 'css/tablet.css',
-			})
+			});
+			var isFF = navigator.userAgent.match(/FireFox/i) != null;
+			yepnope({
+				test : isFF,
+				yep : 'css/FF_BugFix.css',
+			});	
 		</script>
 		<!-- icons from Font Awesome - http://fortawesome.github.com/Font-Awesome -->
         <link href="http://oyanix.com/opensource/hybridauth/social_hub/public/zocial.css" rel="stylesheet" type="text/css" />
