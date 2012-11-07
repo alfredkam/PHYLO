@@ -80,7 +80,7 @@
                 var username = $.cookie.read("username");
                 var provider = $.cookie.read("loginmode");
                 var c_logid = $.cookie.read("logid");
-                if (provider=="facebook") {
+                if (provider=="Facebook") {
                     // FIXME
                     status='connected';
                     if (response.status === 'connected') {
