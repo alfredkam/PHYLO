@@ -37,13 +37,13 @@
                             $(".showInLogin").hide();
                             return;
                         }
-                    } else if (response.status === 'not_authorized') {
+                    } else if (status === 'not_authorized') {
                         // not_authorized
-                        $("div.login-warning").show().html("Phylo has not been authorized to connect with your Facebook account. Please, confirm.");
+                        $("div.login-warning").show().html("Phylo has not been authorized to connect with your " + provider + " account. Please, confirm.");
                         return;
                     } else {
                         // not_logged_in
-                        $("div.login-warning").show().html("You are not logged in Facebook. Please, sign-in to Facebook and re-connect to Phylo.");
+                        $("div.login-warning").show().html("You are not logged in " + provider + ". Please, sign-in and re-connect to Phylo.");
                         return;
                     }
                 });
@@ -85,8 +85,8 @@
 		};
         // Facebook login onclick event
         var socialLogin = function(provider) {
-            $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider,function(data){
-            var status ='connected';
+            $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider,function(data,status){
+            alert(status);
             if (status === 'connected') {
                   // connected
                   var userinfo = eval ("(" + data + ")");
@@ -102,46 +102,46 @@
                   }).done(function(mypasswd) {
                     var password = mypasswd;
                     $.protocal.login(username, password, function(re) {
-                    if(re == "succ") {
-                        console.log("login successful.");
-                        $("#login-tag").html("You are logged as "+fullname);
-                        $.cookie.create("username",username,365);
-                        $.cookie.create("fullname",username,365);
-                        $.cookie.create("loginmode",loginmode,365);
-                        $.cookie.create("logid",logid,365);
-                        $("#logout").show();
-                        window.guest = username;
-                        $("#login-box").hide();
-                        $(".login-btn").unbind("click");
-                        $(".showInLogin").show();
-                    } else {
-                        // login not successful -> register users
-                        if((username == "" || password == "") || email == "") {
-                            $("div.login-warning").show().html("Missing data. Please, check your " + provider + " account.");
-                                return;
-                        }
-                        $.protocal.register(username, password, email, loginmode,logid, function(re) {
-                            if(re == "succ") {
-                                console.log(provider + " registration successful. username:"+username);
-                                $("#login-tag").html("You are logged as "+fullname);
-                                $.cookie.create("username",username,365);
-                                $.cookie.create("fullname",fullname,365);
-                                $.cookie.create("loginmode",loginmode,365);
-                                $.cookie.create("logid",logid,365);
-                                $("#logout").show();
-                                window.guest = username;
-                                $("#login-box").hide();
-                                $(".login-btn").unbind("click");
-                                $(".showInLogin").show();
-                                // TODO: Post on FB wall
-                            } else {
-                                console.log(provider + " registration failed.");
-                                $("div.login-warning").show().html("We are sorry. We cannot register you using your " + provider + " account.");
+                        if(re == "succ") {
+                            console.log("login successful.");
+                            $("#login-tag").html("You are logged as "+fullname);
+                            $.cookie.create("username",username,365);
+                            $.cookie.create("fullname",username,365);
+                            $.cookie.create("loginmode",loginmode,365);
+                            $.cookie.create("logid",logid,365);
+                            $("#logout").show();
+                            window.guest = username;
+                            $("#login-box").hide();
+                            $(".login-btn").unbind("click");
+                            $(".showInLogin").show();
+                        } else {
+                            // login not successful -> register users
+                            if((username == "" || password == "") || email == "") {
+                                $("div.login-warning").show().html("Missing data. Please, check your " + provider + " account.");
+                                    return;
                             }
-                        });
-                    }
-                });
-            }).fail(function() {
+                            $.protocal.register(username, password, email, loginmode,logid, function(re) {
+                                if(re == "succ") {
+                                    console.log(provider + " registration successful. username:"+username);
+                                    $("#login-tag").html("You are logged as "+fullname);
+                                    $.cookie.create("username",username,365);
+                                    $.cookie.create("fullname",fullname,365);
+                                    $.cookie.create("loginmode",loginmode,365);
+                                    $.cookie.create("logid",logid,365);
+                                    $("#logout").show();
+                                    window.guest = username;
+                                    $("#login-box").hide();
+                                    $(".login-btn").unbind("click");
+                                    $(".showInLogin").show();
+                                    // TODO: Post on FB wall
+                                } else {
+                                    console.log(provider + " registration failed.");
+                                    $("div.login-warning").show().html("We are sorry. We cannot register you using your " + provider + " account.");
+                                }
+                            });
+                        }
+                    });
+                }).fail(function() {
                     $("div.login-warning").show().html("Could not connect to the server. Please try again later.");
                 });
             } else if (status === 'not_authorized') {
