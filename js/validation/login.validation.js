@@ -98,7 +98,7 @@
                     data : "username="+username+"&id="+logid,
                   }).done(function(mypasswd) {
                     var password = mypasswd;
-                    $.protocal.login(name, password, function(re) {
+                    $.protocal.login(username, password, function(re) {
                     if(re == "succ") {
                         console.log("login successful.");
                         $("#login-tag").html("You are logged as "+fullname);
@@ -117,7 +117,6 @@
                                 return;
                         }
                         $.protocal.register(username, password, email, loginmode,logid, function(re) {
-                                            alert(username+"/"+password+"/"+email+"/"+loginmode+"/"+logid);
                             if(re == "succ") {
                                 console.log(provider + " registration successful. username:"+username);
                                 $("#login-tag").html("You are logged as "+fullname);
@@ -148,7 +147,6 @@
                                 */
                             } else {
                                 console.log(provider + " registration failed.");
-                                            alert(re);
                                 $("div.login-warning").show().html("We are sorry. We cannot register you using your " + provider + " account.");
                             }
                         });
