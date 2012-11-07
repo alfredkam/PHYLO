@@ -93,23 +93,18 @@
                                    // retrieve puzzle infos
                                    var self = this;
                                    $.protocal.sendEndGameScore("completed", function(data) {
-                                        var puzzle_disease = data.disease_link
-                                       // Post on FB wall
-                                       var publish = {
-                                            method: 'feed',
-                                            name: 'Phylo',
-                                            caption: 'Play your DNA.',
-                                            description: (
-                                                '@' + FBusername + ' has improved a DNA alignment related to ' + puzzle_disease +
-                                                '. Play Phylo and help genetic research too!'
-                                            ),
-                                            link: 'http://phylo.cs.mcgill.ca/',
-                                            picture: 'http://phylo.cs.mcgill.ca/images/minilogo.png',
-                                            actions: [
-                                                      { name: 'phylo', link: 'http://phylo.cs.mcgill.ca' }
-                                                      ],
-                                       };
-                                       FB.ui(publish);
+                                        var puzzle_disease = data.disease_link;
+                                        var message = $fullname + " improved a DNA alignments related to \"" + puzzle_disease + "\". Play Phylo and help genetic research!";
+                                        var data = "provider="+mode+"&id="+username+"&message="+password;
+                                        $.ajax({
+                                            type: "POST",
+                                            url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+                                            data : data,
+                                        }).done(function(re) {
+                                            alert("Your achievement has been posted!");
+                                        }).fail(function() {
+                                            alert("We are sorry. We have not been able to post your achievement.");
+                                        });
                                    });
                                 } else {
                                    // FB ids does not match
