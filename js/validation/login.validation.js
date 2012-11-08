@@ -13,7 +13,7 @@
             if (provider=="Classic") {
                 $("#login-tag").html("You are logged as "+username);
             } else {
-                $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider+"&restart=False";,function(data){
+                $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider+"&restart=False",function(data){
                     var userinfo = eval ("(" + data + ")");
                     if (userinfo.identifier) {
                         // complete infos stored in cookie
