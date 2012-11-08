@@ -321,13 +321,7 @@ a.btn {
 #logo {
 	font-size: 20px;
 	padding:8px 10px;
-	border:1px solid #eee;
 	cursor:pointer;
-}
-#logo:hover, .logo-OnSelect {
-	border-right:1px solid #ddd;
-	background-color:#e9e9e9;
-	color:#777;
 }
 
 #nav {
@@ -653,7 +647,7 @@ a.btn {
 
 /* overwrite boostrap */
 .container {
-	width:1024px solid;
+	width:100% !important;
 }	
 
 /* Eleyine's fixes, will synchronize with previous css later */
