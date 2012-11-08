@@ -35,7 +35,7 @@
                                             $("div.login-warning").show().html("Missing data. Please, check your " + provider + " account.");
                                             return;
                                         }
-                                        $.protocal.register(username, password, email, loginmode,c_logid, function(re2) {
+                                        $.protocal.register(username,password,email,provider,c_logid, function(re2) {
                                             if(re2 == "succ") {
                                                 console.log(provider + " registration successful. username: "+username);
                                                 // TODO: Post on FB wall
