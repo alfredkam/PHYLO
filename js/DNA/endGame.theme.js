@@ -103,7 +103,8 @@
                     $.protocal.sendEndGameScore("completed", function(data) {
                         var puzzle_disease = data.disease_link;
                         var message = fullname + " received the new highscore and improved a DNA alignments related to \"" + puzzle_disease + "\".\nPlay Phylo and help genetic research!";
-                        var data = "provider="+provider+"&id="+c_logid+"&description="+message;
+                        var caption = "DNA puzzles";
+                        var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
                         bootbox.confirm("Phylo will update your status: " + message,"Cancel","Post", function() {
                             $.ajax({
                                 type: "POST",
