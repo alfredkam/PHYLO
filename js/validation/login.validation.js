@@ -40,7 +40,7 @@
                                                 console.log(provider + " registration successful. username: "+username);
                                                 // Update status
                                                 var message = fullname + " started to play Phylo.\nPhylo is a puzzle game in which every puzzle completed contributes to mapping diseases within human DNA. Have fun and help genetic research!";
-                                                var caption = "DNA puzzles",
+                                                var caption = "DNA puzzles";
                                                 var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
                                                 bootbox.confirm("Phylo will update your status: " + message,"Cancel","Post", function() {
                                                     $.ajax({
