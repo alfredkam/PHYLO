@@ -56,7 +56,9 @@ body {
 }	
 
 #draw {
-	background-color: #efefef;
+/*	background-color: #efefef;
+	*/
+	background-color:white;
 	/*background: linear-gradient(-28deg, black 0%, #3D3D3D 95%);
 	background: -o-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
 	background: -ms-linear-gradient(-28deg, black 0%, #3D3D3D 95%);
@@ -500,7 +502,6 @@ a.btn {
 	margin-right:auto;
 	position:relative;
 	text-align:left;
-	border:1px solid #333;
 }
 
 #copyright {
