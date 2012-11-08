@@ -107,13 +107,13 @@
 .nodeImg {
 	width: 20px;
 	height: 20px;
-	background-color: black;
+	background-color: #6D6D6D;
 	position:absolute;
 	display:inline-block;
 	z-index:2;
 }
 .nodeImg:hover {
-	background-color: #EF4136; 
+	background-color: black; 
 }
 .hLine, .vLine {
 	background-color:#6D6D6D;	
@@ -236,7 +236,7 @@
 	top:15px;
 }
 #runaway:hover {
-	color:red;
+	color: black;
 }
 
 /*
@@ -245,7 +245,11 @@
 }
 */
 #volumePanel i {
+	color : #6D6D6D;
 	font-size:33px;
+}
+#volumePanel i:hover {
+	color: black;
 }
 #volumePanel {
 	position:relative;
