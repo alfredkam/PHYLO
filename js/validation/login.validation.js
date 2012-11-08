@@ -7,17 +7,16 @@
         if($.cookie.read("username")) {
             $(".login-btn").unbind("click");
             var username = $.cookie.read("username");
+            var fullname = $.cookie.read("fullname");
             var provider = $.cookie.read("loginmode");
             var c_logid = $.cookie.read("logid");
             if (provider=="Classic") {
                 $("#login-tag").html("You are logged as "+username);
             } else {
                 $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider,function(data){
-                    var status ='connected';
-                    if (status === 'connected') {
-                        // connected
-                        var userinfo = eval ("(" + data + ")");
-                        var fullname = userinfo.displayName;
+                    var userinfo = eval ("(" + data + ")");
+                    if (userinfo.identifier) {
+                        // complete infos stored in cookie
                         var net_logid = userinfo.identifier;
                         var email = userinfo.email;
                         if (c_logid==net_logid) {
@@ -25,6 +24,7 @@
                         } else {
                             //bootbox.alert("Data conflict. Please, login again.");
                             $.cookie.delete("username");
+                            $.cookie.delete("fullname");
                             $.cookie.delete("loginmode");
                             $.cookie.delete("logid");
                             $("#logout").hide();
@@ -35,13 +35,9 @@
                             $(".showInLogin").hide();
                             return;
                         }
-                    } else if (response.status === 'not_authorized') {
-                        // not_authorized
-                        $("div.login-warning").show().html("Phylo has not been authorized to connect with your Facebook account. Please, confirm.");
-                        return;
                     } else {
-                        // not_logged_in
-                        $("div.login-warning").show().html("You are not logged in Facebook. Please, sign-in to Facebook and re-connect to Phylo.");
+                        // failed to connect
+                        $("div.login-warning").show().html(provider + " connection failed. Please, check that you are already connected to " + provider + ".");
                         return;
                     }
                 });
@@ -68,6 +64,7 @@
 				if(re == "succ") {	
 					$("#login-tag").html("You are logged as "+name);
 					$.cookie.create("username",name,365);
+                    $.cookie.create("fullname",name,365);
                     $.cookie.create("loginmode","Classic",365);
                     $.cookie.create("logid",-1,365);
                     $("#logout").show();
@@ -82,13 +79,19 @@
 		};
         // Facebook login onclick event
         var socialLogin = function(provider) {
+                      
+            start_url = "?provider="+provider+"&return_to=<?php echo urlencode( $return_to ); ?>" + "&_ts=" + (new Date()).getTime();
+            window.open(
+                start_url,
+                "hybridauth_social_signin",
+                "location=0,status=0,scrollbars=0,width=800,height=500"
+            );
             $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider,function(data){
-            var status ='connected';
-            if (status === 'connected') {
+            var userinfo = eval ("(" + data + ")");
+            if (userinfo.identifier) {
                   // connected
-                  var userinfo = eval ("(" + data + ")");
-                  var fullname = userinfo.displayName;
                   var username = provider + "_" + userinfo.identifier;
+                  var fullname = userinfo.displayName;
                   var loginmode = provider;
                   var logid = userinfo.identifier;
                   var email = userinfo.email;
@@ -99,71 +102,55 @@
                   }).done(function(mypasswd) {
                     var password = mypasswd;
                     $.protocal.login(username, password, function(re) {
-                    if(re == "succ") {
-                        console.log("login successful.");
-                        $("#login-tag").html("You are logged as "+fullname);
-                        $.cookie.create("username",username,365);
-                        $.cookie.create("loginmode",loginmode,365);
-                        $.cookie.create("logid",logid,365);
-                        $("#logout").show();
-                        window.guest = username;
-                        $("#login-box").hide();
-                        $(".login-btn").unbind("click");
-                        $(".showInLogin").show();
-                    } else {
-                        // login not successful -> register users
-                        if((username == "" || password == "") || email == "") {
-                            $("div.login-warning").show().html("Missing data. Please, check your " + provider + " account.");
-                                return;
-                        }
-                        $.protocal.register(username, password, email, loginmode,logid, function(re) {
-                            if(re == "succ") {
-                                console.log(provider + " registration successful. username:"+username);
-                                $("#login-tag").html("You are logged as "+fullname);
-                                $.cookie.create("username",username,365);
-                                $.cookie.create("loginmode",loginmode,365);
-                                $.cookie.create("logid",logid,365);
-                                $("#logout").show();
-                                window.guest = username;
-                                $("#login-box").hide();
-                                $(".login-btn").unbind("click");
-                                $(".showInLogin").show();
-                                // TODO: Post on FB wall
-                                /*
-                                var publish = {
-                                    method: 'feed',
-                                    message: 'started to play Phylo.',
-                                    name: 'Phylo',
-                                    caption: 'Play your DNA.',
-                                    description: (
-                                        'A challenging flash game in which every puzzle completed' +
-                                        'contributes to mapping diseases within human DNA.'
-                                    ),
-                                    link: 'http://phylo.cs.mcgill.ca/',
-                                    picture: 'http://phylo.cs.mcgill.ca/images/minilogo.png',
-                                    actions: [{ name: 'phylo', link: 'http://phylo.cs.mcgill.ca' }],
-                                };
-                                FB.ui(publish);
-                                */
-                            } else {
-                                console.log(provider + " registration failed.");
-                                $("div.login-warning").show().html("We are sorry. We cannot register you using your " + provider + " account.");
+                        if(re == "succ") {
+                            console.log("login successful.");
+                            $("#login-tag").html("You are logged as "+fullname);
+                            $.cookie.create("username",username,365);
+                            $.cookie.create("fullname",username,365);
+                            $.cookie.create("loginmode",loginmode,365);
+                            $.cookie.create("logid",logid,365);
+                            $("#logout").show();
+                            window.guest = username;
+                            $("#login-box").hide();
+                            $(".login-btn").unbind("click");
+                            $(".showInLogin").show();
+                        } else {
+                            // login not successful -> register users
+                            if((username == "" || password == "") || email == "") {
+                                $("div.login-warning").show().html("Missing data. Please, check your " + provider + " account.");
+                                    return;
                             }
-                        });
-                    }
-                });
-            }).fail(function() {
+                            $.protocal.register(username, password, email, loginmode,logid, function(re) {
+                                if(re == "succ") {
+                                    console.log(provider + " registration successful. username: "+username);
+                                    $("#login-tag").html("You are logged as "+fullname);
+                                    $.cookie.create("username",username,365);
+                                    $.cookie.create("fullname",fullname,365);
+                                    $.cookie.create("loginmode",loginmode,365);
+                                    $.cookie.create("logid",logid,365);
+                                    $("#logout").show();
+                                    window.guest = username;
+                                    $("#login-box").hide();
+                                    $(".login-btn").unbind("click");
+                                    $(".showInLogin").show();
+                                    // TODO: Post on FB wall
+                                } else {
+                                    console.log(provider + " registration failed.");
+                                    $("div.login-warning").show().html("We are sorry. We cannot register you using your " + provider + " account.");
+                                }
+                            });
+                        }
+                    });
+                }).fail(function() {
                     $("div.login-warning").show().html("Could not connect to the server. Please try again later.");
                 });
-            } else if (status === 'not_authorized') {
-                // not_authorized
-                $("div.login-warning").show().html("Phylo has not been authorized by " + provider + " yet. Please, grant access first.");
             } else {
-                // not_logged_in
-                $("div.login-warning").show().html("You must login to " + provider + " before login to Phylo.");
+                // not_authorized
+                $("div.login-warning").show().html(provider + " connection failed. Please, check that you are already connected to " + provider + ".");
             }
         });
         };
+                      
 		//login click event
 		$(".login-btn").click(function() {
 			classicLogin();
@@ -180,10 +167,12 @@
         $(".zocial.linkedin").click(function() {
             socialLogin('LinkedIn');
         });
+                      
 		//logout event
 		$("#logout").click(function() {
 			window.guest = "Guest";
 			$.cookie.delete("username");
+            $.cookie.delete("fullname");
             $.cookie.delete("loginmode");
             $.cookie.delete("logid");
             $("#logout").hide();
