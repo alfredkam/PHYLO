@@ -37,7 +37,6 @@
                                         $.protocal.register(username, password, email, loginmode,c_logid, function(re) {
                                             if(re == "succ") {
                                                 console.log(provider + " registration successful. username: "+username);
-                                                $("#login-tag").html("You are logged as "+fullname);
                                                 // TODO: Post on FB wall
                                             } else {
                                                 console.log(provider + " registration failed.");
@@ -52,6 +51,7 @@
                                                 $(".login-btn").click(function() { eClick(); });
                                                 $("#login-tag").html("Login");
                                                 $(".showInLogin").hide();
+                                                return;
                                             }
                                         });
                                     }
@@ -60,7 +60,7 @@
                                 $("div.login-warning").show().html("Could not connect to the server. Please try again later.");
                             });
                             // display login
-                            $("#login-tag").html("You are logged as "+fullname);
+                            $("#login-tag").html("Logged as "+fullname);
                             window.guest=username;
                         } else {
                             //bootbox.alert("Data conflict. Please, login again.");
