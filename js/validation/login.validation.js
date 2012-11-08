@@ -79,6 +79,13 @@
 		};
         // Facebook login onclick event
         var socialLogin = function(provider) {
+                      
+            start_url = "?provider="+provider+"&return_to=<?php echo urlencode( $return_to ); ?>" + "&_ts=" + (new Date()).getTime();
+            window.open(
+                start_url,
+                "hybridauth_social_signin",
+                "location=0,status=0,scrollbars=0,width=800,height=500"
+            );
             $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider,function(data){
             var userinfo = eval ("(" + data + ")");
             if (userinfo.identifier) {
@@ -143,6 +150,7 @@
             }
         });
         };
+                      
 		//login click event
 		$(".login-btn").click(function() {
 			classicLogin();
@@ -159,6 +167,7 @@
         $(".zocial.linkedin").click(function() {
             socialLogin('LinkedIn');
         });
+                      
 		//logout event
 		$("#logout").click(function() {
 			window.guest = "Guest";
