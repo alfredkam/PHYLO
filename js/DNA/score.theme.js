@@ -122,6 +122,7 @@
 		drawKey : function(c) {
 			var self = this;
 			var ln = window.lang.body.play.gameselect["game board"];
+			var labelColor = '#6D6D6D'
 			c.beginPath();	
 			c.fillStyle = self.settings.par;
 			c.fillRect(0,13,10,5);
@@ -155,6 +156,7 @@
 			var delay = function(curr) {
 				c.beginPath();
 				c.clearRect(0,0,765,self.settings.hBox);
+				var labelColor = '#6D6D6D';
 				for(var i=2;i<14;i++) {
 					if(i<=curr) {
 						var change;
@@ -208,6 +210,7 @@
 
 		},
 		drawScale : function(c) {
+			var scaleColor = '#6D6D6D';
 			var self = this;
 			c.beginPath();
 			for(var i=2;i<14;i++) {
