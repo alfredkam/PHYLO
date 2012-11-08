@@ -3,9 +3,10 @@
 		//hide logout on default
 		$("#logout").hide();
 
+        window.guest='guest';
+                      
         //check cookie
         if($.cookie.read("username")) {
-            window.guest='guest';
             $(".login-btn").unbind("click");
             var username = $.cookie.read("username");
             var fullname = $.cookie.read("fullname");
