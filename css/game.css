@@ -106,7 +106,7 @@
 .nodeImg {
 	width: 20px;
 	height: 20px;
-	background-color: grey;
+	background-color: black;
 	position:absolute;
 	display:inline-block;
 	z-index:2;
@@ -115,7 +115,7 @@
 	background-color: #EF4136; 
 }
 .hLine, .vLine {
-	background-color:#000;	
+	background-color:#6D6D6D;	
 	position:absolute;
 	z-index:1;
 }
