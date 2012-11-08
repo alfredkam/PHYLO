@@ -15,7 +15,7 @@
             if (provider=="Classic") {
                 $("#login-tag").html("You are logged as "+username);
             } else {
-                $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider+"&restart=False",function(data){
+                $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider + "&restart=0",function(data){
                     var userinfo = eval ("(" + data + ")");
                     if (userinfo.identifier) {
                         // complete infos stored in cookie
@@ -83,7 +83,7 @@
         // Facebook login onclick event
         var socialLogin = function(provider) {
                       
-            start_url = "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider="+provider+"&restart=True";
+            start_url = "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider="+provider+"&restart=1";
             win = window.open(
                 start_url,
                 "hybridauth_social_signin",
