@@ -121,21 +121,22 @@
 		drawKey : function(c) {
 			var self = this;
 			var ln = window.lang.body.play.gameselect["game board"];
+			var labelColor = '#6D6D6D'
 			c.beginPath();	
 			c.fillStyle = self.settings.par;
 			c.fillRect(0,13,10,5);
 			c.font = "10.5pt Helvetica";
-			c.fillStyle = "white";
+			c.fillStyle = labelColor;
 			c.fillText(ln["field 2"],16, 20);
 			c.fillStyle = self.settings.current;
 			c.fillRect(0,27,10,5);	
 			c.font = "10.5pt Helvetica";
-			c.fillStyle = "white";
+			c.fillStyle = labelColor;
 			c.fillText(ln["field 1"], 16, 35);
 			c.fillStyle = self.settings.best;
 			c.fillRect(0,42,10,5);
 			c.font = "10pt Helvetica";
-			c.fillStyle = "white";
+			c.fillStyle = labelColor;
 			c.fillText(ln["field 4"],16, 50);
 			/*
 			c.font = "20pt Helvetica";
@@ -154,6 +155,7 @@
 			var delay = function(curr) {
 				c.beginPath();
 				c.clearRect(0,0,765,self.settings.hBox);
+				var labelColor = '#6D6D6D';
 				for(var i=2;i<14;i++) {
 					if(i<=curr) {
 						var change;
@@ -176,21 +178,21 @@
 					}
 					if(i==2) {
 						c.font = "9pt Helvetica";
-						c.fillStyle = "white";
+						c.fillStyle = labelColor;
 						c.fillText(self.minBorder,self.settings.w*i+3,50);
 					}
 					if(i==curr) {
 						c.font = "9pt Helvetica";
-						c.fillStyle = "white";
+						c.fillStyle = labelColor;
 						c.fillText("0",self.settings.w*i+3,50);
 					}
 					if(i==13) {
 						c.font = "9pt Helvetica";
-						c.fillStyle = "white";
+						c.fillStyle = labelColor;
 						c.fillText(self.maxBorder,self.settings.w*i+3,50);
 					}
 				}
-				c.strokeStyle = "white";
+				c.strokeStyle = labelColor;
 				c.stroke();
 				c.closePath();
 				self.drawKey(c);
@@ -207,6 +209,7 @@
 
 		},
 		drawScale : function(c) {
+			var scaleColor = '#6D6D6D';
 			var self = this;
 			c.beginPath();
 			for(var i=2;i<14;i++) {
@@ -231,21 +234,21 @@
 				}
 				if(i==2) {
 					c.font = "9pt Helvetica";
-					c.fillStyle = "white";
+					c.fillStyle = scaleColor;
 					c.fillText(self.minBorder,self.settings.w*i+3,50);
 				}
 				if(i==self.midPoint) {
 					c.font = "9pt Helvetica";
-					c.fillStyle = "white";
+					c.fillStyle = scaleColor;
 					c.fillText("0",self.settings.w*i+3,50);
 				}
 				if(i==13) {
 					c.font = "9pt Helvetica";
-					c.fillStyle = "white";
+					c.fillStyle = scaleColor;
 					c.fillText(self.maxBorder,self.settings.w*i+3,50);
 				}
 			}
-			c.strokeStyle = "white";
+			c.strokeStyle = scaleColor;
 			c.stroke();
 			c.closePath();
 		},
