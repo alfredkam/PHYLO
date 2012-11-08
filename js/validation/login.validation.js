@@ -39,8 +39,8 @@
                                             if(re2 == "succ") {
                                                 console.log(provider + " registration successful. username: "+username);
                                                 // Update status
-                                                var message = fullname + " started to play Phylo.\n""Play Phylo and help genetic research!";
-                                                var caption = "DNA puzzles"
+                                                var message = fullname + " started to play Phylo.\nPhylo is a puzzle game in which every puzzle completed contributes to mapping diseases within human DNA. Have fun and help genetic research!";
+                                                var caption = "DNA puzzles",
                                                 var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
                                                 bootbox.confirm("Phylo will update your status: " + message,"Cancel","Post", function() {
                                                     $.ajax({
@@ -50,7 +50,7 @@
                                                     }).done(function(re) {
                                                         bootbox.alert("Thank you for sharing the word. You can now start to play!");
                                                     }).fail(function() {
-                                                        bootbox.alert("We are sorry. We have not been able to post your achievement.");
+                                                        bootbox.alert("We are sorry. We have not been able to update your status.");
                                                     });
                                                 });
                                             } else {
