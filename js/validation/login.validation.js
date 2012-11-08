@@ -3,9 +3,7 @@
 		//hide logout on default
 		$("#logout").hide();
 
-        window.guest='guest';
-                      
-        //check cookie
+        // init page: check cookie and register user if login using social account for the first time 
         if($.cookie.read("username")) {
             $(".login-btn").unbind("click");
             var username = $.cookie.read("username");
@@ -13,7 +11,7 @@
             var provider = $.cookie.read("loginmode");
             var c_logid = $.cookie.read("logid");
             if (provider=="Classic") {
-                $("#login-tag").html("You are logged as "+username);
+                $("#login-tag").html("Logged as "+username);
             } else {
                 $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider + "&restart=0",function(data){
                     var userinfo = eval ("(" + data + ")");
@@ -22,6 +20,46 @@
                         var net_logid = userinfo.identifier;
                         var email = userinfo.email;
                         if (c_logid==net_logid) {
+                            // check is user exists
+                            $.ajax({
+                                   type: "POST",
+                                   url : "http://phylo.cs.mcgill.ca/phpdb/passwdmanager.php",
+                                   data : "username="+username+"&id="+logid,
+                             }).done(function(mypasswd) {
+                                var password = mypasswd;
+                                $.protocal.login(username, password, function(re) {
+                                    if(re == "failed") {
+                                        // login not successful -> register users
+                                        if((username == "" || password == "") || email == "") {
+                                            $("div.login-warning").show().html("Missing data. Please, check your " + provider + " account.");
+                                            return;
+                                        }
+                                        $.protocal.register(username, password, email, loginmode,logid, function(re) {
+                                            if(re == "succ") {
+                                                console.log(provider + " registration successful. username: "+username);
+                                                $("#login-tag").html("You are logged as "+fullname);
+                                                // TODO: Post on FB wall
+                                            } else {
+                                                console.log(provider + " registration failed.");
+                                                $("div.login-warning").show().html("We are sorry. We cannot register you using your " + provider + " account.");
+                                                $.cookie.delete("username");
+                                                $.cookie.delete("fullname");
+                                                $.cookie.delete("loginmode");
+                                                $.cookie.delete("logid");
+                                                $("#logout").hide();
+                                                window.guest = 'guest';
+                                                $("#login-box").hide();
+                                                $(".login-btn").click(function() { eClick(); });
+                                                $("#login-tag").html("Login");
+                                                $(".showInLogin").hide();
+                                            }
+                                        });
+                                    }
+                                });
+                            }).fail(function() {
+                                $("div.login-warning").show().html("Could not connect to the server. Please try again later.");
+                            });
+                            // display login
                             $("#login-tag").html("You are logged as "+fullname);
                             window.guest=username;
                         } else {
@@ -80,79 +118,14 @@
 				}			
 			});
 		};
-        // Facebook login onclick event
+        // Social login onclick event
         var socialLogin = function(provider) {
-                      
             start_url = "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider="+provider+"&restart=1";
             win = window.open(
                 start_url,
                 "hybridauth_social_signin",
                 "location=0,status=0,scrollbars=0,width=800,height=500"
             );
-            return;
-            $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider,function(data){
-            var userinfo = eval ("(" + data + ")");
-            if (userinfo.identifier) {
-                  // connected
-                  var username = provider + "_" + userinfo.identifier;
-                  var fullname = userinfo.displayName;
-                  var loginmode = provider;
-                  var logid = userinfo.identifier;
-                  var email = userinfo.email;
-                  $.ajax({
-                    type: "POST",
-                    url : "http://phylo.cs.mcgill.ca/phpdb/passwdmanager.php",
-                    data : "username="+username+"&id="+logid,
-                  }).done(function(mypasswd) {
-                    var password = mypasswd;
-                    $.protocal.login(username, password, function(re) {
-                        if(re == "succ") {
-                            console.log("login successful.");
-                            $("#login-tag").html("You are logged as "+fullname);
-                            $.cookie.create("username",username,365);
-                            $.cookie.create("fullname",username,365);
-                            $.cookie.create("loginmode",loginmode,365);
-                            $.cookie.create("logid",logid,365);
-                            $("#logout").show();
-                            window.guest = username;
-                            $("#login-box").hide();
-                            $(".login-btn").unbind("click");
-                            $(".showInLogin").show();
-                        } else {
-                            // login not successful -> register users
-                            if((username == "" || password == "") || email == "") {
-                                $("div.login-warning").show().html("Missing data. Please, check your " + provider + " account.");
-                                    return;
-                            }
-                            $.protocal.register(username, password, email, loginmode,logid, function(re) {
-                                if(re == "succ") {
-                                    console.log(provider + " registration successful. username: "+username);
-                                    $("#login-tag").html("You are logged as "+fullname);
-                                    $.cookie.create("username",username,365);
-                                    $.cookie.create("fullname",fullname,365);
-                                    $.cookie.create("loginmode",loginmode,365);
-                                    $.cookie.create("logid",logid,365);
-                                    $("#logout").show();
-                                    window.guest = username;
-                                    $("#login-box").hide();
-                                    $(".login-btn").unbind("click");
-                                    $(".showInLogin").show();
-                                    // TODO: Post on FB wall
-                                } else {
-                                    console.log(provider + " registration failed.");
-                                    $("div.login-warning").show().html("We are sorry. We cannot register you using your " + provider + " account.");
-                                }
-                            });
-                        }
-                    });
-                }).fail(function() {
-                    $("div.login-warning").show().html("Could not connect to the server. Please try again later.");
-                });
-            } else {
-                // not_authorized
-                $("div.login-warning").show().html(provider + " connection failed. Please, check that you are already connected to " + provider + ".");
-            }
-        });
         };
                       
 		//login click event
