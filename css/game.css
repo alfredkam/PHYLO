@@ -30,14 +30,16 @@
 	width:32px;
 	position:absolute;
 	display:inline-block;
-	border:1px solid #383838;
+	border:0px solid #383838;
 	z-index: 11;
+	/*
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	-ms-border-radius: 5px;
 	-o-border-radius: 5px;
 	-khtml-border-radius: 5px;
+	*/
 }
 
 .row {
@@ -193,7 +195,7 @@
 #statsPanel {
 	left:280px;
 	max-width:534px;
-	color:white;
+	color:#6D6D6D;
 	position:relative;
 	top:-15px
 }

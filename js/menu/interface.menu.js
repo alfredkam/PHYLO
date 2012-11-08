@@ -244,10 +244,11 @@
 
 			var menuStr = [window.lang.body.play.gameselect.levelselect.random["field 2"],window.lang.body.play.gameselect.levelselect["level id"]["field 2"],window.lang.body.play.gameselect.levelselect.disease["field 1"]];
 			var cell = function(ctx,x,y,i) {
+				var menuStrColor = '#444';
 				ctx.beginPath();			
 				ctx.fillStyle = settings.color[i];
 				ctx.fillRect(x,y,settings.box(),settings.box());
-				ctx.fillStyle = "white";
+				ctx.fillStyle = menuStrColor;
 				ctx.font = "19pt Helvetica";
 				ctx.fillText(menuStr[i],x+100,y+25);
 				ctx.closePath();
@@ -264,19 +265,20 @@
 						var scale = Math.sin(offset/settings.box()*1.3);
 						ctx.fillStyle = settings.color[i];
 					 	ctx.fillRect(x-5*scale,y-5*scale,settings.box()*(1+.2*scale),settings.box()*(1+.2*scale));	
-						ctx.fillStyle = "white";
+						ctx.fillStyle = menuStrColor;
 						ctx.font = (19+6*scale)+"pt Helvetica";
 						ctx.fillText(menuStr[i],x+100,y+25);
 					} else {
 						ctx.fillStyle = settings.color[i];
 						ctx.fillRect(x,y,settings.box(),settings.box());
-						ctx.fillStyle = "white";
+						ctx.fillStyle = menuStrColor;
 						ctx.font = "19pt Helvetica";
 						ctx.fillText(menuStr[i],x+100,y+25);
 					}
 					ctx.closePath();
 				};
 				this.onClick = function(eX,eY) {
+					var menuStrColor = '#444';
 					if( x-5 <= eX && eX <= x+5+settings.box()*1.3+900 
 					&& y-5 <= eY && eY <= y+5+settings.box()*1.3) {
 						switch(i) {
@@ -287,7 +289,7 @@
 								selection = [];
 								selection.push(new login(ctx));
 								ctx.beginPath();
-								ctx.fillStyle = "white";
+								ctx.fillStyle = menuStrColor;
 								ctx.font = "20pt Helvetica";
 								ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 3"], 245, 100);
 								ctx.closePath();
@@ -311,7 +313,7 @@
 								ctx.beginPath();
 								ctx.textAlign = "center";
 								ctx.clearRect(0, 0,1024,450);
-								ctx.fillStyle = "white";
+								ctx.fillStyle = menuStrColor;
 								ctx.font = "20pt Helvetica";	
 								ctx.fillText(lang.body.play.gameselect.levelselect.disease["field 1"],settings.width()/2, 100);
 								ctx.textAlign = "left";
@@ -329,7 +331,7 @@
 								ctx.beginPath();
 								ctx.textAlign = "center";
 								ctx.clearRect(0,0,1024,450);
-								ctx.fillStyle = "white";
+								ctx.fillStyle = menuStrColor;
 								ctx.font = "20pt Helvetica";	
 								ctx.fillText(lang.body.play.gameselect.levelselect.random["field 1"], settings.width()/2,120);
 								ctx.fillText(lang.body.play.gameselect.levelselect.random["field 3"], settings.width()/2,240);
@@ -352,12 +354,13 @@
 
 
 			var levelselect = function(ctx) {	
+				var menuStrColor = '#444';
 				$("#level_inputbox").show();
 				ctx.beginPath();
 				ctx.save();
 				ctx.fillStyle = "rgb(153,50,204)";
 				ctx.fillRect(250,220,170,50);
-				ctx.fillStyle = "white";
+				ctx.fillStyle = menuStrColor;
 				ctx.font = '19pt Helvetica';
 				ctx.textAlign = "center";
 				ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 4"],335,252);
@@ -421,7 +424,7 @@
 
 					ctx.fillStyle = "white";
 					ctx.fillRect(250,220,170,50);
-					ctx.fillStyle = "rgb(153,50,204)";
+					ctx.fillStyle = menuStrColor;
 					ctx.font = '19pt Helvetica';
 					ctx.textAlign = "center";
 					ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 4"],335,252);
@@ -429,7 +432,7 @@
 					} else {
 					ctx.fillStyle = "rgb(153,50,204)";
 					ctx.fillRect(250,220,170,50);
-					ctx.fillStyle = "white";
+					ctx.fillStyle = menuStrColor;
 					ctx.font = '19pt Helvetica';
 					ctx.textAlign = "center";
 					ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 4"],335,252);
