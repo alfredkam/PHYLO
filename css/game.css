@@ -188,7 +188,6 @@
 	width:1024px;
 	position:relative;
 	display:inline-block;
-	top:10px;
 }
 #bottomPanel div{
 	display:inline-block;
@@ -198,7 +197,7 @@
 	max-width:534px;
 	color:#6D6D6D;
 	position:relative;
-	top:-15px
+	top:15px;
 }
 .gap {
 	padding-left:15px;
@@ -231,9 +230,9 @@
 #runaway {
 	color:#6D6D6D;
 	font-size: 28px;
-	top:-13px;
 	position:relative;
 	left:200px;
+	top:15px;
 }
 #runaway:hover {
 	color:red;
@@ -248,10 +247,9 @@
 	font-size:33px;
 }
 #volumePanel {
-	width: 33px;
 	position:relative;
 	left: 180px;
-	top:-20px;
+	top:15px;
 }
 #cycle:hover {
 	opacity: 1;
