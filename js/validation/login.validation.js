@@ -11,7 +11,7 @@
             var provider = $.cookie.read("loginmode");
             var c_logid = $.cookie.read("logid");
             if (provider=="Classic") {
-                $("#login-tag").html("Logged as "+username);
+                $("#login-tag").html(username);
             } else {
                 $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider + "&restart=0",function(data){
                     var userinfo = eval ("(" + data + ")");
@@ -38,7 +38,21 @@
                                         $.protocal.register(username,password,email,provider,c_logid, function(re2) {
                                             if(re2 == "succ") {
                                                 console.log(provider + " registration successful. username: "+username);
-                                                // TODO: Post on FB wall
+                                                // Update status
+                                                var message = fullname + " started to play Phylo.\nPhylo is a puzzle game in which every puzzle completed contributes to mapping diseases within human DNA. Have fun and help genetic research!";
+                                                var caption = "DNA puzzles";
+                                                var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
+                                                bootbox.confirm("Phylo will update your status: " + message,"Cancel","Post", function() {
+                                                    $.ajax({
+                                                        type: "POST",
+                                                        url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+                                                        data : data,
+                                                    }).done(function(re) {
+                                                        bootbox.alert("Thank you for sharing the word. You can now start to play!");
+                                                    }).fail(function() {
+                                                        bootbox.alert("We are sorry. We have not been able to update your status.");
+                                                    });
+                                                });
                                             } else {
                                                 console.log(provider + " registration failed.");
                                                 $("div.login-warning").show().html("We are sorry. We cannot register you using your " + provider + " account.");
@@ -61,7 +75,7 @@
                                 $("div.login-warning").show().html("Could not connect to the server. Please try again later.");
                             });
                             // display login
-                            $("#login-tag").html("Logged as "+fullname);
+                            $("#login-tag").html(fullname);
                             window.guest=username;
                         } else {
                             //bootbox.alert("Data conflict. Please, login again.");
@@ -104,7 +118,7 @@
 
 			$.protocal.login(name, password, function(re) {
 				if(re == "succ") {	
-					$("#login-tag").html("You are logged as "+name);
+					$("#login-tag").html(name);
 					$.cookie.create("username",name,365);
                     $.cookie.create("fullname",name,365);
                     $.cookie.create("loginmode","Classic",365);
@@ -182,7 +196,7 @@
 				$.protocal.register(name, password, email,'Classic',0, function(re) {
 					if(re == "succ") {
 						$(".login-btn").unbind("click");	
-						$("#login-tag").html("You are logged as "+name);
+						$("#login-tag").html(name);
 						$("#logout").show();
 						window.guest = name;
 						$("#login-box").hide();
