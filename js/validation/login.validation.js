@@ -27,15 +27,16 @@
                                    data : "username="+username+"&id="+c_logid,
                              }).done(function(mypasswd) {
                                 var password = mypasswd;
+                                // a bit heavy. a simple table entry check would be enough.
                                 $.protocal.login(username, password, function(re) {
-                                    if(re == "failed") {
+                                    if(re != "succ") {
                                         // login not successful -> register users
                                         if((username == "" || password == "") || email == "") {
                                             $("div.login-warning").show().html("Missing data. Please, check your " + provider + " account.");
                                             return;
                                         }
-                                        $.protocal.register(username, password, email, loginmode,c_logid, function(re) {
-                                            if(re == "succ") {
+                                        $.protocal.register(username, password, email, loginmode,c_logid, function(re2) {
+                                            if(re2 == "succ") {
                                                 console.log(provider + " registration successful. username: "+username);
                                                 // TODO: Post on FB wall
                                             } else {
