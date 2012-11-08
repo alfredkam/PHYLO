@@ -2,9 +2,10 @@
 	$(document).ready(function() {
 		//hide logout on default
 		$("#logout").hide();
-                      
+
         //check cookie
         if($.cookie.read("username")) {
+            window.guest='guest';
             $(".login-btn").unbind("click");
             var username = $.cookie.read("username");
             var fullname = $.cookie.read("fullname");
@@ -21,6 +22,7 @@
                         var email = userinfo.email;
                         if (c_logid==net_logid) {
                             $("#login-tag").html("You are logged as "+fullname);
+                            window.guest=username;
                         } else {
                             //bootbox.alert("Data conflict. Please, login again.");
                             $.cookie.delete("username");
