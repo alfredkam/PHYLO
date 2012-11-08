@@ -434,10 +434,13 @@ a.btn {
 	text-align:left;
 	margin-left:auto;
 	margin-right:auto;
-	color: whitesmoke;
+	color: #6D6D6D;
+}
+.footer-inner a.btn {
+	color:white;
 }
 .footer-inner a {
-	color:whitesmoke;
+	color:#6D6D6D;
 }
 #footer, .push {
 }
