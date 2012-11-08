@@ -2,6 +2,7 @@
 #gameBoard {
 	position: relative;
 	display:inline-block;
+	color: #6D6D6D;
 	width: 841px;
 	top: -335px;
 	padding-top:20px;
@@ -228,7 +229,7 @@
 }
 
 #runaway {
-	color:white;
+	color:#6D6D6D;
 	font-size: 28px;
 	top:-13px;
 	position:relative;
