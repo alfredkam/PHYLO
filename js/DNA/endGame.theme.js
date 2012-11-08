@@ -85,7 +85,7 @@
                     $.protocal.sendEndGameScore("completed", function(data) {
                         var puzzle_disease = data.disease_link;
                         var message = fullname + " received the new highscore and improved a DNA alignments related to \"" + puzzle_disease + "\".\nPlay Phylo and help genetic research!";
-                        var caption = "DNA puzzles"
+                        var caption = "DNA puzzles";
                         var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
                         bootbox.confirm("Phylo will update your status: " + message,"Cancel","Post", function() {
                             $.ajax({
@@ -97,6 +97,22 @@
                             }).fail(function() {
                                 bootbox.alert("We are sorry. We have not been able to post your achievement.");
                             });
+                        });
+                    });
+                } else if (provider=="Facebook") {
+                    $.protocal.sendEndGameScore("completed", function(data) {
+                    var puzzle_disease = data.disease_link;
+                    var message = fullname + " received the new highscore and improved a DNA alignments related to \"" + puzzle_disease + "\".\nPlay Phylo and help genetic research!";
+                    var data = "provider="+provider+"&id="+c_logid+"&description="+message;
+                    bootbox.confirm("Phylo will update your status: " + message,"Cancel","Post", function() {
+                        $.ajax({
+                            type: "POST",
+                            url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+                            data : data,
+                        }).done(function(re) {
+                            bootbox.alert("Your achievement has been posted!");
+                        }).fail(function() {
+                            bootbox.alert("We are sorry. We have not been able to post your achievement.");
                         });
                     });
                 } else {
