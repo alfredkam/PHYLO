@@ -85,15 +85,17 @@
                     $.protocal.sendEndGameScore("completed", function(data) {
                         var puzzle_disease = data.disease_link;
                         var message = fullname + "improved a DNA alignments related to \"" + puzzle_disease + "\". Play Phylo and help genetic research!";
-                        var data = "provider="+provider+"&id="+c_logid+"&message="+password;
-                        $.ajax({
-                            type: "POST",
-                            url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
-                            data : data,
-                        }).done(function(re) {
-                            alert("Your achievement has been posted!");
-                        }).fail(function() {
-                            alert("We are sorry. We have not been able to post your achievement.");
+                        var data = "provider="+provider+"&id="+c_logid+"&caption="+message;
+                        bootbox.confirm("Phylo will update your status: " + message,"Cancel","Post", function() {
+                            $.ajax({
+                                type: "POST",
+                                url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+                                data : data,
+                            }).done(function(re) {
+                                bootbox.alert("Your achievement has been posted!");
+                            }).fail(function() {
+                                bootbox.alert("We are sorry. We have not been able to post your achievement.");
+                            });
                         });
                     });
                 } else {
