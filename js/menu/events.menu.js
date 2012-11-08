@@ -49,9 +49,10 @@
 			$(this).addClass("logo-OnSelect");
 		}); */
 
-		$("#login").click(function() {
+		$("#login").click(function(event) {
 			event.stopPropagation();
-			if($("#login-tag").html().search(/Welcome/) > -1) {
+			if(window.guest != "guest") {
+			//if($("#login-tag").html().search(/Welcome/) > -1) {
 	
 			} else {
 				$("#login-box").show();
@@ -68,7 +69,8 @@
 			}
 
 		}).hover(function() {
-			if($("#login-tag").html().search(/Welcome/) < 0) {
+			//if($("#login-tag").html().search(/Welcome/) < 0) {
+			if(window.guest == "guest") {
 				$(this).addClass("login-OnSelect");
 			}	
 		}, function() {

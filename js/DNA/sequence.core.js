@@ -162,7 +162,7 @@
 			if (numstring == 'x')
 				return numstring;
 			else
-				return parseInt(numstring);
+				return parseInt(0);
 		},
 		//randomize the location of the sequence
 		randomize : function(seq) {

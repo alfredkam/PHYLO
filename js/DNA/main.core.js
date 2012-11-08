@@ -19,12 +19,17 @@
 			//configuration
 			init : function(setting) {
 				this.clear();
+				if($("#tree").css("height") == undefined) {
+					height = 178;
+				} else {
+					height = $("#tree").css("height").replace(/px/,"");
+				}
 				$.endGame.runAway();
 				$.phylo = {
 					seqLen : 25,
 					x : 34,
 					offSet : 0,//$("#gameBoard").css("left").replace(/px/,""),
-					height : $("#tree").css("height").replace(/px/,"")
+					height : height,//$("#tree").css("height").replace(/px/,"")
 				};
 				$.lang.init(function() {
 					$("#game").show();

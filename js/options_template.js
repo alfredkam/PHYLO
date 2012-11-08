@@ -1,5 +1,5 @@
 window.DEBUG = false;
-window.guest = "Anonymous";
+window.guest = "guest";
 window.DEV = {
 	disableMenu : false,
 	disableSplash : false,
