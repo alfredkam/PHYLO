@@ -80,12 +80,15 @@
         // Facebook login onclick event
         var socialLogin = function(provider) {
                       
-            start_url = "?provider="+provider+"&return_to=<?php echo urlencode( $return_to ); ?>" + "&_ts=" + (new Date()).getTime();
-            window.open(
-                start_url,
+            start_url = "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php";
+            get_params="?provider="+provider+"&return_to=<?php echo urlencode( $return_to ); ?>" + "&_ts=" + (new Date()).getTime();
+            win = window.open(
+                start_url+get_params,
                 "hybridauth_social_signin",
                 "location=0,status=0,scrollbars=0,width=800,height=500"
             );
+            win.unload(alert("exit"));
+            return;
             $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider,function(data){
             var userinfo = eval ("(" + data + ")");
             if (userinfo.identifier) {
