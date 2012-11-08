@@ -289,7 +289,7 @@ a.btn {
 	padding: 9px 10px;
 	white-space:nowrap;
 	text-overflow: ellipsis;
-	max-width:109px;
+	min-width:100px;
 	overflow:hidden;
 }
 
@@ -673,7 +673,7 @@ a.btn {
 }
 
 #options{
-   width:35px;
+   width:80px;
 }
 
 #options-button{
