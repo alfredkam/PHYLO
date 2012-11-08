@@ -52,12 +52,13 @@
 
 .bgCell {
 	position:absolute;
-	height: 32px;
-	width: 32px;
+	height: 30px;
+	width: 30px;
 	background-color: white;
 	display:inline-block;
-	border: 1px black solid;
-	opacity:0.2;
+	border-top: 1px black solid;
+	border-right: 1px black solid;
+	opacity:0.4;
 }
 .bgRow {
 	position:relative;
@@ -106,7 +107,7 @@
 .nodeImg {
 	width: 20px;
 	height: 20px;
-	background-color: #DDD;
+	background-color: black;
 	position:absolute;
 	display:inline-block;
 	z-index:2;
@@ -115,7 +116,7 @@
 	background-color: #EF4136; 
 }
 .hLine, .vLine {
-	background-color:#DDD;	
+	background-color:#6D6D6D;	
 	position:absolute;
 	z-index:1;
 }
