@@ -240,8 +240,13 @@
 	color:red;
 }
 
+/*
 #volumePanel img {
 	width: 33px;
+}
+*/
+#volumePanel i {
+	font-size:33px;
 }
 #volumePanel {
 	width: 33px;
