@@ -51,7 +51,7 @@
 
 		$("#login").click(function(event) {
 			event.stopPropagation();
-			if(window.guest == "Anonymous") {
+			if(window.guest == "guest") {
 			//if($("#login-tag").html().search(/Welcome/) > -1) {
 	
 			} else {
@@ -70,7 +70,7 @@
 
 		}).hover(function() {
 			//if($("#login-tag").html().search(/Welcome/) < 0) {
-			if(window.guest != "Anonymous") {
+			if(window.guest != "guest") {
 				$(this).addClass("login-OnSelect");
 			}	
 		}, function() {
