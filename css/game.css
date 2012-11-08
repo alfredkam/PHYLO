@@ -234,6 +234,7 @@
 	position:relative;
 	left:200px;
 	top:15px;
+	margin-left:10px;
 }
 #runaway:hover {
 	color: black;
