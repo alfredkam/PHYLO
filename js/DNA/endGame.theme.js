@@ -84,8 +84,9 @@
                 if (provider=="Facebook") {
                     $.protocal.sendEndGameScore("completed", function(data) {
                         var puzzle_disease = data.disease_link;
-                        var message = fullname + "improved a DNA alignments related to \"" + puzzle_disease + "\". Play Phylo and help genetic research!";
-                        var data = "provider="+provider+"&id="+c_logid+"&caption="+message;
+                        var message = fullname + " improved a DNA alignments related to \"" + puzzle_disease + "\". Play Phylo and help genetic research!";
+                        var caption = "DNA puzzles"
+                        var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
                         bootbox.confirm("Phylo will update your status: " + message,"Cancel","Post", function() {
                             $.ajax({
                                 type: "POST",
