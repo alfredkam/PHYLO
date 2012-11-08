@@ -99,7 +99,7 @@
                             });
                         });
                     });
-                } else if (provider=="Facebook") {
+                } else if (provider=="Twitter") {
                     $.protocal.sendEndGameScore("completed", function(data) {
                         var puzzle_disease = data.disease_link;
                         var message = fullname + " received the new highscore and improved a DNA alignments related to \"" + puzzle_disease + "\".\nPlay Phylo and help genetic research!";
