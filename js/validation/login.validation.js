@@ -24,7 +24,7 @@
                             $.ajax({
                                    type: "POST",
                                    url : "http://phylo.cs.mcgill.ca/phpdb/passwdmanager.php",
-                                   data : "username="+username+"&id="+logid,
+                                   data : "username="+username+"&id="+c_logid,
                              }).done(function(mypasswd) {
                                 var password = mypasswd;
                                 $.protocal.login(username, password, function(re) {
@@ -34,7 +34,7 @@
                                             $("div.login-warning").show().html("Missing data. Please, check your " + provider + " account.");
                                             return;
                                         }
-                                        $.protocal.register(username, password, email, loginmode,logid, function(re) {
+                                        $.protocal.register(username, password, email, loginmode,c_logid, function(re) {
                                             if(re == "succ") {
                                                 console.log(provider + " registration successful. username: "+username);
                                                 $("#login-tag").html("You are logged as "+fullname);
