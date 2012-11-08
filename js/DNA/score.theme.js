@@ -8,6 +8,7 @@
 			par : "#FF0000",
 			current : "#6495ED",
 			best : "#66CD00",
+			color : "#6D6D6D",
 			prev : 0,
 			prevMid : 4
 		},
@@ -125,17 +126,17 @@
 			c.fillStyle = self.settings.par;
 			c.fillRect(0,13,10,5);
 			c.font = "10.5pt Helvetica";
-			c.fillStyle = "white";
+			c.fillStyle = self.settings.color;
 			c.fillText(ln["field 2"],16, 20);
 			c.fillStyle = self.settings.current;
 			c.fillRect(0,27,10,5);	
 			c.font = "10.5pt Helvetica";
-			c.fillStyle = "white";
+			c.fillStyle = self.settings.color;
 			c.fillText(ln["field 1"], 16, 35);
 			c.fillStyle = self.settings.best;
 			c.fillRect(0,42,10,5);
 			c.font = "10pt Helvetica";
-			c.fillStyle = "white";
+			c.fillStyle = self.settings.color;
 			c.fillText(ln["field 4"],16, 50);
 			/*
 			c.font = "20pt Helvetica";
@@ -176,21 +177,21 @@
 					}
 					if(i==2) {
 						c.font = "9pt Helvetica";
-						c.fillStyle = "white";
+						c.fillStyle = self.settings.color;
 						c.fillText(self.minBorder,self.settings.w*i+3,50);
 					}
 					if(i==curr) {
 						c.font = "9pt Helvetica";
-						c.fillStyle = "white";
+						c.fillStyle = self.settings.color;
 						c.fillText("0",self.settings.w*i+3,50);
 					}
 					if(i==13) {
 						c.font = "9pt Helvetica";
-						c.fillStyle = "white";
+						c.fillStyle = self.settings.color;
 						c.fillText(self.maxBorder,self.settings.w*i+3,50);
 					}
 				}
-				c.strokeStyle = "white";
+				c.strokeStyle = self.settings.color;
 				c.stroke();
 				c.closePath();
 				self.drawKey(c);
@@ -231,21 +232,21 @@
 				}
 				if(i==2) {
 					c.font = "9pt Helvetica";
-					c.fillStyle = "white";
+					c.fillStyle = self.settings.color;
 					c.fillText(self.minBorder,self.settings.w*i+3,50);
 				}
 				if(i==self.midPoint) {
 					c.font = "9pt Helvetica";
-					c.fillStyle = "white";
+					c.fillStyle = self.settings.color;
 					c.fillText("0",self.settings.w*i+3,50);
 				}
 				if(i==13) {
 					c.font = "9pt Helvetica";
-					c.fillStyle = "white";
+					c.fillStyle = self.settings.color;
 					c.fillText(self.maxBorder,self.settings.w*i+3,50);
 				}
 			}
-			c.strokeStyle = "white";
+			c.strokeStyle = self.settings.color;
 			c.stroke();
 			c.closePath();
 		},
