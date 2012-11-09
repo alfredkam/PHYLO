@@ -583,7 +583,7 @@
 
 			for(var i=0;i<3;i++) {
 				//selection.push(new cell(ctx,150,120+(50*i),i));
-				selection.push(new cell(ctx, 200+(50*i), 300,i));
+				selection.push(new cell(ctx, 250+(100*i), 300,i));
 			}
 
 			$('#draw').unbind().mousemove(function(e) {

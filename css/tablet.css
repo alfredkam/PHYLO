@@ -2,7 +2,7 @@
 
 	body {
 		background-image:none;
-		background-color:black;
+		background-color:#F1F1F1;
 	}
 	#top-panel {
 		display:none;
@@ -15,6 +15,7 @@
 	#tabletPanel {
 		display:block;
 		margin:3em 3em;
+		color:#6D6D6D;
 	}
 	
 	#tabletPanel, #tabletPanel div{
