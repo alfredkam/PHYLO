@@ -422,9 +422,9 @@
 					if(250 < eX && eX < 370 &&
 						220 < eY && eY < 270 ){
 
-					ctx.fillStyle = "white";
+					ctx.fillStyle = "#6D6D6D";
 					ctx.fillRect(250,220,170,50);
-					ctx.fillStyle = menuStrColor;
+					ctx.fillStyle = "white";
 					ctx.font = '19pt Helvetica';
 					ctx.textAlign = "center";
 					ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 4"],335,252);
@@ -432,7 +432,7 @@
 					} else {
 					ctx.fillStyle = "rgb(153,50,204)";
 					ctx.fillRect(250,220,170,50);
-					ctx.fillStyle = menuStrColor;
+					ctx.fillStyle = "white";
 					ctx.font = '19pt Helvetica';
 					ctx.textAlign = "center";
 					ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 4"],335,252);
@@ -511,9 +511,9 @@
 						150 < eY && eY< 200) {
 						ctx.beginPath();
 						ctx.save();
-						ctx.fillStyle = "white";
+						ctx.fillStyle = "#6D6D6D";
 						ctx.fillRect(100+70*i, 150, 50,50);
-						ctx.fillStyle = '#EF4136';
+						ctx.fillStyle = 'white';
 						ctx.font = '19pt Helvetica';
 						ctx.fillText(i,118+70*i,185);
 						ctx.restore();
@@ -564,9 +564,9 @@
 						120 < eY && eY < 230) {
 						ctx.beginPath();
 						ctx.save();
-						ctx.fillStyle = "white";
+						ctx.fillStyle = "#6D6D6D";
 						ctx.fillRect(150,120,50,110);
-						ctx.fillStyle = "#EF4136";
+						ctx.fillStyle = "white";
 						ctx.rotate(1.56);
 						ctx.font = '19pt Helvetica';
 						ctx.textAlign = "center";

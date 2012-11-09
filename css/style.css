@@ -225,6 +225,8 @@ a.btn {
 }
 
 #top-panel {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size:20px;
 	text-align:center;
 	height:36px;
 	color: #71B2E2;
@@ -257,7 +259,7 @@ a.btn {
 }
 
 #options-button img{
-	height:30px;
+	height:40px;
 	position:relative;
 }
 #options {
@@ -290,6 +292,7 @@ a.btn {
 	white-space:nowrap;
 	text-overflow: ellipsis;
 	min-width:100px;
+	max-width:150px;
 	overflow:hidden;
 }
 
@@ -326,6 +329,7 @@ a.btn {
 
 #nav {
 	position:relative;
+	margin-left:0px !important;
 }
 
 #nav ul {
@@ -334,7 +338,6 @@ a.btn {
 
 #nav ul li {
 	float:left;
-	margin-right:5px;
 }
 #nav a div {
 	color: #71B2E2;
@@ -345,7 +348,7 @@ a.btn {
 }
 
 #nav.span6 {
-	width:490px !important;
+	width:750px !important;
 }
 
 #nav div:hover, #nav div.onSelect {
