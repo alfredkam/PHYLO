@@ -264,10 +264,14 @@
 	opacity: 0.4;
 }
 #star {
+	position:relative;
+	top:2px;
 	opacity: 0.4;
 }
-#star img{
-	width: 40px !important;
+#star i {
+	color:#CDCD00;
+	width: 35px !important;
+	font-size:40px;
 }
 #timerPanel {
 	display:none !important;
