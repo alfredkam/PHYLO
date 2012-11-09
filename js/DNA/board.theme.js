@@ -5,14 +5,13 @@
 		//generates the grid 
 		build : function() {
 			var str = "";
-			for(var i=0;i<10;i++) {
+			for(var i=0;i<$.phylo.rows;i++) {
 				str+="<div class='bgRow'>";
-				for(var j=0;j<25;j++) {
+				for(var j=0;j<$.phylo.seqLen;j++) {
 					str+="<div class='bgCell' style='left:"+$.sequence.calcPos(j)+"px'></div>";	
 				}
 				str+="</div>";
 			}				
-			
 			$("#gameBoard").html("<div id='bg'>"+str+"</div>");
 			
 		},	

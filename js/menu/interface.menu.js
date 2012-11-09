@@ -210,55 +210,90 @@
 			
 			var banner = new Image();
 			var bannerValues = {
-				x : 500,
-				y : 85,
-				w : 400,
-				h : 150
+				x : 212,
+				y : 30,
+				w : 600,
+				h : 200
 
 			}
 			banner.onload = function() {
 				ctx.drawImage(banner,bannerValues.x,bannerValues.y,bannerValues.w,bannerValues.h);
 			};
-			banner.src = 'img/phylo_logo.png';
+			banner.src = 'img/logo.png';
 			ctx.fillStyle = "#F1F1F1";
 			ctx.fillRect(212,250,600,120);
 
 			ctx.closePath();
 			var selection = [];
 
-			//var menuStr = [window.lang.body.play.gameselect.levelselect.random["field 2"],window.lang.body.play.gameselect.levelselect["level id"]["field 2"],window.lang.body.play.gameselect.levelselect.disease["field 1"]];
+			var menuStr = [window.lang.body.play.gameselect.levelselect.random["field 2"],window.lang.body.play.gameselect.levelselect["level id"]["field 2"],window.lang.body.play.gameselect.levelselect.disease["field 1"]];
+
+			var menuIcon = [
+					["img/random.png",95,95],
+					["img/id.png",95,95],
+					["img/disease.png",95,95],
+					];	
+			var menuIconHover = ["img/random_hover.png","img/id_hover.png","img/disease_hover.png"]	
+
+			//var menuBar = [
 			var cell = function(ctx,x,y,i) {
 				var menuStrColor = '#444';
 				ctx.beginPath();			
 				ctx.fillStyle = settings.color[i];
-				ctx.fillRect(x,y,settings.box(),settings.box());
+				var icon = new Image();
+				icon.onload = function() {
+					ctx.drawImage(icon,x,y,menuIcon[i][1],menuIcon[i][2]);
+				}
+				icon.src = menuIcon[i][0];
 				ctx.fillStyle = menuStrColor;
 				ctx.font = "19pt Helvetica";
 				//ctx.fillText(menuStr[i],x+100,y+25);
 				ctx.closePath();
+				var iconOnHover = false;
 				this.onOver =  function(eX,eY) {
 					ctx.beginPath();
-					ctx.drawImage(banner,bannerValues.x,bannerValues.y,bannerValues.w,bannerValues.h);
-					if( x-5 <= eX && eX <= x+5+settings.box()*1.3+900 
-					&& y-5 <= eY && eY <= y+5+settings.box()*1.3) {
+					if(x <= eX && eX <= x+menuIcon[i][1] &&
+						y <= eY && eY <= y+menuIcon[i][2]) { 
+						if( iconOnHover == false ) {
+							ctx.clearRect(x,y,menuIcon[i][1],menuIcon[i][2])
+							ctx.fillStyle = "#F1F1F1";
+							ctx.fillRect(x,y,menuIcon[i][1],menuIcon[i][2]);
+							var icon = new Image();
+							icon.onload = function() {
+								ctx.drawImage(icon,x,y,menuIcon[i][1],menuIcon[i][2]);
+							}
+							icon.src = menuIconHover[i];	
+							iconOnHover = true;
+						}
 					} else {
+						if(iconOnHover) {
+							ctx.clearRect(x,y,menuIcon[i][1],menuIcon[i][2])
+							ctx.fillStyle = "#F1F1F1";
+							ctx.fillRect(x,y,menuIcon[i][1],menuIcon[i][2]);
+							var icon = new Image();
+							icon.onload = function() {
+								ctx.drawImage(icon,x,y,menuIcon[i][1],menuIcon[i][2]);
+							}
+							icon.src = menuIcon[i][0];	
+							iconOnHover = false;
+						}
 					}
 					ctx.closePath();
 				};
 				this.onClick = function(eX,eY) {
 					var menuStrColor = '#444';
-					if( x-5 <= eX && eX <= x+5+settings.box()*1.3+900 
-					&& y-5 <= eY && eY <= y+5+settings.box()*1.3) {
+					if(x <= eX && eX <= x+menuIcon[i][1] &&
+						y <= eY && eY <= y+menuIcon[i][2]) { 
 						switch(i) {
 							case 1:
 								ctx.beginPath();
-								ctx.clearRect(140,60,900,400);
+								ctx.clearRect(0,0,1024,450);
 								ctx.closePath();
 								selection = [];
 								ctx.beginPath();
 								ctx.fillStyle = menuStrColor;
 								ctx.font = "20pt Helvetica";
-								ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 3"], 245, 100);
+								ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 3"], 400, 100);
 								ctx.closePath();
 								selection.push(new levelselect(ctx));
 								window.setTimeout(function() {
@@ -286,12 +321,12 @@
 								ctx.textAlign = "left";
 								ctx.closePath();
 								selection = [];
+								window.setTimeout(function() {
 								for(var j=0; j<diseaseorder.length; j++) {
 									selection.push(new disease(ctx,diseaseorder[j],j));	
 								}
-								window.setTimeout(function() {
-									selection.push(new back(ctx));
 								},50);
+								selection.push(new back(ctx));
 								return;
 							case 0:
 								ctx.beginPath();
@@ -323,16 +358,16 @@
 				ctx.beginPath();
 				ctx.save();
 				ctx.fillStyle = "rgb(153,50,204)";
-				ctx.fillRect(250,220,170,50);
+				ctx.fillRect(405,220,170,50);
 				ctx.fillStyle = menuStrColor;
 				ctx.font = '19pt Helvetica';
 				ctx.textAlign = "center";
-				ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 4"],335,252);
+				ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 4"],490,252);
 				ctx.textAlign = "left";
 				ctx.restore();
 				ctx.closePath();
 				this.onClick = function(eX, eY) {
-					if(250 < eX && eX < 370 &&
+					if(405 < eX && eX < 525 &&
 						220 < eY && eY < 270 ){
 						var id = parseInt($("#level_inputbox").val().trim());
 						if(isNaN(id)) {
@@ -383,23 +418,23 @@
 				this.onOver = function(eX,eY) {
 					ctx.beginPath();
 					ctx.save();
-					if(250 < eX && eX < 370 &&
+					if(405 < eX && eX < 525 &&
 						220 < eY && eY < 270 ){
 
 					ctx.fillStyle = "#6D6D6D";
-					ctx.fillRect(250,220,170,50);
+					ctx.fillRect(405,220,170,50);
 					ctx.fillStyle = "white";
 					ctx.font = '19pt Helvetica';
 					ctx.textAlign = "center";
-					ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 4"],335,252);
+					ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 4"],490,252);
 					ctx.textAlign = "left";
 					} else {
 					ctx.fillStyle = "rgb(153,50,204)";
-					ctx.fillRect(250,220,170,50);
+					ctx.fillRect(405,220,170,50);
 					ctx.fillStyle = "white";
 					ctx.font = '19pt Helvetica';
 					ctx.textAlign = "center";
-					ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 4"],335,252);
+					ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 4"],490,252);
 					ctx.textAlign = "left";
 
 					}
@@ -563,7 +598,7 @@
 						selection = [];
 						//selection.push(new highscore(ctx));
 						for(var i=0;i<3;i++) {
-							selection.push(new cell(ctx,150,120+(50*i),i));
+							selection.push(new cell(ctx, 310+(160*i), 260,i));
 						}
 						var banner = new Image();
 						banner.onload = function() {
@@ -575,7 +610,9 @@
 								selection[i].onOver(k[0],k[1]);		
 							}
 						});
-						banner.src = 'img/phylo_logo.png';
+						banner.src = 'img/logo.png';
+						ctx.fillStyle = "#F1F1F1";
+						ctx.fillRect(212,250,600,120);
 						$("#level_inputbox").val("").hide();
 					}
 				};
@@ -583,7 +620,7 @@
 
 			for(var i=0;i<3;i++) {
 				//selection.push(new cell(ctx,150,120+(50*i),i));
-				selection.push(new cell(ctx, 250+(100*i), 300,i));
+				selection.push(new cell(ctx, 310+(160*i), 260,i));
 			}
 
 			$('#draw').unbind().mousemove(function(e) {

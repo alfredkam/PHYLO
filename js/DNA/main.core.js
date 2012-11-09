@@ -30,7 +30,8 @@
 					seqLen : 25,
 					x : 34,
 					offSet : 0,//$("#gameBoard").css("left").replace(/px/,""),
-					height : height,//$("#tree").css("height").replace(/px/,"")
+					height : height,//$("#tree").css("height").replace(/px/,""),
+					rows : 10,
 				};
 				$.lang.init(function() {
 					$("#game").show();
