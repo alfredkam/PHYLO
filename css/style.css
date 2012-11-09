@@ -56,6 +56,12 @@ body {
 }	
 
 #draw {
+	box-shadow: 0 6px 6px -6px #CCC;
+	-webkit-box-shadow: 0 6px 6px -6px #CCC;
+	-moz-box-shadow: 0 6px 6px -6px #CCC;
+	-o-box-shadow: 0 6px 6px -6px #CCC;
+	-ms-box-shadow: 0 6px 6px -6px #CCC;
+	-khtml-box-shadow: 0 6px 6px -6px #CCC;
 /*	background-color: #efefef;
 	*/
 	background-color:white;
@@ -190,6 +196,12 @@ a.btn {
 /* end of theme controller css */
 
 #game {
+	box-shadow: 0 6px 6px -6px #CCC;
+	-webkit-box-shadow: 0 6px 6px -6px #CCC;
+	-moz-box-shadow: 0 6px 6px -6px #CCC;
+	-o-box-shadow: 0 6px 6px -6px #CCC;
+	-ms-box-shadow: 0 6px 6px -6px #CCC;
+	-khtml-box-shadow: 0 6px 6px -6px #CCC;
 	margin-bottom:10px;
 	display:none;
 	width:1024px;
@@ -429,6 +441,12 @@ a.btn {
 	border:none;
 	padding:50px 50px;	
 	background-color:white;
+	box-shadow: 0 6px 6px -6px #CCC;
+	-webkit-box-shadow: 0 6px 6px -6px #CCC;
+	-moz-box-shadow: 0 6px 6px -6px #CCC;
+	-o-box-shadow: 0 6px 6px -6px #CCC;
+	-ms-box-shadow: 0 6px 6px -6px #CCC;
+	-khtml-box-shadow: 0 6px 6px -6px #CCC;
 }
 
 .wrapper-inner {
@@ -440,6 +458,12 @@ a.btn {
 	margin-left:auto;
 	margin-right:auto;
 	margin-bottom:10px;
+	box-shadow: 0 6px 6px -6px #CCC;
+	-webkit-box-shadow: 0 6px 6px -6px #CCC;
+	-moz-box-shadow: 0 6px 6px -6px #CCC;
+	-o-box-shadow: 0 6px 6px -6px #CCC;
+	-ms-box-shadow: 0 6px 6px -6px #CCC;
+	-khtml-box-shadow: 0 6px 6px -6px #CCC;
 }
 
 .footer-inner {
@@ -532,6 +556,12 @@ a.btn {
 	right: 0px;
 	z-index:30;
 	display:none;
+	box-shadow: 0 6px 6px -6px #CCC;
+	-webkit-box-shadow: 0 6px 6px -6px #CCC;
+	-moz-box-shadow: 0 6px 6px -6px #CCC;
+	-o-box-shadow: 0 6px 6px -6px #CCC;
+	-ms-box-shadow: 0 6px 6px -6px #CCC;
+	-khtml-box-shadow: 0 6px 6px -6px #CCC;
 }	
 .language-list {
 	text-align:center;
@@ -544,6 +574,12 @@ a.btn {
 	top: 0px;
 	background-color: white;
 	border-top:1px solid #ccc;
+	box-shadow: 0 6px 6px -6px #CCC;
+	-webkit-box-shadow: 0 6px 6px -6px #CCC;
+	-moz-box-shadow: 0 6px 6px -6px #CCC;
+	-o-box-shadow: 0 6px 6px -6px #CCC;
+	-ms-box-shadow: 0 6px 6px -6px #CCC;
+	-khtml-box-shadow: 0 6px 6px -6px #CCC;
 }
 .language-list a div{
 	display:block !important;
