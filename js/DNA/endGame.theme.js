@@ -58,10 +58,8 @@
             $("#endGame-share").hide();
 			if(status == "bail")
 				return;
-			
 			var currentScore = $.phylo.currentScore;
 			var par = $.sequence.par;
-
 			if(par < currentScore && currentScore < highscore) {
 				setDefault = "<i class='icon-star'></i><i class='icon-star'></i><i class='icon-star-empty'></i>";
                 $("#endGame-share").hide();
@@ -87,9 +85,9 @@
                         var message = fullname + " received the new highscore and improved a DNA alignments related to \"" + puzzle_disease + "\".\nPlay Phylo and help genetic research!";
                         var caption = "DNA puzzles";
                         var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
-                        console.log("post on "+provider+" : "+data);
                         bootbox.confirm("Phylo will update your status: " + message,"Cancel","Post", function(result) {
                             if (result) {
+                                console.log("post on " + provider + " : " + message);
                                 $.ajax({
                                     type: "POST",
                                     url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
@@ -107,9 +105,9 @@
                         var puzzle_disease = data.disease_link;
                         var message = "Improved a DNA alignments related to \"" + puzzle_disease + "\".";
                         var data = "provider="+provider+"&id="+c_logid+"&description="+message;
-                        console.log("post on "+provider+" : "+data);
                         bootbox.confirm("Phylo will update your status: " + message,"Cancel","Tweet", function(result) {
                             if (result) {
+                                console.log("post on " + provider + " : " + message);
                                 $.ajax({
                                     type: "POST",
                                     url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
@@ -127,9 +125,9 @@
                         var puzzle_disease = data.disease_link;
                         var message = fullname + " received the new highscore and improved a DNA alignments related to \"" + puzzle_disease + "\".\nPlay Phylo and help genetic research!";
                         var data = "provider="+provider+"&id="+c_logid+"&description="+message;
-                        console.log("post on "+provider+" : "+data);
                         bootbox.confirm("Phylo will update your status: " + message,"Cancel","Post", function(result) {
                             if (result) {
+                                console.log("post on " + provider + " : " + data);
                                 $.ajax({
                                     type: "POST",
                                     url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
