@@ -30,11 +30,13 @@
 			$("#game").mousemove(function(e) {
 				e = $.events.getMultiSelectFingerPos(e);
 				if(e.pageY-origin.Y > 0 && e.pageX - origin.X > 0 ) {
+					//bottom right
 					$("#selectBox").css({
 						height : e.pageY-origin.Y,
 						width: e.pageX - origin.X
 					});	
 				} else if(e.pageY-origin.Y < 0 && e.pageX - origin.X < 0 ) {
+					//top left
 					$("#selectBox").css({
 						top : e.pageY,
 						left: e.pageX,
@@ -42,12 +44,14 @@
 						width: origin.X -e.pageX,
 					});
 				} else if(e.pageY-origin.Y < 0 && e.pageX - origin.X > 0) {
+					//top right
 					$("#selectBox").css({
 						top:e.pageY,
 						height: origin.Y - e.pageY,
 						width: e.pageX - origin.X
 					});
 				} else if(e.pageY-origin.Y > 0 && e.pageX - origin.X < 0) {
+					//bottom left
 					$("#selectBox").css({
 						left:e.pageX,
 						height : e.pageY - origin.Y,
@@ -67,7 +71,7 @@
 		capture : function() {
 			var box = {
 				X: parseInt($("#selectBox").css("left").replace(/px/,"")) - parseInt($("#tree").css("width").replace(/px/,""))-5,
-				Y: parseInt($("#selectBox").css("top").replace(/px/,"")) - 70,
+				Y: parseInt($("#selectBox").css("top").replace(/px/,"")) - 110,
 				H: parseInt($("#selectBox").css("height").replace(/px/,"")),
 				W: parseInt($("#selectBox").css("width").replace(/px/,"")),
 			};	
@@ -85,7 +89,7 @@
 				var row = parseInt($(this).parent().attr("id").replace(/row/,""));
 				var curr = {
 					X: parseInt($(this).css("left").replace(/px/,"")),
-					Y: 34*row,
+					Y: 32*row,
 					H: parseInt($(this).css("height").replace(/px/,"")),
 					W: parseInt($(this).css("width").replace(/px/,""))
 				};
