@@ -9,6 +9,7 @@
 			//	$("#countDown-text").html(3);
 				$("#countDown-text").html('<img src="img/loading.gif>');
 				$("#countDown").show();
+				$("#endGame").hide();
 				/*
 				$("#tree").html();
 				var canvas  = document.getElementById("score");
