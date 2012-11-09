@@ -422,13 +422,21 @@ a.btn {
 	top: 0px;
 }	
 
+#mid-panel .wrapper iframe {
+	border:none;
+	padding:50px 50px;	
+	background-color:white;
+}
+
 .wrapper-inner {
+	padding:50px 100px;
+	background-color:white;
 	text-align:left;
 	width:600px;
 	position:relative;
 	margin-left:auto;
 	margin-right:auto;
-	padding-bottom:30px;
+	margin-bottom:10px;
 }
 
 .footer-inner {
