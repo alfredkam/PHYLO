@@ -220,29 +220,13 @@
 				ctx.drawImage(banner,bannerValues.x,bannerValues.y,bannerValues.w,bannerValues.h);
 			};
 			banner.src = 'img/phylo_logo.png';
+			ctx.fillStyle = "#F1F1F1";
+			ctx.fillRect(212,250,600,120);
 
 			ctx.closePath();
 			var selection = [];
 
-			var login = function(ctx) {
-				/*
-				ctx.beginPath();
-				ctx.fillStyle = "rgb(113, 178, 226)";
-				ctx.fillRect(0,0,120,50);
-				ctx.closePath();		
-				*/
-				this.onOver = function() {
-
-				};
-				this.onClick = function() {
-	
-				};
-			};
-
-
-			selection.push(new login(ctx));
-
-			var menuStr = [window.lang.body.play.gameselect.levelselect.random["field 2"],window.lang.body.play.gameselect.levelselect["level id"]["field 2"],window.lang.body.play.gameselect.levelselect.disease["field 1"]];
+			//var menuStr = [window.lang.body.play.gameselect.levelselect.random["field 2"],window.lang.body.play.gameselect.levelselect["level id"]["field 2"],window.lang.body.play.gameselect.levelselect.disease["field 1"]];
 			var cell = function(ctx,x,y,i) {
 				var menuStrColor = '#444';
 				ctx.beginPath();			
@@ -250,30 +234,14 @@
 				ctx.fillRect(x,y,settings.box(),settings.box());
 				ctx.fillStyle = menuStrColor;
 				ctx.font = "19pt Helvetica";
-				ctx.fillText(menuStr[i],x+100,y+25);
+				//ctx.fillText(menuStr[i],x+100,y+25);
 				ctx.closePath();
 				this.onOver =  function(eX,eY) {
 					ctx.beginPath();
-					ctx.clearRect(x-5,y-5,settings.box()*1.3+900, settings.box()*1.3);
 					ctx.drawImage(banner,bannerValues.x,bannerValues.y,bannerValues.w,bannerValues.h);
 					if( x-5 <= eX && eX <= x+5+settings.box()*1.3+900 
 					&& y-5 <= eY && eY <= y+5+settings.box()*1.3) {
-						var offset = (eY-y) < 0? 0: (eY-y);
-						if(offset > settings.box()*1.3/2)
-							offset-=settings.box()*1.3/2*-1;
-						//determine scale
-						var scale = Math.sin(offset/settings.box()*1.3);
-						ctx.fillStyle = settings.color[i];
-					 	ctx.fillRect(x-5*scale,y-5*scale,settings.box()*(1+.2*scale),settings.box()*(1+.2*scale));	
-						ctx.fillStyle = menuStrColor;
-						ctx.font = (19+6*scale)+"pt Helvetica";
-						ctx.fillText(menuStr[i],x+100,y+25);
 					} else {
-						ctx.fillStyle = settings.color[i];
-						ctx.fillRect(x,y,settings.box(),settings.box());
-						ctx.fillStyle = menuStrColor;
-						ctx.font = "19pt Helvetica";
-						ctx.fillText(menuStr[i],x+100,y+25);
 					}
 					ctx.closePath();
 				};
@@ -287,7 +255,6 @@
 								ctx.clearRect(140,60,900,400);
 								ctx.closePath();
 								selection = [];
-								selection.push(new login(ctx));
 								ctx.beginPath();
 								ctx.fillStyle = menuStrColor;
 								ctx.font = "20pt Helvetica";
@@ -319,7 +286,6 @@
 								ctx.textAlign = "left";
 								ctx.closePath();
 								selection = [];
-								//selection.push(new login(ctx));
 								for(var j=0; j<diseaseorder.length; j++) {
 									selection.push(new disease(ctx,diseaseorder[j],j));	
 								}
@@ -338,8 +304,6 @@
 								ctx.textAlign = "left";
 								ctx.closePath();
 								selection = [];
-								selection.push(new login(ctx));
-								selection.push(new login(ctx));
 								for(var j=3;j<=8;j++) {
 									selection.push(new random(ctx,j));
 								}
@@ -597,7 +561,6 @@
 						ctx.clearRect(0,60,1024,400);
 						ctx.closePath();
 						selection = [];
-						selection.push(new login(ctx));
 						//selection.push(new highscore(ctx));
 						for(var i=0;i<3;i++) {
 							selection.push(new cell(ctx,150,120+(50*i),i));
@@ -619,7 +582,8 @@
 			};
 
 			for(var i=0;i<3;i++) {
-				selection.push(new cell(ctx,150,120+(50*i),i));
+				//selection.push(new cell(ctx,150,120+(50*i),i));
+				selection.push(new cell(ctx, 200+(50*i), 300,i));
 			}
 
 			$('#draw').unbind().mousemove(function(e) {
