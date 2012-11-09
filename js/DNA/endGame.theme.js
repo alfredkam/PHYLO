@@ -87,6 +87,7 @@
                         var message = fullname + " received the new highscore and improved a DNA alignments related to \"" + puzzle_disease + "\".\nPlay Phylo and help genetic research!";
                         var caption = "DNA puzzles";
                         var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
+                        console.log("post on "+provider+" : "+data);
                         bootbox.confirm("Phylo will update your status: " + message,"Cancel","Post", function() {
                             $.ajax({
                                 type: "POST",
@@ -104,7 +105,8 @@
                         var puzzle_disease = data.disease_link;
                         var message = "Improved a DNA alignments related to \"" + puzzle_disease + "\".";
                         var data = "provider="+provider+"&id="+c_logid+"&description="+message;
-                        bootbox.confirm("Phylo will update your status: " + message,"Cancel","Post", function() {
+                        console.log("post on "+provider+" : "+data);
+                        bootbox.confirm("Phylo will update your status: " + message,"Cancel","Tweet", function() {
                             $.ajax({
                                 type: "POST",
                                 url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
@@ -121,6 +123,7 @@
                         var puzzle_disease = data.disease_link;
                         var message = fullname + " received the new highscore and improved a DNA alignments related to \"" + puzzle_disease + "\".\nPlay Phylo and help genetic research!";
                         var data = "provider="+provider+"&id="+c_logid+"&description="+message;
+                        console.log("post on "+provider+" : "+data);
                         bootbox.confirm("Phylo will update your status: " + message,"Cancel","Post", function() {
                             $.ajax({
                                 type: "POST",
