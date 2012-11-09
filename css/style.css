@@ -20,10 +20,10 @@ html, body {
 }
 
 body {
+	background-color:#F1F1F1;
 	font-family: 'helveticathin', Helvetica, Arial, sans-serif;
 	color:black;
 	/* background-color: #1C1C1C; */
-	background-image: url(../img/light_paper.png);
 	background-repeat:repeat;
 	padding:0px;
 	margin: 0px;
@@ -190,6 +190,7 @@ a.btn {
 /* end of theme controller css */
 
 #game {
+	margin-bottom:10px;
 	display:none;
 	width:1024px;
 	margin-left:auto;
@@ -226,7 +227,6 @@ a.btn {
 
 #top-panel {
 	font-family: Helvetica, Arial, sans-serif;
-	font-size:20px;
 	text-align:center;
 	height:36px;
 	color: #71B2E2;
@@ -288,6 +288,7 @@ a.btn {
 }
 
 #login-tag {
+	font-size:20px;
 	padding: 9px 10px;
 	white-space:nowrap;
 	text-overflow: ellipsis;
@@ -304,6 +305,7 @@ a.btn {
 }
 
 #login-box {
+	margin-top:6px;
 	display:none;
 	position:absolute;
 	z-index:1000;
@@ -328,6 +330,7 @@ a.btn {
 }
 
 #nav {
+	font-size:20px;
 	position:relative;
 	margin-left:0px !important;
 }
@@ -417,7 +420,6 @@ a.btn {
 	min-height:100%;
 	width: 100%;
 	top: 0px;
-	position: absolute;
 }	
 
 .wrapper-inner {
@@ -447,7 +449,6 @@ a.btn {
 
 /* Disable footer for now */
 #footer {
-	display:none;
 	position:relative;
 	bottom: 0px;
 	width:100%;
@@ -680,13 +681,14 @@ a.btn {
 }
 
 #options-button{
+   height:53px;
    padding-top:5px;
    border:0px;
 }
 
 #top-panel{
    background-color:white;
-   line-height: 10px;
+   line-height: 5px;
    float:right;
    top:0px;
    height:auto;
@@ -713,13 +715,10 @@ a.btn {
 /* BODY CSS */
 
 #wrapper {
+    position:relative;
     background: url(../img/bg-light.png) no-repeat center 60px;
     z-index:0;
     height:500px;
-}
-
-body {
-    background: #f4f4f4 url(../img/bg.png);
 }
 
 /* FOOTER */
