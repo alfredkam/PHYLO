@@ -263,6 +263,10 @@
 								ctx.drawImage(icon,x,y,menuIcon[i][1],menuIcon[i][2]);
 							}
 							icon.src = menuIconHover[i];	
+							ctx.fillStyle = "#6D6D6D";
+							ctx.font = "19pt Helvetica";
+							ctx.textAlign = "center";
+							ctx.fillText(menuStr[i],515,420);
 							iconOnHover = true;
 						}
 					} else {
@@ -276,6 +280,7 @@
 							}
 							icon.src = menuIcon[i][0];	
 							iconOnHover = false;
+							ctx.clearRect(0,390,1024,50);
 						}
 					}
 					ctx.closePath();
