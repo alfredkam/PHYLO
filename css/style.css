@@ -217,7 +217,7 @@ a.btn {
 	padding-top:20px;
 }
 #mid-panel {
-	top:20px;
+	top:70px;
 	position:relative;
 	min-height:500px;
 }
@@ -226,6 +226,7 @@ a.btn {
 }
 
 #top-panel {
+	z-index:1000;
 	font-family: Helvetica, Arial, sans-serif;
 	text-align:center;
 	height:36px;
@@ -423,6 +424,8 @@ a.btn {
 }	
 
 #mid-panel .wrapper iframe {
+	top:-60px;	
+	position:relative;
 	border:none;
 	padding:50px 50px;	
 	background-color:white;
@@ -714,10 +717,6 @@ a.btn {
 
 #nav a div, #top-panel {
    color: #6D6D6D;
-}
-
-#mid-panel{
-  top:70px;
 }
 
 /* BODY CSS */
