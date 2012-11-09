@@ -27,7 +27,7 @@
 	height: 340px;
 }
 .sequence , .ancestor {
-	height:32px;
+	height:31px;
 	width:32px;
 	position:absolute;
 	display:inline-block;
@@ -171,7 +171,7 @@
 }
 #ancestorSeq {
 	position:absolute;
-	top:381px;
+	top:419px;
 	left:182px;
 	display:none;
 	width:841px;
