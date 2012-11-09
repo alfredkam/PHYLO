@@ -95,7 +95,7 @@
                                     url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
                                     data : data,
                                 }).done(function(re) {
-                                    bootbox.alert("Your achievement has been posted!");
+                                    //bootbox.alert("Your achievement has been posted!");
                                 }).fail(function() {
                                     bootbox.alert("We are sorry. We have not been able to post your achievement.");
                                 });
@@ -115,7 +115,7 @@
                                     url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
                                     data : data,
                                 }).done(function(re) {
-                                    bootbox.alert("Your achievement has been posted!");
+                                    //bootbox.alert("Your achievement has been posted!");
                                 }).fail(function() {
                                     bootbox.alert("We are sorry. We have not been able to post your achievement.");
                                 });
@@ -135,7 +135,7 @@
                                     url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
                                     data : data,
                                 }).done(function(re) {
-                                    bootbox.alert("Your achievement has been posted!");
+                                    //bootbox.alert("Your achievement has been posted!");
                                 }).fail(function() {
                                     bootbox.alert("We are sorry. We have not been able to post your achievement.");
                                 });
