@@ -272,8 +272,10 @@ a.btn {
 	display:inline-block;
 }
 
-#options-button img{
-	height:40px;
+#options-button i{
+	font-size:40px;
+	top:5px;
+	left:-10px;
 	position:relative;
 }
 #options {
