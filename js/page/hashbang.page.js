@@ -55,6 +55,14 @@
 					$.page.rna();
 					self.panelReady();
 				});
+			} else if(page == "settings") {
+				self.selectTab(page);
+				$.lang.init(function() {
+					$.page.settings();
+					self.panelReady();
+				});
+			} else if(page == "login") {
+				
 			} else if(page == "back") {
 				$("#loading-panel").hide();
 			}
