@@ -298,7 +298,7 @@
 								ctx.beginPath();
 								ctx.fillStyle = menuStrColor;
 								ctx.font = "20pt Helvetica";
-								ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 3"], 400, 100);
+								ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 3"], 490, 100);
 								ctx.closePath();
 								selection.push(new levelselect(ctx));
 								window.setTimeout(function() {
