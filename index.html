@@ -31,11 +31,12 @@
 				nope : ['css/media1280.css','css/media1024.css'],
 			});
 			//FF bug fix
-			var isFF = navigator.userAgent.match(/FireFox/i) != null;
+			/*
+			var isFF = navigator.userAgent.match(/Firefox/i) != null;
 			yepnope({
 				test : isFF,
 				yep : 'css/FF_BugFix.css',
-			});	
+			}); */	
 			//test mode script injection
 			yepnope({
 				test : window.DEV.enableTabletMode,
