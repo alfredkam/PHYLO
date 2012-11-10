@@ -42,16 +42,18 @@
                                                 var message = fullname + " started to play Phylo.\nPhylo is a puzzle game in which every puzzle completed contributes to mapping diseases within human DNA. Have fun and help genetic research!";
                                                 var caption = "DNA puzzles";
                                                 var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
-                                                bootbox.confirm("Phylo will update your status: " + message,"Cancel","Post", function() {
-                                                    $.ajax({
-                                                        type: "POST",
-                                                        url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
-                                                        data : data,
-                                                    }).done(function(re) {
-                                                        bootbox.alert("Thank you for sharing the word. You can now start to play!");
-                                                    }).fail(function() {
-                                                        bootbox.alert("We are sorry. We have not been able to update your status.");
-                                                    });
+                                                bootbox.confirm("You are now registered. Please, help us to share the word and announce to your friend you novel contribution to science!\nPhylo will not store any personal data beside your username and email. You will have the opportunity to post your achievements if you request it.","Skip","Post", function(result) {
+                                                    if (result) {
+                                                        $.ajax({
+                                                            type: "POST",
+                                                            url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+                                                            data : data,
+                                                        }).done(function(re) {
+                                                            //bootbox.alert("Thank you for sharing the word. You can now start to play!");
+                                                        }).fail(function() {
+                                                            bootbox.alert("We are sorry. We have not been able to update your status. However, you can still start to play!");
+                                                        });
+                                                    }
                                                 });
                                             } else {
                                                 console.log(provider + " registration failed.");
