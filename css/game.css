@@ -192,6 +192,8 @@
 	width:1024px;
 	position:relative;
 	display:inline-block;
+	top:15px;
+	height:80px;
 }
 #bottomPanel div{
 	display:inline-block;
@@ -212,12 +214,10 @@
 	height:33px;
 }
 #controlPanel {
-/*	width: 33px;
-		*/
 	height:66px;
-	float:right;
 	position: relative;
-	right:10px;
+	left:350px;
+	top:10px;
 }
 
 #scorePanel {
