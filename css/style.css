@@ -379,7 +379,7 @@ a.btn {
 #nav #tutorial div:hover, #nav #tutorial div.onSelect, .tablet-tutorial-btn div, .tablet-settings-btn div {
 	background-color: darkOrchid;
 }
-#nav #about div:hover, #nav #about div.onSelect, .tablet-about-btn div, .tablet-feedback-btn div {
+#nav #about div:hover, #nav #about div.onSelect, .tablet-about-btn div, .tablet-feedback-btn div, .tablet-history-btn div {
 	background-color: green;
 }
 #nav #credits div:hover, #nav #credits div.onSelect, .tablet-credits-btn div {
@@ -390,7 +390,7 @@ a.btn {
 	background-color:#EF4136;
 }
 
-#nav #history div:hover, #nav #history div.onSelect, .tablet-history-btn div {
+#nav #history div:hover, #nav #history div.onSelect {
 	background-color: #71B2E2;
 }
 #nav #expert div:hover, #nav #expert div.onSelect, .tablet-expert-btn div {
