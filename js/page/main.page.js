@@ -27,6 +27,9 @@
 		$.hashbang.panelReady();
             });
 		},
+		login : function() {
+			$.tablet.login();	
+		},
 		settings : function() {
 			this.protocal("content/settings.html");
 		},

@@ -1,4 +1,11 @@
 /* assume 1024 for tablets */
+	.beta {
+		display:inline-block !important;
+		font-size:18px;
+	}
+	#wrapper {
+		padding-bottom:0px !important;
+	}
 	#mid-panel {
 		top: 0px !important;
 	}
@@ -104,3 +111,28 @@
 		font-size:50px;
 	}
 	
+	.tablet-login-bg {
+		display:none;
+		background-color:black;
+		position:absolute;
+		opacity:0.8;
+		z-index:99;
+		top:-40px;
+	}
+	.tablet-login-wrapper {
+		display:none;
+		top:100px;
+		z-index:201;
+		text-align:center;
+		width:242px;
+		padding:20px 10px;
+		margin-left:auto;
+		margin-right:auto;
+		position:relative;
+		background-color: #f1f1f1;
+	}
+	
+	.tablet-login-cancel {
+		top:10px;
+		position:relative;
+	}

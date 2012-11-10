@@ -55,14 +55,12 @@
 					$.page.rna();
 					self.panelReady();
 				});
-			} else if(page == "settings") {
+			} else if(page == "tablet:settings") {
 				self.selectTab(page);
 				$.lang.init(function() {
 					$.page.settings();
 					self.panelReady();
 				});
-			} else if(page == "login") {
-				
 			} else if(page == "back") {
 				$("#loading-panel").hide();
 			}
@@ -177,7 +175,11 @@
 				$.hashbang.load($.hashbang.get());	
 				$.tailor.init();
 			}
-			window.location.hash = "#!"+$(this).attr("name");		
+			if(window.location.hash.match("#!"+$(this).attr("name")) != null) {
+				$.hashbang.load($(this).attr("name"));
+			} else {
+				window.location.hash = "#!"+$(this).attr("name");		
+			}
 			$("#tabletPanel").hide("slide",{direction : "left"}, 500);
 			if($("#mid-panel").hasClass("forceDisplayNone")) {
 				$("#mid-panel").removeClass("forceDisplayNone");	
@@ -185,6 +187,30 @@
 			window.setTimeout(function() {
 			$(".tablet-back-btn").fadeIn();
 			},400);
+	});
+	$("a.tablet-login").click(function() {
+		if($(".tablet-login-wrapper").html().trim() == "") {
+			hitTest();
+			$(".tablet-login-wrapper").html($("#login-box").html());
+			$("#login-box").html("");
+			$(".tablet-login-wrapper").append(
+			"<div class='tablet-login-cancel'>"+
+				"<a class='btn btn-danger' href='javascript:void(0);'>Cancel</a>"+
+			"</div>");
+			$(".tablet-login-bg").fadeIn();
+			$(".tablet-login-wrapper").fadeIn();
+			$(".tablet-login-bg").css({
+				height : $(document).height(),
+				width : $(document).width()
+			});
+			$(".tablet-login-cancel").unbind().click(function() {
+				$(".tablet-login-wrapper").hide();
+				$(".tablet-login-bg").hide();
+			});	
+		} else {
+			$(".tablet-login-bg").fadeIn();
+			$(".tablet-login-wrapper").fadeIn();
+		}	
 	});
 
 })();

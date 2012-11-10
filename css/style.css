@@ -36,9 +36,12 @@ body {
 	min-width:1024px;
 }
 /*disables tablet */
-#tabletPanel {
-	display:none;	
-}
+	.beta {
+		display:none;
+	}
+	#tabletPanel {
+		display:none;	
+	}
 	.tablet-grid {
 		display:none;
 	}
