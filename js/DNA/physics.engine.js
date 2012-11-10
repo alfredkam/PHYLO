@@ -48,7 +48,7 @@
 				//determine the left most boundary
 				var ithPos = 827;
 				for(var r=0;r<row.length;r++) {
-					var nuc = sequence_track[r];
+					var nuc = sequence_track[row[r]];
 					var counter = 0;
 					var ifBreak = false;
 					for(var i=0,len = nuc.length;i<len;i++) {
@@ -56,7 +56,7 @@
 							for(var j=0;j<list_nonObj.length;j++) {
 								if(nuc[i] == list_nonObj[j]) {
 									if(leastPos <= counter && ithPos > parseInt(domCache[list_nonObj[j]].left.replace(/px/,""))) {
-										leastPos = counter;
+										leastPos = counter;//counter;
 										nucTemp = list_nonObj[j];
 										ithPos = parseInt(domCache[list_nonObj[j]].left.replace(/px/,""));
 									}
@@ -81,7 +81,7 @@
 				//determine the right most boudary	
 				var ithPos = 0;
 				for(var r=0;r<row.length;r++) {
-					var nuc = sequence_track[r];
+					var nuc = sequence_track[row[r]];
 					var counter = 1;
 					var ifBreak = false;
 					for(var i=nuc.length-1;i>=0;i--) {
@@ -113,7 +113,6 @@
 					max_distance = diff;	
 				}
 			}
-
 			if(max_distance == 0)
 				return;
 

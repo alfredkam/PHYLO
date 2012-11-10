@@ -38,7 +38,7 @@
 				} else if(e.pageY-origin.Y < 0 && e.pageX - origin.X < 0 ) {
 					//top left
 					$("#selectBox").css({
-						top : e.pageY,
+						top : e.pageY-10,
 						left: e.pageX,
 						height: origin.Y-e.pageY,
 						width: origin.X -e.pageX,
@@ -89,7 +89,7 @@
 				var row = parseInt($(this).parent().attr("id").replace(/row/,""));
 				var curr = {
 					X: parseInt($(this).css("left").replace(/px/,"")),
-					Y: 32*row,
+					Y: 34*row,
 					H: parseInt($(this).css("height").replace(/px/,"")),
 					W: parseInt($(this).css("width").replace(/px/,""))
 				};
