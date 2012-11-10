@@ -47,8 +47,7 @@
 	*/
 }
 
-.row {
-	left:20px;
+.boardRow {
 	width: 824px;
 	position:relative;
 	height:34px;

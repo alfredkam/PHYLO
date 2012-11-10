@@ -64,7 +64,7 @@
 			}
 
 			for(var i=0;i<seq.length;i++) {
-				str+="<div class='row hidden' id='row"+i+"'>";
+				str+="<div class='boardRow hidden' id='row"+i+"'>";
 				var counter = 0;
 				for(var j=0;j<seq[i].length;j++) {
 					var c = seq[i].charAt(j);

@@ -22,7 +22,7 @@
 			if(x == 0)
 				$.timer.start();
 			$.engine.deActive();
-			$(".row").removeClass("current").removeClass("blocked");
+			$(".boardRow").removeClass("current").removeClass("blocked");
 			var show = function(n) {
 				var tree = $.phylo.tree[n];
 				if(tree.child == 0) {
@@ -51,7 +51,7 @@
 			if(x == 0) {
 				$("#bg").show("slide",{direction : "left"},400);
 			}
-			$(".row").each(function() {
+			$(".boardRow").each(function() {
 				if($(this).hasClass("hidden") == false && $(this).hasClass("current") == false) {
 					$(this).addClass("blocked");
 				}

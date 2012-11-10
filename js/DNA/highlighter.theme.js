@@ -22,7 +22,7 @@
 		},
 		getActiveRows : function() {
 			var row = [];
-			$(".row").each(function() {
+			$(".boardRow").each(function() {
 				if($(this).hasClass("current")) {
 					row.push(parseInt($(this).attr("id").replace(/row/,"")));
 				}
