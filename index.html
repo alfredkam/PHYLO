@@ -12,7 +12,9 @@
 		<!-- custom css -->
 		<link rel='stylesheet' href='css/style.css'/>
 		<link rel='stylesheet' href='css/game.css'/>
+		<!--
 		<link rel='stylesheet' href='css/tablet.css'/>
+		-->
 		<link rel='stylesheet' href='css/ranking.css'/>
 		<link rel='stylesheet' href='css/DT_bootstrap.css'/>
 		<script src='js/blueprint/yepnope.js' type='text/javascript'></script>
@@ -21,7 +23,7 @@
 			var isTablet = navigator.userAgent.match(/(iPad|Android .* Chrome\/[.0-9]* (?!Mobile)|Opera Tablet|Android .* (?!Mobile)|Tablet)/i) != null;
 			yepnope({
 				test : isTablet,
-				yep : ['css/tablet.css','js/tablet.js'],
+				yep : 'css/tablet.css',
 				nope : ['css/media1280.css','css/media1024.css'],
 			});
 			//FF bug fix
@@ -31,7 +33,6 @@
 				yep : 'css/FF_BugFix.css',
 			});	
 		</script>
-		<script src='js/tablet.js' type='text/javascript'></script>
 		<!-- icons from Font Awesome - http://fortawesome.github.com/Font-Awesome -->
         <link href="http://oyanix.com/opensource/hybridauth/social_hub/public/zocial.css" rel="stylesheet" type="text/css" />
             <link href='css/zocial.css' rel='stylesheet' type='text/css' />
