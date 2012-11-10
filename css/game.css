@@ -404,12 +404,11 @@
 /*highlighting */
 
 .highlighter {
-	box-shadow: inset 0 0 30px #000;
-	-webkit-box-shadow: inset 0 0 30px #000;
-	-moz-box-shadow: inset 0 0 30px #000;
-	-ms-box-shadow: inset 0 0 30px #000;
-	-khtml-box-shadow: inset 0 0 30px #000;
-	-o-box-shadow: inset 0 0 30px #000;
-		
+	box-shadow: inset 1px -1px -4px #000;
+	-webkit-box-shadow: inset 1px -1px -4px #000;
+	-moz-box-shadow: inset 1px -1px -4px #000;
+	-o-box-shadow: inset 1px -1px -4px #000;
+	-khtml-box-shadow: inset 1px -1px -4px #000;
+	-ms-box-shadow: inset 1px -1px -4px #000;
 }
 /* end of highligher */
