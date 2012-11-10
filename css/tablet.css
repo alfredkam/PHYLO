@@ -1,4 +1,7 @@
 /* assume 1024 for tablets */
+	#mid-panel {
+		top: 0px !important;
+	}
 
 	body {
 		background-image:none;
