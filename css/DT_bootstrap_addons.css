@@ -1,0 +1,20 @@
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Page setup
+ */
+ 
+#ranking {
+	width: 940px;
+	margin: auto;
+    margin-bottom: 40px;
+}
+
+#rankingselect {
+    font-size: 32px;
+    padding-left: 300px
+}
+
+img.startable {
+    width: 12px;
+}
