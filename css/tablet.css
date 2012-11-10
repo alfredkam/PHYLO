@@ -1,4 +1,8 @@
 /* assume 1024 for tablets */
+	#bottomPanel {
+		left: -250px;
+	}
+	
 	.beta {
 		display:inline-block !important;
 		font-size:18px;
