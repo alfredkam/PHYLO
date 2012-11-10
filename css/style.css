@@ -1,4 +1,4 @@
-
+@media 
 @font-face {
     font-family: 'helveticathin';
     src: url('../fonts/helveticaneueltstd-th-helv.eot');
@@ -39,11 +39,9 @@ body {
 #tabletPanel {
 	display:none;	
 }
-@media only screen and (min-width:992px) {
 	.tablet-grid {
 		display:none;
 	}
-}
 
 /* disables the game */
 #level_inputbox {
@@ -367,7 +365,8 @@ a.btn {
 }
 
 #nav.span6 {
-	width:750px !important;
+	max-width:750px;
+	width:auto!important;
 }
 
 #nav div:hover, #nav div.onSelect {

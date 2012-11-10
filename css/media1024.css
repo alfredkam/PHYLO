@@ -1,16 +1,22 @@
-@media (min-width: 1024px) and (max-width: 1280px) {
+@media  (max-width: 1024px) {
+	body {
+		min-width:1024px;
+	}
 	#nav.span6 {
-		max-width:700px;
+		max-width:550px;
+	}
+	#login-tag {
+		max-width: 100px;
 	}
 	#nav, #login-tag {
-		font-size: 18px;
+		font-size: 14px;
 	}	
 	#options-button i {
 		font-size:30px;
 		top:7px;
 	}
 	#logo {
-		font-size:19px;
+		font-size:17px;
 	}
 	li {
 		line-height:16px !important;
@@ -20,5 +26,8 @@
 	}
 	#options-button {
 		height:50px;
+	}
+	#nav div {
+		padding: 20px 15px;
 	}
 }
