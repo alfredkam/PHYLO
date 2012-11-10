@@ -34,6 +34,7 @@ This build includes options, it can be found at js/options_template.js
 	window.DEV.disableMenu //disables Menu
 	window.DEV.disableSplash //disables Splash 
 	window.DEV.disableMusic //disables the background music
+	window.DEV.enableTabletMode //forces browsers to load tablet mode.
 
 To enable options w/ .gitignore, make sure the .gitignore is under the directory of options_template.js and it contains the value of - options.js, now in terminal
 

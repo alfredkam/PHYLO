@@ -4,4 +4,5 @@ window.DEV = {
 	disableMenu : false,
 	disableSplash : false,
 	disableMusic : false,
+	enableTableMode : false,
 };

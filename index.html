@@ -16,7 +16,10 @@
 		<link rel='stylesheet' href='css/tablet.css'/>
 		-->
 		<link rel='stylesheet' href='css/DT_bootstrap.css'/>
-        <link rel='stylesheet' href='css/DT_bootstrap_addons.css'/>
+		<link rel='stylesheet' href='css/DT_bootstrap_addons.css'/>
+		<!-- options -->
+		<script src='js/options_template.js' type='text/javascript'></script>
+		<script src='js/options.js' type='text/javascript'></script>
             
 		<script src='js/blueprint/yepnope.js' type='text/javascript'></script>
 		<script type='text/javascript'>
@@ -33,6 +36,11 @@
 				test : isFF,
 				yep : 'css/FF_BugFix.css',
 			});	
+			//test mode script injection
+			yepnope({
+				test : window.DEV.enableTabletMode,
+				yep : 'css/tablet.css',
+			});
 		</script>
 		<!-- icons from Font Awesome - http://fortawesome.github.com/Font-Awesome -->
         <link href="http://oyanix.com/opensource/hybridauth/social_hub/public/zocial.css" rel="stylesheet" type="text/css" />
@@ -354,9 +362,6 @@
 
 		<!-- custom js -->
 
-		<!-- options -->
-		<script src='js/options_template.js' type='text/javascript'></script>
-		<script src='js/options.js' type='text/javascript'></script>
 
 		<!-- DNA modules -->
 		<script src='js/DNA/helper.core.js' type='text/javascript'></script>
