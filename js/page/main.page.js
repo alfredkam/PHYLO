@@ -22,7 +22,7 @@
 				type : "post",
 			}).done(function(re) {
                 $("#mid-panel").html(re);
-                $.getScript("js/history/history.js");
+                $.getScript("js/history/DT_bootstrap_history.js");
 		$.hashbang.panelReady();
             });
 		},
