@@ -104,17 +104,18 @@
             window.guest = username;
             $("#login-box").hide();
             $(".login-btn").unbind("click");
-            $(".showInLogin").show();
             // show buttons. NB: hide expert button if necessary
             $.ajax({
                 type: "POST",
                 url : "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php",
                 data : "mode=8&user="+username,
             }).done(function(re) {
+                $(".showInLogin").show();
                 if (re!='succ') {
                     $(".showExpertOptions").hide();
                 }
             }).fail(function() {
+                $(".showInLogin").show();
                 console.log("Expert validation failed. Could not connect to the server.");
             });
         };
@@ -141,18 +142,18 @@
                     window.guest = username;
                     $("#login-box").hide();
                     $(".login-btn").unbind("click");
-                    $(".showInLogin").show();
                     // show buttons. NB: hide expert button if necessary
                     $.ajax({
                         type: "POST",
                         url : "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php",
                         data : "mode=8&user="+username,
                     }).done(function(re) {
-                        console.log(re);
+                        $(".showInLogin").show();
                         if (re!='succ') {
                             $(".showExpertOptions").hide();
                         }
                     }).fail(function() {
+                        $(".showInLogin").show();
                         console.log("Expert validation failed. Could not connect to the server.");
                     });
 				} else {
