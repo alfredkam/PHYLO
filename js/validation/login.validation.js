@@ -121,24 +121,24 @@
 
 		// Classic login onclick event
 		var classicLogin = function() {
-			var name = $("#username").val().trim();
+			var username = $("#username").val().trim();
 			var password = $("#password").val().trim();
-			if((name == "" || password == "")) { 
+			if((username == "" || password == "")) {
 				$("div.login-warning").show().html("Username or Password is missing");
 				return;
 			} 
 
 			$("div.login-warning").hide();
 
-			$.protocal.login(name, password, function(re) {
+			$.protocal.login(username, password, function(re) {
 				if(re == "succ") {	
-					$("#login-tag").html(name);
-					$.cookie.create("username",name,365);
-                    $.cookie.create("fullname",name,365);
+					$("#login-tag").html(username);
+					$.cookie.create("username",username,365);
+                    $.cookie.create("fullname",username,365);
                     $.cookie.create("loginmode","Classic",365);
                     $.cookie.create("logid",-1,365);
                     $("#logout").show();
-                    window.guest = name;
+                    window.guest = username;
                     $("#login-box").hide();
                     $(".login-btn").unbind("click");
                     $(".showInLogin").show();
