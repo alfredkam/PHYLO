@@ -148,6 +148,7 @@
                         url : "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php",
                         data : "mode=8&user="+username,
                     }).done(function(re) {
+                        bootbox.alert(re);
                         if (re!='succ') {
                             $(".showExpertOptions").hide();
                         }
