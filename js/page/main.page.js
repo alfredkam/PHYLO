@@ -4,10 +4,9 @@
 			window.location = "http://phylo.cs.mcgill.ca/dcanv";
 		},
 		ranking : function() {
-            // FIXME? protocal use POST not GET
             $.ajax({
-				url : "http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + window.langOpt.toUpperCase(),
-                //url : "content/ranking.html",
+				//url : "http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + window.langOpt.toUpperCase(),
+                url : "content/ranking.html",
 				type : "post",
 			}).done(function(re) {
                 $("#mid-panel").html(re);

@@ -114,8 +114,7 @@ $(document).ready(function(){
         },
         "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 0 ] } ],
     });
-                  
-                  
+
     // select buttons
                   
     $("#showall").click(function(){
@@ -124,7 +123,6 @@ $(document).ready(function(){
         $("#alltime").show();
         $("ul li.active").removeClass('active');
         $("ul li.all").stop().addClass('active');
-        //$('.table').dataTable.fnDrawCallback(oSettings);
     });
     $("#showmonth").click(function(){
         $("#alltime").hide();
@@ -140,7 +138,7 @@ $(document).ready(function(){
         $("ul li.active").removeClass('active');
         $("ul li.week").stop().addClass('active');
     });
-                    
+  
     // initial display
   
     $("#weekly").hide();
