@@ -56,7 +56,7 @@
 	}
 	
 	.tablet-grid > div > div:last-child {
-		font-size:20px;
+		font-size:0.7em;
 	}	
 
 	.tablet-grid i {
@@ -82,22 +82,13 @@
 		top:0.45em;
 	}
 
-	.tablet-tutorial-btn > div , .tablet-play-btn > div{
-		width:230px;
-		padding:0.8em 0.79em;
-	}
 	.tablet-tutorial-btn i, .tablet-about-btn i, .tablet-credits-btn i, .tablet-ranking-btn i, .tablet-login-btn i, .tablet-settings-btn i, .tablet-back-btn i, .tablet-feedback-btn i,.tablet-history-btn i {
 		top:0.17em;
 		position:relative;
 	}
-	.tablet-about-btn > div, .tablet-credits-btn > div, .tablet-ranking-btn > div, .tablet-login-btn > div{
+	.tablet-about-btn > div, .tablet-credits-btn > div, .tablet-ranking-btn > div, .tablet-login-btn > div , .tablet-tutorial-btn > div , .tablet-play-btn > div, .tablet-settings-btn > div, .tablet-feedback-btn > div, .tablet-history-btn> div {
 		padding:0.8em 0.79em;
-		width:230px;
-	}
-	
-	.tablet-settings-btn > div, .tablet-feedback-btn > div, .tablet-history-btn> div {
-		padding:0.8em 0.79em;
-		width:230px;
+		width:5.1em;
 	}
 	
 
