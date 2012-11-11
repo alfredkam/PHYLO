@@ -97,56 +97,22 @@ $(document).ready(function(){
     } );
 
     /* Table initialisation */
-
-    $('.table').dataTable( {
+    $('.table').dataTable({
         "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
         "sPaginationType": "bootstrap",
+        "aaSorting": [[ 1, "asc" ]],
         "oLanguage": {
             "sUrl": "js/extra/datatable_" + window.langOpt.toUpperCase() + ".txt"
         },
-        "aaSorting": [[ 5, "desc" ]],
-        "fnDrawCallback": function ( oSettings ) {
-            if ( oSettings.bSorted || oSettings.bFiltered ) {
-                for ( var i=0, iLen=oSettings.aiDisplay.length ; i<iLen ; i++ ) {
-                     $('td:eq(0)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html( i+1 );
-                }
-            }
-        },
-        "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 0 ] } ],
+        "aoColumns": [
+            { "bVisible" : false },
+            { "iDataSort" : 0 },
+            null,
+            null,
+            null,
+            { "iDataSort" : 6 },
+            { "bVisible" : false, "bSearchable" : false }
+        ]
     });
-                  
-                  
-    // select buttons
-                  
-    $("#showall").click(function(){
-        $("#weekly").hide();
-        $("#monthly").hide();
-        $("#alltime").show();
-        $("ul li.active").removeClass('active');
-        $("ul li.all").stop().addClass('active');
-        $('.table').dataTable.fnDrawCallback(oSettings);
-    });
-    $("#showmonth").click(function(){
-        $("#alltime").hide();
-        $("#weekly").hide();
-        $("#monthly").show();
-        $("ul li.active").removeClass('active');
-        $("ul li.month").stop().addClass('active');
-        $('.table').dataTable.fnDrawCallback(oSettings);
-    });
-    $("#showweek").click(function(){
-        $("#alltime").hide();
-        $("#monthly").hide();
-        $("#weekly").show();
-        $("ul li.active").removeClass('active');
-        $("ul li.week").stop().addClass('active');
-        $('.table').dataTable.fnDrawCallback(oSettings);
-    });
-                    
-    // initial display
-  
-    $("#weekly").hide();
-    $("#monthly").hide();
-    $("#alltime").show();
-                  
+
 });

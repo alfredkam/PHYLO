@@ -65,7 +65,7 @@
                                                 $("#logout").hide();
                                                 window.guest = 'guest';
                                                 $("#login-box").hide();
-                                                $(".login-btn").click(function() { eClick(); });
+                                                $(".login-btn").click(function() { classicLogin(); });
                                                 $("#login-tag").html("Login");
                                                 $(".showInLogin").hide();
                                                 return;
@@ -88,7 +88,7 @@
                             $("#logout").hide();
                             window.guest = 'guest';
                             $("#login-box").hide();
-                            $(".login-btn").click(function() { eClick(); });
+                            $(".login-btn").click(function() { classicLogin(); });
                             $("#login-tag").html("Login");
                             $(".showInLogin").hide();
                             return;
@@ -104,32 +104,58 @@
             window.guest = username;
             $("#login-box").hide();
             $(".login-btn").unbind("click");
-            $(".showInLogin").show();
+            // show buttons. NB: hide expert button if necessary
+            $.ajax({
+                type: "POST",
+                url : "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php",
+                data : "mode=8&user="+username,
+            }).done(function(re) {
+                $(".showInLogin").show();
+                if (re!='succ') {
+                    $(".showExpertOptions").hide();
+                }
+            }).fail(function() {
+                $(".showInLogin").show();
+                console.log("Expert validation failed. Could not connect to the server.");
+            });
         };
 
 		// Classic login onclick event
 		var classicLogin = function() {
-			var name = $("#username").val().trim();
+			var username = $("#username").val().trim();
 			var password = $("#password").val().trim();
-			if((name == "" || password == "")) { 
+			if((username == "" || password == "")) {
 				$("div.login-warning").show().html("Username or Password is missing");
 				return;
 			} 
 
 			$("div.login-warning").hide();
 
-			$.protocal.login(name, password, function(re) {
+			$.protocal.login(username, password, function(re) {
 				if(re == "succ") {	
-					$("#login-tag").html(name);
-					$.cookie.create("username",name,365);
-                    $.cookie.create("fullname",name,365);
+					$("#login-tag").html(username);
+					$.cookie.create("username",username,365);
+                    $.cookie.create("fullname",username,365);
                     $.cookie.create("loginmode","Classic",365);
                     $.cookie.create("logid",-1,365);
                     $("#logout").show();
-                    window.guest = name;
+                    window.guest = username;
                     $("#login-box").hide();
                     $(".login-btn").unbind("click");
-                    $(".showInLogin").show();
+                    // show buttons. NB: hide expert button if necessary
+                    $.ajax({
+                        type: "POST",
+                        url : "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php",
+                        data : "mode=8&user="+username,
+                    }).done(function(re) {
+                        $(".showInLogin").show();
+                        if (re!='succ') {
+                            $(".showExpertOptions").hide();
+                        }
+                    }).fail(function() {
+                        $(".showInLogin").show();
+                        console.log("Expert validation failed. Could not connect to the server.");
+                    });
 				} else {
 					$("div.login-warning").show().html("Incorrect Username or Password");
 				}			
@@ -173,7 +199,7 @@
             window.guest = 'guest';
             $("#login-box").hide();
 			$(".login-btn").click(function() {
-				eClick();
+				classicLogin();
 			});
 			$("#login-tag").html("Login");
 			$(".showInLogin").hide();
