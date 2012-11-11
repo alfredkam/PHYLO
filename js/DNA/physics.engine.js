@@ -121,7 +121,6 @@
 				left: box.old+max_distance,
 			});
 			
-			
 			//for(var cell in list) {
 			for(var cell = 0, len = list.length;cell < len; cell++) {
 				var prev = parseInt($(list[cell]).css("left").replace(/px/,""));		
@@ -136,7 +135,6 @@
 							continue;
 						}	
 					}
-					
 				} else {
 					if(domCache[pos+1] != undefined && domCache[pos+1].left != undefined) {
 						if(checkList(pos+1)) {
@@ -146,56 +144,40 @@
 							continue;
 						}	
 					}
-
 				}
 				if(left) {
 					while(true) {
-						try {
-							if(domCache[pos] == undefined ^ domCache[pos].left == undefined) 
-								break;
-							if(domCache[pos-1] == undefined ^ domCache[pos-1].left == undefined) {
-								//last step
+						var seed = pos % $.phylo.seqLen;
+						if(domCache[pos] == undefined ^ domCache[pos] == 0) 
+							break;
+						if(domCache[pos-1] == undefined ^ domCache[pos-1] == 0) {
+							var est_px = parseInt(domCache[pos].left.replace(/px/,"")) + max_distance;
+							if(est_px < $.sequence.calcPos(seed))
+								domCache[pos].left = $.sequence.calcPos(seed)+"px";
+							else
 								domCache[pos].left = (parseInt(domCache[pos].left.replace(/px/,"")) + max_distance) + "px"; 
+							break;
+						} else {
+							//check next step
+							var currentStep = parseInt(domCache[pos].left.replace(/px/,""));
+							var nextStep = parseInt(domCache[pos-1].left.replace(/px/,""))+$.phylo.x;
+							var est_px = currentStep+max_distance;
+							if(est_px < $.sequence.calcPos(seed))
+								domCache[pos].left = $.sequence.calcPos(seed)+"px";
+							else
+								domCache[pos].left = est_px +"px";
+							pos-=1;
+							if(!(est_px < nextStep))
 								break;
-							} else {
-								//check next step
-								var currentStep = parseInt(domCache[pos].left.replace(/px/,""));
-								var nextStep = parseInt(domCache[pos-1].left.replace(/px/,""));
-								if((currentStep+max_distance) < nextStep+$.phylo.x) {
-									domCache[pos].left = (currentStep+max_distance) + "px";
-								} else { 
-									domCache[pos].left = (currentStep+max_distance) + "px";
-									break;
-								}
-								pos-=1;
-							}
-						} catch(err) {
-							if(domCache[pos] == undefined) 
-								break;
-							if(domCache[pos-1] == undefined) {
-								//last step
-								domCache[pos].left = (parseInt(domCache[pos].left.replace(/px/,"")) + max_distance) + "px"; 
-								break;
-							} else {
-								//check next step
-								var currentStep = parseInt(domCache[pos].left.replace(/px/,""));
-								var nextStep = parseInt(domCache[pos-1].left.replace(/px/,""));
-								if((currentStep+max_distance) < nextStep+$.phylo.x) {
-									domCache[pos].left = (currentStep+max_distance) + "px";
-								} else { 
-									domCache[pos].left = (currentStep+max_distance) + "px";
-									break;
-								}
-								pos-=1;
-							}
-
 						}
 					}
 				} else {
 					while(true) {
-						if(domCache[pos].left == undefined)
+						var seed = $.phylo.seqLen - (pos % $.phylo.seqLen);
+						if(domCache[pos] == undefined ^ domCache[pos] == 0)
 							break;
-						if(domCache[pos+1].left == undefined) {
+						if(domCache[pos+1] == undefined ^ domCache[pos+1] == 0) {
+									
 							domCache[pos].left = (parseInt(domCache[pos].left.replace(/px/,"")) + max_distance) + "px"; 
 							break;
 						} else {
