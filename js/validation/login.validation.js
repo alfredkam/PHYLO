@@ -105,6 +105,18 @@
             $("#login-box").hide();
             $(".login-btn").unbind("click");
             $(".showInLogin").show();
+            // show buttons. NB: hide expert button if necessary
+            $.ajax({
+                type: "POST",
+                url : "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php";,
+                data : "mode=8&user="+username;,
+            }).done(function(re) {
+                if (re!='succ') {
+                    $(".showExpertOptions").hide();
+                }
+            }).fail(function() {
+                console.log("Expert validation failed. Could not connect to the server.");
+            });
         };
 
 		// Classic login onclick event
@@ -130,6 +142,18 @@
                     $("#login-box").hide();
                     $(".login-btn").unbind("click");
                     $(".showInLogin").show();
+                    // show buttons. NB: hide expert button if necessary
+                    $.ajax({
+                        type: "POST",
+                        url : "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php";,
+                        data : "mode=8&user="+username;,
+                    }).done(function(re) {
+                        if (re!='succ') {
+                            $(".showExpertOptions").hide();
+                        }
+                    }).fail(function() {
+                        console.log("Expert validation failed. Could not connect to the server.");
+                    });
 				} else {
 					$("div.login-warning").show().html("Incorrect Username or Password");
 				}			
