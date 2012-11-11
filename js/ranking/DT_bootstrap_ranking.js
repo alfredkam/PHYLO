@@ -124,7 +124,7 @@ $(document).ready(function(){
         $("#alltime").show();
         $("ul li.active").removeClass('active');
         $("ul li.all").stop().addClass('active');
-        //$('.table').dataTable.fnDrawCallback(oSettings);
+        $('.table').dataTable.fnDrawCallback(oSettings);
     });
     $("#showmonth").click(function(){
         $("#alltime").hide();
@@ -132,6 +132,7 @@ $(document).ready(function(){
         $("#monthly").show();
         $("ul li.active").removeClass('active');
         $("ul li.month").stop().addClass('active');
+        $('.table').dataTable.fnDrawCallback(oSettings);
     });
     $("#showweek").click(function(){
         $("#alltime").hide();
@@ -139,6 +140,7 @@ $(document).ready(function(){
         $("#weekly").show();
         $("ul li.active").removeClass('active');
         $("ul li.week").stop().addClass('active');
+        $('.table').dataTable.fnDrawCallback(oSettings);
     });
                     
     // initial display
