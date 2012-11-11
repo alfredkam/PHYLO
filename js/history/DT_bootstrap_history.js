@@ -98,7 +98,8 @@ $(document).ready(function(){
 
     /* Table initialisation */
     $('.table').dataTable({
-        "sPaginationType": "full_numbers",
+        "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
+        "sPaginationType": "bootstrap",
         "aaSorting": [[ 1, "asc" ]],
         "oLanguage": {
             "sUrl": "js/extra/datatable_" + window.langOpt.toUpperCase() + ".txt"
