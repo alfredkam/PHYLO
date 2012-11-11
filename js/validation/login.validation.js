@@ -65,7 +65,7 @@
                                                 $("#logout").hide();
                                                 window.guest = 'guest';
                                                 $("#login-box").hide();
-                                                $(".login-btn").click(function() { eClick(); });
+                                                $(".login-btn").click(function() { classicLogin(); });
                                                 $("#login-tag").html("Login");
                                                 $(".showInLogin").hide();
                                                 return;
@@ -88,7 +88,7 @@
                             $("#logout").hide();
                             window.guest = 'guest';
                             $("#login-box").hide();
-                            $(".login-btn").click(function() { eClick(); });
+                            $(".login-btn").click(function() { classicLogin(); });
                             $("#login-tag").html("Login");
                             $(".showInLogin").hide();
                             return;
@@ -198,7 +198,7 @@
             window.guest = 'guest';
             $("#login-box").hide();
 			$(".login-btn").click(function() {
-				eClick();
+				classicLogin();
 			});
 			$("#login-tag").html("Login");
 			$(".showInLogin").hide();
