@@ -108,7 +108,7 @@
             // show buttons. NB: hide expert button if necessary
             $.ajax({
                 type: "POST",
-                url : "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php";,
+                url : "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php",
                 data : "mode=8&user="+username;,
             }).done(function(re) {
                 if (re!='succ') {
@@ -145,7 +145,7 @@
                     // show buttons. NB: hide expert button if necessary
                     $.ajax({
                         type: "POST",
-                        url : "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php";,
+                        url : "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php",
                         data : "mode=8&user="+username;,
                     }).done(function(re) {
                         if (re!='succ') {
