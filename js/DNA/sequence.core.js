@@ -1,6 +1,19 @@
 (function() {
 	var doc = document, win = window;
 	$.sequence = {
+		//checks row length
+		checkEachRowLength : function() {
+			var arr = $.phylo.origin;
+			$.phylo.eachRowLength = [];
+			for(var i=0, ll = arr.length; i < ll;i++) {
+				var counter = 0;
+				for(var j=0, len = arr[i].length; j < len; j++) {
+					if(arr[i][j] != "x")
+						counter+=1; 
+				}
+				$.phylo.eachRowLength.push(counter);
+			}
+		},
 		//retrives repsective nucleotide
 		nuc : function(x) {
 			if (x == "x") {

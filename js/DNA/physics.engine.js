@@ -155,7 +155,7 @@
 							if(est_px < $.sequence.calcPos(seed))
 								domCache[pos].left = $.sequence.calcPos(seed)+"px";
 							else
-								domCache[pos].left = (parseInt(domCache[pos].left.replace(/px/,"")) + max_distance) + "px"; 
+								domCache[pos].left = est_px + "px";
 							break;
 						} else {
 							//check next step
@@ -173,24 +173,29 @@
 					}
 				} else {
 					while(true) {
-						var seed = $.phylo.seqLen - (pos % $.phylo.seqLen);
+						var rrow = Math.floor(pos/$.phylo.seqLen); 
+						var seed = $.phylo.seqLen - ($.phylo.eachRowLength[rrow] - (pos % $.phylo.seqLen));
 						if(domCache[pos] == undefined ^ domCache[pos] == 0)
 							break;
 						if(domCache[pos+1] == undefined ^ domCache[pos+1] == 0) {
-									
-							domCache[pos].left = (parseInt(domCache[pos].left.replace(/px/,"")) + max_distance) + "px"; 
+							var est_px = parseInt(domCache[pos].left.replace(/px/,""))+max_distance;	
+							if(est_px > $.sequence.calcPos(seed)) 
+								domCache[pos].left = $.sequence.calcPos(seed) + "px";	
+							else 
+								domCache[pos].left = est_px + "px";
 							break;
 						} else {
 							//check next step
 							var currentStep = parseInt(domCache[pos].left.replace(/px/,""));
 							var nextStep = parseInt(domCache[pos+1].left.replace(/px/,""));
-							if(nextStep < (currentStep+max_distance)+$.phylo.x) {
+							var est_px = currentStep+max_distance+$.phylo.x;	
+							if(est_px-$.phylo.x > $.sequence.calcPos(seed)) 
+								domCache[pos].left = $.sequence.calcPos(seed) + "px";
+							else 
 								domCache[pos].left = (currentStep+max_distance) + "px";
-							} else {
-								domCache[pos].left = (currentStep+max_distance) + "px";
-								break;
-							}
 							pos+=1;
+							if(!(est_px > nextStep))
+								break;
 						}
 					}
 				}

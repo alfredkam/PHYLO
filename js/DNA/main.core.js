@@ -116,6 +116,7 @@
 						}
 					});
 				}
+				$.sequence.checkEachRowLength();
 				$.board.startListener();
 			},
 		};
