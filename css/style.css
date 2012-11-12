@@ -130,6 +130,16 @@ a.btn {
 	padding: 5px 10px;
 }
 
+.customize .customize-theme.row .span4 {
+	left:100px;
+	position:relative;
+}
+
+.customize .customize-theme.row .span5 {
+	left:80px;
+	position:relative;
+}
+
 .customize .customize-theme .span4, .customize .customize-theme .span5 {
 	height:300px;
 }
@@ -152,8 +162,13 @@ a.btn {
 	font-size: 20px;
 }
 .customize-dnaColor .customize-title, .customize-boardColor .customize-title {
-	color: black;
+	color: black !important;
 	font-size: 20px;
+}
+
+.customize .customize-title {
+	line-height:normal;
+	color:whitesmoke;
 }
 .customize-boardColor {
 	margin-top:20px;
