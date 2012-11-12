@@ -259,18 +259,19 @@
 				var max = self.settings.w*self.midPoint;  
 				var min = self.settings.w*2;
 				var x = -1*(max-min)/(Math.abs(self.minBorder))*Math.abs(score);						
-				if( -1*(max-min) > x ) {
+				if( -1*(max-min) >= x ) {
 					return -1*(max-min) - 10;
 				} else 
 					return x;
 					
 			} else if(score >= 0 ) {
 				var min = self.settings.w*self.midPoint;
-				var max = self.settings.w*12;
-				if(score < self.maxBorder) {
+				var max = self.settings.w*13;
+				//bug here -- need fix
+				if(score <= self.maxBorder) {
 					return (max-min)/self.maxBorder*score;
 				} else {
-					return self.settings.wBox-min;
+					return self.settings.wBox-min-setting.w*1.2;
 				}
 			}
 		},
