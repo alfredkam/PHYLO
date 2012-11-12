@@ -442,7 +442,7 @@ a.btn {
 #mid-panel .wrapper iframe {
 	position:relative;
 	border:none;
-	padding:50px 50px;	
+    padding:50px 50px;
 	background-color:white;
 	box-shadow: 0 6px 6px -6px #CCC;
 	-webkit-box-shadow: 0 6px 6px -6px #CCC;
