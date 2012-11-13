@@ -3,10 +3,14 @@
 		disableMenu : function() {
 				$("#draw").hide();
 				$("#menu").hide();
-				$.main.init({
-					type: "random",
-					num: 3,		
-				});	
+				if(window.location.hash.match(/rna/i) != null) {
+				//	$.rna.init();
+				} else {
+					$.main.init({
+						type: "random",
+						num: 3,		
+					});	
+				}
 		},
 	};
 	$(document).ready(function() {

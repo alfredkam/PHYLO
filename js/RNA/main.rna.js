@@ -1,43 +1,48 @@
 (function() {
 	$(document).ready(function() {
 		$.rna = {
-			getPuzzle : function(init) {
-				var puzzle = {
-					p :"((((...))))",
-					p : "((..))",
-					p : "(((((.........)))))",
-					p : "(((.....)))"
-				};
-				init(puzzle);
-			
+			getPuzzle : function() {
+				var puzzle = [
+					"((((...))))",
+					"((..))",
+					"(((((.........)))))",
+					"(((.....)))"
+				];
+				return puzzle;	
 			},
 			//unbinds all the previous data
 			clear : function() {
 				$.stage.current = -1;
 			},
 			//configuration
-			init : function(code) {
+			init : function() {
 				var self = this;
 				this.clear();
+				if($("#tree").css("height") == undefined) {
+					height = 178;
+				} else {
+					height = $("#tree").css("height").replace(/px/,"");
+				}
 				$.phylo = {
 					seqLen : 25,
 					x : 34,
-					offSet : $("#gameBoard").css("left").replace(/px/,""),
-					height : $("#tree").css("height").replace(/px/,"")
+					offSet : 0,//$("#gameBoard").css("left").replace(/px/,""),
+					height : height,
+					rows : 10,
 				};
 				$.lang.init(function() {
 					$("#game").show();
 					//$.protocal.read(setting);
 					//$.protocal.request();
 					//$.endGame.init("lose");
-					$.rna.code = code;
 					self.callBack();
-				
 				});
 			},
 			//call back on protocal complete
 			//sets the layout and activates the game
 			callBack : function() {
+				var self = this;
+				
 				//sets the gameBoard to be nonMovable on touch devices.
 				$.events.touch("#gameBoard",{
 					start: function(e) {
@@ -47,14 +52,11 @@
 				});
 				var mouseMove = "onmousemove" in document.documentElement;
 
-				if(DEBUG)
-					console.log($.phylo);
 				//$.phylo.tree = $.tree.build($.phylo.get.tree);
 				$.board.build();
-				//$.sequence.build($.phylo.get.sequence);
-				//$.sequence.prepareTracking($.phylo.get.sequence);
-
-				$.message.build($.rna.code);
+				//using temporary puzzle
+				$.sequence.buildRNA(self.getPuzzle());
+				$.sequence.prepareRNATracking(self.getPuzzle());
 
 				$.phylo.origin = [];
 				for(var i=0;i<8;i++){
@@ -65,24 +67,16 @@
 					$.phylo.origin.push(t);
 				}
 
-			//	$.helper.copy($.phylo.origin, $.sequence.track);
-				//$.phylo.origin = $.sequence.track.slice(0);
+				$.helper.copy($.phylo.origin, $.sequence.track);
 			//	var random = $.sequence.randomize($.sequence.track);
 			//	$.sequence.prepareTracking(random);
 			//	$.phylo.domCache = $.sequence.createCache();
 			//	$.physics.snapRandom();
 
-				if(DEBUG) {
-					/*
-					console.log("original")
-					console.log($.phylo.origin);
-					console.log("tracked");
-					console.log($.sequence.track);
-					console.log($.phylo.tree);
-					*/
-				}
 			//	$.stage.last = $.phylo.tree[$.phylo.tree.length-1].lv;
-				$.splash.countDown(function() {
+			//	$.stage.last = 
+				//disbales count down for now	
+		//		$.splash.countDown(function() {
 					//start game
 					$.stage.end = false;
 					//$.stage.round();	
@@ -91,11 +85,12 @@
 					if(mouseMove) {
 						$.multiSelect.active();
 					}
-				});
+		//		});
 				$.board.startListener();
+				//temporary sripts to disble certain functions
+				$("#countDown").hide();
+				$(".hidden").removeClass("hidden");
 			},
 		};
-
-	//	$.main.init();
 	});
 })();

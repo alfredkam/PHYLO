@@ -36,7 +36,7 @@
 		//creates a dom cache of the grids but only contains style
 		createCache : function() {
 			var arr = [];		
-			for(var i=0, y=10, x = $.phylo.seqLen; i<y*x;i++) {
+			for(var i=0, y=$.phylo.rows, x = $.phylo.seqLen; i<y*x;i++) {
 				arr.push(0);
 			}
 
@@ -49,7 +49,7 @@
 		//creates a dom cache of the grid but includes parent
 		createCache2 : function() {
 			var arr = [];		
-			for(var i=0, y=10, x = $.phylo.seqLen; i<y*x;i++) {
+			for(var i=0, y=$.phylo.rows, x = $.phylo.seqLen; i<y*x;i++) {
 				arr.push(0);
 			}
 
@@ -70,7 +70,7 @@
 			this.posListReverse = [];
 			this.nucleotide = [];
 
-			for(var i=0, y=10, x = $.phylo.seqLen;i<y*x;i++) {
+			for(var i=0, y=$.phylo.rows, x = $.phylo.seqLen;i<y*x;i++) {
 				this.posList.push(0);
 				this.posListReverse.push(0);
 				this.nucleotide.push(0);
@@ -84,7 +84,6 @@
 					if(c !=  "_") {
 						this.posList[i*$.phylo.seqLen+counter] = counter;	
 						this.nucleotide[i*$.phylo.seqLen+counter] = seq[i].charAt(j);
-						//str+="<div class='sequence "+ this.colorTag(this.translate(c))+"' id='"+(i*25+counter)+"' style='left:"+(this.calcPos(j))+"px;background-color:"+this.color(this.translate(c))+"'></div>";
 						str+="<div class='sequence "+ this.colorTag(this.translate(c))+"' id='"+(i*25+counter)+"' style='left:"+(this.calcPos(j))+"px;'></div>";
 						counter++;
 					}
