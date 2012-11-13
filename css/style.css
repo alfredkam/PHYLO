@@ -57,6 +57,16 @@ body {
 	color:#6D6D6D;
 }	
 
+
+.beta2 {
+	font-size:13px;
+	line-height:0px;
+	top:10px;
+	position:relative;
+	text-align:right;
+	right:10px;
+}
+
 #draw {
 	box-shadow: 0 6px 6px -6px #CCC;
 	-webkit-box-shadow: 0 6px 6px -6px #CCC;
