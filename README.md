@@ -5,7 +5,7 @@ PHYLO nightly build can be found at
 http://phylo.cs.mcgill.ca/nightly/index.html#!play
 
 PHYLO - RNA in pre-Alpha
-http://phylo.cs.mcgill.ca/nightly/index.html#!rna
+http://phylo.cs.mcgill.ca/nightly/index.html#!beta:rna
 
 Master Branch contains the most recent experimental release
 
