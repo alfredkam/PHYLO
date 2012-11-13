@@ -16,6 +16,7 @@
 			},
 			//configuration
 			init : function() {
+				$.main.type = "RNA";
 				var self = this;
 				this.clear();
 				if($("#tree").css("height") == undefined) {
@@ -70,7 +71,7 @@
 				$.helper.copy($.phylo.origin, $.sequence.track);
 			//	var random = $.sequence.randomize($.sequence.track);
 			//	$.sequence.prepareTracking(random);
-			//	$.phylo.domCache = $.sequence.createCache();
+				$.phylo.domCache = $.sequence.createCache();
 			//	$.physics.snapRandom();
 
 			//	$.stage.last = $.phylo.tree[$.phylo.tree.length-1].lv;
@@ -79,6 +80,11 @@
 		//		$.splash.countDown(function() {
 					//start game
 					$.stage.end = false;
+				//temporary values
+					$.stage.rna.last = 10;
+					$.stage.rna.current = 1;
+					
+					$.stage.rna.round();
 					//$.stage.round();	
 					if(DEBUG)
 						$.helper.dump($.sequence.track);
@@ -89,7 +95,7 @@
 				$.board.startListener();
 				//temporary sripts to disble certain functions
 				$("#countDown").hide();
-				$(".hidden").removeClass("hidden");
+				$(".boardRow").removeClass("hidden");
 			},
 		};
 	});

@@ -2,6 +2,7 @@
 	$(document).ready(function() {
 	
 		$.main = {
+			type : "DNA",
 			//unbinds all the previous data
 			clear : function() {
 				$.timer.stop();
