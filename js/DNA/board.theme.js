@@ -94,6 +94,7 @@
 			});
 			//next stage
 			$("#star").click(function(){
+				console.log("star clicked");
 				if($(this).hasClass("pass")) {
 					$.stage.round();
 				}
