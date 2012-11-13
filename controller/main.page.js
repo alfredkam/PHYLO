@@ -39,7 +39,7 @@
 			this.protocal("content/play.html");
 		},
 		tutorial : function() {
-			$("#mid-panel").html('<div class="wrapper"><iframe src="http://phylo.cs.mcgill.ca/tutorial/'+window.langOpt.toUpperCase()+'/index.html" width="840" height="550" class="iframe-tutorial"></iframe></div>');
+            this.protocal("content/tutorial.html");
 		},
 		about : function() {
 			var about = window.lang.body.play.about;
