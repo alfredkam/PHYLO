@@ -799,3 +799,11 @@ footer a:link, footer a:visited, footer a:active  {
 footer a:hover {
     color: black ;
 }
+
+
+/* ADD-ON Tutorial */
+
+
+h2.slide-caption {
+    color: #EFEFEF;
+}
