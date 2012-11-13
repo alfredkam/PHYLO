@@ -233,7 +233,7 @@
 				var weight = {
 					match : 1,
 					mismatch : -1,
-					open : -5,
+					open : -4,
 					extend : -1
 				};
 				return (a.match		*	weight.match	+
