@@ -84,6 +84,7 @@
 		protocal : function(url) {
 			var self = this;
 			$.ajax({
+				type : "GET",
 				statusCode : {
 					412 : function() {
 						console.log(">> Warning : Status Code 412; Retrying URL : "+url);
@@ -96,7 +97,6 @@
 					},
 				},	
 				url : url,
-				type : "post",
 			}).done(function(re) {
 				self.change(re);	
 			});
