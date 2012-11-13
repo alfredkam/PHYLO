@@ -271,7 +271,7 @@
 				if(score <= self.maxBorder) {
 					return (max-min)/self.maxBorder*score;
 				} else {
-					return self.settings.wBox-min-settings.w*1.2;
+					return self.settings.wBox-min-self.settings.w*1.2;
 				}
 			}
 		},
