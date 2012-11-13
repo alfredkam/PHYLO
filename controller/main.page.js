@@ -88,7 +88,7 @@
 						console.log(">> Warning : Status Code 412; Retrying URL : "+url);
 						self.loadFailCounter+=1;
 						if(self.loadFailCounter == 5) {
-							window.location.reload(true);	
+							//window.location.reload(true);	
 						} else {
 							self.protocal(url);
 						}
