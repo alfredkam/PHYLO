@@ -98,6 +98,9 @@
 					$.stage.round();
 				}
 			});
+			$("#star").dblclick(function() {
+				console.log("filtered out >> dbl click detected on star");
+			});
 			//new scoring
 			//$.html5.score.init();
 		},
