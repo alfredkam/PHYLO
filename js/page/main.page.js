@@ -79,13 +79,19 @@
 		change : function(content) {
 			$("#mid-panel").html(content);
 		},
+		loadFailCounter : 0,
 		protocal : function(url) {
 			var self = this;
 			$.ajax({
 				statusCode : {
 					412 : function() {
 						console.log(">> Warning : Status Code 412; Retrying URL : "+url);
-						self.protocal(url);
+						self.loadFailCounter+=1;
+						if(self.loadFailCounter == 5) {
+							window.location.reload(true);	
+						} else {
+							self.protocal(url);
+						}
 					},
 				},	
 				url : url,
