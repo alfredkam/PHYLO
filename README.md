@@ -27,7 +27,7 @@ Screen @ 1024px w/ cutomized UX
 
 
 
-This build includes options, it can be found at js/options_template.js
+This build includes options, it can be found at controller/options_template.js
 
 	window.DEBUG //enables debug log
 	window.guest //tell us its anoymous
@@ -38,7 +38,7 @@ This build includes options, it can be found at js/options_template.js
 
 To enable options w/ .gitignore, make sure the .gitignore is under the directory of options_template.js and it contains the value of - options.js, now in terminal
 
-	cd js
+	cd controller
 	cp options_template.js options.js
 	
 Now you can edit options.js to modify the development options
