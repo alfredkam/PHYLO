@@ -4,12 +4,13 @@
 			window.location = "http://phylo.cs.mcgill.ca/dcanv";
 		},
 		ranking : function() {
+			$("#mid-panel").html("<div id='ranking-wrapper'></div>");
             $.ajax({
 				url : "http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + window.langOpt.toUpperCase(),
                 //url : "content/ranking.html",
 				type : "post",
 			}).done(function(re) {
-                $("#mid-panel").html(re);
+                $("#ranking-wrapper").html(re);
                 $.getScript("js/ranking/DT_bootstrap_ranking.js");
                 $.hashbang.panelReady();
             });
