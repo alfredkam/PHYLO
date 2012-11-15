@@ -17,7 +17,7 @@
  
 		},
 		history : function() {
-			$("#mid-panel").html("<div id='ranking-wrapper'></div>");
+			$("#mid-panel").html("<div id='history-wrapper'></div>");
             $.ajax({
 				url : "http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username=" + window.guest,
                 //url : "content/history.html",
