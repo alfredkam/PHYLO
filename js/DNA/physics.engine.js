@@ -56,22 +56,12 @@
 							for(var j=0;j<list_nonObj.length;j++) {
 								if(nuc[i] == list_nonObj[j]) {
 									if(leastPos <= counter) {
-										console.log(counter);
 										leastPos = counter;
 										nucTemp = list_nonObj[j];
 										ithPos = parseInt(domCache[list_nonObj[j]].left.replace(/px/,""));
 									} 
 									ifBreak = true;
 									break;
-									/*	
-									if(leastPos <= counter && ithPos > parseInt(domCache[list_nonObj[j]].left.replace(/px/,""))) {
-										console.log(counter);
-										leastPos = counter;//counter;
-										nucTemp = list_nonObj[j];
-										ithPos = parseInt(domCache[list_nonObj[j]].left.replace(/px/,""));
-									} */
-									/*ifBreak = true;
-									break; */
 								}
 							}
 							if(ifBreak)
@@ -89,7 +79,9 @@
 			} else {
 				//right
 				//determine the right most boudary	
+				nucTemp = list_nonObj[list_nonObj.length-1];
 				var ithPos = 0;
+				maxPos = 0;
 				for(var r=0;r<row.length;r++) {
 					var nuc = sequence_track[row[r]];
 					var counter = 1;
@@ -98,7 +90,7 @@
 						if(nuc[i] != "x") {
 							for(var j=$.phylo.seqLen-1; j >= 0; j--) {
 								if(nuc[i] == list_nonObj[j] && nuc[i] != undefined) {
-									if(parseInt(domCache[list_nonObj[j]].left.replace(/px/,"")) > ithPos) {
+									if(counter >= maxPos) {
 										maxPos = counter;
 										nucTemp = list_nonObj[j];
 										ithPos = parseInt(domCache[list_nonObj[j]].left.replace(/px/,""));
