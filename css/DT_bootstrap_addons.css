@@ -10,7 +10,13 @@ div#mid-panel div#ranking-wrapper div#ranking {
 	padding-bottom:20px;
 	width: 940px;
 	margin: auto;
-    margin-bottom: 40px;
+	margin-bottom: 40px;
+	box-shadow: 0 6px 6px -6px #CCC
+	-moz-box-shadow: 0 6px 6px -6px #CCC
+	-webkit-box-shadow: 0 6px 6px -6px #CCC
+	-o-box-shadow: 0 6px 6px -6px #CCC
+	-ms-box-shadow: 0 6px 6px -6px #CCC
+	-khtml-box-shadow: 0 6px 6px -6px #CCC
 }
 
 #rankingselect {
@@ -22,11 +28,9 @@ img.startable {
     width: 12px;
 }
 
-div.row div.span6 ul li a: {
-	cursor: pointer !important;
-}
-
 div.row div.span6 ul li a:hover {
 	background-color: #6D6D6D !important;
 	color:white !important;
+	cursor: pointer !important;
+	
 }
