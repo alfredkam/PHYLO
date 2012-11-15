@@ -10,8 +10,10 @@
                 //url : "content/ranking.html",
 				type : "post",
 			}).done(function(re) {
-                $("#ranking-wrapper").html(re);
-                $.getScript("js/ranking/DT_bootstrap_ranking.js");
+		if($("#ranking-wrapper").length != 0) {
+			$("#ranking-wrapper").html(re);
+			$.getScript("js/ranking/DT_bootstrap_ranking.js");
+		}
                 $.hashbang.panelReady();
             });
  
@@ -23,8 +25,10 @@
                 //url : "content/history.html",
 				type : "post",
 			}).done(function(re) {
-                $("#history-wrapper").html(re);
-                $.getScript("js/history/DT_bootstrap_history.js");
+		if($("#history-wrapper").length != 0) {
+			$("#history-wrapper").html(re);
+			$.getScript("js/history/DT_bootstrap_history.js");
+		}
                 $.hashbang.panelReady();
             });
 		},
