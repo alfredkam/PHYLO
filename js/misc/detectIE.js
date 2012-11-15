@@ -1,6 +1,5 @@
 (function() {
 	var str =  navigator.userAgent.toString().toLowerCase();
-	
 	if(str.search(/msie (8.0|7.0|6.0|5.0)/) > -1) {
 	//	console.log("IE");
 		$(".warning-cancel").hide();
