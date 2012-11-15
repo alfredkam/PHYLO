@@ -11,12 +11,12 @@ div#mid-panel div#ranking-wrapper div#ranking, div#mid-panel div#history-wrapper
 	width: 940px;
 	margin: auto;
 	margin-bottom: 40px;
-	box-shadow: 0 6px 6px -6px #CCC
-	-moz-box-shadow: 0 6px 6px -6px #CCC
-	-webkit-box-shadow: 0 6px 6px -6px #CCC
-	-o-box-shadow: 0 6px 6px -6px #CCC
-	-ms-box-shadow: 0 6px 6px -6px #CCC
-	-khtml-box-shadow: 0 6px 6px -6px #CCC
+	box-shadow: 0 6px 6px -6px #CCC;
+	-moz-box-shadow: 0 6px 6px -6px #CCC;
+	-webkit-box-shadow: 0 6px 6px -6px #CCC;
+	-o-box-shadow: 0 6px 6px -6px #CCC;
+	-ms-box-shadow: 0 6px 6px -6px #CCC;
+	-khtml-box-shadow: 0 6px 6px -6px #CCC;
 }
 
 #rankingselect {
