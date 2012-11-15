@@ -41,7 +41,7 @@
 			}
 
 			var leastPos = 0;
-			var nucTemp = 0;
+			var nucTemp = list_nonObj[0];
 			var maxPos = 25;
 
 			if(left) {
@@ -55,13 +55,23 @@
 						if(nuc[i] != "x") {
 							for(var j=0;j<list_nonObj.length;j++) {
 								if(nuc[i] == list_nonObj[j]) {
+									if(leastPos <= counter) {
+										console.log(counter);
+										leastPos = counter;
+										nucTemp = list_nonObj[j];
+										ithPos = parseInt(domCache[list_nonObj[j]].left.replace(/px/,""));
+									} 
+									ifBreak = true;
+									break;
+									/*	
 									if(leastPos <= counter && ithPos > parseInt(domCache[list_nonObj[j]].left.replace(/px/,""))) {
+										console.log(counter);
 										leastPos = counter;//counter;
 										nucTemp = list_nonObj[j];
 										ithPos = parseInt(domCache[list_nonObj[j]].left.replace(/px/,""));
-									}
-									ifBreak = true;
-									break;
+									} */
+									/*ifBreak = true;
+									break; */
 								}
 							}
 							if(ifBreak)
