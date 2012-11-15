@@ -22,11 +22,11 @@ img.startable {
     width: 12px;
 }
 
-div.dataTables_paginate a {
+div.row div.span6 ul li a: {
 	cursor: pointer;
 }
 
-div.dataTables_paginate a:hover {
-	background-color: #6D6D6D;
+div.row div.span6 ul li a:hover {
+	background-color: #6D6D6D !important;
 	color:white;
 }
