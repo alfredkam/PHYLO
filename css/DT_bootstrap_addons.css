@@ -23,10 +23,10 @@ img.startable {
 }
 
 div.row div.span6 ul li a: {
-	cursor: pointer;
+	cursor: pointer !important;
 }
 
 div.row div.span6 ul li a:hover {
 	background-color: #6D6D6D !important;
-	color:white;
+	color:white !important;
 }
