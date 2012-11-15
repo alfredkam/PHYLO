@@ -23,7 +23,7 @@
                 //url : "content/history.html",
 				type : "post",
 			}).done(function(re) {
-                $("#ranking-wrapper").html(re);
+                $("#history-wrapper").html(re);
                 $.getScript("js/history/DT_bootstrap_history.js");
                 $.hashbang.panelReady();
             });
