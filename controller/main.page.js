@@ -17,12 +17,13 @@
  
 		},
 		history : function() {
+			$("#mid-panel").html("<div id='ranking-wrapper'></div>");
             $.ajax({
 				url : "http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username=" + window.guest,
                 //url : "content/history.html",
 				type : "post",
 			}).done(function(re) {
-                $("#mid-panel").html(re);
+                $("#ranking-wrapper").html(re);
                 $.getScript("js/history/DT_bootstrap_history.js");
                 $.hashbang.panelReady();
             });
