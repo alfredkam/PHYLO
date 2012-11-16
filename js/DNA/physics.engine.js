@@ -352,15 +352,26 @@
 							temp = track[row][i];
 							track[row][i] = id;
 							domCache[id].left = $.sequence.calcPos(i)+"px";
+						/*	$("#"+id).animate({
+								left : $.sequence.calcPos(i)
+							},100);*/
 							id = temp;
 						} else {
 							track[row][i] = id;	
 							domCache[id].left = $.sequence.calcPos(i)+"px";	
+							/*
+							$("#"+id).animate({
+								left : $.sequence.calcPos(i) + "px",
+							},300);*/
 							break;		
 						}
 					}
 				} else {
 					domCache[id].left = $.sequence.calcPos(pos)+"px";
+					/*
+					$("#"+id).animate({
+						left : $.sequence.calcPos(i) + "px",
+					},300); */
 					track[row][pos] = id; 
 				}
 			});
