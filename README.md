@@ -1,10 +1,12 @@
 PHYLO
 =====
-We now have hot deployment for master branch! Woot!
+We now have hot deployment for master & feature/RNA branch! Woot!
+
 [Under Master Branch]
 PHYLO - DNA 
 http://phylo.cs.mcgill.ca/master/index.html#!play
 
+[Under feature/RNA Branch]
 PHYLO - RNA in pre-Alpha
 http://phylo.cs.mcgill.ca/master/index.html#!beta:rna
 
