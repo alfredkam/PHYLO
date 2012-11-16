@@ -8,7 +8,7 @@ http://phylo.cs.mcgill.ca/master/index.html#!play
 
 [Under feature/RNA Branch]
 PHYLO - RNA in pre-Alpha
-http://phylo.cs.mcgill.ca/master/index.html#!beta:rna
+http://phylo.cs.mcgill.ca/feature/RNA/index.html#!beta:rna
 
 Master Branch contains the most recent experimental release
 
