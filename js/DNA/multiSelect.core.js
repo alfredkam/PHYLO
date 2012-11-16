@@ -170,7 +170,7 @@
 							list = [];
 							list2 = [];
 							$("#chosenArea").hide();
-							$.physics.snap();
+							$.physics.snap("mutli");
 							var score = $.fitch.score();
 							$.board.score(score);
 							$.board.stats();

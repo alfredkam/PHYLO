@@ -307,7 +307,7 @@
 			}	
 		},
 		//snaps the cell after shifting
-		snap : function() {
+		snap : function(type) {
 			var getGridY = function(f) {
 				var f = parseInt(f);
 				for(var i=0;i<$.sequence.track.length;i++) {
@@ -370,8 +370,8 @@
 					domCache[id].left = $.sequence.calcPos(pos)+"px";
 					/*
 					$("#"+id).animate({
-						left : $.sequence.calcPos(i) + "px",
-					},300); */
+						left : $.sequence.calcPos(pos) + "px",
+					},300);  */
 					track[row][pos] = id; 
 				}
 			});
