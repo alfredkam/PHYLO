@@ -94,10 +94,8 @@
 			});
 			//next stage
 			$("#star").click(function(){
-				console.log("star clicked");
-				if($(this).hasClass("pass")) {
+				if($.phylo.currentScore >= $.sequence.par) 
 					$.stage.round();
-				}
 			});
 			$("#star").dblclick(function() {
 				console.log("filtered out >> dbl click detected on star");
