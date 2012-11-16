@@ -52,3 +52,5 @@ if options.js is tracked, ie - meaning git is tracking the changes, in terminal
 
 	git rm --cache options.js
 	git commit -a -m 'untrack options.js'
+
+- AK
