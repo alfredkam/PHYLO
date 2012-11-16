@@ -96,6 +96,15 @@
 						self.loadFailCounter+=1;
 						if(self.loadFailCounter == 5) {
 							//window.location.reload(true);	
+							$(".warning-cancel").hide();
+							$(".warning-ok").hide();
+							$(".warning-msg").html("<i class='icon-remove'></i><br><b>Aww Snap!</b><br>  Something went wrong.  Please reload the page to continue!");
+							$(".warning-bg").css({
+								height: $(document).height(),
+								width: $(document).width(),
+							});
+							$(".warning-bg").fadeIn();
+							$(".warning").fadeIn();
 						} else {
 							self.protocal(url);
 						}
