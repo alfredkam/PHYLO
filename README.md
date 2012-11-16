@@ -1,11 +1,12 @@
 PHYLO
 =====
-
-PHYLO nightly build can be found at 
-http://phylo.cs.mcgill.ca/nightly/index.html#!play
+We now have hot deployment for master branch! Woot!
+[Under Master Branch]
+PHYLO - DNA 
+http://phylo.cs.mcgill.ca/master/index.html#!play
 
 PHYLO - RNA in pre-Alpha
-http://phylo.cs.mcgill.ca/nightly/index.html#!beta:rna
+http://phylo.cs.mcgill.ca/master/index.html#!beta:rna
 
 Master Branch contains the most recent experimental release
 
