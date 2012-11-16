@@ -13,5 +13,8 @@
 		});
 		$(".warning-bg").fadeIn();
 		$(".warning").fadeIn();
+		$(".warning-msg a").click(function() {
+			window.location = $(this).attr("href");
+		});
 	}
 })();

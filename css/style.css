@@ -711,6 +711,9 @@ a.btn {
 	margin-top:5px;
 	margin-bottom:10px;
 }
+.warning-msg a {
+	color:red;
+}
 .warning-cancel {
 	display:inline-block;
 }
