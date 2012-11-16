@@ -111,21 +111,38 @@
 			$("#star").addClass("pass");
 			$("#star").animate({
 				opacity: 1
-			},300, function(){
+			},300, function() {
+				if($.phylo.currentScore < $.sequence.par) {
+					self.unapprove();
+					return;
+				} 
 				$("#star").animate({
 					opacity: 0.2
 				},300,function() {
+					if($.phylo.currentScore < $.sequence.par) {
+						self.unapprove();
+						return;
+					} 
 					$("#star").animate({
 						opacity: 1
 					},500,function() {
+						if($.phylo.currentScore < $.sequence.par) {
+							self.unapprove();
+							return;
+						} 
 						$("#star").animate({
 							opacity: 0.2
 						},300,function() {
+							if($.phylo.currentScore < $.sequence.par) {
+								self.unapprove();
+								return;
+							} 
 							$("#star").animate({
 								opacity: 1
 							},500,function(){
 								if($.phylo.currentScore < $.sequence.par) {
 									self.unapprove();
+									return;
 								} 
 							});	
 						});	
