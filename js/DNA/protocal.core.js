@@ -37,7 +37,8 @@
 				mode = 4;
 			}
 			var data = "mode="+mode+"&id="+$.phylo.id+"&user="+window.guest+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.currentScore;
-			$.ajax({
+            console.log("send game score : "+mode + "/" + data);
+            $.ajax({
 				type: "POST",
 				url : url,
 				data : data,
@@ -54,11 +55,11 @@
 			});
 			
 		},
-		//sends highscroe to server
+		//sends highscore to server
 		sendHighScore : function() {
 			var self = this;
 			var data = "mode=4&id="+$.phylo.id+"&user="+window.guest+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.bestScore;
-
+            console.log("send highscore : "+mode + "/" + data);
 			$.ajax({
 				type : "POST",
 				url : url,
