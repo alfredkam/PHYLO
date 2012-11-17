@@ -212,6 +212,7 @@
 #cycle img {
 	width: 33px;
 	height:33px;
+	cursor: pointer;
 }
 #controlPanel {
 	height:66px;
@@ -238,6 +239,7 @@
 	left:200px;
 	top:15px;
 	margin-left:10px;
+	cursor: pointer;
 }
 #runaway:hover {
 	color: black;
@@ -251,6 +253,7 @@
 #volumePanel i {
 	color : #6D6D6D;
 	font-size:33px;
+	cursor: pointer;
 }
 #volumePanel i:hover {
 	color: black;
@@ -265,16 +268,21 @@
 }
 #cycle {
 	opacity: 0.4;
+	cursor: pointer;
 }
 #star {
 	position:relative;
 	top:2px;
 	opacity: 0.4;
+	cursor: default;
 }
 #star i {
 	color:#CDCD00;
 	width: 35px !important;
 	font-size:40px;
+}
+#star.pass i {
+	cursor: pointer;
 }
 #timerPanel {
 	display:none !important;

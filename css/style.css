@@ -322,6 +322,7 @@ a.btn {
 #login {
 	position:relative;
 	z-index:30;
+	cursor: pointer;
 }
 
 .login-warning {
