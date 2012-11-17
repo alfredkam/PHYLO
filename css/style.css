@@ -702,6 +702,17 @@ a.btn {
 }
 .warning-msg {
 	padding:10px 15px;
+	line-height:normal;
+}
+.warning-msg .icon-remove {
+	font-size: 40px;
+	left:-9px;
+	position:relative;
+	margin-top:5px;
+	margin-bottom:10px;
+}
+.warning-msg a {
+	color:red;
 }
 .warning-cancel {
 	display:inline-block;
