@@ -53,8 +53,7 @@ http://phylo.cs.mcgill.ca/feature/RNA/index.html#!beta:rna
 
 Device Supported
 =====
-Current version supports browsers and tablet browsers with screen size bigger than 1024px * 768px
-Screen @ 1024px w/ cutomized UX
+Current version supports all major browsers (except IE 6-8) and tablet browsers with screen size bigger than 1024px * 768px.  Tablets have their own custome UX
 
 I want to contribute!
 =====
