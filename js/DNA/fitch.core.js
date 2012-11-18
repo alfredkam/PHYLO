@@ -2,6 +2,7 @@
 	$.fitch = {
 		//calls to get the score
 		score : function() {
+
 			//oops its not DNA - we do not use this scoring algorithm
 			if($.main.type != "DNA")
 				return;
