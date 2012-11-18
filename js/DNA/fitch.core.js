@@ -268,33 +268,30 @@
 							} else {
 								log.mismatch++;
 							}
-						}
-						countArr++;
-						countSeq++;
-						gapMemory = 0;
-						console.log("Match/Mismatch");
-					} else if (arr[i] != "x" && seq[i] == "x") {
-						if (countSeq > 0 && countSeq < sizeSeq) {
-							if (gapMemory == 1) {
-								log.extend++;
-							} else {
-								log.open++;
-								gapMemory = 1;
+							countArr++;
+							countSeq++;
+							gapMemory = 0;
+						} else if (arr[i] != "x" && seq[i] == "x") {
+							if (countSeq > 0 && countSeq < sizeSeq) {
+								if (gapMemory == 1) {
+									log.extend++;
+								} else {
+									log.open++;
+									gapMemory = 1;
+								}
 							}
-						}
-						countArr++;
-						console.log("Gap1");
-					} else if (arr[i] == "x" && seq[i] != "x") {
-						if (countArr > 0 && countArr < sizeArr) {
-							if (gapMemory == 2) {
-								log.extend++;
-							} else {
-								log.open++;
-								gapMemory = 2;
+							countArr++;
+						} else if (arr[i] == "x" && seq[i] != "x") {
+							if (countArr > 0 && countArr < sizeArr) {
+								if (gapMemory == 2) {
+									log.extend++;
+								} else {
+									log.open++;
+									gapMemory = 2;
+								}
 							}
+							countSeq++;
 						}
-						countSeq++;
-						console.log("Gap2");
 					}
 				}
 /*
