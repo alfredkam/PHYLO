@@ -55,3 +55,8 @@ if options.js is tracked, ie - meaning git is tracking the changes, in terminal
 	git rm --cache options.js
 	git commit -a -m 'untrack options.js'
 
+
+I want to contribute!
+=====
+That is awesome! Just fork the project on github.  Create a topic branch, write some code and let us know!
+
