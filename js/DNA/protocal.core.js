@@ -37,7 +37,8 @@
 				mode = 4;
 			}
 			var data = "mode="+mode+"&id="+$.phylo.id+"&user="+window.guest+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.currentScore;
-			$.ajax({
+            console.log("send game score : "+mode + "/" + data);
+            $.ajax({
 				type: "POST",
 				url : url,
 				data : data,
@@ -54,11 +55,11 @@
 			});
 			
 		},
-		//sends highscroe to server
+		//sends highscore to server
 		sendHighScore : function() {
 			var self = this;
 			var data = "mode=4&id="+$.phylo.id+"&user="+window.guest+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.bestScore;
-
+            console.log("send highscore : "+mode + "/" + data);
 			$.ajax({
 				type : "POST",
 				url : url,
@@ -195,7 +196,8 @@
 				//var dummy = '{"level":{"attributes":{"id":"172"},"sequence":["----AGCGG---GG---AGTG","----TGAGA---GG---TGTA","----GGTGG---AG-------","----GAAAG---AG---CGAG","----GGGGA---TG---CGGG","GGGACCCCG---GG---AGGC","GGGTCCCAG---AG-------"],"tree":"(((hg19,mm9),(bosTau4,(canFam2,pteVam1))),(loxAfr3,dasNov2));"}}';
 				//var dummy = '{"level":{"attributes":{"id":"513"},"sequence":["------CTC-ATGCAGTGAAA","------CCC-ATGCAG-----","------GCT-CCGAGG-----","-AGCTCTCT-GCCGGG-----"],"tree":"(((hg19,rheMac2),mm9),loxAfr3);"}}';
 				//var dummy = '{"level":{"attributes":{"id":"1505"},"sequence":["---TCC----CAG-----CTG","CCCTCC----CAA-----CTC","---CCT----CAGCGGGCCC-","-----------------AGCC","---Tctgccctcacggaacac"],"tree":"(((hg19,rheMac2),(bosTau4,canFam2)),loxAfr3);"}}';
-				var dummy = '{"level":{"attributes":{"id":"3394"},"sequence":["----A-----------CTTCT","----A-----------CTTCT","----G----AGTGGGCCTGGG","----GTACCTGCGCGTCCAGG"],"tree":"((hg19,rheMac2),(bosTau4,canFam2));"}}';
+				//var dummy = '{"level":{"attributes":{"id":"3394"},"sequence":["----A-----------CTTCT","----A-----------CTTCT","----G----AGTGGGCCTGGG","----GTACCTGCGCGTCCAGG"],"tree":"((hg19,rheMac2),(bosTau4,canFam2));"}}';
+				var dummy = '{"level":{"attributes":{"id":"18"},"sequence":["cggcgcgcgccg---------","tggtgtgtgtgt---------","AGCCGCCAGCGC---------","AGGAGCCCATCT---------","TTGGGC-CTCTC---------","gTGCGCGCACTC---------","ACACACACACGCAGGgggagg"],"tree":"(((hg19,(galGal3,taeGut1)),xenTro2),((tetNig2,fr2),gasAcu1));"}}';
 
 				console.log(">> Cannnot connect to database");
 				console.log(">> loading dummy data");

@@ -5,8 +5,7 @@
 		$(".warning-cancel").hide();
 		$(".warning-ok").hide();
 	
-		$(".warning-msg").html("Oops! Currently we do not support IE 8 and below.<br>  Please either upgrade your browser or use an alternate.<br>If not please click here for flash");
-		
+		$(".warning-msg").html("<i class='icon-remove'></i><br><b>Aww Snap!</b><br> We currently do not support IE 8 and below.<br>  Please either upgrade your browser to IE9 or above,  or use an alternate browser like chrome or firefox.<br>If not please <a href='http://phylo.cs.mcgill.ca/archive/flash/eng/'>click here</a> for flash");
 
 		$(".warning-bg").css({
 			height: $(document).height(),
@@ -14,5 +13,8 @@
 		});
 		$(".warning-bg").fadeIn();
 		$(".warning").fadeIn();
+		$(".warning-msg a").click(function() {
+			window.location = $(this).attr("href");
+		});
 	}
 })();
