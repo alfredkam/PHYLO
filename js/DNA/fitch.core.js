@@ -261,8 +261,8 @@
 			var gapMemory = 0;
 
 				for(var i=0;i<arr.length;i++) {
-					if (arr[i] != "x" or seq[i] != "x") {
-						if (arr[i] != "x" and seq[i] != "x") {
+					if (arr[i] != "x" || seq[i] != "x") {
+						if (arr[i] != "x" && seq[i] != "x") {
 							if (seq[i] == arr[i]) {
 								log.match++;
 							} else {
@@ -271,8 +271,8 @@
 						countArr++;
 						countSeq++;
 						gapMemory = 0;
-					} else if (arr[i] != "x" and seq[i] == "x") {
-						if (countSeq > 0 and countSeq < sizeSeq) {
+					} else if (arr[i] != "x" && seq[i] == "x") {
+						if (countSeq > 0 && countSeq < sizeSeq) {
 							if (gapMemory == 1) {
 								log.extend++;
 							} else {
@@ -280,8 +280,8 @@
 								gapMemory = 1;
 							}
 						countArr++;
-					} else if (arr[i] == "x" and seq[i] != "x") {
-						if (countArr > 0 and countArr < sizeArr) {
+					} else if (arr[i] == "x" && seq[i] != "x") {
+						if (countArr > 0 && countArr < sizeArr) {
 							if (gapMemory == 2) {
 								log.extend++;
 							} else {
