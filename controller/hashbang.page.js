@@ -49,7 +49,7 @@
 				});
 			} else if(page == "expert") {
 				window.location = "http://phylo.cs.mcgill.ca/dcanv";
-			} else if(page == "beta:rna") {
+			} else if(page == "rna") {
 				self.selectTab(page);
 				$.lang.init(function() {
 					$.page.rna();
