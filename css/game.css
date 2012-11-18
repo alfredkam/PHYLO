@@ -108,6 +108,7 @@
 	z-index:2;
 }
 .nodeImg {
+	cursor: pointer;
 	width: 20px;
 	height: 20px;
 	background-color: #6D6D6D;
@@ -210,6 +211,7 @@
 }
 
 #cycle img {
+	cursor:pointer;
 	width: 33px;
 	height:33px;
 	cursor: pointer;
@@ -233,6 +235,7 @@
 }
 
 #runaway {
+	cursor: pointer;
 	color:#6D6D6D;
 	font-size: 28px;
 	position:relative;
@@ -251,6 +254,7 @@
 }
 */
 #volumePanel i {
+	cursor: pointer;
 	color : #6D6D6D;
 	font-size:33px;
 	cursor: pointer;
@@ -277,6 +281,7 @@
 	cursor: default;
 }
 #star i {
+	cursor: pointer;
 	color:#CDCD00;
 	width: 35px !important;
 	font-size:40px;
