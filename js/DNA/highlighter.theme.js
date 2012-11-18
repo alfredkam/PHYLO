@@ -2,6 +2,9 @@
 	//$.phylo.tree[$.stage.current].ancestor[i]	
 	$.highlighter = {
 		set : function() {
+			//oops this module is for DNA only - return it
+			if($.main.type != "DNA")
+				return;
 			this.remove();
 			var ancestor = $.phylo.tree[$.stage.current].ancestor;
 			var track = $.sequence.track;
