@@ -272,6 +272,7 @@
 						countArr++;
 						countSeq++;
 						gapMemory = 0;
+						console.log("Match/Mismatch");
 					} else if (arr[i] != "x" && seq[i] == "x") {
 						if (countSeq > 0 && countSeq < sizeSeq) {
 							if (gapMemory == 1) {
@@ -282,6 +283,7 @@
 							}
 						}
 						countArr++;
+						console.log("Gap1");
 					} else if (arr[i] == "x" && seq[i] != "x") {
 						if (countArr > 0 && countArr < sizeArr) {
 							if (gapMemory == 2) {
@@ -292,6 +294,7 @@
 							}
 						}
 						countSeq++;
+						console.log("Gap2");
 					}
 				}
 /*
