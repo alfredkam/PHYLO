@@ -1,17 +1,9 @@
 PHYLO
 =====
-We now have hot deployment for master & feature/RNA branch! Woot!
+Phylo is a gaming framework developed by McGill CSB.  Its use for harnessing the computing power of man kind to solve a common problem in DNA; Multiple Sequence Alignment.
 
-[Under Master Branch]
-PHYLO - DNA 
-http://phylo.cs.mcgill.ca/master/index.html#!play
-
-[Under feature/RNA Branch]
-PHYLO - RNA in pre-Alpha
-http://phylo.cs.mcgill.ca/feature/RNA/index.html#!beta:rna
-
-- If want your own hot deploy branch can message me @alfredkam
-
+Getting Started
+=====
 Master Branch contains the most recent experimental release
 
 Production Branch contains the most recent stable release
@@ -23,14 +15,6 @@ If you are using chrome for development, you will need to execute this in your t
 	open /Applications/Google\ Chrome.app --args --allow-file-access-from-files --allow-access-control-allow-origin
 
 This will tackle the cross domain issue when working locally. 
-
-
-
-Current version supports browsers and mobile browsers with screen size bigger than 1024px * 768px
-Screen @ 1024px w/ cutomized UX
-
-
-
 
 This build includes options, it can be found at controller/options_template.js
 
@@ -55,6 +39,22 @@ if options.js is tracked, ie - meaning git is tracking the changes, in terminal
 	git rm --cache options.js
 	git commit -a -m 'untrack options.js'
 
+Hot deploy branches
+=====
+[Under Master Branch]
+PHYLO - DNA 
+http://phylo.cs.mcgill.ca/master/index.html#!play
+
+[Under feature/RNA Branch]
+PHYLO - RNA in pre-Alpha
+http://phylo.cs.mcgill.ca/feature/RNA/index.html#!beta:rna
+
+- If want your own hot deploy branch can message me @alfredkam
+
+Device Supported
+=====
+Current version supports browsers and tablet browsers with screen size bigger than 1024px * 768px
+Screen @ 1024px w/ cutomized UX
 
 I want to contribute!
 =====
