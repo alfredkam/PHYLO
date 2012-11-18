@@ -268,6 +268,7 @@
 							} else {
 								log.mismatch++;
 							}
+						}
 						countArr++;
 						countSeq++;
 						gapMemory = 0;
@@ -279,6 +280,7 @@
 								log.open++;
 								gapMemory = 1;
 							}
+						}
 						countArr++;
 					} else if (arr[i] == "x" && seq[i] != "x") {
 						if (countArr > 0 && countArr < sizeArr) {
@@ -288,7 +290,9 @@
 								log.open++;
 								gapMemory = 2;
 							}
+						}
 						countSeq++;
+					}
 				}
 /*
 				for(var i=0;i<arr.length;i++) {
@@ -340,7 +344,7 @@
 
 			$.phylo.tree[stage].score = score;
 			return score;
-		}
+		},
 		
 	};
 })();
