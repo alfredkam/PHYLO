@@ -281,7 +281,6 @@
 	cursor: default;
 }
 #star i {
-	cursor: pointer;
 	color:#CDCD00;
 	width: 35px !important;
 	font-size:40px;
