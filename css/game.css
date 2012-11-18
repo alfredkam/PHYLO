@@ -405,6 +405,7 @@
 }
 
 #chosenArea {
+	cursor: pointer;
 	display:none;
 	position:absolute;
 	border:2px solid orange;
