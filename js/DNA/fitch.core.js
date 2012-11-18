@@ -340,7 +340,7 @@
 
 			$.phylo.tree[stage].score = score;
 			return score;
-		},
+		}
 		
 	};
 })();
