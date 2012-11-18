@@ -261,7 +261,7 @@
 			var gapMemory = 0;
 
 				for(var i=0;i<arr.length;i++) {
-					if (arr[i] != "x" or seq[i] != "x" {
+					if (arr[i] != "x" or seq[i] != "x") {
 						if (arr[i] != "x" and seq[i] != "x") {
 							if (seq[i] == arr[i]) {
 								log.match++;
