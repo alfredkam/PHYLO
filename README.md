@@ -51,6 +51,15 @@ http://phylo.cs.mcgill.ca/feature/RNA/index.html#!beta:rna
 
 - If want your own hot deploy branch can message me @alfredkam
 
+Other Frameworks we are using / going to be using
+=====
+- jquery
+- requirejs
+- backbonejs
+- yepnope
+- mustache
+- twitter boostrap
+
 Device Supported
 =====
 Current version supports all major browsers (except IE 6-8) and tablet browsers with screen size bigger than 1024px * 768px.  Tablets have their own custome UX
