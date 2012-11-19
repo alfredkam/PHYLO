@@ -19,14 +19,21 @@
 			'mustache' : {
 				deps : ['jquery'],
 			},
+			'theme/main.theme' : {
+				deps : ['jquery'],
+			},
 			'menu/interface.menu' : {
-				deps : ['menu/settings.menu']
+				deps : ['menu/settings.menu','menu/disease.menu','DNA/main.core']
 			},		
 			'DNA/main.core' : {
-				deps : ['jquery', 'jquery-ui'],	
+				deps : ['jquery', 'jquery-ui','jquery-mobile','DNA/helper.core', 'DNA/timer.core','DNA/physics.engine',
+					'DNA/endGame.theme','DNA/events.engine','DNA/engine.core','DNA/stage.core',
+					'DNA/sequence.core','DNA/splash.theme','DNA/tree.core','DNA/multiSelect.core',
+					'DNA/newick.core','DNA/lang.module','DNA/fitch.core','DNA/board.theme','DNA/highlighter.theme',
+					'DNA/protocal.core','DNA/score.theme','theme/main.theme'],	
 			},
 			'RNA/main.rna' : {
-
+				deps : ['DNA/main.core'],	
 			},
 			'controller/hashbang.page' : {
 				deps : ['jquery','DNA/helper.core','DNA/timer.core','DNA/lang.module','menu/tailor.menu','controller/main.page','menu/events.menu'],
@@ -52,4 +59,5 @@
 	require(['jquery']);
 	require(['bootstrap','mustache']);
 	require(['backbone']);
+	require(['theme/main.theme']);
 })();
