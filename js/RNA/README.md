@@ -1,7 +1,7 @@
 Note
 =====
 This folder is used to contain all the neccessary scripts to build the RNA version<br>
-If the features or dependancies under js/DNA does not fit for this part.  Either write an extension or create a new module, do not modify the files in js/DNA.<br>
+If the features or dependancies under js/DNA does not fit for this part.  Either write an extension or create a new module, do not modify the files in js/DNA. Files under js/DNA are the base of the framework<br>
 Remeber if need to add a new file, please add it in index.html
 
 Naming Schema
