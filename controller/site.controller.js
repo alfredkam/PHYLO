@@ -29,7 +29,7 @@
 				if($("#history-wrapper").length != 0) {
 					$("#history-wrapper").html(re);
 					//$.getScript("js/history/DT_bootstrap_history.js");
-					require(['history/DT_boostrap_history'],function() {
+					require(['history/DT_bootstrap_history'],function() {
 						//$.getScript("js/history/DT_bootstrap_history.js");
 					});
 				}
