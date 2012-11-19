@@ -28,8 +28,11 @@
 				deps : ['jquery'],
 			},
 			'menu/interface.menu' : {
-				deps : ['jquery','menu/settings.menu','menu/disease.menu','DNA/main.core']
+				deps : ['jquery','menu/settings.menu','menu/disease.menu','DNA/main.core'],
 			},		
+			'DNA/stage.core' : {
+				deps : 'DNA/physics.engine', 'DNA/events.engine','DNA/engine.core'],
+			},
 			'DNA/main.core' : {
 				deps : ['jquery', 'jquery-ui','jquery-mobile','DNA/helper.core', 'DNA/timer.core','DNA/physics.engine',
 					'DNA/endGame.theme','DNA/events.engine','DNA/engine.core','DNA/stage.core',
@@ -51,6 +54,12 @@
 			},		
 			'bootbox' : {
 				deps : ['jquery','bootstrap'],
+			},
+			'controller/site.controller' : {
+				deps : ['jquery'],
+			},
+			'menu/events.menu' : {
+				deps : ['jquery'],
 			},
 			'menu/tailor.menu' : {
 				deps : ['jquery'],
