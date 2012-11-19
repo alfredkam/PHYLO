@@ -46,7 +46,7 @@
 			'controller/hashbang.page' : {
 				deps : ['jquery','DNA/helper.core','DNA/timer.core','DNA/lang.module','menu/tailor.menu','controller/site.controller','menu/events.menu'],
 			},
-			'jquery.dataTable' : {
+			'jquery.dataTables' : {
 				deps : ['jquery','jquery-ui'],
 			},
 			'misc/detectIE' :  {
@@ -77,10 +77,10 @@
 				deps : ['jquery', 'validation/cookie.validation'],
 			},
 			'ranking/DT_bootstrap_ranking' : {
-				deps : ['jquery','bootstrap','jquery.dataTable'],
+				deps : ['jquery','bootstrap','jquery.dataTables'],
 			},
 			'history/DT_bootstrap_history' : {
-				deps : ['jquery','bootstrap','jquery.dataTable'],
+				deps : ['jquery','bootstrap','jquery.dataTables'],
 			},
 			'DNA/helper.core' : {
 				deps : ['jquery'],
