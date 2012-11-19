@@ -31,7 +31,7 @@
 				deps : ['jquery','menu/settings.menu','menu/disease.menu','DNA/main.core'],
 			},		
 			'DNA/stage.core' : {
-				deps : 'DNA/physics.engine', 'DNA/events.engine','DNA/engine.core'],
+				deps : ['DNA/physics.engine', 'DNA/events.engine','DNA/engine.core'],
 			},
 			'DNA/main.core' : {
 				deps : ['jquery', 'jquery-ui','jquery-mobile','DNA/helper.core', 'DNA/timer.core','DNA/physics.engine',
