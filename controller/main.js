@@ -8,6 +8,8 @@
 			menu : '../menu',
 			validation : '../validation',
 			controller : '../../controller',
+			misc : '../misc',
+			lang : '../../',
 		},
 		shim : {
 			'backbone' : {
@@ -23,7 +25,7 @@
 				deps : ['jquery'],
 			},
 			'menu/interface.menu' : {
-				deps : ['menu/settings.menu','menu/disease.menu','DNA/main.core']
+				deps : ['jquery','menu/settings.menu','menu/disease.menu','DNA/main.core']
 			},		
 			'DNA/main.core' : {
 				deps : ['jquery', 'jquery-ui','jquery-mobile','DNA/helper.core', 'DNA/timer.core','DNA/physics.engine',
@@ -33,10 +35,22 @@
 					'DNA/protocal.core','DNA/score.theme','theme/main.theme'],	
 			},
 			'RNA/main.rna' : {
-				deps : ['DNA/main.core'],	
+				deps : ['jquery','jquery-ui','DNA/main.core','RNA/stage.ext','RNA/sequence.ext'],	
 			},
 			'controller/hashbang.page' : {
 				deps : ['jquery','DNA/helper.core','DNA/timer.core','DNA/lang.module','menu/tailor.menu','controller/main.page','menu/events.menu'],
+			},
+			'jquery.dataTable' : {
+				deps : ['jquery','jquery-ui'],
+			},
+			'misc/detectIE' :  {
+				deps : ['jquery','DNA/helper.core']
+			},		
+			'misc/bootbox' : {
+				deps : ['bootstrap'],
+			},
+			'validation/login.validation' : {
+				deps : ['jquery', 'validation/cookie.validation'],
 			},
 		}
 	});
@@ -57,7 +71,13 @@
 		}
 	);
 	require(['jquery']);
+	require(['misc/detectIE']);
 	require(['bootstrap','mustache']);
 	require(['backbone']);
 	require(['theme/main.theme']);
+	require(['misc/bootbox']);
+	require(['validation/login.validation']);
+	require(['controller/hashbang.page'],function() {
+		$.hashbang.load($.hashbang.get());
+	});
 })();
