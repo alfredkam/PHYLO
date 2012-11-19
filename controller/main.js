@@ -50,7 +50,7 @@
 				deps : ['jquery','DNA/helper.core']
 			},		
 			'bootbox' : {
-				deps : ['bootstrap'],
+				deps : ['jquery','bootstrap'],
 			},
 			'validation/login.validation' : {
 				deps : ['jquery', 'validation/cookie.validation'],
@@ -60,6 +60,9 @@
 			},
 			'history/DT_bootstrap_history' : {
 				deps : ['jquery','bootstrap','jquery.dataTable'],
+			},
+			'DNA/helper.core' : {
+				deps : ['jquery'],
 			},
 		}
 	});
