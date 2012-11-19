@@ -18,8 +18,10 @@
 			},
 			'mustache' : {
 				deps : ['jquery'],
-			}
-			'DNA/
+			},
+			'DNA/main.core' : {
+
+			},
 		}
 	});
 	//loads tablet UX
