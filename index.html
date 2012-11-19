@@ -1,7 +1,7 @@
 <!doctype html>
 <!-- written by Alfred Kam, McGill CSB -->
 <html lang='UTF8'>
-	<head>
+<head>
         <title>PHYLO | DNA Puzzles</title>
 		<meta name='viewport' content='width=device-width, initial-scale=1'>	
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -27,8 +27,6 @@
 		<script src='controller/options_template.js' type='text/javascript'></script>
 		<script src='controller/options.js' type='text/javascript'></script>
             
-		<script type='text/javascript'>
-		</script>
 		<!-- icons from Font Awesome - http://fortawesome.github.com/Font-Awesome -->
         <link href="http://oyanix.com/opensource/hybridauth/social_hub/public/zocial.css" rel="stylesheet" type="text/css" />
             <link href='css/zocial.css' rel='stylesheet' type='text/css' />
@@ -361,6 +359,7 @@
 
 
 		<!-- DNA modules -->
+		<!--
 		<script src='js/DNA/helper.core.js' type='text/javascript'></script>
 		<script src='js/menu/tailor.menu.js' type='text/javascript'></script>
 		<script src='js/menu/disease.menu.js' type='text/javascript'></script>
@@ -382,23 +381,37 @@
 		<script src='js/DNA/protocal.core.js' type='text/javascript'></script>
 		<script src='js/DNA/score.theme.js' type='text/javascript'></script>
 		<script src='js/DNA/main.core.js' type='text/javascript'></script>
+		-->
 		<!-- RNA module -->
+		<!--
 		<script src='js/RNA/stage.ext.js' type='text/javascript'></script>
 		<script src='js/RNA/sequence.ext.js' type='text/javascript'></script>
 		<script src='js/RNA/main.rna.js' type='text/javascript'></script>		
+		-->
 		
 
 		<!-- theming module -->
+		<!--
 		<script src='js/theme/main.theme.js' type='text/javascript'></script>		
+		-->
 
 		<!-- game menu module-->
+		<!--
 		<script src='js/menu/interface.menu.js' type='text/javascript'></script>
 		<script src='js/menu/settings.menu.js' type='text/javascript'></script>
+		-->
 	
 		<!-- menu / page loading modules -->
+		<!--
 		<script src='controller/main.page.js' type='text/javascript'></script>
 		<script src='controller/hashbang.page.js' type='text/javascript'></script>
 		<script src='js/menu/events.menu.js' type='text/javascript'></script>
+		-->
+	<script type='text/javascript'>
+		require(['controller/hashbang.page'],function() {
+				$.hashbang.load($.hashbang.get());
+		});
+	</script>
 
         <!-- login-->
         <!-- validation scripts -->
@@ -419,13 +432,19 @@
         </script>
         -->
 	<!-- plugin for ranking table -->
+	<!--
 	<script type="text/javascript" language="javascript" src="js/blueprint/jquery.dataTables.js"></script>
+	-->
 
         <!-- dialog boxes -->
+	<!--
         <script type="text/javascript" language="javascript" src="js/misc/bootbox.js"></script>
+	-->
                                 
 	<!-- detect ie 8 and below -->
+	<!--
 	<script type='text/javascript' src='js/misc/detectIE.js'></script>
+	-->
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-27559307-1']);

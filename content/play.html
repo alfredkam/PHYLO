@@ -108,7 +108,11 @@
 			</div>
 		</div>
 		<script>
+			/*
 			$.tailor.run(function() {
 				interactiveMenu.start();
-			});
+			});*/
+			require(['menu/interface.menu'], function() {
+				interactiveMenu.start();
+			});	
 		</script>
