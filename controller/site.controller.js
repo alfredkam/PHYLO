@@ -5,47 +5,51 @@
 		},
 		ranking : function() {
 			$("#mid-panel").html("<div id='ranking-wrapper'></div>");
-            $.ajax({
+		    	$.ajax({
 				url : "http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + window.langOpt.toUpperCase(),
-                //url : "content/ranking.html",
+			//url : "content/ranking.html",
 				type : "post",
 			}).done(function(re) {
-		if($("#ranking-wrapper").length != 0) {
-			$("#ranking-wrapper").html(re);
-			$.getScript("js/ranking/DT_bootstrap_ranking.js");
-		}
-                $.hashbang.panelReady();
-            });
- 
+				if($("#ranking-wrapper").length != 0) {
+					$("#ranking-wrapper").html(re);
+					require(['ranking/DT_bootstrap_ranking'],function() {
+					//$.getScript("js/ranking/DT_bootstrap_ranking.js");
+					});
+				}
+				$.hashbang.panelReady();
+		    	});
 		},
 		history : function() {
 			$("#mid-panel").html("<div id='history-wrapper'></div>");
-            $.ajax({
+            		$.ajax({
 				url : "http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username=" + window.guest,
                 //url : "content/history.html",
 				type : "post",
 			}).done(function(re) {
-		if($("#history-wrapper").length != 0) {
-			$("#history-wrapper").html(re);
-			$.getScript("js/history/DT_bootstrap_history.js");
-		}
-                $.hashbang.panelReady();
-            });
+				if($("#history-wrapper").length != 0) {
+					$("#history-wrapper").html(re);
+					//$.getScript("js/history/DT_bootstrap_history.js");
+					require(['history/DT_boostrap_history'],function() {
+						//$.getScript("js/history/DT_bootstrap_history.js");
+					});
+				}
+				$.hashbang.panelReady();
+            		});
 		},
 		login : function() {
 			$.tablet.login();	
 		},
 		settings : function() {
-			this.protocal("content/settings.html");
+			this.protocal("views/settings.html");
 		},
 		rna : function() {
-			this.protocal("content/rna.html");
+			this.protocal("views/rna.html");
 		},	
 		play : function() {
-			this.protocal("content/play.html");
+			this.protocal("views/play.html");
 		},
 		tutorial : function() {
-            this.protocal("content/tutorial.html");
+		    	this.protocal("views/tutorial.html");
 		},
 		about : function() {
 			var about = window.lang.body.play.about;

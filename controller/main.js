@@ -9,7 +9,10 @@
 			validation : '../validation',
 			controller : '../../controller',
 			misc : '../misc',
-			lang : '../../',
+			lang : '../../lang',
+			tutorial : '../tutorial',
+			ranking : '../ranking',
+			history : '../history',
 		},
 		shim : {
 			'backbone' : {
@@ -38,7 +41,7 @@
 				deps : ['jquery','jquery-ui','DNA/main.core','RNA/stage.ext','RNA/sequence.ext'],	
 			},
 			'controller/hashbang.page' : {
-				deps : ['jquery','DNA/helper.core','DNA/timer.core','DNA/lang.module','menu/tailor.menu','controller/main.page','menu/events.menu'],
+				deps : ['jquery','DNA/helper.core','DNA/timer.core','DNA/lang.module','menu/tailor.menu','controller/site.controller','menu/events.menu'],
 			},
 			'jquery.dataTable' : {
 				deps : ['jquery','jquery-ui'],
@@ -46,11 +49,17 @@
 			'misc/detectIE' :  {
 				deps : ['jquery','DNA/helper.core']
 			},		
-			'misc/bootbox' : {
+			'bootbox' : {
 				deps : ['bootstrap'],
 			},
 			'validation/login.validation' : {
 				deps : ['jquery', 'validation/cookie.validation'],
+			},
+			'ranking/DT_bootstrap_ranking' : {
+				deps : ['jquery','bootstrap','jquery.dataTable'],
+			},
+			'history/DT_bootstrap_history' : {
+				deps : ['jquery','bootstrap','jquery.dataTable'],
 			},
 		}
 	});
@@ -75,7 +84,7 @@
 	require(['bootstrap','mustache']);
 	require(['backbone']);
 	require(['theme/main.theme']);
-	require(['misc/bootbox']);
+	require(['bootbox']);
 	require(['validation/login.validation']);
 	require(['controller/hashbang.page'],function() {
 		$.hashbang.load($.hashbang.get());
