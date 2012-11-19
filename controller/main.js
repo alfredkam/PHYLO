@@ -43,7 +43,7 @@
 			'RNA/main.rna' : {
 				deps : ['jquery','jquery-ui','DNA/main.core','RNA/stage.ext','RNA/sequence.ext'],	
 			},
-			'controller/hashbang.page' : {
+			'controller/hashbang.controller' : {
 				deps : ['jquery','DNA/helper.core','DNA/timer.core','DNA/lang.module','menu/tailor.menu','controller/site.controller','menu/events.menu'],
 			},
 			'jquery.dataTables' : {
@@ -110,7 +110,7 @@
 	require(['theme/main.theme']);
 	require(['bootbox']);
 	require(['validation/login.validation']);
-	require(['controller/hashbang.page'],function() {
+	require(['controller/hashbang.controller'],function() {
 		$.hashbang.load($.hashbang.get());
 	});
 })();

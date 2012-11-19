@@ -13,7 +13,7 @@
 				if($("#ranking-wrapper").length != 0) {
 					$("#ranking-wrapper").html(re);
 					require(['ranking/DT_bootstrap_ranking'],function() {
-					//$.getScript("js/ranking/DT_bootstrap_ranking.js");
+						// you should write some code here to initalize 
 					});
 				}
 				$.hashbang.panelReady();
@@ -28,9 +28,8 @@
 			}).done(function(re) {
 				if($("#history-wrapper").length != 0) {
 					$("#history-wrapper").html(re);
-					//$.getScript("js/history/DT_bootstrap_history.js");
 					require(['history/DT_bootstrap_history'],function() {
-						//$.getScript("js/history/DT_bootstrap_history.js");
+						// you should write some code here to initalize 
 					});
 				}
 				$.hashbang.panelReady();
