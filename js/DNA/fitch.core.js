@@ -2,6 +2,10 @@
 	$.fitch = {
 		//calls to get the score
 		score : function() {
+
+			//oops its not DNA - we do not use this scoring algorithm
+			if($.main.type != "DNA")
+				return;
 			// forwardBackward does a tree traversal for each sequence nucleotide, forwardBackward2 does a sequence traversal for each tree node.
 			// Not sure which is faster
 			if($.stage.stats == undefined)
