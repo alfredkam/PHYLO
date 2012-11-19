@@ -52,6 +52,18 @@
 			'bootbox' : {
 				deps : ['jquery','bootstrap'],
 			},
+			'menu/tailor.menu' : {
+				deps : ['jquery'],
+			},
+			'DNA/timer.core' : {
+				deps : ['jquery'],
+			},
+			'DNA/lang.module' : {
+				deps : ['jquery'],
+			},
+			'validation/cookie.validation' : {
+				deps : ['jquery'],
+			},
 			'validation/login.validation' : {
 				deps : ['jquery', 'validation/cookie.validation'],
 			},
