@@ -2,7 +2,7 @@ Notes
 =====
 
 We are now using requirejs, you can read more about it at http://requirejs.org/ <br>
-main.js contains all the dependencies and this file is where you should include your dependencies too. <br>
+main.js contains all the dependencies and this file is where you should include your dependencies too. ie your javascript files, we do not include in index.html any more. <br>
 site.controller.js is used to point to what the page should load <br>
 hashbang.controller.js is used to determine the hashbang and load as what is defined in the file, depends on site.controller.js <br>
 
