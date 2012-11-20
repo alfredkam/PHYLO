@@ -74,7 +74,7 @@
 				deps : ['jquery'],
 			},
 			'validation/login.validation' : {
-				deps : ['jquery', 'validation/cookie.validation'],
+				deps : ['jquery', 'validation/cookie.validation','DNA/protocal.core'],
 			},
 			'ranking/DT_bootstrap_ranking' : {
 				deps : ['jquery','bootstrap','jquery.dataTables'],
