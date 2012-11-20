@@ -1,6 +1,6 @@
 (function() {
 	var doc = document, win = window;
-	var url = "../phpdb/phyloExpertDB.php";
+	var url = "/phpdb/phyloExpertDB.php";
 	$.protocal = {
 		//for login
 		login : function(username, password, fn) {
