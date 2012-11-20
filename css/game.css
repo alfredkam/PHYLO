@@ -1,3 +1,6 @@
+.addPointer {
+	cursor: pointer;
+}	
 
 #gameBoard {
 	position: relative;
@@ -17,6 +20,10 @@
 	position: absolute;
 	display:inline-block;
 	z-index: 10;	
+}
+
+#movingParts .current .sequence {
+	cursor: pointer;
 }
 
 #tree {
@@ -108,6 +115,7 @@
 	z-index:2;
 }
 .nodeImg {
+	cursor: pointer;
 	width: 20px;
 	height: 20px;
 	background-color: #6D6D6D;
@@ -210,8 +218,10 @@
 }
 
 #cycle img {
+	cursor:pointer;
 	width: 33px;
 	height:33px;
+	cursor: pointer;
 }
 #controlPanel {
 	height:66px;
@@ -232,12 +242,14 @@
 }
 
 #runaway {
+	cursor: pointer;
 	color:#6D6D6D;
 	font-size: 28px;
 	position:relative;
 	left:200px;
 	top:15px;
 	margin-left:10px;
+	cursor: pointer;
 }
 #runaway:hover {
 	color: black;
@@ -249,8 +261,10 @@
 }
 */
 #volumePanel i {
+	cursor: pointer;
 	color : #6D6D6D;
 	font-size:33px;
+	cursor: pointer;
 }
 #volumePanel i:hover {
 	color: black;
@@ -265,16 +279,21 @@
 }
 #cycle {
 	opacity: 0.4;
+	cursor: pointer;
 }
 #star {
 	position:relative;
 	top:2px;
 	opacity: 0.4;
+	cursor: default;
 }
 #star i {
 	color:#CDCD00;
 	width: 35px !important;
 	font-size:40px;
+}
+#star.pass i {
+	cursor: pointer;
 }
 #timerPanel {
 	display:none !important;
@@ -359,6 +378,12 @@
 	width:100%;
 	height:100%;
 	background-color:#3D3D3D;
+	box-shadow:0 6px 6px -6px #CCC;
+	-webkit-box-shadow: 0 6px 6px -6px #CCC;
+	-moz-box-shadow: 0 6px 6px -6px #CCC;
+	-ms-box-shadow: 0 6px 6px -6px #CCC;
+	-o-box-shadow: 0 6px 6px -6px #CCC;
+	-khtml-box-shaodw: 0 6px 6px -6px #CCC;
 }
 #countDown-text {
 	text-align:left;
@@ -370,6 +395,7 @@
 	top:200px;
 	font-size:70px;
 	z-index: 20;
+	line-height:normal;
 }	
 
 #selectBox {
@@ -382,6 +408,7 @@
 }
 
 #chosenArea {
+	cursor: pointer;
 	display:none;
 	position:absolute;
 	border:2px solid orange;

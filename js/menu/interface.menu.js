@@ -499,6 +499,7 @@
                 };
 			};
 
+			var onHover = false;
 			var random = function(ctx, i) {
 				var color= [ "rgb(113, 178, 226)", "rgb(153, 50, 204)","rgb(0, 128, 0)", "rgb(255, 165, 0)"];
 				ctx.beginPath();

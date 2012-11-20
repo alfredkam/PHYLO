@@ -2,6 +2,10 @@
 	$.fitch = {
 		//calls to get the score
 		score : function() {
+
+			//oops its not DNA - we do not use this scoring algorithm
+			if($.main.type != "DNA")
+				return;
 			// forwardBackward does a tree traversal for each sequence nucleotide, forwardBackward2 does a sequence traversal for each tree node.
 			// Not sure which is faster
 			if($.stage.stats == undefined)
@@ -250,6 +254,51 @@
 					extend : 0
 				};
 				
+			function isGap(nucleotide) {
+				return nucleotide == "x";
+				};
+
+			var sizeArr = arr.length - arr.filter(isGap).length;
+			var sizeSeq = seq.length - seq.filter(isGap).length;
+			var countArr = 0;
+			var countSeq = 0;
+			var gapMemory = 0;
+
+				for(var i=0;i<arr.length;i++) {
+					if (arr[i] != "x" || seq[i] != "x") {
+						if (arr[i] != "x" && seq[i] != "x") {
+							if (seq[i] == arr[i]) {
+								log.match++;
+							} else {
+								log.mismatch++;
+							}
+							countArr++;
+							countSeq++;
+							gapMemory = 0;
+						} else if (arr[i] != "x" && seq[i] == "x") {
+							if (countSeq > 0 && countSeq < sizeSeq) {
+								if (gapMemory == 1) {
+									log.extend++;
+								} else {
+									log.open++;
+									gapMemory = 1;
+								}
+							}
+							countArr++;
+						} else if (arr[i] == "x" && seq[i] != "x") {
+							if (countArr > 0 && countArr < sizeArr) {
+								if (gapMemory == 2) {
+									log.extend++;
+								} else {
+									log.open++;
+									gapMemory = 2;
+								}
+							}
+							countSeq++;
+						}
+					}
+				}
+/*
 				for(var i=0;i<arr.length;i++) {
 					if (arr[i] == "x") {
 						if (seq[i] != "x") {
@@ -277,6 +326,7 @@
 						log.mismatch++;
 					}
 				}
+*/
 				return log;
 			};
 

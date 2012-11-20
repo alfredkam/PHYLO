@@ -1,14 +1,17 @@
 <!doctype html>
 <!-- written by Alfred Kam, McGill CSB -->
 <html lang='UTF8'>
-	<head>
+<head>
         <title>PHYLO | DNA Puzzles</title>
 		<meta name='viewport' content='width=device-width, initial-scale=1'>	
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<!-- blue print css -->
 		<link rel='stylesheet' href='css/bootstrap.css'/>
+
+		<!-- icons from Font Awesome - http://fortawesome.github.com/Font-Awesome -->
 		<link rel='stylesheet' href='css/font-awesome.css'/>
 		<link rel='stylesheet' href='css/font-awesome-ie7.css'/>
+
 		<!-- custom css -->
 		<link rel='stylesheet' href='css/style.css'/>
 		<link rel='stylesheet' href='css/game.css'/>
@@ -19,41 +22,22 @@
 		-->
 		<link rel='stylesheet' href='css/DT_bootstrap.css'/>
 		<link rel='stylesheet' href='css/DT_bootstrap_addons.css'/>
+		
 		<!-- options -->
 		<script src='controller/options_template.js' type='text/javascript'></script>
 		<script src='controller/options.js' type='text/javascript'></script>
-            
-		<script src='js/blueprint/yepnope.js' type='text/javascript'></script>
-		<script type='text/javascript'>
-			//loads tablet UX
-			window.isTablet = navigator.userAgent.match(/(iPad|Android .* Chrome\/[.0-9]* (?!Mobile)|Opera Tablet|Android .* (?!Mobile)|Tablet)/i) != null;
-			yepnope({
-				test : isTablet,
-				yep : 'css/tablet.css',
-				nope : ['css/media1280.css','css/media1180.css','css/media1024.css'],
-			});
-			//FF bug fix
-			/*
-			var isFF = navigator.userAgent.match(/Firefox/i) != null;
-			yepnope({
-				test : isFF,
-				yep : 'css/FF_BugFix.css',
-			}); */	
-			//test mode script injection
-			yepnope({
-				test : window.DEV.enableTabletMode,
-				yep : 'css/tablet.css',
-			});
-		</script>
-		<!-- icons from Font Awesome - http://fortawesome.github.com/Font-Awesome -->
-        <link href="http://oyanix.com/opensource/hybridauth/social_hub/public/zocial.css" rel="stylesheet" type="text/css" />
-            <link href='css/zocial.css' rel='stylesheet' type='text/css' />
-        <style>
-            .zocial{
-                margin: 2px;
-                width: 200px;
-            }
-        </style>
+
+		<!-- controller blue print requirejs-->
+		<script data-main="controller/main.js" src='js/blueprint/require.js'></script>
+
+		<link href="http://oyanix.com/opensource/hybridauth/social_hub/public/zocial.css" rel="stylesheet" type="text/css" />
+		    <link href='css/zocial.css' rel='stylesheet' type='text/css' />
+		<style>
+		    .zocial{
+			margin: 2px;
+			width: 200px;
+		    }
+		</style>
     </head>
 	<body>        
         <div id="fb-root"></div>
@@ -362,62 +346,6 @@
 				</div>
 			</div>
 		</div>
-		<!-- blue print js  -->
-		<script src='js/jquery/jquery.1.7.2.js' type='text/javascript'></script>
-		<script src='js/blueprint/handlebars-1.0.rc.1.js' type='text/javascript'></script>
-		<script src='js/blueprint/ember-1.0.0-pre.2.js' type='text/javascript'></script>
-		<script src='js/twitter-bootstrap/bootstrap.js' type='text/javascript'></script>
-		<script src='js/jquery/jquery.mobile.1.0a2.js' type='text/javascript'></script>
-		<script src='js/jquery/jquery-ui-1.9.1.custom.min.js' type='text/javascript'></script>
-
-		<!-- custom js -->
-
-
-		<!-- DNA modules -->
-		<script src='js/DNA/helper.core.js' type='text/javascript'></script>
-		<script src='js/menu/tailor.menu.js' type='text/javascript'></script>
-		<script src='js/menu/disease.menu.js' type='text/javascript'></script>
-		<script src='js/DNA/timer.core.js' type='text/javascript'></script>
-		<script src='js/DNA/endGame.theme.js' type='text/javascript'></script>
-		<script src='js/DNA/physics.engine.js' type='text/javascript'></script>
-		<script src='js/DNA/events.engine.js' type='text/javascript'></script>
-		<script src='js/DNA/engine.core.js' type='text/javascript'></script>
-		<script src='js/DNA/stage.core.js' type='text/javascript'></script>
-		<script src='js/DNA/sequence.core.js' type='text/javascript'></script>
-		<script src='js/DNA/splash.theme.js' type='text/javascript'></script>
-		<script src='js/DNA/tree.core.js' type='text/javascript'></script>
-		<script src='js/DNA/multiSelect.core.js' type='text/javascript'></script>
-		<script src='js/DNA/newick.core.js' type='text/javascript'></script>
-		<script src='js/DNA/lang.module.js' type='text/javascript'></script>
-		<script src='js/DNA/fitch.core.js' type='text/javascript'></script>
-		<script src='js/DNA/board.theme.js' type='text/javascript'></script>
-		<script src='js/DNA/highlighter.theme.js' type='text/javascript'></script>
-		<script src='js/DNA/protocal.core.js' type='text/javascript'></script>
-		<script src='js/DNA/score.theme.js' type='text/javascript'></script>
-		<script src='js/DNA/main.core.js' type='text/javascript'></script>
-		<!-- RNA module -->
-		<script src='js/RNA/stage.ext.js' type='text/javascript'></script>
-		<script src='js/RNA/sequence.ext.js' type='text/javascript'></script>
-		<script src='js/RNA/main.rna.js' type='text/javascript'></script>		
-		
-
-		<!-- theming module -->
-		<script src='js/theme/main.theme.js' type='text/javascript'></script>		
-
-		<!-- game menu module-->
-		<script src='js/menu/interface.menu.js' type='text/javascript'></script>
-		<script src='js/menu/settings.menu.js' type='text/javascript'></script>
-	
-		<!-- menu / page loading modules -->
-		<script src='controller/main.page.js' type='text/javascript'></script>
-		<script src='controller/hashbang.page.js' type='text/javascript'></script>
-		<script src='js/menu/events.menu.js' type='text/javascript'></script>
-
-        <!-- login-->
-        <!-- validation scripts -->
-        <script src='js/validation/cookie.validation.js' type='text/javascript'></script>
-        <script src='js/validation/login.validation.js' type='text/javascript'></script>
-                                
         <!-- FB stuff -->
         <!--                        
         <script>
@@ -431,13 +359,17 @@
             }(document));
         </script>
         -->
-		<!-- plugin for ranking table -->
-		<script type="text/javascript" language="javascript" src="js/jquery/jquery.dataTables.js"></script>
 
-        <!-- dialog boxes -->
-        <script type="text/javascript" language="javascript" src="js/misc/bootbox.js"></script>
-                                
-		<!-- detect ie 8 and below -->
-		<script type='text/javascript' src='js/misc/detectIE.js'></script>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-27559307-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
 	</body>
 </html>

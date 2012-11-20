@@ -5,47 +5,50 @@
 		},
 		ranking : function() {
 			$("#mid-panel").html("<div id='ranking-wrapper'></div>");
-            $.ajax({
+		    	$.ajax({
 				url : "http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + window.langOpt.toUpperCase(),
-                //url : "content/ranking.html",
+			//url : "content/ranking.html",
 				type : "post",
 			}).done(function(re) {
-		if($("#ranking-wrapper").length != 0) {
-			$("#ranking-wrapper").html(re);
-			$.getScript("js/ranking/DT_bootstrap_ranking.js");
-		}
-                $.hashbang.panelReady();
-            });
- 
+				if($("#ranking-wrapper").length != 0) {
+					$("#ranking-wrapper").html(re);
+					require(['ranking/DT_bootstrap_ranking'],function() {
+						// you should write some code here to initalize 
+					});
+				}
+				$.hashbang.panelReady();
+		    	});
 		},
 		history : function() {
 			$("#mid-panel").html("<div id='history-wrapper'></div>");
-            $.ajax({
+            		$.ajax({
 				url : "http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username=" + window.guest,
                 //url : "content/history.html",
 				type : "post",
 			}).done(function(re) {
-		if($("#history-wrapper").length != 0) {
-			$("#history-wrapper").html(re);
-			$.getScript("js/history/DT_bootstrap_history.js");
-		}
-                $.hashbang.panelReady();
-            });
+				if($("#history-wrapper").length != 0) {
+					$("#history-wrapper").html(re);
+					require(['history/DT_bootstrap_history'],function() {
+						// you should write some code here to initalize 
+					});
+				}
+				$.hashbang.panelReady();
+            		});
 		},
 		login : function() {
 			$.tablet.login();	
 		},
 		settings : function() {
-			this.protocal("content/settings.html");
+			this.protocal("views/settings.html");
 		},
 		rna : function() {
-			this.protocal("content/rna.html");
+			this.protocal("views/rna.html");
 		},	
 		play : function() {
-			this.protocal("content/play.html");
+			this.protocal("views/play.html");
 		},
 		tutorial : function() {
-            this.protocal("content/tutorial.html");
+		    	this.protocal("views/tutorial.html");
 		},
 		about : function() {
 			var about = window.lang.body.play.about;
@@ -96,6 +99,15 @@
 						self.loadFailCounter+=1;
 						if(self.loadFailCounter == 5) {
 							//window.location.reload(true);	
+							$(".warning-cancel").hide();
+							$(".warning-ok").hide();
+							$(".warning-msg").html("<i class='icon-remove'></i><br><b>Aww Snap!</b><br>  Something went wrong.  Please reload the page to continue!");
+							$(".warning-bg").css({
+								height: $(document).height(),
+								width: $(document).width(),
+							});
+							$(".warning-bg").fadeIn();
+							$(".warning").fadeIn();
 						} else {
 							self.protocal(url);
 						}

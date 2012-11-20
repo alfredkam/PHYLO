@@ -3,6 +3,7 @@
 .*.swo
 */.DS_Store
 .*
+github.php
 
 js/.DS_Store
 

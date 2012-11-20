@@ -108,8 +108,7 @@
 			</div>
 		</div>
 		<script>
-			$.tailor.run(function() {
-				//interactiveMenu.start();
-				$.rna.init();	
-			});
+			require(['menu/interface.menu'], function() {
+				interactiveMenu.start();
+			});	
 		</script>
