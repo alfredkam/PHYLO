@@ -11,7 +11,8 @@
 				} catch(err) {
 					hash = "EN";
 				}	
-				
+
+
 				var script = document.createElement("script");
 				script.id = "langFile";
 				script.src = "../lang/"+hash+".js";
