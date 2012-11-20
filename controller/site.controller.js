@@ -13,7 +13,6 @@
 				if($("#ranking-wrapper").length != 0) {
 					$("#ranking-wrapper").html(re);
 					require(['ranking/DT_bootstrap_ranking'],function() {
-						// you should write some code here to initalize 
 						rankingTable.init();
 					});
 				}
@@ -30,7 +29,7 @@
 				if($("#history-wrapper").length != 0) {
 					$("#history-wrapper").html(re);
 					require(['history/DT_bootstrap_history'],function() {
-						// you should write some code here to initalize 
+						historyTable.init();
 					});
 				}
 				$.hashbang.panelReady();
@@ -40,16 +39,16 @@
 			$.tablet.login();	
 		},
 		settings : function() {
-			this.protocal("views/settings.html");
+			this.protocal("templates/settings.html");
 		},
 		rna : function() {
-			this.protocal("views/rna.html");
+			this.protocal("templates/rna.html");
 		},	
 		play : function() {
-			this.protocal("views/play.html");
+			this.protocal("templates/play.html");
 		},
 		tutorial : function() {
-		    	this.protocal("views/tutorial.html");
+		    	this.protocal("templates/tutorial.html");
 		},
 		about : function() {
 			var about = window.lang.body.play.about;
