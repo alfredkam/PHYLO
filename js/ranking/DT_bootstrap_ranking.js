@@ -156,6 +156,6 @@ var attr = [
 		["init",g.prototype.init]
 		];
 
-window.common.exportSingleton("ranking",g, attr);
+window.common.exportSingleton("rankingTable",g, attr);
                   
 });

@@ -14,7 +14,7 @@
 					$("#ranking-wrapper").html(re);
 					require(['ranking/DT_bootstrap_ranking'],function() {
 						// you should write some code here to initalize 
-						ranking.init();
+						rankingTable.init();
 					});
 				}
 				$.hashbang.panelReady();
