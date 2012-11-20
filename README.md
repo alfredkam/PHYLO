@@ -59,3 +59,6 @@ I want to contribute!
 =====
 That is awesome! Just fork the project on github.  Create a topic branch, write some code and let us know!
 
+Notes
+====
+We are now making a transition to backbonejs framework.
