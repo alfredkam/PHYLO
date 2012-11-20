@@ -40,7 +40,7 @@
 					'DNA/newick.core','DNA/lang.module','DNA/fitch.core','DNA/board.theme','DNA/highlighter.theme',
 					'DNA/protocal.core','DNA/score.theme','theme/main.theme'],	
 			},
-			'DNA/protocal.core' : }
+			'DNA/protocal.core' : {
 				deps : ['jquery'],
 			},
 			'RNA/main.rna' : {
