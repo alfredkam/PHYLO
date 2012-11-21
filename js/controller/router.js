@@ -69,7 +69,7 @@
 				if(lang == undefined) {
 					lang = "EN";
 				} else lang.toUpperCase();
-				var creditsView = new Views.About;
+				var creditsView = new Views.Credits;
 				creditsView.render(lang);
 			});
 
