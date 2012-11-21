@@ -25,10 +25,12 @@ var tutLangs = Backbone.Collection.extend({
 }
 */
 var Tutview = Backbone.View.extend({
-    
+    el:"#mid-panel",
+    '
     //when initializing, feed in a template or error  
     template:template||"error";
-    render:
+    render:function(){},
+    
     getTemplate:function(){
         $.ajax({
 				type : "GET",
