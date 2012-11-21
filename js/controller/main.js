@@ -7,7 +7,7 @@
 		     	theme : '../theme',
 			menu : '../menu',
 			validation : '../validation',
-			controller : '../../controller',
+			controller : '../controller',
 			misc : '../misc',
 			lang : '../../lang',
 			tutorial : '../tutorial',
