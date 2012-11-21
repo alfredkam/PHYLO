@@ -4,13 +4,16 @@
 		init : function(callBack) {
 			//checks if language file is already loaded.
 			//if not loaded, loaded it into the dom
+
+            //moved hash to be outside so it can be used in all cases
+            var hash;
+            try {
+                hash = $.helper.get("lang").toString().toUpperCase().replace(/!.*/,"");			
+            } catch(err) {
+                hash = "EN";
+            }	
 			if($("#langFile").length == 0) {
-				var hash;
-				try {
-					hash = $.helper.get("lang").toString().toUpperCase().replace(/!.*/,"");			
-				} catch(err) {
-					hash = "EN";
-				}	
+				
 				
 				var script = document.createElement("script");
 				script.id = "langFile";
