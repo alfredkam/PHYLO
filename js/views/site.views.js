@@ -4,11 +4,13 @@
 		'underscore',
 		'backbone',
 		'mustache',
-	], function($, _, Backbone,Mustache) {
-		
+		'views/request.views'
+	], function($, _, Backbone,Mustache,Request) {
+		var request = new Request;	
 		var playView = Backbone.View.extend({
 			render : function(lang) {
 				console.log(lang);				
+				request.get("templates/play.html",lang);
 			},
 		});
 

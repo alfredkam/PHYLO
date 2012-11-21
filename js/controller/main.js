@@ -100,6 +100,9 @@
 			'DNA/helper.core' : {
 				deps : ['jquery'],
 			},
+			'views/site.views' : {
+				deps : ['views/request.views'],
+			},	
 			'controller/router' : {
 				deps : ['jquery','underscore','backbone','views/site.views'],
 			},
