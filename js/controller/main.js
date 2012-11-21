@@ -13,10 +13,22 @@
 			tutorial : '../tutorial',
 			ranking : '../ranking',
 			history : '../history',
+			views : '../views',
+			models : '../models',
 		},
 		shim : {
+			'jquery' : {
+				exports : "$",
+			},
+			'yepnope' : {
+				exports : "yepnope",
+			},
+			'underscore' : {
+				exports : "_",
+			},
 			'backbone' : {
 				deps : ['underscore', 'jquery'],
+				exports : "Backbone",
 			},
 			'bootstrap' : {
 				deps : ['jquery','jquery-ui'],
@@ -88,6 +100,9 @@
 			'DNA/helper.core' : {
 				deps : ['jquery'],
 			},
+			'controller/router' : {
+				deps : ['jquery','underscore','backbone','views/site.views'],
+			},
 		}
 	});
 	require(['yepnope'],
@@ -106,14 +121,24 @@
 			});
 		}
 	);
-	require(['jquery']);
+
+	require([
+		'jquery',
+		'underscore',
+		'backbone',
+		'mustache',
+		'controller/router',
+	],function($, _, Backbone, Mustache, Router) {
+		Router.init();
+	});
+
 	require(['misc/detectIE']);
-	require(['bootstrap','mustache']);
-	require(['backbone']);
+	require(['bootstrap']);
 	require(['theme/main.theme']);
 	require(['bootbox']);
 	require(['validation/login.validation']);
+	/*
 	require(['controller/hashbang.controller'],function() {
 		$.hashbang.load($.hashbang.get());
-	});
+	}); */
 })();
