@@ -4,7 +4,8 @@
 		'underscore',
 		'backbone',
 		'views/site.views',
-	], function($, _ , Backbone,Views) {
+		'views/navBar.views',
+	], function($, _ , Backbone, Views, NavBar) {
 		var Routes = Backbone.Router.extend({
 			routes : {
 				"!/:lang/play" : "play",
@@ -26,7 +27,11 @@
 		});
 
 		var init = function() {
-
+			//set default lang
+			window.langOpt = "EN";
+			//initalize
+			var navBar = new NavBar;
+			navBar.init();
 			var route = new Routes;
 			route.on('route:play', function(lang) {
 				if(lang == undefined) {
@@ -81,10 +86,8 @@
 			});
 
 			route.on('route:defaultRoute', function(lang) {
-				if(lang == undefined) {
-					lang = "EN";
-				} else lang.toUpperCase();
-				var PlayView = new Views.Play;
+				var lang = "EN";
+				var playView = new Views.Play;
 				playView.render(lang);
 			});
 

@@ -4,12 +4,12 @@
 		'underscore',
 		'backbone',
 		'mustache',
-		'views/request.views'
-	], function($, _, Backbone,Mustache,Request) {
+		'views/request.views',
+		'views/navBar.views',
+	], function($, _, Backbone,Mustache,Request,navBar) {
 		var request = new Request;	
 		var playView = Backbone.View.extend({
 			render : function(lang) {
-				console.log(lang);				
 				request.get("templates/play.html",lang);
 			},
 		});
@@ -22,7 +22,7 @@
 		
 		var aboutView = Backbone.View.extend({
 			render : function(lang) {
-
+				request.get("templates/about.html",lang);
 			},
 		});
 
@@ -34,13 +34,13 @@
 		
 		var creditsView = Backbone.View.extend({
 			render : function(lang) {
-
+				request.get("templates/credits.html",lang);
 			},
 		});
 
 		var tutorialView = Backbone.View.extend({
 			render : function(lang) {
-
+				request.get("templates/tutorial.html",lang);
 			},
 		});
 

@@ -103,8 +103,11 @@
 			'views/site.views' : {
 				deps : ['views/request.views'],
 			},	
+			'views/navBar.views' : {
+				deps : ['jquery','underscore', 'backbone','DNA/timer.core'],
+			},
 			'controller/router' : {
-				deps : ['jquery','underscore','backbone','views/site.views'],
+				deps : ['jquery','underscore','backbone','views/site.views','views/navBar.views'],
 			},
 		}
 	});
