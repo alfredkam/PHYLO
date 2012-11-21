@@ -13,8 +13,6 @@
                 hash = "EN";
             }	
 			if($("#langFile").length == 0) {
-				
-				
 				var script = document.createElement("script");
 				script.id = "langFile";
 				script.src = "../lang/"+hash+".js";

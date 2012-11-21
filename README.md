@@ -59,3 +59,11 @@ I want to contribute!
 =====
 That is awesome! Just fork the project on github.  Create a topic branch, write some code and let us know!
 
+Notes
+====
+We are now making a transition to backbonejs + requirejs + mustache.<br>
+Recommended Read <br>
+http://backbonetutorials.com/organizing-backbone-using-modules/ <br>
+http://coenraets.org/blog/2011/12/backbone-js-wine-cellar-tutorial-part-1-getting-started/ <br>
+http://backbonetutorials.com/what-is-a-router/ <br>
+

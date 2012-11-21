@@ -96,8 +96,11 @@ $(document).ready(function(){
         }
     } );
 
-    /* Table initialisation */
+function g(){};
 
+ g.prototype.init = function() {
+
+    /* Table initialisation */
     $('.table').dataTable( {
         "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
         "sPaginationType": "bootstrap",
@@ -118,7 +121,7 @@ $(document).ready(function(){
                   
     // select buttons
                   
-    $("#showall").click(function(){
+    $("#showall").unbind().click(function(){
         $("#weekly").hide();
         $("#monthly").hide();
         $("#alltime").show();
@@ -126,7 +129,7 @@ $(document).ready(function(){
         $("ul li.all").stop().addClass('active');
         $('.table').dataTable.fnDrawCallback(oSettings);
     });
-    $("#showmonth").click(function(){
+    $("#showmonth").unbind().click(function(){
         $("#alltime").hide();
         $("#weekly").hide();
         $("#monthly").show();
@@ -134,7 +137,7 @@ $(document).ready(function(){
         $("ul li.month").stop().addClass('active');
         $('.table').dataTable.fnDrawCallback(oSettings);
     });
-    $("#showweek").click(function(){
+    $("#showweek").unbind().click(function(){
         $("#alltime").hide();
         $("#monthly").hide();
         $("#weekly").show();
@@ -144,9 +147,15 @@ $(document).ready(function(){
     });
                     
     // initial display
-  
     $("#weekly").hide();
     $("#monthly").hide();
     $("#alltime").show();
+}
+
+var attr = [
+		["init",g.prototype.init]
+		];
+
+window.common.exportSingleton("rankingTable",g, attr);
                   
 });

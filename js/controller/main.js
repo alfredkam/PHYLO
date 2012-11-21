@@ -7,7 +7,7 @@
 		     	theme : '../theme',
 			menu : '../menu',
 			validation : '../validation',
-			controller : '../../controller',
+			controller : '../controller',
 			misc : '../misc',
 			lang : '../../lang',
 			tutorial : '../tutorial',
@@ -39,6 +39,9 @@
 					'DNA/sequence.core','DNA/splash.theme','DNA/tree.core','DNA/multiSelect.core',
 					'DNA/newick.core','DNA/lang.module','DNA/fitch.core','DNA/board.theme','DNA/highlighter.theme',
 					'DNA/protocal.core','DNA/score.theme','theme/main.theme'],	
+			},
+			'DNA/protocal.core' : {
+				deps : ['jquery'],
 			},
 			'RNA/main.rna' : {
 				deps : ['jquery','jquery-ui','DNA/main.core','RNA/stage.ext','RNA/sequence.ext'],	
@@ -74,7 +77,7 @@
 				deps : ['jquery'],
 			},
 			'validation/login.validation' : {
-				deps : ['jquery', 'validation/cookie.validation'],
+				deps : ['jquery', 'DNA/protocal.core', 'validation/cookie.validation'],
 			},
 			'ranking/DT_bootstrap_ranking' : {
 				deps : ['jquery','bootstrap','jquery.dataTables'],

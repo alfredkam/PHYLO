@@ -1,6 +1,6 @@
 (function() {
 	var doc = document, win = window;
-	var url = "../phpdb/phyloExpertDB.php";
+	var url = "/phpdb/phyloExpertDB.php";
 	$.protocal = {
 		//for login
 		login : function(username, password, fn) {
@@ -37,14 +37,15 @@
 				mode = 4;
 			}
 			var data = "mode="+mode+"&id="+$.phylo.id+"&user="+window.guest+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.currentScore;
-            console.log("send game score : "+mode + "/" + data);
+            console.log("send game score : "+mode);
             $.ajax({
 				type: "POST",
 				url : url,
 				data : data,
 			}).done(function(re) {
 				var json = eval("["+re+"]")[0];
-				fn(json);			
+                console.log(json);
+				fn(json);
 			}).fail(function() {
 				console.log(">> failed to connect to database to submit end game score");
 				console.log(">> loading end game dummy data");
@@ -57,6 +58,8 @@
 		},
 		//sends highscore to server
 		sendHighScore : function() {
+			//this function is currently turned off.
+			return;
 			var self = this;
 			var data = "mode=4&id="+$.phylo.id+"&user="+window.guest+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.bestScore;
             console.log("send highscore : "+mode + "/" + data);
@@ -198,6 +201,7 @@
 				//var dummy = '{"level":{"attributes":{"id":"1505"},"sequence":["---TCC----CAG-----CTG","CCCTCC----CAA-----CTC","---CCT----CAGCGGGCCC-","-----------------AGCC","---Tctgccctcacggaacac"],"tree":"(((hg19,rheMac2),(bosTau4,canFam2)),loxAfr3);"}}';
 				//var dummy = '{"level":{"attributes":{"id":"3394"},"sequence":["----A-----------CTTCT","----A-----------CTTCT","----G----AGTGGGCCTGGG","----GTACCTGCGCGTCCAGG"],"tree":"((hg19,rheMac2),(bosTau4,canFam2));"}}';
 				var dummy = '{"level":{"attributes":{"id":"18"},"sequence":["cggcgcgcgccg---------","tggtgtgtgtgt---------","AGCCGCCAGCGC---------","AGGAGCCCATCT---------","TTGGGC-CTCTC---------","gTGCGCGCACTC---------","ACACACACACGCAGGgggagg"],"tree":"(((hg19,(galGal3,taeGut1)),xenTro2),((tetNig2,fr2),gasAcu1));"}}';
+				var dummy = '{"level":{"attributes":{"id":"4010"},"sequence":["ggcgccccAG-----------","---GATCTGG-----------","----ACCCAC-----------","----CAAGTG-----------","---GGTTAGG-----------","ggcgccccAG-----------"],"tree":"((((hg19,rheMac2),mm9),(canFam2,pteVam1)),loxAfr3);"}}';
 
 				console.log(">> Cannnot connect to database");
 				console.log(">> loading dummy data");
