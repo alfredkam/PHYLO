@@ -122,6 +122,7 @@
 				if(lang == undefined) {
 					lang = "EN";
 				} else lang.toUpperCase();
+				navBar.set(lang,"play");
 				var tabletSettingsView = new Views.TabletSettings;
 				tabletSettingsView.render(lang);	
 			});
@@ -130,8 +131,8 @@
 				if(lang == undefined) {
 					lang = "EN";
 				} else lang.toUpperCase();
-				var playView = new Views.Play;
 				navBar.set(lang,"play");
+				var playView = new Views.Play;
 				playView.render(lang);
 			});
 
