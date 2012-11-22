@@ -68,6 +68,7 @@
                                                 $(".login-btn").click(function() { classicLogin(); });
                                                 $("#login-tag").html("Login");
                                                 $(".showInLogin").hide();
+		window.showInLogin = false;
                                                 return;
                                             }
                                         });
@@ -75,6 +76,18 @@
                                 });
                             }).fail(function() {
                                 $("div.login-warning").show().html("Could not connect to the server. Please try again later.");
+                                $.cookie.delete("username");
+                                $.cookie.delete("fullname");
+                                $.cookie.delete("loginmode");
+                                $.cookie.delete("logid");
+                                $("#logout").hide();
+                                window.guest = 'guest';
+                                $("#login-box").hide();
+                                $(".login-btn").click(function() { classicLogin(); });
+                                $("#login-tag").html("Login");
+                                $(".showInLogin").hide();
+		window.showInLogin = false;
+                                return;
                             });
                             // display login
                             $("#login-tag").html(fullname.replace("+"," "));
@@ -91,11 +104,23 @@
                             $(".login-btn").click(function() { classicLogin(); });
                             $("#login-tag").html("Login");
                             $(".showInLogin").hide();
+		window.showInLogin = false;
                             return;
                         }
                     } else {
                         // failed to connect
                         $("div.login-warning").show().html(provider + " connection failed. Please, check that you are already connected to " + provider + ".");
+                        $.cookie.delete("username");
+                        $.cookie.delete("fullname");
+                        $.cookie.delete("loginmode");
+                        $.cookie.delete("logid");
+                        $("#logout").hide();
+                        window.guest = 'guest';
+                        $("#login-box").hide();
+                        $(".login-btn").click(function() { classicLogin(); });
+                        $("#login-tag").html("Login");
+                        $(".showInLogin").hide();
+		window.showInLogin = false;
                         return;
                     }
                 });
@@ -111,11 +136,14 @@
                 data : "mode=8&user="+username,
             }).done(function(re) {
                 $(".showInLogin").show();
+		window.showInLogin = true;
                 if (re!='succ') {
                     $(".showExpertOptions").hide();
+				window.showExpertOptions = false;
                 }
             }).fail(function() {
                 $(".showInLogin").show();
+		window.showInLogin = true;
                 console.log("Expert validation failed. Could not connect to the server.");
             });
         };
@@ -149,11 +177,14 @@
                         data : "mode=8&user="+username,
                     }).done(function(re) {
                         $(".showInLogin").show();
+		window.showInLogin = true;
                         if (re!='succ') {
                             $(".showExpertOptions").hide();
+				window.showExpertOptions = false;
                         }
                     }).fail(function() {
                         $(".showInLogin").show();
+		window.showInLogin = true;
                         console.log("Expert validation failed. Could not connect to the server.");
                     });
 				} else {
@@ -203,6 +234,7 @@
 			});
 			$("#login-tag").html("Login");
 			$(".showInLogin").hide();
+		window.showInLogin = false;
 		});
 
 		//register event

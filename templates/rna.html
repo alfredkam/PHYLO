@@ -109,6 +109,13 @@
 		</div>
 		<script>
 			require(['RNA/main.rna'],function() {
-				$.rna.init();	
+				var fn = function() {
+					if($.main == undefined) { 
+						window.setTimeout(function() { fn() },100);
+					} else {
+						$.rna.init();	
+					}
+				}	
+				fn();
 			});
 		</script>

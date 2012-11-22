@@ -9,6 +9,8 @@
 	], function($, _ , Backbone, Views, NavBar, Models) {
 		var Routes = Backbone.Router.extend({
 			routes : {
+				"!/:lang/BETA/RNA" : "rna",
+				"!/:lang/play/puzzle/:id" : "puzzle",
 				"!/:lang/play" : "play",
 				"!/play" : "play",
 				"!/:lang/tutorial" : "tutorial",
@@ -39,14 +41,34 @@
 				if(lang == undefined) {
 					lang = "EN";
 				} else lang.toUpperCase();
+				navBar.set(lang,"play");
 				var playView = new Views.Play;
 				playView.render(lang);
+			});
+
+			route.on('route:puzzle',function(lang, id) {
+				if(lang == undefined) {
+					lang = "EN";
+				} else lang.toUpperCase();
+				navBar.set(lang, "play");
+				var playView = new Views.Play;
+				playView.renderPuzzle(lang, id);	
+			});
+		
+			route.on('route:rna',function(lang) {
+				if(lang == undefined) {
+					lang = "EN";
+				} else lang.toUpperCase();
+				navBar.set(lang, "play");
+				var rnaView = new Views.RNA;
+				rnaView.render(lang);
 			});
 
 			route.on('route:tutorial', function(lang) {
 				if(lang == undefined) {
 					lang = "EN";
 				} else lang.toUpperCase();
+				navBar.set(lang,"tutorial");
 				var tutorialModel = new Models.Tutorial({lang:lang});
 				var tutorialView = new Views.Tutorial;
                 tutorialModel.fetch({success:function(){
@@ -58,6 +80,7 @@
 				if(lang == undefined) {
 					lang = "EN";
 				} else lang.toUpperCase();
+				navBar.set(lang,"history");
 				var historyView = new Views.History;	
 				historyView.render(lang);
 			});
@@ -66,6 +89,7 @@
 				if(lang == undefined) {
 					lang = "EN";
 				} else lang.toUpperCase();
+				navBar.set(lang,"about");
 				var aboutView = new Views.About;
 				aboutView.render(lang);
 			});
@@ -74,6 +98,7 @@
 				if(lang == undefined) {
 					lang = "EN";
 				} else lang.toUpperCase();
+				navBar.set(lang,"credits");
 				var creditsView = new Views.Credits;
 				creditsView.render(lang);
 			});
@@ -82,6 +107,7 @@
 				if(lang == undefined) {
 					lang = "EN";
 				} else lang.toUpperCase();
+				navBar.set(lang,"ranking");
 				var rankingView = new Views.Ranking;
 				rankingView.render(lang);
 			});
@@ -93,6 +119,7 @@
 			route.on('route:defaultRoute', function(lang) {
 				var lang = "EN";
 				var playView = new Views.Play;
+				navBar.set(lang,"play");
 				playView.render(lang);
 			});
 

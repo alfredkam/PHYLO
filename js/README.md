@@ -5,7 +5,7 @@ We are using backbone js / require js / mustache to add structure to this web ap
 
 The current structure:
 
-	js/views	<=== responsible for display materials and actions (events)
+	js/views	<=== responsible for inital html materials and listenes to model changes / actions / events
 	js/models 	<=== responsible for data models, http://backbonetutorials.com/what-is-a-model/
 	js/controller 	<=== defines the site routes
 	template 	<=== contains the html template
@@ -14,10 +14,10 @@ The current structure:
 	RNA		<=== it extends of the DNA framework
 
 
-Backbone is mainly used to add structure , backbonejs.org <br>
+Backbone is mainly used to add structure , http://backbonejs.org <br>
 Backbone Router is used for defining the site url rules<br>
-Require acts like php includes or include once and allows you to define the namespace , requirejs.org<br> 
-Mustache is for templating , mustache.github.com<br>
+Require acts like php includes or include once and allows you to define the namespace , http://requirejs.org<br> 
+Mustache is for templating , https://mustache.github.com<br>
 
 	js/Boilerplate.js
 

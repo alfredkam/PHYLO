@@ -378,6 +378,7 @@ a.btn {
 	font-size:20px;
 	position:relative;
 	margin-left:0px !important;
+	display:none;
 }
 
 #nav ul {
@@ -725,6 +726,18 @@ a.btn {
 .showInLogin {
 	display:none;
 }
+.showExpertOptions {
+	display:none;
+}
+
+.settingUp {
+	font-weight:bold;
+	font-size:20px;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	color:#CCC;
+}	
 
 /* extra - for screen transition */
 #loading-panel {

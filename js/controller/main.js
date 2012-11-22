@@ -1,16 +1,14 @@
 (function(){
 	requirejs.config({
+		waitSeconds : 15,
 		baseUrl : 'js/blueprint',
 		paths : {
 		     	DNA : '../DNA',
 		     	RNA : '../RNA',
-		     	theme : '../theme',
-			menu : '../menu',
 			validation : '../views/validation',
 			controller : '../controller',
 			misc : '../misc',
 			lang : '../../lang',
-			tutorial : '../tutorial',
 			views : '../views',
 			models : '../models',
 		},
@@ -38,7 +36,7 @@
 				deps : ['jquery'],
 			},
 			'views/gameMenu.actions' : {
-				deps : ['jquery','menu/settings.menu','models/disease.data','DNA/main.core'],
+				deps : ['jquery','models/disease.data','DNA/main.core'],
 			},		
 			'DNA/stage.core' : {
 				deps : ['DNA/physics.engine', 'DNA/events.engine','DNA/engine.core'],
@@ -53,11 +51,14 @@
 			'DNA/protocal.core' : {
 				deps : ['jquery'],
 			},
-			'RNA/main.rna' : {
-				deps : ['jquery','jquery-ui','DNA/main.core','RNA/stage.ext','RNA/sequence.ext'],	
+			'RNA/stage.ext' : {
+				deps : ['jquery','DNA/stage.core'],
 			},
-			'controller/hashbang.controller' : {
-				deps : ['jquery','DNA/helper.core','DNA/timer.core','DNA/lang.module','menu/tailor.menu','controller/site.controller','menu/navBar.actions'],
+			'RNA/sequence.ext' : {	
+				deps : ['jquery', 'DNA/sequence.core'],
+			},
+			'RNA/main.rna' : {
+				deps : ['DNA/main.core','RNA/stage.ext','RNA/sequence.ext'],	
 			},
 			'jquery.dataTables' : {
 				deps : ['jquery','jquery-ui'],
@@ -72,7 +73,7 @@
 				deps : ['jquery'],
 			},
 			'menu/navBar.actions' : {
-				deps : ['jquery'],
+				deps : ['jquery','views/request.views'],
 			},
 			'menu/tailor.menu' : {
 				deps : ['jquery'],
@@ -123,6 +124,9 @@
 				test : window.DEV.enableTabletMode,
 				yep : 'css/tablet.css',
 			});
+			var isMobile = navigator.userAgent.match(/(iPhone|Android .* Mobile)/i) != null;
+			if(isMobile) 
+				window.location = "http://phylo.cs.mcgill.ca/archive/js/F2011";
 		}
 	);
 
@@ -141,8 +145,4 @@
 	require(['views/customizeGame.actions']);
 	require(['bootbox']);
 	require(['validation/login.validation']);
-	/*
-	require(['controller/hashbang.controller'],function() {
-		$.hashbang.load($.hashbang.get());
-	}); */
 })();

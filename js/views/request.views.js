@@ -79,39 +79,4 @@
 
 		return Request;
 	});
-
-	$.hashbang = {
-		checkIfAutoStart : function() {
-			var page = $.hashbang.get(); 
-			if(page.search(/autoStart/) >= 0) { 
-				var id = parseInt($.hashbang.httpHashGet("autoStart"));
-				if(isNaN(id))
-					return;
-				$("#draw").hide();
-				$("#menu").hide();
-				$.main.init({
-					type: "disease",
-					num: id,		
-				});
-			} 
-		},
-		//treat hash like HTTP GET
-		httpHashGet : function(pid) {
-			var $_GET = {};
-			var hash = window.location.hash.replace(/#!play&/,"");
-			hash.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
-			    function decode(s) {
-				return decodeURIComponent(s.split("+").join(" "));
-				}
-
-			    $_GET[decode(arguments[1])] = decode(arguments[2]);
-			});
-			return $_GET[pid];
-			//return 1111;	
-		},
-		//gets the current hashtag
-		get : function() {
-			return window.location.hash.replace(/^#!/,"");
-		},
-	};
 })();

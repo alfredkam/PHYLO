@@ -6,6 +6,8 @@ Getting Started
 =====
 Master Branch contains the most recent experimental release
 
+feature/RNA Branch is used for PHYLO-RNA experimental release
+
 feature/integration Branch is used for integration testing 
 
 Production Branch contains the most recent stable release
@@ -43,19 +45,27 @@ if options.js is tracked, ie - meaning git is tracking the changes, in terminal
 	git rm --cache options.js
 	git commit -a -m 'untrack options.js'
 
-<b>Please refer to js/README.md for further explanation / crash course<b>
+<b>Please refer to js/README.md for further instructions / explanation / crash course<b>
+
+Special Links
+====
+
+	index.html#!/<language>/play				<== PHYLO-DNA
+	index.html#!/<langauge>/BETA/RNA			<== PHYLO-RNA
+	index.html#!/<language>/play/puzzle/<puzzle id>		<== PHYLO-DNA autostart for specific puzzles
+
 
 Hot deploy branches
 =====
 [Under Master Branch]
 PHYLO - DNA 
-http://phylo.cs.mcgill.ca/master/index.html#!play
+http://phylo.cs.mcgill.ca/master/index.html
 
 [Under feature/RNA Branch]
 PHYLO - RNA in pre-Alpha
-http://phylo.cs.mcgill.ca/feature/RNA/index.html#!rna
+http://phylo.cs.mcgill.ca/feature/RNA/index.html#!/EN/BETA/RNA
 
-- If want your own hot deploy branch can message me @alfredkam
+- If want your own hot deploy branch, you can create an issue here (https://github.com/McGill-CSB/PHYLO/issues) and assign it to @alfredkam
 
 Devices Supported
 =====
@@ -64,5 +74,9 @@ Current version supports all major browsers (except IE 6-8) and tablet browsers 
 I want to contribute!
 =====
 That is awesome! Just fork the project on github.  Create a topic branch, write some code and let us know!
+
+I want to leave a feedback!
+=====
+We love to hear from you, you can post it here : https://github.com/McGill-CSB/PHYLO/issues
 
 

@@ -21,9 +21,50 @@
 	
 		var request = new Request;	
 		var playView = Backbone.View.extend({
+			renderPuzzle : function(lang, id) {
+				request.getTemplate("templates/play.html", lang);
+				require(["views/gameMenu.actions","DNA/main.core"], function() {
+					if($.main == undefined) {
+						var fn = function() {
+							if($.main == undefined) { 
+								window.setTimeout(function() { fn() },100);
+							} else {
+								$("#draw").hide();
+								$("#menu").hide();
+								$.main.init({
+									type:"disease",
+									num : id,
+								});		
+							}
+						}	
+						fn();
+					} else {
+						$("#draw").hide();
+						$("#menu").hide();
+						$.main.init({
+							type:"disease",
+							num : id,
+						});		
+					}
+				});
+			},
 			render : function(lang) {
 				selectTab("play");
 				request.getTemplate("templates/play.html",lang);
+				if(window.DEV.disableMenu) {
+					window.setTimeout(function() {
+						$("#draw").hide();
+						$("#menu").hide();
+						if(window.location.hash.match(/rna/i) != null) {
+						//	$.rna.init();
+						} else {
+							$.main.init({
+								type: "random",
+								num: 3,		
+							});	
+						}
+					},500);
+				}
 			},
 		});
 
@@ -99,6 +140,13 @@
                 
 			},
 		});
+	
+		var rnaView = Backbone.View.extend({
+			render: function(lang) {
+				selectTab("play");
+				request.getTemplate("templates/rna.html",lang);
+			},
+		});
 
 		return {
 			Play : playView,
@@ -107,6 +155,7 @@
 			Ranking : rankingView,
 			Credits : creditsView, 
 			Tutorial : tutorialView,
+			RNA : rnaView,
 		};
 	});	
 })();

@@ -13,7 +13,6 @@
 				lang: "EN",
 			},
 		    initialize: function(pageLang){
-            console.log(pageLang.lang);
 			//set it to autoload when created
             //this.set({lang:lang});
 			    this.url="js/models/tutorial/"+pageLang.lang+"-tutorial.js";
@@ -34,7 +33,7 @@
                     
                     
                 }).fail(function(resp){
-                    console.log("fail",resp);   
+                    console.log("Tutorial Model fail",resp);   
                 });
                return; 
                                     
