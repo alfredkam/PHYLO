@@ -26,6 +26,7 @@
 				"!/:lang/expert" : "expert",
 				"!/expert" : "expert",
 				"!/:lang/tablet:settings" : "tabletSettings",
+				"!/:lang" : "anotherDefaultRoute",
 				"*actions" : "defaultRoute"
 			}
 		});
@@ -123,6 +124,15 @@
 				} else lang.toUpperCase();
 				var tabletSettingsView = new Views.TabletSettings;
 				tabletSettingsView.render(lang);	
+			});
+			
+			route.on('route:anotherDefaultRoute', function(lang) {
+				if(lang == undefined) {
+					lang = "EN";
+				} else lang.toUpperCase();
+				var playView = new Views.Play;
+				navBar.set(lang,"play");
+				playView.render(lang);
 			});
 
 			route.on('route:defaultRoute', function(lang) {
