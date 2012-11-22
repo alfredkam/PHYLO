@@ -11,7 +11,7 @@ The current structure:
 	template 	<=== contains the html template
 	
 	DNA		<=== the base framework for the game, it depeneds on jquery (for now)
-	RNA		<=== its extends of the DNA framework
+	RNA		<=== it extends of the DNA framework
 
 
 Backbone is mainly used to add structure , backbonejs.org <br>
@@ -21,7 +21,7 @@ Mustache is for templating , mustache.github.com<br>
 
 	js/Boilerplate.js
 
-This is a template one should start using when writing javascript, it helps solve namespace issues
+This is a js template every one should start using this when writing heavy js codes, it helps solve namespace issues
 
 Recommended Readings
 =====
