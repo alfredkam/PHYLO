@@ -4,13 +4,10 @@
 		paths : {
 		     	DNA : '../DNA',
 		     	RNA : '../RNA',
-		     	theme : '../theme',
-			menu : '../menu',
 			validation : '../views/validation',
 			controller : '../controller',
 			misc : '../misc',
 			lang : '../../lang',
-			tutorial : '../tutorial',
 			views : '../views',
 			models : '../models',
 		},
@@ -55,9 +52,6 @@
 			},
 			'RNA/main.rna' : {
 				deps : ['jquery','jquery-ui','DNA/main.core','RNA/stage.ext','RNA/sequence.ext'],	
-			},
-			'controller/hashbang.controller' : {
-				deps : ['jquery','DNA/helper.core','DNA/timer.core','DNA/lang.module','controller/site.controller','menu/navBar.actions'],
 			},
 			'jquery.dataTables' : {
 				deps : ['jquery','jquery-ui'],
@@ -144,8 +138,4 @@
 	require(['views/customizeGame.actions']);
 	require(['bootbox']);
 	require(['validation/login.validation']);
-	/*
-	require(['controller/hashbang.controller'],function() {
-		$.hashbang.load($.hashbang.get());
-	}); */
 })();
