@@ -24,6 +24,20 @@
 			render : function(lang) {
 				selectTab("play");
 				request.getTemplate("templates/play.html",lang);
+				if(window.DEV.disableMenu) {
+					window.setTimeout(function() {
+						$("#draw").hide();
+						$("#menu").hide();
+						if(window.location.hash.match(/rna/i) != null) {
+						//	$.rna.init();
+						} else {
+							$.main.init({
+								type: "random",
+								num: 3,		
+							});	
+						}
+					},500);
+				}
 			},
 		});
 

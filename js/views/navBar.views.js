@@ -25,6 +25,10 @@
 					$("#tablet-grid").html(Mustache.render(self.tabletUX,json));
 					self.addTriggers();
 					$("#"+tag +" div").addClass("onSelect");
+					var l = json;
+					$("input#username").attr("placeholder",l.body.play.gameselect.login["field 7"]);
+					$("input#password").attr("placeholder",l.body.play.gameselect.login["field 8"]);
+					$("button.login-btn").html(l.body.play.gameselect.login["field 2"]);
 				});
 			},
 			addTriggers : function() {
