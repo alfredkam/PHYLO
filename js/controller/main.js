@@ -127,7 +127,6 @@
 			var isMobile = navigator.userAgent.match(/(iPhone|Android .* Mobile)/i) != null;
 			if(isMobile) 
 				window.location = "http://phylo.cs.mcgill.ca/archive/js/F2011";
-			alert(isMobile);
 		}
 	);
 
