@@ -6,7 +6,7 @@ Getting Started
 =====
 Master Branch contains the most recent experimental release
 
-feature/RNA Branch is used for PHYLO-RNA experimental development
+feature/RNA Branch is used for PHYLO-RNA experimental release
 
 feature/integration Branch is used for integration testing 
 
