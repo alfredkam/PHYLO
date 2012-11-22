@@ -5,7 +5,8 @@
 		'backbone',
 		'views/site.views',
 		'views/navBar.views',
-	], function($, _ , Backbone, Views, NavBar) {
+		'models/site.models'
+	], function($, _ , Backbone, Views, NavBar, Models) {
 		var Routes = Backbone.Router.extend({
 			routes : {
 				"!/:lang/play" : "play",
@@ -46,7 +47,7 @@
 				if(lang == undefined) {
 					lang = "EN";
 				} else lang.toUpperCase();
-                var tutorialModel = new Models.Tutorial;
+				var tutorialModel = new Models.Tutorial;
 				var tutorialView = new Views.Tutorial;
 				tutorialView.render(tutorialModel.data);
 			});
