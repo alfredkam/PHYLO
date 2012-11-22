@@ -50,9 +50,9 @@ if options.js is tracked, ie - meaning git is tracking the changes, in terminal
 Special Links
 ====
 
-	index.html#!/EN/play			<== PHYLO-DNA
-	index.html#!/EN/BETA/RNA		<== PHYLO-RNA
-	index.html#!/EN/play/puzzle/1111	<== PHYLO-DNA autostart for specific puzzles
+	index.html#!/<language>/play			<== PHYLO-DNA
+	index.html#!/<langauge>/RNA			<== PHYLO-RNA
+	index.html#!/<language>/play/<puzzle id>/1111	<== PHYLO-DNA autostart for specific puzzles
 
 
 Hot deploy branches
