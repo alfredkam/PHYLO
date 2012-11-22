@@ -11,12 +11,16 @@
 		var Tutorial = Backbone.Model.extend({
 			defaults:{
 				lang: "EN",
+                
 			},
-		    	initialize: function(lang){
+		    initialize: function(lang){
 			//set it to autoload when created
-			    this.fetch(lang);
+			    this.url="../tutorial/"+this.get("lang")+"-tutorial.js";
+                this.fetch();
+
 			},
-		    	fetch: function(lang){
+            /*
+		    fetch: function(lang){
 				$.ajax({
 			    		url:lang+"-tutorial.js"
 			    		dataType: JSON,
@@ -25,7 +29,7 @@
 					    this.set({data:resp});
 
 				});
-			}
+			},*/
 		});
 
 		
