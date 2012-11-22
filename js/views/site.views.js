@@ -49,7 +49,12 @@
 		var aboutView = Backbone.View.extend({
 			render : function(lang) {
 				selectTab("about");
-				request.getTemplate("templates/about.html",lang);
+				request.getTemplate("templates/about.html",function(context) {
+					request.getJsonLang(lang, function(json) {
+						$("#mid-panel").html(Mustache.render(context,json.body.play));
+						request.complete();
+					});
+				});
 			},
 		});
 

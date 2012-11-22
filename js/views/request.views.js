@@ -31,6 +31,13 @@
 					callBack(re);
 				});
 			},
+			getJsonLang : function(lang, callBack) {
+				require(['lang/'+lang],function() {
+					window.langOpt = lang;
+					var json = window[lang+"script"].lang[0];
+					callBack(json);
+				});
+			},
 			getTemplate : function(url,lang) {
 				var self = this;
 				self.loading();

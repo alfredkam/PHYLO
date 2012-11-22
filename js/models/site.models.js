@@ -16,9 +16,8 @@
 		    initialize: function(lang){
 			//set it to autoload when created
 			    this.url="../tutorial/"+this.get("lang")+"-tutorial.js";
-                this.fetch();
-
-			},
+		            this.fetch();
+		    },
             /*
 		    fetch: function(lang){
 				$.ajax({
