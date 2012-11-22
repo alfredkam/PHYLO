@@ -75,6 +75,17 @@
                                 });
                             }).fail(function() {
                                 $("div.login-warning").show().html("Could not connect to the server. Please try again later.");
+                                $.cookie.delete("username");
+                                $.cookie.delete("fullname");
+                                $.cookie.delete("loginmode");
+                                $.cookie.delete("logid");
+                                $("#logout").hide();
+                                window.guest = 'guest';
+                                $("#login-box").hide();
+                                $(".login-btn").click(function() { classicLogin(); });
+                                $("#login-tag").html("Login");
+                                $(".showInLogin").hide();
+                                return;
                             });
                             // display login
                             $("#login-tag").html(fullname.replace("+"," "));
@@ -96,6 +107,16 @@
                     } else {
                         // failed to connect
                         $("div.login-warning").show().html(provider + " connection failed. Please, check that you are already connected to " + provider + ".");
+                        $.cookie.delete("username");
+                        $.cookie.delete("fullname");
+                        $.cookie.delete("loginmode");
+                        $.cookie.delete("logid");
+                        $("#logout").hide();
+                        window.guest = 'guest';
+                        $("#login-box").hide();
+                        $(".login-btn").click(function() { classicLogin(); });
+                        $("#login-tag").html("Login");
+                        $(".showInLogin").hide();
                         return;
                     }
                 });
