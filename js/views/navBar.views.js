@@ -71,12 +71,14 @@
 								$(innerSelf).hide();
 								$("#mid-panel").hide();
 								$("#tabletPanel").show("slide",{direction:"left"},500);
+								window.location.hash = "#!/"+window.langOpt;	
 							}
 						});			
 					} else {
 						$(this).hide();
 						$("#mid-panel").hide();
 						$("#tabletPanel").show("slide",{direction:"left"},500);
+						window.location.hash = "#!/"+window.langOpt;	
 					}
 				});
 				$("a.tablet-tab").unbind().click(function() {
