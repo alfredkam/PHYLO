@@ -31,6 +31,13 @@
 					callBack(re);
 				});
 			},
+			getJsonLang : function(lang, callBack) {
+				require(['lang/'+lang],function() {
+					window.langOpt = lang;
+					var json = window[lang+"script"].lang[0];
+					callBack(json);
+				});
+			},
 			getTemplate : function(url,lang) {
 				var self = this;
 				self.loading();
@@ -58,15 +65,14 @@
 					},	
 					url : url,
 				}).done(function(re) {
-                    //if lang is undefined, return template
-                    if (!lang){
-
-                        return re;
-                        }
-                    else{
-					    self.change(re,lang);	
-					    self.complete();
-                    }
+					//check if its a function
+					var getType = {};
+					if(lang && getType.toString.call(lang) == '[object Function]') {
+						lang(re);
+				    	} else{
+						self.change(re,lang);	
+					    	self.complete();
+					}
 				});
 			}, 
 		});

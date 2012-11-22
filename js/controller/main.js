@@ -6,7 +6,7 @@
 		     	RNA : '../RNA',
 		     	theme : '../theme',
 			menu : '../menu',
-			validation : '../validation',
+			validation : '../views/validation',
 			controller : '../controller',
 			misc : '../misc',
 			lang : '../../lang',

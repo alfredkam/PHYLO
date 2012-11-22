@@ -49,7 +49,12 @@
 		var aboutView = Backbone.View.extend({
 			render : function(lang) {
 				selectTab("about");
-				request.getTemplate("templates/about.html",lang);
+				request.getTemplate("templates/about.html",function(context) {
+					request.getJsonLang(lang, function(json) {
+						$("#mid-panel").html(Mustache.render(context,json.body.play));
+						request.complete();
+					});
+				});
 			},
 		});
 
@@ -75,16 +80,23 @@
 		var creditsView = Backbone.View.extend({
 			render : function(lang) {
 				selectTab("credits");
-				request.getTemplate("templates/credits.html",lang);
+				request.getTemplate("templates/credits.html",function(context) {
+					request.getJsonLang(lang, function(json) {
+						$("#mid-panel").html(Mustache.render(context,json.body.play));
+						request.complete();
+					});
+				});
 			},
 		});
 
 		var tutorialView = Backbone.View.extend({
 			render : function(data) {
 				selectTab("tutorial");
-				var temp = request.getTemplate("templates/tutorial.mustache");
+				request.getTemplate("templates/tutorial.mustache",function(temp){
+					$("#mid-panel").html(Mustache.render(temp,data));
+					request.complete();
+				});
                 
-                $("#mid-panel").html(Mustache.render(temp,data));
 			},
 		});
 
