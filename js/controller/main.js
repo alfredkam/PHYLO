@@ -123,8 +123,9 @@
 				test : window.DEV.enableTabletMode,
 				yep : 'css/tablet.css',
 			});
-			window.isMobile = navigator.userAgent.match(/(iPhone|Android .* Mobile|Mobile)/i) != null;
-			window.location = "http://phylo.cs.mcgill.ca/archive/js/F2011";
+			var isMobile = navigator.userAgent.match(/(iPhone|Android .* Mobile|Mobile)/i) != null;
+			if(isMobile) 
+				window.location = "http://phylo.cs.mcgill.ca/archive/js/F2011";
 		}
 	);
 
