@@ -58,8 +58,15 @@
 					},	
 					url : url,
 				}).done(function(re) {
-					self.change(re,lang);	
-					self.complete();
+                    //if lang is undefined
+                    if (!lang){
+
+                        return re;
+                        }
+                    else{
+					    self.change(re,lang);	
+					    self.complete();
+                    }
 				});
 			}, 
 		});
