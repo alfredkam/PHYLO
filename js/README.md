@@ -5,7 +5,7 @@ We are using backbone js / require js / mustache to add structure to this web ap
 
 The current structure:
 	js/views	<=== responsible for display materials and actions (events)<br>
-	js/models 	<=== responsible for data models<br>
+	js/models 	<=== responsible for data models, http://backbonetutorials.com/what-is-a-model/<br>
 	js/controller 	<=== defines the site routes<br>
 	template 	<=== contains the html template<br>
 	
