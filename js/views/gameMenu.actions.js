@@ -83,6 +83,7 @@
 				"height" : settings.height()
 			});	
 			generate.background(settings);
+			$("#settingUp").hide();
 		}
 
 	})();
@@ -101,6 +102,7 @@
 			//this.loadStroke(doc,win,settings);
 			this.loadMenu(doc,win,settings);
 			this.listenToReload();
+			$("#settingUp").hide();
 			/* temp fix */
 		};
 		g.prototype.restart = function() {
