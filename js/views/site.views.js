@@ -23,13 +23,27 @@
 		var playView = Backbone.View.extend({
 			renderPuzzle : function(lang, id) {
 				request.getTemplate("templates/play.html", lang);
-				require(["DNA/main.core"], function() {
+				require(["views/gameMenu.actions","DNA/main.core"], function() {
 					$("#draw").hide();
 					$("#menu").hide();
-					$.main.init({
-						type:"disease",
-						num : id,
-					});		
+					if($.main == undefined) {
+						var fn = function() {
+							if($.main == undefined) { 
+								window.setTimeout(function() { fn() },100);
+							} else {
+								$.main.init({
+									type:"disease",
+									num : id,
+								});		
+							}
+						}	
+						fn();
+					} else {
+						$.main.init({
+							type:"disease",
+							num : id,
+						});		
+					}
 				});
 			},
 			render : function(lang) {
