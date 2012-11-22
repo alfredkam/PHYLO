@@ -25,6 +25,7 @@
 				"!/credits" : "credits",
 				"!/:lang/expert" : "expert",
 				"!/expert" : "expert",
+				"!/:lang/tablet:settings" : "tabletSettings",
 				"*actions" : "defaultRoute"
 			}
 		});
@@ -115,6 +116,14 @@
 
 			route.on('route:expert', function(lang) {
 				window.location = "http://phylo.cs.mcgill.ca/dcanv";
+			});
+
+			route.on('route:tabletSettings', function(lang) {
+				if(lang == undefined) {
+					lang = "EN";
+				} else lang.toUpperCase();
+				var tabletSettingsView = new Views.TabletSettings;
+				tabletSettingsView.render(lang);	
 			});
 
 			route.on('route:defaultRoute', function(lang) {

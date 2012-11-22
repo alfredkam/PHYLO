@@ -148,6 +148,12 @@
 			},
 		});
 
+		var tabletSettingsView = Backbone.View.extend({
+			render : function(lang) {
+				request.getTemplate("templates/settings.html",lang);
+			},
+		});
+
 		return {
 			Play : playView,
 			History : historyView,
@@ -156,6 +162,7 @@
 			Credits : creditsView, 
 			Tutorial : tutorialView,
 			RNA : rnaView,
+			TabletSettings : tabletSettingsView,
 		};
 	});	
 })();
