@@ -25,9 +25,8 @@
 					$("#tablet-grid").html(Mustache.render(self.tabletUX,json));
 					self.addTriggers();
 					$("#"+tag +" div").addClass("onSelect");
-					if(window.showInLogin != undefined && window.showInLogin == true) {
+					if(window.showInLogin != undefined && window.showInLogin == true)
 						$(".showInLogin").show();
-					}
 					if(window.showExpertOptions != undefined && window.showExpertOptions == true)
 						$(".showExpertOptions").show();
 					var l = json;

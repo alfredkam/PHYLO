@@ -730,6 +730,15 @@ a.btn {
 	display:none;
 }
 
+.settingUp {
+	font-weight:bold;
+	font-size:20px;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	color:#6D6D6D;
+}	
+
 /* extra - for screen transition */
 #loading-panel {
 	padding-top:150px;
