@@ -85,7 +85,7 @@
 							request.getTemplate("templates/play.html", self.lang);
 						}
 						if($(innerSelf).attr("name") == "tablet:settings") {
-							request.getTempalte("templates/settings.html", self.lang);
+							request.getTemplate("templates/settings.html", self.lang);
 						}
 
 						window.location.hash = "#!/"+window.langOpt + "/"+$(this).attr("name");		
