@@ -47,9 +47,13 @@
 				if(lang == undefined) {
 					lang = "EN";
 				} else lang.toUpperCase();
-				var tutorialModel = new Models.Tutorial;
+				var tutorialModel = new Models.Tutorial({lang:lang});
 				var tutorialView = new Views.Tutorial;
-				tutorialView.render(tutorialModel.data);
+                //console.log(tutorialModel.get("data"));
+                tutorialModel.fetch({success:function(){
+                    console.log(tutorialModel.get("data"));
+				    tutorialView.render(tutorialModel.get("data"));}
+                });
 			});
 
 			route.on('route:history', function(lang) {
