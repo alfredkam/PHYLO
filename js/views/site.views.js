@@ -80,7 +80,12 @@
 		var creditsView = Backbone.View.extend({
 			render : function(lang) {
 				selectTab("credits");
-				request.getTemplate("templates/credits.html",lang);
+				request.getTemplate("templates/credits.html",function(context) {
+					request.getJsonLang(lang, function(json) {
+						$("#mid-panel").html(Mustache.render(context,json.body.play));
+						request.complete();
+					});
+				});
 			},
 		});
 
