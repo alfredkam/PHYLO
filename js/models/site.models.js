@@ -7,31 +7,46 @@
 		'views/request.views',
 		'views/navBar.views',
 	],
-   	function($, _, Backbone , Mustache, Request, NavBar) { 
+    function($, _, Backbone , Mustache, Request, NavBar) { 
 		var Tutorial = Backbone.Model.extend({
 			defaults:{
 				lang: "EN",
-                
 			},
-		    initialize: function(lang){
+		    initialize: function(pageLang){
+            console.log(pageLang.lang);
 			//set it to autoload when created
-			    this.url="../tutorial/"+this.get("lang")+"-tutorial.js";
-		            this.fetch();
-		    },
-            /*
-		    fetch: function(lang){
-				$.ajax({
-			    		url:lang+"-tutorial.js"
-			    		dataType: JSON,
-			    
-				}).done(function(resp){
-					    this.set({data:resp});
+            //this.set({lang:lang});
+			    this.url="js/models/tutorial/"+pageLang.lang+"-tutorial.js";
+                //this.fetch();
+			},
+            
+		    fetch: function(callback){
+                var self = this;
+                $.ajax({
+                    url: self.url,
+                    dataType: 'json',
+                }).done(function(resp){
+                    //console.log(this);
+                    self.set({data:resp});
+                    if(callback && callback.success){
+                        callback.success();
+                    }
+                    
+                    
+                }).fail(function(resp){
+                    console.log("fail",resp);   
+                });
+               return; 
+                                    
+                    
+            },
+            getData:function(){
+                return this.get("data");
+                //return this.attribites.data;
 
-				});
-			},*/
+            }
 		});
 
-		
 		return {
 			Tutorial : Tutorial,
 		}
