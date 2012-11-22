@@ -108,7 +108,9 @@
 			</div>
 		</div>
 		<script>
-			require(['RNA/main.rna'],function() {
+			require(['DNA/main.core','RNA/main.rna'],function() {
+				window.setTimeout(function() {
 				$.rna.init();	
+				},200);
 			});
 		</script>

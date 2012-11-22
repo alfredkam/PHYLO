@@ -21,6 +21,17 @@
 	
 		var request = new Request;	
 		var playView = Backbone.View.extend({
+			renderPuzzle : function(lang, id) {
+				request.getTemplate("templates/play.html", lang);
+				require(["DNA/main.core"], function() {
+					$("#draw").hide();
+					$("#menu").hide();
+					$.main.init({
+						type:"disease",
+						num : id,
+					});		
+				});
+			},
 			render : function(lang) {
 				selectTab("play");
 				request.getTemplate("templates/play.html",lang);
@@ -113,6 +124,13 @@
                 
 			},
 		});
+	
+		var rnaView = Backbone.View.extend({
+			render: function(lang) {
+				selectTab("play");
+				request.getTemplate("templates/rna.html",lang);
+			},
+		});
 
 		return {
 			Play : playView,
@@ -121,6 +139,7 @@
 			Ranking : rankingView,
 			Credits : creditsView, 
 			Tutorial : tutorialView,
+			RNA : rnaView,
 		};
 	});	
 })();

@@ -102,7 +102,6 @@
 			this.loadMenu(doc,win,settings);
 			this.listenToReload();
 			/* temp fix */
-			$.hashbang.checkIfAutoStart();
 		};
 		g.prototype.restart = function() {
 			var doc = document, win = window;

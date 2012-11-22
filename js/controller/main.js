@@ -50,8 +50,14 @@
 			'DNA/protocal.core' : {
 				deps : ['jquery'],
 			},
+			'RNA/stage.ext' : {
+				deps : ['jquery','DNA/stage.core'],
+			},
+			'RNA/sequence.ext' : {	
+				deps : ['jquery', 'DNA/sequence.core'],
+			},
 			'RNA/main.rna' : {
-				deps : ['jquery','jquery-ui','DNA/main.core','RNA/stage.ext','RNA/sequence.ext'],	
+				deps : ['DNA/main.core','RNA/stage.ext','RNA/sequence.ext'],	
 			},
 			'jquery.dataTables' : {
 				deps : ['jquery','jquery-ui'],

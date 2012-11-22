@@ -9,6 +9,8 @@
 	], function($, _ , Backbone, Views, NavBar, Models) {
 		var Routes = Backbone.Router.extend({
 			routes : {
+				"!/:lang/BETA/RNA" : "rna",
+				"!/:lang/play/puzzle/:id" : "puzzle",
 				"!/:lang/play" : "play",
 				"!/play" : "play",
 				"!/:lang/tutorial" : "tutorial",
@@ -42,6 +44,24 @@
 				navBar.set(lang,"play");
 				var playView = new Views.Play;
 				playView.render(lang);
+			});
+
+			route.on('route:puzzle',function(lang, id) {
+				if(lang == undefined) {
+					lang = "EN";
+				} else lang.toUpperCase();
+				navBar.set(lang, "play");
+				var playView = new Views.Play;
+				playView.renderPuzzle(lang, id);	
+			});
+		
+			route.on('route:rna',function(lang) {
+				if(lang == undefined) {
+					lang = "EN";
+				} else lang.toUpperCase();
+				navBar.set(lang, "play");
+				var rnaView = new Views.RNA;
+				rnaView.render(lang);
 			});
 
 			route.on('route:tutorial', function(lang) {
