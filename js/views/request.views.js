@@ -58,15 +58,14 @@
 					},	
 					url : url,
 				}).done(function(re) {
-                    //if lang is undefined, return template
-                    if (!lang){
-
-                        return re;
-                        }
-                    else{
-					    self.change(re,lang);	
-					    self.complete();
-                    }
+					//check if its a function
+					var getType = {};
+					if(lang && getType.toString.call(lang) == '[object Function]') {
+						lang(re);
+				    	} else{
+						self.change(re,lang);	
+					    	self.complete();
+					}
 				});
 			}, 
 		});

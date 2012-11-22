@@ -82,7 +82,9 @@
 		var tutorialView = Backbone.View.extend({
 			render : function(data) {
 				selectTab("tutorial");
-				var temp = request.getTemplate("templates/tutorial.mustache");
+				request.getTemplate("templates/tutorial.mustache",function(temp){
+					
+				});
                 
                 $("#mid-panel").html(Mustache.render(temp,data));
 			},
