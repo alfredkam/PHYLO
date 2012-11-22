@@ -49,9 +49,7 @@
 				} else lang.toUpperCase();
 				var tutorialModel = new Models.Tutorial({lang:lang});
 				var tutorialView = new Views.Tutorial;
-                //console.log(tutorialModel.get("data"));
                 tutorialModel.fetch({success:function(){
-                    console.log(tutorialModel.get("data"));
 				    tutorialView.render(tutorialModel.get("data"));}
                 });
 			});
