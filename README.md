@@ -45,7 +45,7 @@ if options.js is tracked, ie - meaning git is tracking the changes, in terminal
 	git rm --cache options.js
 	git commit -a -m 'untrack options.js'
 
-<b>Please refer to js/README.md for further explanation / crash course<b>
+<b>Please refer to js/README.md for further instructions / explanation / crash course<b>
 
 Special Links
 ====
@@ -74,5 +74,9 @@ Current version supports all major browsers (except IE 6-8) and tablet browsers 
 I want to contribute!
 =====
 That is awesome! Just fork the project on github.  Create a topic branch, write some code and let us know!
+
+I want to leave a feedback!
+=====
+We love to hear from you, you can post it here : https://github.com/McGill-CSB/PHYLO/issues
 
 
