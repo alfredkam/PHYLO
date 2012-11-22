@@ -1,5 +1,6 @@
 (function(){
 	requirejs.config({
+		waitSeconds : 15,
 		baseUrl : 'js/blueprint',
 		paths : {
 		     	DNA : '../DNA',
