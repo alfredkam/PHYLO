@@ -18,6 +18,10 @@ Backbone Router is used for defining the site url rules<br>
 Require acts like php includes or include once and allows you to define the namespace , requirejs.org<br> 
 Mustache is for templating , mustache.github.com<br>
 
+	js/Boilerplate.js
+
+This is a template one should start using when writing javascript, it helps solve namespace issues
+
 Recommended Read
 =====
 http://backbonetutorials.com/organizing-backbone-using-modules/ <br>
