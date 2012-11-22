@@ -72,7 +72,7 @@
 				deps : ['jquery'],
 			},
 			'menu/navBar.actions' : {
-				deps : ['jquery'],
+				deps : ['jquery','views/request.views'],
 			},
 			'menu/tailor.menu' : {
 				deps : ['jquery'],

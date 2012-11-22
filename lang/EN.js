@@ -24,6 +24,9 @@
 		"field 12": "Classic",
 		"field 13": "Want to contribute? Click here",
 		"field 14": "Go back to non-mobile edition",
+		"field 15" : "History",
+		"field 16" : "Expert",
+		"field 17" : "Settings",
 },
 	"body": {
 		"play": {

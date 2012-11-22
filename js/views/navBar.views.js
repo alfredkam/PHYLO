@@ -3,11 +3,33 @@
 		'jquery',
 		'underscore',
 		'backbone',
-	], function($, _, Backbone) {
+		'mustache',
+		'views/request.views'
+	], function($, _, Backbone, Mustache, Request) {
+		var request = new Request;
 		var navBar = Backbone.View.extend({
 			init : function() {
+				this.desktopNavBar = $("#nav").html();
+				this.tabletUX = $("#tablet-grid").html();
+				this.set,("EN","play");
+			},
+			lang : "null",
+			set : function(lang,tag) {
+				var self = this;
+				if(this.lang == lang) 
+					return;
+				this.lang = lang;
+
+				request.getJsonLang(lang, function(json) {
+					$("#nav").html(Mustache.render(self.desktopNavBar,json));
+					$("#tablet-grid").html(Mustache.render(self.tabletUX,json));
+					self.addTriggers();
+					$("#"+tag +" div").addClass("onSelect");
+				});
+			},
+			addTriggers : function() {
 				//menu hyperlink listener
-				$("a.isTab").click(function() {
+				$("a.isTab").unbind().click(function() {
 					if($(this).attr("href") == "javascript:void(0);") {
 						var innerSelf = this;
 						if($.timer.active == true) {
@@ -30,7 +52,7 @@
 					}
 				});
 				//tablet
-				$("a.tablet-back-btn").click(function() {
+				$("a.tablet-back-btn").unbind().click(function() {
 					var innerSelf = this;
 					if($.timer.active == true) {
 						$.helper.popUp("Are you sure you want to quite?",function(status) {
@@ -49,7 +71,7 @@
 						$("#tabletPanel").show("slide",{direction:"left"},500);
 					}
 				});
-				$("a.tablet-tab").click(function() {
+				$("a.tablet-tab").unbind().click(function() {
 						var innerSelf = this;
 						if($(innerSelf).attr("name") == "play") {
 							$.hashbang.load($.hashbang.get());	
@@ -66,7 +88,7 @@
 						$(".tablet-back-btn").fadeIn();
 						},400);
 				});
-				$("a.tablet-login").click(function() {
+				$("a.tablet-login").unbind().click(function() {
 					if($(".tablet-login-wrapper").html().trim() == "") {
 						hitTest();
 						$(".tablet-login-wrapper").html($("#login-box").html());
@@ -81,7 +103,7 @@
 							height : $(document).height(),
 							width : $(document).width()
 						});
-						$(".tablet-login-cancel").unbind().click(function() {
+						$(".tablet-login-cancel").unbind().unbind().click(function() {
 							$(".tablet-login-wrapper").hide();
 							$(".tablet-login-bg").hide();
 						});	
