@@ -106,7 +106,7 @@ function g() {};
         "sPaginationType": "bootstrap",
         "aaSorting": [[ 1, "asc" ]],
         "oLanguage": {
-            "sUrl": "js/model/dataTable/datatable_" + window.langOpt.toUpperCase() + ".txt"
+            "sUrl": "js/models/dataTable/datatable_" + window.langOpt.toUpperCase() + ".txt"
         },
         "aoColumns": [
             { "bVisible" : false },
