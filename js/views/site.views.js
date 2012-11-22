@@ -24,13 +24,13 @@
 			renderPuzzle : function(lang, id) {
 				request.getTemplate("templates/play.html", lang);
 				require(["views/gameMenu.actions","DNA/main.core"], function() {
-					$("#draw").hide();
-					$("#menu").hide();
 					if($.main == undefined) {
 						var fn = function() {
 							if($.main == undefined) { 
 								window.setTimeout(function() { fn() },100);
 							} else {
+								$("#draw").hide();
+								$("#menu").hide();
 								$.main.init({
 									type:"disease",
 									num : id,
@@ -39,6 +39,8 @@
 						}	
 						fn();
 					} else {
+						$("#draw").hide();
+						$("#menu").hide();
 						$.main.init({
 							type:"disease",
 							num : id,

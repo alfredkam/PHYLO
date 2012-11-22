@@ -6,6 +6,8 @@ Getting Started
 =====
 Master Branch contains the most recent experimental release
 
+feature/RNA Branch is used for PHYLO-RNA experimental development
+
 feature/integration Branch is used for integration testing 
 
 Production Branch contains the most recent stable release
@@ -45,15 +47,23 @@ if options.js is tracked, ie - meaning git is tracking the changes, in terminal
 
 <b>Please refer to js/README.md for further explanation / crash course<b>
 
+Special Links
+====
+
+	index.html#!/EN/play			<== PHYLO-DNA
+	index.html#!/EN/BETA/RNA		<== PHYLO-RNA
+	index.html#!/EN/play/puzzle/1111	<== PHYLO-DNA autostart for specific puzzles
+
+
 Hot deploy branches
 =====
 [Under Master Branch]
 PHYLO - DNA 
-http://phylo.cs.mcgill.ca/master/index.html#!play
+http://phylo.cs.mcgill.ca/master/index.html
 
 [Under feature/RNA Branch]
 PHYLO - RNA in pre-Alpha
-http://phylo.cs.mcgill.ca/feature/RNA/index.html#!rna
+http://phylo.cs.mcgill.ca/feature/RNA/index.html#!/EN/BETA/RNA
 
 - If want your own hot deploy branch can message me @alfredkam
 
