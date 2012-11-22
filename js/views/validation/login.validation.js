@@ -68,6 +68,7 @@
                                                 $(".login-btn").click(function() { classicLogin(); });
                                                 $("#login-tag").html("Login");
                                                 $(".showInLogin").hide();
+		window.showInLogin = false;
                                                 return;
                                             }
                                         });
@@ -85,6 +86,7 @@
                                 $(".login-btn").click(function() { classicLogin(); });
                                 $("#login-tag").html("Login");
                                 $(".showInLogin").hide();
+		window.showInLogin = false;
                                 return;
                             });
                             // display login
@@ -102,6 +104,7 @@
                             $(".login-btn").click(function() { classicLogin(); });
                             $("#login-tag").html("Login");
                             $(".showInLogin").hide();
+		window.showInLogin = false;
                             return;
                         }
                     } else {
@@ -117,6 +120,7 @@
                         $(".login-btn").click(function() { classicLogin(); });
                         $("#login-tag").html("Login");
                         $(".showInLogin").hide();
+		window.showInLogin = false;
                         return;
                     }
                 });
@@ -132,11 +136,14 @@
                 data : "mode=8&user="+username,
             }).done(function(re) {
                 $(".showInLogin").show();
+		window.showInLogin = true;
                 if (re!='succ') {
                     $(".showExpertOptions").hide();
+				window.showExpertOptions = false;
                 }
             }).fail(function() {
                 $(".showInLogin").show();
+		window.showInLogin = true;
                 console.log("Expert validation failed. Could not connect to the server.");
             });
         };
@@ -170,11 +177,14 @@
                         data : "mode=8&user="+username,
                     }).done(function(re) {
                         $(".showInLogin").show();
+		window.showInLogin = true;
                         if (re!='succ') {
                             $(".showExpertOptions").hide();
+				window.showExpertOptions = false;
                         }
                     }).fail(function() {
                         $(".showInLogin").show();
+		window.showInLogin = true;
                         console.log("Expert validation failed. Could not connect to the server.");
                     });
 				} else {
@@ -224,6 +234,7 @@
 			});
 			$("#login-tag").html("Login");
 			$(".showInLogin").hide();
+		window.showInLogin = false;
 		});
 
 		//register event

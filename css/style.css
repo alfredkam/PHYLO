@@ -726,6 +726,9 @@ a.btn {
 .showInLogin {
 	display:none;
 }
+.showExpertOptions {
+	display:none;
+}
 
 /* extra - for screen transition */
 #loading-panel {
