@@ -65,7 +65,7 @@ http://phylo.cs.mcgill.ca/master/index.html
 PHYLO - RNA in pre-Alpha
 http://phylo.cs.mcgill.ca/feature/RNA/index.html#!/EN/BETA/RNA
 
-- If want your own hot deploy branch can message me @alfredkam
+- If want your own hot deploy branch, you can create an issue here (https://github.com/McGill-CSB/PHYLO/issues) and assign it to @alfredkam
 
 Devices Supported
 =====
