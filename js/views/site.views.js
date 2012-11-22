@@ -80,9 +80,11 @@
 		});
 
 		var tutorialView = Backbone.View.extend({
-			render : function(lang) {
+			render : function(data) {
 				selectTab("tutorial");
-				request.getTemplate("templates/tutorial.html",lang);
+				var temp = request.getTemplate("templates/tutorial.mustache");
+                
+                $("#mid-panel").html(Mustache.render(temp,data));
 			},
 		});
 

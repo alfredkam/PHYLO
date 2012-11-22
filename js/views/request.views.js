@@ -58,7 +58,7 @@
 					},	
 					url : url,
 				}).done(function(re) {
-                    //if lang is undefined
+                    //if lang is undefined, return template
                     if (!lang){
 
                         return re;
