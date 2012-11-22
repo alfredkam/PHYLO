@@ -124,7 +124,7 @@
 				test : window.DEV.enableTabletMode,
 				yep : 'css/tablet.css',
 			});
-			var isMobile = navigator.userAgent.match(/(iPhone|Android .* Mobile|Mobile)/i) != null;
+			var isMobile = navigator.userAgent.match(/(iPhone|Android .* Mobile)/i) != null;
 			if(isMobile) 
 				window.location = "http://phylo.cs.mcgill.ca/archive/js/F2011";
 		}
