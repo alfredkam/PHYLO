@@ -72,7 +72,6 @@
 				navBar.set(lang,"tutorial");
 				var tutorialModel = new Models.Tutorial({lang:lang});
 				var tutorialView = new Views.Tutorial;
-                //console.log(tutorialModel.get("data"));
                 tutorialModel.fetch({success:function(){
 				    tutorialView.render(tutorialModel.get("data"));}
                 });
