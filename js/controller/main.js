@@ -39,8 +39,8 @@
 			'theme/main.theme' : {
 				deps : ['jquery'],
 			},
-			'menu/interface.menu' : {
-				deps : ['jquery','menu/settings.menu','menu/disease.menu','DNA/main.core'],
+			'views/gameMenu.actions' : {
+				deps : ['jquery','menu/settings.menu','models/disease.data','DNA/main.core'],
 			},		
 			'DNA/stage.core' : {
 				deps : ['DNA/physics.engine', 'DNA/events.engine','DNA/engine.core'],
@@ -59,7 +59,7 @@
 				deps : ['jquery','jquery-ui','DNA/main.core','RNA/stage.ext','RNA/sequence.ext'],	
 			},
 			'controller/hashbang.controller' : {
-				deps : ['jquery','DNA/helper.core','DNA/timer.core','DNA/lang.module','menu/tailor.menu','controller/site.controller','menu/events.menu'],
+				deps : ['jquery','DNA/helper.core','DNA/timer.core','DNA/lang.module','menu/tailor.menu','controller/site.controller','menu/navBar.actions'],
 			},
 			'jquery.dataTables' : {
 				deps : ['jquery','jquery-ui'],
@@ -73,7 +73,7 @@
 			'controller/site.controller' : {
 				deps : ['jquery'],
 			},
-			'menu/events.menu' : {
+			'menu/navBar.actions' : {
 				deps : ['jquery'],
 			},
 			'menu/tailor.menu' : {

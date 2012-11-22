@@ -55,11 +55,9 @@
 							$.hashbang.load($.hashbang.get());	
 							$.tailor.init();
 						}
-						if(window.location.hash.match("#!"+$(this).attr("name")) != null) {
-							$.hashbang.load($(this).attr("name"));
-						} else {
-							window.location.hash = "#!"+$(this).attr("name");		
-						}
+
+						window.location.hash = "#!/"+window.langOpt + "/"+$(this).attr("name");		
+
 						$("#tabletPanel").hide("slide",{direction : "left"}, 500);
 						if($("#mid-panel").hasClass("forceDisplayNone")) {
 							$("#mid-panel").removeClass("forceDisplayNone");	

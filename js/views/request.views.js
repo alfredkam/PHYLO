@@ -21,7 +21,17 @@
 				$("#mid-panel").hide();
 				$("#loading-panel").show();
 			},
-			get : function(url,lang) {
+			post : function(url, callBack) {
+				var self = this;
+				self.loading();
+				$.ajax({
+					type : "POST",
+					url : url,
+				}).done(function(re) {
+					callBack(re);
+				});
+			},
+			getTemplate : function(url,lang) {
 				var self = this;
 				self.loading();
 				$.ajax({

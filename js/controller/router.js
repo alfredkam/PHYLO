@@ -27,6 +27,7 @@
 		});
 
 		var init = function() {
+			require(['views/navBar.actions']);
 			//set default lang
 			window.langOpt = "EN";
 			//initalize
