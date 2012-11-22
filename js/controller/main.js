@@ -34,7 +34,7 @@
 			'mustache' : {
 				deps : ['jquery'],
 			},
-			'theme/main.theme' : {
+			'views/customizeGame.actions' : {
 				deps : ['jquery'],
 			},
 			'views/gameMenu.actions' : {
@@ -48,7 +48,7 @@
 					'DNA/endGame.theme','DNA/events.engine','DNA/engine.core','DNA/stage.core',
 					'DNA/sequence.core','DNA/splash.theme','DNA/tree.core','DNA/multiSelect.core',
 					'DNA/newick.core','DNA/lang.module','DNA/fitch.core','DNA/board.theme','DNA/highlighter.theme',
-					'DNA/protocal.core','DNA/score.theme','theme/main.theme'],	
+					'DNA/protocal.core','DNA/score.theme','views/customizeGame.actions'],	
 			},
 			'DNA/protocal.core' : {
 				deps : ['jquery'],
@@ -62,7 +62,7 @@
 			'jquery.dataTables' : {
 				deps : ['jquery','jquery-ui'],
 			},
-			'misc/detectIE' :  {
+			'views/detectIE.actions' :  {
 				deps : ['jquery','DNA/helper.core']
 			},		
 			'bootbox' : {
@@ -136,9 +136,9 @@
 		Router.init();
 	});
 
-	require(['misc/detectIE']);
+	require(['views/detectIE.actions']);
 	require(['bootstrap']);
-	require(['theme/main.theme']);
+	require(['views/customizeGame.actions']);
 	require(['bootbox']);
 	require(['validation/login.validation']);
 	/*
