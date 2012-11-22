@@ -6,7 +6,11 @@ Getting Started
 =====
 Master Branch contains the most recent experimental release
 
+feature/integration Branch is used for integration testing 
+
 Production Branch contains the most recent stable release
+
+We are using Model - View - Controller + Observer Design Pattern
 
 All versions contains an offline mode with dummy data for development 
 
@@ -39,6 +43,8 @@ if options.js is tracked, ie - meaning git is tracking the changes, in terminal
 	git rm --cache options.js
 	git commit -a -m 'untrack options.js'
 
+<b>Please refer to js/README.md for further explanation / crash course<b>
+
 Hot deploy branches
 =====
 [Under Master Branch]
@@ -59,11 +65,4 @@ I want to contribute!
 =====
 That is awesome! Just fork the project on github.  Create a topic branch, write some code and let us know!
 
-Notes
-====
-We used backbonejs / requirejs / mustache to support site
-Recommended Read <br>
-http://backbonetutorials.com/organizing-backbone-using-modules/ <br>
-http://coenraets.org/blog/2011/12/backbone-js-wine-cellar-tutorial-part-1-getting-started/ <br>
-http://backbonetutorials.com/what-is-a-router/ <br>
 
