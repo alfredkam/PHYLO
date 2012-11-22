@@ -66,19 +66,19 @@
 						$.helper.popUp("Are you sure you want to quite?",function(status) {
 							if(status == "ok") {
 							//	window.location.hash = "#!"+$(innerSelf).attr("name");		
+								window.location.hash = "#!/"+window.langOpt;	
 								$.timer.stop();
 								$(this).hide();
 								$(innerSelf).hide();
 								$("#mid-panel").hide();
 								$("#tabletPanel").show("slide",{direction:"left"},500);
-								window.location.hash = "#!/"+window.langOpt;	
 							}
 						});			
 					} else {
+						window.location.hash = "#!/"+window.langOpt;	
 						$(this).hide();
 						$("#mid-panel").hide();
 						$("#tabletPanel").show("slide",{direction:"left"},500);
-						window.location.hash = "#!/"+window.langOpt;	
 					}
 				});
 				$("a.tablet-tab").unbind().click(function() {
