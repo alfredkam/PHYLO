@@ -21,7 +21,7 @@
 				this.lang = lang;
 
 				request.getJsonLang(lang, function(json) {
-					$("#nav").html(Mustache.render(self.desktopNavBar,json));
+					$("#nav").html(Mustache.render(self.desktopNavBar,json)).show();;
 					$("#tablet-grid").html(Mustache.render(self.tabletUX,json));
 					self.addTriggers();
 					$("#"+tag +" div").addClass("onSelect");
