@@ -11,8 +11,6 @@
 			misc : '../misc',
 			lang : '../../lang',
 			tutorial : '../tutorial',
-			ranking : '../ranking',
-			history : '../history',
 			views : '../views',
 			models : '../models',
 		},
@@ -91,10 +89,10 @@
 			'validation/login.validation' : {
 				deps : ['jquery', 'DNA/protocal.core', 'validation/cookie.validation'],
 			},
-			'ranking/DT_bootstrap_ranking' : {
+			'views/DT_bootstrap_ranking.actions' : {
 				deps : ['jquery','bootstrap','jquery.dataTables'],
 			},
-			'history/DT_bootstrap_history' : {
+			'views/DT_bootstrap_history.actions' : {
 				deps : ['jquery','bootstrap','jquery.dataTables'],
 			},
 			'DNA/helper.core' : {

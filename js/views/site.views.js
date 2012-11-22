@@ -36,7 +36,7 @@
 					function(re) {
 						if($("#history-wrapper").length != 0) {
 							$("#history-wrapper").html(re);
-							require(['history/DT_bootstrap_history'],function() {
+							require(['views/DT_bootstrap_history.actions'],function() {
 								historyTable.init();
 							});
 						}
@@ -62,7 +62,7 @@
 					function(re) {
 						if($("#ranking-wrapper").length != 0) {
 							$("#ranking-wrapper").html(re);
-							require(['ranking/DT_bootstrap_ranking'],function() {
+							require(['views/DT_bootstrap_ranking.actions'],function() {
 								rankingTable.init();
 							});
 						}
