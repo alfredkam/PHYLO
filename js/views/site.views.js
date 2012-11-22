@@ -83,10 +83,10 @@
 			render : function(data) {
 				selectTab("tutorial");
 				request.getTemplate("templates/tutorial.mustache",function(temp){
-					
+					$("#mid-panel").html(Mustache.render(temp,data));
+					request.complete();
 				});
                 
-                $("#mid-panel").html(Mustache.render(temp,data));
 			},
 		});
 
