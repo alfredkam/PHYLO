@@ -4,7 +4,7 @@
 		'underscore',
 		'backbone',
 		'mustache',
-		'views/request.views'
+		'views/request.views',
 	], function($, _, Backbone, Mustache, Request) {
 		var request = new Request;
 		var navBar = Backbone.View.extend({
@@ -32,6 +32,7 @@
 				});
 			},
 			addTriggers : function() {
+				var self = this;
 				//menu hyperlink listener
 				$("a.isTab").unbind().click(function() {
 					if($(this).attr("href") == "javascript:void(0);") {
@@ -43,8 +44,7 @@
 									$.timer.stop();
 									//force change
 									if($(innerSelf).attr("id") == "play") {
-										$.hashbang.load($.hashbang.get());	
-										$.tailor.init();
+										request.getTemplate("templates/play.html", self.lang);
 									}
 								}
 							});			
@@ -78,8 +78,7 @@
 				$("a.tablet-tab").unbind().click(function() {
 						var innerSelf = this;
 						if($(innerSelf).attr("name") == "play") {
-							$.hashbang.load($.hashbang.get());	
-							$.tailor.init();
+							request.getTemplate("templates/play.html", self.lang);
 						}
 
 						window.location.hash = "#!/"+window.langOpt + "/"+$(this).attr("name");		
@@ -89,7 +88,7 @@
 							$("#mid-panel").removeClass("forceDisplayNone");	
 						}
 						window.setTimeout(function() {
-						$(".tablet-back-btn").fadeIn();
+							$(".tablet-back-btn").fadeIn();
 						},400);
 				});
 				$("a.tablet-login").unbind().click(function() {
