@@ -23,7 +23,7 @@ Mustache is for templating , mustache.github.com<br>
 
 This is a template one should start using when writing javascript, it helps solve namespace issues
 
-Recommended Read
+Recommended Readings
 =====
 http://backbonetutorials.com/organizing-backbone-using-modules/ <br>
 http://coenraets.org/blog/2011/12/backbone-js-wine-cellar-tutorial-part-1-getting-started/ <br>
