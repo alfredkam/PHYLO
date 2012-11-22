@@ -5,13 +5,13 @@ We are using backbone js / require js / mustache to add structure to this web ap
 
 The current structure:
 
-	js/views	<=== responsible for display materials and actions (events)<br>
-	js/models 	<=== responsible for data models, http://backbonetutorials.com/what-is-a-model/<br>
-	js/controller 	<=== defines the site routes<br>
-	template 	<=== contains the html template<br>
+	js/views	<=== responsible for display materials and actions (events)
+	js/models 	<=== responsible for data models, http://backbonetutorials.com/what-is-a-model/
+	js/controller 	<=== defines the site routes
+	template 	<=== contains the html template
 	
-	DNA		<=== the base framework for the game, it depeneds on jquery (for now)<br>
-	RNA		<=== depends on DNA (base framework)<br>
+	DNA		<=== the base framework for the game, it depeneds on jquery (for now)
+	RNA		<=== depends on DNA (base framework)
 
 
 Backbone is mainly used to add structure , backbonejs.org <br>
