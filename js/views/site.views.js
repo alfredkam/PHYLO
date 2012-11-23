@@ -74,7 +74,7 @@
 						selectTab("history");
 						$("#mid-panel").html("<div id='history-wrapper'></div>");
 						request.post(
-							"http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username=" + window.guest,
+							"http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username=" + window.guest + "&lang=" + window.langOpt.toUpperCase(),
 							function(re) {
 								if($("#history-wrapper").length != 0) {
 									$("#history-wrapper").html(re);
