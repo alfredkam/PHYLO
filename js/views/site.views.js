@@ -5,9 +5,9 @@
 		'backbone',
 		'mustache',
 		'views/request.views',
-		'views/navBar.views',
-	], function($, _, Backbone,Mustache,Request,navBar) {
-
+		'views/variable.listener',
+	], function($, _, Backbone,Mustache,Request,Listener) {
+		var listener = new Listener;
 		var selectTab = function(tag) {
 			$("#nav a div").removeClass("onSelect");
 			$("#"+tag +" div").addClass("onSelect");
@@ -18,7 +18,6 @@
 				$(this).attr("href",href+"#!/"+$(this).attr("name")+"/"+tag);
 			});
 		};
-	
 		var request = new Request;	
 		var playView = Backbone.View.extend({
 			renderPuzzle : function(lang, id) {
@@ -70,20 +69,26 @@
 
 		var historyView = Backbone.View.extend({
 			render : function(lang) {
-				selectTab("history");
-				$("#mid-panel").html("<div id='history-wrapper'></div>");
-				request.post(
-					"http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username=" + window.guest,
-					function(re) {
-						if($("#history-wrapper").length != 0) {
-							$("#history-wrapper").html(re);
-							require(['views/DT_bootstrap_history.actions'],function() {
-								historyTable.init();
-							});
-						}
-						request.complete();
+				listener.change(window.guest,"guest",100,1000,function(respond) {		
+					if(respond) {
+						selectTab("history");
+						$("#mid-panel").html("<div id='history-wrapper'></div>");
+						request.post(
+							"http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username=" + window.guest,
+							function(re) {
+								if($("#history-wrapper").length != 0) {
+									$("#history-wrapper").html(re);
+									require(['views/DT_bootstrap_history.actions'],function() {
+										historyTable.init();
+									});
+								}
+								request.complete();
+							}
+						);
+					} else {
+						window.location.hash = "#!/"+lang;
 					}
-				);
+				}
 			},
 		});
 		

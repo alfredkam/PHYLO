@@ -100,7 +100,7 @@
 				deps : ['jquery'],
 			},
 			'views/site.views' : {
-				deps : ['views/request.views'],
+				deps : ['views/request.views','views/variable.listener'],
 			},	
 			'views/navBar.views' : {
 				deps : ['jquery','underscore', 'backbone','DNA/timer.core'],
