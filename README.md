@@ -69,7 +69,8 @@ http://phylo.cs.mcgill.ca/feature/RNA/index.html#!/EN/BETA/RNA
 
 Devices Supported
 =====
-Current version supports all major browsers (except IE 6-8) and tablet browsers with screen size bigger than 1024px * 768px.  Tablets have their own custome UX
+Current version supports all major browsers (except IE 6-8) and tablet browsers with screen size bigger than 1024px * 768px.  Tablets have their own custome UX <br>
+For the Mobile Phone Support, please checkout either archive branch or http://phylo.cs.mcgill.ca/archive/js/F2011/index.shtml and it is no longer supported.  
 
 I want to contribute!
 =====
