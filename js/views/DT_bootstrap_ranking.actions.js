@@ -147,7 +147,7 @@ function g(){};
         $('.table').dataTable.fnDrawCallback(oSettings);
     });
 
-	$("#ranking .nav-tabs li a").each(functino() {
+	$("#ranking .nav-tabs li a").each(function() {
 		$(this).attr("href","javascript:void(0)");
 	});
 	
