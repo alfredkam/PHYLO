@@ -8,7 +8,7 @@
 			change : function(_default, _diffFactor, _stepFunction, _maxWait, callBack) {
 				var check = function(_step) {
 					console.log(_step);
-					console.log(window.guest + " < >" +_default);
+					console.log(window.guest + " < >" +_default + " < > "+_diffFactor);
 					console.log((_default != _diffFactor? true : false));
 					console.log((_default != window.guest? true : false));
 					if(_default != _diffFactor)
