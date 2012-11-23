@@ -69,7 +69,7 @@
 
 		var historyView = Backbone.View.extend({
 			render : function(lang) {
-				listener.change(window.guest,"guest",100,3000,function(respond) {		
+				listener.change("guest","guest",100,1500,function(respond) {		
 					if(respond) {
 						selectTab("history");
 						$("#mid-panel").html("<div id='history-wrapper'></div>");
