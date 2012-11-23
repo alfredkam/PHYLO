@@ -14,7 +14,7 @@
 					else if(_step >= _maxWait)
 						return callBack(false);
 					else
-						window.setTimeout(function(_step) {
+						window.setTimeout(function() {
 							check(parseInt(_step+_stepFunction));
 						},_stepFunction);
 				};
