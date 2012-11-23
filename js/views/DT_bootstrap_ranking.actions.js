@@ -126,26 +126,31 @@ function g(){};
         $("#weekly").hide();
         $("#monthly").hide();
         $("#alltime").show();
-        $("ul li.active").removeClass('active');
-        $("ul li.all").addClass('active');
+        $("#ranking li.active").removeClass('active');
+        $("#ranking li.all").addClass('active');
         $('.table').dataTable.fnDrawCallback(oSettings);
     });
     $("#showmonth").unbind().click(function(){
         $("#alltime").hide();
         $("#weekly").hide();
         $("#monthly").show();
-        $("ul li.active").removeClass('active');
-        $("ul li.month").addClass('active');
+        $("#ranking li.active").removeClass('active');
+        $("#ranking li.month").addClass('active');
         $('.table').dataTable.fnDrawCallback(oSettings);
     });
     $("#showweek").unbind().click(function(){
         $("#alltime").hide();
         $("#monthly").hide();
         $("#weekly").show();
-        $("ul li.active").removeClass('active');
-        $("ul li.week").addClass('active');
+        $("#ranking li.active").removeClass('active');
+        $("#ranking li.week").addClass('active');
         $('.table').dataTable.fnDrawCallback(oSettings);
     });
+
+	$("#ranking .nav-tabs li a").each(functino() {
+		$(this).attr("href","javascript:void(0)");
+	});
+	
                     
     // initial display
     $("#weekly").hide();
