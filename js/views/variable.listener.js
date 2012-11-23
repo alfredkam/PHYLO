@@ -8,6 +8,7 @@
 			change : function(_default, _diffFactor, _stepFunction, _maxWait, callBack) {
 				var check = function(_step) {
 					console.log(_step);
+					console.log(window.guest + " < >" +_default);
 					if(_default != _diffFactor)
 						return callBack(true);
 					else if(_step >= _maxWait)
