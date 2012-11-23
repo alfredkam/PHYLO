@@ -21,7 +21,7 @@
 				$("#mid-panel").hide();
 				$("#loading-panel").show();
 			},
-			post : function(url, callBack) {
+			post : function(url, callBack, dummy) {
 				var self = this;
 				self.loading();
 				$.ajax({
@@ -29,6 +29,15 @@
 					url : url,
 				}).done(function(re) {
 					callBack(re);
+				}).fail(function(re) {
+					if(dummy != undefined) {
+						$.ajax({
+							type : "GET",	
+							url : dummy,
+						}).done(function(data) {
+							callBack(data);
+						});
+					}	
 				});
 			},
 			getJsonLang : function(lang, callBack) {

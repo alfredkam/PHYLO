@@ -109,6 +109,7 @@ function g(){};
         },
         "aaSorting": [[ 5, "desc" ]],
         "fnDrawCallback": function ( oSettings ) {
+		console.log(oSettings);
             if ( oSettings.bSorted || oSettings.bFiltered ) {
                 for ( var i=0, iLen=oSettings.aiDisplay.length ; i<iLen ; i++ ) {
                      $('td:eq(0)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html( i+1 );

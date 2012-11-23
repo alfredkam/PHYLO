@@ -113,7 +113,8 @@
 							});
 						}
 						request.complete();
-					}
+					},
+					"js/dummy/ranking.dummy"
 				);
 			},
 		});
