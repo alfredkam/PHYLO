@@ -88,7 +88,7 @@
 					} else {
 						window.location.hash = "#!/"+lang;
 					}
-				}
+				});
 			},
 		});
 		
