@@ -1,4 +1,7 @@
 /* assume 1024 for tablets */
+	#tabetSettingUp {
+		display: none;
+	}
 	#ancestorSeq {
 		top:384px !important;
 	}
