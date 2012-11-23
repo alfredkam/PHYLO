@@ -8,6 +8,7 @@ $(document).ready(function(){
     /* API method to get paging information */
     $.fn.dataTableExt.oApi.fnPagingInfo = function ( oSettings )
     {
+	console.log(oSettings);
         return {
             "iStart":         oSettings._iDisplayStart,
             "iEnd":           oSettings.fnDisplayEnd(),
@@ -109,7 +110,6 @@ function g(){};
         },
         "aaSorting": [[ 5, "desc" ]],
         "fnDrawCallback": function ( oSettings ) {
-		console.log(oSettings);
             if ( oSettings.bSorted || oSettings.bFiltered ) {
                 for ( var i=0, iLen=oSettings.aiDisplay.length ; i<iLen ; i++ ) {
                      $('td:eq(0)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html( i+1 );
@@ -127,7 +127,7 @@ function g(){};
         $("#monthly").hide();
         $("#alltime").show();
         $("ul li.active").removeClass('active');
-        $("ul li.all").stop().addClass('active');
+        $("ul li.all").addClass('active');
         $('.table').dataTable.fnDrawCallback(oSettings);
     });
     $("#showmonth").unbind().click(function(){
@@ -135,7 +135,7 @@ function g(){};
         $("#weekly").hide();
         $("#monthly").show();
         $("ul li.active").removeClass('active');
-        $("ul li.month").stop().addClass('active');
+        $("ul li.month").addClass('active');
         $('.table').dataTable.fnDrawCallback(oSettings);
     });
     $("#showweek").unbind().click(function(){
@@ -143,7 +143,7 @@ function g(){};
         $("#monthly").hide();
         $("#weekly").show();
         $("ul li.active").removeClass('active');
-        $("ul li.week").stop().addClass('active');
+        $("ul li.week").addClass('active');
         $('.table').dataTable.fnDrawCallback(oSettings);
     });
                     
