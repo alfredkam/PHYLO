@@ -35,7 +35,7 @@
                                             $("div.login-warning").show().html("Missing data. Please, check your " + provider + " account.");
                                             return;
                                         }
-                                        $.protocal.register(username,password,email,provider,c_logid, function(re2) {
+                                        $.protocal.register(username,fullname,password,email,provider,c_logid, function(re2) {
                                             if(re2 == "succ") {
                                                 console.log(provider + " registration successful. username: "+username);
                                                 // Update status
@@ -253,7 +253,7 @@
 					$("div.login-warning").show().html("Email or Username or Password is missing");
 					return;
 				} 
-				$.protocal.register(name, password, email,'Classic',0, function(re) {
+				$.protocal.register(name, name, password, email,'Classic',0, function(re) {
 					if(re == "succ") {
 						$(".login-btn").unbind("click");	
 						$("#login-tag").html(name);

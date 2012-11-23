@@ -17,9 +17,9 @@
 			});
 		},
 		//for register
-		register : function(username, password, email,network,network_id, fn) {
+		register : function(username, displayname, password, email,network,network_id, fn) {
 			var mode = 6;
-            var data = "mode="+mode+"&user="+username+"&pass="+password+"&email="+email+"&network="+network+"&network_id="+network_id;
+            var data = "mode="+mode+"&user="+username+"&displayname="+displayname+"&pass="+password+"&email="+email+"&network="+network+"&network_id="+network_id;
 			$.ajax({
 				type: "POST",
 				url : url,
