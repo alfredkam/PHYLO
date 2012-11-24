@@ -90,11 +90,14 @@ The current folder structure:
 
 	js/views	<=== responsible for inital html materials and listenes to model changes / actions / events
 	js/models 	<=== responsible for data models
+	***under these folder you will see site.*.js, this can be considered as the main class 
 	js/controller 	<=== defines the site routes
 	template 	<=== contains the html template
 	
 	DNA		<=== the base framework for the game, it depeneds on jquery (for now)
 	RNA		<=== it extends of the DNA framework
+	
+	
 
 
 Backbone is mainly used to add structure , http://backbonejs.org <br>
