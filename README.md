@@ -82,5 +82,5 @@ We love to hear from you, you can post it here : https://github.com/McGill-CSB/P
 
 License
 =====
-PHYLO is released under the GNU License http://www.gnu.org/licenses/gpl.html
+PHYLO is released under the GNU License http://www.gnu.org/licenses/gpl.html<br>
 Copyright Alfred Kam, McGill CSB
