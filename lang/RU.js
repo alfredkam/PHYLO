@@ -23,9 +23,32 @@
         "field 15": "История",
         "field 16": "Эксперт",
         "field 17": "Настройки",
-        "field 18": "Leave us a feedback",
 	},
 	"body": {
+        "misc" : {
+            "field 1":"Contribute",
+            "field 2":"Setting Up! One moment please.",
+            "field 3":"Leave a Feedback",
+            "field 4":"View on",
+            "field 5" : "Email",
+            "field 6" : "Register",
+            "field 7" : "Cancel",
+            "field 8" : "Forgot Password",
+            "field 9" : "Beta",
+            "field 10" : "Customize",
+            "field 11" : "Theme",
+            "field 12" : "Board Color",
+            "field 13" : "Brick Color",
+            "field 14" : "Restore Default",
+            "field 15" : "Save",
+            "field 16" : "Cancel",
+            "field 17" : "Back",
+            "field 18" : "Ok",
+            "field 19" : "Are you sure you want to quit?",
+            "field 20" : "New Game",
+            "field 21" : "Replay Game",
+            "field 22" : "Share with your friends",
+        },
 		"play": {
 			"gameselect": {
 				"login": {
