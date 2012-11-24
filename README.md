@@ -25,7 +25,7 @@ Getting Started
 We are using Model - View - Controller + Observer Design Pattern<br>
 All versions contains an offline mode with dummy data for development<br> 
 
-To start hacking away, a quick note on the dev environment<br>
+Before hacking away, a quick note on the dev environment<br>
 If you are using chrome for development, you will need to execute this in your terminal : 
 
 	open /Applications/Google\ Chrome.app --args --allow-file-access-from-files --allow-access-control-allow-origin
@@ -63,18 +63,12 @@ Router Setups
 	index.html#!/<langauge>/BETA/RNA			<== PHYLO-RNA
 	index.html#!/<language>/play/puzzle/<puzzle id>		<== PHYLO-DNA autostart for specific puzzles
 	
-	To Learn more can refer here : https://github.com/McGill-CSB/PHYLO/blob/master/js/controller/router.js
+To Learn more can refer here : https://github.com/McGill-CSB/PHYLO/blob/master/js/controller/router.js
 
 Hot deploy branches
 =====
-[Under Master Branch]
-PHYLO - DNA 
-http://phylo.cs.mcgill.ca/master/index.html
-
-[Under feature/RNA Branch]
-PHYLO - RNA in pre-Alpha
-http://phylo.cs.mcgill.ca/feature/RNA/index.html#!/EN/BETA/RNA
-
+- [Master Branch] http://phylo.cs.mcgill.ca/master/index.html
+- [feature/RNA Branch] http://phylo.cs.mcgill.ca/feature/RNA/index.html#!/EN/BETA/RNA
 - If want your own hot deploy branch, you can create an issue here (https://github.com/McGill-CSB/PHYLO/issues) and assign it to @alfredkam
 
 Devices Supported
@@ -88,10 +82,10 @@ Quick Crash Course
 First of all we are using model view controller + observer design patterns.<br>
 We are using backbone js / require js / mustache to add structure to this web application.
 
-The current structure:
+The current folder structure:
 
 	js/views	<=== responsible for inital html materials and listenes to model changes / actions / events
-	js/models 	<=== responsible for data models, http://backbonetutorials.com/what-is-a-model/
+	js/models 	<=== responsible for data models
 	js/controller 	<=== defines the site routes
 	template 	<=== contains the html template
 	
@@ -110,8 +104,11 @@ This is a js template every one should start using this when writing heavy js co
 
 Recommended Readings
 =====
+- Router<br>
+http://backbonetutorials.com/what-is-a-router/ <br>
+
+- Backbone + MVC<br>
 http://backbonetutorials.com/organizing-backbone-using-modules/ <br>
 http://coenraets.org/blog/2011/12/backbone-js-wine-cellar-tutorial-part-1-getting-started/ <br>
-http://backbonetutorials.com/what-is-a-router/ <br>
 http://blog.andyet.com/2010/oct/29/building-a-single-page-app-with-backbonejs-undersc/<br>
 http://backbonetutorials.com/what-is-a-model/<br>
