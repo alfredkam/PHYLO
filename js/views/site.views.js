@@ -21,6 +21,7 @@
 		var request = new Request;	
 		var playView = Backbone.View.extend({
 			renderPuzzle : function(lang, id) {
+				selectTab("play");
 				request.getTemplate("templates/play.html",function(context) {
 					request.getJsonLang(lang, function(json) {
 						window.lang = json;
@@ -52,6 +53,9 @@
 						});
 					});
 				});
+				$("#m_contribute").unbind().click(function() {
+					window.location.hash = $(this).attr("href");
+				});
 			},
 			render : function(lang) {
 				selectTab("play");
@@ -75,7 +79,9 @@
 							},500);
 						}
 					});
-
+				});
+				$("#m_contribute").unbind().click(function() {
+					window.location.hash = $(this).attr("href");
 				});
 			},
 		});
@@ -102,6 +108,12 @@
 						window.location.hash = "#!/"+lang;
 					}
 				});
+	
+
+				$("#ranking td a").unbind().click(function() {
+					window.location.hash = $(this).attr("href").replace(/index.html/,"");
+				});
+				
 			},
 		});
 		

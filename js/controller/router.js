@@ -9,6 +9,7 @@
 	], function($, _ , Backbone, Views, NavBar, Models) {
 		var Routes = Backbone.Router.extend({
 			routes : {
+				'!/contribute' : "contribute",
 				"!/:lang/BETA/RNA" : "rna",
 				"!/:lang/play/puzzle/:id" : "puzzle",
 				"!/:lang/play" : "play",
@@ -27,7 +28,6 @@
 				"!/expert" : "expert",
 				"!/:lang/tablet:settings" : "tabletSettings",
 				"!/:lang" : "anotherDefaultRoute",
-				'!/contribute' : "contribute",
 				"*actions" : "defaultRoute"
 			}
 		});
