@@ -77,7 +77,7 @@ Every single time a push is made to these branches, it is automatically deployed
 Devices Supported
 =====
 Current version supports all major browsers (except IE 6-8) and tablet browsers with screen size bigger than 1024px * 768px.  Tablets have their own custome UX <br>
-For the Mobile Phone Support, please checkout either archive branch or http://phylo.cs.mcgill.ca/archive/js/F2011/index.shtml and it is no longer supported.  
+For the Mobile Phone Development, please checkout either archive branch or http://phylo.cs.mcgill.ca/archive/js/F2011/index.shtml and it is no longer supported.  
 
 Quick Crash Course
 =====
