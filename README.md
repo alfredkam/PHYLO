@@ -7,6 +7,7 @@ The most up to date experimental build can be found at http://phylo.cs.mcgill.ca
 I want to contribute!
 =====
 That is awesome! Just fork the project on github.  Create a topic branch, write some code and let us know!<br>
+No worries if you cannot code, check out this page instead http://phylo.cs.mcgill.ca/contribute
 
 I want to leave a feedback!
 =====
