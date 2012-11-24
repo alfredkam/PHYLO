@@ -27,6 +27,7 @@
 				"!/expert" : "expert",
 				"!/:lang/tablet:settings" : "tabletSettings",
 				"!/:lang" : "anotherDefaultRoute",
+				'!/contribute' : "contribute",
 				"*actions" : "defaultRoute"
 			}
 		});
@@ -116,6 +117,10 @@
 
 			route.on('route:expert', function(lang) {
 				window.location = "http://phylo.cs.mcgill.ca/dcanv";
+			});
+	
+			route.on('route:contribute',function() {
+				window.location = "http://phylo.cs.mcgill.ca/contribute";
 			});
 
 			route.on('route:tabletSettings', function(lang) {
