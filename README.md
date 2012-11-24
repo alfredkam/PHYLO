@@ -1,6 +1,6 @@
 PHYLO
 =====
-Phylo is a gaming framework developed by McGill CSB.  Its use for harnessing the computing power of man kind to solve a common problem in DNA; Multiple Sequence Alignment.
+Aligning genomic data is a fundamental but difficult (NP-hard) problem in Biology. We developed Phylo, a casual video game which solutions are used to compare genomes.  In this project, we implemented a complete gaming framework and an API for human-computing video games in genomics.  Come help solve science through playing games!
 
 Getting Started
 =====
@@ -79,5 +79,4 @@ That is awesome! Just fork the project on github.  Create a topic branch, write 
 I want to leave a feedback!
 =====
 We love to hear from you, you can post it here : https://github.com/McGill-CSB/PHYLO/issues
-
 
