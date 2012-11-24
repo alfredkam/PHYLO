@@ -48,7 +48,7 @@
 			"field 16" : "Cancel",
 			"field 17" : "Back",
 			"field 18" : "Ok",
-			"field 19" : "You sure you want to bail out from this puzzle?",
+			"field 19" : "Are you sure you want to quit?",
 			"field 20" : "New Game",
 			"field 21" : "Replay Game",
 			"field 22" : "Share with your friends",
