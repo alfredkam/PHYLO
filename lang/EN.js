@@ -23,7 +23,6 @@
         "field 15": "History",
         "field 16": "Expert",
         "field 17": "Settings",
-        "field 18": "Leave us a feedback",
     },
 	"body": {
 		"misc" : {
@@ -39,7 +38,7 @@
 			"field 10" : "Customize",
 			"field 11" : "Theme",
 			"field 12" : "Board Color",
-			"field 13" : "DNA Color",
+			"field 13" : "Brick Color",
 			"field 14" : "Restore Default",
 			"field 15" : "Save",
 			"field 16" : "Cancel",
