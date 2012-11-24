@@ -26,6 +26,7 @@
 				'save' : "{{body.misc.field 15}}",
 				'cancel' : "{{body.misc.field 16}}",
 				'settingUp' : "{{body.misc.field 2}}",
+				'ok' : "{{body.misc.field 18}}",
 			},
 		});
 		return translate;

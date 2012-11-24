@@ -27,6 +27,7 @@
 				$(".m_restoreDefault").html(Mustache.render(trans.get("restoreDefault"),json));
 				$(".m_save").html(Mustache.render(trans.get("save"),json));
 				$(".m_cancel").html(Mustache.render(trans.get("cancel"),json));	
+				$(".m_ok").html(Mustache.render(trans.get("ok"),json));
 				$(".m_settingUp").html(Mustache.render(trans.get("settingUp"),json));
 				
 			},

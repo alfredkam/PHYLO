@@ -1,7 +1,7 @@
 		<div id='menu'>
 			<div id='sandbox'>
 				<div class='settingUp'>
-					Setting Up. One moment please.
+					{{body.misc.field 2}}
 				</div>
 			</div>
 			<input id='level_inputbox'/>
@@ -73,7 +73,8 @@
 						<div id='endGame-content'>
 							<div id='endGame-score'>
 								<div id='endGame-score-tag'>
-									Score
+									<!--{{body.play.gameselect.ranking.field 16}}
+		-->
 								</div>
 								<div id='endGame-score-result'>
 								</div>
@@ -83,7 +84,7 @@
 							</div>
 							<div id='endGame-learnMore'>
 								<div id='endGame-learnMore-tag'>
-									<button class=' btn btn-info'>Learn More</button>	
+									<button class=' btn btn-info'>{{body.misc.field 24}}</button>	
 								</div>
 								<div id='endGame-learnMore-content'>
 								</div>	
@@ -91,17 +92,17 @@
 							<div class='wrapper'>
 								<div id='endGame-new'>
 									<button class='btn btn-primary'>
-										New Game
+										{{body.misc.field 20}}
 									</button>
 								</div>
 								<div id='endGame-replay'>
 									<button class='btn btn-primary'>
-										Replay Game
+										{{body.misc.field 21}}
 									</button>
 								</div>
 								<div id='endGame-share'>
 									<button class='btn btn-success'>
-										Share with your friends
+										{{body.misc.field 22}}
 									</button>
 								</div>
 							</div>
