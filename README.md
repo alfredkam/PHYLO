@@ -13,7 +13,7 @@ We love to hear from you, you can post it here : https://github.com/McGill-CSB/P
 License
 =====
 PHYLO is released under the GNU License http://www.gnu.org/licenses/gpl.html<br>
-Copyright Alfred Kam, McGill CSB
+Copyright 2012 Alfred Kam, McGill CSB
 
 Getting Started
 =====
@@ -100,7 +100,8 @@ Mustache is for templating , https://mustache.github.com<br>
 
 	js/Boilerplate.js
 
-This is a js template every one should start using this when writing heavy js codes, it helps solve namespace issues
+This is the boiler plate for writing any js application.
+
 
 Recommended Readings
 =====
