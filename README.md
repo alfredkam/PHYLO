@@ -12,8 +12,8 @@ We love to hear from you, you can post it here : https://github.com/McGill-CSB/P
 
 License
 =====
-PHYLO is released under the MIT - License, <br>
-Copyright 2012 Alfred Kam, McGill CSB
+PHYLO is released under the MIT - License, learn more at https://github.com/McGill-CSB/PHYLO/blob/master/MIT-LICENSE.txt <br>
+Copyright 2012 Alfred Kam, McGill CSB and other contributers
 
 Getting Started
 =====
