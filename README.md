@@ -90,16 +90,13 @@ The current folder structure:
 
 	js/views	<=== responsible for inital html materials and listenes to model changes / actions / events
 	js/models 	<=== responsible for data models
-	***under these folder you will see site.*.js, this can be considered as the main class 
+	***under these folders you will see site.*.js, this can be considered as the main class 
 	js/controller 	<=== defines the site routes
 	template 	<=== contains the html template
 	
-	DNA		<=== the base framework for the game, it depeneds on jquery (for now)
-	RNA		<=== it extends of the DNA framework
+	js/DNA		<=== the base framework for the game, it depeneds on jquery (for now)
+	js/RNA		<=== it extends of the DNA framework
 	
-	
-
-
 Backbone is mainly used to add structure , http://backbonejs.org <br>
 Backbone Router is used for defining the site url rules<br>
 Require acts like php includes or include once and allows you to define the namespace , http://requirejs.org<br> 
