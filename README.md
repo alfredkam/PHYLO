@@ -2,7 +2,7 @@
 =====
 Aligning genomic data is a fundamental but difficult (NP-hard) problem in Biology. We developed Phylo, a casual video game which solutions are used to compare genomes.  In this project, we implemented a complete gaming framework and an API for human-computing video games in genomics.  <b>Come help solve science through playing games!</b>
 
-The most up to date experimental build can be found at http://phylo.cs.mcgill.ca/master/index.html
+The most recent experimental release can be found at http://phylo.cs.mcgill.ca/master/index.html
 
 I want to contribute!
 =====
