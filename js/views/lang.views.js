@@ -10,7 +10,7 @@
 		var translate = Backbone.View.extend({
 			set : function(json) {
 				
-				$("#m_back").html(Mustache.render(trans.get("back"),json));	
+				$(".m_back").html(Mustache.render(trans.get("back"),json));	
 				$(".m_login").html(Mustache.render(trans.get("login"),json));
 				$("#m_cancel").html(Mustache.render(trans.get("cancel"),json));
 				$("#m_register").html(Mustache.render(trans.get("register"),json));
