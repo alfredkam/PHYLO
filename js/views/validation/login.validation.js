@@ -42,7 +42,7 @@
                                                 var message = fullname.replace("+"," ") + " started to play Phylo.\nPhylo is a puzzle game in which every puzzle completed contributes to mapping diseases within human DNA. Have fun and help genetic research!";
                                                 var caption = "DNA puzzles";
                                                 var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
-                                                bootbox.confirm("You are now registered. Please, help us to share the word and announce to your friend you novel contribution to science!\nPhylo will not store any personal data beside your username and email. You will have the opportunity to post your achievements if you request it.","Skip","Post", function(result) {
+                                                bootbox.confirm("You are now registered. Please, help us to share the word and announce to your friend you novel contribution to science!<br/>\nPhylo will not store any personal data beside your username and email. You will have the opportunity to post your achievements if you request it.","Skip","Post", function(result) {
                                                     if (result) {
                                                         $.ajax({
                                                             type: "POST",
