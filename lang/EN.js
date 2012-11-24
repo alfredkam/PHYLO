@@ -56,7 +56,7 @@
 					"field 2": "Login",
 					"field 3": "Register",
 					"field 4": "Or just sign in instantly with",
-					"field 5": "logout",
+					"field 5": "Logout",
 					"field 6": "Please login or register so you can keep track of your contribution to science",
 					"field 7": "Username",
 					"field 8": "Password",

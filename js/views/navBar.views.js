@@ -5,8 +5,10 @@
 		'backbone',
 		'mustache',
 		'views/request.views',
-	], function($, _, Backbone, Mustache, Request) {
+		'views/lang.views',
+	], function($, _, Backbone, Mustache, Request, Lang) {
 		var request = new Request;
+		var translate = new Lang;
 		var navBar = Backbone.View.extend({
 			init : function() {
 				this.desktopNavBar = $("#nav").html();
@@ -23,16 +25,13 @@
 				request.getJsonLang(lang, function(json) {
 					$("#nav").html(Mustache.render(self.desktopNavBar,json)).show();;
 					$("#tablet-grid").html(Mustache.render(self.tabletUX,json));
+					translate.set(json);
 					self.addTriggers();
 					$("#"+tag +" div").addClass("onSelect");
 					if(window.showInLogin != undefined && window.showInLogin == true)
 						$(".showInLogin").show();
 					if(window.showExpertOptions != undefined && window.showExpertOptions == true)
 						$(".showExpertOptions").show();
-					var l = json;
-					$("input#username").attr("placeholder",l.body.play.gameselect.login["field 7"]);
-					$("input#password").attr("placeholder",l.body.play.gameselect.login["field 8"]);
-					$("button.login-btn").html(l.body.play.gameselect.login["field 2"]);
 				});
 			},
 			addTriggers : function() {

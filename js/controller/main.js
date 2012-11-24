@@ -103,7 +103,7 @@
 				deps : ['views/request.views','views/variable.listener'],
 			},	
 			'views/navBar.views' : {
-				deps : ['jquery','underscore', 'backbone','DNA/timer.core'],
+				deps : ['jquery','underscore', 'backbone','DNA/timer.core','views/lang.views'],
 			},
 			'controller/router' : {
 				deps : ['jquery','underscore','backbone','views/site.views','views/navBar.views'],

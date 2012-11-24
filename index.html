@@ -68,13 +68,13 @@
 		<div class='wrapper-overlay'>
 			<div class='customize customize-bg'></div>
 			<div class='customize customize-wrapper'>
-				<div class='row customize-title'>
+				<div class='row customize-title n_customize'>
 					Customize
 				</div>
 				<div class='customize-tab'>
 					<div class='row'>
 						<a href='javascript:void(0)' class='customize-tab-onselect span2 tag-theme'>Theme</a>
-						<a href='javascript:void(0)' class='span2 tag-music'>Music</a>
+						<a href='javascript:void(0)' class='span2 tag-music m_music' >Music</a>
 					</div>
 				</div>
 				<div class='customize-body'>
@@ -82,7 +82,7 @@
 						<div class='customize-theme row'>
 							<div class='span4' >
 								<div class='customize-boardColor'>
-									<div class='row customize-title'>
+									<div class='row customize-title m_boardColor'>
 											Board Color:
 									</div>
 									<div class='row'>
@@ -91,7 +91,7 @@
 									</div>
 								</div>
 								<div class='customize-dnaColor'>
-									<div class='customize-title row'>
+									<div class='customize-title row m_dnaColor'>
 										DNA Color:
 									</div>
 									<div class='row'>
@@ -107,7 +107,7 @@
 								</div>
 								<div class='row'>
 									<br><br>
-									<a href='javascript:void(0);' class='customize-theme-reset btn-danger btn'>
+									<a href='javascript:void(0);' class='customize-theme-reset btn-danger btn m_restoreDefault'>
 										Restore Default	
 									</a>	
 								</div>
@@ -130,10 +130,10 @@
 				</div>
 				<div class='customize-buttons'>
 					<div class='row'>
-						<a href='javascript:void(0)' class='customize-save btn btn-primary offset4 span2'>
+						<a href='javascript:void(0)' class='customize-save btn btn-primary offset4 span2 m_save'>
 							Save
 						</a>
-						<a href='javascript:void(0)' class='customize-cancel btn btn-primary span2'>
+						<a href='javascript:void(0)' class='customize-cancel btn btn-primary span2 m_cancel'>
 							Cancel
 						</a>
 					</div>
@@ -141,7 +141,7 @@
 			</div>
 		</div>
 		<div id='wrapper'>
-			<div id='tabletSettingUp'>
+			<div id='tabletSettingUp' class='m_settingUp'>
 				Setting Up. One moment please.	
 			</div>
 			<div id='tabletPanel'>
@@ -256,8 +256,8 @@
 				</div>
 					<div id='top-panel-right'>
 						<div id='login'>
-							<div id='login-tag'>
-								Login	
+							<div id='login-tag' class='m_login'>
+								Login
 							</div>
 							<div id='login-box'>
 								<div class='login-warning'>
@@ -266,9 +266,9 @@
 								<input id='username' type='text' class='input-medium' placeholder='Username'/>
 								<br>
 								<input id='password' type='password' class='input-medium' placeholder='Password'/><br>
-								<button class='btn login-btn'>Log In</button>
-								<button class='btn btn-primary register-btn register-btn-shift'>Register</button>
-								<button class='btn btn-danger cancel-btn'>Cancel</button>
+								<button class='btn login-btn m_login'>Log In</button>
+								<button class='btn btn-primary register-btn register-btn-shift' id='m_register'>Register</button>
+								<button class='btn btn-danger cancel-btn' id='m_cancel'>Cancel</button>
 				    <br/><br/>
 				    <a href="#" class="zocial facebook">Signin with Facebook</a>
 				    <a href="#" class="zocial twitter">Signin with Twitter</a>
@@ -306,7 +306,7 @@
 										</div>			
 									</div>
 								</div>
-								<div id='customize' class='option-list'>Customize</div>
+								<div id='customize' class='option-list' class='m_customize'>Customize</div>
 								<div id='logout' class='option-list'>Logout</div>
 							</div>
 						</div>	
@@ -318,7 +318,7 @@
 						<div>
 							<i class='icon-circle-arrow-left'></i>
 						</div>		
-						<div>Back</div>	
+						<div class='m_back'>Back</div>	
 					</div>
 				</a>
 				<div id='loading-panel'>
@@ -341,7 +341,7 @@
 			<div id='footer'>
 				<div class='wrapper'>
 					<div id='contribute' class='footer-inner'>
-						<a class='btn btn-info' href='https://github.com/McGill-CSB/PHYLO'>Contribute</a> &nbsp;&nbsp;<a class='btn btn-warning' href='https://github.com/McGill-CSB/PHYLO/issues'>Leave a Feedback</a>&nbsp;&nbsp;<a href='https://github.com/McGill-CSB/PHYLO' class='btn btn-inverse'><i class='icon-github'></i>View On GitHub</a>
+						<a class='btn btn-info' href='https://github.com/McGill-CSB/PHYLO' id='m_contribute'>Contribute</a> &nbsp;&nbsp;<a class='btn btn-warning' href='https://github.com/McGill-CSB/PHYLO/issues' id='m_feedback'>Leave a Feedback</a>&nbsp;&nbsp;<a href='https://github.com/McGill-CSB/PHYLO' class='btn btn-inverse' id='m_github'><i class='icon-github'></i>View On GitHub</a>
 					</div>
 					<div id='copyright' class='footer-inner'>
 						 Copyright &#169; 2012 <a href='http://phylo.cs.mcgill.ca'>PHYLO</a>, <a href='http://csb.cs.mcgill.ca/'>McGill CSB</a> and <a href='http://www.mcgill.ca'>McGill University</a><br>
