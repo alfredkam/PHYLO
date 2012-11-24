@@ -517,6 +517,12 @@ a.btn {
 #footer, .push {
 }
 
+#footer a i.icon-github {
+	position:relative;
+	top:4px;
+	margin-right:2px;
+}
+
 /* Disable footer for now */
 #footer {
 	position:relative;
