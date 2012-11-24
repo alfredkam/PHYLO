@@ -99,6 +99,9 @@
 									$("#history-wrapper").html(re);
 									require(['views/DT_bootstrap_history.actions'],function() {
 										historyTable.init();
+										$("#ranking td a").unbind().click(function() {
+											window.location.hash = $(this).attr("href").replace(/index.html/,"");
+										});
 									});
 								}
 								request.complete();
@@ -110,9 +113,6 @@
 				});
 	
 
-				$("#ranking td a").unbind().click(function() {
-					window.location.hash = $(this).attr("href").replace(/index.html/,"");
-				});
 				
 			},
 		});
