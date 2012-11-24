@@ -48,6 +48,7 @@
             "field 20" : "New Game",
             "field 21" : "Replay Game",
             "field 22" : "Share with your friends",
+            "field 23" : "DNA Puzzles",
         },
 		"play": {
 			"gameselect": {
