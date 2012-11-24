@@ -6,11 +6,11 @@ The most up to date experimental build can be found at http://phylo.cs.mcgill.ca
 
 I want to contribute!
 =====
-That is awesome! Just fork the project on github.  Create a topic branch, write some code and let us know!
+That is awesome! Just fork the project on github.  Create a topic branch, write some code and let us know!<br>
 
 I want to leave a feedback!
 =====
-We love to hear from you, you can post it here : https://github.com/McGill-CSB/PHYLO/issues
+We love to hear from you, you can post it at https://github.com/McGill-CSB/PHYLO/issues
 
 License
 =====
@@ -69,6 +69,7 @@ To Learn more can refer here : https://github.com/McGill-CSB/PHYLO/blob/master/j
 
 Hot deploy branches
 =====
+Every single time a push is made to these branches, it is automatically deployed to the live server
 - [Master Branch] http://phylo.cs.mcgill.ca/master/index.html
 - [feature/RNA Branch] http://phylo.cs.mcgill.ca/feature/RNA/index.html#!/EN/BETA/RNA
 - If want your own hot deploy branch, you can create an issue here (https://github.com/McGill-CSB/PHYLO/issues) and assign it to @alfredkam
