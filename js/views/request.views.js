@@ -31,14 +31,14 @@
 					callBack(re);
 				}).fail(function(re) {
 					if(dummy != undefined) {
-						console.log(">> Cannot connect to database, requesting dummy data");
+						console.log(">> Cannot connect to database, requesting dummy data @"+dummy);
 						$.ajax({
 							type : "GET",	
 							url : dummy,
 						}).done(function(data) {
 							callBack(data);
 						});
-					}	
+					} 
 				});
 			},
 			getJsonLang : function(lang, callBack) {
