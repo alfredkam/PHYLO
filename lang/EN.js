@@ -189,7 +189,7 @@
            "field 2": "You are now registered. Please, help us to share the word and announce to your friend you novel contribution to science! Phylo will not store any personal data beside your username and email. You will have the opportunity to post your achievements if you request it.",
            "field 3": "Missing data. Please, check your *** account.",
            "field 4": "We are sorry. We have not been able to update your status. However, you can still start to play!",
-           "field 5": "We are sorry. We cannot register you using your *** account."",
+           "field 5": "We are sorry. We cannot register you using your *** account.",
            "field 6": "Connection to *** failed. Please, check that you are properly connected.",
            "field 7": "*** received the new highscore and improved a DNA alignments related to ***",
            "field 8": "*** received the new highscore for the DNA puzzle ***",
