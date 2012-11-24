@@ -31,6 +31,7 @@
 					callBack(re);
 				}).fail(function(re) {
 					if(dummy != undefined) {
+						console.log(">> Cannot connect to database, requesting dummy data");
 						$.ajax({
 							type : "GET",	
 							url : dummy,
