@@ -21,6 +21,8 @@
 	    "field 12": "Clásico",
 	    "field 13": "¿Quieres contribuir? Ház click aquí.",
 	    "field 14": "De vuelta a la versión normal",
+        "field 15": "Historia",
+        "field 16": "Experto",
 	},
 	"body": {
 		"play": {

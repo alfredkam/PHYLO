@@ -20,6 +20,8 @@
 		"field 12": "Clássico",
 		"field 13": "Quer contribuir? Clique aqui",
 		"field 14": "Retornar do modo para celular",
+        "field 15": "História",
+        "field 16": "Especialista",
 	},
 	"body": {
 		"play": {
