@@ -78,7 +78,6 @@
                 var fullname = $.cookie.read("fullname");
                 var provider = $.cookie.read("loginmode");
                 var c_logid = $.cookie.read("logid");
-                var socialContext = lang.body.social;
  
                 if ((provider=="Facebook")||(provider=="Twitter")||(provider=="LinkedIn")) {
  
@@ -88,29 +87,29 @@
                                                 
                         if (provider=="Facebook") {
                             if (puzzle_disease) {
-                                var message = fullname.replace("+"," ") + " " + socialContext["field 7"] + " \"" + puzzle_disease + "\".\n" + socialContext["field 10"];
+                                var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 7"] + " \"" + puzzle_disease + "\".\n" + window.lang.body.social["field 10"];
                             } else {
-                                var message = fullname.replace("+"," ") + " " + socialContext["field 9"];
+                                var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 9"];
                             }
-                            var caption = socialContext["field 26"];
+                            var caption = window.lang.body.social["field 26"];
                             var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
                         } else if (provider=="Twitter") {
                             if (puzzle_disease) {
                                 var message = window.lang.body.social["field 14"] + " \"" + puzzle_disease + "\".";
                             } else {
-                                var message = socialContext["field 17"];
+                                var message = window.lang.body.social["field 17"];
                             }
                             var data = "provider="+provider+"&id="+c_logid+"&description="+message;
                         } else if (provider=="LinkedIn") {
                             if (puzzle_disease) {
-                                var message = fullname.replace("+"," ") + " " + socialContext["field 16"] +  " \"" + puzzle_disease + "\".";
+                                var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 16"] +  " \"" + puzzle_disease + "\".";
                             } else {
-                                var message = socialContext["field 19"];
+                                var message = window.lang.body.social["field 19"];
                             }
                             var data = "provider="+provider+"&id="+c_logid+"&description="+message;
                         }
 
-                        bootbox.confirm(socialContext["field 12"] + "<br/>\n" + message,socialContext["field 22"],socialContext["field 20"], function(result) {
+                        bootbox.confirm(window.lang.body.social["field 12"] + "<br/>\n" + message,window.lang.body.social["field 22"],window.lang.body.social["field 20"], function(result) {
                             if (result) {
                                 console.log("post on " + provider + " : " + data);
                                 $.ajax({
@@ -120,7 +119,7 @@
                                 }).done(function(re) {
                                     //bootbox.alert("Your achievement has been posted!");
                                 }).fail(function() {
-                                    bootbox.alert(socialContext["field 13"]);
+                                    bootbox.alert(window.lang.body.social["field 13"]);
                                 });
                             }
                         });
@@ -130,7 +129,7 @@
                     return;
                 }
             } else {
-                bootbox.alert(socialContext["field 24"]);
+                bootbox.alert(window.lang.body.social["field 24"]);
                 // delete cookie (just to be safe)
                 $.cookie.delete("username");
                 $.cookie.delete("fullname");
@@ -140,7 +139,7 @@
                 window.guest = 'guest';
                 $("#login-box").hide();
                 $(".login-btn").click(function() { eClick(); });
-                $("#login-tag").html(socialContext["field 27"]);
+                $("#login-tag").html(window.lang.body.social["field 27"]);
                 $(".showInLogin").hide();
                 return;
             }
