@@ -81,6 +81,9 @@
  
                 if ((provider=="Facebook")||(provider=="Twitter")||(provider=="LinkedIn")) {
  
+ 
+                    console.log(">>>" + $.phylo.id);
+ 
                     $.protocal.sendEndGameScore("completed", function(data) {
                                                 
                         var puzzle_disease = data.disease_link;
