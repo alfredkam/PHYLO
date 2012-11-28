@@ -78,7 +78,7 @@
                 var fullname = $.cookie.read("fullname");
                 var provider = $.cookie.read("loginmode");
                 var c_logid = $.cookie.read("logid");
-                var socialContext = lang.body["social"];
+                var socialContext = lang.body.social;
  
                 if ((provider=="Facebook")||(provider=="Twitter")||(provider=="LinkedIn")) {
  
