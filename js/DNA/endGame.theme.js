@@ -78,53 +78,38 @@
                 var fullname = $.cookie.read("fullname");
                 var provider = $.cookie.read("loginmode");
                 var c_logid = $.cookie.read("logid");
-                if (provider=="Facebook") {
-                    $.protocal.sendEndGameScore("completed", function(data) {
-                        var puzzle_disease = data.disease_link;
-                        var message = fullname.replace("+"," ") + " received the new highscore and improved a DNA alignments related to \"" + puzzle_disease + "\".\nPlay Phylo and help genetic research!";
-                        var caption = "DNA puzzles";
+                var socialContext = lang.body.play.gameselect["social"];
+ 
+                if ((provider=="Facebook")||(provider=="Twitter")||(provider=="LinkedIn")) {
+ 
+                    var puzzle_disease = data.disease_link;
+ 
+                    if (provider=="Facebook") {
+                        if (puzzle_disease) {
+                            var message = fullname.replace("+"," ") + " " + socialContext["field 7"] + " \"" + puzzle_disease + "\".\n" + socialContext["field 10"];
+                        } else {
+                            var message = fullname.replace("+"," ") + " " + socialContext["field 9"];
+                        }
+                        var caption = socialContext["field 26"];
                         var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
-                        bootbox.confirm("Phylo will update your status: " + message,"Cancel","Post", function(result) {
-                            if (result) {
-                                console.log("post on " + provider + " : " + message);
-                                $.ajax({
-                                    type: "POST",
-                                    url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
-                                    data : data,
-                                }).done(function(re) {
-                                    //bootbox.alert("Your achievement has been posted!");
-                                }).fail(function() {
-                                    bootbox.alert("We are sorry. We have not been able to post your achievement.");
-                                });
-                            }
-                        });
-                    });
-                } else if (provider=="Twitter") {
-                    $.protocal.sendEndGameScore("completed", function(data) {
-                        var puzzle_disease = data.disease_link;
-                        var message = "Improved a DNA alignments related to \"" + puzzle_disease + "\".";
+                    } else if (provider=="Twitter") {
+                        if (puzzle_disease) {
+                            var message = socialContext["field 14"] + " \"" + puzzle_disease + "\".";
+                        } else {
+                            var message = socialContext["field 17"];
+                        }
                         var data = "provider="+provider+"&id="+c_logid+"&description="+message;
-                        bootbox.confirm("Phylo will update your status: " + message,"Cancel","Tweet", function(result) {
-                            if (result) {
-                                console.log("post on " + provider + " : " + message);
-                                $.ajax({
-                                    type: "POST",
-                                    url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
-                                    data : data,
-                                }).done(function(re) {
-                                    //bootbox.alert("Your achievement has been posted!");
-                                }).fail(function() {
-                                    bootbox.alert("We are sorry. We have not been able to post your achievement.");
-                                });
-                            }
-                        })
-                    });
-                } else if (provider=="LinkedIn") {
-                    $.protocal.sendEndGameScore("completed", function(data) {
-                        var puzzle_disease = data.disease_link;
-                        var message = fullname.replace("+"," ") + " used Phylo and improved a DNA alignments related to \"" + puzzle_disease + "\".";
+                    } else if (provider=="LinkedIn") {
+                        if (puzzle_disease) {
+                            var message = fullname.replace("+"," ") + " " + socialContext["field 16"] +  " \"" + puzzle_disease + "\".";
+                        } else {
+                            var message = socialContext["field 19"];
+                        }
                         var data = "provider="+provider+"&id="+c_logid+"&description="+message;
-                        bootbox.confirm("Phylo will update your status: " + message,"Cancel","Post", function(result) {
+                    }
+
+                    $.protocal.sendEndGameScore("completed", function(data) {
+                        bootbox.confirm(socialContext["field 12"] + "<br/>\n" + message,socialContext["field 22"],socialContext["field 20"], function(result) {
                             if (result) {
                                 console.log("post on " + provider + " : " + data);
                                 $.ajax({
@@ -134,17 +119,17 @@
                                 }).done(function(re) {
                                     //bootbox.alert("Your achievement has been posted!");
                                 }).fail(function() {
-                                    bootbox.alert("We are sorry. We have not been able to post your achievement.");
+                                    bootbox.alert(socialContext["field 13"]);
                                 });
                             }
-                        })
+                        });
                     });
                 } else {
                     console.log("Provider " + provider + " is not supported.");
                     return;
                 }
             } else {
-                alert("You seem to have been disconnected. Please, login again.");
+                bootbox.alert(socialContext["field 24"]);
                 // delete cookie (just to be safe)
                 $.cookie.delete("username");
                 $.cookie.delete("fullname");
@@ -154,7 +139,7 @@
                 window.guest = 'guest';
                 $("#login-box").hide();
                 $(".login-btn").click(function() { eClick(); });
-                $("#login-tag").html("Login");
+                $("#login-tag").html(socialContext["field 27"]);
                 $(".showInLogin").hide();
                 return;
             }
