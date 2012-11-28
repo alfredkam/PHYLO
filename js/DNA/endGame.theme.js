@@ -95,7 +95,7 @@
                             var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
                         } else if (provider=="Twitter") {
                             if (puzzle_disease) {
-                                var message = window.lang.body.social["field 14"] + " \"" + puzzle_disease + "\".";
+                                var message = window.lang.body.misc["field 14"] + " \"" + puzzle_disease + "\".";
                             } else {
                                 var message = window.lang.body.social["field 17"];
                             }
