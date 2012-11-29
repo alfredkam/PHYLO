@@ -68,7 +68,7 @@
                                                 $(".login-btn").click(function() { classicLogin(); });
                                                 $("#login-tag").html("Login");
                                                 $(".showInLogin").hide();
-		window.showInLogin = false;
+                                                window.showInLogin = false;
                                                 return;
                                             }
                                         });
