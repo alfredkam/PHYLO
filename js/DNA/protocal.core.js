@@ -178,6 +178,12 @@
 				for(var i =0;i<j.sequence.length;i++) {
 					j.sequence[i] = (j.sequence[i].replace(/-/g,"_")).toUpperCase();
 				}	
+				//Detect backend error
+				var numOfSeq = j.sequence.length;
+				var numOfNodes = j.tree.replace(/(\(|\)|\;/,"").split(",").length;
+				console.log(numOfSeq + " < > " +numOfNodes);
+			
+
 				$.phylo.get = {};
 				$.phylo.get.sequence = j.sequence;
 				
