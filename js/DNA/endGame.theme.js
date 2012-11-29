@@ -89,13 +89,13 @@
                         if (provider=="Facebook") {
                             if (puzzle_disease) {
                                 if ($.phylo.currentScore>=puzzle_disease) {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 7"] + " \"" + puzzle_disease + "\".<br/>\n<a href=\"http://phylo.cs.mcgill.ca\">" + window.lang.body.social["field 20"] + "</a>";
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 7"] + " \"" + puzzle_disease + "\".\n" + window.lang.body.social["field 20"];
                                 } else {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 8"] + " \"" + puzzle_disease + "\".<br/>\n<a href=\"http://phylo.cs.mcgill.ca\">" + window.lang.body.social["field 20"] + "</a>";
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 8"] + " \"" + puzzle_disease + "\".\n" + window.lang.body.social["field 20"];
                                 }
                             } else {
                                 if ($.phylo.currentScore>=puzzle_disease) {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 9"] + ".<br/>\n<a href=\"http://phylo.cs.mcgill.ca\">" + window.lang.body.social["field 20"] + "</a>";
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 9"] + ".\n" + window.lang.body.social["field 20"];
                                 } else {
                                     var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 10"] + ".";
                                 }
