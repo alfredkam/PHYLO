@@ -180,8 +180,9 @@
 				}	
 				//Detect backend error
 				var numOfSeq = j.sequence.length;
-				var numOfNodes = j.tree.replace(/(\(|\)|\;/,"").split(",").length;
-				console.log(numOfSeq + " < > " +numOfNodes);
+				var numOfNodes = j.tree.replace(/(\(|\)|\;)/,"").split(",").length;
+				if(numOfSeq != numOfNodes)
+					console.log(">> Detected Error -> Sequence given ("+numOfSeq+") != phylo tree nodes ("+numOfNodes+")");
 			
 
 				$.phylo.get = {};
@@ -223,6 +224,10 @@
 				for(var i =0;i<j.sequence.length;i++) {
 					j.sequence[i] = (j.sequence[i].replace(/-/g,"_")).toUpperCase();
 				}	
+				var numOfSeq = j.sequence.length;
+				var numOfNodes = j.tree.replace(/(\(|\)|\;)/,"").split(",").length;
+				if(numOfSeq != numOfNodes)
+					console.log(">> Detected Error -> Sequence given ("+numOfSeq+") != phylo tree nodes ("+numOfNodes+")");
 				$.phylo.get = {};
 				$.phylo.get.sequence = j.sequence;
 				
