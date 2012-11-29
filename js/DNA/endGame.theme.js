@@ -152,11 +152,11 @@
                         });
                     });
                 } else {
-                    console.log("Provider " + provider + " is not supported.");
+                    console.log(window.lang.body.social["field 28"].replace("***",provider));
                     return;
                 }
             } else {
-                bootbox.alert(window.lang.body.social["field 24"]);
+                bootbox.alert(window.lang.body.social["field 29"]);
                 // delete cookie (just to be safe)
                 $.cookie.delete("username");
                 $.cookie.delete("fullname");
@@ -166,7 +166,7 @@
                 window.guest = 'guest';
                 $("#login-box").hide();
                 $(".login-btn").click(function() { eClick(); });
-                $("#login-tag").html(window.lang.body.social["field 27"]);
+                $("#login-tag").html(window.lang.play.gameselect.login["field 2"]);
                 $(".showInLogin").hide();
                 return;
             }
