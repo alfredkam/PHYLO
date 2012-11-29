@@ -136,7 +136,7 @@
                             var data = "provider="+provider+"&id="+c_logid+"&description="+message;
                         }
 
-                        bootbox.confirm(window.lang.body.social["field 22"] + "<br/>\n" + message,window.lang.body.social["field 25"],window.lang.body.social["field 27"], function(result) {
+                        bootbox.confirm(window.lang.body.social["field 22"] + "<br/>\n" + message,window.lang.body.social["field 27"],window.lang.body.social["field 25"], function(result) {
                             if (result) {
                                 console.log("post on " + provider + " : " + data);
                                 $.ajax({
