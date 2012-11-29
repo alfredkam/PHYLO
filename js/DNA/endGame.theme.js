@@ -80,39 +80,63 @@
                 var c_logid = $.cookie.read("logid");
  
                 if ((provider=="Facebook")||(provider=="Twitter")||(provider=="LinkedIn")) {
- 
- 
-                    console.log(">>>" + $.phylo.id);
- 
-                    $.protocal.sendEndGameScore("completed", function(data) {
+  
+                    $.protocal.sendEndGameScore("info", function(data) {
                                                 
                         var puzzle_disease = data.disease_link;
-                                                
+                        var puzzle_highscore = data.best_score;
+                        
                         if (provider=="Facebook") {
                             if (puzzle_disease) {
-                                var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 7"] + " \"" + puzzle_disease + "\".\n" + window.lang.body.social["field 10"];
+                                if ($.phylo.currentScore>=puzzle_disease) {
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 7"] + " \"" + puzzle_disease + "\".\n" + window.lang.body.social["field 20"];
+                                } else {
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 8"] + " \"" + puzzle_disease + "\".\n" + window.lang.body.social["field 20"];
+                                }
                             } else {
-                                var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 9"];
+                                if ($.phylo.currentScore>=puzzle_disease) {
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 9"] + ".\n" + window.lang.body.social["field 20"];
+                                } else {
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 10"] + ".";
+                                }
                             }
-                            var caption = window.lang.body.social["field 26"];
+                            var caption = window.lang.body.social["field 31"];
                             var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
                         } else if (provider=="Twitter") {
                             if (puzzle_disease) {
-                                var message = window.lang.body.social["field 14"] + " \"" + puzzle_disease + "\".";
+                                if ($.phylo.currentScore>=puzzle_disease) {
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 11"] + " \"" + puzzle_disease + "\". " + window.lang.body.social["field 20"] + "#Phylo #DNA #puzzles";
+                                } else {
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 12"] + " \"" + puzzle_disease + "\". " + window.lang.body.social["field 20"] + "#Phylo #DNA #puzzles";
+                                }
                             } else {
-                                var message = window.lang.body.social["field 17"];
+                                if ($.phylo.currentScore>=puzzle_disease) {
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 13"] + ".\"" + window.lang.body.social["field 20"] + "#Phylo #DNA #puzzles";
+                                } else {
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 14"] + ".\"" + window.lang.body.social["field 20"] + "#Phylo #DNA #puzzles";
+                                }
                             }
                             var data = "provider="+provider+"&id="+c_logid+"&description="+message;
                         } else if (provider=="LinkedIn") {
                             if (puzzle_disease) {
-                                var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 16"] +  " \"" + puzzle_disease + "\".";
+                                if ($.phylo.currentScore>=puzzle_disease) {
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 15"] + " \"" + puzzle_disease + "\".\n" + window.lang.body.social["field 20"];
+                                } else {
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 16"] + " \"" + puzzle_disease + "\".\n" + window.lang.body.social["field 20"];
+                                }
                             } else {
-                                var message = window.lang.body.social["field 19"];
+                                if ($.phylo.currentScore>=puzzle_disease) {
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 17"] + ".\n" + window.lang.body.social["field 20"];
+                                } else {
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 18"] + ".\n" + window.lang.body.social["field 20"];
+                                }
                             }
+                            //var caption = window.lang.body.social["field 26"];
+                            //var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
                             var data = "provider="+provider+"&id="+c_logid+"&description="+message;
                         }
 
-                        bootbox.confirm(window.lang.body.social["field 12"] + "<br/>\n" + message,window.lang.body.social["field 22"],window.lang.body.social["field 20"], function(result) {
+                        bootbox.confirm(window.lang.body.social["field 22"] + "<br/>\n" + message,window.lang.body.social["field 25"],window.lang.body.social["field 27"], function(result) {
                             if (result) {
                                 console.log("post on " + provider + " : " + data);
                                 $.ajax({
@@ -122,7 +146,7 @@
                                 }).done(function(re) {
                                     //bootbox.alert("Your achievement has been posted!");
                                 }).fail(function() {
-                                    bootbox.alert(window.lang.body.social["field 13"]);
+                                    bootbox.alert(window.lang.body.social["field 23"]);
                                 });
                             }
                         });
