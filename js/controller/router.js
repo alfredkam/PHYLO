@@ -116,7 +116,7 @@
 			});
 
 			route.on('route:expert', function(lang) {
-				window.location = "http://phylo.cs.mcgill.ca/dcanv";
+				window.location = "http://phylo.cs.mcgill.ca/expert";
 			});
 	
 			route.on('route:contribute',function() {
