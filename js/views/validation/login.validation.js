@@ -32,17 +32,17 @@
                                     if(re != "succ") {
                                         // login not successful -> register users
                                         if((username == "" || password == "") || email == "") {
-                                            $("div.login-warning").show().html("Missing data. Please, check your " + provider + " account.");
+                                            $("div.login-warning").show().html(window.lang.body.social["field 3"].replace("***",provider));
                                             return;
                                         }
                                         $.protocal.register(username,fullname,password,email,provider,c_logid, function(re2) {
                                             if(re2 == "succ") {
                                                 console.log(provider + " registration successful. username: "+username);
                                                 // Update status
-                                                var message = fullname.replace("+"," ") + " started to play Phylo.\nPhylo is a puzzle game in which every puzzle completed contributes to mapping diseases within human DNA. Have fun and help genetic research!";
-                                                var caption = "DNA puzzles";
+                                                var message = fullname.replace("+"," ") + window.lang.body.social["field 1"];
+                                                var caption = window.lang.body.social["field 31"];
                                                 var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
-                                                bootbox.confirm("You are now registered. Please, help us to share the word and announce to your friend you novel contribution to science!<br/>\nPhylo will not store any personal data beside your username and email. You will have the opportunity to post your achievements if you request it.","Skip","Post", function(result) {
+                                                bootbox.confirm(window.lang.body.social["field 3"],window.lang.body.social["field 26"],window.lang.body.social["field 25"], function(result) {
                                                     if (result) {
                                                         $.ajax({
                                                             type: "POST",
@@ -51,13 +51,13 @@
                                                         }).done(function(re) {
                                                             //bootbox.alert("Thank you for sharing the word. You can now start to play!");
                                                         }).fail(function() {
-                                                            bootbox.alert("We are sorry. We have not been able to update your status. However, you can still start to play!");
+                                                            bootbox.alert(window.lang.body.social["field 4"]);
                                                         });
                                                     }
                                                 });
                                             } else {
                                                 console.log(provider + " registration failed.");
-                                                $("div.login-warning").show().html("We are sorry. We cannot register you using your " + provider + " account.");
+                                                $("div.login-warning").show().html(window.lang.body.social["field 5"].replace("***",provider));
                                                 $.cookie.delete("username");
                                                 $.cookie.delete("fullname");
                                                 $.cookie.delete("loginmode");
@@ -66,7 +66,7 @@
                                                 window.guest = 'guest';
                                                 $("#login-box").hide();
                                                 $(".login-btn").click(function() { classicLogin(); });
-                                                $("#login-tag").html("Login");
+                                                $("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]);
                                                 $(".showInLogin").hide();
                                                 window.showInLogin = false;
                                                 return;
@@ -75,7 +75,7 @@
                                     }
                                 });
                             }).fail(function() {
-                                $("div.login-warning").show().html("Could not connect to the server. Please try again later.");
+                                $("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 21"]);
                                 $.cookie.delete("username");
                                 $.cookie.delete("fullname");
                                 $.cookie.delete("loginmode");
@@ -84,9 +84,9 @@
                                 window.guest = 'guest';
                                 $("#login-box").hide();
                                 $(".login-btn").click(function() { classicLogin(); });
-                                $("#login-tag").html("Login");
+                                $("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]);
                                 $(".showInLogin").hide();
-		window.showInLogin = false;
+                                window.showInLogin = false;
                                 return;
                             });
                             // display login
@@ -102,14 +102,14 @@
                             window.guest = 'guest';
                             $("#login-box").hide();
                             $(".login-btn").click(function() { classicLogin(); });
-                            $("#login-tag").html("Login");
+                            $("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]);
                             $(".showInLogin").hide();
-		window.showInLogin = false;
+                            window.showInLogin = false;
                             return;
                         }
                     } else {
                         // failed to connect
-                        $("div.login-warning").show().html(provider + " connection failed. Please, check that you are already connected to " + provider + ".");
+                        $("div.login-warning").show().html(window.lang.body.social["field 6"].replace("***",provider));
                         $.cookie.delete("username");
                         $.cookie.delete("fullname");
                         $.cookie.delete("loginmode");
@@ -118,7 +118,7 @@
                         window.guest = 'guest';
                         $("#login-box").hide();
                         $(".login-btn").click(function() { classicLogin(); });
-                        $("#login-tag").html("Login");
+                        $("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]);
                         $(".showInLogin").hide();
 		window.showInLogin = false;
                         return;
@@ -136,14 +136,14 @@
                 data : "mode=8&user="+username,
             }).done(function(re) {
                 $(".showInLogin").show();
-		window.showInLogin = true;
+                window.showInLogin = true;
                 if (re!='succ') {
                     $(".showExpertOptions").hide();
 				window.showExpertOptions = false;
                 }
             }).fail(function() {
                 $(".showInLogin").show();
-		window.showInLogin = true;
+                window.showInLogin = true;
                 console.log("Expert validation failed. Could not connect to the server.");
             });
         };
@@ -153,7 +153,7 @@
 			var username = $("#username").val().trim();
 			var password = $("#password").val().trim();
 			if((username == "" || password == "")) {
-				$("div.login-warning").show().html("Username or Password is missing");
+				$("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 20"]);
 				return;
 			} 
 
@@ -177,18 +177,18 @@
                         data : "mode=8&user="+username,
                     }).done(function(re) {
                         $(".showInLogin").show();
-		window.showInLogin = true;
+                        window.showInLogin = true;
                         if (re!='succ') {
                             $(".showExpertOptions").hide();
-				window.showExpertOptions = false;
+                            window.showExpertOptions = false;
                         }
                     }).fail(function() {
                         $(".showInLogin").show();
-		window.showInLogin = true;
+                        window.showInLogin = true;
                         console.log("Expert validation failed. Could not connect to the server.");
                     });
 				} else {
-					$("div.login-warning").show().html("Incorrect Username or Password");
+					$("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 16"]);
 				}			
 			});
 		};
@@ -250,7 +250,7 @@
 				var password = $("#password").val().trim();
 				var email = $("#email").val().trim();
 				if((name == "" || password == "") || email == "") { 
-					$("div.login-warning").show().html("Email or Username or Password is missing");
+					$("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 20"]);
 					return;
 				} 
 				$.protocal.register(name, name, password, email,'Classic',0, function(re) {
@@ -261,7 +261,7 @@
 						window.guest = name;
 						$("#login-box").hide();
 					} else {
-						$("div.login-warning").show().html("This username already exist");
+						$("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 22"]);
 					}
 				});
 			}	

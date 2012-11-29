@@ -211,7 +211,7 @@
         "field 23": "We are sorry. We have not been able to post your achievement.",
         "field 24": "helps to decipher human genetic code with Phylo.",
         "field 25": "Post",
-        "field 26": "Tweet",
+        "field 26": "Skip",
         "field 27": "Cancel",
         "field 28": "Provider *** is not supported",
         "field 29": "You seem to have been disconnected. Please, login again.",
