@@ -152,6 +152,8 @@
                 "field 9": "The Data",
                 "field 10": "All alignments were generously made available through UCSC Genome Browser. Infact, all alignments contain sections of human DNA which have been speculated to be linked to various genetic disorders, such as breast cancer. Every alignment is received, analyzed, and stored in a database, where it will eventually be re-introduced back into the global alignment as an optimization.",
                 "field 11": "For more information about any one of these topics, click here.",
+                "field 12": "Publications",
+                "field 13": "Media coverage",
             },
             "credit": {
                 "field 1": "Project leaders (Media and scientific contact)",
@@ -163,6 +165,8 @@
                 "field 7": "Special Thanks",
                 "field 8": "Scientific Advisor",
                 "field 9": "Translation",
+                "field 10": "Alumni",
+                "field 11": "Technical support",
             },
             "ranking": {
                 "field 1": "All-time",
