@@ -15,14 +15,14 @@ We love to hear from you, you can post it at https://github.com/McGill-CSB/PHYLO
 
 Contacts
 =====
-Principal investigator (Media and scientific contact) : Jerome Waldisphul - jerome.waldispuhl@mcgill.ca<br>
+Principal Investigator (Media and scientific contact) : Jerome Waldispuhl - jerome.waldispuhl@mcgill.ca<br>
 Lead Developer (Technical Inquiries) : Alfred Kam - alfred.kam@mail.mcgill.ca
 
 License
 =====
 
 PHYLO is released under the McGill - License, which has been specifically designed for human-computing and crowdsourcing software developments. Learn more at https://github.com/McGill-CSB/PHYLO/blob/master/McGill-LICENSE.txt <br>
-Copyright 2012 Alfred Kam, and other contributors.
+Copyright (2012) McGill University, Alfred Kam, Jerome Waldispuhl and other contributors.
 
 Getting Started
 =====
