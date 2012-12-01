@@ -207,8 +207,9 @@
 				//var dummy = '{"level":{"attributes":{"id":"513"},"sequence":["------CTC-ATGCAGTGAAA","------CCC-ATGCAG-----","------GCT-CCGAGG-----","-AGCTCTCT-GCCGGG-----"],"tree":"(((hg19,rheMac2),mm9),loxAfr3);"}}';
 				//var dummy = '{"level":{"attributes":{"id":"1505"},"sequence":["---TCC----CAG-----CTG","CCCTCC----CAA-----CTC","---CCT----CAGCGGGCCC-","-----------------AGCC","---Tctgccctcacggaacac"],"tree":"(((hg19,rheMac2),(bosTau4,canFam2)),loxAfr3);"}}';
 				//var dummy = '{"level":{"attributes":{"id":"3394"},"sequence":["----A-----------CTTCT","----A-----------CTTCT","----G----AGTGGGCCTGGG","----GTACCTGCGCGTCCAGG"],"tree":"((hg19,rheMac2),(bosTau4,canFam2));"}}';
-				var dummy = '{"level":{"attributes":{"id":"18"},"sequence":["cggcgcgcgccg---------","tggtgtgtgtgt---------","AGCCGCCAGCGC---------","AGGAGCCCATCT---------","TTGGGC-CTCTC---------","gTGCGCGCACTC---------","ACACACACACGCAGGgggagg"],"tree":"(((hg19,(galGal3,taeGut1)),xenTro2),((tetNig2,fr2),gasAcu1));"}}';
+				//var dummy = '{"level":{"attributes":{"id":"18"},"sequence":["cggcgcgcgccg---------","tggtgtgtgtgt---------","AGCCGCCAGCGC---------","AGGAGCCCATCT---------","TTGGGC-CTCTC---------","gTGCGCGCACTC---------","ACACACACACGCAGGgggagg"],"tree":"(((hg19,(galGal3,taeGut1)),xenTro2),((tetNig2,fr2),gasAcu1));"}}';
 				var dummy = '{"level":{"attributes":{"id":"4010"},"sequence":["ggcgccccAG-----------","---GATCTGG-----------","----ACCCAC-----------","----CAAGTG-----------","---GGTTAGG-----------","ggcgccccAG-----------"],"tree":"((((hg19,rheMac2),mm9),(canFam2,pteVam1)),loxAfr3);"}}';
+
 
 				console.log(">> Cannnot connect to database");
 				console.log(">> loading dummy data");
