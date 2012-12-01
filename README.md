@@ -6,8 +6,7 @@ The most recent experimental release can be found at http://phylo.cs.mcgill.ca/m
 
 I want to contribute!
 =====
-That is awesome! Just fork the project on github.  Create a topic branch, write some code and let us know! <a href='#gettingStarted'>Click Me to jump to Getting Started</a>
-
+That is awesome! Just fork the project on github.  Create a topic branch, write some code and let us know! <a href='#getting-started'>Click Me to jump to Getting Started</a><br>
 No worries if you cannot code, check out this page instead http://phylo.cs.mcgill.ca/contribute
 
 I want to leave a feedback!
@@ -24,7 +23,7 @@ License
 PHYLO is released under the MIT - License, learn more at https://github.com/McGill-CSB/PHYLO/blob/master/MIT-LICENSE.txt <br>
 Copyright 2012 Alfred Kam, Jerome Waldisphul, McGill and other contributers
 
-<label id='#gettingStarted'>Getting Started</label>
+Getting Started
 =====
 - Master Branch contains the most recent experimental release
 - feature/RNA Branch is used for PHYLO-RNA experimental release
