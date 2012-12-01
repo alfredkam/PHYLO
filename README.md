@@ -15,7 +15,7 @@ We love to hear from you, you can post it at https://github.com/McGill-CSB/PHYLO
 
 Contacts
 =====
-Corresponding Researcher : Jerome Waldisphul - jerome.waldispuhl@mcgill.ca
+Corresponding Researcher : Jerome Waldisphul - jerome.waldispuhl@mcgill.ca<br>
 Technical Development : Alfred Kam - alfred.kam@mail.mcgill.ca
 
 License
