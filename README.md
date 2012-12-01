@@ -6,7 +6,7 @@ The most recent experimental release can be found at http://phylo.cs.mcgill.ca/m
 
 I want to contribute!
 =====
-That is awesome! Just fork the project on github.  Create a topic branch, write some code and let us know! <a href='#getting-started'>Click Me to jump to Getting Started</a><br>
+That is awesome! Just fork the project on github.  Create a topic branch, write some code and let us know! <a href='#getting-started'>Click here to jump to Getting Started</a><br>
 No worries if you cannot code, check out this page instead http://phylo.cs.mcgill.ca/contribute
 
 I want to leave a feedback!
@@ -16,7 +16,7 @@ We love to hear from you, you can post it at https://github.com/McGill-CSB/PHYLO
 Contacts
 =====
 Corresponding Researcher : Jerome Waldisphul - jerome.waldispuhl@mcgill.ca<br>
-Technical Development : Alfred Kam - alfred.kam@mail.mcgill.ca
+Technical Inquiries : Alfred Kam - alfred.kam@mail.mcgill.ca
 
 License
 =====
