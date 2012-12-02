@@ -1,4 +1,4 @@
-*** McGill Human-Computing Developper and User agreement ***
+*** McGill Human-Computing Developer and User agreement ***
 
 Copyright 2012 McGill university, Alfred Kam, Jerome Waldispuhl and other contributors.
 
