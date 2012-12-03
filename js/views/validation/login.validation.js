@@ -39,9 +39,9 @@
                                             if(re2 == "succ") {
                                                 console.log(provider + " registration successful. username: "+username);
                                                 // Update status
-                                                var message = fullname.replace("+"," ") + window.lang.body.social["field 1"];
+                                                var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 1"]+ " " + window.lang.body.social["field 20"];
                                                 var caption = window.lang.body.social["field 31"];
-                                                if (provider=='Facebook') {
+                                                if ((provider=='Facebook')||(provider=='LinkedIn')) {
                                                     var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
                                                 } else {
                                                     var data = "provider="+provider+"&id="+c_logid+"&description="+message;
