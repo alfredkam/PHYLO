@@ -72,7 +72,8 @@
 					"?mode=2&id="+i,
 					function(re) {
 						try {
-						var json = eval("["+re+"]")[0].level;
+							re = re.replace("@","");
+							var json = eval("["+re+"]")[0].level;
 						} catch(err) {
 							console.log("eval puzzle fail > "+i);
 						}
