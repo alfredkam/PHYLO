@@ -219,7 +219,7 @@
             "field 27": "Cancel",
             "field 28": "Provider *** is not supported",
             "field 29": "You seem to have been disconnected. Please, login again.",
-            "field 30": "Signin with ***",
+            "field 30": "Sign in with ***",
             "field 31" : "DNA Puzzles",
             "field 32" : "Login",
         },

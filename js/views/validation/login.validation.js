@@ -42,7 +42,7 @@
                                                 var message = fullname.replace("+"," ") + window.lang.body.social["field 1"];
                                                 var caption = window.lang.body.social["field 31"];
                                                 var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
-                                                bootbox.confirm(window.lang.body.social["field 3"],window.lang.body.social["field 26"],window.lang.body.social["field 25"], function(result) {
+                                                bootbox.confirm(window.lang.body.social["field 2"],window.lang.body.social["field 26"],window.lang.body.social["field 25"], function(result) {
                                                     if (result) {
                                                         $.ajax({
                                                             type: "POST",
