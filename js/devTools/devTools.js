@@ -62,7 +62,6 @@
 			var self = this;
 			for(var i=0;i<1000;i++) {
 				//so dont bombard the network
-				window.setTimeout(function() {
 					self.jax(
 						"?mode=2&id="+i,
 						function(re) {
@@ -77,7 +76,6 @@
 								console.log("#Node/#Seq Mismatch > "+i);
 						}
 					);
-				}, 50);
 			}
 		}
 	}
