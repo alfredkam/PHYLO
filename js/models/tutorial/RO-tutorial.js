@@ -13,7 +13,7 @@
             "scoring": {
             		"1": "Noţiuni avansate: Punctare",
             		"2": "Fiecare nod al arborelui phylogenetic stochează o secvenţă de predecesori. Predecesorii sunt calculaţi automat şi reprezintă un consens al tuturor secvenţelor derivate din el. Mutaţi cursorul pe oricare punct al arborelui pentru a vizualiza în josul grilei secvenţa corespunzătoare. În mod implicit, noi afişăm predecesorul în rădăcina arborelui.",
-            		"3": "Scorul de aliniament estimează similitudinea dintre o secvenţă şi predecesorul ei. O potrivire de culoare vă aduce un bonus de +1 iar o nepotrivire de culoare vă costă -1. Crearea unui gol aduce o penalitate de -5 iar extensia ei cu o unitate costă -1 fiecare. Aici scorul de aliniament dintre secvenţa liliacului şi predecesorul lui este -4 (12 potriviri, 5 nepotriviri, 1 gol de lungime 1 şi un gol de lungime 2).",
+            		"3": "Scorul de aliniament estimează similitudinea dintre o secvenţă şi predecesorul ei. O potrivire de culoare vă aduce un bonus de +1 iar o nepotrivire de culoare vă costă -1. Crearea unui gol aduce o penalitate de -4 iar extensia ei cu o unitate costă -1 fiecare. Aici scorul de aliniament dintre secvenţa liliacului şi predecesorul lui este -5 (4 potriviri, 4 nepotriviri, 1 gol de lungime 1).",
             		"4": "Scorul vostru este suma scorurilor de aliniament al fiecarei secvenţe cu predecesorul ei imediat. Aici, scorul este suma comparaţiilor dintre predecesorul B cu om şi cimpanzeu, predecesorul C cu liliac şi câine, şi predecesorul A cu B şi C."
             },
             "example": {

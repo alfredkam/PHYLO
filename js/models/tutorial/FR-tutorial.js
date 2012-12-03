@@ -11,7 +11,7 @@
             "scoring": {
             		"1": "Avançé: Calcul du score",
             		"2": "Chaque noeud de l'arbre phylogénétique stocke une séquence ancestrale. Les séquences ancestrales sont calculées automatiquement et représentent un consensus des séquence qui en dérivent. Pointe sur un noeud pour afficher la séquence ancestrale correspondante en bas de la grille. Par défaut nous affichons la séquence liée à la raçine de l'arbre.",
-            		"3": "Le score d'alignement évalue la similarité entre une séquence et son ancêtre. Une couleur de blocs identique t'apportes un bonus de +1 et une dissimilarité de couleur une pénalité de -1. La création d'un espace apporte une pénalité de -5 et son extension d'une unité coûte -1. Ici, le score de l'alignement entre la séquence de la chauve-souris avec son ancêtre est -4 (12 similarités, 5 dissimilarités, un espace de longueur 1 et un espace de longueur 2).",
+            		"3": "Le score d'alignement évalue la similarité entre une séquence et son ancêtre. Une couleur de blocs identique t'apportes un bonus de +1 et une dissimilarité de couleur une pénalité de -1. La création d'un espace apporte une pénalité de -4 et son extension d'une unité coûte -1. Le score aux extrémité n'est pas compté. Ici, le score de l'alignement entre la séquence de la chauve-souris avec son ancêtre est -4 (4 similarités, 4 dissimilarités, un espace de longueur 1).",
             		"4": "Ton score est la somme des scores des alignements de chaque séquence avec leur ancêtre immédiat. Ici, le score est la somme de la comparaison entre l'ancêtre B avec la séquence de l'homme et du chimpanzé, de l'ancêtre C avec la séquence du chien et de la chauve-souris, et de l'ancêtre A avec B et C."
             },
             "example": {

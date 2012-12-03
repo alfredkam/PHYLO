@@ -12,7 +12,7 @@
             "scoring": {
             		"1": "Avançado: Pontuação",
             		"2": "Cada nó da árvore filogenética contém uma sequência ancestral. Ancestrais são computadas automaticamente e representam um consenso de todas as sequências derivadas delas. Coloque o cursor sobre qualquer nó da árvore para exibir a sequência correspondente na parte de baixo da grade. Por default, nós exibimos a ancestral da raiz da árvore.",
-            		"3": "A pontuação do alinhamento é uma estimativa da similaridade entre a sequência e a de sua ancestral. Concordâncias aumentam sua pontuação em +1 ponto, discordâncias penalizam-no em -1 ponto. Abrir uma lacuna incorre numa penalidade de -5 pontos, e cada espaço extra na lacuna custa outro -1 ponto negativo. No exemplo, a pontuação do alinhamento da sequência do morcego com sua ancestral é -4 (12 concordâncias, 5 discordâncias, 1 lacuna de extensão 1 e 1 lacuna de extensão 2).",
+            		"3": "A pontuação do alinhamento é uma estimativa da similaridade entre a sequência e a de sua ancestral. Concordâncias aumentam sua pontuação em +1 ponto, discordâncias penalizam-no em -1 ponto. Abrir uma lacuna incorre numa penalidade de -4 pontos, e cada espaço extra na lacuna custa outro -1 ponto negativo. No exemplo, a pontuação do alinhamento da sequência do morcego com sua ancestral é -5 (4 concordâncias, 4 discordâncias, 1 lacuna de extensão 1).",
             		"4": "Sua pontuação é a soma das pontuações dos alinhamentos de cada sequência com sua ancestral imediata. No exemplo, a pontuação é a soma das comparações entre a ancestral de B com humano e chimpanzé, da ancestral C com cão e morcego, a da ancestral A com B e C."
             },
             "example": {
