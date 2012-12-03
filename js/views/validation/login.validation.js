@@ -41,9 +41,14 @@
                                                 // Update status
                                                 var message = fullname.replace("+"," ") + window.lang.body.social["field 1"];
                                                 var caption = window.lang.body.social["field 31"];
-                                                var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
+                                                if (provider=='Facebook') {
+                                                    var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
+                                                } else {
+                                                    var data = "provider="+provider+"&id="+c_logid+"&description="+message;
+                                                }
                                                 bootbox.confirm(window.lang.body.social["field 2"],window.lang.body.social["field 26"],window.lang.body.social["field 25"], function(result) {
                                                     if (result) {
+                                                        console.log("post on " + provider + " : " + data);
                                                         $.ajax({
                                                             type: "POST",
                                                             url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
