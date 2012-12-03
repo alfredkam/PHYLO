@@ -595,7 +595,9 @@ td.social-link {
 	padding-top:5px;
 	padding-bottom:5px;
 }
-
+.twitter-follow-button {
+    padding-top: 3px;
+}
 
 #option-list {
 	color: #333;
