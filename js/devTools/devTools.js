@@ -62,21 +62,27 @@
 			var self = this;
 			for(var i=0;i<1000;i++) {
 				//so dont bombard the network
-					self.jax(
-						"?mode=2&id="+i,
-						function(re) {
-							try {
-							var json = eval("["+re+"]")[0].level;
-							} catch(err) {
-								console.log("eval puzzle fail > "+i);
-							}
-							var numOfSeq = j.sequence.length;
-							var numOfNodes = j.tree.replace(/(\(|\)|\;)/,"").split(",").length;
-							if(numOfSeq != numOfNodes)
-								console.log("#Node/#Seq Mismatch > "+i);
-						}
-					);
+				self._puzzle(i);
 			}
+		}
+		_puzzle : function(i) {
+			var self = this;
+			window.setTimeout(function() {
+				self.jax(
+					"?mode=2&id="+i,
+					function(re) {
+						try {
+						var json = eval("["+re+"]")[0].level;
+						} catch(err) {
+							console.log("eval puzzle fail > "+i);
+						}
+						var numOfSeq = j.sequence.length;
+						var numOfNodes = j.tree.replace(/(\(|\)|\;)/,"").split(",").length;
+						if(numOfSeq != numOfNodes)
+							console.log("#Node/#Seq Mismatch > "+i);
+					}
+				);
+			},50);
 		}
 	}
 	var proto = g.prototype,
