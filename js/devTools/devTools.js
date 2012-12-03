@@ -59,11 +59,13 @@
 			});
 		},
 		puzzles : function() {
+			console.log("starting");
 			var self = this;
 			for(var i=0;i<1000;i++) {
 				//so dont bombard the network
 				self._puzzle(i);
 			}
+			console.log("done");
 		},
 		_puzzle : function(i) {
 			var self = this;
@@ -87,6 +89,7 @@
 						var numOfNodes = j.tree.replace(/(\(|\)|\;)/,"").split(",").length;
 						if(numOfSeq != numOfNodes)
 							console.log("#Node/#Seq Mismatch > "+i);
+						conolse.log(numOfSeq + " < > "+numOfNodes);
 					}
 				);
 			},50);
