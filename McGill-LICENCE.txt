@@ -13,10 +13,7 @@ this application.
 3.     Do not submit any information you consider confidential or proprietary to this 
 application.
 
-4.     The authors grant to the developers the permission to copy, modify, merge the 
-software for personal use only. This software, or modified version of this software, 
-cannot be used for crowdsourcing, human-computing and citizen-science applications aiming 
-to proceed, analyze or filter data other than those provided by the authors.
+4.     Developers are invited to submit their modifications and upgrades of the software to the authors for public release. Developers hereby agree to transfer their copyright to the authors. Upon publication, the authors will receive full credits for their contribution and will be associated and credited for any scientific and non-profit discovery achieved with their modified and upgraded software.
 
 5.     Developers are invited to submit their modifications and upgrades of the software 
 to the authors for public release. Upon publication, the authors will receive full credits 
