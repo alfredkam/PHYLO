@@ -350,6 +350,8 @@
                         <a class='btn btn-warning' href='https://github.com/McGill-CSB/PHYLO/issues' id='m_feedback'>Leave a Feedback</a>&nbsp;
                         <!-- <a href='https://github.com/McGill-CSB/PHYLO' class='btn btn-inverse' id='m_github'><i class='icon-github'></i>View On GitHub</a>&nbsp; -->
                         <a href='http://phylo.cs.mcgill.ca/archive/flash/eng/' class='btn btn-inverse'>Classic</a>
+                        <div class="fb-like" data-href="http://phylo.cs.mcgill.ca" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true" data-font="arial"></div>
+                        <a href="https://twitter.com/phylo_game" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @phylo_game</a>
                     </div>
 					<div id='copyright' class='footer-inner'>
 						 Copyright &#169; 2012 <a href='http://www.mcgill.ca'>McGill University</a>. All Rights Reserved.
@@ -358,18 +360,18 @@
 				</div>
 			</div>
 		<!-- FB stuff -->
-		<!--                        
-		<script>
-        // Load the SDK Asynchronously
-        (function(d){
-            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-            if (d.getElementById(id)) { return; }
-                js = d.createElement('script'); js.id = id; js.async = true;
-                js.src = "//connect.facebook.net/en_US/all.js";
-                ref.parentNode.insertBefore(js, ref);
-            }(document));
-        </script>
-        -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=254079141380941";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <!-- Twitter stuff -->
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                        
+                        
                         
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
