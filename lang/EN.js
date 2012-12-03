@@ -222,7 +222,7 @@
             "field 30": "Sign in with ***",
             "field 31" : "DNA Puzzles",
             "field 32" : "Login",
-            "field 33" : "Phylo is a game in which every puzzle completed contributes to mapping diseases within human DNA. Have fun and help genetic research!";
+            "field 33" : "Phylo is a game in which every puzzle completed contributes to mapping diseases within human DNA. Have fun and help genetic research!",
         },
         "footer": {
             "field 1": "Phylo is a challenging video game in which every puzzle completed contributes to mapping diseases within human DNA. Learn <a href='?pid=about"+window.location.hash+"'>more</a>.",
