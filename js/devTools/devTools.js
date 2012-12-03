@@ -76,6 +76,7 @@
 							var json = eval("["+re+"]")[0].level;
 						} catch(err) {
 							console.log("eval puzzle fail > "+i);
+							console.log(re);
 						}
 						var numOfSeq = j.sequence.length;
 						var numOfNodes = j.tree.replace(/(\(|\)|\;)/,"").split(",").length;
