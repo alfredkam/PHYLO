@@ -144,14 +144,14 @@
 						}
 						request.complete();
 					},
-					"js/dummy/ranking.dummy",
-                    request.getTemplate("templates/ranking_legend.html",function(context) {
-                        request.getJsonLang(lang, function(json) {
-                            $("#mid-panel").html(Mustache.render(context,json.body.play));
-                            request.complete();
-                        });
+					"js/dummy/ranking.dummy"
+				);
+                request.getTemplate("templates/ranking_legend.html",function(context) {
+                    request.getJsonLang(lang, function(json) {
+                        $("#mid-panel").append(Mustache.render(context,json.body.play));
+                        request.complete();
                     });
-                );
+                });
 			},
 		});
 		
