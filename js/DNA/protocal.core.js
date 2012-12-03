@@ -182,7 +182,7 @@
 				var numOfSeq = j.sequence.length;
 				var numOfNodes = j.tree.replace(/(\(|\)|\;)/,"").split(",").length;
 				if(numOfSeq != numOfNodes)
-					console.log(">> Detected Error -> Sequence given ("+numOfSeq+") != phylo tree nodes ("+numOfNodes+")");
+					console.log(">> Detected Error -> Puzzle ("+$.phylo.id+") Sequence given ("+numOfSeq+") != phylo tree nodes ("+numOfNodes+")");
 			
 
 				$.phylo.get = {};
