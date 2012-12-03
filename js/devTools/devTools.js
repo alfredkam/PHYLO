@@ -64,7 +64,7 @@
 				//so dont bombard the network
 				self._puzzle(i);
 			}
-		}
+		},
 		_puzzle : function(i) {
 			var self = this;
 			window.setTimeout(function() {
