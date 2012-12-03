@@ -3,7 +3,7 @@
     g.prototype.lang = [{
 	"info": {
 	    "lang": "繁体中文",
-	    "author": "James Junzhi Wen &Jerome Waldispuhl",
+	    "author": "James Junzhi Wen",
 	},
 	"header": {
 	    "field 1": "開始",
@@ -183,7 +183,7 @@
 			},
 		    },
                         "social": {
-                        "field 1": "started to play Phylo.\nPhylo is a game in which every puzzle completed contributes to mapping diseases within human DNA. Have fun and help genetic research!",
+                        "field 1": "started to play Phylo.",
                         "field 2": "You are now registered. Please, help us to share the word and announce to your friend your novel contribution to science! Phylo will not store any personal data beside your username and email. You will have the opportunity to post your achievements if you request it.",
                         "field 3": "Missing data. Please, check your *** account.",
                         "field 4": "We are sorry. We have not been able to update your status. However, you can still start to play!",
@@ -215,6 +215,7 @@
                         "field 30": "Signin with ***",
                         "field 31" : "DNA Puzzles",
                         "field 32" : "Login",
+                        "field 33" : "Phylo is a game in which every puzzle completed contributes to mapping diseases within human DNA. Have fun and help genetic research!",
                         },
 	"footer": {
 	    "field 1": "Phylo是一個挑戰科學難題的Flash遊戲，遊戲中的每個難關與人類疾病密切相關。瞭解更多",
