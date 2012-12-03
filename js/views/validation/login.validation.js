@@ -96,7 +96,7 @@
                             });
                             // display login
                             $("#login-tag").html(fullname.replace("+"," "));
-                            window.guest=username;
+                            window.guest=fullname;
                         } else {
                             //bootbox.alert("Data conflict. Please, login again.");
                             $.cookie.delete("username");
@@ -131,7 +131,7 @@
                 });
             }
             $("#logout").show();
-            window.guest = username;
+            window.guest = fullname;
             $("#login-box").hide();
             $(".login-btn").unbind("click");
             // show buttons. NB: hide expert button if necessary
