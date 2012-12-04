@@ -153,6 +153,7 @@
 			}
 
 			//console.log(str);
+			console.log(str);
 
 			$.ajax({
 				url : url,
