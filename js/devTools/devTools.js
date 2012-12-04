@@ -51,7 +51,7 @@
 		jax : function(link, callBack) {
 			$.ajax({
 				type : "GET",
-				url : url+url,
+				url : link,
 			}).done(function(r) {
 				callBack(r);
 			}).fail(function() {
@@ -71,7 +71,7 @@
 			var self = this;
 			window.setTimeout(function() {
 				self.jax(
-					"?mode=2&id="+i,
+					url+"?mode=2&id="+i,
 					function(re) {
 						var j = "";
 						try {
