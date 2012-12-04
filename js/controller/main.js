@@ -11,6 +11,7 @@
 			lang : '../../lang',
 			views : '../views',
 			models : '../models',
+			dev : '../devTools',
 		},
 		shim : {
 			'jquery' : {
@@ -108,6 +109,9 @@
 			'controller/router' : {
 				deps : ['jquery','underscore','backbone','views/site.views','views/navBar.views'],
 			},
+			'dev/devTools' : {
+				deps : ['jquery'],
+			},
 		}
 	});
 	require(['yepnope'],
@@ -140,6 +144,7 @@
 		Router.init();
 	});
 
+	require(['dev/devTools']);
 	require(['views/detectIE.actions']);
 	require(['bootstrap']);
 	require(['views/customizeGame.actions']);
