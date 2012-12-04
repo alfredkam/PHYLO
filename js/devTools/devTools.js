@@ -49,9 +49,8 @@
 	};
 	g.prototype.test = {
 		jax : function(link, callBack) {
-			console.log(link);
 			$.ajax({
-				type : "GET",
+				type : "POST",
 				url : link,
 			}).done(function(r) {
 				callBack(r);
