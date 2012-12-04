@@ -1,18 +1,21 @@
-*** McGill Human-Computing Developer Licence ***
+*** McGill Human-Computing Developer Licence *********************************************
 
 Copyright 2012 McGill university, Alfred Kam, Jerome Waldispuhl and other contributors.
 
 Title: Phylo | DNA Puzzles (a human-computing framework for comparative genomics)
 URL: http://phylo.cs.mcgill.ca
 
-*************************************************
+******************************************************************************************
 
 1.     Use of this application is non-profit and strictly for research and teaching purposes only.
 
 2.     No title to any intellectual property is transferred to the user or developer of
 this application.
 
-3.     
+3.     The authors grant to the developers the permission to copy, modify, merge the 
+software for personal use only. This software, or modified version of this software, 
+cannot be used for crowdsourcing, human-computing and citizen-science applications aiming 
+to proceed, analyze or filter data other than those provided by the authors.
 
 4.     Developers are invited to submit their modifications and upgrades of the software 
 to the authors for public release. Upon publication, the authors will receive full credits 
