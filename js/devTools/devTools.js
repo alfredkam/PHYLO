@@ -49,6 +49,7 @@
 	};
 	g.prototype.test = {
 		jax : function(link, callBack) {
+			console.log(link);
 			$.ajax({
 				type : "GET",
 				url : link,
@@ -68,7 +69,6 @@
 			console.log("done");
 		},
 		_puzzle : function(i) {
-			console.log(i);
 			var self = this;
 			window.setTimeout(function() {
 				self.jax(
