@@ -73,6 +73,7 @@
 				self.jax(
 					url+"?mode=2&id="+i,
 					function(re) {
+						console.log(re);
 						var j = "";
 						try {
 							re = re.replace("@","");
