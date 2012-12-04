@@ -49,6 +49,8 @@
 	};
 	g.prototype.test = {
 		jax : function(link, callBack) {
+			console.log(link);
+			console.log(callBack);
 			$.ajax({
 				type : "POST",
 				url : link,
@@ -73,7 +75,6 @@
 				self.jax(
 					url+"?mode=2&id="+i,
 					function(re) {
-						console.log(re);
 						var j = "";
 						try {
 							re = re.replace("@","");
