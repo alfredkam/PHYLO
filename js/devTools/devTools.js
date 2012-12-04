@@ -53,7 +53,8 @@
 			console.log(callBack);
 			$.ajax({
 				type : "POST",
-				url : link,
+				url : link.url,
+				data : link.data,
 			}).done(function(r) {
 				callBack(r);
 			}).fail(function() {
@@ -72,8 +73,10 @@
 		_puzzle : function(i) {
 			var self = this;
 			window.setTimeout(function() {
-				self.jax(
-					url+"?mode=2&id="+i,
+				self.jax({
+						url : url,
+						data : "mode=2&id="+i
+					},
 					function(re) {
 						var j = "";
 						try {
