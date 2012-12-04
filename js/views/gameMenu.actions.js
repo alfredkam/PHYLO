@@ -448,6 +448,7 @@
 			};
 
 			var disease = function(ctx, items, i) {
+				var node = i;
 				var img = new Image();
 				var img_hover = new Image();
 				img.src = items[1];
@@ -461,14 +462,8 @@
 				this.onClick = function(eX, eY) {
 					if( 335+110*(i>=3?(i>=6?i-6:i-3):i) < eX && eX < 405+110*(i>=3?(i>=6?i-6:i-3):i) &&
 						150+(i>=3?(i>=6?200:100):0) < eY && eY < 220+(i>=3?(i>=6?200:100):0)) {
+						var id = diseaseList[items[0]][Math.floor(Math.random()*diseaseList[items[0]].length)];
 						$("#draw").hide();		
-						/*
-						$("#frame").show();
-						var hash = window.location.hash.toUpperCase();
-						hash = hash.replace('#',"").toLowerCase();
-						document.getElementById('frame').src = 'http://phylo.cs.mcgill.ca/js/index2.html?lang='+hash+'&type=disease&disease='+id+'#home';
-						*/
-						var id = diseaseList[i][1][Math.floor(Math.random()*diseaseList[i][1].length)];
 						$("#menu").hide();
 						$.main.init({
 							type: "disease",
