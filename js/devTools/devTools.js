@@ -68,6 +68,7 @@
 			console.log("done");
 		},
 		_puzzle : function(i) {
+			console.log(i);
 			var self = this;
 			window.setTimeout(function() {
 				self.jax(
