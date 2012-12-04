@@ -37,14 +37,12 @@
 				mode = 4;
 			}
 			var data = "mode="+mode+"&id="+$.phylo.id+"&user="+window.guest+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.currentScore;
-            console.log("send game score : "+mode);
             $.ajax({
 				type: "POST",
 				url : url,
 				data : data,
 			}).done(function(re) {
 				var json = eval("["+re+"]")[0];
-                console.log(json);
 				fn(json);
 			}).fail(function() {
 				console.log(">> failed to connect to database to submit end game score");
@@ -62,7 +60,6 @@
 			return;
 			var self = this;
 			var data = "mode=4&id="+$.phylo.id+"&user="+window.guest+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.bestScore;
-            console.log("send highscore : "+mode + "/" + data);
 			$.ajax({
 				type : "POST",
 				url : url,
