@@ -92,7 +92,6 @@
 						var numOfNodes = j.tree.replace(/(\(|\)|\;)/,"").split(",").length;
 						if(numOfSeq != numOfNodes)
 							console.log("#Node/#Seq Mismatch > "+i);
-						conolse.log(numOfSeq + " < > "+numOfNodes);
 					}
 				);
 			},50);
