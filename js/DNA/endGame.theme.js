@@ -26,7 +26,6 @@
 				var msg = window.lang.body.play.gameselect["end of game"]["field 4"];
 				$("#endGame-text").html(msg);
 				//$("#endGame-learnMore-content").html("This disease is related to diseases etc, you are helping...etc");
-				console.log(data);
 				$("#endGame-learnMore-content").html(self.learnMore(data));
 				$("#endGame").fadeIn();
 			});
@@ -135,7 +134,6 @@
 
                         bootbox.confirm(window.lang.body.social["field 22"] + "<br/>\n" + message,window.lang.body.social["field 27"],window.lang.body.social["field 25"], function(result) {
                             if (result) {
-                                console.log("post on " + provider + " : " + data);
                                 $.ajax({
                                     type: "POST",
                                     url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
@@ -149,6 +147,7 @@
                         });
                     });
                 } else {
+			if(DEBUG)
                     console.log(window.lang.body.social["field 28"].replace("***",provider));
                     return;
                 }
@@ -200,6 +199,7 @@
 			});
  
             $("#endGame-share button").unbind().click(function(){
+		if(DEBUG)
                 console.log("Click share event");
                 $.endGame.share('test');
             });
