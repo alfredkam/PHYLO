@@ -1,4 +1,6 @@
-{
+(function() {
+  function g() {};
+    g.prototype.spanish = [{
     "info": {
         "lang": "Inglés", 
         "author": "David Becerra ",
@@ -225,6 +227,14 @@
 	"footer": {
 		"field 1": "Phylo es un video juego retador en el cual cada juego completado contribuye a mapear enfermedades con el ADN humano. Learn <a href='?pid=about"+window.location.hash+"'>more</a>.",
 		"field 2": "Unase a Phylo <a href='https://www.facebook.com/groups/127713783941517/'>community</a> en facebook or regalenos un pulgar arrriba.",
+    },
 },
 },
-}
+];
+ 
+ var proto = g.prototype,
+ attr = [
+         ["lang",proto.spanish],
+         ];
+ common.exportSingleton("SPscript",g,attr);
+ })();
