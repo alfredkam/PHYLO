@@ -205,6 +205,7 @@
 			$("#splashLogo").remove();
 			var ctx = doc.getElementById('draw').getContext('2d');
 			ctx.beginPath();
+			ctx.globalAlpha = 1;
 			ctx.clearRect(0,0,settings.width(),settings.height());
 			
 			var banner = new Image();
@@ -327,7 +328,10 @@
 								selection = [];
 								window.setTimeout(function() {
 								for(var j=0; j<diseaseorder.length; j++) {
-									selection.push(new disease(ctx,diseaseorder[j],j));	
+									if(diseaseList[diseaseorder[j][0]].length == 0)
+										selection.push(new emptyDisease(ctx, diseaseorder[j],j))
+									else
+										selection.push(new disease(ctx,diseaseorder[j],j));	
 								}
 								},50);
 								selection.push(new back(ctx));
@@ -447,8 +451,7 @@
 				};		
 			};
 
-			var disease = function(ctx, items, i) {
-				var node = i;
+			var emptyDisease = function(ctx, items, i) {
 				var img = new Image();
 				var img_hover = new Image();
 				img.src = items[1];
@@ -456,6 +459,24 @@
 				var hovered = false;
 				img.onload = function() {
 					ctx.beginPath();
+					ctx.globalAlpha = 0.5;
+					ctx.drawImage(img, 335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
+					ctx.globalAlpha = 1;
+					ctx.closePath();
+				};
+				this.onClick = function(eX, eY) { };
+				this.onOver = function(eX, eY) {};
+			};
+
+			var disease = function(ctx, items, i) {
+				var img = new Image();
+				var img_hover = new Image();
+				img.src = items[1];
+				img_hover.src = items[1].replace('.png', '_hover.png');
+				var hovered = false;
+				img.onload = function() {
+					ctx.beginPath();
+					ctx.globalAlpha = 1;
 					ctx.drawImage(img, 335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
 					ctx.closePath();
 				};
@@ -473,24 +494,24 @@
 					}
 				};
 				    
-                this.onOver = function(eX, eY) {
-                    if( 335+110*(i>=3?(i>=6?i-6:i-3):i) < eX && eX < 405+110*(i>=3?(i>=6?i-6:i-3):i) &&
-                        150+(i>=3?(i>=6?200:100):0) < eY && eY < 220+(i>=3?(i>=6?200:100):0)) {
-                        ctx.beginPath();
-                        ctx.clearRect(335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
-                        ctx.drawImage(img_hover, 335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
-                        ctx.closePath();
-                        hovered = true;
-                    } else {
-                    	if(hovered) {
-                    		ctx.beginPath();
-                        	ctx.clearRect(335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
-                        	ctx.drawImage(img, 335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
-                        	ctx.closePath();
-                        	hovered = false;
-                    	}
-                    }
-                };
+				this.onOver = function(eX, eY) {
+				    if( 335+110*(i>=3?(i>=6?i-6:i-3):i) < eX && eX < 405+110*(i>=3?(i>=6?i-6:i-3):i) &&
+					150+(i>=3?(i>=6?200:100):0) < eY && eY < 220+(i>=3?(i>=6?200:100):0)) {
+					ctx.beginPath();
+					ctx.clearRect(335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
+					ctx.drawImage(img_hover, 335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
+					ctx.closePath();
+					hovered = true;
+				    } else {
+					if(hovered) {
+						ctx.beginPath();
+						ctx.clearRect(335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
+						ctx.drawImage(img, 335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
+						ctx.closePath();
+						hovered = false;
+					}
+				    }
+				};
 			};
 
 			var onHover = false;
