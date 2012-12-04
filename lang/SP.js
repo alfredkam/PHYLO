@@ -143,8 +143,7 @@
 		"about": {
 			"field 1":"De qué se trata Phylo?",
 			"field 2":"La comparación de los genomas de diferentes especies es uno de los problemas fundamentales y es una poderosa técnica en Biología Molecular. Esta ayuda a descifrar nuestro ADN y a identificar nuevos genes. Aunque parezca solo un juego, Phylo es en realidad un marco para aprovechar el poder computacional de los humanos para resolver un problema en común; El alineamiento múltiple de secuencias.",
-			"field 3": "Que es un Alineamiento múltiple de secuencias
-?",
+			"field 3": "Que es un Alineamiento múltiple de secuencias?",
 			"field 4": "Un Alineamiento de secuencia es una manera de acomodar las secuencias de ADN, ARN ó proteínas para identificar regiones similares. Estas similitudes pueden ser consecuencias de relaciones funcionales, estructurales o evolutivas entre las secuencias. De dichas alineaciones, los biólogos pueden inferir relaciones evolutivas entre especies, identificar sitios funcionales importantes, e ilustrar eventos de mutaciones. Más importante aún, los biólogos pueden localizar el origen de ciertas enfermedades genéticas.",
 			"field 5": "El problema",
 			"field 6": "Tradicionalmente, los algoritmos de alineamiento múltiple de secuencias usan heurísticas computacionalmente complejas. Desafortunadamente, el uso de heurísticas no garantiza una optimización global ya que el costo computacional sería prohibitivo para encontrar la alineación óptima. Esto se debe en parte al gran tamaño del genoma, que consiste aproximadamente en tres mil millones de pares de bases, y que la complejidad computacional aumenta como resultado de cada secuencia adicional en un alineamiento.",
