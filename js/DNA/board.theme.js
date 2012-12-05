@@ -67,20 +67,20 @@
 				} catch (err) {
 				}
 			} 
-			$("#volumeOn").click(function() {
+			$("#volumeOn").unbind().click(function() {
 				$.cookie.create("music-level",0,365);
 				document.getElementById("game-audio").volume=0;
 				$("#volumeOn").hide();
 				$("#volumeOff").show();
 			});
-			$("#volumeOff").click(function() {
+			$("#volumeOff").unbind().click(function() {
 				$.cookie.create("music-level",1,365);
 				document.getElementById("game-audio").volume=1;
 				$("#volumeOff").hide();
 				$("#volumeOn").show()
 			});
 			//roll back to best score
-			$("#cycle").click(function(){
+			$("#cycle").unbind().click(function(){
 				$.helper.copy($.sequence.track, $.phylo.bestTrack);
 				//$.sequence.track = $.phylo.bestTrack.slice(0);
 				
@@ -93,11 +93,11 @@
 				
 			});
 			//next stage
-			$("#star").click(function(){
+			$("#star").unbind().click(function(){
 				if($.phylo.currentScore >= $.sequence.par) 
 					$.stage.round();
 			});
-			$("#star").dblclick(function() {
+			$("#star").unbind().dblclick(function() {
 				console.log("filtered out >> dbl click detected on star");
 			});
 			//new scoring
