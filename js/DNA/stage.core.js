@@ -8,7 +8,6 @@
 		round : function() {	
 			//for testing
 			if(this.current < this.last){
-				console.log(this.current);
 				this.current+=1;
 				this.set(this.current);
 			} else if(this.current === this.last) {
