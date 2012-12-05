@@ -19,6 +19,7 @@
 		}, 
 		//sets up the next stage
 		set : function(x) {	
+			console.log("@22 > "+x);
 			if(x == 0)
 				$.timer.start();
 			$.engine.deActive();
