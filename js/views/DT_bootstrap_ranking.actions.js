@@ -111,9 +111,15 @@ function g(){};
         "aaSorting": [[ 5, "desc" ]],
         "fnDrawCallback": function ( oSettings ) {
             if ( oSettings.bSorted || oSettings.bFiltered ) {
+                /*
                 for ( var i=0, iLen=oSettings.aiDisplay.length ; i<iLen ; i++ ) {
                      $('td:eq(0)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html( i+1 );
                 }
+                */
+                this.$('td:first-child', {"filter":"applied"}).each( function (i) {
+                    that.fnUpdate( i+1, this.parentNode, 0, false, false );
+                });
+                          
             }
         },
         "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 0 ] } ],
