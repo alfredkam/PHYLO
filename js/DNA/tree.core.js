@@ -11,6 +11,7 @@
 				} else {
 					var x = j.branchset[0];
 					var y = j.branchset[1];
+					console.log(c);
 					if (x.branchset == undefined && y.branchset == undefined) {
 						var d = { "lv" : i++, "depth" : c, "child" : 0, "node1" : k++, "node2" : k++, "p1": x.name, "p2" : y.name};
 					} else if (x.branchset == undefined) {
@@ -35,12 +36,15 @@
 			buildTree(tree,0);
 			return format;
 		},
-		//builds the ancestor
+		//builds the phylogenetic tree
 		buildAncestor : function() {
 			var stage = $.stage.current;
 			var data = "";
 			var self = this;
-			
+			var maxDepth = $.phylo.tree[0].depth;
+			var maxWidth = 178; 	
+			var maxNodeWidth = 20;
+			var assignWidth = (maxWidth - (maxDepth * maxNodeWidth))/maxDepth;
 					
 			var getAvg = function(node){
 				var n = $.phylo.tree[node];
@@ -74,7 +78,7 @@
 				mWidth-=32;
 				if(n.child == 0) {
 					//build top
-					var hLeft = n.depth*34+34*.3;
+					var hLeft = n.depth*assignWidth+34*.3;
 					var hTop_1 = n.node1*34 + 34/2 - 2;
 					var hTop_2 = n.node2*34 + 34/2 - 2;
 					var vTop_1 = Math.abs(hTop_2-hTop_1);
@@ -83,11 +87,11 @@
 					//build bot		
 					str+= "<div class='hLine' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
 				} else if(n.child == 1) {
-					var hLeft = n.depth*34+34*.3;
+					var hLeft = n.depth*assignWidth+34*.3;
 					var dist = getDist(n.node2);
 					var hTop_1 = n.node1*34 + 34/2 - 2;
 					var hTop_2 = dist.top;
-					var hWidth = 34*Math.abs((n.depth-dist.depth));
+					var hWidth = assignWidth*Math.abs((n.depth-dist.depth));
 					var vTop_1 = Math.abs(hTop_2-hTop_1);
 					
 					str+= "<div class='vLine' style='top:"+(hTop_2>hTop_1?hTop_1:hTop_2)+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
@@ -95,14 +99,14 @@
 					str+= "<div class='hLine' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(hWidth)+"px'></div>";
 					
 				} else if(n.child == 2) {
-					var hLeft = n.depth*34+34*.3;
+					var hLeft = n.depth*assignWidth+34*.3;
 					var dist_1 = getDist(n.node1);
 					var dist_2 = getDist(n.node2);
 							
 					var hTop_1 = dist_1.top;
-					var hWidth_1 = 34* Math.abs((n.depth-dist_1.depth));
+					var hWidth_1 = assignWidth* Math.abs((n.depth-dist_1.depth));
 					var hTop_2 = dist_2.top;
-					var hWidth_2 = 34*Math.abs((n.depth-dist_2.depth));
+					var hWidth_2 = assignWidth*Math.abs((n.depth-dist_2.depth));
 					var vTop_1 = hTop_2 - hTop_1;
 					
 					str+= "<div class='vLine' style='top:"+(hTop_1)+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
@@ -118,20 +122,20 @@
 				if(tree.child == 0) {
 					data+="<div class='ancestorImg' style='top:"+(tree.node1)*34+"px'><img src='"+self.getImg(tree.p1)+"'/></div>";	
 					data+="<div class='ancestorImg' style='top:"+(tree.node2)*34+"px'><img src='"+self.getImg(tree.p2)+"'/></div>";	
-					data+="<div class='nodeImg' id='node"+stage+"' style='left:"+(tree.depth)*34+"px;top:"+((tree.node1+.5)*34+7)+"px'></div>";
+					data+="<div class='nodeImg' id='node"+stage+"' style='left:"+(tree.depth)*assignWidth+"px;top:"+((tree.node1+.5)*34+7)+"px'></div>";
 					data+=buildAngle(tree);
 					return;
 				} else if(tree.child == 1) {
 					var x = (tree.node1+getAvg(tree.node2))/2;
 					x = x*34 + 7;
 					data+="<div class='ancestorImg' style='top:"+(tree.node1)*34+"px'><img src='"+self.getImg(tree.p1)+"'/></div>";	
-					data+="<div class='nodeImg' id='node"+stage+"' style='left:"+(tree.depth)*34+"px;top:"+x+"px'></div>";
+					data+="<div class='nodeImg' id='node"+stage+"' style='left:"+(tree.depth)*assignWidth+"px;top:"+x+"px'></div>";
 					data+=buildAngle(tree);
 					build(tree.node2);
 				} else if(tree.child == 2) {
 					var x = (getAvg(tree.node1)+getAvg(tree.node2))/2;
 					x = x*34+7;
-					data+="<div class='nodeImg' id='node"+stage+"' style='left:"+(tree.depth)*34+"px;top:"+x+"px'></div>";
+					data+="<div class='nodeImg' id='node"+stage+"' style='left:"+(tree.depth)*assignWidth+"px;top:"+x+"px'></div>";
 					data+=buildAngle(tree);
 					build(tree.node1);
 					build(tree.node2);
