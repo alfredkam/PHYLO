@@ -47,6 +47,9 @@ $(document).ready(function(){
              },
 
             "fnUpdate": function ( oSettings, fnDraw ) {
+             
+                console.log("fnUpdate:"+oSettings);
+             
                 var iListLength = 5;
                 var oPaging = oSettings.oInstance.fnPagingInfo();
                 var an = oSettings.aanFeatures.p;
@@ -98,7 +101,7 @@ $(document).ready(function(){
                 }
             }
         }
-    } ); 
+    } );
                   
                   
 function g(){};
