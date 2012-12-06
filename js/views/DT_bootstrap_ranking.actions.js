@@ -48,7 +48,7 @@ $(document).ready(function(){
                 console.log("fnUpdate:"+oSettings);
                 console.log("fnUpdate 2:"+oSettings.oInstance);
                 var iListLength = 5;
-                var oPaging = oSettings.oInstance.fnPagingInfo();
+                var oPaging = oSettings.oInstance.fnPagingInfo(oSettings);
                 var an = oSettings.aanFeatures.p;
                 var i, j, sClass, iStart, iEnd, iHalf=Math.floor(iListLength/2);
 
