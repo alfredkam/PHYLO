@@ -63,7 +63,11 @@ if options.js is tracked, ie - meaning git is tracking the changes, in terminal
 	git rm --cache options.js
 	git commit -a -m 'untrack options.js'
 
-<b>Please refer to js/README.md for further instructions / explanation / crash course<b>
+Another way to trigger options is through the URL
+	
+	http://phylo.cs.mcgill.ca/master/#!/EN/play/IAMADEV  //shows dev logs
+	http://phylo.cs.mcgill.ca/master/#!/EN/play/IAMADEV+DEBUG //shows debug logs
+
 
 Router Setups
 ====

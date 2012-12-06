@@ -87,7 +87,5 @@
 			$("#language").removeClass("dropDown-OptionOnSelect");
 			$(".dropDownTriangle").hide();
 		});
-		
-
 	});
 })();
