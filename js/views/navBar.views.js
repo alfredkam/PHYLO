@@ -39,7 +39,6 @@
 				//classic button to jump
 				$("#m_classic").click(function() {
 					window.location = $(this).attr("href");
-					window.location.reload(true);
 				});
 				//menu hyperlink listener
 				$("a.isTab").unbind().click(function() {
