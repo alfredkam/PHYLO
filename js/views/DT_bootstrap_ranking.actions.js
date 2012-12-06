@@ -107,7 +107,6 @@ function g(){};
     /* Table initialisation */
     $('.table').dataTable( {
         "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
-        "sPaginationType": "bootstrap",
         "oLanguage": {
             "sUrl": "js/models/dataTable/datatable_" + window.langOpt.toUpperCase() + ".txt"
         },
@@ -127,6 +126,7 @@ function g(){};
             }
         },
         "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 0 ] } ],
+        "sPaginationType": "bootstrap",
     });
                   
                   
