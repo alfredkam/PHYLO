@@ -31,6 +31,7 @@ $(document).ready(function(){
                         fnDraw( oSettings );
                     }
                 };
+                console.log("fnInit:"+oSettings);
 
                 $(nPaging).addClass('pagination').append(
                     '<ul>'+
@@ -49,6 +50,8 @@ $(document).ready(function(){
                 var an = oSettings.aanFeatures.p;
                 var i, j, sClass, iStart, iEnd, iHalf=Math.floor(iListLength/2);
 
+             console.log("fnUpdate:"+oSettings);
+             
                 if ( oPaging.iTotalPages < iListLength) {
                     iStart = 1;
                     iEnd = oPaging.iTotalPages;
