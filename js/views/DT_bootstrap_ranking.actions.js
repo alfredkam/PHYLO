@@ -51,8 +51,6 @@ $(document).ready(function(){
                 var an = oSettings.aanFeatures.p;
                 var i, j, sClass, iStart, iEnd, iHalf=Math.floor(iListLength/2);
 
-             console.log("fnUpdate:"+oSettings);
-             
                 if ( oPaging.iTotalPages < iListLength) {
                     iStart = 1;
                     iEnd = oPaging.iTotalPages;
@@ -114,6 +112,7 @@ function g(){};
         },
         "aaSorting": [[ 5, "desc" ]],
         "fnDrawCallback": function ( oSettings ) {
+            console.log("fnDrawCallback:"+oSettings);
             if ( oSettings.bSorted || oSettings.bFiltered ) {
                 for ( var i=0, iLen=oSettings.aiDisplay.length ; i<iLen ; i++ ) {
                      $('td:eq(0)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html( i+1 );
