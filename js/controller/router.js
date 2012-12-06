@@ -44,7 +44,7 @@
 			route.on('route:play', function(lang, dev) {
 				if(dev) {
 					if(dev == "IAMADEV") {
-						window.DEV.loggin = true;	
+						window.DEV.logging = true;	
 					}
 				}
 				if(lang == undefined) {
