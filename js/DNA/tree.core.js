@@ -41,7 +41,7 @@
 			var stage = $.stage.current;
 			var data = "";
 			var self = this;
-			var maxDepth = $.phylo.tree[0].depth;
+			var maxDepth = ($.phylo.tree[0].depth >= 4 ? $.phylo.tree[0].depth : 4);
 			var maxWidth = 178; 	
 			var maxNodeWidth = 20;
 			var assignWidth = (maxWidth - (maxDepth * maxNodeWidth))/maxDepth;
