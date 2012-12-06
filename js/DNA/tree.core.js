@@ -11,7 +11,6 @@
 				} else {
 					var x = j.branchset[0];
 					var y = j.branchset[1];
-					console.log(c);
 					if (x.branchset == undefined && y.branchset == undefined) {
 						var d = { "lv" : i++, "depth" : c, "child" : 0, "node1" : k++, "node2" : k++, "p1": x.name, "p2" : y.name};
 					} else if (x.branchset == undefined) {
