@@ -152,8 +152,6 @@
 				str+= "mode=2&id="+score;
 			}
 
-			//console.log(str);
-
 			$.ajax({
 				url : url,
 				data : str,
@@ -161,7 +159,7 @@
 			}).done(function(data) {
 				data = data.replace("@","");
 				$.protocal.previousData = data;
-				if(DEBUG)
+				if(DEBUG ^ DEV.logging)
 					console.log(data);
 				try {
 					var j = eval("["+data+"]")[0].level;

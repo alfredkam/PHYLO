@@ -13,6 +13,7 @@
 				"!/:lang/BETA/RNA" : "rna",
 				"!/:lang/play/puzzle/:id" : "puzzle",
 				"!/:lang/play" : "play",
+				"!/:lang/play/:AMA": "play",
 				"!/play" : "play",
 				"!/:lang/tutorial" : "tutorial",
 				"!/tutorial" : "tutorial",
@@ -40,7 +41,12 @@
 			var navBar = new NavBar;
 			navBar.init();
 			var route = new Routes;
-			route.on('route:play', function(lang) {
+			route.on('route:play', function(lang, dev) {
+				if(dev) {
+					if(dev == "IAMADEV") {
+						window.DEV.loggin = true;	
+					}
+				}
 				if(lang == undefined) {
 					lang = "EN";
 				} else lang.toUpperCase();
