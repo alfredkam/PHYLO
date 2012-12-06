@@ -8,7 +8,7 @@ $(document).ready(function(){
     /* API method to get paging information */
     $.fn.dataTableExt.oApi.fnPagingInfo = function ( oSettings )
     {
-	console.log(oSettings);
+        console.log("fnPagingInfo:"+oSettings);
         return {
             "iStart":         oSettings._iDisplayStart,
             "iEnd":           oSettings.fnDisplayEnd(),
