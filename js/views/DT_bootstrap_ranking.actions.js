@@ -32,8 +32,6 @@ $(document).ready(function(){
                         fnDraw( oSettings );
                     }
                 };
-                console.log("fnInit:"+oSettings);
-
                 $(nPaging).addClass('pagination').append(
                     '<ul>'+
                         '<li class="prev disabled"><a href="#">&larr; '+oLang.sPrevious+'</a></li>'+
@@ -43,13 +41,12 @@ $(document).ready(function(){
                 var els = $('a', nPaging);
                 $(els[0]).bind( 'click.DT', { action: "previous" }, fnClickHandler );
                 $(els[1]).bind( 'click.DT', { action: "next" }, fnClickHandler );
-                console.log("CLOSE fnInit:"+oSettings);
              },
 
             "fnUpdate": function ( oSettings, fnDraw ) {
              
                 console.log("fnUpdate:"+oSettings);
-             
+                console.log("fnUpdate 2:"+oSettings.oInstance);
                 var iListLength = 5;
                 var oPaging = oSettings.oInstance.fnPagingInfo();
                 var an = oSettings.aanFeatures.p;
@@ -99,6 +96,9 @@ $(document).ready(function(){
                         $('li:last', an[i]).removeClass('disabled');
                     }
                 }
+             
+                console.log("CLOSE fnUpdate:"+oSettings);
+             
             }
         }
     } );
