@@ -42,7 +42,8 @@ $(document).ready(function(){
                 var els = $('a', nPaging);
                 $(els[0]).bind( 'click.DT', { action: "previous" }, fnClickHandler );
                 $(els[1]).bind( 'click.DT', { action: "next" }, fnClickHandler );
-            },
+                console.log("CLOSE fnInit:"+oSettings);
+             },
 
             "fnUpdate": function ( oSettings, fnDraw ) {
                 var iListLength = 5;
