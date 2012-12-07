@@ -18,7 +18,7 @@ $(document).ready(function(){
                   
                   
 /* API method to get paging information */
-    $.fn.dataTableExt.oApi.fnPagingInfo = function ( oSettings ) {
+    $.fn.dataTableExt.oApi.fnPagingInfo = function ( oSettings,oSettings ) {
         return {
             "iStart":         oSettings._iDisplayStart,
             "iEnd":           oSettings.fnDisplayEnd(),
@@ -56,7 +56,7 @@ $(document).ready(function(){
              
              "fnUpdate": function ( oSettings, fnDraw ) {
                 var iListLength = 5;
-                var oPaging = oSettings.oInstance.fnPagingInfo();
+                var oPaging = oSettings.oInstance.fnPagingInfo(oSettings);
                 var an = oSettings.aanFeatures.p;
                 var i, j, sClass, iStart, iEnd, iHalf=Math.floor(iListLength/2);
              
