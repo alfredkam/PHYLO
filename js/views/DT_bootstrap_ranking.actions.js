@@ -169,7 +169,7 @@ function g(){};
             }
         },
         "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 0 ] } ],
-        "sPaginationType": "bootstrap",
+        "sPaginationType": "bootstrap1",
     });
                   
     $('.table-month').dataTable( {
@@ -187,7 +187,7 @@ function g(){};
             }
         },
         "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 0 ] } ],
-        "sPaginationType": "bootstrap",
+        "sPaginationType": "bootstrap1",
     });
                   
 
@@ -206,7 +206,7 @@ function g(){};
             }
         },
         "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 0 ] } ],
-        "sPaginationType": "bootstrap",
+        "sPaginationType": "bootstrap1",
     });
                   
                   
