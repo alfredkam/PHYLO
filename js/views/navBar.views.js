@@ -17,6 +17,7 @@
 				this.set,("EN","play");
 			},
 			lang : "null",
+			//sets stuff
 			set : function(lang,tag) {
 				var self = this;
 				if(this.lang == lang) 
@@ -34,6 +35,7 @@
 					}
 					self.addTriggers();
 					$("#"+tag +" div").addClass("onSelect");
+					//check to see if to show these options
 					if(window.showInLogin != undefined && window.showInLogin == true)
 						$(".showInLogin").show();
 					if(window.showExpertOptions != undefined && window.showExpertOptions == true)
