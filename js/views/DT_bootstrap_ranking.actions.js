@@ -33,7 +33,7 @@ $(document).ready(function(){
                   
 /* Bootstrap style pagination control */
     $.extend( $.fn.dataTableExt.oPagination, {
-        "bootstrap": {
+        "bootstrap1": {
             "fnInit": function( oSettings, nPaging, fnDraw ) {
                 var oLang = oSettings.oLanguage.oPaginate;
                 var fnClickHandler = function ( e ) {
