@@ -274,7 +274,7 @@ function g(){};
         },
         "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 0 ] } ],
         "sPaginationType": "bootstrap",
-    });
+    },
                   
     $('.table-month').dataTable( {
         "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
@@ -292,7 +292,7 @@ function g(){};
         },
         "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 0 ] } ],
         "sPaginationType": "bootstrap",
-    });
+    },
                   
 
     $('.table-week').dataTable( {
@@ -311,7 +311,7 @@ function g(){};
         },
         "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 0 ] } ],
         "sPaginationType": "bootstrap",
-    });
+    })));
                   
                   
     // select buttons
