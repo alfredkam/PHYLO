@@ -18,7 +18,8 @@ $(document).ready(function(){
                   
                   
 /* API method to get paging information */
-    $.fn.dataTableExt.oApi.fnPagingInfo = function ( oSettings,oSettings ) {
+/* FIXME: the 2x oSettings is an ugly fix for multiple tables in bootstrap plugin */
+    $.fn.dataTableExt.oApi.fnPagingInfo = function ( oSettings, oSettings ) {
         return {
             "iStart":         oSettings._iDisplayStart,
             "iEnd":           oSettings.fnDisplayEnd(),
@@ -156,7 +157,7 @@ function g(){};
  g.prototype.init = function() {
 
     /* Table initialisation */
-    $('.table-all').dataTable( {
+    $('.table').dataTable( {
         "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
         "oLanguage": {
             "sUrl": "js/models/dataTable/datatable_" + window.langOpt.toUpperCase() + ".txt"
