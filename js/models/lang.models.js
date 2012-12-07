@@ -18,7 +18,7 @@
 				'username' : "{{body.play.gameselect.login.field 7}}",
 				'password' : "{{body.play.gameselect.login.field 8}}",
 				'email' : "{{body.misc.field 5}}",	
-				'customize' : "{{body.misc field 10}}",
+				'customize' : "{{body.misc.field 10}}",
 				'music' : "",
 				'boardColor' : "{{body.misc.field 12}}",
 				'dnaColor' : "{{body.misc.field 13}}",
@@ -27,6 +27,8 @@
 				'cancel' : "{{body.misc.field 16}}",
 				'settingUp' : "{{body.misc.field 2}}",
 				'ok' : "{{body.misc.field 18}}",
+				'classic' : '{{header.field 12}}',
+				'theme' : '{{body.misc.field 11}}',
 			},
 		});
 		return translate;

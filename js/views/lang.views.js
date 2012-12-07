@@ -29,7 +29,9 @@
 				$(".m_cancel").html(Mustache.render(trans.get("cancel"),json));	
 				$(".m_ok").html(Mustache.render(trans.get("ok"),json));
 				$(".m_settingUp").html(Mustache.render(trans.get("settingUp"),json));
-				
+				$("#m_classic").html(Mustache.render(trans.get("classic"),json));
+				$(".m_logout").html(Mustache.render(trans.get("logout"),json));
+				$(".m_theme").html(Mustache.render(trans.get("theme"),json));
 			},
 		});
 		return translate;

@@ -71,7 +71,7 @@
                                                 window.guest = 'guest';
                                                 $("#login-box").hide();
                                                 $(".login-btn").click(function() { classicLogin(); });
-                                                $("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]);
+                                                $("#login-tag").html("74>"+window.lang.body.play.gameselect.login["field 2"]);
                                                 $(".showInLogin").hide();
                                                 window.showInLogin = false;
                                                 return;
@@ -89,7 +89,11 @@
                                 window.guest = 'guest';
                                 $("#login-box").hide();
                                 $(".login-btn").click(function() { classicLogin(); });
-                                $("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]);
+<<<<<<< HEAD
+                                $("#login-tag").html("92>"+window.lang.body.play.gameselect.login["field 2"]);
+=======
+                                $("#login-tag").html( + window.lang.body.play.gameselect.login["field 2"]);
+>>>>>>> cd660d2294670eaa9772bf55e3181b1502cdb7ae
                                 $(".showInLogin").hide();
                                 window.showInLogin = false;
                                 return;
@@ -107,7 +111,11 @@
                             window.guest = 'guest';
                             $("#login-box").hide();
                             $(".login-btn").click(function() { classicLogin(); });
-                            $("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]);
+<<<<<<< HEAD
+                            $("#login-tag").html("110>"+window.lang.body.play.gameselect.login["field 2"]);
+=======
+                            $("#login-tag").html( + window.lang.body.play.gameselect.login["field 2"]);
+>>>>>>> cd660d2294670eaa9772bf55e3181b1502cdb7ae
                             $(".showInLogin").hide();
                             window.showInLogin = false;
                             return;
@@ -123,9 +131,13 @@
                         window.guest = 'guest';
                         $("#login-box").hide();
                         $(".login-btn").click(function() { classicLogin(); });
-                        $("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]);
+<<<<<<< HEAD
+                        $("#login-tag").html("127>"+window.lang.body.play.gameselect.login["field 2"]);
+=======
+                        $("#login-tag").html( + window.lang.body.play.gameselect.login["field 2"]);
+>>>>>>> cd660d2294670eaa9772bf55e3181b1502cdb7ae
                         $(".showInLogin").hide();
-		window.showInLogin = false;
+                        window.showInLogin = false;
                         return;
                     }
                 });
@@ -237,7 +249,11 @@
 			$(".login-btn").click(function() {
 				classicLogin();
 			});
-			$("#login-tag").html("Login");
+<<<<<<< HEAD
+			$("#login-tag").html("240>"+window.lang.body.play.gameselect.login["field 2"]);
+=======
+			$("#login-tag").html( + window.lang.body.play.gameselect.login["field 2"]);
+>>>>>>> cd660d2294670eaa9772bf55e3181b1502cdb7ae
 			$(".showInLogin").hide();
 		window.showInLogin = false;
 		});
