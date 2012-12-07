@@ -10,6 +10,7 @@
 		var request = new Request;
 		var translate = new Lang;
 		var navBar = Backbone.View.extend({
+			//saves initial default template
 			init : function() {
 				this.desktopNavBar = $("#nav").html();
 				this.tabletUX = $("#tablet-grid").html();
@@ -21,11 +22,16 @@
 				if(this.lang == lang) 
 					return;
 				this.lang = lang;
-
+				//request and check if file exists if not load in the file
 				request.getJsonLang(lang, function(json) {
+					//loads out the translation
 					$("#nav").html(Mustache.render(self.desktopNavBar,json)).show();;
 					$("#tablet-grid").html(Mustache.render(self.tabletUX,json));
 					translate.set(json);
+					//update login tagg too
+					if(window.guest != "guest") {
+						$("#login-tag").html(window.guest.replace(/\+/," "));
+					}
 					self.addTriggers();
 					$("#"+tag +" div").addClass("onSelect");
 					if(window.showInLogin != undefined && window.showInLogin == true)
@@ -34,6 +40,7 @@
 						$(".showExpertOptions").show();
 				});
 			},
+			//this is to set / reset the event triggers
 			addTriggers : function() {
 				var self = this;
 				//classic button to jump
