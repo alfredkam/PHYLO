@@ -174,44 +174,6 @@ function g(){};
         "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 0 ] } ],
         "sPaginationType": "bootstrap",
     });
-    /*
-    $('.table-month').dataTable( {
-        "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
-        "oLanguage": {
-            "sUrl": "js/models/dataTable/datatable_" + window.langOpt.toUpperCase() + ".txt"
-        },
-        "aaSorting": [[ 5, "desc" ]],
-        "fnDrawCallback": function ( oSettings ) {
-            console.log("fnDrawCallback:"+oSettings);
-            if ( oSettings.bSorted || oSettings.bFiltered ) {
-                for ( var i=0, iLen=oSettings.aiDisplay.length ; i<iLen ; i++ ) {
-                    $('td:eq(0)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html( i+1 );
-                }
-            }
-        },
-        "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 0 ] } ],
-        "sPaginationType": "bootstrap",
-    });
-                  
-
-    $('.table-week').dataTable( {
-        "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
-        "oLanguage": {
-            "sUrl": "js/models/dataTable/datatable_" + window.langOpt.toUpperCase() + ".txt"
-        },
-        "aaSorting": [[ 5, "desc" ]],
-        "fnDrawCallback": function ( oSettings ) {
-            console.log("fnDrawCallback:"+oSettings);
-            if ( oSettings.bSorted || oSettings.bFiltered ) {
-                for ( var i=0, iLen=oSettings.aiDisplay.length ; i<iLen ; i++ ) {
-                    $('td:eq(0)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html( i+1 );
-                }
-            }
-        },
-        "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 0 ] } ],
-        "sPaginationType": "bootstrap",
-    });
-    */
                   
     // select buttons
     
