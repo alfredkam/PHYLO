@@ -71,7 +71,7 @@
                                                 window.guest = 'guest';
                                                 $("#login-box").hide();
                                                 $(".login-btn").click(function() { classicLogin(); });
-                                                $("#login-tag").html("74>"+window.lang.body.play.gameselect.login["field 2"]);
+                                                $("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]);
                                                 $(".showInLogin").hide();
                                                 window.showInLogin = false;
                                                 return;
@@ -89,7 +89,7 @@
                                 window.guest = 'guest';
                                 $("#login-box").hide();
                                 $(".login-btn").click(function() { classicLogin(); });
-                                $("#login-tag").html("92>"+window.lang.body.play.gameselect.login["field 2"]);
+                                $("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]);
                                 $(".showInLogin").hide();
                                 window.showInLogin = false;
                                 return;
@@ -107,7 +107,7 @@
                             window.guest = 'guest';
                             $("#login-box").hide();
                             $(".login-btn").click(function() { classicLogin(); });
-                            $("#login-tag").html("110>"+window.lang.body.play.gameselect.login["field 2"]);
+                            $("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]);
                             $(".showInLogin").hide();
                             window.showInLogin = false;
                             return;
@@ -123,7 +123,7 @@
                         window.guest = 'guest';
                         $("#login-box").hide();
                         $(".login-btn").click(function() { classicLogin(); });
-                        $("#login-tag").html("127>"+window.lang.body.play.gameselect.login["field 2"]);
+                        $("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]);
                         $(".showInLogin").hide();
 		window.showInLogin = false;
                         return;
@@ -237,7 +237,7 @@
 			$(".login-btn").click(function() {
 				classicLogin();
 			});
-			$("#login-tag").html("240>"+window.lang.body.play.gameselect.login["field 2"]);
+			$("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]);
 			$(".showInLogin").hide();
 		window.showInLogin = false;
 		});
