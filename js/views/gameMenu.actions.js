@@ -342,13 +342,15 @@
 								ctx.clearRect(0,0,1024,450);
 								ctx.fillStyle = menuStrColor;
 								ctx.font = "20pt Helvetica";	
-								ctx.fillText(lang.body.play.gameselect.levelselect.random["field 1"], settings.width()/2,120);
-								ctx.fillText(lang.body.play.gameselect.levelselect.random["field 3"], settings.width()/2,240);
+								ctx.fillText(lang.body.play.gameselect.levelselect.random["field 1"], settings.width()/2+60,120);
+								ctx.fillText(lang.body.play.gameselect.levelselect.random["field 3"], settings.width()/2+60,240);
 								ctx.textAlign = "left";
 								ctx.closePath();
 								selection = [];
-								for(var j=3;j<=8;j++) {
-									selection.push(new random(ctx,j));
+								var k = 0;
+								for(var j=3;j<=10;j+=2) {
+									selection.push(new random(ctx,j,k));
+									k+=1;
 								}
 								window.setTimeout(function() {
 									selection.push(new back(ctx));
@@ -515,50 +517,54 @@
 			};
 
 			var onHover = false;
-			var random = function(ctx, i) {
+			var random = function(ctx, i, k) {
 				var color= [ "rgb(113, 178, 226)", "rgb(153, 50, 204)","rgb(0, 128, 0)", "rgb(255, 165, 0)"];
 				ctx.beginPath();
 				ctx.save();
-				ctx.fillStyle = color[((i-3)>=4?(i-3)-4:i-3)];
-				ctx.fillRect(100+70*i, 150, 50,50);
+				ctx.fillStyle = color[(k>3?k-4:k)];
+				ctx.fillRect(100+70*i, 150, 100,50);
 				ctx.fillStyle = 'white';
 				ctx.font = '19pt Helvetica';
-				ctx.fillText(i,118+70*i,185);
+				ctx.textAlign = "center";
+				ctx.fillText(i+" - "+(i+1),150+70*i,185);
 				ctx.restore();
 				ctx.closePath();
 				this.onOver = function(eX,eY) {
-					if(100+70*i < eX && eX < 150+70*i &&
+					if(100+70*i < eX && eX < 200+70*i &&
 						150 < eY && eY< 200) {
 						ctx.beginPath();
 						ctx.save();
 						ctx.fillStyle = "#6D6D6D";
-						ctx.fillRect(100+70*i, 150, 50,50);
+						ctx.fillRect(100+70*i, 150, 100, 50);
 						ctx.fillStyle = 'white';
 						ctx.font = '19pt Helvetica';
-						ctx.fillText(i,118+70*i,185);
+						ctx.textAlign = "center";
+						ctx.fillText(i+" - "+(i+1),150+70*i,185);
 						ctx.restore();
 						ctx.closePath();
 
 					} else {
 						ctx.beginPath();
 						ctx.save();
-						ctx.fillStyle = color[((i-3)>=4?(i-3)-4:i-3)];
-						ctx.fillRect(100+70*i, 150, 50,50);
+						ctx.fillStyle = color[(k>3?k-4:k)];
+						ctx.fillRect(100+70*i, 150, 100,50);
 						ctx.fillStyle = 'white';
 						ctx.font = '19pt Helvetica';
-						ctx.fillText(i,118+70*i,185);
+						ctx.textAlign = "center";
+						ctx.fillText(i+" - "+(i+1),150+70*i,185);
 						ctx.restore();
 						ctx.closePath();
 					}
 				};
 				this.onClick = function(eX, eY) {
-					if(100+70*i <eX && eX < 150+70*i  &&
+					if(100+70*i <eX && eX < 200+70*i  &&
 						150 < eY && eY< 200) {
+						var ranNumber = Math.floor(Math.random()*2)+1 - 1;	
 						$("#draw").hide();		
 						$("#menu").hide();
 						$.main.init({
 							type: "random",
-							num: i,		
+							num: (i+ranNumber),		
 						});	
 						return;
 					}
