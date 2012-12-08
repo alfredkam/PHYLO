@@ -14,6 +14,9 @@
 			dev : '../devTools',
 		},
 		shim : {
+			'jquery-ui' : {
+				deps : ['jquery'],
+			},
 			'jquery' : {
 				exports : "$",
 			},
@@ -43,7 +46,8 @@
 				deps : ['DNA/physics.engine', 'DNA/events.engine','DNA/engine.core'],
 			},
 			'DNA/main.core' : {
-				deps : ['jquery', 'jquery-ui','jquery-mobile','DNA/helper.core', 'DNA/timer.core','DNA/physics.engine',
+				//deps : ['jquery', 'jquery-ui','jquery-mobile','DNA/helper.core', 'DNA/timer.core','DNA/physics.engine',
+				deps : ['jquery', 'jquery-ui','DNA/helper.core', 'DNA/timer.core','DNA/physics.engine',
 					'DNA/endGame.theme','DNA/events.engine','DNA/engine.core','DNA/stage.core',
 					'DNA/sequence.core','DNA/splash.theme','DNA/tree.core','DNA/multiSelect.core',
 					'DNA/newick.core','DNA/lang.module','DNA/fitch.core','DNA/board.theme','DNA/highlighter.theme',
@@ -112,6 +116,9 @@
 			'dev/devTools' : {
 				deps : ['jquery'],
 			},
+			'jquery.notify' : {
+				deps : ['jquery', 'jquery-ui'],
+			},	
 		}
 	});
 	require(['yepnope'],
@@ -144,6 +151,7 @@
 		Router.init();
 	});
 
+	require(['jquery.notify']);
 	require(['dev/devTools']);
 	require(['views/detectIE.actions']);
 	require(['bootstrap']);

@@ -46,9 +46,6 @@
 			addTriggers : function() {
 				var self = this;
 				//classic button to jump
-				$("#m_classic").click(function() {
-					window.location = $(this).attr("href");
-				});
 				//menu hyperlink listener
 				$("a.isTab").unbind().click(function() {
 					if($(this).attr("href") == "javascript:void(0);") {
