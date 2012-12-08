@@ -559,7 +559,7 @@
 				this.onClick = function(eX, eY) {
 					if(100+70*i <eX && eX < 200+70*i  &&
 						150 < eY && eY< 200) {
-						var ranNumber = Math.floor(Math.random()*2)+1) - 1;	
+						var ranNumber = Math.floor(Math.random()*2)+1 - 1;	
 						$("#draw").hide();		
 						$("#menu").hide();
 						$.main.init({
