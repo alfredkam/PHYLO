@@ -16,7 +16,6 @@ $(document).ready(function(){
         "sWrapper": "dataTables_wrapper form-inline"
     } );
                   
-                  
 /* API method to get paging information */
 /* FIXME: the 2x oSettings is an ugly fix for multiple tables in bootstrap plugin */
     $.fn.dataTableExt.oApi.fnPagingInfo = function ( oSettings, oSettings ) {

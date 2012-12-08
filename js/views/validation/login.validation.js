@@ -125,7 +125,7 @@
                         $(".login-btn").click(function() { classicLogin(); });
                         $("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]);
                         $(".showInLogin").hide();
-		window.showInLogin = false;
+                        window.showInLogin = false;
                         return;
                     }
                 });
