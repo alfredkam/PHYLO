@@ -33,25 +33,21 @@
 	width: 178px;	
 	height: 340px;
 }
-.sequence , .ancestor {
+
+.ancestor {
+	height: 15px;
+}
+.sequence {
 	height:29px;
+}
+.sequence , .ancestor {
 	width:29px;
 	position:absolute;
 	display:inline-block;
 	border:0px solid #383838;
 	z-index: 11;
-    margin-top: 2px;
-    margin-left: 1px;
-	/*
-    height: 31px;
-    width: 32px;
-	border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	-ms-border-radius: 5px;
-	-o-border-radius: 5px;
-	-khtml-border-radius: 5px;
-	*/
+	margin-top: 2px;
+	margin-left: 1px;
 }
 
 .boardRow {
@@ -180,9 +176,13 @@
 .blocked {
 	opacity: 0.3;
 }
+#ancestorSeq-filling {
+	position:relative;
+	height:15px;
+}
+
 #ancestorSeq {
-	position:absolute;
-	top:420px;
+	position:relative;
 	left:182px;
 	display:none;
 	width:841px;
@@ -200,7 +200,6 @@
 	width:1024px;
 	position:relative;
 	display:inline-block;
-	top:15px;
 	height:80px;
 }
 #bottomPanel div{
