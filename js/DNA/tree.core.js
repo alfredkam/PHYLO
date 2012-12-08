@@ -45,6 +45,7 @@
 			var maxNodeWidth = 20;
 			var assignWidth = (maxWidth - (maxDepth * maxNodeWidth))/maxDepth;
 					
+			//gets the average distance
 			var getAvg = function(node){
 				var n = $.phylo.tree[node];
 				if(n.child == 0) {
@@ -55,6 +56,7 @@
 					return(getAvg(n.node1)+getAvg(n.node2))/2;
 				}
 			};
+			//the angle math
 			var buildAngle = function(n) {
 				var str ="";
 				//change to collect from css
@@ -130,41 +132,22 @@
 					data+="<div class='ancestorImg' style='top:"+(tree.node1)*34+"px'><img src='"+self.getImg(tree.p1)+"'/></div>";	
 					data+="<div class='nodeImg' id='node"+stage+"' style='left:"+(tree.depth)*assignWidth+"px;top:"+x+"px'></div>";
 					data+=buildAngle(tree);
-					build(tree.node2);
 				} else if(tree.child == 2) {
 					var x = (getAvg(tree.node1)+getAvg(tree.node2))/2;
 					x = x*34+7;
 					data+="<div class='nodeImg' id='node"+stage+"' style='left:"+(tree.depth)*assignWidth+"px;top:"+x+"px'></div>";
 					data+=buildAngle(tree);
-					build(tree.node1);
-					build(tree.node2);
 				}
 				return;
 			}
-			build(stage);
-			//check if tree is disjoint
-			//rewrite this part af algorithm
-			if($.stage.current+1 <= $.stage.last && ($.stage.current-1) >= 0) {
-				var c_tree = $.phylo.tree[$.stage.current+1];
-				if(c_tree.child == 2 ) {
-				//	build($.stage.current-1);
-					//console.log(c_tree.node2 + " < > "+c_tree.node1);
-					if($.stage.current == c_tree.node1) {
-						build(c_tree.node2);
-					} else 
-						build(c_tree.node1);
-				} else if(c_tree.child == 1) {
-					if(c_tree.node1 != $.stage.current-1 && c_tree.node2 != $.stage.current-1 )
-						build($.stage.current-1);
-				} 
-				//build($.stage.current-1);
-			}
-			//end of checking
+			//generates the html tree
+			for(var _stage=0;_stage<=stage;_stage++)
+				build(_stage);
+			//dumps the data to element node
 			$("#tree").html(data);
 		
 			$(".nodeImg").hover(function() {
 				var id = $(this).attr("id").replace(/node/,"");
-			//	console.log($.phylo.tree[id].ancestor);
 				var seq= "";
 				for(var i=0;i<$.phylo.tree[id].ancestor.length;i++) {
 					var s = $.phylo.tree[id].ancestor[i];
