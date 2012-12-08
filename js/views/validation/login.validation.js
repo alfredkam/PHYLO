@@ -237,15 +237,7 @@
 			$(".login-btn").click(function() {
 				classicLogin();
 			});
-<<<<<<< HEAD
-<<<<<<< HEAD
-			$("#login-tag").html("240>"+window.lang.body.play.gameselect.login["field 2"]);
-=======
-			$("#login-tag").html( + window.lang.body.play.gameselect.login["field 2"]);
->>>>>>> cd660d2294670eaa9772bf55e3181b1502cdb7ae
-=======
 			$("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]);
->>>>>>> master
 			$(".showInLogin").hide();
 		window.showInLogin = false;
 		});
