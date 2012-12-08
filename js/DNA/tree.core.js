@@ -222,7 +222,7 @@
 					
 					return this.collect("Dog");
 					
-				}else if(name == "myLuc1" || name == "pteVam1"){
+				}else if(name == "myLuc1" || name == "pteVam1" || "myoluc1"){
 					
 					return this.collect("bat");
 					
