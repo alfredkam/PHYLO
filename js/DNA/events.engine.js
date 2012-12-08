@@ -79,9 +79,6 @@
 			var mouseMove= 'onmousemove' in document.documentElement;
 			var mouseUp = 'onmouseup' in document.documentElement;
 			var self = this;
-			console.log("here");
-			console.log($(element).touchstart);
-			console.log("not here");
 			if(fn.start != undefined) {
 				if(mouseDown)
 					$(element).mousedown(function(e) {
