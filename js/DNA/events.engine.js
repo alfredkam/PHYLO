@@ -88,7 +88,7 @@
 						fn.start(self.getFingerPos(e));			
 					});
 				if(touchStart)  {
-					$(element).touchstart(function(e) {
+					$(element).bind("touchstart",function(e) {
 						e.preventDefault();
 						if(e.originalEvent.touches && e.originalEvent.touches.length) {
 							e = e.originalEvent.touches[0];
@@ -103,7 +103,7 @@
 						fn.move(self.getFingerPos(e));
 					});
 				if(touchMove)
-					$(element).touchmove(function(e) {
+					$(element).bind("touchmove",function(e) {
 						e.preventDefault();
 						if(e.originalEvent.touches && e.originalEvent.touches.length) {
 							e = e.originalEvent.touches[0];
@@ -117,7 +117,7 @@
 						fn.end(self.getFingerPos(e));
 					});
 				if(touchEnd)
-					$(element).touchend(function(e) {	
+					$(element).bind("touchend",function(e) {	
 						e.preventDefault();
 						if(e.originalEvent.touches && e.originalEvent.touches.length) {
 							e = e.originalEvent.touches[0];
