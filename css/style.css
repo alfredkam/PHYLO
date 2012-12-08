@@ -96,13 +96,9 @@ body {
 	display:none;
 }
 /* end of hidden */
-
 a.btn {
-	color:white;
 	font-weight:bold;
 }
-
-
 .customize {
 	display:none;
 	position:absolute;
