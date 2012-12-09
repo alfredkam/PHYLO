@@ -19,6 +19,9 @@
 				$("#tablet-login-box").show();
 			} else {
 				$("#tablet-logout-tag").show();
+				$("html").unbind().click(function() {
+					$("#tablet-logout-tag").hide();
+				});
 			}
 		});
 
