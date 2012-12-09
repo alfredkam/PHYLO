@@ -160,6 +160,10 @@
 			"field 5": "Siga-nos",
 			"field 6": "Música",
 			"field 7": "Agradecimentos",
+            "field 8": "Scientific Advisor",
+            "field 9": "Translation",
+            "field 10": "Antigos alunos",
+            "field 11": "Suporte técnico",
 		},
 		"ranking": {
             "field 1": "All-time",

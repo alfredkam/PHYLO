@@ -162,6 +162,8 @@
 			    "field 7": "非常感谢",
 			    "field 8": "科学顾问",
 			    "field 9": "翻译",
+                "field 10": "校友",
+                "field 11": "技术支持",
 			},
 			"ranking": {
                         "field 1": "All-time",

@@ -165,6 +165,8 @@
 			"field 7": "Agradecimientos especiales",
             "field 8": "Consejeros científicos ",
 			"field 9": "Traducción",
+            "field 10": "Antiguos Alumnos",
+            "field 11": "Apoyo técnico",
 },
 		"ranking": {
             "field 1": "Todo el tiempo",
