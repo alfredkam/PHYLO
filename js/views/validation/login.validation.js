@@ -11,7 +11,7 @@
 		    var provider = $.cookie.read("loginmode");
 		    var c_logid = $.cookie.read("logid");
 		    if (provider=="Classic") {
-			$("#login-tag").html(username);
+			$(".m_login").html(username);
 		    } else {
 			$.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider + "&restart=0",function(data){
 			    var userinfo = eval ("(" + data + ")");
@@ -95,7 +95,7 @@
 					return;
 				    });
 				    // display login
-				    $("#login-tag").html(fullname.replace("+"," "));
+				    $(".m_login").html(fullname.replace("+"," "));
 				    window.guest=fullname;
 				} else {
 				    //bootbox.alert("Data conflict. Please, login again.");
@@ -166,7 +166,7 @@
 
 				$.protocal.login(username, password, function(re) {
 					if(re == "succ") {	
-						$("#login-tag").html(username);
+						$(".m_login").html(username);
 						$.cookie.create("username",username,365);
 			    $.cookie.create("fullname",username,365);
 			    $.cookie.create("loginmode","Classic",365);
@@ -261,7 +261,7 @@
 					$.protocal.register(name, name, password, email,'Classic',0, function(re) {
 						if(re == "succ") {
 							$(".login-btn").unbind("click");	
-							$("#login-tag").html(name);
+							$(".m_login").html(name);
 							$("#logout").show();
 							window.guest = name;
 							$("#login-box").hide();
