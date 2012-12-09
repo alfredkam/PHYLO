@@ -594,6 +594,9 @@ td.contribute {
 	padding-top:5px;
 	padding-bottom:5px;
 }
+td.contribute a {
+	color:white;
+}
 td.social-link {
 	width: 200px;
 	padding-top:5px;
