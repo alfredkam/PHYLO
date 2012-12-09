@@ -515,9 +515,11 @@ a.btn {
 }
 */
 
-.footer-inner a {
+/* .footer-inner a { */
+#copyright a {
 	color:#6D6D6D;
 }
+
 #footer, .push {
 }
 
