@@ -22,5 +22,5 @@
 		$("#tablet-login-box-bg").hide();
 		$("#tablet-login-box").hide();
 	});
-	}
+	});
 })();
