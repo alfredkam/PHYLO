@@ -31,7 +31,7 @@
 					translate.set(json);
 					//update login tagg too
 					if(window.guest != "guest") {
-						$("#login-tag").html(window.guest.replace(/\+/," "));
+						$("m_login").html(window.guest.replace(/\+/," "));
 					}
 					self.addTriggers();
 					$("#"+tag +" div").addClass("onSelect");
