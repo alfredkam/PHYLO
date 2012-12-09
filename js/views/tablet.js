@@ -11,11 +11,13 @@
 		$("#tablet-login-box").html(content+"<br><br><div><a class='m_cancel btn btn-danger'>Cancel</a></div>");
 
 		$("#tablet-login-tag").click(function() {
-			$("#tablet-login-box-bg").css({
-				height: $(document).height(),
-				width : $(document).width()
-			}).show();
-			$("#tablet-login-box").show();
+			if(window.guest == "guest") {
+				$("#tablet-login-box-bg").css({
+					height: $(document).height(),
+					width : $(document).width()
+				}).show();
+				$("#tablet-login-box").show();
+			}
 		});
 
 		$("#tablet-login-box .m_cancel").click(function() {
