@@ -18,13 +18,7 @@
 				}).show();
 				$("#tablet-login-box").show();
 			} else {
-				$("#tablet-logout-tag").show();
-				window.setTimeout(function() {
-					$("html").unbind().click(function() {
-						$("#tablet-logout-tag").hide();
-						$(this).unbind();
-					});
-				},100);
+				$("#tablet-logout-tag").toggle();
 			}
 		});
 
