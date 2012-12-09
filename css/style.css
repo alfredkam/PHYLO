@@ -22,7 +22,9 @@ html, body {
 body {
 	/*background-color:#F1F1F1;
 	*/
-	background: #f4f4f4 url(../img/background.png);
+	/*background: #f4f4f4 url(../img/background.png);
+	*/
+	background-color: #ebebeb;
 	font-family: 'helveticathin', Helvetica, Arial, sans-serif;
 	color:black;
 	/* background-color: #1C1C1C; */
