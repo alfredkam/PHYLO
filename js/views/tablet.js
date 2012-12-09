@@ -1,5 +1,6 @@
 (function() {
 	//loads this script if its tablet
+	$(document).ready(function() {
 	$("#tablet-login-template").css({
 		width : $(document).width()
 	});
@@ -19,6 +20,7 @@
 	$("#tablet-login-box .m_cancel").click(function() {
 		$("#tablet-login-box-bg").hide();
 		$("#tablet-login-box").hide();
+	});
 	});
 
 })();
