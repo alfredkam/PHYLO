@@ -225,7 +225,7 @@
 		});
 			      
 			//logout event
-			$("#logout").click(function() {
+			$(".m_logout").click(function() {
 				window.guest = "Guest";
 				$.cookie.delete("username");
 		    $.cookie.delete("fullname");

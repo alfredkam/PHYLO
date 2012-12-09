@@ -16,6 +16,7 @@
 
 			$("#login-box").hide();
 			$("#login").removeClass("login-OnSelect");
+			$("#tablet-logout-tag").hide();
 		});
 	
 		$("#options-button").click(function(event) {
