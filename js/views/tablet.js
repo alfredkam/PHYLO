@@ -17,6 +17,8 @@
 					width : $(document).width()
 				}).show();
 				$("#tablet-login-box").show();
+			} else {
+				$("#tablet-logout-tag").show();
 			}
 		});
 
