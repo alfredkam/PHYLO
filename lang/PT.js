@@ -149,6 +149,8 @@
 			"field 9": "Os Dados",
 			"field 10": "Todos os alinhamentos foram generosamente disponibilizados através do UCSC Genome Browser. De fato, todos os alinhamentos contém seções de DNA humano que, especula-se, estejam relacionadas a diversas doenças genéticas, como câncer. Toda vez que alguém completa um nível, o alinhamento é enviado para nós, analizado e armazenado num banco de dados, de onde em algum momento será reintroduzido no alinhamento global original, como otimização suplementar.",
 			"field 11": "Para mais informações sobre qualquer um destes tópicos, clique aqui.",
+            "field 12": "Publicações",
+            "field 13": "A cobertura da mídia",
 		},
 		"credit": {
 			"field 1": "Gerência de Projeto (Mídia e contatos científicos)",

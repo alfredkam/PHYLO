@@ -152,8 +152,8 @@
 			"field 9": "Los datos",
 			"field 10": "Todas las alineaciones fueron generosamente proporcionadas através del UCSC Genome Browser. De hecho, todas las alineaciones contienen secciones de ADN humano que se piensa están ligadas a varios desordenes genéticos, tales como el cáncer de mama. Cada alineación es recibida, analizada y guardada en una base de datos, donde eventualmente se volverá a introducir de vuelta en la alineación global como una optimización.",
 			"field 11": "Para mas información acerca de estos temas, haga clic acá.",
-            "field 12": "Publications",
-            "field 13": "Media coverage",
+            "field 12": "Publicaciones",
+            "field 13": "Cobertura periodística",
 },
 		"credit": {
 			"field 1": "Lideres del proyecto (Contactos de medios y científicos)",
