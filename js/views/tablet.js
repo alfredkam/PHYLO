@@ -22,6 +22,7 @@
 				window.setTimeout(function() {
 					$("html").unbind().click(function() {
 						$("#tablet-logout-tag").hide();
+						$(this).unbind();
 					});
 				},100);
 			}
