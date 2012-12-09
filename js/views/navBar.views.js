@@ -25,6 +25,8 @@
 				this.lang = lang;
 				//request and check if file exists if not load in the file
 				request.getJsonLang(lang, function(json) {
+					//sets the lang defintion
+					window.lang = json;
 					//loads out the translation
 					$("#nav").html(Mustache.render(self.desktopNavBar,json)).show();;
 					$("#tablet-grid").html(Mustache.render(self.tabletUX,json));
