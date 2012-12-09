@@ -1,4 +1,7 @@
 /* assume 1024 for tablets */
+	#m_classic {
+		display:none;
+	}
 	.tablet-property {
 		display:block !important;
 	}
