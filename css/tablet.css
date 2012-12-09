@@ -1,6 +1,6 @@
 /* assume 1024 for tablets */
 	#m_classic {
-		display:none;
+		display:none !important;
 	}
 	.tablet-property {
 		display:block !important;
