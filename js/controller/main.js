@@ -127,7 +127,7 @@
 			window.isTablet = navigator.userAgent.match(/(iPad|Android .* Chrome\/[.0-9]* (?!Mobile)|Opera Tablet|Android .* (?!Mobile)|Tablet|silk|kindle fire)/i) != null;
 			yepnope({
 				test : isTablet,
-				yep : 'css/tablet.css',
+				yep : ['css/tablet.css','js/views/tablet.js'],
 				nope : ['css/media1280.css','css/media1180.css','css/media1024.css'],
 			});
 			//test mode script injection
@@ -157,5 +157,7 @@
 	require(['bootstrap']);
 	require(['views/customizeGame.actions']);
 	require(['bootbox']);
+	window.setTimeout(function() {
 	require(['validation/login.validation']);
+	},500);
 })();

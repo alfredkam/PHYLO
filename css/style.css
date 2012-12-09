@@ -37,6 +37,10 @@ body {
 	min-width:1024px;
 }
 /*disables tablet */
+	.tablet-property {
+		display:none;
+	}
+	
 	.beta {
 		display:none;
 	}
