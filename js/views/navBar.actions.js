@@ -73,9 +73,10 @@
 			if(window.guest == "guest") {
 				$(this).addClass("login-OnSelect");
 			}	
+		}); /*
 		}, function() {
 			$(this).removeClass("login-OnSelect");
-		});
+		});*/
 		
 		$("#logout").mouseover(function() {
 			$("#language-list").hide();
