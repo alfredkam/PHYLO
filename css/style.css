@@ -572,6 +572,10 @@ a.btn {
 	background-color:white;
 	padding:5px 10px;
 }
+
+.option-list a {
+	color: #333;
+}
 .option-list:hover {
 	background-color: #08c;
 	color: whitesmoke;
