@@ -25,13 +25,15 @@
 				this.lang = lang;
 				//request and check if file exists if not load in the file
 				request.getJsonLang(lang, function(json) {
+					//sets the lang defintion
+					window.lang = json;
 					//loads out the translation
 					$("#nav").html(Mustache.render(self.desktopNavBar,json)).show();;
 					$("#tablet-grid").html(Mustache.render(self.tabletUX,json));
 					translate.set(json);
 					//update login tagg too
 					if(window.guest != "guest") {
-						$("#login-tag").html(window.guest.replace(/\+/," "));
+						$("m_login").html(window.guest.replace(/\+/," "));
 					}
 					self.addTriggers();
 					$("#"+tag +" div").addClass("onSelect");
@@ -46,9 +48,6 @@
 			addTriggers : function() {
 				var self = this;
 				//classic button to jump
-				$("#m_classic").click(function() {
-					window.location = $(this).attr("href");
-				});
 				//menu hyperlink listener
 				$("a.isTab").unbind().click(function() {
 					if($(this).attr("href") == "javascript:void(0);") {

@@ -14,6 +14,9 @@
 			dev : '../devTools',
 		},
 		shim : {
+			'jquery-ui' : {
+				deps : ['jquery'],
+			},
 			'jquery' : {
 				exports : "$",
 			},
@@ -43,7 +46,8 @@
 				deps : ['DNA/physics.engine', 'DNA/events.engine','DNA/engine.core'],
 			},
 			'DNA/main.core' : {
-				deps : ['jquery', 'jquery-ui','jquery-mobile','DNA/helper.core', 'DNA/timer.core','DNA/physics.engine',
+				//deps : ['jquery', 'jquery-ui','jquery-mobile','DNA/helper.core', 'DNA/timer.core','DNA/physics.engine',
+				deps : ['jquery', 'jquery-ui','DNA/helper.core', 'DNA/timer.core','DNA/physics.engine',
 					'DNA/endGame.theme','DNA/events.engine','DNA/engine.core','DNA/stage.core',
 					'DNA/sequence.core','DNA/splash.theme','DNA/tree.core','DNA/multiSelect.core',
 					'DNA/newick.core','DNA/lang.module','DNA/fitch.core','DNA/board.theme','DNA/highlighter.theme',
@@ -112,6 +116,9 @@
 			'dev/devTools' : {
 				deps : ['jquery'],
 			},
+			'jquery.notify' : {
+				deps : ['jquery', 'jquery-ui'],
+			},	
 		}
 	});
 	require(['yepnope'],
@@ -120,7 +127,7 @@
 			window.isTablet = navigator.userAgent.match(/(iPad|Android .* Chrome\/[.0-9]* (?!Mobile)|Opera Tablet|Android .* (?!Mobile)|Tablet|silk|kindle fire)/i) != null;
 			yepnope({
 				test : isTablet,
-				yep : 'css/tablet.css',
+				yep : ['css/tablet.css','js/views/tablet.js'],
 				nope : ['css/media1280.css','css/media1180.css','css/media1024.css'],
 			});
 			//test mode script injection
@@ -144,10 +151,13 @@
 		Router.init();
 	});
 
+	require(['jquery.notify']);
 	require(['dev/devTools']);
 	require(['views/detectIE.actions']);
 	require(['bootstrap']);
 	require(['views/customizeGame.actions']);
 	require(['bootbox']);
+	window.setTimeout(function() {
 	require(['validation/login.validation']);
+	},500);
 })();
