@@ -84,7 +84,7 @@
 					if(c !=  "_") {
 						this.posList[i*$.phylo.seqLen+counter] = counter;	
 						this.nucleotide[i*$.phylo.seqLen+counter] = seq[i].charAt(j);
-						str+="<div class='sequence "+ this.colorTag(this.translate(c))+"' id='"+(i*25+counter)+"' style='left:"+(this.calcPos(j))+"px;'></div>";
+						str+="<div class='sequence "+ this.colorTag(this.translate(c))+"' id='"+(i*$.phylo.seqLen+counter)+"' style='left:"+(this.calcPos(j))+"px;'></div>";
 						counter++;
 					}
 				}	

@@ -19,8 +19,8 @@
 					box.new = box.old;
 				}
 			} else {
-				if(box.new + obj_w > $.sequence.calcPos(25))
-					box.new = $.sequence.calcPos(25) - obj_w;
+				if(box.new + obj_w > $.sequence.calcPos($.phylo.seqLen))
+					box.new = $.sequence.calcPos($.phylo.seqLen) - obj_w;
 			}
 
 			//check if in list
@@ -42,7 +42,7 @@
 
 			var leastPos = 0;
 			var nucTemp = list_nonObj[0];
-			var maxPos = 25;
+			var maxPos = $.phylo.seqLen;
 
 			if(left) {
 				//determine the left most boundary
@@ -230,8 +230,8 @@
 					var y = ($.phylo.x*$.phylo.seqLen)+offSet;
 					var move = e.pageX+(c-.5)*$.phylo.x-offSet;
 					//the right border boundary
-					if(move >=  (25-posListReverse[pos])*$.phylo.x-22) {
-						move = (25-posListReverse[pos])*$.phylo.x-22;
+					if(move >=  ($.phylo.seqLen-posListReverse[pos])*$.phylo.x-22) {
+						move = ($.phylo.seqLen-posListReverse[pos])*$.phylo.x-22;
 					}
 					if(domCache[pos+1] != 0) {
 						if(domCache[pos+1] == undefined) {

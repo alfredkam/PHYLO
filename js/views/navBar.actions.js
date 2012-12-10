@@ -74,7 +74,9 @@
 				$(this).addClass("login-OnSelect");
 			}	
 		}, function() {
-			$(this).removeClass("login-OnSelect");
+			if($("#login-box").css("display") == "none") {
+				$(this).removeClass("login-OnSelect");
+			}
 		});
 		
 		$("#logout").mouseover(function() {

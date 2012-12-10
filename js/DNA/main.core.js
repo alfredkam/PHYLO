@@ -63,7 +63,7 @@
 				$.phylo.origin = [];
 				for(var i=0;i<8;i++){
 					var t = [];
-					for(var j=0;j<25;j++) {
+					for(var j=0;j<$.phylo.seqLen;j++) {
 						t.push(0);		
 					}
 					$.phylo.origin.push(t);

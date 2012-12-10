@@ -85,9 +85,9 @@
                         if (provider=="Facebook") {
                             if (puzzle_disease) {
                                 if ($.phylo.currentScore>=puzzle_disease) {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 7"] + " \"" + puzzle_disease + "\".\n" + window.lang.body.social["field 20"];
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 7"].replace("***",puzzle_disease) + "\n" + window.lang.body.social["field 20"];
                                 } else {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 8"] + " \"" + puzzle_disease + "\".\n" + window.lang.body.social["field 20"];
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 8"].replace("***",puzzle_disease) + "\n" + window.lang.body.social["field 20"];
                                 }
                             } else {
                                 if ($.phylo.currentScore>=puzzle_disease) {
@@ -101,9 +101,9 @@
                         } else if (provider=="Twitter") {
                             if (puzzle_disease) {
                                 if ($.phylo.currentScore>=puzzle_disease) {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 11"] + " \"" + puzzle_disease + "\". " + window.lang.body.social["field 20"] + "#Phylo #DNA #puzzles";
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 11"].replace("***",puzzle_disease) + " " + window.lang.body.social["field 20"] + "#Phylo #DNA #puzzles";
                                 } else {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 12"] + " \"" + puzzle_disease + "\". " + window.lang.body.social["field 20"] + "#Phylo #DNA #puzzles";
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 12"].replace("***",puzzle_disease) + " " + window.lang.body.social["field 20"] + "#Phylo #DNA #puzzles";
                                 }
                             } else {
                                 if ($.phylo.currentScore>=puzzle_disease) {
@@ -116,9 +116,9 @@
                         } else if (provider=="LinkedIn") {
                             if (puzzle_disease) {
                                 if ($.phylo.currentScore>=puzzle_disease) {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 15"] + " \"" + puzzle_disease + "\".\n" + window.lang.body.social["field 20"];
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 15"].replace("***",puzzle_disease) + "\n" + window.lang.body.social["field 20"];
                                 } else {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 16"] + " \"" + puzzle_disease + "\".\n" + window.lang.body.social["field 20"];
+                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 16"].replace("***",puzzle_disease) + "\n" + window.lang.body.social["field 20"];
                                 }
                             } else {
                                 if ($.phylo.currentScore>=puzzle_disease) {
