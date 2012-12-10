@@ -152,7 +152,6 @@
 			console.log("Expert validation failed. Could not connect to the server.");
 		    });
 		};
-
 			// Classic login onclick event
 			var classicLogin = function() {
 				var username = $("#username").val().trim();
