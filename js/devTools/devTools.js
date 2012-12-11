@@ -128,6 +128,8 @@
 		}
 	}
 	exportSingleton("devTools",g,attr);
+	//export this to notify
+	console.notify = devTools.prompts.notify;
 	//initalize notify
 	$(document).ready(function() {
 		try {
