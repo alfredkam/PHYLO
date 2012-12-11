@@ -179,6 +179,11 @@
 				//Detect backend error
 				var numOfSeq = j.sequence.length;
 				var numOfNodes = j.tree.replace(/(\(|\)|\;)/,"").split(",").length;
+
+				if(DEV.logging) {
+					devTools.prompts.notify({ title : "Puzzle Id", text : $.phylo.id});
+				}
+
 				if(numOfSeq != numOfNodes) {
 					console.log(">> Detected Error -> Puzzle ("+$.phylo.id+") Sequence given ("+numOfSeq+") != phylo tree nodes ("+numOfNodes+")");
 					if(DEV.logging)	
