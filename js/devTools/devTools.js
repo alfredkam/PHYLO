@@ -1,3 +1,4 @@
+//Tools written by alfred
 (function() {
 	var url = "/phpdb/phyloExpertDB.php";
 	function g() {};
@@ -37,6 +38,9 @@
 		},
 	};
 	g.prototype.prompt = {
+		//calls the notify
+		//-json title, text, type (optional : error)
+		//@return null
 		notify : function( json ) {
 			if(json.type == undefined)
 				$("#notification").notify("create", { title : json.title , text : json.text });
