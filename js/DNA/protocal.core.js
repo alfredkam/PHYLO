@@ -47,6 +47,10 @@
 			}).fail(function() {
 				console.log(">> failed to connect to database to submit end game score");
 				console.log(">> loading end game dummy data");
+				if(DEV.logging)  {
+					devTools.prompts.notify({ type:"error", title:"warning", text: "failed to connect to database to submit end game score"});
+					devTools.prompts.notify({ type:"error", title:"warning", text: "loading end game dummy data"});
+				}
 				//fail to connect
 				var dummy = '{"0":"CONGENITAL PTOSIS","disease_link":"CONGENITAL PTOSIS","1":"67","play_count":"67","2":"13","fail_count":"13","3":"42","best_score":"42","4":"1375","running_score":"1375","5":"unki2aut","highscore_user":"unki2aut"}';
 				var json = eval("["+dummy+"]")[0];
@@ -175,8 +179,11 @@
 				//Detect backend error
 				var numOfSeq = j.sequence.length;
 				var numOfNodes = j.tree.replace(/(\(|\)|\;)/,"").split(",").length;
-				if(numOfSeq != numOfNodes)
+				if(numOfSeq != numOfNodes) {
 					console.log(">> Detected Error -> Puzzle ("+$.phylo.id+") Sequence given ("+numOfSeq+") != phylo tree nodes ("+numOfNodes+")");
+					if(DEV.logging)	
+						devTools.prompts.notify({ type:"error", title:"warning", text: "Puzzle: "+$.phylo.id +"<br> #Seq("+numOfSeq+") / #Nodes("+numOfNodes+") mismatch"});
+				}
 			
 
 				$.phylo.get = {};
@@ -209,6 +216,10 @@
 
 				console.log(">> Cannnot connect to database");
 				console.log(">> loading dummy data");
+				if(DEV.logging)  {
+					devTools.prompts.notify({ type:"error", title:"warning", text: "Cannot connect to database"});
+					devTools.prompts.notify({ type:"error", title:"warning", text: "loading dummy data"});
+				}
 				$.protocal.previousData = dummy;
 				try {
 					var j = eval("["+dummy+"]")[0].level;
@@ -223,8 +234,11 @@
 				}	
 				var numOfSeq = j.sequence.length;
 				var numOfNodes = j.tree.replace(/(\(|\)|\;)/,"").split(",").length;
-				if(numOfSeq != numOfNodes)
+				if(numOfSeq != numOfNodes) {
 					console.log(">> Detected Error -> Sequence given ("+numOfSeq+") != phylo tree nodes ("+numOfNodes+")");
+					if(DEV.logging)	
+						devTools.prompts.notify({ type:"error", title:"warning", text: "Puzzle: "+$.phylo.id +"<br> #Seq("+numOfSeq+") / #Nodes("+numOfNodes+") mismatch"});
+				}
 				$.phylo.get = {};
 				$.phylo.get.sequence = j.sequence;
 				

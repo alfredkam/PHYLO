@@ -37,6 +37,14 @@
 		},
 	};
 	g.prototype.prompt = {
+		notify : function( json ) {
+			if(json.type == undefined)
+				$("#notification").notify("create", { title : json.title , text : json.text });
+			else if (json.type == "error") 
+				$("#notification").notify("create", "error-template",{ title : json.title , text : json.text },{custom:true});
+			else 
+				$("#notification").notify("create", { title : json.title , text : json.text });
+		},
 		msg : function(msg) {
 				
 		},
@@ -116,4 +124,12 @@
 		}
 	}
 	exportSingleton("devTools",g,attr);
+	//initalize notify
+	$(document).ready(function() {
+		try {
+			$("#notification").notify();
+		} catch(err) {
+			console.log("Error > Notify Module initalization fail");
+		};
+	});
 })();
