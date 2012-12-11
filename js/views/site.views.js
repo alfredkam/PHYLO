@@ -132,8 +132,8 @@
 		var rankingView = Backbone.View.extend({
 			render : function(lang) {
 				selectTab("ranking");
-                                               console.notify({title:"",text:lang + "<>"+window.langOpt});
-				$("#mid-panel").html("<div id='ranking-wrapper'></div>");
+                                               console.log(window.langOpt + "<>"+lang);
+                                               $("#mid-panel").html("<div id='ranking-wrapper'></div>");
 				request.post(	
 					"http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + window.langOpt.toUpperCase(),
 					function(re) {
