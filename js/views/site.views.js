@@ -132,10 +132,9 @@
 		var rankingView = Backbone.View.extend({
 			render : function(lang) {
 				selectTab("ranking");
-                                               console.log(window.langOpt + "<>"+lang);
-                                               $("#mid-panel").html("<div id='ranking-wrapper'></div>");
+                $("#mid-panel").html("<div id='ranking-wrapper'></div>");
 				request.post(	
-					"http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + window.langOpt.toUpperCase(),
+					"http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + lang.toUpperCase(),
 					function(re) {
 						if($("#ranking-wrapper").length != 0) {
                              $("#ranking-wrapper").html(re);
