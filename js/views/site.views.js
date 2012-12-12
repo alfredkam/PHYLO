@@ -93,7 +93,7 @@
 						selectTab("history");
 						$("#mid-panel").html("<div id='history-wrapper'></div>");
 						request.post(
-							"http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username=" + window.guest + "&lang=" + window.langOpt.toUpperCase(),
+							"http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username=" + window.guest + "&lang=" + lang.toUpperCase(),
 							function(re) {
 								if($("#history-wrapper").length != 0) {
 									$("#history-wrapper").html(re);
@@ -134,10 +134,10 @@
 				selectTab("ranking");
 				$("#mid-panel").html("<div id='ranking-wrapper'></div>");
 				request.post(	
-					"http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + window.langOpt.toUpperCase(),
+					"http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + lang.toUpperCase(),
 					function(re) {
 						if($("#ranking-wrapper").length != 0) {
-                             $("#ranking-wrapper").html(re);
+							$("#ranking-wrapper").html(re);
 							require(['views/DT_bootstrap_ranking.actions'],function() {
 								rankingTable.init();
 							});

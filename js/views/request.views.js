@@ -42,6 +42,10 @@
 				});
 			},
 			getJsonLang : function(lang, callBack) {
+				if(lang == undefined) {
+					console.log("Warning >> Lang undefined - default to EN");
+					lang = "EN";
+				}
 				require(['lang/'+lang],function() {
 					window.langOpt = lang;
 					var json = window[lang+"script"].lang[0];
