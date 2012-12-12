@@ -13,4 +13,5 @@
         "sPrevious": "上頁",
         "sNext":     "下頁",
         "sLast":     "尾頁"
+    }
 }
