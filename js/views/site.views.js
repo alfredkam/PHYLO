@@ -139,7 +139,6 @@
 						if($("#ranking-wrapper").length != 0) {
 							$("#ranking-wrapper").html(re);
 							require(['views/DT_bootstrap_ranking.actions'],function() {
-								console.notify("test");
 								rankingTable.init();
 							});
 						}
