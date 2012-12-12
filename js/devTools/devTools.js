@@ -61,6 +61,7 @@
 						$("#notification").notify("create", { title : json.title , text : json.text });
 				}
 			} catch(err) {
+				//notify is not intialized, intialize it
 				$("#notification").notify();
 				self.notify(json);
 			}
@@ -146,13 +147,4 @@
 	exportSingleton("devTools",g,attr);
 	//export this to notify
 	console.notify = devTools.prompts.notify;
-	/*
-	//initalize notify
-	$(document).ready(function() {
-		try {
-			$("#notification").notify();
-		} catch(err) {
-			console.log("Error > Notify Module initalization fail");
-		};
-	});*/
 })();
