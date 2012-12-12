@@ -42,12 +42,28 @@
 		//-json title, text, type (optional : error)
 		//@return null
 		notify : function( json ) {
-			if(json.type == undefined)
-				$("#notification").notify("create", { title : json.title , text : json.text });
-			else if (json.type == "error") 
-				$("#notification").notify("create", "error-template",{ title : json.title , text : json.text },{custom:true});
-			else 
-				$("#notification").notify("create", { title : json.title , text : json.text });
+			var self = this;
+			try {
+			var isJson;
+			try {
+				isJson = eval(json);
+			} catch(err) {
+				isJson = null;
+			} 
+			if(isJson == null) {
+					$("#notification").notify("create", { title : "" , text : json });
+			} else {
+				if(json.type == undefined)
+					$("#notification").notify("create", { title : json.title , text : json.text });
+				else if (json.type == "error") 
+					$("#notification").notify("create", "error-template",{ title : json.title , text : json.text },{custom:true});
+				else 
+					$("#notification").notify("create", { title : json.title , text : json.text });
+			}
+			} catch(err) {
+				$("#notification").notify();
+				self.notify(json);
+			}
 		},
 		msg : function(msg) {
 				
