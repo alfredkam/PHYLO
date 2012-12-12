@@ -164,6 +164,7 @@ console.notify(window.langOpt);
         },
         "aaSorting": [[ 5, "desc" ]],
         "fnDrawCallback": function ( oSettings ) {
+	    console.notify("call backed worked?");
             console.log("fnDrawCallback:"+oSettings);
             if ( oSettings.bSorted || oSettings.bFiltered ) {
                 for ( var i=0, iLen=oSettings.aiDisplay.length ; i<iLen ; i++ ) {
