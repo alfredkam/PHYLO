@@ -232,5 +232,5 @@
 	    attr = [
 		    ["lang",proto.lang],
 		    ];
-        common.exportSingleton("ZH-TWscript",g,proto);
+        common.exportSingleton("ZH-CNscript",g,proto);
 })();
