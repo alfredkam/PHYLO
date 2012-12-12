@@ -156,7 +156,6 @@ function g(){};
  g.prototype.init = function() {
 
     /* Table initialisation */
-console.notify(window.langOpt);
     $('.table').dataTable( {
         "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
         "oLanguage": {
@@ -164,7 +163,6 @@ console.notify(window.langOpt);
         },
         "aaSorting": [[ 5, "desc" ]],
         "fnDrawCallback": function ( oSettings ) {
-	    console.notify("call backed worked?");
             console.log("fnDrawCallback:"+oSettings);
             if ( oSettings.bSorted || oSettings.bFiltered ) {
                 for ( var i=0, iLen=oSettings.aiDisplay.length ; i<iLen ; i++ ) {
