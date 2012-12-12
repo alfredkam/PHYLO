@@ -53,7 +53,9 @@ This build includes options, it can be found at controller/options_template.js
 
 To prompt on screen logging, similar to Growl on mac
 
-	devTools.prompts.notify({ title : "" , text : "" , type : ""});
+	//code under devTools.prompts.notify
+	console.notify({ title : "" , text : "" , type : <optional>});
+	console.notify("any string");
 
 To enable options w/ .gitignore, make sure the .gitignore is under the directory of options_template.js and it contains the value of - options.js, now in terminal
 
