@@ -137,7 +137,7 @@
 					"http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + lang.toUpperCase(),
 					function(re) {
 						if($("#ranking-wrapper").length != 0) {
-							$("#ranking-wrapper").prepend(re);
+							$("#ranking-wrapper").html(re);
 							require(['views/DT_bootstrap_ranking.actions'],function() {
 								rankingTable.init();
 							});
