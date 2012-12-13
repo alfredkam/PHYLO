@@ -133,6 +133,7 @@
 			render : function(lang) {
 				selectTab("ranking");
 				$("#mid-panel").html("<div id='ranking-wrapper'>HELLO</div>");
+                                               request.complete();
                 /*
                 request.post(
 					"http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + lang.toUpperCase(),
