@@ -133,7 +133,8 @@
 			render : function(lang) {
 				selectTab("ranking");
 				$("#mid-panel").html("<div id='ranking-wrapper'></div>\n<div id='ranking-legend'></div>");
-				request.post(	
+                /*
+                request.post(
 					"http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + lang.toUpperCase(),
 					function(re) {
 						if($("#ranking-wrapper").length != 0) {
@@ -145,7 +146,7 @@
 						request.complete();
 					},
 					"js/dummy/ranking.dummy"
-                );
+                );*/
                 request.getTemplate("templates/ranking_legend.html",function(context) {
                     request.getJsonLang(lang, function(json) {
                         $("#ranking-legend").html(Mustache.render(context,json.body.play));
