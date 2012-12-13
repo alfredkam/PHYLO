@@ -146,6 +146,11 @@
 					},
 					"js/dummy/ranking.dummy"
                 );
+                request.getTemplate("templates/ranking_legend.html",function(context) {
+                    $("#ranking-wrapper").append(Mustache.render(context,json.body.play));
+                });
+                                               
+                                               
 			},
 		});
 		
