@@ -6,9 +6,11 @@
 		'mustache',
 		'views/request.views',
 		'views/lang.views',
-	], function($, _, Backbone, Mustache, Request, Lang) {
+		'models/lang.models',
+	], function($, _, Backbone, Mustache, Request, Lang, LangModel) {
 		var request = new Request;
 		var translate = new Lang;
+		var trans = new LangModel;
 		var navBar = Backbone.View.extend({
 			//saves initial default template
 			init : function() {
@@ -35,7 +37,7 @@
 					if(window.guest != "guest") {
 						$("m_login").html(window.guest.replace(/\+/," "));
 					}
-					self.addTriggers();
+					self.addTriggers(lang,json);
 					$("#"+tag +" div").addClass("onSelect");
 					//check to see if to show these options
 					if(window.showInLogin != undefined && window.showInLogin == true)
@@ -45,7 +47,7 @@
 				});
 			},
 			//this is to set / reset the event triggers
-			addTriggers : function() {
+			addTriggers : function(lang, json) {
 				var self = this;
 				//classic button to jump
 				//menu hyperlink listener
@@ -53,9 +55,9 @@
 					if($(this).attr("href") == "javascript:void(0);") {
 						var innerSelf = this;
 						if($.timer.active == true) {
-							$.helper.popUp("Are you sure you want to quite?",function(status) {
+							$.helper.popUp(Mustache.render(trans.get("quitGame"),json),function(status) {
 								if(status == "ok") {
-									window.location.hash = "#!/"+window.langOpt+"/"+$(innerSelf).attr("id");		
+									window.location.hash = "#!/"+lang+"/"+$(innerSelf).attr("id");		
 									$.timer.stop();
 									//force change
 									if($(innerSelf).attr("id") == "play") {
