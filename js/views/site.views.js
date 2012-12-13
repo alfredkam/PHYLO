@@ -146,9 +146,9 @@
 					},
 					"js/dummy/ranking.dummy"
                 );
-                $("#ranking-wrapper").append("Legend");
+                $("#mid-panel").append("<p>Legend</p>");
                 request.getTemplate("templates/ranking_legend.html",function(context) {
-                    $("#ranking-wrapper").append(Mustache.render(context,json.body.play));
+                    $("#mid-panel").append(Mustache.render(context,json.body.play));
                 });
 			},
 		});
