@@ -4,7 +4,7 @@
  * Page setup
  */
  
-div#mid-panel div#ranking-wrapper, div#mid-panel div#history-wrapper div#ranking {
+div#mid-panel div#ranking-wrapper, div#mid-panel div#history-wrapper {
 	background-color:white;
 	padding: 0 40px;
 	padding-bottom:20px;
