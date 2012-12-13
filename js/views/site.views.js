@@ -137,20 +137,20 @@
 					"http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + lang.toUpperCase(),
 					function(re) {
 						if($("#ranking-wrapper").length != 0) {
-							$("#ranking-wrapper").prepend(re);
-							require(['views/DT_bootstrap_ranking.actions'],function() {
-								rankingTable.init();
-							});
+                            /* Now call the legend */
+                            request.getTemplate("templates/ranking_legend.html",function(legend) {
+                                request.getJsonLang(lang, function(json) {
+                                    $("#ranking-wrapper").prepend(re + "\n\n" + Mustache.render(legend,json.body.play));
+                                    require(['views/DT_bootstrap_ranking.actions'],function() {
+                                        rankingTable.init();
+                                    });
+                                });
+                            });
 						}
 						request.complete();
 					},
 					"js/dummy/ranking.dummy"
                 );
-                request.getTemplate("templates/ranking_legend.html",function(context) {
-                    request.getJsonLang(lang, function(json) {
-                        $("#ranking-wrapper").append(Mustache.render(context,json.body.play));
-                    });
-                });
 			},
 		});
 		
