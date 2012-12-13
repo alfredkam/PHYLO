@@ -6,9 +6,11 @@
 		'mustache',
 		'views/request.views',
 		'views/lang.views',
-	], function($, _, Backbone, Mustache, Request, Lang) {
+		'models/lang.models',
+	], function($, _, Backbone, Mustache, Request, Lang, LangModel) {
 		var request = new Request;
 		var translate = new Lang;
+		var trans = new LangModel;
 		var navBar = Backbone.View.extend({
 			//saves initial default template
 			init : function() {
@@ -53,7 +55,7 @@
 					if($(this).attr("href") == "javascript:void(0);") {
 						var innerSelf = this;
 						if($.timer.active == true) {
-							$.helper.popUp(Mustache.render(translate.get("quitGame"),json),function(status) {
+							$.helper.popUp(Mustache.render(trans.get("quitGame"),json),function(status) {
 								if(status == "ok") {
 									window.location.hash = "#!/"+lang+"/"+$(innerSelf).attr("id");		
 									$.timer.stop();
