@@ -148,7 +148,7 @@
                 );
                 request.getTemplate("templates/ranking_legend.html",function(context) {
                     request.getJsonLang(lang, function(json) {
-                        $("#ranking-wrapper").prepend(Mustache.render(context,json.body.play));
+                        $("#mid-panel").append(Mustache.render(context,json.body.play));
                         request.complete();
                     });
                 });
