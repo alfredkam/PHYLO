@@ -132,14 +132,12 @@
 		var rankingView = Backbone.View.extend({
 			render : function(lang) {
 				selectTab("ranking");
-				$("#mid-panel").html("<div id='ranking-wrapper'>HELLO</div>");
-                                               request.complete();
-                /*
+				$("#mid-panel").html("<div id='ranking-wrapper'></div>");
                 request.post(
 					"http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + lang.toUpperCase(),
 					function(re) {
 						if($("#ranking-wrapper").length != 0) {
-							$("#ranking-wrapper").html(re);
+							$("#ranking-wrapper").prepend(re);
 							require(['views/DT_bootstrap_ranking.actions'],function() {
 								rankingTable.init();
 							});
@@ -150,10 +148,9 @@
                 );
                 request.getTemplate("templates/ranking_legend.html",function(context) {
                     request.getJsonLang(lang, function(json) {
-                        $("#ranking-wrapper").html(Mustache.render(context,json.body.play));
-                        request.complete();
+                        $("#ranking-wrapper").append(Mustache.render(context,json.body.play));
                     });
-                });*/
+                });
 			},
 		});
 		
