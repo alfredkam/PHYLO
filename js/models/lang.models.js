@@ -29,6 +29,7 @@
 				'ok' : "{{body.misc.field 18}}",
 				'classic' : '{{header.field 12}}',
 				'theme' : '{{body.misc.field 11}}',
+				'quitGame':'{{body.misc.field 19}}',
 			},
 		});
 		return translate;

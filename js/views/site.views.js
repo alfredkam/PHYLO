@@ -93,16 +93,21 @@
 						selectTab("history");
 						$("#mid-panel").html("<div id='history-wrapper'></div>");
 						request.post(
-							"http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username=" + window.guest + "&lang=" + window.langOpt.toUpperCase(),
+							"http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username=" + window.guest + "&lang=" + lang.toUpperCase(),
 							function(re) {
 								if($("#history-wrapper").length != 0) {
-									$("#history-wrapper").html(re);
-									require(['views/DT_bootstrap_history.actions'],function() {
-										historyTable.init();
-										$("#ranking td a").unbind().click(function() {
-											window.location.hash = $(this).attr("href").replace(/index.html/,"");
-										});
-									});
+                                    /* Now call the legend */
+                                    request.getTemplate("templates/history_legend.html",function(legend) {
+                                        request.getJsonLang(lang, function(json) {
+                                            $("#history-wrapper").prepend(re + "\n\n" + Mustache.render(legend,json.body.play));
+                                            require(['views/DT_bootstrap_history.actions'],function() {
+                                                historyTable.init();
+                                                $("#ranking td a").unbind().click(function() {
+                                                    window.location.hash = $(this).attr("href").replace(/index.html/,"");
+                                                });
+                                            });
+                                        });
+                                    });
 								}
 								request.complete();
 							}
@@ -133,14 +138,19 @@
 			render : function(lang) {
 				selectTab("ranking");
 				$("#mid-panel").html("<div id='ranking-wrapper'></div>");
-				request.post(	
-					"http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + window.langOpt.toUpperCase(),
+                request.post(
+					"http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + lang.toUpperCase(),
 					function(re) {
 						if($("#ranking-wrapper").length != 0) {
-                             $("#ranking-wrapper").html(re);
-							require(['views/DT_bootstrap_ranking.actions'],function() {
-								rankingTable.init();
-							});
+                            /* Now call the legend */
+                            request.getTemplate("templates/ranking_legend.html",function(legend) {
+                                request.getJsonLang(lang, function(json) {
+                                    $("#ranking-wrapper").prepend(re + "\n\n" + Mustache.render(legend,json.body.play));
+                                    require(['views/DT_bootstrap_ranking.actions'],function() {
+                                        rankingTable.init();
+                                    });
+                                });
+                            });
 						}
 						request.complete();
 					},
