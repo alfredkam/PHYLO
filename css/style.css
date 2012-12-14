@@ -611,18 +611,21 @@ td.social-link {
 	padding-bottom:5px;
 }
 
+.list-shadow {
+	box-shadow: 0px 1px 1px #6D6D6D;
+	-webkit-box-shadow: 0px 1px 1px #6D6D6D;	
+	-moz-box-shadow:0px 1px 1px #6D6D6D;
+	-ms-box-shadow:0px 1px 1px #6D6D6D;
+	-khtml-box-shadow:0px 1px 1px #6D6D6D;
+	-o-box-shadow:0px 1px 1px #6D6D6D;
+}
+
 #option-list {
 	color: #333;
 	position:absolute;
 	right: 0px;
 	z-index:30;
 	display:none;
-	box-shadow: 0 6px 6px -6px #CCC;
-	-webkit-box-shadow: 0 6px 6px -6px #CCC;
-	-moz-box-shadow: 0 6px 6px -6px #CCC;
-	-o-box-shadow: 0 6px 6px -6px #CCC;
-	-ms-box-shadow: 0 6px 6px -6px #CCC;
-	-khtml-box-shadow: 0 6px 6px -6px #CCC;
 }	
 .language-list {
 	text-align:center;
