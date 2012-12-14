@@ -870,8 +870,8 @@ footer a:hover {
     color: black ;
 }
 
-footer div#wrapper div#footer-inner div#twitter-follow-btn-div {
-    padding-top: 10px;
+#custom-follow-button a {
+    padding: 10px 10px 10px 10px;
 }
 
 
