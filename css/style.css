@@ -870,8 +870,9 @@ footer a:hover {
     color: black ;
 }
 
-#custom-follow-button a {
-    padding: 10px 10px 10px 10px;
+#custom-follow-button {
+    padding-top: 10px;
+    margin-top: 10px;
 }
 
 
