@@ -40,6 +40,14 @@
 .sequence {
 	height:29px;
 }
+.sequence:hover {
+	box-shadow: 0px 0px 10px red;
+	-webkit-box-shadow: 0px 0px 10px red;
+	-moz-box-shadow: 0px 0px 10px red;
+	-ms-box-shadow: 0px 0px 10px red;
+	-o-box-shadow: 0px 0px 10px red;
+	-khtml-box-shadow: 0px 0px 10px red;
+}
 .sequence , .ancestor {
 	width:29px;
 	position:absolute;

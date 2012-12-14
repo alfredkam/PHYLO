@@ -19,6 +19,8 @@
 						}
 					} catch(err) {
 						console.log("Warning : Cell(s) fell off the chart");	
+						if(DEV.logging)
+							console.notify("Warning : Cell(s) fell off the chart");	
 					}
 				}
 			}	
