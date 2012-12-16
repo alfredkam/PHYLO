@@ -1,3 +1,0 @@
-Notes
-=====
-Start hacking away!
