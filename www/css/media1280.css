@@ -1,0 +1,24 @@
+@media (min-width: 1181px) and (max-width: 1280px) {
+	#nav.span6 {
+		max-width:720px;
+	}
+	#nav, #login-tag {
+		font-size: 15px;
+	}	
+	#options-button i {
+		font-size:30px;
+		top:7px;
+	}
+	#logo {
+		font-size:19px;
+	}
+	li {
+		line-height:16px !important;
+	}
+	#login-box {
+		margin-top:3px;
+	}
+	#options-button {
+		height:50px;
+	}
+}
