@@ -205,16 +205,16 @@
 	font-size:100px;
 }
 #bottomPanel {
-	width:1024px;
 	position:relative;
 	display:inline-block;
 	height:80px;
 }
 #bottomPanel div{
+	position:relative;
 	display:inline-block;
 }
 #statsPanel {
-	left:280px;
+	left:480px;
 	max-width:534px;
 	color:#6D6D6D;
 	position:relative;
@@ -233,7 +233,7 @@
 #controlPanel {
 	height:66px;
 	position: relative;
-	left:350px;
+	left:540px;
 	top:10px;
 }
 
@@ -253,7 +253,7 @@
 	color:#6D6D6D;
 	font-size: 28px;
 	position:relative;
-	left:200px;
+	left:410px;
 	top:15px;
 	margin-left:10px;
 	cursor: pointer;
@@ -262,12 +262,9 @@
 	color: black;
 }
 
-/*
-#volumePanel img {
-	width: 33px;
-}
-*/
 #volumePanel i {
+	left:200px;
+	position:relative;
 	cursor: pointer;
 	color : #6D6D6D;
 	font-size:33px;

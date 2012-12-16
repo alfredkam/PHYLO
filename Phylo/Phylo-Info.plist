@@ -41,6 +41,8 @@
 	<true/>
 	<key>NSMainNibFile</key>
 	<string></string>
+	<key>UIStatusBarHidden~ipad</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array/>
 	<key>UISupportedInterfaceOrientations~ipad</key>

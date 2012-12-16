@@ -140,6 +140,8 @@
 				window.location = "http://phylo.cs.mcgill.ca/archive/js/F2011";
 		}
 	);
+	
+	require(['cordova-2.2.0']);
 
 	require([
 		'jquery',

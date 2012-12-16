@@ -37,7 +37,7 @@
 				mode = 4;
 			}
 			var data = "mode="+mode+"&id="+$.phylo.id+"&user="+window.guest+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.currentScore;
-            $.ajax({
+			$.ajax({
 				type: "POST",
 				url : url,
 				data : data,
