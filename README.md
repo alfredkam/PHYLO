@@ -26,7 +26,7 @@ Copyright (2012) McGill University, Alfred Kam, Jerome Waldispuhl and other cont
 
 Getting Started
 =====
-Link: <a href='http://www.alfredkam.com/github-cheat-sheet/'>Git CheatSheet<a>
+Checkout this link if you are new to git: <a href='http://www.alfredkam.com/git-cheat-sheet/'>Git CheatSheet<a>
 - Master Branch contains the most recent experimental release
 - feature/RNA Branch is used for PHYLO-RNA experimental release
 - feature/integration Branch is used for integration testing 
