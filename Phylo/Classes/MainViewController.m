@@ -149,10 +149,19 @@
     return [super webView:theWebView didFailLoadWithError:error];
 }
 
+*/
+
+//this enables the access of white list domain
 - (BOOL) webView:(UIWebView*)theWebView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    return [super webView:theWebView shouldStartLoadWithRequest:request navigationType:navigationType];
+    //return [super webView:theWebView shouldStartLoadWithRequest:request navigationType:navigationType];
+	NSURL *url = [request URL];
+	if ([[url scheme] isEqualToString:@"http"] || [[url scheme] isEqualToString:@"https"]) {
+	    return YES;
+	}
+	else {
+		return [ super webView:theWebView shouldStartLoadWithRequest:request navigationType:navigationType ];
+	}
 }
-*/
 
 @end
