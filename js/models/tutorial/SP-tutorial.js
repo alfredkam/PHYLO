@@ -30,7 +30,7 @@
          "9":"Para completar su puntaje, es necesario calcular la puntuación del alineamiento del antepasado del humano y chimpancé y el ancestro del perro y murcielago con el ancestro en la raíz del árbol. En primer lugar, se calcula la puntuación del alineamiento del antepasado humano/chimpancé con el antepasado global. Hay 9 concordancias, 4 discordancias (los espacios al final y comienzo son ignorados). El puntaje es 9 × (+1) + 4 × (‐1) = 5.",
          "10":"A continuación, se calcula la puntuación de la alineación del antepasado del perro/murcielago con el ancestro global. Hay 18 concordancias y el puntaje es 18. Por lo tanto, la puntuación asociada con la raíz es 5 + 18 = 23.",
          "11":"Su puntuación final es la suma de todas las puntuaciones individuales previamente calculadas. Aca, el puntaje del alineamiento de humano y chimpance es 17, el puntaje del alineamiento de perro y murcielago es 17, la puntuación de la alineación de los antepasados ​​con la raíz es de 23. Por lo tanto, su puntaje total es 57.",
-         "12":"Usted tiene la puntuación más alta. Haga clic en la estrella y envía tu juego. Usted ha finalizado!. La identificación del nivel de este juego es 0. Ahora, usted está listo para jugar!!"
+         "12":"Usted tiene la puntuación más alta. Haga clic en la estrella y envía tu juego. Usted ha finalizado!. La identificación del nivel de este juego es 481. Ahora, usted está listo para jugar!!"
 
       },
       "misc":{
