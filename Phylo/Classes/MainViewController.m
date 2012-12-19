@@ -156,7 +156,14 @@
 {
     //return [super webView:theWebView shouldStartLoadWithRequest:request navigationType:navigationType];
 	NSURL *url = [request URL];
-	if ([[url scheme] isEqualToString:@"http"] || [[url scheme] isEqualToString:@"https"]) {
+	if ( ([url fragment] != NULL) && ([[url fragment] rangeOfString:@"phonegap=external"].location != NSNotFound))
+	{
+		if ([[UIApplication sharedApplication] canOpenURL:url]) {
+		    [[UIApplication sharedApplication] openURL:url];
+		    return NO;
+		}
+	}
+	else if ([[url scheme] isEqualToString:@"http"] || [[url scheme] isEqualToString:@"https"]) {
 	    return YES;
 	}
 	else {

@@ -29,6 +29,7 @@
 	<key>ExternalHosts</key>
 	<array>
 		<string>phylo.cs.mcgill.ca</string>
+		<string>*.twitter.com</string>
 		<string>*.mcgill.ca</string>
 	</array>
 	<key>Plugins</key>
