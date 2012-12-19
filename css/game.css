@@ -231,10 +231,8 @@
 	cursor: pointer;
 }
 #controlPanel {
-	height:66px;
 	position: relative;
 	left:350px;
-	top:10px;
 }
 
 #scorePanel {
@@ -254,7 +252,7 @@
 	font-size: 28px;
 	position:relative;
 	left:200px;
-	top:15px;
+	top:10px;
 	margin-left:10px;
 	cursor: pointer;
 }
@@ -279,7 +277,7 @@
 #volumePanel {
 	position:relative;
 	left: 180px;
-	top:15px;
+	top:10px;
 }
 #cycle:hover {
 	opacity: 1;
