@@ -30,7 +30,6 @@
 	<array>
 		<string>phylo.cs.mcgill.ca</string>
 		<string>*.mcgill.ca</string>
-		<string>github.com</string>
 	</array>
 	<key>Plugins</key>
 	<dict>
