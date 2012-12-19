@@ -39,7 +39,7 @@
 			if($.stage.stats == undefined)
 				$("#statsPanel").html("Stats - "+ln["field 3"]+": "+($.stage.current+1)+"/"+($.stage.last+1));
 			else
-				$("#statsPanel").html("Stats - "+ln["field 3"]+": "+($.stage.current+1)+"/"+($.stage.last+1) + "<span class='gap'></span>"+ln["field 9"]+": "+$.stage.stats.match+"<span class='gap'></span>"+ln["field 10"]+": "+$.stage.stats.mismatch+"<span class='gap'></span>"+ln["field 11"]+": "+$.stage.stats.open+"<span class='gap'></span>"+ln["field 12"]+": "+$.stage.stats.extend +"<span class='gap'><span>"+ln["field 2"]+": "+$.sequence.par);
+				$("#statsPanel").html("Puzzle ID:&nbsp;&nbsp;"+$.phylo.id+"<br>Stats - "+ln["field 3"]+": "+($.stage.current+1)+"/"+($.stage.last+1) + "<span class='gap'></span>"+ln["field 9"]+": "+$.stage.stats.match+"<span class='gap'></span>"+ln["field 10"]+": "+$.stage.stats.mismatch+"<span class='gap'></span>"+ln["field 11"]+": "+$.stage.stats.open+"<span class='gap'></span>"+ln["field 12"]+": "+$.stage.stats.extend +"<span class='gap'><span>"+ln["field 2"]+": "+$.sequence.par);
 		},
 		//listens to events
 		startListener: function() {
