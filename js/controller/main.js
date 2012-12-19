@@ -124,7 +124,7 @@
 	require(['yepnope'],
 		function() {
 			//loads tablet UX
-			window.isTablet = navigator.userAgent.match(/(iPad|Android .* Chrome\/[.0-9]* (?!Mobile)|Opera Tablet|Android .* (?!Mobile)|Tablet|silk|kindle fire)/i) != null;
+			var isTablet = navigator.userAgent.match(/(iPad|Android .* Chrome\/[.0-9]* (?!Mobile)|Opera Tablet|Android .* (?!Mobile)|Tablet|silk|kindle fire)/i) != null;
 			yepnope({
 				test : isTablet,
 				yep : ['css/tablet.css','js/views/tablet.js'],
