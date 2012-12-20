@@ -147,8 +147,9 @@
 		position:relative;		
 	}
 	
-	.tablet-play-btn i.icon-stop {
-		top:0.17em;
+	.tablet-play-btn i.icon-stop-1 {
+		width: 50px !important;
+		color:black;
 		position:relative;
 	}	
 	i.tablet-style-stroke {
@@ -158,6 +159,7 @@
 		color:#333;
 		background-color: black;
 		top:0.45em;
+		opacity:0.6;
 	}
 
 	.tablet-tutorial-btn i, .tablet-about-btn i, .tablet-credits-btn i, .tablet-ranking-btn i, .tablet-login-btn i, .tablet-settings-btn i, .tablet-back-btn i, .tablet-feedback-btn i,.tablet-history-btn i {
