@@ -3,15 +3,16 @@
 		waitSeconds : 15,
 		baseUrl : 'js/blueprint',
 		paths : {
-		     	DNA : '../DNA',
-		     	RNA : '../RNA',
-			validation : '../views/validation',
-			controller : '../controller',
-			misc : '../misc',
-			lang : '../../lang',
-			views : '../views',
-			models : '../models',
-			dev : '../devTools',
+                     DNA : '../DNA',
+                     RNA : '../RNA',
+                     validation : '../views/validation',
+                     controller : '../controller',
+                     misc : '../misc',
+                     lang : '../../lang',
+                     views : '../views',
+                     models : '../models',
+                     dev : '../devTools',
+                     social : '../social',
 		},
 		shim : {
 			'jquery-ui' : {
@@ -114,7 +115,7 @@
 				deps : ['jquery','underscore','backbone','views/site.views','views/navBar.views'],
 			},
 			'dev/devTools' : {
-				deps : ['jquery'],
+				deps : ['jquery','jquery.notify'],
 			},
 			'jquery.notify' : {
 				deps : ['jquery', 'jquery-ui'],
@@ -122,6 +123,9 @@
 			'TwitterPlugin' : {
 				deps : ['cordova-2.2.0'],
 			},
+            'social/twitter' : {
+                deps : ['TwitterPlugin','dev/devTools'],
+            }
 		}
 	});
 	require(['yepnope'],
@@ -143,9 +147,10 @@
 				window.location = "http://phylo.cs.mcgill.ca/archive/js/F2011";
 		}
 	);
-	
+    require(['jquery.notify']);
+    require(['dev/devTools']);
 	require(['cordova-2.2.0']);
-	require(['TwitterPlugin']);
+	require(['social/twitter']);
 
 	require([
 		'jquery',
@@ -156,9 +161,7 @@
 	],function($, _, Backbone, Mustache, Router) {
 		Router.init();
 	});
-
-	require(['jquery.notify']);
-	require(['dev/devTools']);
+	
 	require(['views/detectIE.actions']);
 	require(['bootstrap']);
 	require(['views/customizeGame.actions']);
