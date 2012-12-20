@@ -2,6 +2,11 @@
 	var twit = {
 		isAvailable : function() {
 			console.notify("Waiting");
+  			console.notify(PhoneGap);
+            console.notify(window.plugins);
+
+ 			console.notify(window.plugins.twitter);
+ 			
 			window.plugins.twitter.isTwitterAvailable(function(r) {
 				console.notify(r);
 			});
@@ -14,10 +19,16 @@
         },
         
 	}
-    document.addEventListener("deviceready", function(){
-        if(twit.isAvailable()) {
-                console.notify("@test1");
-        }
-    }, false);
+  document.addEventListener("deviceready", onDeviceReady, false);
+  function  onDeviceReady() {
+ 	console.notify("deviceready");
+ }
+//	function onDeviceReady() {
+         
+         if(twit.isAvailable()) {
+         console.notify("@test1");
+         }
+
+ //	}
 
 })();

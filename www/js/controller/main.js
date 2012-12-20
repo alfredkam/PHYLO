@@ -124,7 +124,7 @@
 				deps : ['cordova-2.2.0'],
 			},
             'social/twitter' : {
-                deps : ['TwitterPlugin','dev/devTools'],
+                deps : ['cordova-2.2.0','TwitterPlugin','dev/devTools'],
             }
 		}
 	});
@@ -147,9 +147,10 @@
 				window.location = "http://phylo.cs.mcgill.ca/archive/js/F2011";
 		}
 	);
+    require(['cordova-2.2.0']);
     require(['jquery.notify']);
     require(['dev/devTools']);
-	require(['cordova-2.2.0']);
+
 	require(['social/twitter']);
 
 	require([
