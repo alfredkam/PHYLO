@@ -1,17 +1,17 @@
 (function(){
 	requirejs.config({
 		waitSeconds : 15,
-		baseUrl : 'js/blueprint',
+		baseUrl : 'blueprint',
 		paths : {
-		     	DNA : '../DNA',
-		     	RNA : '../RNA',
-			validation : '../views/validation',
-			controller : '../controller',
-			misc : '../misc',
-			lang : '../../lang',
-			views : '../views',
-			models : '../models',
-			dev : '../devTools',
+		     	DNA : '../js/DNA',
+		     	RNA : '../js/RNA',
+			validation : '../js/views/validation',
+			controller : '../js/controller',
+			misc : '../js/misc',
+			lang : '../lang',
+			views : '../js/views',
+			models : '../js/models',
+			dev : '../js/devTools',
 		},
 		shim : {
 			'jquery-ui' : {
