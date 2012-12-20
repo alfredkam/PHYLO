@@ -119,6 +119,9 @@
 			'jquery.notify' : {
 				deps : ['jquery', 'jquery-ui'],
 			},	
+			'TwitterPlugin' : {
+				deps : ['cordova-2.2.0'],
+			},
 		}
 	});
 	require(['yepnope'],
@@ -142,6 +145,7 @@
 	);
 	
 	require(['cordova-2.2.0']);
+	require(['TwitterPlugin']);
 
 	require([
 		'jquery',
