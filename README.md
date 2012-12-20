@@ -26,7 +26,7 @@ Copyright (2012) McGill University, Alfred Kam, Jerome Waldispuhl and other cont
 
 Getting Started
 =====
-Checkout this link if you are new to git: <a href='http://www.alfredkam.com/git-cheat-sheet/'>Git CheatSheet<a>
+Checkout this link if you are new to git: <a href='http://www.alfredkam.com/git-cheat-sheet/'>Git CheatSheet</a>
 - Master Branch contains the most recent experimental release
 - feature/RNA Branch is used for PHYLO-RNA experimental release
 - feature/integration Branch is used for integration testing 
@@ -42,7 +42,7 @@ If you are using chrome for development, you will need to execute this in your t
 
 This will tackle the cross domain issue when working locally. 
 
-This build includes options, it can be found at controller/options_template.js
+This build includes options, it can be found at `controller/options_template.js`
 
 	window.DEBUG //enables debug log
 	window.guest //tell us its anoymous
@@ -52,39 +52,41 @@ This build includes options, it can be found at controller/options_template.js
 	window.DEV.enableTabletMode //forces browsers to load tablet mode.
 	window.DEV.logging //prompts on screen logging
 
-To prompt on screen logging, similar to Growl on mac
+To prompt on-screen logging, similar to Growl on a mac
 
 	//code under devTools.prompts.notify
 	console.notify({ title : "" , text : "" , type : <optional>});
 	console.notify("any string");
 
-To enable options w/ .gitignore, make sure the .gitignore is under the directory of options_template.js and it contains the value of - options.js, now in terminal
+To enable options with `.gitignore`, make sure the `.gitignore` is under the directory of `options_template.js` and it contains the value of `- options.js`. Subsequently, in a terminal
 
 	cd controller
 	cp options_template.js options.js
 	
-Now you can edit options.js to modify the development options<br>
-Note: Do not delete options_template.js
+You can edit `options.js` to modify the development options.<br>
+Note: Do not delete `options_template.js`.
 
-if options.js is tracked, ie - meaning git is tracking the changes, in terminal
+To ensure your options file is not tracked by git, execute in a terminal
 
 	git rm --cache options.js
 	git commit -a -m 'untrack options.js'
 
-Another way to trigger options is through the URL
-	
-	http://phylo.cs.mcgill.ca/master/#!/EN/play/IAMADEV  //shows dev logs
-	http://phylo.cs.mcgill.ca/master/#!/EN/play/IAMADEV+DEBUG //shows debug logs
+Options may also be triggered through the following URLs:
+<table>
+  <tr><td>Show development logs</td><td>http://phylo.cs.mcgill.ca/master/#!/EN/play/IAMADEV</td></tr>
+  <tr><td>Show debug logs</td><td>http://phylo.cs.mcgill.ca/master/#!/EN/play/IAMADEV+DEBUG</td></tr>
+</table>
 
 
-Router Setups
+Router Setup
 ====
-
-	index.html#!/<language>/play				<== PHYLO-DNA
-	index.html#!/<langauge>/BETA/RNA			<== PHYLO-RNA
-	index.html#!/<language>/play/puzzle/<puzzle id>		<== PHYLO-DNA autostart for specific puzzles
+<table>
+  <tr><td>PHYLO DNA</td><td>index.html#!/<language>/play</td></tr>
+  <tr><td>PHYLO DNA with specified puzzle</td><td>index.html#!/<language>/play/puzzle/<puzzle id></td></tr>
+  <tr><td>PHYLO RNA</td><td>index.html#!/<langauge>/BETA/RNA</td><tr>
+</table>
 	
-To Learn more can refer here : https://github.com/McGill-CSB/PHYLO/blob/master/js/controller/router.js
+To Learn more, see https://github.com/McGill-CSB/PHYLO/blob/master/js/controller/router.js
 
 Hot deploy branches
 =====
