@@ -100,6 +100,7 @@ For the Mobile Phone Development, please checkout either archive branch or http:
 
 Quick Crash Course
 =====
+<a href="http://alfredkam.com/best-way-to-develop-a-website/">Click here for a more indepth overview</a>
 
 First of all we are using model view controller + observer design patterns.<br>
 We are using backbone js / require js / mustache to add structure to this web application.
