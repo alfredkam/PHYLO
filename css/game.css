@@ -204,6 +204,7 @@
 	left: 400px;
 	font-size:100px;
 }
+
 #bottomPanel {
 	width:1024px;
 	position:relative;
@@ -213,6 +214,11 @@
 #bottomPanel div{
 	display:inline-block;
 }
+#statsPanel .icon-puzzle {
+	font-size:16px;
+	left:-5px;
+	position:relative;
+} 
 #statsPanel {
 	left:280px;
 	max-width:534px;
