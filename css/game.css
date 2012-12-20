@@ -252,7 +252,7 @@
 	font-size: 28px;
 	position:relative;
 	left:200px;
-	top:10px;
+	top:3px;
 	margin-left:10px;
 	cursor: pointer;
 }
@@ -277,7 +277,6 @@
 #volumePanel {
 	position:relative;
 	left: 180px;
-	top:10px;
 }
 #cycle:hover {
 	opacity: 1;
@@ -296,6 +295,9 @@
 	color:#CDCD00;
 	width: 35px !important;
 	font-size:40px;
+	top:-13px;
+	left: -20px;
+	position:relative;
 }
 #star.pass i {
 	cursor: pointer;
@@ -356,6 +358,11 @@
 }
 #endGame-score-result {
 	padding:15px 0px;
+	display:inline-block;
+	line-height: normal;
+	position:relative;
+	margin-bottom:30px;
+	left:-35px;
 }
 #endGame-score-result i {
 	font-size: 50px;

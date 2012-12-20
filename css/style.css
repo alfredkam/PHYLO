@@ -649,6 +649,17 @@ td.social-link {
 	-ms-box-shadow: 0 6px 6px -6px #CCC;
 	-khtml-box-shadow: 0 6px 6px -6px #CCC;
 }
+
+#language-tag {
+	min-width: 57px;
+}
+
+#language-tag i {
+	font-size: 30px;
+	top:-5px;
+	left:-10px;
+	position:relative;
+}
 .language-list a div{
 	display:block !important;
 	padding: 5px 10px;

@@ -59,11 +59,11 @@
 			var currentScore = $.phylo.currentScore;
 			var par = $.sequence.par;
 			if(par < currentScore && currentScore < highscore) {
-				setDefault = "<i class='icon-star'></i><i class='icon-star'></i><i class='icon-star-empty'></i>";
+				setDefault = "<i class='icon-star-1'></i><i class='icon-star-1'></i><i class='icon-star-empty'></i>";
 			} else if( highscore <= currentScore) {
-				setDefault = "<i class='icon-star'></i><i class='icon-star'></i><i class='icon-star'></i>";	
+				setDefault = "<i class='icon-star-1'></i><i class='icon-star-1'></i><i class='icon-star-1'></i>";	
 			} else { //exactly par score
-				setDefault = "<i class='icon-star'></i><i class='icon-star-empty'></i><i class='icon-star-empty'></i>";	
+				setDefault = "<i class='icon-star-1'></i><i class='icon-star-empty'></i><i class='icon-star-empty'></i>";	
 			}
 			$("#endGame-score-result").html(setDefault);
 		},
