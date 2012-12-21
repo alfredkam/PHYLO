@@ -161,7 +161,7 @@
 		opacity:0.6;
 	}
 
-	.tablet-tutorial-btn i, .tablet-about-btn i, .tablet-credits-btn i, .tablet-ranking-btn i, .tablet-login-btn i, .tablet-settings-btn i, .tablet-back-btn i, .tablet-feedback-btn i,.tablet-history-btn i {
+	.tablet-tutorial-btn i, .tablet-about-btn i, .tablet-credits-btn i, .tablet-ranking-btn i, .tablet-login-btn i, .tablet-settings-btn i, .tablet-feedback-btn i,.tablet-history-btn i {
 		top:0.17em;
 		position:relative;
 	}
@@ -183,6 +183,7 @@
 	}
 	.tablet-back-btn div div:last-child {
 		font-size:50px;
+		left:-15px;
 	}
 	
 	.tablet-login-bg {
