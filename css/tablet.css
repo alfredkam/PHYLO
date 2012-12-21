@@ -142,8 +142,7 @@
 	}
 	
 	.tablet-play-btn i.icon-stop-1 {
-		width: 50px !important;
-		color:black;
+		width: 50px;
 		position:relative;
 	}	
 	i.tablet-style-stroke {
