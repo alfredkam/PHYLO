@@ -234,10 +234,11 @@
 }
 
 #cycle img {
-	cursor:pointer;
 	width: 33px;
 	height:33px;
 	cursor: pointer;
+	top:6px;
+	position:relative;
 }
 #controlPanel {
 	position: relative;
@@ -303,7 +304,7 @@
 	color:#CDCD00;
 	width: 35px !important;
 	font-size:40px;
-	top:-13px;
+	top:-9px;
 	left: -20px;
 	position:relative;
 }
