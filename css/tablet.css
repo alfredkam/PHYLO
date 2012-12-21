@@ -111,6 +111,21 @@
 		font-size: 6em;
 		padding-bottom:0.2em;
 	}	
+
+	#tablet-grid-2 {
+		height:300px;
+		text-align:center;
+		display:none;
+	}
+	#tablet-grid-2 i {
+		font-size:40px;	
+		top:100px;
+		position:relative;
+	}
+	
+	#tablet-grid {
+		display:none;
+	}
 	
 	.tablet-grid {
 		color: rgb(51, 51, 51);

@@ -49,6 +49,9 @@ body {
 	#tabletPanel {
 		display:none;	
 	}
+	#tablet-grid-2 {
+		display:none;
+	}
 	.tablet-grid {
 		display:none;
 	}

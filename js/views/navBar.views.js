@@ -32,6 +32,8 @@
 					//loads out the translation
 					$("#nav").html(Mustache.render(self.desktopNavBar,json)).show();;
 					$("#tablet-grid").html(Mustache.render(self.tabletUX,json));
+					$("#tablet-grid-2").hide();
+					$("#tablet-grid").show();
 					translate.set(json);
 					//update login tagg too
 					if(window.guest != "guest") {
