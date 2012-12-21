@@ -205,8 +205,11 @@
 	font-size:100px;
 }
 
+#bottomPanel-wrapper {
+	height:80px;
+}
 #bottomPanel {
-	position:relative;
+	position:absolute;
 	display:inline-block;
 	height:80px;
 	left:182px;
