@@ -206,10 +206,10 @@
 }
 
 #bottomPanel {
-	width:1024px;
 	position:relative;
 	display:inline-block;
 	height:80px;
+	left:182px;
 }
 #bottomPanel div{
 	display:inline-block;
@@ -220,7 +220,7 @@
 	position:relative;
 } 
 #statsPanel {
-	left:280px;
+	left:80px;
 	max-width:534px;
 	color:#6D6D6D;
 	position:relative;
@@ -238,7 +238,7 @@
 }
 #controlPanel {
 	position: relative;
-	left:350px;
+	left:150px;
 }
 
 #scorePanel {
@@ -257,7 +257,7 @@
 	color:#6D6D6D;
 	font-size: 28px;
 	position:relative;
-	left:200px;
+	left:20px;
 	top:3px;
 	margin-left:10px;
 	cursor: pointer;
@@ -282,7 +282,6 @@
 }
 #volumePanel {
 	position:relative;
-	left: 180px;
 }
 #cycle:hover {
 	opacity: 1;
