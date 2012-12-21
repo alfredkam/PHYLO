@@ -229,6 +229,7 @@ a.btn {
 /* end of theme controller css */
 
 #game {
+	display:inline-block;
 	box-shadow: 0 6px 6px -6px #CCC;
 	-webkit-box-shadow: 0 6px 6px -6px #CCC;
 	-moz-box-shadow: 0 6px 6px -6px #CCC;
