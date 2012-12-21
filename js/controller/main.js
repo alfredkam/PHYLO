@@ -130,6 +130,12 @@
 				yep : ['css/tablet.css','js/views/tablet.js'],
 				nope : ['css/media1280.css','css/media1180.css','css/media1024.css'],
 			});
+			//check if ipad and load ipad fix
+			var isiPad = navigator.userAgent.match(/(ipad)/i);
+			yepnope({
+				test : isiPad,
+				yep : ['css/ipad-fix.css'],
+			});
 			//test mode script injection
 			yepnope({
 				test : window.DEV.enableTabletMode,
