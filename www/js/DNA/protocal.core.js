@@ -1,13 +1,13 @@
 (function() {
 	var doc = document, win = window;
-	var url = "/phpdb/phyloExpertDB.php";
+	var url = "http://phylo.cs.mcgill.ca/phpdb/phyloMobileDB.php";
 	$.protocal = {
 		//for login
 		login : function(username, password, fn) {
 			var mode = 7;
 			var data = "mode="+mode+"&user="+username+"&pass="+password;
 			$.ajax({
-				type: "POST",
+				type: "GET",
 				url : url,
 				data : data,
 			}).done(function(re) {
@@ -21,7 +21,7 @@
 			var mode = 6;
             var data = "mode="+mode+"&user="+username+"&displayname="+displayname+"&pass="+password+"&email="+email+"&network="+network+"&network_id="+network_id;
 			$.ajax({
-				type: "POST",
+				type: "GET",
 				url : url,
 				data : data,
 			}).done(function(re) {
@@ -38,7 +38,7 @@
 			}
 			var data = "mode="+mode+"&id="+$.phylo.id+"&user="+window.guest+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.currentScore;
 			$.ajax({
-				type: "POST",
+				type: "GET",
 				url : url,
 				data : data,
 			}).done(function(re) {
@@ -65,7 +65,7 @@
 			var self = this;
 			var data = "mode=4&id="+$.phylo.id+"&user="+window.guest+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.bestScore;
 			$.ajax({
-				type : "POST",
+				type : "GET",
 				url : url,
 				data : data 
 
@@ -81,7 +81,7 @@
 			var data = "mode=3&id="+$.phylo.id;
 
 			$.ajax({
-				type : "POST",
+				type : "GET",
 				url : url,
 				data : data	
 			}).done(function(re) {
@@ -155,11 +155,17 @@
 				mode = 2;
 				str+= "mode=2&id="+score;
 			}
-
+			console.notify(url+"?"+str);
+ 
+ 			$.get(url+"?"+str, function(re){
+                  console.notify(re);
+                  });
+ 
+ 
 			$.ajax({
 				url : url,
 				data : str,
-				type : "POST",
+				type : "GET",
 			}).done(function(data) {
 				data = data.replace("@","");
 				$.protocal.previousData = data;
