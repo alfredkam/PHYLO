@@ -18,6 +18,13 @@ a:link, a:visited, a:active {
 html, body {
 	min-height:100%;
 }
+/* bootstrap overrides */
+
+[class^="icon-"],
+[class*=" icon-"] {
+	background-image: none !important;
+}
+/* end of override */
 
 body {
 	/*background-color:#F1F1F1;
