@@ -7,7 +7,7 @@
 	display:inline-block;
 	color: #6D6D6D;
 	width: 841px;
-	top: -335px;
+	height:340px;
 	padding-top:20px;
 }
 #bg {
@@ -27,7 +27,7 @@
 }
 
 #tree {
-	top:8px;
+	top:3px;
 	position: relative;
 	display:inline-block;
 	width: 178px;	
@@ -204,17 +204,26 @@
 	left: 400px;
 	font-size:100px;
 }
+
+#bottomPanel-wrapper {
+	height:80px;
+}
 #bottomPanel {
-	width:1024px;
-	position:relative;
+	position:absolute;
 	display:inline-block;
 	height:80px;
+	left:182px;
 }
 #bottomPanel div{
 	display:inline-block;
 }
+#statsPanel .icon-puzzle {
+	font-size:16px;
+	left:-5px;
+	position:relative;
+} 
 #statsPanel {
-	left:280px;
+	left:80px;
 	max-width:534px;
 	color:#6D6D6D;
 	position:relative;
@@ -225,14 +234,15 @@
 }
 
 #cycle img {
-	cursor:pointer;
 	width: 33px;
 	height:33px;
 	cursor: pointer;
+	top:6px;
+	position:relative;
 }
 #controlPanel {
 	position: relative;
-	left:350px;
+	left:150px;
 }
 
 #scorePanel {
@@ -251,8 +261,8 @@
 	color:#6D6D6D;
 	font-size: 28px;
 	position:relative;
-	left:200px;
-	top:10px;
+	left:20px;
+	top:3px;
 	margin-left:10px;
 	cursor: pointer;
 }
@@ -276,8 +286,6 @@
 }
 #volumePanel {
 	position:relative;
-	left: 180px;
-	top:10px;
 }
 #cycle:hover {
 	opacity: 1;
@@ -296,6 +304,9 @@
 	color:#CDCD00;
 	width: 35px !important;
 	font-size:40px;
+	top:-9px;
+	left: -20px;
+	position:relative;
 }
 #star.pass i {
 	cursor: pointer;
@@ -356,6 +367,11 @@
 }
 #endGame-score-result {
 	padding:15px 0px;
+	display:inline-block;
+	line-height: normal;
+	position:relative;
+	margin-bottom:30px;
+	left:-35px;
 }
 #endGame-score-result i {
 	font-size: 50px;

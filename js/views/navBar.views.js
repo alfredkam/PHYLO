@@ -1,9 +1,9 @@
 (function() {
 	define([
-		'jquery',
-		'underscore',
-		'backbone',
-		'mustache',
+		'jquery/jquery',
+		'underscore/underscore',
+		'backbone/backbone',
+		'mustache/mustache',
 		'views/request.views',
 		'views/lang.views',
 		'models/lang.models',
@@ -32,6 +32,8 @@
 					//loads out the translation
 					$("#nav").html(Mustache.render(self.desktopNavBar,json)).show();;
 					$("#tablet-grid").html(Mustache.render(self.tabletUX,json));
+					$("#tablet-grid-2").hide();
+					$("#tablet-grid").show();
 					translate.set(json);
 					//update login tagg too
 					if(window.guest != "guest") {
@@ -76,7 +78,7 @@
 				$("a.tablet-back-btn").unbind().click(function() {
 					var innerSelf = this;
 					if($.timer.active == true) {
-						$.helper.popUp("Are you sure you want to quite?",function(status) {
+						$.helper.popUp("Are you sure you want to quit?",function(status) {
 							if(status == "ok") {
 							//	window.location.hash = "#!"+$(innerSelf).attr("name");		
 								$.timer.stop();
