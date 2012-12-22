@@ -1,8 +1,8 @@
 (function() {
 	define([
-		'jquery',
-		'underscore',
-		'backbone',
+		'jquery/jquery',
+		'underscore/underscore',
+		'backbone/backbone',
 		'views/site.views',
 		'views/navBar.views',
 		'models/site.models'

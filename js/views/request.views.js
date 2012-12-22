@@ -1,8 +1,8 @@
 (function() {
 	define([
-		'jquery',
-		'underscore',
-		'backbone'
+		'jquery/jquery',
+		'underscore/underscore',
+		'backbone/backbone'
 	],function($,_, Backbone) {
 		var Request = Backbone.View.extend({
 			change : function(context,lang) {

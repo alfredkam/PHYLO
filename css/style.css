@@ -18,6 +18,13 @@ a:link, a:visited, a:active {
 html, body {
 	min-height:100%;
 }
+/* bootstrap overrides */
+
+[class^="icon-"],
+[class*=" icon-"] {
+	background-image: none !important;
+}
+/* end of override */
 
 body {
 	/*background-color:#F1F1F1;
@@ -48,6 +55,9 @@ body {
 	}
 	#tabletPanel {
 		display:none;	
+	}
+	#tablet-grid-2 {
+		display:none;
 	}
 	.tablet-grid {
 		display:none;
@@ -229,6 +239,7 @@ a.btn {
 /* end of theme controller css */
 
 #game {
+	display:inline-block;
 	box-shadow: 0 6px 6px -6px #CCC;
 	-webkit-box-shadow: 0 6px 6px -6px #CCC;
 	-moz-box-shadow: 0 6px 6px -6px #CCC;
@@ -307,8 +318,8 @@ a.btn {
 
 #options-button i{
 	font-size:40px;
-	top:5px;
-	left:-10px;
+	top:-8px;
+	left:-20px;
 	position:relative;
 }
 #options {
@@ -648,6 +659,17 @@ td.social-link {
 	-o-box-shadow: 0 6px 6px -6px #CCC;
 	-ms-box-shadow: 0 6px 6px -6px #CCC;
 	-khtml-box-shadow: 0 6px 6px -6px #CCC;
+}
+
+#language-tag {
+	min-width: 57px;
+}
+
+#language-tag i {
+	font-size: 30px;
+	top:-5px;
+	left:-10px;
+	position:relative;
 }
 .language-list a div{
 	display:block !important;
