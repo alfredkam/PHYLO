@@ -115,7 +115,7 @@ The current folder structure:
 	js/controller 	<=== defines the site routes
 	template 	<=== contains the html template
 	
-	js/DNA		<=== the base framework for the game, it depeneds on jquery (for now)
+	js/phylo-lib	<=== the base framework for the game, it depeneds on jquery (for now)
 	js/RNA		<=== it extends of the DNA framework
 	
 Backbone is mainly used to add structure , http://backbonejs.org <br>
