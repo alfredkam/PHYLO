@@ -140,9 +140,16 @@
 				test : window.DEV.enableTabletMode,
 				yep : 'css/tablet.css',
 			});
+			//check if mobile phone
 			var isMobile = navigator.userAgent.match(/(iPhone|Android .* Mobile)/i) != null;
 			if(isMobile) 
 				window.location = "http://phylo.cs.mcgill.ca/archive/js/F2011";
+			//check if Win 64 FF
+			var isWinFF = navigator.userAgent.match(/Windows .* Firefox/) != null;
+			yepnope({
+				test : isWinFF,
+				yep : ['css/FF-Win-fix.css'],
+			});
 		}
 	);
 
