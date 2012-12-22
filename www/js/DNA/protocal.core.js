@@ -155,12 +155,6 @@
 				mode = 2;
 				str+= "mode=2&id="+score;
 			}
-			console.notify(url+"?"+str);
- 
- 			$.get(url+"?"+str, function(re){
-                  console.notify(re);
-                  });
- 
  
 			$.ajax({
 				url : url,

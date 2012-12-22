@@ -29,12 +29,14 @@
 	<key>ExternalHosts</key>
 	<array>
 		<string>*</string>
-		<string>phylo.cs.mcgill.ca/*</string>
+		<string>*.phylo.cs.mcgill.ca/*</string>
 		<string>*.twitter.com</string>
 		<string>*.mcgill.ca</string>
 	</array>
 	<key>Plugins</key>
 	<dict>
+		<key>TwitterPlugin</key>
+		<string>TwitterPlugin</string>
 		<key>Device</key>
 		<string>CDVDevice</string>
 		<key>Logger</key>

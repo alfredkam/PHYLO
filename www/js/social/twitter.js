@@ -2,33 +2,29 @@
 	var twit = {
 		isAvailable : function() {
 			console.notify("Waiting");
-  			console.notify(PhoneGap);
-            console.notify(window.plugins);
+            console.log(window.plugins);
 
- 			console.notify(window.plugins.twitter);
+ 			console.log(window.plugins.twitter);
  			
 			window.plugins.twitter.isTwitterAvailable(function(r) {
-				console.notify(r);
+				console.log(r);
 			});
 		},
         isSetup : function() {
- 			console.notify("waitin...");
+ 			console.notify("waiting...");
  			window.plugins.twitter.isTwitterSetup(function(r) {
                 console.notify(r);
             });
         },
         
 	}
-  document.addEventListener("deviceready", onDeviceReady, false);
-  function  onDeviceReady() {
- 	console.notify("deviceready");
- }
-//	function onDeviceReady() {
+    document.addEventListener("deviceready", onDeviceReady, false);
+	function onDeviceReady() {
          
          if(twit.isAvailable()) {
-         console.notify("@test1");
+        	console.notify("@test1");
          }
 
- //	}
+	}
 
 })();
