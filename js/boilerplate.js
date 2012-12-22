@@ -2,10 +2,10 @@
 (function() {
 	//Enclosure
 	define([
-		'jquery',
-		'underscore',
-		'backbone',
-		'mustache',
+		'jquery/jquery',
+		'underscore/underscore',
+		'backbone/backbone',
+		'mustache/mustache',
 		//These are path alias that we configured in js/main.js
 	], function($, _, Backbone, Mustache) {
 		//Above we have passed in jquery , underscore, backbone and mustache

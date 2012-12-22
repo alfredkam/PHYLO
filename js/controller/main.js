@@ -1,9 +1,9 @@
 (function(){
 	requirejs.config({
 		waitSeconds : 15,
-		baseUrl : 'blueprint',
+		baseUrl : 'lib',
 		paths : {
-		     	DNA : '../js/DNA',
+		     	DNA : '../js/phylo-lib',
 		     	RNA : '../js/RNA',
 			validation : '../js/views/validation',
 			controller : '../js/controller',
@@ -14,114 +14,113 @@
 			dev : '../js/devTools',
 		},
 		shim : {
-			'jquery-ui' : {
-				deps : ['jquery'],
+			'jquery/jquery-ui' : {
+				deps : ['jquery/jquery'],
 			},
-			'jquery' : {
+			'jquery/jquery' : {
 				exports : "$",
 			},
-			'yepnope' : {
+			'yepnope/yepnope' : {
 				exports : "yepnope",
 			},
-			'underscore' : {
+			'underscore/underscore' : {
 				exports : "_",
 			},
-			'backbone' : {
-				deps : ['underscore', 'jquery'],
+			'backbone/backbone' : {
+				deps : ['underscore/underscore', 'jquery/jquery'],
 				exports : "Backbone",
 			},
-			'bootstrap' : {
-				deps : ['jquery','jquery-ui'],
+			'bootstrap/bootstrap' : {
+				deps : ['jquery/jquery','jquery/jquery-ui'],
 			},
-			'mustache' : {
-				deps : ['jquery'],
+			'mustache/mustache' : {
+				deps : ['jquery/jquery'],
 			},
 			'views/customizeGame.actions' : {
-				deps : ['jquery'],
+				deps : ['jquery/jquery'],
 			},
 			'views/gameMenu.actions' : {
-				deps : ['jquery','models/disease.data','DNA/main.core'],
+				deps : ['jquery/jquery','models/disease.data','DNA/main.core'],
 			},		
 			'DNA/stage.core' : {
 				deps : ['DNA/physics.engine', 'DNA/events.engine','DNA/engine.core'],
 			},
 			'DNA/main.core' : {
-				//deps : ['jquery', 'jquery-ui','jquery-mobile','DNA/helper.core', 'DNA/timer.core','DNA/physics.engine',
-				deps : ['jquery', 'jquery-ui','DNA/helper.core', 'DNA/timer.core','DNA/physics.engine',
+				deps : ['jquery/jquery', 'jquery/jquery-ui','DNA/helper.core', 'DNA/timer.core','DNA/physics.engine',
 					'DNA/endGame.theme','DNA/events.engine','DNA/engine.core','DNA/stage.core',
 					'DNA/sequence.core','DNA/splash.theme','DNA/tree.core','DNA/multiSelect.core',
 					'DNA/newick.core','DNA/lang.module','DNA/fitch.core','DNA/board.theme','DNA/highlighter.theme',
 					'DNA/protocal.core','DNA/score.theme','views/customizeGame.actions'],	
 			},
 			'DNA/protocal.core' : {
-				deps : ['jquery'],
+				deps : ['jquery/jquery'],
 			},
 			'RNA/stage.ext' : {
-				deps : ['jquery','DNA/stage.core'],
+				deps : ['jquery/jquery','DNA/stage.core'],
 			},
 			'RNA/sequence.ext' : {	
-				deps : ['jquery', 'DNA/sequence.core'],
+				deps : ['jquery/jquery', 'DNA/sequence.core'],
 			},
 			'RNA/main.rna' : {
 				deps : ['DNA/main.core','RNA/stage.ext','RNA/sequence.ext'],	
 			},
-			'jquery.dataTables' : {
-				deps : ['jquery','jquery-ui'],
+			'jquery/jquery.dataTables' : {
+				deps : ['jquery/jquery','jquery/jquery-ui'],
 			},
 			'views/detectIE.actions' :  {
-				deps : ['jquery','DNA/helper.core']
+				deps : ['jquery/jquery','DNA/helper.core']
 			},		
-			'bootbox' : {
-				deps : ['jquery','bootstrap'],
+			'bootbox/bootbox' : {
+				deps : ['jquery/jquery','bootstrap/bootstrap'],
 			},
 			'controller/site.controller' : {
-				deps : ['jquery'],
+				deps : ['jquery/jquery'],
 			},
 			'menu/navBar.actions' : {
-				deps : ['jquery','views/request.views'],
+				deps : ['jquery/jquery','views/request.views'],
 			},
 			'menu/tailor.menu' : {
-				deps : ['jquery'],
+				deps : ['jquery/jquery'],
 			},
 			'DNA/timer.core' : {
-				deps : ['jquery'],
+				deps : ['jquery/jquery'],
 			},
 			'DNA/lang.module' : {
-				deps : ['jquery'],
+				deps : ['jquery/jquery'],
 			},
 			'validation/cookie.validation' : {
-				deps : ['jquery'],
+				deps : ['jquery/jquery'],
 			},
 			'validation/login.validation' : {
-				deps : ['jquery', 'DNA/protocal.core', 'validation/cookie.validation'],
+				deps : ['jquery/jquery', 'DNA/protocal.core', 'validation/cookie.validation'],
 			},
 			'views/DT_bootstrap_ranking.actions' : {
-				deps : ['jquery','bootstrap','jquery.dataTables'],
+				deps : ['jquery/jquery','bootstrap/bootstrap','jquery/jquery.dataTables'],
 			},
 			'views/DT_bootstrap_history.actions' : {
-				deps : ['jquery','bootstrap','jquery.dataTables'],
+				deps : ['jquery/jquery','bootstrap/bootstrap','jquery/jquery.dataTables'],
 			},
 			'DNA/helper.core' : {
-				deps : ['jquery'],
+				deps : ['jquery/jquery'],
 			},
 			'views/site.views' : {
 				deps : ['views/request.views','views/variable.listener'],
 			},	
 			'views/navBar.views' : {
-				deps : ['jquery','underscore', 'backbone','DNA/timer.core','views/lang.views'],
+				deps : ['jquery/jquery','underscore/underscore', 'backbone/backbone','DNA/timer.core','views/lang.views'],
 			},
 			'controller/router' : {
-				deps : ['jquery','underscore','backbone','views/site.views','views/navBar.views'],
+				deps : ['jquery/jquery','underscore/underscore','backbone/backbone','views/site.views','views/navBar.views'],
 			},
 			'dev/devTools' : {
-				deps : ['jquery'],
+				deps : ['jquery/jquery'],
 			},
-			'jquery.notify' : {
-				deps : ['jquery', 'jquery-ui'],
+			'jquery/jquery.notify' : {
+				deps : ['jquery/jquery', 'jquery/jquery-ui'],
 			},	
 		}
 	});
-	require(['yepnope'],
+	require(['yepnope/yepnope'],
 		function() {
 			//loads tablet UX
 			var isTablet = navigator.userAgent.match(/(iPad|Android .* Chrome\/[.0-9]* (?!Mobile)|Opera Tablet|Android .* (?!Mobile)|Tablet|silk|kindle fire)/i) != null;
@@ -148,21 +147,21 @@
 	);
 
 	require([
-		'jquery',
-		'underscore',
-		'backbone',
-		'mustache',
+		'jquery/jquery',
+		'underscore/underscore',
+		'backbone/backbone',
+		'mustache/mustache',
 		'controller/router',
 	],function($, _, Backbone, Mustache, Router) {
 		Router.init();
 	});
 
-	require(['jquery.notify']);
+	require(['jquery/jquery.notify']);
 	require(['dev/devTools']);
 	require(['views/detectIE.actions']);
-	require(['bootstrap']);
+	require(['bootstrap/bootstrap']);
 	require(['views/customizeGame.actions']);
-	require(['bootbox']);
+	require(['bootbox/bootbox']);
 	window.setTimeout(function() {
 	require(['validation/login.validation']);
 	},500);

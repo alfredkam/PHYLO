@@ -1,9 +1,9 @@
 (function() {
 	define([
-		'jquery',
-		'underscore',
-		'backbone',
-		'mustache',
+		'jquery/jquery',
+		'underscore/underscore',
+		'backbone/backbone',
+		'mustache/mustache',
 		'models/lang.models',
 	], function( $, _, Backbone, Mustache, Lang) {
 		var trans = new Lang;
