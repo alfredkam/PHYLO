@@ -47,7 +47,7 @@
 		src_lang_code = $("#src-lang option:selected").attr("value");
 		$("#src-lang-code").text(src_lang_code);
 		$.getScript("lang/"+src_lang_code+".js").done(function(script, textStatus) {
-			var language = eval(src_lang_code+"script").lang[0];
+			var language = window[src_lang_code+"script"].lang[0];
 			$("#main-forum-info-author").children().filter(function(idx) {return 1 ? idx == 0 : 0})
 			.text("Author: "+language.info.author+".");
 			var queue = []; // FIFO
