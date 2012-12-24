@@ -4,7 +4,7 @@
 <html lang='UTF8'>
 <head>
         <title>PHYLO | DNA Puzzles</title>
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <meta name='viewport' content='width=device-width, initial-scale=1, target-densitydpi=device-dpi'>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
             
         <!-- icon -->
@@ -13,9 +13,10 @@
         <!-- blue print css -->
 		<link rel='stylesheet' href='css/bootstrap.css'/>
 
-		<!-- icons from Font Awesome - http://fortawesome.github.com/Font-Awesome -->
-		<link rel='stylesheet' href='css/font-awesome.css'/>
-		<link rel='stylesheet' href='css/font-awesome-ie7.css'/>
+		<!-- fontello [Fontelico, entypo, font-awesome, typicons, zocials]-->
+		<link rel="stylesheet" href='lib/fontello/css/fontello.css'/>
+		<link rel="stylesheet" href='lib/fontello/css/animation.css'/>
+		<link rel="stylesheet" href='lib/fontello/css/fontello-ie7.css'/>
 
 		<!-- custom css -->
 		<link rel='stylesheet' href='css/style.css'/>
@@ -35,13 +36,14 @@
 		
 		<!-- options -->
 		<script src='js/controller/options_template.js' type='text/javascript'></script>
-		<script src='js/controller/options.js' type='text/javascript'></script>
 
 		<!-- controller blue print requirejs-->
-		<script data-main="js/controller/main.js" src='js/blueprint/require.js'></script>
+		<script data-main="js/controller/main.js" src='lib/require/require.js'></script>
 
 		<!-- <link href="http://oyanix.com/opensource/hybridauth/social_hub/public/zocial.css" rel="stylesheet" type="text/css" /> -->
+	<!--- need to depreciated this file and switch its dependcies to fontello-->
         <link href='css/zocial.css' rel='stylesheet' type='text/css' />
+
 		<style>
 		    .zocial{
 			margin: 2px;
@@ -184,14 +186,18 @@
 			</div>
 			<div id='tabletPanel'>
 				<div class='tablet-title'> PHYLO | DNA Puzzles <span class='beta'>Beta UX</span></div>
+				<div id='tablet-grid-2'>
+					<!--<img src='img/loading.gif'/>-->
+					<i class='icon-spin2 animate-spin'></i>
+				</div>
 				<div id='tablet-grid'>
 					<a class='tablet-grid tablet-play-btn tablet-tab' href=javascript:void(0);' name='play'>
 						<div>
 							<div>
 								<i class='tablet-style-stroke'></i>
-								<i class='icon-stop'></i>
-								<i class='icon-stop'></i>
-								<i class='icon-stop'></i>
+								<i class='icon-stop-1'></i>
+								<i class='icon-stop-1'></i>
+								<i class='icon-stop-1'></i>
 							</div>
 							<div>{{header.field 1}}</div>
 						</div>
@@ -199,7 +205,7 @@
 					<a class='tablet-grid tablet-tutorial-btn tablet-tab' href=javascript:void(0);' name='tutorial'>
 						<div>
 							<div>
-								<i class='icon-circle-arrow-right'></i>
+								<i class='icon-lamp-1'></i>
 							</div>
 							<div>{{header.field 2}}</div>
 						</div>
@@ -207,7 +213,7 @@
 					<a class='tablet-grid tablet-about-btn tablet-tab' href=javascript:void(0);' name='about'>
 						<div>
 							<div>
-								<i class='icon-info-sign'></i>
+								<i class='icon-info-circle'></i>
 							</div>
 							<div>{{header.field 3}}</div>
 						</div>
@@ -241,7 +247,7 @@
 					<a class='tablet-grid tablet-settings-btn tablet-tab' href=javascript:void(0);' name='tablet:settings'>
 						<div>
 							<div>
-								<i class='icon-cogs'></i>
+								<i class='icon-cog-alt'></i>
 							</div>
 							<div>{{header.field 17}}</div>
 						</div>
@@ -258,7 +264,7 @@
 					<a class='tablet-grid tablet-history-btn tablet-tab' href=javascript:void(0);' name='history'>
 						<div class='showInLogin'>
 							<div>
-								<i class='icon-book'></i>
+								<i class='icon-book-1'></i>
 							</div>
 							<div>{{header.field 15}}</div>
 						</div>
@@ -323,7 +329,7 @@
 							<div id='option-list' class='list-shadow'>
 								<div id='language' class='option-list'>
 									<div id='language-tag'>
-										<img src="img/translate3.png"/>
+										<i class='icon-language'></i>
 									</div>			
 									<div id='language-list'>
 										<div class='language-list list-shadow'>
@@ -333,8 +339,9 @@
 											<a href='' name='RU'><div>Pусский</div></a>
 											<a href='' name='ZH-HK'><div>中文繁體</div></a>
 											<a href='' name='ZH-CN'><div>中文简体</div></a>
+                                            <a href='' name='KO'><div>한국어</div></a>
 											<a href='' name='HE'><div>עברית</div></a>
-											<a href='' name='RO'><div>Român</div></a>
+											<a href='' name='RO'><div>Română</div></a>
 											<a href='' name='PT'><div>Português</div></a>
 										</div>
 									</div>
@@ -349,7 +356,7 @@
 				<a class='tablet-grid tablet-back-btn' href='javascript:void(0);' name='back'>
 					<div>
 						<div>
-							<i class='icon-circle-arrow-left'></i>
+							<i class='icon-left-circled'></i>
 						</div>		
 						<div class='m_back'>Back</div>	
 					</div>

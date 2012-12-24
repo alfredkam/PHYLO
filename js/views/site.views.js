@@ -1,9 +1,9 @@
 (function() {
 	define([
-		'jquery',
-		'underscore',
-		'backbone',
-		'mustache',
+		'jquery/jquery',
+		'underscore/underscore',
+		'backbone/backbone',
+		'mustache/mustache',
 		'views/request.views',
 		'views/variable.listener',
 	], function($, _, Backbone,Mustache,Request,Listener) {

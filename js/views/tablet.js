@@ -1,6 +1,6 @@
 (function() {
 	//loads this script if its tablet
-	require( ['jquery'],
+	require( ['jquery/jquery'],
 	function($) {
 		$("#tablet-login-template").css({
 			width : $(document).width()
