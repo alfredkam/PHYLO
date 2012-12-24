@@ -102,39 +102,5 @@ For the Mobile Phone Development, please checkout either archive branch or http:
 
 Quick Crash Course
 =====
-<a href="http://alfredkam.com/best-way-to-develop-a-website/">Click here for a more indepth overview</a>
-
-First of all we are using model view controller + observer design patterns.<br>
-We are using backbone js / require js / mustache to add structure to this web application.
-
-The current folder structure:
-
-	js/views	<=== responsible for inital html materials and listenes to model changes / actions / events
-	js/models 	<=== responsible for data models
-	***under these folders you will see site.*.js, this can be considered as the main class 
-	js/controller 	<=== defines the site routes
-	template 	<=== contains the html template
-	
-	js/phylo-lib	<=== the base framework for the game, it depeneds on jquery (for now)
-	js/RNA		<=== it extends of the DNA framework
-	
-Backbone is mainly used to add structure , http://backbonejs.org <br>
-Backbone Router is used for defining the site url rules<br>
-Require acts like php includes or include once and allows you to define the namespace , http://requirejs.org<br> 
-Mustache is for templating , https://mustache.github.com<br>
-
-	js/Boilerplate.js
-
-This is the boiler plate for writing any js application.
-
-
-Recommended Readings
-=====
-- Router<br>
-http://backbonetutorials.com/what-is-a-router/ <br>
-
-- Backbone + MVC<br>
-http://backbonetutorials.com/organizing-backbone-using-modules/ <br>
-http://coenraets.org/blog/2011/12/backbone-js-wine-cellar-tutorial-part-1-getting-started/ <br>
-http://blog.andyet.com/2010/oct/29/building-a-single-page-app-with-backbonejs-undersc/<br>
-http://backbonetutorials.com/what-is-a-model/<br>
+<a href="http://alfredkam.com/best-way-to-develop-a-website/">Overview</a>
+<a href="https://github.com/alfredkam/MVPjs">Boiler Plate (stock version) </a>
