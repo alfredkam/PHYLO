@@ -9,14 +9,12 @@
          "6":"To reach the final stage, you need to pass the levels. This requires to beat the par (i.e. the computer score). When your score is equal or higher than the par, a shiny star appears at the bottom right corner. Click on it to reach the next stage. When all sequences are on the board, try to get the higher score possible and submit it by clicking the star again!",
          "7":"Scoring information are available at the top of your game board. The blue bar indicates your current score. The red marker indicates the par (i.e. the computer score to beat) and the green marker displays the best score you obtained so far.",
          "8":"Basic information are available at the bottom of your game board. There, you will find your advancement in the game (i.e. stages) and the numbers of match, mismatch and gap. You can revert at anytime to the best solution you found by clicking the multi-color wheel."
-
       },
       "scoring":{
          "1":"Advanced: Scoring",
          "2":"Each node of the phylogenetic tree stores an ancestor sequence. Ancestors are computed automatically and represent a consensus of all sequences derived from it. Point at any node of the tree to display the corresponding sequence at the bottom of the grid.",
          "3":"The alignment score estimates the similarity between a sequence and its ancestor. A color match brings you a bonus of +1 and a color mismatch costs you a penalty of -1. The creation of a gap has a penalty of -4 and its extension by one unit costs -1. Moreover, gaps at the extremities are not penalized and  empty columns are ignored. Here, the alignment score between the bat and its ancestor is -3 (4 matches, 1 mismatches, 1 gap of length 3).",
          "4":"Your score is the sum of the alignment scores of each sequences with their immediate ancestor. Here, the score is the sum of the comparisons between the ancestor of B with human and chimp, the ancestor C with dog and bat, and the ancestor A with B and C."
-
       },
       "example":{
          "1":"Getting ready: An example",
