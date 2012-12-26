@@ -1,4 +1,5 @@
-{		"tutorial": {
+{
+    "tutorial": {
             "basics": {
                 "1": "Bases: Règles et astuçes",
                 "2": "Dans Phylo, ton but est de déplacer les séquences de blocs horizontalement dans le but de créer le maximum de colonnes de couleurs similaires. Chaque alignement de couleur te donne un bonus.",
@@ -6,8 +7,8 @@
                 "4": "Les bonus et pénalités pour les alignements de couleurs sont faible. Mais le coût de création d’un espace est grand! Il est souvent préférable d’avoir un long espace plutôt que plusieurs petits. Essaie de minimiser le nombre d‘espaces en priorité!",
                 "5": "As-tu remarqué l’arbre sur la gauche? Il indique quelles séquences doivent être alignées en priorité. C’est utile quand tu dois favoriser un alignment de blocs par rapport à un autre. Il est plus important de conserver des motifs de couleur pour des séquences dans un même groupe plutôt que dans des groupes différents.",
                 "6": "Pour atteindre le niveau final tu dois passer des niveaux. Pour cela tu dois atteindre le par (i.e. le score de l’ordinateur). Quand ton score est égal ou supérieur au par, une étoile s’illumine en bas a droite. Clique dessus pour atteindre le niveau suivant. Quand toutes les séquences sont présente dans le tableau, essaie d’obtenir le meilleur score possible et soumet ta solution en cliquant encore sur l’étoile!",
-                "7": "Des informations sur ton score sont disponibles au dessus de la grille de jeu. La barre bleue indique ton score. Le marqueur rouge indique le par (i.e. le score de l'ordinateur à battre), tandis que le marqueur vert affiche le meilleur score que tu as obtenu à ce niveau.                
-                "8": "Des informations élémentaires sont disponible en bas de la grille de jeu. Tu y trouveras ton avancement dans le jeu (i.e. les niveaux) ainsi que le nombre de similarités, dissimilarités et d'espaces. Tu peux revenir à ton meilleur score à tout moment en cliquant sur la roue multicolore. "
+                "7": "Des informations sur ton score sont disponibles au dessus de la grille de jeu. La barre bleue indique ton score. Le marqueur rouge indique le par (i.e. le score de l'ordinateur à battre), tandis que le marqueur vert affiche le meilleur score que tu as obtenu à ce niveau.",               
+                "8": "Des informations élémentaires sont disponible en bas de la grille de jeu. Tu y trouveras ton avancement dans le jeu (i.e. les niveaux) ainsi que le nombre de similarités, dissimilarités et d'espaces. Tu peux revenir à ton meilleur score à tout moment en cliquant sur la roue multicolore."
                 },
             "scoring": {
             		"1": "Avançé: Calcul du score",
