@@ -92,6 +92,7 @@
 					if(respond) {
 						selectTab("history");
 						$("#mid-panel").html("<div id='history-wrapper'></div>");
+                        console.log("Call history for " + window.guest);
 						request.post(
 							"http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username=" + window.guest + "&lang=" + lang.toUpperCase(),
 							function(re) {
