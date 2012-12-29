@@ -314,10 +314,10 @@
 								<button class='btn btn-primary register-btn register-btn-shift' id='m_register'>Register</button>
 								<button class='btn btn-danger cancel-btn' id='m_cancel'>Cancel</button>
 								<br/><br/>
-								<a href="#" class="zocial facebook">Signin with Facebook</a>
-								<a href="#" class="zocial twitter">Signin with Twitter</a>
-								<a href="#" class="zocial google">Signin with Google</a>
-								<a href="#" class="zocial linkedin">Signin with LinkedIn</a>
+								<a href="#" class="zocial facebook"><?php str_replace("***","Facebook",{{body.social.field 30}}); ?></a>
+								<a href="#" class="zocial twitter">{{body.social.field 30}} Twitter</a>
+								<a href="#" class="zocial google">{{body.social.field 30}} Google</a>
+								<a href="#" class="zocial linkedin">{{body.social.field 30}} LinkedIn</a>
 								<br><br>
 								<a href='http://phylo.cs.mcgill.ca/reset.php'>Forgot Password?</a>
 							</div>
