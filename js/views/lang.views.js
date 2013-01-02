@@ -8,8 +8,7 @@
 	], function( $, _, Backbone, Mustache, Lang) {
 		var trans = new Lang;
 		var translate = Backbone.View.extend({
-			set : function(json) {
-				
+			set : function(json) {				
 				$(".m_back").html(Mustache.render(trans.get("back"),json));	
 				$(".m_login").html(Mustache.render(trans.get("login"),json));
 				$("#m_cancel").html(Mustache.render(trans.get("cancel"),json));
@@ -32,6 +31,12 @@
 				$("#m_classic").html(Mustache.render(trans.get("classic"),json));
 				$(".m_logout").html(Mustache.render(trans.get("logout"),json));
 				$(".m_theme").html(Mustache.render(trans.get("theme"),json));
+                /*
+                $(".m_fb_signin").html((Mustache.render(trans.get("Sign-in with ***"),json)).replace("***","Facebook"));
+                $(".m_tw_signin").html((Mustache.render(trans.get("Sign-in with ***"),json)).replace("***","Twitter"));
+                $(".m_gg_signin").html((Mustache.render(trans.get("Sign-in with ***"),json)).replace("***","Google"));
+                $(".m_li_signin").html((Mustache.render(trans.get("Sign-in with ***"),json)).replace("***","LinkedIn"));
+                */
 			},
 		});
 		return translate;
