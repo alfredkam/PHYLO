@@ -254,7 +254,7 @@
 					ctx.beginPath();
 					if(x <= eX && eX <= x+menuIcon[i][1] &&
 						y <= eY && eY <= y+menuIcon[i][2]) { 
-						console.log("hover working...");
+						console.log(iconOnHover + " < > "+ window.isTablet);
 						if( iconOnHover == false && window.isTablet == false) {
 							console.log("hovering");
 							ctx.clearRect(x,y,menuIcon[i][1],menuIcon[i][2])
