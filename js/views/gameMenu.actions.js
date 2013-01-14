@@ -271,7 +271,6 @@
 						}
 					} else {
 						if(iconOnHover) {
-							console.log("f");
 							ctx.fillStyle = "#F1F1F1";
 							ctx.fillRect(x,y,menuIcon[i][1],menuIcon[i][2]);
 							var icon = new Image();
