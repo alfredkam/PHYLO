@@ -254,9 +254,7 @@
 					ctx.beginPath();
 					if(x <= eX && eX <= x+menuIcon[i][1] &&
 						y <= eY && eY <= y+menuIcon[i][2]) { 
-						console.log(iconOnHover + " < > "+ window.isTablet);
 						if( iconOnHover == false && window.isTablet == false) {
-							console.log("hovering");
 							ctx.clearRect(x,y,menuIcon[i][1],menuIcon[i][2])
 							ctx.fillStyle = "#F1F1F1";
 							ctx.fillRect(x,y,menuIcon[i][1],menuIcon[i][2]);
@@ -274,7 +272,6 @@
 					} else {
 						if(iconOnHover) {
 							console.log("f");
-							ctx.clearRect(x,y,menuIcon[i][1],menuIcon[i][2])
 							ctx.fillStyle = "#F1F1F1";
 							ctx.fillRect(x,y,menuIcon[i][1],menuIcon[i][2]);
 							var icon = new Image();
