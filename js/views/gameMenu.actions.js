@@ -291,6 +291,7 @@
 					var menuStrColor = '#444';
 					if(x <= eX && eX <= x+menuIcon[i][1] &&
 						y <= eY && eY <= y+menuIcon[i][2]) { 
+						console.log("clicked");
 						switch(i) {
 							case 1:
 								ctx.beginPath();
