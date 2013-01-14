@@ -61,7 +61,7 @@
 		},
 		//calculates the cell position
 		calcPos : function(pos) {
-			return 32.96*pos+(pos);
+			return 32*pos+(pos);
 		},
 		//builds the sequence
 		build : function(seq) {
