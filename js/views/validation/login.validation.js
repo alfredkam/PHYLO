@@ -11,9 +11,9 @@
 		    var provider = $.cookie.read("loginmode");
 		    var c_logid = $.cookie.read("logid");
 		    if (provider=="Classic") {
-			$(".m_login").html(username);
+              $(".m_login").html(username);
 		    } else {
-			$.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider + "&restart=0",function(data){
+			  $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider + "&restart=0",function(data){
 			    var userinfo = eval ("(" + data + ")");
 			    if (userinfo.identifier) {
 				// complete infos stored in cookie
@@ -136,20 +136,20 @@
 		    $(".login-btn").unbind("click");
 		    // show buttons. NB: hide expert button if necessary
 		    $.ajax({
-			type: "POST",
-			url : "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php",
-			data : "mode=8&user="+username,
+			  type: "POST",
+			  url : "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php",
+			  data : "mode=8&user="+username,
 		    }).done(function(re) {
-			$(".showInLogin").show();
-			window.showInLogin = true;
-			if (re!='succ') {
+			  $(".showInLogin").show();
+			  window.showInLogin = true;
+			  if (re!='succ') {
 			    $(".showExpertOptions").hide();
 					window.showExpertOptions = false;
-			}
+			  }
 		    }).fail(function() {
-			$(".showInLogin").show();
-			window.showInLogin = true;
-			console.log("Expert validation failed. Could not connect to the server.");
+			  $(".showInLogin").show();
+			  window.showInLogin = true;
+			  console.log("Expert validation failed. Could not connect to the server.");
 		    });
 		};
 			// Classic login onclick event
