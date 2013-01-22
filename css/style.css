@@ -88,12 +88,12 @@ body {
 }
 
 #draw {
-	box-shadow: 0 6px 6px -6px #CCC;
-	-webkit-box-shadow: 0 6px 6px -6px #CCC;
-	-moz-box-shadow: 0 6px 6px -6px #CCC;
-	-o-box-shadow: 0 6px 6px -6px #CCC;
-	-ms-box-shadow: 0 6px 6px -6px #CCC;
-	-khtml-box-shadow: 0 6px 6px -6px #CCC;
+	box-shadow: 0 1px 1px #ccc;
+	-webkit-box-shadow:0 1px 1px #ccc;
+	-khtml-box-shadow:0 1px 1px #ccc;
+	-o-box-shadow:0 1px 1px #ccc;
+	-ms-box-shadow:0 1px 1px #ccc;
+	-ms-box-shadow:0 1px 1px #ccc;
 /*	background-color: #efefef;
 	*/
 	background-color:white;
