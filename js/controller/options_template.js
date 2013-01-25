@@ -7,5 +7,5 @@ window.DEV = {
 	disableSplash : false,
 	disableMusic : false,
 	enableTableMode : false,
-	logging : false,
+	logging : false
 };

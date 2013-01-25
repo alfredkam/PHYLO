@@ -16,5 +16,5 @@
 		$(".warning-msg a").click(function() {
 			window.location = $(this).attr("href");
 		});
-	}
+	} 
 })();
