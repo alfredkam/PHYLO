@@ -126,9 +126,9 @@
 			});
 
 			route.on('route:expert', function(lang) {
-				window.location = "http://phylo.cs.mcgill.ca/expert";
+				window.location = "http://phylo.cs.mcgill.ca/expert/welcome.php";
 			});
-	
+
 			route.on('route:contribute',function() {
 				window.location = "http://phylo.cs.mcgill.ca/contribute";
 			});
