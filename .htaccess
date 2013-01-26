@@ -1,4 +1,5 @@
 ErrorDocument 404 /index.html
 IndexIgnore *
 RewriteEngine On
+RewriteRule ^expert/?$ dcanv/$1 [L]
 RewriteRule ^([^/\.]+)/?$ index.php/$1 [L]
