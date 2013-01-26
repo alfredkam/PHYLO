@@ -178,6 +178,7 @@ function g(){};
         },
         "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 0 ] } ],
         "sPaginationType": "bootstrap",
+        "bAutoWidth": false,
     });
                   
     // select buttons
