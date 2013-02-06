@@ -497,7 +497,14 @@ a.btn {
 	-khtml-box-shadow: 0 6px 6px -6px #CCC;
 }
 
-.wrapper-inner {
+.wrapper-inner::selection {
+	background: lightblue;
+}	
+.wrapper-inner::-moz-selection {
+	background:lightblue;
+}
+
+.wrapper-inner {	
 	padding:50px 100px;
 	background-color:white;
 	text-align:left;
