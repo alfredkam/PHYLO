@@ -498,25 +498,19 @@ a.btn {
 }
 
 .wrapper-inner::selection {
-	-webkit-touch-callout: text;
-	-webkit-user-select: text;
-	-khtml-user-select: text;
-	-moz-user-select: text;
-	-ms-user-select: text;
-	user-select: text;
 	background: lightblue;
 }	
 .wrapper-inner::-moz-selection {
-	-webkit-touch-callout: text;
-	-webkit-user-select: text;
-	-khtml-user-select: text;
-	-moz-user-select: text;
-	-ms-user-select: text;
-	user-select: text;
 	background:lightblue;
 }
 
 .wrapper-inner {	
+	-webkit-touch-callout: text;
+	-webkit-user-select: text;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
 	padding:50px 100px;
 	background-color:white;
 	text-align:left;
