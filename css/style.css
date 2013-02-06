@@ -498,9 +498,21 @@ a.btn {
 }
 
 .wrapper-inner::selection {
+	-webkit-touch-callout: element;
+	-webkit-user-select: element;
+	-khtml-user-select: element;
+	-moz-user-select: element;
+	-ms-user-select: element;
+	user-select: element;
 	background: lightblue;
 }	
 .wrapper-inner::-moz-selection {
+	-webkit-touch-callout: element;
+	-webkit-user-select: element;
+	-khtml-user-select: element;
+	-moz-user-select: element;
+	-ms-user-select: element;
+	user-select: element;
 	background:lightblue;
 }
 
