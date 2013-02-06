@@ -498,21 +498,21 @@ a.btn {
 }
 
 .wrapper-inner::selection {
-	-webkit-touch-callout: element;
-	-webkit-user-select: element;
-	-khtml-user-select: element;
-	-moz-user-select: element;
-	-ms-user-select: element;
-	user-select: element;
+	-webkit-touch-callout: auto;
+	-webkit-user-select: auto;
+	-khtml-user-select: auto;
+	-moz-user-select: auto;
+	-ms-user-select: auto;
+	user-select: auto;
 	background: lightblue;
 }	
 .wrapper-inner::-moz-selection {
-	-webkit-touch-callout: element;
-	-webkit-user-select: element;
-	-khtml-user-select: element;
-	-moz-user-select: element;
-	-ms-user-select: element;
-	user-select: element;
+	-webkit-touch-callout: auto;
+	-webkit-user-select: auto;
+	-khtml-user-select: auto;
+	-moz-user-select: auto;
+	-ms-user-select: auto;
+	user-select: auto;
 	background:lightblue;
 }
 
