@@ -1,43 +1,43 @@
 {
    "tutorial":{
       "basics":{
-         "1":"Basics: Rules and tips",
-         "2":"In Phylo, your goal is to move sequences of  blocks horizontally in order to create the maximum number of columns of similar colors. Each color match gives you a bonus.",
-         "3":"However, the sequences are not identical. Thus, color mismatches and gaps are unavoidable and you receive penalties for that. Your challenge is to find the  best trade-off between bonuses and penalties. N.B.: Smaller blocks highlight mismatches.",
-         "4":"Bonuses and penalties for color matches and mismatches are small. But the cost of gaps is big! It is usually preferable to have a long gap rather than several small ones. Try to minimize the number of gaps in priority.",
-         "5":"Did you notice the tree on the left? It tells you which sequences must be aligned in priority. This is helpful when you have to favor one color match versus another one. It is more important to conserve identical patterns for sequences in the same group than increasing similarities between different groups.",
-         "6":"To reach the final stage, you need to pass the levels. This requires to beat the par (i.e. the computer score). When your score is equal or higher than the par, a shiny star appears at the bottom right corner. Click on it to reach the next stage. When all sequences are on the board, try to get the higher score possible and submit it by clicking the star again!",
-         "7":"Scoring information are available at the top of your game board. The blue bar indicates your current score. The red marker indicates the par (i.e. the computer score to beat) and the green marker displays the best score you obtained so far.",
-         "8":"Basic information are available at the bottom of your game board. There, you will find your advancement in the game (i.e. stages) and the numbers of match, mismatch and gap. You can revert at anytime to the best solution you found by clicking the multi-color wheel."
+         "1":"基础：规则与提示",
+         "2":"在Phylo游戏中，你的目标是水平移动序列中的方块，使得相同颜色的最大可能的在一起（匹配）。每一个匹配都能为您带来加分奖励。",
+         "3":"然而，这些序列是不一样的。因此，颜色的错配和所照成的插空是不可避免的，并且您会被罚分。您的挑战内容就是在得分与罚分之间寻找一个最好的权衡点。注：错配区域将以小方块突出显示。",
+         "4":"颜色的匹配与错配对于分数的得失影响很小。但是插空的形成却会严重影响得分！而通常一个长插空比几个小插空更好。所以优先考虑的是尽量减小插空的数量。",
+         "5":"您有注意到左边的发生树吗？它会告诉您应该优先排列哪些序列。这个在您遇到必须在一个与另一个颜色之间做出选择时显得尤为有用。更重要的是保留小组里模式一致的序列而非增加在不同的组之间的相似性。",
+         "6":"为了进入最终阶段，您需要不断地通过水平测试。这要求你要高于一个设定的分数值（例如电脑的内设分数）。当您的分数等于或大于所设定的分数值，在右下方的角落会出现一个闪亮的星星。点击它进入下一个阶段。当所有的序列都在版面上，尽可能提高分数，并且再次点击星星提交你的结果。",
+         "7":"在游戏版面的顶部会显示您的得分信息。蓝色的条块表示为您当前的得分。而红色的标志物则表示为所设定的分数值（例如，电脑内部设定要求您超过的分数值），蓝色的标志物则表示您目前为止所获得的最高分。",
+         "8":"基本信息可在您游戏版面的底部中看到。那里有您在游戏里的前进程度（例如已进入的阶段）以及颜色匹配、错配和缝隙的数量。你可以通过点击彩色的转轮随时返回你所找到的最好的结果处。"
 
       },
       "scoring":{
-         "1":"Advanced: Scoring",
-         "2":"Each node of the phylogenetic tree stores an ancestor sequence. Ancestors are computed automatically and represent a consensus of all sequences derived from it. Point at any node of the tree to display the corresponding sequence at the bottom of the grid.",
-         "3":"The alignment score estimates the similarity between a sequence and its ancestor. A color match brings you a bonus of +1 and a color mismatch costs you a penalty of -1. The creation of a gap has a penalty of -4 and its extension by one unit costs -1. Moreover, gaps at the extremities are not penalized and  empty columns are ignored. Here, the alignment score between the bat and its ancestor is -3 (4 matches, 1 mismatches, 1 gap of length 3).",
-         "4":"Your score is the sum of the alignment scores of each sequences with their immediate ancestor. Here, the score is the sum of the comparisons between the ancestor of B with human and chimp, the ancestor C with dog and bat, and the ancestor A with B and C."
+         "1":"高级：得分",
+         "2":"系统进化树上的每一个节点都储存着一个祖先序列。祖先是自动计算的而且代表它所有衍生序列的一致性。拖动鼠标箭头指着树上任意一个节点即可显示与底部的网格相对应的序列。",
+         "3":"这个比对得分可以估计一个序列和它的祖先序列之间的相似性。一个颜色匹配可得1分，而错配扣1分。造成一个插空扣4分且它每多延伸一个单位就多扣1分。然而，在两端的插空是不扣分的且可忽略空的纵列。这里，大象和它的祖先比对得分是-3（4个匹配，1个错配，1个长度为3的插空）。",
+         "4":"您的得分是每一个序列和它们最接近的祖先序列的比对得分之总和。这里，分数指的是在B的祖先与人类和黑猩猩之间，C祖先与狗和蝙蝠之间，以及A祖先与B和C之间的比较所得出之总和。"
 
       },
       "example":{
-         "1":"Getting ready: An example",
-         "2":"You are starting with two sequences (human and chimp). Push everything on the left and check out the ancestor. Aligning this ancestor with your two sequences gives you 13 matches for the first sequence (human), and 5 matches, 1 mismatch for the second sequence (chimp). The trailing gap is ignored. Thus your total is 18 × (+1) + 1 × (‐1) = 17. You beat the par. Click on the star and jump to the next stage!",
-         "3":"Two new sequences (dog and bat) appear. Again, push them all to the left. Your score is 9. 18 matches between the dog sequence and its ancestor (gap at extremity is again ignored), and 5 matches and 14 mismatches between the bat sequence and the ancestor (Thus a total of 23 × (+1) + 14 × (‐1) = 9). You can do better. How?",
-         "4":"Shift the bottom sequence by one unit to the right starting from the seventh brick. You create an additional gap but you also create many matches. Did you notice? The ancestor changed. You have now 18 matches with the dog sequence (trailing gap ignored), and 12 matches, 7 mismatches and 1 gap of length 1 with the bat sequence. Your score is 30 × (+1) + 7 × (‐1) + ( 1 × ‐4 ) = 19. Move to the next stage.",
-         "5":"Now, you have to assemble your previous alignments. Your initial score is 41. It beats the par (30) but you can do better… Intuitively, we want to find a better alignment of the 1st block (the two top sequences) and the 2nd block (the two lower sequences). How?",
-         "6":"Shift the first block by 4 units to the right. This move creates two complete green columns. It also improves the similarity between the human's sequence and those of the dog and the bat. Your total score is now 57. How is it calculated?",
-         "7":"Let's have a look at the human and chimp ancestor. Its alignment score with the human sequence is 11 (12 matches and 1 mismatch), and 6 with the chimp sequence (6 matches). Thus the score at this ancestor node is 11 + 6 = 17.",
-         "8":"We do the same thing for the dog and bat ancestor. Its alignment score with the dog sequence is 14 (16 matches and 2 mismatches) and 3 with the bat sequence (12 matches, 5 mismatches, 1 gap of length 1). Thus, the score at this ancestor node is 14 + 3 = 17.",
-         "9":"To complete your score, you need to compute the alignment score of the human/chimp ancestor and dog/bat ancestor with the ancestor at the root of the tree. First, we compute the alignment score of the human/chimp ancestor with the global ancestor. There are 9 matches, 4 mismatches (gaps at the end and beginning are ignored). The score is 9 × (+1) + 4 × (‐1) = 5.",
-         "10":"Then, we compute the alignment score of the dog/bat ancestor with the global ancestor. There is 18 matches and the score is 18. Therefore, the score associated with the root is 5 + 18 = 23.",
-         "11":"Your final score is the sum of all individual scores previously computed. Here, the score of the alignment of human and chimp is 17, the score  of the alignment of dog and bat is 17, the score of the alignment of ancestors with the root is 23. Thus, your total score is 57.",
-         "12":"You have the highest score. Click the star and submit your puzzle. You are done! The level id for this puzzle is 481. Now, you are ready to play!"
+         "1":"准备工作：一个例子",
+         "2":"您开始于两个序列（人类和黑猩猩）。把所有方格推到左边并检查它们的祖先。用您的两个序列去排列这个祖先会给您的第一个序列（人类）获得13个匹配，以及第二个序列（黑猩猩）5个匹配和一个错配。后面的插空可被忽略。因此您的总分是18 × (+1) + 1 × (‐1) = 17。您已高于设定的分数值。点击星星并进入下一阶段！",
+         "3":"两个新序列（狗和蝙蝠）出现了。再次将它们全部推到左方。您的得分是9。在狗和它的祖先的序列之间有18个匹配（在两端的插空再次被忽略），在蝙蝠和它的祖先的序列之间有5个匹配和14个错配（因此总共为23 × (+1) + 14 × (‐1) = 9）。您可以做得更好的。应该如何做呢？",
+         "4":"从第七个砖块开始，将底部的序列以一个单位转移到右边。您会造成1个额外的插空但同时您也创造出很多匹配。您注意到了吗？祖先改变了。您现在有狗的序列的18个匹配（后面的插空被忽略），蝙蝠序列的12个匹配、7个错配和1个长度为1的插空。您的分数是30 × (+1) + 7 × (‐1) + ( 1 × ‐4 ) = 19。请进入下一阶段。",
+         "5":"现在，您需要收集您之前的比对序列。您的初始成绩是41分，比所设定的分数值高（30），但您可以做得更好...直观上来说，我们想要给第一个阻块（那两个顶部的序列）和第二格阻块（那两个更低的序列）找到一个更好的比对序列。应该如何做呢？",
+         "6":"将第一个阻块以四个单位转移到右边。这个移动创造出两个完全绿色的柱形物。它也提高了人类和狗以及蝙蝠的序列之间的相似性。您现在的总得分为57。它是怎么计算得出的呢？",
+         "7":"请看人类和黑猩猩的祖先。它与人类序列的比对得分是11（12个匹配和1个错配），而与黑猩猩序列则是6（6个匹配）。因此在这个祖先节点的得分是11 + 6 = 17。",
+         "8":"我们给狗和蝙蝠的祖先所做的工作是一样的。它与狗的序列的比对分数是14（16个匹配和2个错配），与蝙蝠的序列的是3（12个匹配，5个错配，1个长度为1的插空）。因此在这个祖先节点的得分是14 + 3 = 17。",
+         "9":"为了完成您的得分，您需要用发生树根部的祖先来计算人类/黑猩猩的祖先和狗/蝙蝠的祖先的比对分数。首先，我们用全球的祖先来计算人类/黑猩猩的祖先之间的比对得分。这里有9个匹配，4个错配（在始端和末端的插空均被忽略）。计分为9 × (+1) + 4 × (‐1) = 5。",
+         "10":"然后，我们用全球的祖先来计算狗/蝙蝠的祖先的比对得分。这里有18个匹配且得分为18.因此，与根部相关的分数是 5 + 18 = 23。",
+         "11":"Y您的最终得分是所有之前分别计算的分数的总和。这里，人类和黑猩猩的比对分数是17，狗和蝙蝠的比对分数是17，它们的祖先和发生树根部的祖先的比对得分是23。因此，您的总分为57.",
+         "12":"您获得了最高分。点击星星并提交您的拼图。您已经完成了！这个拼图的水平等级号是0。现在，您可以开始进入游戏了！"
 
       },
       "misc":{
-         "1":"match",
-         "2":"mismatch",
-         "3":"gap",
-         "4":"phylogenetic tree"
+         "1":"匹配",
+         "2":"错配",
+         "3":"插空",
+         "4":"系统进化树"
 
       }
 
