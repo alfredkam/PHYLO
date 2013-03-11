@@ -32,7 +32,7 @@
 			return null;
 		},
 		//c_name : name of cookie
-		delete : function (c_name) {
+		"delete" : function (c_name) {
 		    this.create(c_name,"",-1);
 		}
 	};

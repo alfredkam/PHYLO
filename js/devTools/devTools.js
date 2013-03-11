@@ -74,7 +74,7 @@
 		},
 		log : function(msg) {
 			console.log(msg);
-		},
+		}
 	};
 	g.prototype.test = {
 		jax : function(link, callBack) {

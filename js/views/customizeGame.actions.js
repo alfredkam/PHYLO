@@ -82,7 +82,7 @@
 (function() {
 	
 	$.customize = {
-		default : function() {
+		"default" : function() {
 			if($.cookie.read("bgCell")) {
 				$(".colorBG").css({backgroundColor : $.cookie.read("bgCell")});
 				$(".bgCell").css({backgroundColor : $.cookie.read("bgCell")});
@@ -114,7 +114,7 @@
 			} else {
 				$.cookie.create("nuc-T","#FFA500",365);
 			}
-		},
+		}
 	}
 })();
 

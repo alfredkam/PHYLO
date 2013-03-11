@@ -68,7 +68,7 @@
 								$(".warning-msg").html("<i class='icon-remove'></i><br><b>Aww Snap!</b><br>  Something went wrong.  Please reload the page to continue!");
 								$(".warning-bg").css({
 									height: $(document).height(),
-									width: $(document).width(),
+									width: $(document).width()
 								});
 								$(".warning-bg").fadeIn();
 								$(".warning").fadeIn();

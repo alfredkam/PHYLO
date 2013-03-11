@@ -30,8 +30,8 @@
 				'classic' : '{{header.field 12}}',
 				'theme' : '{{body.misc.field 11}}',
 				'quitGame':'{{body.misc.field 19}}',
-				'signInWith' : '{{body.social.field 30}}',
-			},
+				'signInWith' : '{{body.social.field 30}}'
+			}
 		});
 		return translate;
 	});

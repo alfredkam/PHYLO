@@ -71,7 +71,7 @@
 				$(".warning").fadeOut();
 				$(".warning-bg").fadeOut();
 			});
-		},
+		}
 	}
 	window.common = {
 		//used by the depreciated functions to export singleton
