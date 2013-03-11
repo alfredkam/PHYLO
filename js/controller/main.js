@@ -117,7 +117,7 @@
 			},
 			'jquery/jquery.notify' : {
 				deps : ['jquery/jquery', 'jquery/jquery-ui']
-			},	
+			}	
 		}
 	});
 	require(['yepnope/yepnope'],
