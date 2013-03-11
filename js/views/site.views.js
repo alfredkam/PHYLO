@@ -5,7 +5,7 @@
 		'backbone/backbone',
 		'mustache/mustache',
 		'views/request.views',
-		'views/variable.listener',
+		'views/variable.listener'
 	], function($, _, Backbone,Mustache,Request,Listener) {
 		var listener = new Listener;
 		var selectTab = function(tag) {
@@ -37,7 +37,7 @@
 										$("#menu").hide();
 										$.main.init({
 											type:"disease",
-											num : id,
+											num : id
 										});		
 									}
 								}	
@@ -47,7 +47,7 @@
 								$("#menu").hide();
 								$.main.init({
 									type:"disease",
-									num : id,
+									num : id
 								});		
 							}
 						});
@@ -73,7 +73,7 @@
 								} else {
 									$.main.init({
 										type: "random",
-										num: 3,		
+										num: 3		
 									});	
 								}
 							},500);

@@ -18,7 +18,7 @@
 						},_stepFunction);
 				};
 				check(0);
-			},
+			}
 		});					
 		return obj;
 	});

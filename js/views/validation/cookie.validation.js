@@ -13,13 +13,13 @@
 		//c_name : name of cookie
 		//value : the value to store
 		//exdays : expire date [int]
-        create : function(c_name, value, exdays) {
-            var exdate = new Date();
-            exdate.setDate(exdate.getDate()+exdays);
-            var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
-            document.cookie=c_name + "=" + c_value + "; path=/";
-        },
-        //c_name : name of cookie
+		create : function(c_name, value, exdays) {
+		    var exdate = new Date();
+		    exdate.setDate(exdate.getDate()+exdays);
+		    var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+		    document.cookie=c_name + "=" + c_value + "; path=/";
+		},
+		//c_name : name of cookie
 		//returns value or null
 		check : function(c_name) {
 			var nameEQ = c_name + "=";
@@ -33,8 +33,8 @@
 		},
 		//c_name : name of cookie
 		delete : function (c_name) {
-            this.create(c_name,"",-1);
+		    this.create(c_name,"",-1);
 		}
-	}
+	};
 
 })();

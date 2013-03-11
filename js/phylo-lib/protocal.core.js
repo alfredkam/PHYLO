@@ -9,7 +9,7 @@
 			$.ajax({
 				type: "POST",
 				url : url,
-				data : data,
+				data : data
 			}).done(function(re) {
 				fn(re);		
 			}).fail(function() {
@@ -23,7 +23,7 @@
 			$.ajax({
 				type: "POST",
 				url : url,
-				data : data,
+				data : data
 			}).done(function(re) {
 				fn(re);		
 			}).fail(function() {
@@ -40,7 +40,7 @@
             $.ajax({
 				type: "POST",
 				url : url,
-				data : data,
+				data : data
 			}).done(function(re) {
 				var json = eval("["+re+"]")[0];
 				fn(json);
@@ -159,7 +159,7 @@
 			$.ajax({
 				url : url,
 				data : str,
-				type : "POST",
+				type : "POST"
 			}).done(function(data) {
 				data = data.replace("@","");
 				$.protocal.previousData = data;

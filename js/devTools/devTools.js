@@ -35,7 +35,7 @@
 		},
 		retrieveMutliPuzzle : function() {
 
-		},
+		}
 	};
 	g.prototype.prompt = {
 		//calls the notify
@@ -81,7 +81,7 @@
 			$.ajax({
 				type : "POST",
 				url : link.url,
-				data : link.data,
+				data : link.data
 			}).done(function(r) {
 				callBack(r);
 			}).fail(function() {
@@ -130,7 +130,7 @@
 		attr = [
 			["offline", proto.offline],
 			["prompts", proto.prompt],
-			["test",proto.test],
+			["test",proto.test]
 			];
 	//export singlenton
 	var exportSingleton =  function(name, obj, attr) {

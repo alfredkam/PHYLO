@@ -6,7 +6,7 @@
 		'mustache/mustache',
 		'views/request.views',
 		'views/lang.views',
-		'models/lang.models',
+		'models/lang.models'
 	], function($, _, Backbone, Mustache, Request, Lang, LangModel) {
 		var request = new Request;
 		var translate = new Lang;
@@ -16,7 +16,7 @@
 			init : function() {
 				this.desktopNavBar = $("#nav").html();
 				this.tabletUX = $("#tablet-grid").html();
-				this.set,("EN","play");
+				this.set("EN","play");
 			},
 			lang : "null",
 			//sets stuff

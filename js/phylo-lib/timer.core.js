@@ -16,6 +16,6 @@
 		stop : function() {
 			clearInterval(this.timer);
 			this.active = false;
-		},
+		}
 	}
 })();

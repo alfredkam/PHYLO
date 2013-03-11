@@ -26,7 +26,7 @@
 				self.loading();
 				$.ajax({
 					type : "POST",
-					url : url,
+					url : url
 				}).done(function(re) {
 					callBack(re);
 				}).fail(function(re) {
@@ -34,7 +34,7 @@
 						console.log(">> Cannot connect to database, requesting dummy data @"+dummy);
 						$.ajax({
 							type : "GET",	
-							url : dummy,
+							url : dummy
 						}).done(function(data) {
 							callBack(data);
 						});

@@ -9,7 +9,7 @@
 
 		$(".warning-bg").css({
 			height: $(document).height(),
-			width: $(document).width(),
+			width: $(document).width()
 		});
 		$(".warning-bg").fadeIn();
 		$(".warning").fadeIn();

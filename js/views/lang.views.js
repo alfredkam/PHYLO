@@ -4,7 +4,7 @@
 		'underscore/underscore',
 		'backbone/backbone',
 		'mustache/mustache',
-		'models/lang.models',
+		'models/lang.models'
 	], function( $, _, Backbone, Mustache, Lang) {
 		var trans = new Lang;
 		var translate = Backbone.View.extend({
@@ -35,7 +35,7 @@
                 $(".m_tw_signin").html(Mustache.render(trans.get("signInWith"),json).replace("***","Twitter"));
                 $(".m_gg_signin").html(Mustache.render(trans.get("signInWith"),json).replace("***","Google"));
                 $(".m_li_signin").html(Mustache.render(trans.get("signInWith"),json).replace("***","LinkedIn"));
-			},
+			}
 		});
 		return translate;
 	});
