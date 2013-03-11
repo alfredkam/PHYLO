@@ -137,7 +137,7 @@
 						$(".tablet-login-wrapper").fadeIn();
 					}	
 				});
-			},
+			}
 		});
 		return navBar;
 	});

@@ -83,7 +83,7 @@
 				$("#m_contribute").unbind().click(function() {
 					window.location.hash = $(this).attr("href");
 				});
-			},
+			}
 		});
 
 		var historyView = Backbone.View.extend({

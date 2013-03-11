@@ -75,7 +75,7 @@
 							} else {
 								self.protocal(url);
 							}
-						},
+						}
 					},	
 					url : url,
 				}).done(function(re) {

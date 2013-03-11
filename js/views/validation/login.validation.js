@@ -24,7 +24,7 @@
 				    $.ajax({
 					   type: "POST",
 					   url : "http://phylo.cs.mcgill.ca/phpdb/passwdmanager.php",
-					   data : "username="+username+"&id="+c_logid,
+					   data : "username="+username+"&id="+c_logid
 				     }).done(function(mypasswd) {
 					var password = mypasswd;
 					// a bit heavy. a simple table entry check would be enough.
@@ -52,7 +52,7 @@
 								$.ajax({
 								    type: "POST",
 								    url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
-								    data : data,
+								    data : data
 								}).done(function(re) {
 								    //bootbox.alert("Thank you for sharing the word. You can now start to play!");
 								}).fail(function() {
@@ -138,7 +138,7 @@
 		    $.ajax({
 			  type: "POST",
 			  url : "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php",
-			  data : "mode=8&user="+username,
+			  data : "mode=8&user="+username
 		    }).done(function(re) {
 			  $(".showInLogin").show();
 			  window.showInLogin = true;
@@ -178,7 +178,7 @@
 			    $.ajax({
 				type: "POST",
 				url : "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php",
-				data : "mode=8&user="+username,
+				data : "mode=8&user="+username
 			    }).done(function(re) {
 				$(".showInLogin").show();
 				window.showInLogin = true;

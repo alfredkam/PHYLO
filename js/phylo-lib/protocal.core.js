@@ -256,6 +256,6 @@
 				$.phylo.get.tree = tree;
 				$.main.callBack();
 			});
-		},
+		}
 	};
 })();

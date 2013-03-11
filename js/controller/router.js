@@ -163,6 +163,6 @@
 
 		return {
 			init : init
-		};
+		}
 	});
 })();
