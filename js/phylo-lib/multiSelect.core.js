@@ -97,7 +97,7 @@
 				if(
 					( 	//first row just sitting on border level  -- exclude far left && far right
 						curr.Y <= box.Y && box.Y <= curr.Y+curr.H
-						&& box.X <= curr.X && curr.X <= box.X+box.H
+						&& box.X <= curr.X && curr.X <= box.X+box.W
 					) 	||
 					(	//when red box inside the cell
 						curr.Y <= box.Y && box.Y+box.H <= curr.Y+curr.H 
@@ -148,6 +148,8 @@
 			});	
 			select.H -= select.Y;
 			select.W -= select.X;
+
+			console.log(list);
 
 			if(list.length == 0) {
 				$("#chosenArea").hide();
