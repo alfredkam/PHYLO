@@ -70,8 +70,8 @@
 		//captures the select grids
 		capture : function() {
 			var box = {
-				X: parseInt($("#selectBox").css("left").replace(/px/,"")) - parseInt($("#tree").css("width").replace(/px/,""))-5,
-				Y: parseInt($("#selectBox").css("top").replace(/px/,"")) - 110,
+				X: parseInt($("#selectBox").css("left").replace(/px/,"")) - parseInt($("#tree").css("width").replace(/px/,""))-4,
+				Y: parseInt($("#selectBox").css("top").replace(/px/,"")) - 126,
 				H: parseInt($("#selectBox").css("height").replace(/px/,"")),
 				W: parseInt($("#selectBox").css("width").replace(/px/,"")),
 			};	
@@ -95,6 +95,10 @@
 				};
 				//gets if in the box
 				if(
+					( 	//first row just sitting on border level  -- exclude far left && far right
+						curr.Y <= box.Y && box.Y <= curr.Y+curr.H
+						&& box.X <= curr.X && curr.X <= box.X+box.H
+					) 	||
 					(	//when red box inside the cell
 						curr.Y <= box.Y && box.Y+box.H <= curr.Y+curr.H 
 				     		&& curr.X <= box.X && box.X+box.W <= curr.X+curr.W
@@ -110,14 +114,19 @@
 					(	//top right corner
 						curr.Y <= box.Y && box.Y <= curr.Y+curr.H 
 						&& curr.X <= box.X+box.W && box.X+box.W <= curr.X+curr.W
-					)	||
-					(	//top middle
-						curr.Y <= box.Y && box.Y <= curr.Y+curr.H 
-						&& box.X <= curr.X && curr.X <= box.X+box.W
+
 					)	||
 					(	//bottom left
 						box.Y <= curr.Y && curr.Y <= box.Y+box.H
 						&& curr.X <= box.X && box.X <= curr.X+curr.W
+					)	||
+					(	//bottom right
+						box.Y <= curr.Y && curr.Y <= box.Y+box.H
+						&& curr.X <= box.X+box.W && box.X+box.W <= curr.X+curr.W
+					)	|| 
+					(	//last row just sitting on border level -- exclude far left && far right
+						curr.Y <= box.Y+box.H && box.Y+box.H <= curr.Y+curr.H
+						&& box.X <= curr.X && curr.X  <= box.X+box.W	
 					)
 				) {
 					list.push(self);

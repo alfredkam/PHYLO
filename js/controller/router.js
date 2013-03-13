@@ -43,11 +43,13 @@
 			var route = new Routes;
 			route.on('route:play', function(lang, dev) {
 				if(dev) {
-					if(dev == "IAMADEV")
+					if(dev == "IAMADEV") 
 						window.DEV.logging = true;	
 					else if(dev == "IAMADEV+DEBUG") {
 						window.DEV.logging = true;
 						window.DEBUG = true;
+					} else if(dev == "NOMUSIC") {
+						window.DEV.disableMusic = true;
 					}
 					
 				}
