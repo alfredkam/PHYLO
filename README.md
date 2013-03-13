@@ -16,7 +16,7 @@ We love to hear from you, you can post it at https://github.com/McGill-CSB/PHYLO
 Contacts
 =====
 Principal Investigator (Media and scientific contact) : Jerome Waldispuhl - jerome.waldispuhl@mcgill.ca<br>
-Lead Developer / UX (Technical Inquiries) : Alfred Kam - alfred.kam@mail.mcgill.ca or alfred@appfuel.me
+Lead Developer / UX (Technical Inquiries) : @AlfredKam - alfred.kam@mail.mcgill.ca or alfred@appfuel.me
 
 License
 =====
