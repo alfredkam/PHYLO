@@ -149,8 +149,6 @@
 			select.H -= select.Y;
 			select.W -= select.X;
 
-			console.log(list);
-
 			if(list.length == 0) {
 				$("#chosenArea").hide();
 				return;
