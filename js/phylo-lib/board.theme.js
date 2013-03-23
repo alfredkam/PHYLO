@@ -165,7 +165,7 @@
 					else if(i!=0 && track[i][j] == 0)
 						str+="";
 					else
-						str+=self.convertColor($("#"+track[i][j]).css("backgroundColor"));
+						str+=self.convertColor($("#"+track[i][j]));
 				}
 				str+='"}';
 				if(i<track.length-2)
@@ -174,7 +174,16 @@
 			return '{"alignments" : '+str+']}';
 		},
 		//translates the grid color to its respected nucletide
-		convertColor : function(color) {
+		convertColor : function(nuc) {
+			if(nuc.hasClass("nuc-G"))
+				return "G";
+			if(nuc.hasClass("nuc-C"))
+				return "C";
+			if(nuc.hasClass("nuc-A"))
+				return "A";
+			if(nuc.hasClass("nuc-T"))
+				return "T";
+			/*
 			if(color == "#71B2E2")
 				return "A";
 			if(color == "#9932CC")
@@ -199,7 +208,8 @@
 				return "C";
 			if(color == $(".nuc-T").css("backgroundColor"))
 				return "T";
+			*/
 			return null;
-		},
+		}
 	};	
 })();
