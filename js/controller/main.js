@@ -11,7 +11,7 @@
 			lang : '../lang',
 			views : '../js/views',
 			models : '../js/models',
-			dev : '../js/devTools'
+			dev : '../js/util'
 		},
 		shim : {
 			'jquery/jquery-ui' : {

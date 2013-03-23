@@ -10,11 +10,13 @@
 						$.events.touch(self,{
 							start: function(e) {
 								$.events.touch(document, {
+									//move start
 									move: function(e) {
 										$("#chosenArea").hide();
 										$("#red"+id).show("fast");
 										$.physics.move(self,e);
 									},
+									//move end
 									end : function(e) {
 										$("#red"+id).hide("fast");
 										$.events.untouch(document, "move");
