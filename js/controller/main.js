@@ -11,7 +11,8 @@
 			lang : '../lang',
 			views : '../js/views',
 			models : '../js/models',
-			dev : '../js/util'
+			dev : '../js/util',
+			util : '../js/util'
 		},
 		shim : {
 			'jquery/jquery-ui' : {
@@ -117,6 +118,9 @@
 			},
 			'jquery/jquery.notify' : {
 				deps : ['jquery/jquery', 'jquery/jquery-ui']
+			},
+			'util/example' : {
+				deps : ['jquery/jquery', 'backbone/backbone', 'underscore/underscore','mustache/mustache']
 			}	
 		}
 	});

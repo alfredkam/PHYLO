@@ -5,13 +5,15 @@
 		'backbone/backbone',
 		'views/site.views',
 		'views/navBar.views',
-		'models/site.models'
-	], function($, _ , Backbone, Views, NavBar, Models) {
+		'models/site.models',
+		'util/example'
+	], function($, _ , Backbone, Views, NavBar, Models, example) {
 		var Routes = Backbone.Router.extend({
 			routes : {
 				'!/contribute' : "contribute",
 				"!/:lang/BETA/RNA" : "rna",
 				"!/:lang/play/puzzle/:id" : "puzzle",
+				"!/:lang/play/aws/:id" : "mechanicalTurk",
 				"!/:lang/play" : "play",
 				"!/:lang/play/:AMA": "play",
 				"!/play" : "play",
@@ -62,6 +64,20 @@
 			});
 
 			route.on('route:puzzle',function(lang, id) {
+				if(lang == undefined) {
+					lang = "EN";
+				} else lang.toUpperCase();
+				navBar.set(lang, "play");
+				var playView = new Views.Play;
+				playView.renderPuzzle(lang, id);	
+			});
+
+			route.on('route:mechanicalTurk', function(lang, id) {
+				//you can write additional script here
+				
+				id = id.replace(/\?.*/,"");
+				console.log(id);
+				console.log("calling aws link");
 				if(lang == undefined) {
 					lang = "EN";
 				} else lang.toUpperCase();
