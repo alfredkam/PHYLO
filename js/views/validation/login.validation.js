@@ -10,18 +10,15 @@
 		    var fullname = $.cookie.read("fullname");
 		    var provider = $.cookie.read("loginmode");
 		    var c_logid = $.cookie.read("logid");
-            bootbox.alert("Start login");
 		    if (provider=="Classic") {
               $(".m_login").html(username);
 		    } else {
-              bootbox.alert("Social login");
 			  $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider + "&restart=0",function(data){
 			    var userinfo = eval ("(" + data + ")");
 			    if (userinfo.identifier) {
 				  // complete infos stored in cookie
 				  var net_logid = userinfo.identifier;
 				  var email = userinfo.email;
-                  bootbox.alert("net_logid=" + net_logid + " ; c_logid=" + c_logid);
 				  if (c_logid==net_logid) {
 				    // check is user exists
 				    $.ajax({
