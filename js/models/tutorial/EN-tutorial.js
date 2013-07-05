@@ -13,8 +13,8 @@
       "scoring":{
          "1":"Advanced: Scoring",
          "2":"Each node of the phylogenetic tree stores an ancestor sequence. Ancestors are computed automatically and represent a consensus of all sequences derived from it. Point at any node of the tree to display the corresponding sequence at the bottom of the grid.",
-         "3":"The alignment score estimates the similarity between a sequence and its ancestor. A color match brings you a bonus of +1 and a color mismatch costs you a penalty of -1. The creation of a gap has a penalty of -4 and its extension by one unit costs -1. Moreover, gaps at the extremities are not penalized and  empty columns are ignored. Here, the alignment score between the bat and its ancestor is -3 (4 matches, 1 mismatches, 1 gap of length 3).",
-         "4":"Your score is the sum of the alignment scores of each sequences with their immediate ancestor. Here, the score is the sum of the comparisons between the ancestor of B with human and chimp, the ancestor C with dog and bat, and the ancestor A with B and C."
+         "3":"The alignment score estimates the similarity between a sequence and its ancestor. A color match brings you a bonus of +1 and a color mismatch costs you a penalty of -1. The creation of a gap has a penalty of -4 and its extension by one unit costs -1. Moreover, gaps at the extremities are not penalized and  empty columns are ignored. Here, the alignment score between the bat and its ancestor is -3 (4 matches, 1 mismatch, 1 gap of length 3).",
+         "4":"Your score is the sum of the alignment scores of each sequence with its immediate ancestor. Here, the score is the sum of the comparisons between the ancestor of B with human and chimp, the ancestor C with dog and bat, and the ancestor A with B and C."
       },
       "example":{
          "1":"Getting ready: An example",
