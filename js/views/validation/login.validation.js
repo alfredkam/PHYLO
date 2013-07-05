@@ -16,10 +16,11 @@
 			  $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider + "&restart=0",function(data){
 			    var userinfo = eval ("(" + data + ")");
 			    if (userinfo.identifier) {
-				// complete infos stored in cookie
-				var net_logid = userinfo.identifier;
-				var email = userinfo.email;
-				if (c_logid==net_logid) {
+				  // complete infos stored in cookie
+				  var net_logid = userinfo.identifier;
+				  var email = userinfo.email;
+                    bootbox.alert("net_logid=" + net_logid + " ; c_logid=" + c_logid);
+				  if (c_logid==net_logid) {
 				    // check is user exists
 				    $.ajax({
 					   type: "POST",
@@ -37,62 +38,62 @@
 						}
 						$.protocal.register(username,fullname,password,email,provider,c_logid, function(re2) {
 						    if(re2 == "succ") {
-							console.log(provider + " registration successful. username: "+username);
-							// Update status
-							var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 1"]+ " " + window.lang.body.social["field 20"];
-							var caption = window.lang.body.social["field 31"];
-							if ((provider=='Facebook')||(provider=='LinkedIn')) {
-							    var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
-							} else {
-							    var data = "provider="+provider+"&id="+c_logid+"&description="+message;
-							}
-							bootbox.confirm(window.lang.body.social["field 2"],window.lang.body.social["field 26"],window.lang.body.social["field 25"], function(result) {
-							    if (result) {
-								console.log("post on " + provider + " : " + data);
-								$.ajax({
-								    type: "POST",
-								    url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
-								    data : data
-								}).done(function(re) {
-								    //bootbox.alert("Thank you for sharing the word. You can now start to play!");
-								}).fail(function() {
-								    bootbox.alert(window.lang.body.social["field 4"]);
-								});
-							    }
-							});
+                                console.log(provider + " registration successful. username: "+username);
+                                // Update status
+                                var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 1"]+ " " + window.lang.body.social["field 20"];
+                                var caption = window.lang.body.social["field 31"];
+                                if ((provider=='Facebook')||(provider=='LinkedIn')) {
+                                    var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
+                                } else {
+                                    var data = "provider="+provider+"&id="+c_logid+"&description="+message;
+                                }
+                                bootbox.confirm(window.lang.body.social["field 2"],window.lang.body.social["field 26"],window.lang.body.social["field 25"], function(result) {
+                                        if (result) {
+                                            console.log("post on " + provider + " : " + data);
+                                            $.ajax({
+                                                type: "POST",
+                                                url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+                                                data : data
+                                            }).done(function(re) {
+                                                //bootbox.alert("Thank you for sharing the word. You can now start to play!");
+                                            }).fail(function() {
+                                                bootbox.alert(window.lang.body.social["field 4"]);
+                                            });
+                                        }
+                                    });
 						    } else {
-							console.log(provider + " registration failed.");
-							$("div.login-warning").show().html(window.lang.body.social["field 5"].replace("***",provider));
-							$.cookie.delete("username");
-							$.cookie.delete("fullname");
-							$.cookie.delete("loginmode");
-							$.cookie.delete("logid");
-							$("#logout").hide();
-							window.guest = 'guest';
-							$("#login-box").hide();
-							$(".login-btn").click(function() { classicLogin(); });
-							$(".m_login").html(window.lang.body.play.gameselect.login["field 2"]);
-							$(".showInLogin").hide();
-							window.showInLogin = false;
-							return;
+                                console.log(provider + " registration failed.");
+                                $("div.login-warning").show().html(window.lang.body.social["field 5"].replace("***",provider));
+                                $.cookie.delete("username");
+                                $.cookie.delete("fullname");
+                                $.cookie.delete("loginmode");
+                                $.cookie.delete("logid");
+                                $("#logout").hide();
+                                window.guest = 'guest';
+                                $("#login-box").hide();
+                                $(".login-btn").click(function() { classicLogin(); });
+                                $(".m_login").html(window.lang.body.play.gameselect.login["field 2"]);
+                                $(".showInLogin").hide();
+                                window.showInLogin = false;
+                                return;
 						    }
 						});
 					    }
 					});
 				    }).fail(function() {
-					$("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 21"]);
-					$.cookie.delete("username");
-					$.cookie.delete("fullname");
-					$.cookie.delete("loginmode");
-					$.cookie.delete("logid");
-					$("#logout").hide();
-					window.guest = 'guest';
-					$("#login-box").hide();
-					$(".login-btn").click(function() { classicLogin(); });
-					$(".m_login").html(window.lang.body.play.gameselect.login["field 2"]);
-					$(".showInLogin").hide();
-					window.showInLogin = false;
-					return;
+                        $("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 21"]);
+                        $.cookie.delete("username");
+                        $.cookie.delete("fullname");
+                        $.cookie.delete("loginmode");
+                        $.cookie.delete("logid");
+                        $("#logout").hide();
+                        window.guest = 'guest';
+                        $("#login-box").hide();
+                        $(".login-btn").click(function() { classicLogin(); });
+                        $(".m_login").html(window.lang.body.play.gameselect.login["field 2"]);
+                        $(".showInLogin").hide();
+                        window.showInLogin = false;
+                        return;
 				    });
 				    // display login
 				    $(".m_login").html(fullname.replace("+"," "));
@@ -113,20 +114,20 @@
 				    return;
 				}
 			    } else {
-				// failed to connect
-				$("div.login-warning").show().html(window.lang.body.social["field 6"].replace("***",provider));
-				$.cookie.delete("username");
-				$.cookie.delete("fullname");
-				$.cookie.delete("loginmode");
-				$.cookie.delete("logid");
-				$("#logout").hide();
-				window.guest = 'guest';
-				$("#login-box").hide();
-				$(".login-btn").click(function() { classicLogin(); });
-				$(".m_login").html(window.lang.body.play.gameselect.login["field 2"]);
-				$(".showInLogin").hide();
-				window.showInLogin = false;
-				return;
+                    // failed to connect
+                    $("div.login-warning").show().html(window.lang.body.social["field 6"].replace("***",provider));
+                    $.cookie.delete("username");
+                    $.cookie.delete("fullname");
+                    $.cookie.delete("loginmode");
+                    $.cookie.delete("logid");
+                    $("#logout").hide();
+                    window.guest = 'guest';
+                    $("#login-box").hide();
+                    $(".login-btn").click(function() { classicLogin(); });
+                    $(".m_login").html(window.lang.body.play.gameselect.login["field 2"]);
+                    $(".showInLogin").hide();
+                    window.showInLogin = false;
+                    return;
 			    }
 			});
 		    }
