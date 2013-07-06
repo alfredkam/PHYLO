@@ -1,41 +1,41 @@
 {
    "tutorial":{
       "basics":{
-         "1":"Basics: Rules and tips",
-         "2":"In Phylo, your goal is to move sequences of  blocks horizontally in order to create the maximum number of columns of similar colors. Each color match gives you a bonus.",
-         "3":"However, the sequences are not identical. Thus, color mismatches and gaps are unavoidable and you receive penalties for that. Your challenge is to find the  best trade-off between bonuses and penalties. N.B.: Smaller blocks highlight mismatches.",
-         "4":"Bonuses and penalties for color matches and mismatches are small. But the cost of gaps is big! It is usually preferable to have a long gap rather than several small ones. Try to minimize the number of gaps in priority.",
-         "5":"Did you notice the tree on the left? It tells you which sequences must be aligned in priority. This is helpful when you have to favor one color match versus another one. It is more important to conserve identical patterns for sequences in the same group than increasing similarities between different groups.",
-         "6":"To reach the final stage, you need to pass the levels. This requires to beat the par (i.e. the computer score). When your score is equal or higher than the par, a shiny star appears at the bottom right corner. Click on it to reach the next stage. When all sequences are on the board, try to get the higher score possible and submit it by clicking the star again!",
-         "7":"Scoring information are available at the top of your game board. The blue bar indicates your current score. The red marker indicates the par (i.e. the computer score to beat) and the green marker displays the best score you obtained so far.",
-         "8":"Basic information are available at the bottom of your game board. There, you will find your advancement in the game (i.e. stages) and the numbers of match, mismatch and gap. You can revert at anytime to the best solution you found by clicking the multi-color wheel."
+         "1":"Grundlagen: Regeln und Tipps",
+          "2":"Bei Phylo ist Ihr Ziel, Sequenzen von Blöcken horizontal zu verschieben, um die maximale Zahl von Spalten gleicher Farbe zu finden. Jede  Farbübereinstimmung wird mit einem Bonus belohnt.",
+         "3":"Die Sequenzen sind leider nicht identisch. Fehlstellen und Lücken sind unvermeidbar, wofür es Strafpunkte gibt. Ihre Herausforderung ist es, die beste Balance zwischen Bonus- und Strafpunkten zu finden. Anm.: Kleinere Blöcke kennzeichnen  Stellen, die nicht passen.",
+         "4":"Es gibt wenig Bonus- und Strafpunkte für passende und unpassende Farben. Aber die Strafe für Lücken ist groß! Normalerweise ist eine große Lücken besser als viele kleine. Priorität ist es, die Anzahl der Lücken zu minimieren.",
+         "5":"Haben Sie die Baumstruktur links bemerkt? Sie zeigt, welche Sequenzen bevorzugt angeordnet werden sollen. Das ist hilfreich, wenn man zwischen zwei Farbanordnungen wählen muss. Es ist wichtiger, dass die Muster in der gleichen Gruppe zusammenpassen, als die Gemeinsamkeiten in verschiedenen Gruppen zu erhöhen.",
+         "6":"Um die letzte Stufe zu erreichen, müssen Sie die Level abschließen. Dafür muss der Par-Wert (das berechnete Ergebnis) geschlagen werden. Wenn Ihr Wert gleich oder besser ist, erscheint unten rechts ein Stern. Klicken Sie, um die nächste Stufe zu erreichen. Wenn alle Sequenzen auf dem Spielfeld sind, versuchen Sie, die höchste Punktzahl zu erreichen, und senden Sie diese mit einem Klick auf den Stern ab.",
+         "7":"Informationen zum Punktestand werden über dem Spielfeld angezeigt. Der blaue Balken zeigt Ihren aktuellen Punktestand. Die rote Markierung  zeigt den Par-Wert (d.h. das zu schlagende Ergebnis des Computers) und die blaue Markierung zeigt die beste Punktzahl, die Sie bisher erreicht haben.",
+         "8":"Allgemeine Informationen sind unter dem Spielfeld verfügbar. Dort sehen Sie Ihren Spielfortschritt (d.h. die Level) und die Anzahl der Übereinstimmungen, Fehlstellen und Lücken. Sie können jederzeit zu Ihrem besten Ergebnis zurückkehren, indem Sie auf das bunte Rad klicken."
       },
       "scoring":{
-         "1":"Advanced: Scoring",
-         "2":"Each node of the phylogenetic tree stores an ancestor sequence. Ancestors are computed automatically and represent a consensus of all sequences derived from it. Point at any node of the tree to display the corresponding sequence at the bottom of the grid.",
-         "3":"The alignment score estimates the similarity between a sequence and its ancestor. A color match brings you a bonus of +1 and a color mismatch costs you a penalty of -1. The creation of a gap has a penalty of -4 and its extension by one unit costs -1. Moreover, gaps at the extremities are not penalized and  empty columns are ignored. Here, the alignment score between the bat and its ancestor is -3 (4 matches, 1 mismatches, 1 gap of length 3).",
-         "4":"Your score is the sum of the alignment scores of each sequences with their immediate ancestor. Here, the score is the sum of the comparisons between the ancestor of B with human and chimp, the ancestor C with dog and bat, and the ancestor A with B and C."
+         "1":"Ausführlich: Punktwertung",
+         "2":"Jeder Knoten  des phylogenetische Baums enthält die Sequenz eines Vorfahren. Die Sequenzen werden automatisch berechnet und fassen alle Übereinstimmungen der Sequenzen zusammen. Fahren Sie mit der Maus über einen Knoten, um sie entsprechende Sequenz unten anzuzeigen.",
+         "3":"Der Punktwert der Ausrichtung ermittelt die Gemeinsamkeiten einer Sequenz und ihres Vorfahren. Passende Farben bringen einen Bonuspunkt (+1) ein, unpassende Farben kosten einen Strafpunkt (-1). Das Anlegen einer Lücke wird mit vier Strafpunkten bestraft (-4), die Erweiterung kostet je einen Punkt pro Feld (-1). Lücken am Ende werden nicht bestraft, leere Spalten werden ignoriert. Im Beispiel beträgt die Punktzahl für den Elefanten und seinen Vorfahren -3 (passend: 4, unpassend: 1, Lücken: 1 mit Länge 3)",
+         "4":"Ihre Punktzahl ist die Summe der Punktzahlen jeder Sequenz mit den unmittelbaren Vorfahren. Im Beispiel ergibt sich die Punktzahl aus dem Vergleich von Vorfahr B mit Mensch und Schimpanse, Vorfahr C mit Hund und Fledermaus, und Vorfahr A mit B und C."
       },
       "example":{
-         "1":"Getting ready: An example",
-         "2":"You are starting with two sequences (human and chimp). Push everything on the left and check out the ancestor. Aligning this ancestor with your two sequences gives you 13 matches for the first sequence (human), and 5 matches, 1 mismatch for the second sequence (chimp). The trailing gap is ignored. Thus your total is 18 × (+1) + 1 × (‐1) = 17. You beat the par. Click on the star and jump to the next stage!",
-         "3":"Two new sequences (dog and bat) appear. Again, push them all to the left. Your score is 9. 18 matches between the dog sequence and its ancestor (gap at extremity is again ignored), and 5 matches and 14 mismatches between the bat sequence and the ancestor (Thus a total of 23 × (+1) + 14 × (‐1) = 9). You can do better. How?",
-         "4":"Shift the bottom sequence by one unit to the right starting from the seventh brick. You create an additional gap but you also create many matches. Did you notice? The ancestor changed. You have now 18 matches with the dog sequence (trailing gap ignored), and 12 matches, 7 mismatches and 1 gap of length 1 with the bat sequence. Your score is 30 × (+1) + 7 × (‐1) + ( 1 × ‐4 ) = 19. Move to the next stage.",
-         "5":"Now, you have to assemble your previous alignments. Your initial score is 41. It beats the par (30) but you can do better… Intuitively, we want to find a better alignment of the 1st block (the two top sequences) and the 2nd block (the two lower sequences). How?",
-         "6":"Shift the first block by 4 units to the right. This move creates two complete green columns. It also improves the similarity between the human's sequence and those of the dog and the bat. Your total score is now 57. How is it calculated?",
-         "7":"Let's have a look at the human and chimp ancestor. Its alignment score with the human sequence is 11 (12 matches and 1 mismatch), and 6 with the chimp sequence (6 matches). Thus the score at this ancestor node is 11 + 6 = 17.",
-         "8":"We do the same thing for the dog and bat ancestor. Its alignment score with the dog sequence is 14 (16 matches and 2 mismatches) and 3 with the bat sequence (12 matches, 5 mismatches, 1 gap of length 1). Thus, the score at this ancestor node is 14 + 3 = 17.",
-         "9":"To complete your score, you need to compute the alignment score of the human/chimp ancestor and dog/bat ancestor with the ancestor at the root of the tree. First, we compute the alignment score of the human/chimp ancestor with the global ancestor. There are 9 matches, 4 mismatches (gaps at the end and beginning are ignored). The score is 9 × (+1) + 4 × (‐1) = 5.",
-         "10":"Then, we compute the alignment score of the dog/bat ancestor with the global ancestor. There is 18 matches and the score is 18. Therefore, the score associated with the root is 5 + 18 = 23.",
-         "11":"Your final score is the sum of all individual scores previously computed. Here, the score of the alignment of human and chimp is 17, the score  of the alignment of dog and bat is 17, the score of the alignment of ancestors with the root is 23. Thus, your total score is 57.",
-         "12":"You have the highest score. Click the star and submit your puzzle. You are done! The level id for this puzzle is 481. Now, you are ready to play!"
+         "1":"Letzte Schritte. Ein Beispiel.",
+         "2":"Sie fangen mit zwei Sequenzen an (Mensch und Schimpanse). Schieben Sie alles nach links und prüfen Sie den Vorfahren. Die Ausrichtung des Vorfahrens mit beiden Sequenzen ergibt 13 Übereinstimmungen für die erste Sequenz (Mensch), sowie 5 Übereinstimmungen und 1 Fehlstelle für die zweite Sequenz (Schimpanse). Lücken an den Enden werden ignoriert. Ihre Gesamtsumme ist also 18 x (+1) + 1 x (-1) = 17. Sie übertreffen den Par-Wert. Klicken Sie auf den Stern und gehen Sie zur nächsten Stufe.",
+          "3":"Zwei neue Sequenzen (Hund und Fledermaus) erscheinen. Schieben Sie wieder alles nach links. Ihre Punktzahl ist 9: 18 Übereinstimmungen zwischen dem Hund und seinem Vorfahren (die Lücke an der Seite wird ignoriert), und 5 Übereinstimmungen sowie 14 Fehlstellen zwischen der Fledermaus und ihrem Vorfahren. (Somit ergibt sich insgesamt 23 × (+1) + 14 × (‐1) = 9). Das geht besser. Wie?",
+         "4":"Verschieben Sie die untere Sequenz um eine Einheit nach recht, beginnend mit dem siebten Stein. Das verursacht eine Lücke, aber auch viele Übereinstimmungen. Haben Sie es bemerkt? Der Vorfahre hat sich geändert. Sie haben jetzt 18 Übereinstimmungen mit der Sequenz des Hundes  (Lücken am Ende werden ignoriert), sowie 12 Übereinstimmungen, 7 Fehlstellen und 1 Lücke der Länge 1 mit der Sequenz der Fledermaus. Ihre Punktzahl ist  30 × (+1) + 7 × (‐1) + ( 1 × ‐4 ) = 19. Auf zum nächsten Level!",
+         "5":"Jetzt müssen Sie Ihre vorherige Anordnung ausrichten. Ihre Ausgangspunktzahl ist 41. Das ist besser als der Par-Wert (30), aber das können Sie besser... Intuitiv wollen wir eine bessere Anordnung für den 1. Block (die oberen beiden Sequenzen) und den 2. Block (die unteren beiden Sequenzen) finden. Wie?",
+         "6":"Schieben Sie den ersten Block um 4 Einheiten nach rechts. Dieser Zug erzeugt zwei komplett grüne Spalten. Er verbessert auch die Übereinstimmung zwischen der Sequenz des Menschen und denen von Hund und Fledermaus. Ihre Gesamtpunktzahl beträgt jetzt 57. Wie wird sie berechnet?",
+         "7":"Schauen wir uns den Vorfahren von Mensch und Schimpanse an. Die Punktzahl der Ausrichtung mit dem Menschen beträgt 11 (12 Übereinstimmung und 1 Fehlstelle) und 6 mit dem Schimpansen. Somit beträgt die Punktzahl an diesem Knoten 11 + 6 = 17.",
+         "8":"Dasselbe machen wir für den Vorfahren von Hund und Fledermaus. Die Punktzahl der Ausrichtung  mit dem Hund beträgt 14 (16 Übereinstimmungen und 2 Fehlstellen) uns 3 mit der Fledermaus (12 Übereinstimmungen, 5 Fehlstellen, 1 Lücke der Länge 1).  Somit beträgt die Punktzahl an diesem Knoten 14 + 3 = 17.",
+         "9":"Für die Gesamtpunktzahl müssen Sie noch die Punktzahl der Ausrichtung des Mensch/Schimpansen-Vorfahrens und des Hund/Fledermaus-Vorfahrens mit dem Vorfahren an der Wurzel des Baums berechnen. Zuerst berechnen wir die Punktzahl der Ausrichtung des Mensch/Schimpanse-Knotens mir dem globalen Vorfahren. Es gibt 9 Übereinstimmungen und 4 Fehlstellen (Lücken am Ende werden ignoriert). Die Summe beträgt 9 × (+1) + 4 × (‐1) = 5.",
+         "10":"Dann berechnen wir die Punktzahl des Hund/Fledermaus-Vorfahrens mit dem globalen Vorfahren. Es gibt 18 Übereinstimmungen, die Summe beträgt 18. Damit beträgt die Summe am Wurzelknoten 5 + 18 = 23.",
+          "11":"Ihre Endpunktzahl ist die Summe aller Einzelpunktzahlen, die wir bisher berechnet haben. Hier beträgt die Summe der Ausrichtung von Mensch und Schimpanse 17, die Summe der Ausrichtung von Hund und Fledermaus ist 17, und die Summe der Ausrichtung der Vorfahren mit der Wurzel ist 23. Damit beträgt Ihre Gesamtpunktzahl 57.",
+         "12":"Sie haben die Höchstpunktzahl. Klicken Sie auf den Stern und senden Sie das Puzzle ab. Sie sind fertig! Die Level-Nr. dieses Puzzles ist 481. Jetzt sind Sie bereit zum Spiel!"
 
       },
       "misc":{
-         "1":"match",
-         "2":"mismatch",
-         "3":"gap",
-         "4":"phylogenetic tree"
+         "1":"Übereinstimmung",
+         "2":"Fehlstelle",
+         "3":"Lücke",
+          "4":"Phylogenetischer Baum"
 
       }
 
