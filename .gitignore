@@ -8,6 +8,8 @@ merge.sh
 
 js/.DS_Store
 
+merge.sh
+
 # ignore yii dir during table ranking dev 
 htdocs/
 framework/
@@ -16,3 +18,5 @@ protected/
 js/bootstrap/bootstrap.min.js
 
 js/bootstrap/bootstrap.js
+
+lang/DE0.js
