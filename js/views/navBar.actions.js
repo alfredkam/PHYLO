@@ -40,6 +40,20 @@
 			$(this).addClass("dropDown-OptionOnSelect");
 		});
 		
+        $("#language-list").click(function(event) {
+                                  
+            $.lang.init();
+                                  
+            $("#option-list").hide();
+            $("#options-button .dropDownTriangle").hide();
+            $("#options-button").removeClass("dropDown-OnSelect");
+                                  
+            $("#language-list").hide();
+            $(".dropDownTriangle").hide();
+            $(this).removeClass("dropDown-OptionOnSelect");
+                                  
+        });
+                      
 
 		/*
 		$("#logo").mouseover(function(event) {
