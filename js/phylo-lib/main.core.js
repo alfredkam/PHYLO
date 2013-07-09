@@ -34,12 +34,14 @@
 					height : height,//$("#tree").css("height").replace(/px/,""),
 					rows : 10,
 				};
-				$.lang.init(function() {
+                
+                $.lang.init(function() {
 					$("#game").show();
 					$.protocal.read(setting);
 					$.protocal.request();
 					//$.endGame.init("lose");
 				});
+                
 			},
 			//call back on protocal complete
 			//sets the layout and activates the game

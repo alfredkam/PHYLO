@@ -46,6 +46,7 @@
 					console.log("Warning >> Lang undefined - default to EN");
 					lang = "EN";
 				}
+                console.log("language set up : " + lang);
 				require(['lang/'+lang],function() {
 					window.langOpt = lang;
 					var json = window[lang+"script"].lang[0];

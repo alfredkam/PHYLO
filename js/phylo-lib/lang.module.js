@@ -1,38 +1,38 @@
 (function() {
 	$.lang = {
-		//initliaze and get the languages file, then executes call back function
+		//initialize and get the languages file, then executes call back function
 		init : function(callBack) {
 			//checks if language file is already loaded.
-			//if not loaded, loaded it into the dom
-
+			//if not loaded, load it into the dom
+            
             //moved hash to be outside so it can be used in all cases
             var hash;
             try {
-                hash = $.helper.get("lang").toString().toUpperCase().replace(/!.*/,"");			
+                hash = $.helper.get("lang").toString().toUpperCase().replace(/!.*/,"");
             } catch(err) {
                 hash = "EN";
-            }	
+            }
+ 
 			if($("#langFile").length == 0) {
 				var script = document.createElement("script");
 				script.id = "langFile";
 				script.src = "../lang/"+hash+".js";
 				script.type = "text/javascript";
-				
 				document.getElementsByTagName("head")[0].appendChild(script);
 				
 				script.onload = function() {
-					var avaliable = function() {
+					var available = function() {
 						if(window[hash+"script"] != undefined) {
 							window.langOpt = hash;
 							window.lang = window[hash+"script"].lang[0];
 							callBack();
 						} else {
 							window.setTimeout(function(){
-								avaliable();
+								available();
 							},50);
 						}
 					};
-					avaliable();
+					available();
 				};
 				script.onerror = function() {
 					console.log(">> Cannot connect to get language files");
