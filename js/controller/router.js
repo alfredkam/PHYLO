@@ -37,12 +37,47 @@
 
 		var init = function() {
 			require(['views/navBar.actions']);
-			//set default lang
-			window.langOpt = "EN";
+
+            //set default lang
+            
+            // BEGIN FIXME (Quick hack to detect language)
+            var userLang = navigator.language || navigator.userLanguage;
+            var language = userLang.substring(0,2).toUpperCase();
+            console.log("Browser language: " + language);
+            switch (language) {
+                case "EN":
+                case "FR":
+                case "SP":
+                case "DE":
+                case "PT":
+                case "RO":
+                case "RU":
+                case "KO":
+                case "HE":
+                    window.langOpt = language;
+                    break;
+                case "ZH":
+                    var languageExtension = headers['Accept-Language'].substring(0,5).toUpperCase();
+                    console.log("Browser extended language: " + languageExtension);
+                    if (languageExtension == "ZH-HK") {
+                        window.langOpt = "ZH-HK";
+                    } else {
+                        window.langOpt = "ZH-CN";
+                    };
+                    break;
+                default:
+                    window.langOpt = "EN";
+                    break;
+            }
+            // END FIXME
+           
+			//window.langOpt = "EN";
+           
 			//initalize
 			var navBar = new NavBar;
 			navBar.init();
 			var route = new Routes;
+           
 			route.on('route:play', function(lang, dev) {
 				if(dev) {
 					if(dev == "IAMADEV") 
@@ -56,10 +91,11 @@
 					
 				}
 				if(lang == undefined) {
-					lang = "EN";
+                    console.log(lang);
 				} else lang.toUpperCase();
 				navBar.set(lang,"play");
 				var playView = new Views.Play;
+                console.log("render >> " +lang);
 				playView.render(lang);
 			});
 
@@ -77,7 +113,7 @@
 				
 				id = id.replace(/\?.*/,"");
 				console.log(id);
-				console.log("calling aws link");
+				console.log("calling as link");
 				if(lang == undefined) {
 					lang = "EN";
 				} else lang.toUpperCase();
@@ -170,10 +206,47 @@
 			});
 
 			route.on('route:defaultRoute', function(lang) {
-				var lang = "EN";
-				var playView = new Views.Play;
-				navBar.set(lang,"play");
-				playView.render(lang);
+                     
+                
+                // BEGIN FIXME (Quick hack to detect language)
+                var lang;
+                var userLang = navigator.language || navigator.userLanguage;
+                var language = userLang.substring(0,2).toUpperCase();
+                switch (language) {
+                    case "EN":
+                    case "FR":
+                    case "SP":
+                    case "DE":
+                    case "PT":
+                    case "RO":
+                    case "RU":
+                    case "KO":
+                    case "HE":
+                        lang = language;
+                        break;
+                    case "ZH":
+                        var languageExtension = headers['Accept-Language'].substring(0,5).toUpperCase();
+                        if (languageExtension == "ZH-HK") {
+                            lang = "ZH-HK";
+                        } else {
+                            lang = "ZH-CN";
+                        };
+                        break;
+                    default:
+                        lang = "EN";
+                        break;
+                }
+                var playView = new Views.Play;
+                navBar.set(lang,"play");
+                playView.render(lang);
+                     
+                // END FIXME
+                
+                // EN default code
+                //var lang = "EN";
+				//var playView = new Views.Play;
+				//navBar.set(lang,"play");
+				//playView.render(lang);
 			});
 
 			Backbone.history.start();

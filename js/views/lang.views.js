@@ -31,10 +31,10 @@
 				$("#m_classic").html(Mustache.render(trans.get("classic"),json));
 				$(".m_logout").html(Mustache.render(trans.get("logout"),json));
 				$(".m_theme").html(Mustache.render(trans.get("theme"),json));
-                $(".m_fb_signin").html(Mustache.render(trans.get("signInWith"),json).replace("***","Facebook"));
-                $(".m_tw_signin").html(Mustache.render(trans.get("signInWith"),json).replace("***","Twitter"));
-                $(".m_gg_signin").html(Mustache.render(trans.get("signInWith"),json).replace("***","Google"));
-                $(".m_li_signin").html(Mustache.render(trans.get("signInWith"),json).replace("***","LinkedIn"));
+                //$(".m_fb_signin").html(Mustache.render(trans.get("signInWith"),json).replace("***","Facebook"));
+                //$(".m_tw_signin").html(Mustache.render(trans.get("signInWith"),json).replace("***","Twitter"));
+                //$(".m_gg_signin").html(Mustache.render(trans.get("signInWith"),json).replace("***","Google"));
+                //$(".m_li_signin").html(Mustache.render(trans.get("signInWith"),json).replace("***","LinkedIn"));
 			}
 		});
 		return translate;
