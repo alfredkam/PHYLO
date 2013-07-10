@@ -21,7 +21,7 @@
 		var request = new Request;	
 		var playView = Backbone.View.extend({
 			renderPuzzle : function(lang, id) {
-				selectTab("play");
+                selectTab("play");
 				request.getTemplate("templates/play.html",function(context) {
 					request.getJsonLang(lang, function(json) {
 						window.lang = json;

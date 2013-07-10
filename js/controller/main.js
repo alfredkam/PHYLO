@@ -3,8 +3,8 @@
 		waitSeconds : 15,
 		baseUrl : 'lib',
 		paths : {
-		     	DNA : '../js/phylo-lib',
-		     	RNA : '../js/RNA',
+            DNA : '../js/phylo-lib',
+            RNA : '../js/RNA',
 			validation : '../js/views/validation',
 			controller : '../js/controller',
 			misc : '../js/misc',
