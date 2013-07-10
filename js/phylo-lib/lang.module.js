@@ -13,6 +13,7 @@
                 hash = $.helper.get("lang").toString().toUpperCase().replace(/!.*/,"");
             } catch(err) {
                 hash = "EN";
+                console.log("Error when trying to get lang. Set to default.");
             }
  
 			if($("#langFile").length == 0) {
