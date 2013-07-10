@@ -42,7 +42,11 @@
 		
         $("#language-list").click(function(event) {
                                   
+<<<<<<< HEAD
             $.lang.init();
+=======
+            $.lang.init(function() {});
+>>>>>>> a8fcebfcc8b6d550605025c4f53f8243c4a738b3
                                   
             $("#option-list").hide();
             $("#options-button .dropDownTriangle").hide();
