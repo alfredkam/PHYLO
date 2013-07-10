@@ -11,6 +11,7 @@
             var hash;
             try {
                 hash = $.helper.get("lang").toString().toUpperCase().replace(/!.*/,"");
+                console.log("Language hash set " + hash);
             } catch(err) {
                 hash = "EN";
                 console.log("Error when trying to get lang. Set to default.");
