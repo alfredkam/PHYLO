@@ -1,10 +1,8 @@
 (function() {
 	$.lang = {
-<<<<<<< HEAD
-		//initliaze and get the languages file, then executes call back function
-=======
+
 		//initialize and get the languages file, then executes call back function
->>>>>>> a8fcebfcc8b6d550605025c4f53f8243c4a738b3
+
 		init : function(callBack) {
 			//checks if language file is already loaded.
 			//if not loaded, load it into the dom
