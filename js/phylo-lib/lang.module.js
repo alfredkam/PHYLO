@@ -13,8 +13,37 @@
                 hash = $.helper.get("lang").toString().toUpperCase().replace(/!.*/,"");
                 console.log("Language hash set " + hash);
             } catch(err) {
-                hash = "EN";
-                console.log("Error when trying to get lang. Set to default.");
+                // BEGIN FIXME (Quick hack to detect language)
+                var userLang = navigator.language || navigator.userLanguage;
+                var language = userLang.substring(0,2).toUpperCase();
+                console.log("Browser language detected: " + language);
+                switch (language) {
+                    case "EN":
+                    case "FR":
+                    case "SP":
+                    case "DE":
+                    case "PT":
+                    case "RO":
+                    case "RU":
+                    case "KO":
+                    case "HE":
+                        hash= language;
+                        break;
+                    case "ZH":
+                        var languageExtension = headers['Accept-Language'].substring(0,5).toUpperCase();
+                        console.log("Browser extended language: " + languageExtension);
+                        if (languageExtension == "ZH-HK") {
+                            hash = "ZH-HK";
+                        } else {
+                            hash = "ZH-CN";
+                        };
+                        break;
+                    default:
+                        hash = "EN";
+                        break;
+                }
+                // END FIXME
+                console.log("Error when trying to get lang. Set to default value: " + hash);
             }
  
 			if($("#langFile").length == 0) {
@@ -23,7 +52,7 @@
 				script.src = "../lang/"+hash+".js";
 				script.type = "text/javascript";
 				document.getElementsByTagName("head")[0].appendChild(script);
-				
+	
 				script.onload = function() {
 					var available = function() {
 						if(window[hash+"script"] != undefined) {
