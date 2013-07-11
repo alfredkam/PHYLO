@@ -178,13 +178,13 @@
                     var color = undefined;
                     
                     //if (mouseDown &&
-		/*
-		if(
-                    mousePos !== null &&
-                    mousePos.x > padding &&
-                    mousePos.x < padding + imageObj.width &&
-                    mousePos.y > padding &&
-                    mousePos.y < padding + imageObj.height) {
+                    /*
+                     if(
+                        mousePos !== null &&
+                        mousePos.x > padding &&
+                        mousePos.x < padding + imageObj.width &&
+                        mousePos.y > padding &&
+                        mousePos.y < padding + imageObj.height) {
                         /*
                          * color picker image is 256x256 and is offset by 10px
                          * from top and bottom

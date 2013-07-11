@@ -43,7 +43,7 @@
             // BEGIN FIXME (Quick hack to detect language)
             var userLang = navigator.language || navigator.userLanguage;
             var language = userLang.substring(0,2).toUpperCase();
-            console.log("Browser language: " + language);
+            console.log("Browser language detected: " + language);
             switch (language) {
                 case "EN":
                 case "FR":
