@@ -43,7 +43,7 @@
                         break;
                 }
                 // END FIXME
-                console.log("Error when trying to get lang. Set to default value: " + hash);
+                console.log("Language not specified. Set to default value: " + hash);
             }
  
 			if($("#langFile").length == 0) {
