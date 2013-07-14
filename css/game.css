@@ -451,12 +451,12 @@
 /* end of score */
 /*highlighting */
 
-.highlighter {
-	box-shadow: inset 0px 0px -4px white;
-	-ms-box-shadow: inset 0px 0px -4px white;
-	-moz-box-shadow: inset 0px 0px -4px white;
-	-webkit-box-shadow: inset 0px 0px -4px white;
-	-o-box-shadow: inset 0px 0px -4px white;
-	-khtml-box-shadow: inset 0px 0px -4px white;
+.highlighter-2 {
+	box-shadow: inset 0px 0px 0px 4px white;
+	-ms-box-shadow: inset 0px 0px 0px 4px white;
+	-moz-box-shadow: inset 0px 0px 0px 4px white;
+	-webkit-box-shadow: inset 0px 0px 0px 4px white;
+	-o-box-shadow: inset 0px 0px 0px 4px white;
+	-khtml-box-shadow: inset 0px 0px 0px 4px white;
 }
 /* end of highligher */
