@@ -66,11 +66,24 @@
 		$("#login").click(function(event) {
 			event.stopPropagation();
 			if(window.guest != "guest") {
-			//if($("#login-tag").html().search(/Welcome/) > -1) {
-	
+			// BEGIN FIXME (new logout)
+                $("#login-box").show();
+                // FIXME: needed to remove this to enable toggle
+                //$("#login-box").css("display","inline-block");
+                $(this).addClass("login-OnSelect");
+                          
+                $("#option-list").hide();
+                $("#options-button .dropDownTriangle").hide();
+                $("#options-button").removeClass("dropDown-OnSelect");
+                          
+                $("#language-list").hide();
+                $("#language").removeClass("dropDown-OptionOnSelect");
+                $(".dropDownTriangle").hide();
+            //END FIXME
 			} else {
-				$("#login-box").show();
-				$("#login-box").css("display","inline-block");
+				$("#login-box").toggle();
+                // FIXME: needed to remove this to enable toggle
+				//$("#login-box").css("display","inline-block");
 				$(this).addClass("login-OnSelect");
 				
 				$("#option-list").hide();
