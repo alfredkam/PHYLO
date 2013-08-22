@@ -164,7 +164,21 @@
 		'mustache/mustache',
 		'controller/router'
 	],function($, _, Backbone, Mustache, Router) {
-		Router.init();
+
+		//TODO: Starting point
+		// var config = window["vaurum"].getConfig();
+		// var configDebug = config.DEBUG;
+		
+		// //TODO: Choose if you want to follow the current config debug flag, or your own.
+		// var consoleUtils = new WebConsoleUtils({
+		// 	debug: true//debug flag here
+		// });
+		
+		var router = new Router();
+		Backbone.history.start();
+		
+		consoleUtils.initConsole(true);
+
 	});
 
 	require(['jquery/jquery.notify']);
