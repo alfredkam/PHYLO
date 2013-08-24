@@ -27,7 +27,7 @@ Copyright (2012) McGill University, Alfred Kam, Jerome Waldispuhl and other cont
 Getting Started
 =====
 Checkout this link if you are new to git: <a href='http://www.alfredkam.com/git-cheat-sheet/'>Git CheatSheet</a>
-- Master Branch contains the most recent experimental release
+- Master Branch is the bleeding edge build
 - feature/RNA Branch is used for PHYLO-RNA experimental release
 - feature/integration Branch is used for integration testing 
 - Production Branch contains the most recent stable release
