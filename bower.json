@@ -11,6 +11,13 @@
   ],
   "dependencies": {
     "jquery": "~2.0.3",
-    "bootstrap": "~3.0.0"
+    "bootstrap": "~3.0.0",
+    "dustjs": "~0.3.0",
+    "mustache": "~0.7.2",
+    "backbone": "~1.0.0",
+    "requirejs": "~2.1.8",
+    "marionette": "~1.1.0",
+    "yepnope": "~1.5.4",
+    "bootbox": "~3.3.0"
   }
 }
