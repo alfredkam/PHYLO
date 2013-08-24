@@ -66,8 +66,19 @@
 		$("#login").click(function(event) {
 			event.stopPropagation();
 			if(window.guest != "guest") {
-			//if($("#login-tag").html().search(/Welcome/) > -1) {
-	
+			/* 
+                $("#login-box").show();
+                $("#login-box").css("display","inline-block");
+                $(this).addClass("login-OnSelect");
+                          
+                $("#option-list").hide();
+                $("#options-button .dropDownTriangle").hide();
+                $("#options-button").removeClass("dropDown-OnSelect");
+                          
+                $("#language-list").hide();
+                $("#language").removeClass("dropDown-OptionOnSelect");
+                $(".dropDownTriangle").hide();
+            */
 			} else {
 				$("#login-box").show();
 				$("#login-box").css("display","inline-block");
