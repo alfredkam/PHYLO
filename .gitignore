@@ -1,22 +1,60 @@
-.DS_Store
+##Vim###
+
 .*.swp
 .*.swo
-*/.DS_Store
-.*
-github.php
-merge.sh
 
-js/.DS_Store
+###Node###
 
-merge.sh
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
 
-# ignore yii dir during table ranking dev 
-htdocs/
-framework/
-protected/
+pids
+logs
+results
 
-js/bootstrap/bootstrap.min.js
+npm-debug.log
+node_modules
 
-js/bootstrap/bootstrap.js
+###Eclipse###
 
-lang/DE0.js
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
+
+###SublimeText###
+
+# SublimeText project files
+*.sublime-workspace
+*.sublime-project
+
+.DS_Store
