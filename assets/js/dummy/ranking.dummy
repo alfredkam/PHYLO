@@ -1,0 +1,322 @@
+
+<div id="ranking">
+
+<div class="nav nav-tabs" >
+<li class="active all"><a id="showall" href="#">All-time</a></li><li class="month"><a id="showmonth" href="#">Monthly</a></li><li class="week"><a id="showweek" href="#">Weekly</a></li></div>
+
+<div id="alltime">
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-condensed" id="rankingtable" width="100%">
+<thead>
+<tr><td width="3%">&nbsp;</td><td>Username</td><td><img class="startable" src="img/1star.png"><img class="startable" src="img/1star.png"><img class="startable" src="img/1star.png"></td><td><img class="startable" src="img/1star.png"><img class="startable" src="img/1star.png"></td><td><img class="startable" src="img/1star.png"></td><td>Total</td></tr>
+</thead>
+<tbody>
+<tr><td class="center"></td><td>ABCBTom</td><td>89</td><td>96</td><td>101</td><td>286</td></tr>
+<tr><td class="center"></td><td>ablapel</td><td>40</td><td>54</td><td>29</td><td>123</td></tr>
+<tr><td class="center"></td><td>ada43</td><td>61</td><td>41</td><td>23</td><td>125</td></tr>
+<tr><td class="center"></td><td>adalel</td><td>332</td><td>386</td><td>150</td><td>868</td></tr>
+<tr><td class="center"></td><td>ADN</td><td>72</td><td>104</td><td>81</td><td>257</td></tr>
+<tr><td class="center"></td><td>Agonalia</td><td>36</td><td>69</td><td>41</td><td>146</td></tr>
+<tr><td class="center"></td><td>aislinnfaye</td><td>26</td><td>49</td><td>40</td><td>115</td></tr>
+<tr><td class="center"></td><td>akawry</td><td>56</td><td>121</td><td>54</td><td>231</td></tr>
+<tr><td class="center"></td><td>Aldronaigh</td><td>95</td><td>128</td><td>73</td><td>296</td></tr>
+<tr><td class="center"></td><td>aliceb3</td><td>24</td><td>45</td><td>48</td><td>117</td></tr>
+<tr><td class="center"></td><td>Alien</td><td>60</td><td>60</td><td>39</td><td>159</td></tr>
+<tr><td class="center"></td><td>aliwalliwoo</td><td>27</td><td>51</td><td>24</td><td>102</td></tr>
+<tr><td class="center"></td><td>angelfire</td><td>58</td><td>106</td><td>80</td><td>244</td></tr>
+<tr><td class="center"></td><td>annaemmie</td><td>74</td><td>140</td><td>64</td><td>278</td></tr>
+<tr><td class="center"></td><td>antibuddy</td><td>36</td><td>54</td><td>35</td><td>125</td></tr>
+<tr><td class="center"></td><td>antifin</td><td>70</td><td>156</td><td>62</td><td>288</td></tr>
+<tr><td class="center"></td><td>Anym</td><td>185</td><td>126</td><td>76</td><td>387</td></tr>
+<tr><td class="center"></td><td>archelon</td><td>35</td><td>56</td><td>20</td><td>111</td></tr>
+<tr><td class="center"></td><td>archimedes</td><td>3972</td><td>41</td><td>12</td><td>4025</td></tr>
+<tr><td class="center"></td><td>Architect</td><td>55</td><td>74</td><td>42</td><td>171</td></tr>
+<tr><td class="center"></td><td>ariasmc</td><td>28</td><td>54</td><td>19</td><td>101</td></tr>
+<tr><td class="center"></td><td>aspringer</td><td>175</td><td>320</td><td>190</td><td>685</td></tr>
+<tr><td class="center"></td><td>AutoHawk</td><td>51</td><td>35</td><td>30</td><td>116</td></tr>
+<tr><td class="center"></td><td>autumntalon</td><td>54</td><td>68</td><td>22</td><td>144</td></tr>
+<tr><td class="center"></td><td>AyaTooru</td><td>35</td><td>76</td><td>31</td><td>142</td></tr>
+<tr><td class="center"></td><td>BakaKashi</td><td>22</td><td>51</td><td>28</td><td>101</td></tr>
+<tr><td class="center"></td><td>bananiel</td><td>40</td><td>61</td><td>35</td><td>136</td></tr>
+<tr><td class="center"></td><td>Batibeuil</td><td>132</td><td>183</td><td>116</td><td>431</td></tr>
+<tr><td class="center"></td><td>bc17</td><td>33</td><td>64</td><td>30</td><td>127</td></tr>
+<tr><td class="center"></td><td>beej175560</td><td>114</td><td>104</td><td>32</td><td>250</td></tr>
+<tr><td class="center"></td><td>bhishma</td><td>173</td><td>240</td><td>248</td><td>661</td></tr>
+<tr><td class="center"></td><td>bibi</td><td>147</td><td>120</td><td>205</td><td>472</td></tr>
+<tr><td class="center"></td><td>bigi</td><td>183</td><td>192</td><td>108</td><td>483</td></tr>
+<tr><td class="center"></td><td>bikegirl64</td><td>61</td><td>91</td><td>86</td><td>238</td></tr>
+<tr><td class="center"></td><td>bilouweb</td><td>34</td><td>57</td><td>15</td><td>106</td></tr>
+<tr><td class="center"></td><td>bingo</td><td>27</td><td>63</td><td>36</td><td>126</td></tr>
+<tr><td class="center"></td><td>biotek014</td><td>37</td><td>60</td><td>40</td><td>137</td></tr>
+<tr><td class="center"></td><td>blinblin</td><td>34</td><td>31</td><td>38</td><td>103</td></tr>
+<tr><td class="center"></td><td>BlueCerinthe</td><td>58</td><td>31</td><td>13</td><td>102</td></tr>
+<tr><td class="center"></td><td>briangluft</td><td>36</td><td>46</td><td>23</td><td>105</td></tr>
+<tr><td class="center"></td><td>BugMamba</td><td>79</td><td>141</td><td>87</td><td>307</td></tr>
+<tr><td class="center"></td><td>bzix</td><td>30</td><td>55</td><td>29</td><td>114</td></tr>
+<tr><td class="center"></td><td>calin7</td><td>46</td><td>43</td><td>28</td><td>117</td></tr>
+<tr><td class="center"></td><td>Carl Ballard</td><td>66</td><td>110</td><td>42</td><td>218</td></tr>
+<tr><td class="center"></td><td>carolyn2565</td><td>51</td><td>81</td><td>29</td><td>161</td></tr>
+<tr><td class="center"></td><td>catma</td><td>26</td><td>50</td><td>29</td><td>105</td></tr>
+<tr><td class="center"></td><td>chirishman</td><td>39</td><td>51</td><td>18</td><td>108</td></tr>
+<tr><td class="center"></td><td>christina88</td><td>41</td><td>49</td><td>22</td><td>112</td></tr>
+<tr><td class="center"></td><td>chuckieh</td><td>268</td><td>311</td><td>106</td><td>685</td></tr>
+<tr><td class="center"></td><td>cinabre</td><td>38</td><td>63</td><td>24</td><td>125</td></tr>
+<tr><td class="center"></td><td>coalnut</td><td>100</td><td>172</td><td>174</td><td>446</td></tr>
+<tr><td class="center"></td><td>colleen2g</td><td>177</td><td>178</td><td>73</td><td>428</td></tr>
+<tr><td class="center"></td><td>comet56us</td><td>336</td><td>311</td><td>68</td><td>715</td></tr>
+<tr><td class="center"></td><td>cptouriste</td><td>123</td><td>149</td><td>115</td><td>387</td></tr>
+<tr><td class="center"></td><td>crash</td><td>41</td><td>57</td><td>22</td><td>120</td></tr>
+<tr><td class="center"></td><td>crashlanier</td><td>67</td><td>82</td><td>18</td><td>167</td></tr>
+<tr><td class="center"></td><td>Crazyfox</td><td>48</td><td>69</td><td>19</td><td>136</td></tr>
+<tr><td class="center"></td><td>dandreatta</td><td>130</td><td>170</td><td>55</td><td>355</td></tr>
+<tr><td class="center"></td><td>Danielle</td><td>146</td><td>165</td><td>142</td><td>453</td></tr>
+<tr><td class="center"></td><td>darint</td><td>444</td><td>635</td><td>166</td><td>1245</td></tr>
+<tr><td class="center"></td><td>Darkside</td><td>35</td><td>53</td><td>14</td><td>102</td></tr>
+<tr><td class="center"></td><td>daveita</td><td>87</td><td>71</td><td>32</td><td>190</td></tr>
+<tr><td class="center"></td><td>dcmm</td><td>80</td><td>36</td><td>51</td><td>167</td></tr>
+<tr><td class="center"></td><td>Deckard</td><td>36</td><td>27</td><td>66</td><td>129</td></tr>
+<tr><td class="center"></td><td>derekh</td><td>144</td><td>148</td><td>39</td><td>331</td></tr>
+<tr><td class="center"></td><td>Devochka</td><td>78</td><td>82</td><td>47</td><td>207</td></tr>
+<tr><td class="center"></td><td>dewey</td><td>24</td><td>43</td><td>43</td><td>110</td></tr>
+<tr><td class="center"></td><td>dextra</td><td>37</td><td>58</td><td>41</td><td>136</td></tr>
+<tr><td class="center"></td><td>dilbert</td><td>195</td><td>199</td><td>53</td><td>447</td></tr>
+<tr><td class="center"></td><td>Ding</td><td>287</td><td>301</td><td>130</td><td>718</td></tr>
+<tr><td class="center"></td><td>dingbat</td><td>42</td><td>39</td><td>22</td><td>103</td></tr>
+<tr><td class="center"></td><td>ditz</td><td>39</td><td>59</td><td>24</td><td>122</td></tr>
+<tr><td class="center"></td><td>DJMahoney</td><td>72</td><td>97</td><td>55</td><td>224</td></tr>
+<tr><td class="center"></td><td>dmieluk</td><td>69</td><td>96</td><td>27</td><td>192</td></tr>
+<tr><td class="center"></td><td>dmuecke</td><td>57</td><td>86</td><td>39</td><td>182</td></tr>
+<tr><td class="center"></td><td>dmurch</td><td>41</td><td>56</td><td>35</td><td>132</td></tr>
+<tr><td class="center"></td><td>Dobhar</td><td>93</td><td>133</td><td>45</td><td>271</td></tr>
+<tr><td class="center"></td><td>docdebbie71</td><td>147</td><td>151</td><td>64</td><td>362</td></tr>
+<tr><td class="center"></td><td>DrKohleiz</td><td>40</td><td>79</td><td>23</td><td>142</td></tr>
+<tr><td class="center"></td><td>Dr_Funk</td><td>36</td><td>59</td><td>31</td><td>126</td></tr>
+<tr><td class="center"></td><td>dsiem</td><td>39</td><td>63</td><td>25</td><td>127</td></tr>
+<tr><td class="center"></td><td>dukeluke</td><td>140</td><td>221</td><td>59</td><td>420</td></tr>
+<tr><td class="center"></td><td>egernunge</td><td>63</td><td>121</td><td>44</td><td>228</td></tr>
+<tr><td class="center"></td><td>eigl</td><td>64</td><td>124</td><td>39</td><td>227</td></tr>
+<tr><td class="center"></td><td>eko1972</td><td>37</td><td>51</td><td>52</td><td>140</td></tr>
+<tr><td class="center"></td><td>elfi</td><td>130</td><td>138</td><td>52</td><td>320</td></tr>
+<tr><td class="center"></td><td>Elissa</td><td>24</td><td>46</td><td>36</td><td>106</td></tr>
+<tr><td class="center"></td><td>Endre</td><td>43</td><td>68</td><td>22</td><td>133</td></tr>
+<tr><td class="center"></td><td>Endy</td><td>44</td><td>52</td><td>21</td><td>117</td></tr>
+<tr><td class="center"></td><td>eoi</td><td>150</td><td>174</td><td>87</td><td>411</td></tr>
+<tr><td class="center"></td><td>Ermance</td><td>262</td><td>413</td><td>219</td><td>894</td></tr>
+<tr><td class="center"></td><td>eveka</td><td>64</td><td>83</td><td>61</td><td>208</td></tr>
+<tr><td class="center"></td><td>evronm</td><td>375</td><td>406</td><td>132</td><td>913</td></tr>
+<tr><td class="center"></td><td>Fatalis</td><td>44</td><td>36</td><td>38</td><td>118</td></tr>
+<tr><td class="center"></td><td>fboons</td><td>175</td><td>193</td><td>75</td><td>443</td></tr>
+<tr><td class="center"></td><td>fcantin</td><td>43</td><td>67</td><td>19</td><td>129</td></tr>
+<tr><td class="center"></td><td>fpc</td><td>936</td><td>808</td><td>156</td><td>1900</td></tr>
+<tr><td class="center"></td><td>freriksj</td><td>165</td><td>183</td><td>42</td><td>390</td></tr>
+<tr><td class="center"></td><td>fruittingles</td><td>21</td><td>67</td><td>28</td><td>116</td></tr>
+<tr><td class="center"></td><td>FurryJamHats</td><td>48</td><td>47</td><td>21</td><td>116</td></tr>
+<tr><td class="center"></td><td>gdi</td><td>340</td><td>271</td><td>26</td><td>637</td></tr>
+<tr><td class="center"></td><td>gemmink</td><td>47</td><td>57</td><td>32</td><td>136</td></tr>
+<tr><td class="center"></td><td>gibrial</td><td>61</td><td>114</td><td>45</td><td>220</td></tr>
+<tr><td class="center"></td><td>giolefpaceid</td><td>33</td><td>46</td><td>55</td><td>134</td></tr>
+<tr><td class="center"></td><td>gkonopas</td><td>94</td><td>158</td><td>102</td><td>354</td></tr>
+<tr><td class="center"></td><td>goofoff</td><td>35</td><td>59</td><td>50</td><td>144</td></tr>
+<tr><td class="center"></td><td>gramps</td><td>1043</td><td>1119</td><td>367</td><td>2529</td></tr>
+<tr><td class="center"></td><td>gustavjarl</td><td>67</td><td>63</td><td>33</td><td>163</td></tr>
+<tr><td class="center"></td><td>halo.fr.nf</td><td>53</td><td>70</td><td>54</td><td>177</td></tr>
+<tr><td class="center"></td><td>hans.adler</td><td>50</td><td>51</td><td>22</td><td>123</td></tr>
+<tr><td class="center"></td><td>hanschr</td><td>84</td><td>174</td><td>43</td><td>301</td></tr>
+<tr><td class="center"></td><td>harmonic</td><td>111</td><td>93</td><td>70</td><td>274</td></tr>
+<tr><td class="center"></td><td>hazzik</td><td>40</td><td>32</td><td>33</td><td>105</td></tr>
+<tr><td class="center"></td><td>Heidi</td><td>26</td><td>39</td><td>41</td><td>106</td></tr>
+<tr><td class="center"></td><td>Helvin</td><td>91</td><td>85</td><td>46</td><td>222</td></tr>
+<tr><td class="center"></td><td>hhiker</td><td>68</td><td>97</td><td>54</td><td>219</td></tr>
+<tr><td class="center"></td><td>IETSUGU</td><td>51</td><td>54</td><td>105</td><td>210</td></tr>
+<tr><td class="center"></td><td>imurfashia</td><td>64</td><td>63</td><td>46</td><td>173</td></tr>
+<tr><td class="center"></td><td>ipushel</td><td>62</td><td>88</td><td>43</td><td>193</td></tr>
+<tr><td class="center"></td><td>ivar</td><td>257</td><td>300</td><td>72</td><td>629</td></tr>
+<tr><td class="center"></td><td>jamayes</td><td>56</td><td>78</td><td>29</td><td>163</td></tr>
+<tr><td class="center"></td><td>Janne</td><td>34</td><td>45</td><td>27</td><td>106</td></tr>
+<tr><td class="center"></td><td>jayblurd</td><td>35</td><td>42</td><td>36</td><td>113</td></tr>
+<tr><td class="center"></td><td>JDavidC</td><td>272</td><td>284</td><td>110</td><td>666</td></tr>
+<tr><td class="center"></td><td>jeanyves17</td><td>933</td><td>856</td><td>220</td><td>2009</td></tr>
+<tr><td class="center"></td><td>jerome</td><td>132</td><td>228</td><td>91</td><td>451</td></tr>
+<tr><td class="center"></td><td>jette</td><td>24</td><td>38</td><td>49</td><td>111</td></tr>
+<tr><td class="center"></td><td>joker2156</td><td>142</td><td>154</td><td>41</td><td>337</td></tr>
+<tr><td class="center"></td><td>jophylo</td><td>27</td><td>43</td><td>38</td><td>108</td></tr>
+<tr><td class="center"></td><td>jordon47</td><td>64</td><td>75</td><td>42</td><td>181</td></tr>
+<tr><td class="center"></td><td>josh</td><td>49</td><td>65</td><td>51</td><td>165</td></tr>
+<tr><td class="center"></td><td>jrb123172</td><td>31</td><td>62</td><td>27</td><td>120</td></tr>
+<tr><td class="center"></td><td>JustJustin</td><td>25</td><td>46</td><td>47</td><td>118</td></tr>
+<tr><td class="center"></td><td>Jwb52z</td><td>47</td><td>73</td><td>40</td><td>160</td></tr>
+<tr><td class="center"></td><td>jwwinder</td><td>44</td><td>73</td><td>41</td><td>158</td></tr>
+<tr><td class="center"></td><td>K33p3r</td><td>42</td><td>42</td><td>20</td><td>104</td></tr>
+<tr><td class="center"></td><td>kairn</td><td>28</td><td>55</td><td>59</td><td>142</td></tr>
+<tr><td class="center"></td><td>karmaguru</td><td>37</td><td>69</td><td>44</td><td>150</td></tr>
+<tr><td class="center"></td><td>Kevonni2</td><td>80</td><td>107</td><td>38</td><td>225</td></tr>
+<tr><td class="center"></td><td>kitycath</td><td>28</td><td>49</td><td>25</td><td>102</td></tr>
+<tr><td class="center"></td><td>Klippefisken</td><td>38</td><td>44</td><td>23</td><td>105</td></tr>
+<tr><td class="center"></td><td>Knot</td><td>35</td><td>87</td><td>32</td><td>154</td></tr>
+<tr><td class="center"></td><td>Kompasskalle</td><td>40</td><td>83</td><td>67</td><td>190</td></tr>
+<tr><td class="center"></td><td>Koren</td><td>33</td><td>50</td><td>20</td><td>103</td></tr>
+<tr><td class="center"></td><td>Korvien</td><td>31</td><td>58</td><td>18</td><td>107</td></tr>
+<tr><td class="center"></td><td>LAwoman</td><td>100</td><td>124</td><td>74</td><td>298</td></tr>
+<tr><td class="center"></td><td>Le Décharné</td><td>36</td><td>57</td><td>35</td><td>128</td></tr>
+<tr><td class="center"></td><td>LEFEU</td><td>51</td><td>74</td><td>55</td><td>180</td></tr>
+<tr><td class="center"></td><td>Legioner</td><td>38</td><td>38</td><td>33</td><td>109</td></tr>
+<tr><td class="center"></td><td>Lela</td><td>30</td><td>57</td><td>37</td><td>124</td></tr>
+<tr><td class="center"></td><td>lhoch</td><td>31</td><td>60</td><td>34</td><td>125</td></tr>
+<tr><td class="center"></td><td>lilia</td><td>50</td><td>48</td><td>81</td><td>179</td></tr>
+<tr><td class="center"></td><td>lilypud</td><td>34</td><td>54</td><td>24</td><td>112</td></tr>
+<tr><td class="center"></td><td>LiqueArdena</td><td>105</td><td>96</td><td>32</td><td>233</td></tr>
+<tr><td class="center"></td><td>LissyNumber</td><td>28</td><td>61</td><td>21</td><td>110</td></tr>
+<tr><td class="center"></td><td>Lobatchevsky</td><td>54</td><td>70</td><td>80</td><td>204</td></tr>
+<tr><td class="center"></td><td>lou-i-se</td><td>75</td><td>101</td><td>94</td><td>270</td></tr>
+<tr><td class="center"></td><td>luketron</td><td>36</td><td>74</td><td>37</td><td>147</td></tr>
+<tr><td class="center"></td><td>Lyrelia</td><td>31</td><td>49</td><td>22</td><td>102</td></tr>
+<tr><td class="center"></td><td>maarten19</td><td>45</td><td>60</td><td>35</td><td>140</td></tr>
+<tr><td class="center"></td><td>Macka</td><td>28</td><td>47</td><td>26</td><td>101</td></tr>
+<tr><td class="center"></td><td>mahughes</td><td>36</td><td>50</td><td>30</td><td>116</td></tr>
+<tr><td class="center"></td><td>Maju</td><td>32</td><td>48</td><td>35</td><td>115</td></tr>
+<tr><td class="center"></td><td>marcors</td><td>52</td><td>53</td><td>69</td><td>174</td></tr>
+<tr><td class="center"></td><td>MarcS</td><td>44</td><td>39</td><td>18</td><td>101</td></tr>
+<tr><td class="center"></td><td>marie_s</td><td>323</td><td>430</td><td>180</td><td>933</td></tr>
+<tr><td class="center"></td><td>mathoulepou</td><td>25</td><td>32</td><td>55</td><td>112</td></tr>
+<tr><td class="center"></td><td>megdarin</td><td>166</td><td>291</td><td>156</td><td>613</td></tr>
+<tr><td class="center"></td><td>melonhead</td><td>214</td><td>257</td><td>170</td><td>641</td></tr>
+<tr><td class="center"></td><td>meltorme</td><td>49</td><td>47</td><td>27</td><td>123</td></tr>
+<tr><td class="center"></td><td>mfg</td><td>46</td><td>64</td><td>60</td><td>170</td></tr>
+<tr><td class="center"></td><td>mgermain</td><td>43</td><td>81</td><td>50</td><td>174</td></tr>
+<tr><td class="center"></td><td>mhartley</td><td>71</td><td>126</td><td>85</td><td>282</td></tr>
+<tr><td class="center"></td><td>mikeyp</td><td>122</td><td>185</td><td>95</td><td>402</td></tr>
+<tr><td class="center"></td><td>Minaj</td><td>578</td><td>545</td><td>218</td><td>1341</td></tr>
+<tr><td class="center"></td><td>mindthegap</td><td>41</td><td>51</td><td>53</td><td>145</td></tr>
+<tr><td class="center"></td><td>mispriss3377</td><td>28</td><td>56</td><td>45</td><td>129</td></tr>
+<tr><td class="center"></td><td>mm044</td><td>216</td><td>229</td><td>94</td><td>539</td></tr>
+<tr><td class="center"></td><td>mm325</td><td>77</td><td>121</td><td>70</td><td>268</td></tr>
+<tr><td class="center"></td><td>moi0001</td><td>34</td><td>60</td><td>23</td><td>117</td></tr>
+<tr><td class="center"></td><td>Morn</td><td>67</td><td>87</td><td>45</td><td>199</td></tr>
+<tr><td class="center"></td><td>Morrison</td><td>66</td><td>41</td><td>15</td><td>122</td></tr>
+<tr><td class="center"></td><td>mrlinds</td><td>67</td><td>89</td><td>42</td><td>198</td></tr>
+<tr><td class="center"></td><td>mtkahn</td><td>62</td><td>76</td><td>33</td><td>171</td></tr>
+<tr><td class="center"></td><td>mtz</td><td>74</td><td>151</td><td>40</td><td>265</td></tr>
+<tr><td class="center"></td><td>mwh2357</td><td>1957</td><td>940</td><td>100</td><td>2997</td></tr>
+<tr><td class="center"></td><td>Nerotus</td><td>64</td><td>51</td><td>63</td><td>178</td></tr>
+<tr><td class="center"></td><td>Nesa</td><td>40</td><td>56</td><td>10</td><td>106</td></tr>
+<tr><td class="center"></td><td>nessie</td><td>169</td><td>171</td><td>80</td><td>420</td></tr>
+<tr><td class="center"></td><td>newfie</td><td>73</td><td>120</td><td>50</td><td>243</td></tr>
+<tr><td class="center"></td><td>Nexos</td><td>25</td><td>44</td><td>35</td><td>104</td></tr>
+<tr><td class="center"></td><td>Nicmji25</td><td>99</td><td>106</td><td>38</td><td>243</td></tr>
+<tr><td class="center"></td><td>Nikita</td><td>40</td><td>70</td><td>32</td><td>142</td></tr>
+<tr><td class="center"></td><td>ninalh</td><td>48</td><td>88</td><td>32</td><td>168</td></tr>
+<tr><td class="center"></td><td>nobrandminda</td><td>59</td><td>115</td><td>58</td><td>232</td></tr>
+<tr><td class="center"></td><td>nolleb</td><td>102</td><td>155</td><td>47</td><td>304</td></tr>
+<tr><td class="center"></td><td>nsg</td><td>27</td><td>35</td><td>56</td><td>118</td></tr>
+<tr><td class="center"></td><td>Nulcher</td><td>52</td><td>76</td><td>57</td><td>185</td></tr>
+<tr><td class="center"></td><td>oatmealpie</td><td>46</td><td>76</td><td>52</td><td>174</td></tr>
+<tr><td class="center"></td><td>ocleary</td><td>36</td><td>64</td><td>72</td><td>172</td></tr>
+<tr><td class="center"></td><td>orcus</td><td>40</td><td>51</td><td>24</td><td>115</td></tr>
+<tr><td class="center"></td><td>osmiumtet</td><td>34</td><td>38</td><td>31</td><td>103</td></tr>
+<tr><td class="center"></td><td>Penfold</td><td>28</td><td>51</td><td>31</td><td>110</td></tr>
+<tr><td class="center"></td><td>Pickle</td><td>59</td><td>70</td><td>35</td><td>164</td></tr>
+<tr><td class="center"></td><td>plefrancois</td><td>49</td><td>51</td><td>23</td><td>123</td></tr>
+<tr><td class="center"></td><td>pokio</td><td>32</td><td>57</td><td>17</td><td>106</td></tr>
+<tr><td class="center"></td><td>ponnuki</td><td>63</td><td>75</td><td>20</td><td>158</td></tr>
+<tr><td class="center"></td><td>Prothon</td><td>415</td><td>153</td><td>40</td><td>608</td></tr>
+<tr><td class="center"></td><td>r01339113</td><td>80</td><td>111</td><td>38</td><td>229</td></tr>
+<tr><td class="center"></td><td>radrik</td><td>37</td><td>57</td><td>27</td><td>121</td></tr>
+<tr><td class="center"></td><td>rafael36</td><td>30</td><td>84</td><td>43</td><td>157</td></tr>
+<tr><td class="center"></td><td>rigdrol</td><td>39</td><td>64</td><td>30</td><td>133</td></tr>
+<tr><td class="center"></td><td>Rolf</td><td>107</td><td>126</td><td>43</td><td>276</td></tr>
+<tr><td class="center"></td><td>ronimore</td><td>60</td><td>87</td><td>37</td><td>184</td></tr>
+<tr><td class="center"></td><td>rosy</td><td>260</td><td>335</td><td>238</td><td>833</td></tr>
+<tr><td class="center"></td><td>Rubis</td><td>42</td><td>41</td><td>24</td><td>107</td></tr>
+<tr><td class="center"></td><td>runella</td><td>54</td><td>69</td><td>71</td><td>194</td></tr>
+<tr><td class="center"></td><td>r_66_p</td><td>47</td><td>74</td><td>26</td><td>147</td></tr>
+<tr><td class="center"></td><td>sandrine7007</td><td>48</td><td>93</td><td>57</td><td>198</td></tr>
+<tr><td class="center"></td><td>SandyP</td><td>112</td><td>159</td><td>125</td><td>396</td></tr>
+<tr><td class="center"></td><td>saperekier</td><td>29</td><td>42</td><td>36</td><td>107</td></tr>
+<tr><td class="center"></td><td>scal</td><td>35</td><td>77</td><td>29</td><td>141</td></tr>
+<tr><td class="center"></td><td>scarlatti</td><td>86</td><td>105</td><td>20</td><td>211</td></tr>
+<tr><td class="center"></td><td>Scribbler</td><td>71</td><td>67</td><td>37</td><td>175</td></tr>
+<tr><td class="center"></td><td>sedyn</td><td>58</td><td>31</td><td>31</td><td>120</td></tr>
+<tr><td class="center"></td><td>senya</td><td>35</td><td>77</td><td>20</td><td>132</td></tr>
+<tr><td class="center"></td><td>seq935</td><td>197</td><td>86</td><td>54</td><td>337</td></tr>
+<tr><td class="center"></td><td>Sinkef</td><td>77</td><td>114</td><td>60</td><td>251</td></tr>
+<tr><td class="center"></td><td>snow1eopard</td><td>45</td><td>83</td><td>42</td><td>170</td></tr>
+<tr><td class="center"></td><td>softlight93</td><td>31</td><td>90</td><td>47</td><td>168</td></tr>
+<tr><td class="center"></td><td>spencebot</td><td>35</td><td>47</td><td>18</td><td>100</td></tr>
+<tr><td class="center"></td><td>SpencerC</td><td>97</td><td>118</td><td>36</td><td>251</td></tr>
+<tr><td class="center"></td><td>spmm</td><td>112</td><td>85</td><td>97</td><td>294</td></tr>
+<tr><td class="center"></td><td>spvincent</td><td>223</td><td>275</td><td>111</td><td>609</td></tr>
+<tr><td class="center"></td><td>stefano</td><td>862</td><td>1131</td><td>487</td><td>2480</td></tr>
+<tr><td class="center"></td><td>stegamt</td><td>46</td><td>55</td><td>85</td><td>186</td></tr>
+<tr><td class="center"></td><td>stoganes</td><td>45</td><td>48</td><td>20</td><td>113</td></tr>
+<tr><td class="center"></td><td>sweetrowan</td><td>53</td><td>45</td><td>20</td><td>118</td></tr>
+<tr><td class="center"></td><td>swooboo</td><td>236</td><td>121</td><td>75</td><td>432</td></tr>
+<tr><td class="center"></td><td>Teh_0wn3r</td><td>154</td><td>48</td><td>19</td><td>221</td></tr>
+<tr><td class="center"></td><td>tht</td><td>41</td><td>57</td><td>25</td><td>123</td></tr>
+<tr><td class="center"></td><td>Tieaun</td><td>67</td><td>65</td><td>62</td><td>194</td></tr>
+<tr><td class="center"></td><td>titousensei</td><td>46</td><td>47</td><td>13</td><td>106</td></tr>
+<tr><td class="center"></td><td>tmehoke</td><td>122</td><td>83</td><td>55</td><td>260</td></tr>
+<tr><td class="center"></td><td>TooManyPies</td><td>41</td><td>55</td><td>54</td><td>150</td></tr>
+<tr><td class="center"></td><td>topace10</td><td>32</td><td>49</td><td>28</td><td>109</td></tr>
+<tr><td class="center"></td><td>toregil</td><td>27</td><td>83</td><td>21</td><td>131</td></tr>
+<tr><td class="center"></td><td>Trader Jimm</td><td>92</td><td>153</td><td>75</td><td>320</td></tr>
+<tr><td class="center"></td><td>triforian</td><td>40</td><td>56</td><td>28</td><td>124</td></tr>
+<tr><td class="center"></td><td>Tryptophan</td><td>48</td><td>77</td><td>38</td><td>163</td></tr>
+<tr><td class="center"></td><td>unki2aut</td><td>41</td><td>60</td><td>22</td><td>123</td></tr>
+<tr><td class="center"></td><td>Uttel</td><td>72</td><td>68</td><td>38</td><td>178</td></tr>
+<tr><td class="center"></td><td>vdruyen</td><td>32</td><td>63</td><td>26</td><td>121</td></tr>
+<tr><td class="center"></td><td>vergil</td><td>55</td><td>80</td><td>82</td><td>217</td></tr>
+<tr><td class="center"></td><td>vilarif</td><td>155</td><td>130</td><td>49</td><td>334</td></tr>
+<tr><td class="center"></td><td>VVV</td><td>149</td><td>48</td><td>13</td><td>210</td></tr>
+<tr><td class="center"></td><td>vvv</td><td>100</td><td>24</td><td>8</td><td>132</td></tr>
+<tr><td class="center"></td><td>waxwing</td><td>65</td><td>115</td><td>81</td><td>261</td></tr>
+<tr><td class="center"></td><td>wightolg</td><td>41</td><td>45</td><td>36</td><td>122</td></tr>
+<tr><td class="center"></td><td>Wild Bill</td><td>31</td><td>36</td><td>40</td><td>107</td></tr>
+<tr><td class="center"></td><td>wildIris</td><td>155</td><td>152</td><td>52</td><td>359</td></tr>
+<tr><td class="center"></td><td>wongba</td><td>32</td><td>54</td><td>15</td><td>101</td></tr>
+<tr><td class="center"></td><td>wroxter</td><td>182</td><td>159</td><td>76</td><td>417</td></tr>
+<tr><td class="center"></td><td>wtrstone</td><td>74</td><td>120</td><td>41</td><td>235</td></tr>
+<tr><td class="center"></td><td>yasmina</td><td>270</td><td>88</td><td>20</td><td>378</td></tr>
+<tr><td class="center"></td><td>ynapeu</td><td>249</td><td>201</td><td>113</td><td>563</td></tr>
+<tr><td class="center"></td><td>zannmw</td><td>52</td><td>68</td><td>35</td><td>155</td></tr>
+<tr><td class="center"></td><td>Zeg</td><td>53</td><td>62</td><td>30</td><td>145</td></tr>
+</tbody>
+</table>
+</div>
+
+<div id="monthly">
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-condensed" id="rankingtable" width="100%">
+<thead>
+<tr><td width="3%">&nbsp;</td><td>Username</td><td><img class="startable" src="img/1star.png"><img class="startable" src="img/1star.png"><img class="startable" src="img/1star.png"></td><td><img class="startable" src="img/1star.png"><img class="startable" src="img/1star.png"></td><td><img class="startable" src="img/1star.png"></td><td>Total</td></tr>
+</thead>
+<tbody>
+<tr><td class="center"></td><td>Anonymous</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td class="center"></td><td>Anoymous</td><td>3</td><td>3</td><td>2</td><td>8</td></tr>
+<tr><td class="center"></td><td>Facebook_1670949321</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td class="center"></td><td>Facebook_580113485</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+<tr><td class="center"></td><td>Facebook_729557752</td><td>11</td><td>2</td><td>0</td><td>13</td></tr>
+<tr><td class="center"></td><td>Guest</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td class="center"></td><td>jerome</td><td>1</td><td>2</td><td>1</td><td>4</td></tr>
+<tr><td class="center"></td><td>LinkedIn_lVn2jPjsEY</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td class="center"></td><td>LinkedIn_V8KRcKAvzf</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td class="center"></td><td>phylo_game</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td class="center"></td><td>waldispuhl_fb_580113</td><td>3</td><td>2</td><td>6</td><td>11</td></tr>
+</tbody>
+</table>
+</div>
+
+<div id="weekly">
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-condensed" id="rankingtable" width="100%">
+<thead>
+<tr><td width="3%">&nbsp;</td><td>Username</td><td><img class="startable" src="img/1star.png"><img class="startable" src="img/1star.png"><img class="startable" src="img/1star.png"></td><td><img class="startable" src="img/1star.png"><img class="startable" src="img/1star.png"></td><td><img class="startable" src="img/1star.png"></td><td>Total</td></tr>
+</thead>
+<tbody>
+<tr><td class="center"></td><td>Facebook_580113485</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+<tr><td class="center"></td><td>Facebook_729557752</td><td>9</td><td>1</td><td>0</td><td>10</td></tr>
+<tr><td class="center"></td><td>jerome</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td class="center"></td><td>phylo_game</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+
