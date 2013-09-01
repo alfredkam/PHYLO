@@ -37,6 +37,8 @@ define([
 
 		initHeaderFooter : function(pageName, lang)
 		{
+			var langModel = {};
+
 			if(!lang) 
 				lang = "EN";	
 			// a good place for code that needs to be ran every page
@@ -44,7 +46,6 @@ define([
 			if(!this.lang || this.lang != lang) {
 				this.lang = lang;
 
-				var langModel = {};
 
 				$.ajax({
 					url :"assets/lang/"+lang+".js",
@@ -56,7 +57,6 @@ define([
 					console.log("failed")
 					langModel= data;
 				});
-				console.log(langModel);
 
 
 				//langModel.fetch();
@@ -66,7 +66,7 @@ define([
 			if (!this.regions.headerRegion.currentView)
 			{
 				this.regions.headerRegion.show(new HeaderView({
-					model : langModel,
+					model : (new Backbone.Model(langModel.lang)),
 					lang : lang
 				}));
 			}
