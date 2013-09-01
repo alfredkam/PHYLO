@@ -1,19 +1,19 @@
 define([
-	"js/config", 
-	"js/util/WebConsoleUtils", 
+	"scripts/config", 
+	"scripts/util/WebConsoleUtils", 
 	//LIBRARY
 	"backbone",
 	"marionette",
 	"mustache",
 	//CONTROLLER
-	"js/AppController",
+	"scripts/AppController",
 	//ROUTER
-	"js/AppRouter",
+	"scripts/AppRouter",
 	//LAYOUT
-	"js/views/AppLayout",
+	"scripts/views/AppLayout",
 	//MODELS
 	//OTHERS
-	"js/util/vent/vent"
+	"scripts/util/vent/vent"
 ], function(
 		config, WebConsoleUtils, 
 		Backbone, Marionette, Mustache, 

@@ -6,18 +6,17 @@ define([
          "backbone", 
          "marionette",
          //VIEWS
-         "js/views/HeaderView", 
-         "js/views/FooterView", 
-         "js/views/app/demo/DemoLayout",
-         "js/views/app/home/HomeView",
+         "scripts/views/HeaderView", 
+         "scripts/views/FooterView", 
+         "scripts/views/app/home/HomeView",
          //LAYOUT
-         "js/views/AppLayout"
+         "scripts/views/AppLayout"
          //Modules
 
          //NO EXPORTS goes last
 ], function(
 		$, Backbone, Marionette, 
-		HeaderView, FooterView, DemoView, HomeView,
+		HeaderView, FooterView, HomeView,
 		AppLayout
 ) {
 	var DashboardController = Marionette.Controller.extend({

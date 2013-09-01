@@ -1,3 +1,3 @@
 define([], function(){
-	return window["localhost"].getConfig();
+	return window["PHYLO"].getConfig();
 });

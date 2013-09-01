@@ -7,7 +7,7 @@
 (function(){
 	
 	//TODO: Change the sitename to whatever your site name is.
-	var sitename = "localhost";
+	var sitename = "PHYLO";
 	
 	window[sitename] = window[sitename] || {};
 	
@@ -72,13 +72,13 @@
 	
 	if(config.env === "dev")
 	{
-		script.setAttribute("data-main", "js/main/"+sitename+"-main.js");
-		script.setAttribute("src", "lib/require/require.js");
+		script.setAttribute("data-main", "assets/scripts/main/"+sitename+"-main.js");
+		script.setAttribute("src", "assets/bower_components/requirejs/require.js");
 	}
 	
 	else if(config.env === "production")
 	{
-		script.setAttribute("src", "js/build/"+sitename+".js");
+		script.setAttribute("src", "scripts/build/"+sitename+".js");
 	}
 	
 	document.getElementsByTagName("body")[0].appendChild(script);

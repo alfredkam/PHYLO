@@ -124,7 +124,7 @@
 			}	
 		}
 	});
-	require(['yepnope/yepnope'],
+	require(['dev/dev','yepnope'],
 		function() {
 			//loads tablet UX
 			window.isTablet = navigator.userAgent.match(/(iPad|Android .* Chrome\/[.0-9]* (?!Mobile)|Opera Tablet|Android .* (?!Mobile)|Tablet|silk|kindle fire)/i) != null;
