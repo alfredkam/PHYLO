@@ -4,9 +4,10 @@
 		'underscore/underscore',
 		'backbone/backbone',
 		'mustache/mustache',
+		'marionette',
 		'views/request.views',
 		'views/variable.listener'
-	], function($, _, Backbone,Mustache,Request,Listener) {
+	], function($, _, Backbone,Mustache,Marionette,Request,Listener) {
 		var listener = new Listener;
 		var selectTab = function(tag) {
 			$("#nav a div").removeClass("onSelect");

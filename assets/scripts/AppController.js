@@ -44,15 +44,19 @@ define([
 			if(!this.lang || this.lang != lang) {
 				this.lang = lang;
 
-				var langModel = Backbone.Model.extend({
-					url : "assets/lang/"+lang+".js"
+				var langModel = {};
+
+				$.ajax({
+					url :"assets/lang/"+lang+".js",
+					async: false,
+					dataType: 'json'
+				}).done(function(data,resp){
+					langModel = data;
+				}).fail(function(data,resp){
+					console.log("failed")
+					langModel= data;
 				});
-
-				var xx = new langModel();
-
-				xx.fetch();
-
-				console.log(xx.toJSON());
+				console.log(langModel);
 
 
 				//langModel.fetch();
