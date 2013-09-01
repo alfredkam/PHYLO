@@ -128,14 +128,14 @@
                 </div>
                 <div class='customize-tab'>
                     <div class='row'>
-                        <a href='javascript:void(0)' class='customize-tab-onselect span2 tag-theme m_theme'>Theme</a>
-                        <a href='javascript:void(0)' class='span2 tag-music m_music' >Music</a>
+                        <a href='javascript:void(0)' class='customize-tab-onselect col-md-2 tag-theme m_theme'>Theme</a>
+                        <a href='javascript:void(0)' class='col-md-2 tag-music m_music' >Music</a>
                     </div>
                 </div>
                 <div class='customize-body'>
                     <div class='row'>
                         <div class='customize-theme row'>
-                            <div class='span4' >
+                            <div class='col-md-4' >
                                 <div class='customize-boardColor'>
                                     <div class='row customize-title m_boardColor'>
                                             Board Color:
@@ -167,7 +167,7 @@
                                     </a>    
                                 </div>
                             </div>
-                            <div class='span5'>
+                            <div class='col-md-5'>
                                 <canvas id='colorpad' width='256' height='256'>
 
                                 </canvas>
@@ -185,10 +185,10 @@
                 </div>
                 <div class='customize-buttons'>
                     <div class='row'>
-                        <a href='javascript:void(0)' class='customize-save btn btn-primary offset4 span2 m_save'>
+                        <a href='javascript:void(0)' class='customize-save btn btn-primary offset4 col-md-2 m_save'>
                             Save
                         </a>
-                        <a href='javascript:void(0)' class='customize-cancel btn btn-primary span2 m_cancel'>
+                        <a href='javascript:void(0)' class='customize-cancel btn btn-primary col-md-2 m_cancel'>
                             Cancel
                         </a>
                     </div>
@@ -198,7 +198,91 @@
 
 
 <!--         site content starts here -->
-        <header id="header-wrapper"></header>
+        <header id="header-wrapper">
+            <div id='top-panel'>
+                <div class='container'>
+                <div id='logo' class='col-md-3'><div>PHYLO | DNA Puzzles</div></div>
+                <!-- <div id='logo' class='col-md-3'><div>PHYLO | DNA Puzzles</div><div class='beta2'>Beta</div></div> -->
+                <a href="http://phylo.cs.mcgill.ca/submit">
+                    <!--<div id='dropDown-logoTriangle'></div>
+                    --> 
+                    <div id='dropDown-logo' class='col-md-3'>PHYLO | Research</div>
+                </a>
+                <div id='nav' class='col-md-6'>
+                    <ul>
+                        <li>
+                        <a id='play' class='isTab' href='javascript:void(0);' data-url='index.html?page=play'><div>{{header.field 1}}</div></a>
+                        </li><li>
+                        <a id='tutorial' class='isTab' href='javascript:void(0);'><div>{{header.field 2}}</div></a>
+                        </li><li>
+                        <a id='about' class='isTab' href='javascript:void(0);'><div>{{header.field 3}}</div></a>
+                        </li><li>
+                        <a id='credits' class='isTab' href='javascript:void(0);'><div>{{header.field 4}}</div></a>
+                        </li><li>
+                        <a id='ranking' class='isTab' href='javascript:void(0);'><div>{{header.field 5}}</div></a>
+                        </li><li class='showInLogin'>
+                        <a id='history' class='isTab' href='javascript:void(0);'><div>{{header.field 15}}</div></a>
+                        </li><li class='showInLogin showExpertOptions'>
+                        <a id='expert' class='isTab' href='javascript:void(0);'><div>{{header.field 16}}</div></a>
+                        </li>
+                    </ul>
+                </div>
+                    <div id='top-panel-right'>
+                        <div id='login'>
+                            <div id='login-tag' class='m_login'>
+                                Login
+                            </div>
+                            <div id='login-box'>
+                                <div class='login-warning'></div>
+                                <span class='email-holder'><input id='email' type='text' class='input-medium' placeholder='Email'/><br></span>
+                                <input id='username' type='text' class='input-medium' placeholder='Username'/>
+                                <br>
+                                <input id='password' type='password' class='input-medium' placeholder='Password'/><br>
+                                <button class='btn login-btn m_login'>Log In</button>
+                                <button class='btn btn-primary register-btn register-btn-shift' id='m_register'>Register</button>
+                                <button class='btn btn-danger cancel-btn' id='m_cancel'>Cancel</button>
+                                <br/><br/>
+                                <a href="#" class="zocial facebook" id="m_fb_signin">Sign-in with Facebook</a>
+                                <a href="#" class="zocial twitter" id="m_tw_signin">Sign-in with Twitter</a>
+                                <a href="#" class="zocial google" id="m_gg_signin">Sign-in with Google</a>
+                                <a href="#" class="zocial linkedin" id="m_li_signin">Sign-in with LinkedIn</a>
+                                <br/><br/>
+                                <a href='http://phylo.cs.mcgill.ca/reset.php'>Forgot Password?</a>
+                            </div>
+                        </div>
+                        <div id='options'>
+                            <div id='options-button'>
+                                <i class='icon-cog'></i>
+                            </div>
+                            <div id='option-list' class='list-shadow'>
+                                <div id='language' class='option-list'>
+                                    <div id='language-tag'>
+                                        <i class='icon-language'></i>
+                                    </div>          
+                                    <div id='language-list'>
+                                        <div class='language-list list-shadow'>
+                                            <a href='' name='EN'><div>English</div></a>
+                                            <a href='' name='SP'><div>Español</div></a>
+                                            <a href='' name='FR'><div>Français</div></a>
+                                            <a href='' name='DE'><div>Deutsch</div></a>
+                                            <a href='' name='RU'><div>Pусский</div></a>
+                                            <a href='' name='ZH-HK'><div>中文繁體</div></a>
+                                            <a href='' name='ZH-CN'><div>中文简体</div></a>
+                                            <a href='' name='KO'><div>한국어</div></a>
+                                            <a href='' name='HE'><div>עברית</div></a>
+                                            <a href='' name='RO'><div>Română</div></a>
+                                            <a href='' name='PT'><div>Português</div></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id='customize' class='option-list' class='m_customize'><img src="img/customize1.png"/></div>
+                                <div id='logout' class='option-list m_logout'>Logout</div>
+                            </div>
+                        </div>  
+                    </div>  
+                    </div>
+                </div>
+        </header>
 <!--         wrapper -->
         <div id="wrapper">
                         <div id='tabletSettingUp' class='m_settingUp'>
@@ -293,90 +377,6 @@
                                 </a>
                             </div>
                         </div>
-                                    
-                        <div id='top-panel'>
-                            <div class='container'>
-                            <div id='logo' class='span3'><div>PHYLO | DNA Puzzles</div></div>
-                            <!-- <div id='logo' class='span3'><div>PHYLO | DNA Puzzles</div><div class='beta2'>Beta</div></div> -->
-                            <a href="http://phylo.cs.mcgill.ca/submit">
-                                <!--<div id='dropDown-logoTriangle'></div>
-                                --> 
-                                <div id='dropDown-logo' class='span3'>PHYLO | Research</div>
-                            </a>
-                            <div id='nav' class='span6'>
-                                <ul>
-                                    <li>
-                                    <a id='play' class='isTab' href='javascript:void(0);' data-url='index.html?page=play'><div>{{header.field 1}}</div></a>
-                                    </li><li>
-                                    <a id='tutorial' class='isTab' href='javascript:void(0);'><div>{{header.field 2}}</div></a>
-                                    </li><li>
-                                    <a id='about' class='isTab' href='javascript:void(0);'><div>{{header.field 3}}</div></a>
-                                    </li><li>
-                                    <a id='credits' class='isTab' href='javascript:void(0);'><div>{{header.field 4}}</div></a>
-                                    </li><li>
-                                    <a id='ranking' class='isTab' href='javascript:void(0);'><div>{{header.field 5}}</div></a>
-                                    </li><li class='showInLogin'>
-                                    <a id='history' class='isTab' href='javascript:void(0);'><div>{{header.field 15}}</div></a>
-                                    </li><li class='showInLogin showExpertOptions'>
-                                    <a id='expert' class='isTab' href='javascript:void(0);'><div>{{header.field 16}}</div></a>
-                                    </li>
-                                </ul>
-                            </div>
-                                <div id='top-panel-right'>
-                                    <div id='login'>
-                                        <div id='login-tag' class='m_login'>
-                                            Login
-                                        </div>
-                                        <div id='login-box'>
-                                            <div class='login-warning'></div>
-                                            <span class='email-holder'><input id='email' type='text' class='input-medium' placeholder='Email'/><br></span>
-                                            <input id='username' type='text' class='input-medium' placeholder='Username'/>
-                                            <br>
-                                            <input id='password' type='password' class='input-medium' placeholder='Password'/><br>
-                                            <button class='btn login-btn m_login'>Log In</button>
-                                            <button class='btn btn-primary register-btn register-btn-shift' id='m_register'>Register</button>
-                                            <button class='btn btn-danger cancel-btn' id='m_cancel'>Cancel</button>
-                                            <br/><br/>
-                                            <a href="#" class="zocial facebook" id="m_fb_signin">Sign-in with Facebook</a>
-                                            <a href="#" class="zocial twitter" id="m_tw_signin">Sign-in with Twitter</a>
-                                            <a href="#" class="zocial google" id="m_gg_signin">Sign-in with Google</a>
-                                            <a href="#" class="zocial linkedin" id="m_li_signin">Sign-in with LinkedIn</a>
-                                            <br/><br/>
-                                            <a href='http://phylo.cs.mcgill.ca/reset.php'>Forgot Password?</a>
-                                        </div>
-                                    </div>
-                                    <div id='options'>
-                                        <div id='options-button'>
-                                            <i class='icon-cog'></i>
-                                        </div>
-                                        <div id='option-list' class='list-shadow'>
-                                            <div id='language' class='option-list'>
-                                                <div id='language-tag'>
-                                                    <i class='icon-language'></i>
-                                                </div>          
-                                                <div id='language-list'>
-                                                    <div class='language-list list-shadow'>
-                                                        <a href='' name='EN'><div>English</div></a>
-                                                        <a href='' name='SP'><div>Español</div></a>
-                                                        <a href='' name='FR'><div>Français</div></a>
-                                                        <a href='' name='DE'><div>Deutsch</div></a>
-                                                        <a href='' name='RU'><div>Pусский</div></a>
-                                                        <a href='' name='ZH-HK'><div>中文繁體</div></a>
-                                                        <a href='' name='ZH-CN'><div>中文简体</div></a>
-                                                        <a href='' name='KO'><div>한국어</div></a>
-                                                        <a href='' name='HE'><div>עברית</div></a>
-                                                        <a href='' name='RO'><div>Română</div></a>
-                                                        <a href='' name='PT'><div>Português</div></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div id='customize' class='option-list' class='m_customize'><img src="img/customize1.png"/></div>
-                                            <div id='logout' class='option-list m_logout'>Logout</div>
-                                        </div>
-                                    </div>  
-                                </div>  
-                                </div>
-                            </div>
                             <a class='tablet-grid tablet-back-btn' href='javascript:void(0);' name='back'>
                                 <div>
                                     <div>
@@ -386,7 +386,7 @@
                                 </div>
                             </a>
                             <div id='loading-panel'>
-                                <img src='img/loading.gif'/>
+                                <img src='assets/img/loading.gif'/>
                             </div>
 <!--         	content -->
         	<div id="app-content"></div>
@@ -448,7 +448,7 @@
         <!-- Overray notifications -->
         <div id="overlays"></div>
         
-        <!-- js -->>
+        <!-- js -->
         <script type="text/javascript" src="assets/scripts/main/main.js"></script
         
         <!-- build -->
