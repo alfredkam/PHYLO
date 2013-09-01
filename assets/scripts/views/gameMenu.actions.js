@@ -219,7 +219,7 @@
 			banner.onload = function() {
 				ctx.drawImage(banner,bannerValues.x,bannerValues.y,bannerValues.w,bannerValues.h);
 			};
-			banner.src = 'img/logo.png';
+			banner.src = 'assets/img/logo.png';
 			ctx.fillStyle = "#F1F1F1";
 			ctx.fillRect(212,250,600,120);
 
@@ -229,11 +229,11 @@
 			var menuStr = [window.lang.body.play.gameselect.levelselect.random["field 2"],window.lang.body.play.gameselect.levelselect["level id"]["field 2"],window.lang.body.play.gameselect.levelselect.disease["field 1"]];
 
 			var menuIcon = [
-					["img/random.png",95,95],
-					["img/id.png",95,95],
-					["img/disease.png",95,95],
+					["assets/img/random.png",95,95],
+					["assets/img/id.png",95,95],
+					["assets/img/disease.png",95,95],
 					];	
-			var menuIconHover = ["img/random_hover.png","img/id_hover.png","img/disease_hover.png"]	
+			var menuIconHover = ["assets/img/random_hover.png","assets/img/id_hover.png","assets/img/disease_hover.png"]	
 
 			//var menuBar = [
 			var cell = function(ctx,x,y,i) {
@@ -307,15 +307,15 @@
 								return;
 							case 2:
 								var diseaseorder =  [
-									["digestive","img/disease/digestive.png","150px",""],
-									["heart", "img/disease/heart.png","110px","30px"],
-									["cancer", "img/disease/cancer.png","100px","55px"],
-									["metabolic", "img/disease/metabolic.png","100px",""],
-									["blood","img/disease/blood.png","50px","10px"],
-									["sensory","img/disease/sensory.png","60px","30px"],
-									["brain","img/disease/brain.png","80px",""],
-									["muscles","img/disease/muscles.png","60px",""],
-									["lung","img/disease/lung.png","60px",""]
+									["digestive","assets/img/disease/digestive.png","150px",""],
+									["heart", "assets/img/disease/heart.png","110px","30px"],
+									["cancer", "assets/img/disease/cancer.png","100px","55px"],
+									["metabolic", "assets/img/disease/metabolic.png","100px",""],
+									["blood","assets/img/disease/blood.png","50px","10px"],
+									["sensory","assets/img/disease/sensory.png","60px","30px"],
+									["brain","assets/img/disease/brain.png","80px",""],
+									["muscles","assets/img/disease/muscles.png","60px",""],
+									["lung","assets/img/disease/lung.png","60px",""]
 									];
 								ctx.beginPath();
 								ctx.textAlign = "center";
@@ -637,7 +637,7 @@
 								selection[i].onOver(k[0],k[1]);		
 							}
 						});
-						banner.src = 'img/logo.png';
+						banner.src = 'assets/img/logo.png';
 						ctx.fillStyle = "#F1F1F1";
 						ctx.fillRect(212,250,600,120);
 						$("#level_inputbox").val("").hide();
