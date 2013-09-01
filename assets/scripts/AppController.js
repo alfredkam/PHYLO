@@ -6,8 +6,8 @@ define([
          "backbone", 
          "marionette",
          //VIEWS
-         "scripts/views/HeaderView", 
-         "scripts/views/FooterView", 
+         "scripts/views/HeaderView",
+         "scripts/views/FooterView",
          "scripts/views/app/home/HomeView",
          //LAYOUT
          "scripts/views/AppLayout"
@@ -112,6 +112,162 @@ define([
 			this.regions.contentRegion.reset();
 
 			this.regions.contentRegion.show(new LoginView());
+		},
+		anotherDefaultRoute : function(lang) {
+			if(lang == undefined) {
+				lang = "EN";
+			} else lang.toUpperCase();
+			navBar.set(lang,"play");
+			var playView = new Views.Play;
+			playView.render(lang);
+		},
+		defaultRoute : function(lang) {
+
+			// BEGIN FIXME (Quick hack to detect language)
+            var lang;
+            var userLang = navigator.language || navigator.userLanguage;
+            var language = userLang.substring(0,2).toUpperCase();
+            switch (language) {
+                case "EN":
+                case "FR":
+                case "SP":
+                case "DE":
+                case "PT":
+                case "RO":
+                case "RU":
+                case "KO":
+                case "HE":
+                    lang = language;
+                    break;
+                case "ZH":
+                    var languageExtension = headers['Accept-Language'].substring(0,5).toUpperCase();
+                    if (languageExtension == "ZH-HK") {
+                        lang = "ZH-HK";
+                    } else {
+                        lang = "ZH-CN";
+                    };
+                    break;
+                default:
+                    lang = "EN";
+                    break;
+            }
+            var playView = new Views.Play;
+            navBar.set(lang,"play");
+            playView.render(lang);
+                 
+            // END FIXME
+            
+            // EN default code
+            //var lang = "EN";
+			//var playView = new Views.Play;
+			//navBar.set(lang,"play");
+			//playView.render(lang);
+		},
+		tabletSettings : function(lang){
+			if(lang == undefined) {
+				lang = "EN";
+			} else lang.toUpperCase();
+			navBar.set(lang,"play");
+			var tabletSettingsView = new Views.TabletSettings;
+			tabletSettingsView.render(lang);	
+		},
+		contribute : function() {
+			window.location = "http://phylo.cs.mcgill.ca/contribute";
+		},
+		expert : function(lang) {
+			window.location = "http://phylo.cs.mcgill.ca/expert/welcome.php";
+		},
+		ranking : function(lang) {
+			if(lang == undefined) {
+				lang = "EN";
+			} else lang.toUpperCase();
+			navBar.set(lang,"ranking");
+			var rankingView = new Views.Ranking;
+			rankingView.render(lang);
+		},
+		credits : function(lang){
+			if(lang == undefined) {
+				lang = "EN";
+			} else lang.toUpperCase();
+			navBar.set(lang,"credits");
+			var creditsView = new Views.Credits;
+			creditsView.render(lang);
+		},
+		about : function(lang){
+			if(lang == undefined) {
+				lang = "EN";
+			} else lang.toUpperCase();
+			navBar.set(lang,"about");
+			var aboutView = new Views.About;
+			aboutView.render(lang);
+		},
+		history : function(lang){
+			if(lang == undefined) {
+				lang = "EN";
+			} else lang.toUpperCase();
+			navBar.set(lang,"history");
+			var historyView = new Views.History;	
+			historyView.render(lang);
+		},
+		tutorial : function(lang){
+			if(lang == undefined) {
+				lang = "EN";
+			} else lang.toUpperCase();
+			navBar.set(lang,"tutorial");
+			var tutorialModel = new Models.Tutorial({lang:lang});
+			var tutorialView = new Views.Tutorial;
+	        tutorialModel.fetch({success:function(){
+			    tutorialView.render(tutorialModel.get("data"));}
+	        });
+		},
+		rna : function(lang){
+			if(lang == undefined) {
+				lang = "EN";
+			} else lang.toUpperCase();
+			navBar.set(lang, "play");
+			var rnaView = new Views.RNA;
+			rnaView.render(lang);
+		},
+		mechanicalTurk : function(lang, id) {
+			//you can write additional script here
+			
+			id = id.replace(/\?.*/,"");
+			console.log(id);
+			console.log("calling as link");
+			if(lang == undefined) {
+				lang = "EN";
+			} else lang.toUpperCase();
+			navBar.set(lang, "play");
+			var playView = new Views.Play;
+			playView.renderPuzzle(lang, id);
+		},
+		puzzle : function(lang, id){
+			if(lang == undefined) {
+				lang = "EN";
+			} else lang.toUpperCase();
+			navBar.set(lang, "play");
+			var playView = new Views.Play;
+			playView.renderPuzzle(lang, id);	
+		},
+		play : function(lang, dev){
+			if(dev) {
+				if(dev == "IAMADEV") 
+					window.DEV.logging = true;	
+				else if(dev == "IAMADEV+DEBUG") {
+					window.DEV.logging = true;
+					window.DEBUG = true;
+				} else if(dev == "NOMUSIC") {
+					window.DEV.disableMusic = true;
+				}
+				
+			}
+			if(lang == undefined) {
+                console.log(lang);
+			} else lang.toUpperCase();
+			navBar.set(lang,"play");
+			var playView = new Views.Play;
+            console.log("render >> " +lang);
+			playView.render(lang);
 		}
 	});
 
