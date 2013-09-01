@@ -27,6 +27,9 @@
     "json": "*",
     "backbone.babysitter": "~0.0.6",
     "backbone.wreqr": "~0.2.0",
-    "jquery-ui": "~1.10.3"
+    "jquery-ui": "~1.10.3",
+    "spectrum": "~1.1.1",
+    "sinon": "~1.7.3",
+    "chai": "~1.7.2"
   }
 }
