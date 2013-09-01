@@ -46,7 +46,6 @@ define([
 			if(!this.lang || this.lang != lang) {
 				this.lang = lang;
 
-
 				$.ajax({
 					url :"assets/lang/"+lang+".js",
 					async: false,
@@ -61,6 +60,7 @@ define([
 
 				//langModel.fetch();
 				//console.log(langModel.toJSON());
+
 			}
 
 			if (!this.regions.headerRegion.currentView)
