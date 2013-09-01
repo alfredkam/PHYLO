@@ -1,0 +1,170 @@
+{
+  "name": "",
+  "glyphs": [
+    {
+      "search": [
+        "skype"
+      ],
+      "code": 83,
+      "uid": "1884ff7f89cc02840606d28f9bcf930a",
+      "css": "skype",
+      "orig_css": "skype",
+      "orig_code": 83,
+      "src": "zocial",
+      "from": 83
+    },
+    {
+      "search": [
+        "arrow",
+        "left"
+      ],
+      "code": 8592,
+      "from": 8592,
+      "uid": "555ef8c86832e686fef85f7af2eb7cde",
+      "css": "left",
+      "orig_css": "left",
+      "orig_code": 8592,
+      "src": "fontawesome"
+    },
+    {
+      "search": [
+        "arrow",
+        "right"
+      ],
+      "code": 8594,
+      "from": 8594,
+      "uid": "ad6b3fbb5324abe71a9c0b6609cbb9f1",
+      "css": "right",
+      "orig_css": "right",
+      "orig_code": 8594,
+      "src": "fontawesome"
+    },
+    {
+      "search": [
+        "settings",
+        "cog",
+        "gear",
+        "params"
+      ],
+      "code": 9881,
+      "from": 9881,
+      "uid": "e99461abfef3923546da8d745372c995",
+      "css": "cog",
+      "orig_css": "cog",
+      "orig_code": 9881,
+      "src": "fontawesome"
+    },
+    {
+      "search": [
+        "reload",
+        "undo",
+        "arrow"
+      ],
+      "code": 10226,
+      "from": 10226,
+      "uid": "f9c3205df26e7778abac86183aefdc99",
+      "css": "ccw",
+      "orig_css": "ccw",
+      "orig_code": 10226,
+      "src": "fontawesome"
+    },
+    {
+      "search": [
+        "twitter"
+      ],
+      "code": 61593,
+      "uid": "627abcdb627cb1789e009c08e2678ef9",
+      "css": "twitter",
+      "orig_css": "twitter",
+      "orig_code": 61593,
+      "src": "fontawesome",
+      "from": 61593
+    },
+    {
+      "search": [
+        "github"
+      ],
+      "code": 61595,
+      "uid": "0f6a2573a7b6df911ed199bb63717e27",
+      "css": "github-circled",
+      "orig_css": "github-circled",
+      "orig_code": 61595,
+      "src": "fontawesome",
+      "from": 61595
+    },
+    {
+      "search": [
+        "google",
+        "plus"
+      ],
+      "code": 61652,
+      "uid": "f0cf7db1b03cb65adc450aa3bdaf8c4d",
+      "css": "gplus-squared",
+      "orig_css": "gplus-squared",
+      "orig_code": 61652,
+      "src": "fontawesome",
+      "from": 61652
+    },
+    {
+      "search": [
+        "google",
+        "plus"
+      ],
+      "code": 61653,
+      "uid": "b8d0c7d76e87b94882329a88e8e43d3d",
+      "css": "gplus",
+      "orig_css": "gplus",
+      "orig_code": 61653,
+      "src": "fontawesome",
+      "from": 61653
+    },
+    {
+      "search": [
+        "github"
+      ],
+      "code": 61715,
+      "uid": "5e0a374728ffa8d0ae1f331a8f648231",
+      "css": "github",
+      "orig_css": "github",
+      "orig_code": 61715,
+      "src": "fontawesome",
+      "from": 61715
+    },
+    {
+      "search": [
+        "github"
+      ],
+      "code": 62208,
+      "from": 62208,
+      "uid": "0ece9a12de796b8411f868d582bee678",
+      "css": "github-squared",
+      "orig_css": "github-squared",
+      "orig_code": 62208,
+      "src": "fontawesome"
+    },
+    {
+      "search": [
+        "twitter"
+      ],
+      "code": 62212,
+      "from": 62212,
+      "uid": "906348dc798a0d42715cc97c875e3ac6",
+      "css": "twitter-squared",
+      "orig_css": "twitter-squared",
+      "orig_code": 62212,
+      "src": "fontawesome"
+    },
+    {
+      "search": [
+        "facebook"
+      ],
+      "code": 62216,
+      "from": 62216,
+      "uid": "4743b088aa95d6f3b6b990e770d3b647",
+      "css": "facebook-squared",
+      "orig_css": "facebook-squared",
+      "orig_code": 62216,
+      "src": "fontawesome"
+    }
+  ]
+}
