@@ -15,12 +15,12 @@
 	var config = (namespace.config = namespace.config || {});
 	
 	//TODO: Change to either "dev" or "production"
-	config.env = "dev"
+	config.env = "dev";
 	
 	var dev = {
 			DEBUG: true
 	};	
-	
+
 	var production = {
 		DEBUG: false	
 	};
@@ -46,14 +46,13 @@
 	
 	if(config.env === "dev")
 	{
-		script.setAttribute("data-main", "js/main/"+phylo+"-main.js");
-		script.setAttribute("src", "bower_components/requirejs/require.js");
+		script.setAttribute("data-main", "assets/js/main/"+sitename+"-main.js");
+		script.setAttribute("src", "assets/bower_components/requirejs/require.js");
 	}
 	
 	else if(config.env === "production")
 	{
-		script.setAttribute("src", "js/build/"+sitename+".js");
+		script.setAttribute("src", "assets/js/build/"+sitename+".js");
 	}
-	
 	document.getElementsByTagName("body")[0].appendChild(script);
 })();

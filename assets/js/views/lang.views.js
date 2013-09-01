@@ -1,10 +1,10 @@
 (function() {
 	define([
-		'jquery/jquery',
-		'underscore/underscore',
-		'backbone/backbone',
-		'mustache/mustache',
-		'models/lang.models'
+		'jquery',
+		'underscore',
+		'backbone',
+		'mustache',
+		'js/models/lang.models'
 	], function( $, _, Backbone, Mustache, Lang) {
 		var trans = new Lang;
 		var translate = Backbone.View.extend({

@@ -1,12 +1,12 @@
 (function() {
 	define([
-		'jquery/jquery',
-		'underscore/underscore',
-		'backbone/backbone',
-		'mustache/mustache',
-		'views/request.views',
-		'views/lang.views',
-		'models/lang.models'
+		'jquery',
+		'underscore',
+		'backbone',
+		'mustache',
+		'js/views/request.views',
+		'js/views/lang.views',
+		'js/models/lang.models'
 	], function($, _, Backbone, Mustache, Request, Lang, LangModel) {
 		var request = new Request;
 		var translate = new Lang;
@@ -63,7 +63,7 @@
 									$.timer.stop();
 									//force change
 									if($(innerSelf).attr("id") == "play") {
-										request.getTemplate("templates/play.html", self.lang);
+										request.getTemplate("tpl/play.html", self.lang);
 									}
 								}
 							});			
@@ -97,10 +97,10 @@
 				$("a.tablet-tab").unbind().click(function() {
 						var innerSelf = this;
 						if($(innerSelf).attr("name") == "play") {
-							request.getTemplate("templates/play.html", self.lang);
+							request.getTemplate("tpl/play.html", self.lang);
 						}
 						if($(innerSelf).attr("name") == "tablet:settings") {
-							request.getTemplate("templates/settings.html", self.lang);
+							request.getTemplate("tpl/settings.html", self.lang);
 						}
 
 						window.location.hash = "#!/"+window.langOpt + "/"+$(this).attr("name");		

@@ -20,6 +20,13 @@
     "yepnope": "~1.5.4",
     "bootbox": "~3.3.0",
     "modernizr": "~2.6.2",
-    "normalize-css": "~2.1.2"
+    "normalize-css": "~2.1.2",
+    "almond": "~0.2.6",
+    "moment": "~2.1.0",
+    "requirejs-text": "~2.0.10",
+    "json": "*",
+    "backbone.babysitter": "~0.0.6",
+    "backbone.wreqr": "~0.2.0",
+    "jquery-ui": "~1.10.3"
   }
 }

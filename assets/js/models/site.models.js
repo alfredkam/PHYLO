@@ -1,11 +1,11 @@
 (function() {
 	define([
-		'jquery/jquery',
-		'underscore/underscore',
-		'backbone/backbone',
-		'mustache/mustache',
-		'views/request.views',
-		'views/navBar.views',
+		'jquery',
+		'underscore',
+		'backbone',
+		'mustache',
+		'js/views/request.views',
+		'js/views/navBar.views',
 	],
     function($, _, Backbone , Mustache, Request, NavBar) { 
 		var Tutorial = Backbone.Model.extend({

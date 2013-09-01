@@ -1,31 +1,24 @@
 require.config({
 	
-	baseUrl: "../..",
-	
+	baseUrl: "assets/js/..",
+	waitSeconds : 15,
 	paths: {
 		//Require Plugins
-		text: "lib/require/text",
-		
+		text: "bower_components/requirejs-text/text",
 		//Core API / Framework / Plugins
-		json: "lib/json/json2",
-		jquery: "lib/jquery/jquery-1.9.1",
-		underscore: "lib/underscore/underscore",
-		backbone: "lib/backbone/backbone",
-		mustache: "lib/mustache/mustache",
-		marionette : "lib/marionette/marionette.min",
-		"backbone.babysitter" : "lib/backbone.babysitter/Backbone.babysitter",
-		"backbone.wreqr" : "lib/backbone.Wreqr/Backbone.Wreqr",
-		flot : "lib/flot/jquery.flot",
-		"flot.time" : "lib/flot/jquery.flot.time",
-		"flot.pie" : "lib/flot/jquery.flot.pie",
-		"flot.threshold" : "lib/flot/jquery.flot.threshold",
-		"flot.stack" : "lib/flot/jquery.flot.stack",
-		"flot.crosshair" : "lib/flot/jquery.flot.crosshair",
-		"moment" : "lib/moment/moment"
-		//TODO : include others here if you want to use them
-		//"bootstrap" : "/lib/bootstrap/bootstrap.min"
+		json: "bower_components/json/json2",
+		jquery: "bower_components/jquery/jquery.min",
+		underscore: "bower_components/underscore/underscore-min",
+		backbone: "bower_components/backbone/backbone",
+		mustache: "bower_components/mustache/mustache",
+		"backbone.babysitter" : "bower_components/backbone.babysitter/lib/backbone.babysitter.min",
+		"backbone.wreqr" : "bower_components/backbone.Wreqr/lib/backbone.wreqr.min",
+		"moment" : "bower_components/moment/moment",
+		"dustjs" : "bower_components/dustjs/dist/dust-full-0.3.0.min",
+		"yepnope" : "bower_components/yepnope/yepnope.1.5.4-min",
+		"bootstrap" : "bower_components/bootstrap/dist/js/bootstrap.min",
+		"jquery-ui" : "bower_components/jquery-ui/ui/minified/jquery-ui.min"
 	},
-	
 	/*
 	 * shim is used to export js files that do not follow the AMD module style
 	 * It is also used to define dependencies for scripts that DO follow the module style.
@@ -48,7 +41,7 @@ require.config({
 		marionette : {
 			deps : ["json", "jquery", "underscore","backbone"],
 			exports : "Marionette"
-		}
+		},
 		flot : {
 			deps : [ "json", "jquery" ],
 			exports : "jQuery"
@@ -83,7 +76,7 @@ require.config({
 require(["js/util/WebConsoleUtils", "backbone", "js/Router"], function(WebConsoleUtils, Backbone, Router){
 	
 	//TODO: Starting point
-	var config = window[sitename].getConfig();
+	var config = window['phylo'].getConfig();
 	var configDebug = config.DEBUG;
 	
 	//TODO: Choose if you want to follow the current config debug flag, or your own.

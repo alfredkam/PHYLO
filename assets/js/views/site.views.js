@@ -1,11 +1,11 @@
 (function() {
 	define([
-		'jquery/jquery',
-		'underscore/underscore',
-		'backbone/backbone',
-		'mustache/mustache',
-		'views/request.views',
-		'views/variable.listener'
+		'jquery',
+		'underscore',
+		'backbone',
+		'mustache',
+		'js/views/request.views',
+		'js/views/variable.listener'
 	], function($, _, Backbone,Mustache,Request,Listener) {
 		var listener = new Listener;
 		var selectTab = function(tag) {
@@ -22,7 +22,7 @@
 		var playView = Backbone.View.extend({
 			renderPuzzle : function(lang, id) {
                 selectTab("play");
-				request.getTemplate("templates/play.html",function(context) {
+				request.getTemplate("tpl/play.html",function(context) {
 					request.getJsonLang(lang, function(json) {
 						window.lang = json;
 						$("#mid-panel").html(Mustache.render(context,json));
@@ -59,7 +59,7 @@
 			},
 			render : function(lang) {
 				selectTab("play");
-				request.getTemplate("templates/play.html",function(context) {
+				request.getTemplate("tpl/play.html",function(context) {
 					request.getJsonLang(lang, function(json) {
 						window.lang = json;
 						$("#mid-panel").html(Mustache.render(context,json));
@@ -97,7 +97,7 @@
 							function(re) {
 								if($("#history-wrapper").length != 0) {
                                     /* Now call the legend */
-                                    request.getTemplate("templates/history_legend.html",function(legend) {
+                                    request.getTemplate("tpl/history_legend.html",function(legend) {
                                         request.getJsonLang(lang, function(json) {
                                             $("#history-wrapper").prepend(re + "\n\n" + Mustache.render(legend,json.body.play));
                                             require(['views/DT_bootstrap_history.actions'],function() {
@@ -125,7 +125,7 @@
 		var aboutView = Backbone.View.extend({
 			render : function(lang) {
 				selectTab("about");
-				request.getTemplate("templates/about.html",function(context) {
+				request.getTemplate("tpl/about.html",function(context) {
 					request.getJsonLang(lang, function(json) {
 						$("#mid-panel").html(Mustache.render(context,json.body.play));
 						request.complete();
@@ -143,7 +143,7 @@
 					function(re) {
 						if($("#ranking-wrapper").length != 0) {
                             /* Now call the legend */
-                            request.getTemplate("templates/ranking_legend.html",function(legend) {
+                            request.getTemplate("tpl/ranking_legend.html",function(legend) {
                                 request.getJsonLang(lang, function(json) {
                                     $("#ranking-wrapper").prepend(re + "\n\n" + Mustache.render(legend,json.body.play));
                                     require(['views/DT_bootstrap_ranking.actions'],function() {
@@ -162,7 +162,7 @@
 		var creditsView = Backbone.View.extend({
 			render : function(lang) {
 				selectTab("credits");
-				request.getTemplate("templates/credits.html",function(context) {
+				request.getTemplate("tpl/credits.html",function(context) {
 					request.getJsonLang(lang, function(json) {
 						$("#mid-panel").html(Mustache.render(context,json.body.play));
 						request.complete();
@@ -174,7 +174,7 @@
 		var tutorialView = Backbone.View.extend({
 			render : function(data) {
 				selectTab("tutorial");
-				request.getTemplate("templates/tutorial.mustache",function(temp){
+				request.getTemplate("tpl/tutorial.mustache",function(temp){
 					$("#mid-panel").html(Mustache.render(temp,data));
 					request.complete();
 				});
@@ -185,13 +185,13 @@
 		var rnaView = Backbone.View.extend({
 			render: function(lang) {
 				selectTab("play");
-				request.getTemplate("templates/rna.html",lang);
+				request.getTemplate("tpl/rna.html",lang);
 			},
 		});
 
 		var tabletSettingsView = Backbone.View.extend({
 			render : function(lang) {
-				request.getTemplate("templates/settings.html",lang);
+				request.getTemplate("tpl/settings.html",lang);
 			},
 		});
 

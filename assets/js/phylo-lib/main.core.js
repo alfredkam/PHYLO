@@ -8,7 +8,7 @@
 				$.timer.stop();
 				$.stage.current = -1;
 			//	$("#countDown-text").html(3);
-				$("#countDown-text").html('<img src="img/loading.gif>');
+				$("#countDown-text").html('<img src="/assets/img/loading.gif>');
 				$("#countDown").show();
 				$("#endGame").hide();
 				/*

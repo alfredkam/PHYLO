@@ -1,8 +1,8 @@
 (function(){
 	define([
-		'jquery/jquery',
-		'underscore/underscore',
-		'backbone/backbone'
+		'jquery',
+		'underscore',
+		'backbone'
 	],function($, _, Backbone) {
 		var obj = Backbone.View.extend({
 			//only detect window change

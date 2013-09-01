@@ -1,8 +1,8 @@
 (function(){
 	define([
-		'jquery/jquery',
-		'backbone/backbone',
-		'mustache/mustache'
+		'jquery',
+		'backbone',
+		'mustache'
 	], function($, Backbone, Mustache,tpl) {
 		var HeaderView = Backbone.view.extend({
 			el : "header",
