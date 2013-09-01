@@ -71,6 +71,7 @@ require.config({
 			deps : [ "jquery", "backbone", "underscore" ],
 			exports : "Marionette"		
 		},
+		bootstrap : ['jquery'],
 		
 		"backbone.wreqr" : {
 			deps : [ "backbone" ]
