@@ -57,7 +57,7 @@ define([
 					console.log("failed")
 					langModel= data;
 				});
-
+				window.lang = langModel.lang;
 
 				//langModel.fetch();
 				//console.log(langModel.toJSON());
