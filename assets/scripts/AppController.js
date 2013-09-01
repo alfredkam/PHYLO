@@ -8,7 +8,7 @@ define([
          //VIEWS
          "scripts/views/HeaderView",
          "scripts/views/FooterView",
-         "scripts/views/app/home/HomeView",
+         "scripts/views/app/index/IndexView",
          //LAYOUT
          "scripts/views/AppLayout"
          //Modules
@@ -16,7 +16,7 @@ define([
          //NO EXPORTS goes last
 ], function(
 		$, Backbone, Marionette, 
-		HeaderView, FooterView, HomeView,
+		HeaderView, FooterView, IndexView,
 		AppLayout
 ) {
 	var DashboardController = Marionette.Controller.extend({
@@ -151,17 +151,16 @@ define([
                     lang = "EN";
                     break;
             }
-            var playView = new Views.Play;
-            navBar.set(lang,"play");
-            playView.render(lang);
-                 
+            // var playView = new Views.Play;
+            // navBar.set(lang,"play");
+            // playView.render(lang);
+            // 
+            this.initHeaderFooter("play");
+            this.regions.contentRegion.reset();
+          	this.regions.contentRegion.show(new IndexView({
+          		lang : lang
+          	}));
             // END FIXME
-            
-            // EN default code
-            //var lang = "EN";
-			//var playView = new Views.Play;
-			//navBar.set(lang,"play");
-			//playView.render(lang);
 		},
 		tabletSettings : function(lang){
 			if(lang == undefined) {

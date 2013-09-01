@@ -885,7 +885,7 @@ td.social-link {
 
 #wrapper {
     position:relative;
-    background: url(../img/bg-light.png) no-repeat center 60px;
+    background: url(assets/img/bg-light.png) no-repeat center 60px;
     z-index:0;
     height:500px;
 }
@@ -893,15 +893,12 @@ td.social-link {
 /* FOOTER */
 
 footer {
-	color: #6D6D6D !important;
 	padding: 17px 0 5px 0;
-	background-color:white;
-	border-top: 1px solid #ddd;
 }
 
 footer a:link, footer a:visited, footer a:active  {
 	font-size:15px;
-    color: #aaa;
+    color: white;
 }
 
 footer a:hover {
