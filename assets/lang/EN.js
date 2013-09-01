@@ -1,6 +1,4 @@
-(function(){
-	function g() {};
-	g.prototype.english = [{
+[{
     "info": {
         "lang": "English",
         "author": "Jerome Waldispuhl",
@@ -230,9 +228,3 @@
         },
     },
 }];
-	var proto = g.prototype,
-		attr = [
-			["lang",proto.english]
-			];
-	common.exportSingleton("ENscript",g,attr);
-})();

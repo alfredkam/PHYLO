@@ -35,18 +35,40 @@ define([
 			}
 		},
 
-		initHeaderFooter : function(pageName)
+		initHeaderFooter : function(pageName, lang)
 		{
+			if(!lang) 
+				lang = "EN";	
 			// a good place for code that needs to be ran every page
+			// 
+			if(!this.lang || this.lang != lang) {
+				this.lang = lang;
+
+				var langModel = Backbone.Model.extend({
+					url : "assets/lang/"+lang+".js"
+				});
+
+				var xx = new langModel();
+
+				xx.fetch();
+
+				console.log(xx.toJSON());
+
+
+				//langModel.fetch();
+				//console.log(langModel.toJSON());
+			}
+
 			if (!this.regions.headerRegion.currentView)
 			{
-				console.log(new HeaderView({}));
-				this.regions.headerRegion.show(new HeaderView({}));
+				this.regions.headerRegion.show(new HeaderView({
+					model : langModel,
+					lang : lang
+				}));
 			}
 
 			if (!this.regions.footerRegion.currentView)
 			{
-				console.log(new FooterView({}));
 				this.regions.footerRegion.show(new FooterView({}));
 			}
 			// this.setActiveLink(pageName);
@@ -155,7 +177,7 @@ define([
             // navBar.set(lang,"play");
             // playView.render(lang);
             // 
-            this.initHeaderFooter("play");
+            this.initHeaderFooter("play", lang);
             this.regions.contentRegion.reset();
           	this.regions.contentRegion.show(new IndexView({
           		lang : lang

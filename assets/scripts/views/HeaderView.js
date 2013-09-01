@@ -13,6 +13,9 @@ define([
 
 ], function($, Marionette, tpl){
 	var HeaderView = Marionette.ItemView.extend({
+        initialize : function (options){
+            this.lang = options.lang;
+        },
 		template: tpl,
 		events: {
 			//"click button.logout": "logout"
