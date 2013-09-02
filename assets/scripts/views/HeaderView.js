@@ -59,7 +59,7 @@ define([
             "click .cancel-btn": function() {
                 $(".email-holder").hide();
                 $(".register-btn").addClass("register-btn-shift");
-                $(".login-btn").show();
+                $(".login-btn").parent().show();
                 $(".cancel-btn").hide();
             },
             "click .login-btn" : "classicLogin"
@@ -75,7 +75,7 @@ define([
                 $(".login-warning").hide();
                 $(".email-holder").show();
                 $(".register-btn").removeClass("register-btn-shift");
-                $(".login-btn").hide();
+                $(".login-btn").parent().hide();
                 $(".cancel-btn").show();
             } else {
                 var name = $("#username").val().trim();
