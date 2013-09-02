@@ -674,7 +674,7 @@
 
 		function getCursorPosition(e) {
 			var gCanvasElement = document.getElementById("sandbox");
-			var menu = document.getElementById("mid-panel");
+			var menu = document.getElementById("app-content");
 			var x;
 			var y;
 			if (e.pageX || e.pageY) {

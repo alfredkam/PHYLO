@@ -16,8 +16,9 @@ a:link, a:visited, a:active {
 }
 
 #app-content {
-	padding-top:70px;
+	top:70px;
 	position:relative;
+	padding-bottom:50px;
 }
 
 html, body {
