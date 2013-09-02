@@ -241,12 +241,12 @@
 	width: 33px;
 	height:33px;
 	cursor: pointer;
-	top:6px;
+	top:5px;
 	position:relative;
 }
 #controlPanel {
 	position: relative;
-	left:150px;
+	left:97px;
 }
 
 #scorePanel {
@@ -300,16 +300,14 @@
 }
 #star {
 	position:relative;
-	top:2px;
 	opacity: 0.4;
 	cursor: default;
+	top:15px;
 }
 #star i {
 	color:#CDCD00;
 	width: 35px !important;
 	font-size:40px;
-	top:-9px;
-	left: -20px;
 	position:relative;
 }
 #star.pass i {

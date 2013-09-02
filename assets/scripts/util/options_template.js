@@ -3,8 +3,8 @@ window.guest = "guest";
 window.showInLogin = false;
 window.showExpertOptions = false;
 window.DEV = {
-	disableMenu : false,
-	disableSplash : false,
+	disableMenu : true,
+	disableSplash : true,
 	disableMusic : false,
 	enableTableMode : false,
 	logging : false
