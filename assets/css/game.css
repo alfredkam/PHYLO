@@ -191,6 +191,7 @@
 #ancestorSeq-filling {
 	position:relative;
 	height:15px;
+	top:12px;
 }
 
 #ancestorSeq {
@@ -211,6 +212,8 @@
 
 #bottomPanel-wrapper {
 	height:80px;
+	top:5px;
+	position:relative;
 }
 #bottomPanel {
 	position:absolute;
