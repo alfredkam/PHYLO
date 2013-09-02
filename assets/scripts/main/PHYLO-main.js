@@ -19,12 +19,6 @@ require.config({
 		spectrum: "bower_components/spectrum/spectrum",
 		'jquery-ui' : 'bower_components/jquery-ui/ui/minified/jquery-ui.min',
 		bootstrap : 'bower_components/bootstrap/dist/js/bootstrap.min',
-		// flot : "bower_components/flot/jquery.flot",
-		// "flot.time" : "bower_components/flot/jquery.flot.time",
-		// "flot.pie" : "bower_components/flot/jquery.flot.pie",
-		// "flot.threshold" : "bower_components/flot/jquery.flot.threshold",
-		// "flot.stack" : "bower_components/flot/jquery.flot.stack",
-		// "flot.crosshair" : "bower_components/flot/jquery.flot.crosshair",
 		yepnope : "bower_components/yepnope/yepnope",
 		"moment" : "bower_components/moment/moment",
 		bootbox : "bower_components/bootbox/bootbox.min",
@@ -56,7 +50,6 @@ require.config({
 		json : {
 			exports : "JSON"
 		},
-
 		jquery : [ "json" ],
 
 		underscore : {
@@ -84,32 +77,6 @@ require.config({
 			deps : ['jquery']
 		},
 		dataTables : ['jquery'],
-		
-		// flot : {
-		// 	deps : [ "json", "jquery" ],
-		// 	exports : "jQuery"
-		// },
-		// "flot.time" : {
-		// 	deps : [ "json", "jquery", "flot" ],
-		// 	exports : "jQuery"
-		// },
-		// "flot.crosshair" : {
-		// 	deps : [ "json", "jquery", "flot" ],
-		// 	exports : "jQuery"
-		// },
-		// "flot.pie" : {
-		// 	deps : [ "json", "jquery", "flot" ],
-		// 	exports : "jQuery"
-		// },
-		// "flot.threshold" : {
-		// 	deps : [ "json", "jquery", "flot", "flot.time" ],
-		// 	exports : "jQuery"
-		// },
-		// "flot.stack" : {
-		// 	deps : [ "json", "jquery", "flot", "flot.time", "flot.crosshair" ],
-		// 	exports : "jQuery"
-		// }
-		// 
 		'views/customizeGame.actions' : {
 			deps : ['jquery']
 		},
