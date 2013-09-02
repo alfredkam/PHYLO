@@ -102,7 +102,7 @@
                         "field 11": "FORTPFLANZUNGSSYSTEM",
                         "field 12": "ATMUNGSYSTEM",
                         "field 13": "SENSORISCHES SYSTEM"
-                    },
+                    }
                 },
                 "game board": {
                         "field 1": "Punkte",
@@ -136,7 +136,7 @@
                         "field 14": "Einen Freund herausfordern",
                         "field 15": "Menü",
                         "field 16": "Klicken Sie auf den Stern, um Ihr Ergebnis abzuschicken, oder spielen Sie weiter und finden Sie das bestmögliche Ergebnis!"
-                },
+                }
             },
             "about": {
                 "field 1": "Worum geht es bei Phylo?",
@@ -185,7 +185,7 @@
                 "field 16": "Ergebnis",
                 "field 17": "Klicken Sie zum Spielen auf die Level-Nr.",
                 "field 18": "Null"
-            },
+            }
         },
         "social": {
                "field 1": "spielt jetzt Phylo.\nPhylo ist ein Spiel, bei dem jedes gelöste Puzzle hilft, Krankheiten einer Stelle in der DNA zuzuordnen. Helfen Sie der Genforschung und haben Sie Spaß!",

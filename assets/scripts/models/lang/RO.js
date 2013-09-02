@@ -1,7 +1,7 @@
 {
     "info": {
         "lang" : "Română",
-        "author" : "Alexandru Badea & Dr. Sabina Scorţescu",
+        "author" : "Alexandru Badea & Dr. Sabina Scorţescu"
     },
     "header": {
         "field 1" : "Joacă",
@@ -20,7 +20,7 @@
         "field 14" : "Înapoi la versiunea clasic",
         "field 15" : "Istoric",
         "field 16" : "Expert",
-        "field 17" : "Setări",
+        "field 17" : "Setări"
     },
     "body": {
         "misc": {
@@ -47,7 +47,7 @@
             "field 21" : "Jucaţi din nou",
             "field 22" : "Recomandă prietenilor",
             "field 23" : "Puzzle-uri AND",
-            "field 24" : "Află mai mult",
+            "field 24" : "Află mai mult"
         },
         "play": {
             "gameselect": {
@@ -73,20 +73,20 @@
                     "field 19" : "Bine aţi revenit!",
                     "field 20" : "Numele de utilizator sau Parola lipsesc",
                     "field 21" : "Nu s-a reuşit conectarea la server. Va rugam încercaţi din nou.",
-                    "field 22" : "Numele de utilzator există deja.",
+                    "field 22" : "Numele de utilzator există deja."
                 },
                 "levelselect": {
                     "header" : "Selectare nivel. Alegeţi un nivel după dificultate, ID sau boală asociată",
                     "random": {
                         "field 1" : "Alegeţi numărul de secvenţe.",
                         "field 2" : "Aleator",
-                        "field 3" : "Uşor - Dificil",
+                        "field 3" : "Uşor - Dificil"
                     },
                     "level id": {
                         "field 1" : "Introduceţi ID-ul nivelului pe care doriţi să-l jucaţi",
                         "field 2" : "ID Nivel",
                         "field 3" : "Introduceţi ID-ul nivelului",
-                        "field 4" : "Trimite",
+                        "field 4" : "Trimite"
                     },
                     "disease": {
                         "field 1" : "Alegeţi o boală pentru a primi un nivel asociat cu aceasta",
@@ -101,8 +101,8 @@
                         "field 10" : "MUŞCHI",
                         "field 11" : "SISTEM REPRODUCĂTOR",
                         "field 12" : "SISTEM RESPIRATOR",
-                        "field 13" : "SISTEM SENZORIAL",
-                    },
+                        "field 13" : "SISTEM SENZORIAL"
+                    }
                 },
                 "game board": {
                     "field 1" : "Scor",
@@ -117,7 +117,7 @@
                     "field 10" : "Nepotriviri",
                     "field 11" : "Decalaje",
                     "field 12" : "Extinderi de decalaje",
-                    "field 13" : "Punctează acum",
+                    "field 13" : "Punctează acum"
                 },
                 "end of game": {
                     "field 1" : "Vă mulţumim",
@@ -135,8 +135,8 @@
                     "field 13" : "Recomandă",
                     "field 14" : "Provoacaţi un prieten",
                     "field 15" : "Meniu",
-                    "field 16" : "Apăsaţi din nou pe stea pentru a trimite scorul dumneavoastră acum, sau continuaţi să jucaţi pentru a obţine cel mai bun rezultat posibil!",
-                },
+                    "field 16" : "Apăsaţi din nou pe stea pentru a trimite scorul dumneavoastră acum, sau continuaţi să jucaţi pentru a obţine cel mai bun rezultat posibil!"
+                }
             },
             "about": {
                 "field 1" : "Despre ce este vorba în Phylo?",
@@ -151,7 +151,7 @@
                 "field 10" : "Toate aliniamentele au fost puse la dispoziţia noastra prin generozitatea UCSC Genome Browser. De altfel, toate aliniamentele conţin secţiuni ale ADN-ului uman despre care s-ar fi speculat că sunt legate de diverse tulburări genetice, cum ar fi cancerul de sân. Fiecare aliniament este recepţionat, analizat, şi stocat într-o bază de date, de unde în cele din urmă va fi reintrodus în aliniamentul global ca optimizare.",
                 "field 11" : "Pentru mai multe informaţii cu privire la aceste teme, apăsaţi aici.",
                 "field 12": "Publicații",
-                "field 13": "Mass-media",
+                "field 13": "Mass-media"
             },
             "credit": {
                 "field 1" : "Liderii de proiect (Contact media şi ştiinţific)",
@@ -164,7 +164,7 @@
                 "field 8" : "Consultant ştiinţific",
                 "field 9" : "Traducere",
                 "field 10": "Alumni",
-                "field 11": "Suport tehnic",
+                "field 11": "Suport tehnic"
             },
             "ranking": {
                 "field 1" : "Toate timpurile",
@@ -184,8 +184,8 @@
                 "field 15" : "Boala",
                 "field 16" : "Scor",
                 "field 17" : "Daţi click pe ID-ul de nivel pentru a juca puzzle-ul",
-                "field 18" : "Nul",
-            },
+                "field 18" : "Nul"
+            }
         },
         "social": {
             "field 1" : "a început sa joace Phylo.",
@@ -220,11 +220,11 @@
             "field 30": "Înscrieţi-vă prin ***",
             "field 31" : "Puzzle-uri AND",
             "field 32" : "Logare",
-            "field 33": "Phylo este un joc puzzle in care fiecare puzzle completat contribuie la cartografierea bolilor din cadrul ADN-ului uman. Distraţi-vă şi ajutaţi cercetarea genetică!",
+            "field 33": "Phylo este un joc puzzle in care fiecare puzzle completat contribuie la cartografierea bolilor din cadrul ADN-ului uman. Distraţi-vă şi ajutaţi cercetarea genetică!"
         },
         "footer": {
-            "field 1" : "Phylo este un joc solicitant în care fiecare puzzle completat contribuie la cartografierea bolilor din cadrul ADN-ului uman. Află <a href='?pid=about"+window.location.hash+"'>mai mult</a>.",
-            "field 2" : "Alătură-te la <a href='https://www.facebook.com/groups/127713783941517/'>comunitatea</a>Phylo pe Facebook",
+            "field 1" : "Phylo este un joc solicitant în care fiecare puzzle completat contribuie la cartografierea bolilor din cadrul ADN-ului uman. Află <a href='?pid=about#!/RO'>more</a>mai mult</a>.",
+            "field 2" : "Alătură-te la <a href='https://www.facebook.com/groups/127713783941517/'>comunitatea</a>Phylo pe Facebook"
         }
     }
 }

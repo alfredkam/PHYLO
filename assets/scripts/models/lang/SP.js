@@ -1,7 +1,7 @@
 {
     "info": {
         "lang": "Inglés",
-        "author": "David Becerra ",
+        "author": "David Becerra "
     },
     "header": {
         "field 1": "Jugar",
@@ -20,7 +20,7 @@
         "field 14": "Regresar a la edición clásica",
         "field 15": "Historia",
         "field 16": "Experto",
-        "field 17": "Escenario de juego",
+        "field 17": "Escenario de juego"
     },
     "body": {
         "misc": {
@@ -47,7 +47,7 @@
             "field 21": "Volver a jugar",
             "field 22": "Compartir con tus amigos ",
             "field 23": "Tablero de DNA ",
-            "field 24": "Aprender más acerca de ",
+            "field 24": "Aprender más acerca de "
         },
         "play": {
             "gameselect": {
@@ -73,20 +73,20 @@
                     "field 19": "Bienvenido nuevamente!",
                     "field 20": "Falta el nombre de usuario o clave ",
                     "field 21": "No se puede conectar al servidor. Por favor intente mas tarde.",
-                    "field 22": "El nombre de usuario ya existe",
+                    "field 22": "El nombre de usuario ya existe"
                 },
                 "levelselect": {
                     "header": "Seleccion de nivel. Escoja un nivel por dificultad, ID o enfermedad relacionada ",
                     "random": {
                         "field 1": "Seleccionar el número de secuencias.",
                         "field 2": "Aleatorio",
-                        "field 3": "Facil - Avanzado",
+                        "field 3": "Facil - Avanzado"
                     },
                     "level id": {
                         "field 1": "Entrar la ID del nivel que desea jugar ",
                         "field 2": "ID del nivel",
                         "field 3": "Entrar la ID del nivel",
-                        "field 4": "Enviar",
+                        "field 4": "Enviar"
                     },
                     "disease": {
                         "field 1": "Seleccionar la enfermedad para obtener un nivel asociado ",
@@ -101,8 +101,8 @@
                         "field 10": "MUSCULOS",
                         "field 11": "SISTEMA REPRODUCTIVO ",
                         "field 12": "SISTEMA RESPIRATORIO ",
-                        "field 13": "SISTEMA SENSORIAL ",
-                    },
+                        "field 13": "SISTEMA SENSORIAL "
+                    }
                 },
                 "game board": {
                     "field 1": "Puntaje",
@@ -117,7 +117,7 @@
                     "field 10": "Discordancias",
                     "field 11": "Espacios",
                     "field 12": "Extender espacios",
-                    "field 13": "Puntaje ahora",
+                    "field 13": "Puntaje ahora"
                 },
                 "end of game": {
                     "field 1": "Gracias",
@@ -135,8 +135,8 @@
                     "field 13": "Compartir",
                     "field 14": "Retar a un amigo ",
                     "field 15": "Menu",
-                    "field 16": "Presione comenzar de nuevo para enviar su puntaje, o continue jugando para obtener el mejor puntaje posible!",
-                },
+                    "field 16": "Presione comenzar de nuevo para enviar su puntaje, o continue jugando para obtener el mejor puntaje posible!"
+                }
             },
             "about": {
                 "field 1": "De qué se trata Phylo?",
@@ -151,7 +151,7 @@
                 "field 10": "Todas las alineaciones fueron generosamente proporcionadas através del UCSC Genome Browser. De hecho, todas las alineaciones contienen secciones de ADN humano que se piensa están ligadas a varios desordenes genéticos, tales como el cáncer de mama. Cada alineación es recibida, analizada y guardada en una base de datos, donde eventualmente se volverá a introducir de vuelta en la alineación global como una optimización.",
                 "field 11": "Para mas información acerca de estos temas, haga clic acá.",
                 "field 12": "Publicaciones",
-                "field 13": "Cobertura periodística",
+                "field 13": "Cobertura periodística"
             },
             "credit": {
                 "field 1": "Lideres del proyecto (Contactos de medios y científicos)",
@@ -164,7 +164,7 @@
                 "field 8": "Consejeros científicos ",
                 "field 9": "Traducción",
                 "field 10": "Antiguos Alumnos",
-                "field 11": "Apoyo técnico",
+                "field 11": "Apoyo técnico"
             },
             "ranking": {
                 "field 1": "Todo el tiempo",
@@ -184,8 +184,8 @@
                 "field 15": "Enfermedad",
                 "field 16": "Puntaje",
                 "field 17": "De clic en la ID del nivel para jugar ",
-                "field 18": "Invalidar",
-            },
+                "field 18": "Invalidar"
+            }
         },
         "social": {
             "field 1": "Comenzar a jugar Phylo.",
@@ -220,12 +220,12 @@
             "field 30": "Ingrese con ***",
             "field 31": "Rompecabezas de ADN",
             "field 32": "Ingresar",
-            "field 33": "Phylo es un juego en el cual cada intento contribuye a mapear enfermedades con el ADN humano. Diviértete y ayuda a la investigación genética!",
+            "field 33": "Phylo es un juego en el cual cada intento contribuye a mapear enfermedades con el ADN humano. Diviértete y ayuda a la investigación genética!"
 
         },
         "footer": {
             "field 1": "Phylo es un video juego retador en el cual cada juego completado contribuye a mapear enfermedades con el ADN humano. Learn <a href='?pid=about#!/SP'>more</a>.",
-            "field 2": "Unase a Phylo <a href='https://www.facebook.com/groups/127713783941517/'>community</a> en facebook or regalenos un pulgar arrriba.",
+            "field 2": "Unase a Phylo <a href='https://www.facebook.com/groups/127713783941517/'>community</a> en facebook or regalenos un pulgar arrriba."
         }
     }
 }
