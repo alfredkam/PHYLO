@@ -20,6 +20,7 @@
 	position: absolute;
 	display:inline-block;
 	z-index: 10;	
+	top:19px;
 }
 
 #movingParts .current .sequence {
@@ -27,7 +28,7 @@
 }
 
 #tree {
-	top:3px;
+	top:22px;
 	position: relative;
 	display:inline-block;
 	width: 178px;	
@@ -117,6 +118,9 @@
 	float:left;
 	right:0px;
 	z-index:2;
+}
+.ancestorImg img{
+	width:100%;
 }
 .nodeImg {
 	cursor: pointer;
@@ -223,7 +227,7 @@
 	position:relative;
 } 
 #statsPanel {
-	left:80px;
+	left:60px;
 	max-width:534px;
 	color:#6D6D6D;
 	position:relative;
@@ -261,7 +265,6 @@
 	color:#6D6D6D;
 	font-size: 28px;
 	position:relative;
-	left:20px;
 	top:3px;
 	margin-left:10px;
 	cursor: pointer;
@@ -286,6 +289,7 @@
 }
 #volumePanel {
 	position:relative;
+	top:5px;
 }
 #cycle:hover {
 	opacity: 1;
