@@ -26,7 +26,7 @@ define([
             loginBox: "#login-box",
         },
         events: {
-            "click div#login-tag": "login",
+            "click div#login": "login",
             "click .zocial.facebook": function() {
                 this.socialLogin('Facebook');
             },
@@ -59,23 +59,24 @@ define([
             "click .cancel-btn": function() {
                 $(".email-holder").hide();
                 $(".register-btn").addClass("register-btn-shift");
-                $(".login-btn").show();
+                $(".login-btn").parent().show();
                 $(".cancel-btn").hide();
             },
             "click .login-btn" : "classicLogin"
-
-
-
         },
-        login: function() {
+        login: function(e) {
+            e.stopPropagation();
             this.ui.loginBox.show();
+            this.ui.loginBox.parent().addClass("login-onSelect");
+            
+
         },
         register: function() {
             if ($(".cancel-btn").css("display") == "none") {
                 $(".login-warning").hide();
                 $(".email-holder").show();
                 $(".register-btn").removeClass("register-btn-shift");
-                $(".login-btn").hide();
+                $(".login-btn").parent().hide();
                 $(".cancel-btn").show();
             } else {
                 var name = $("#username").val().trim();
@@ -99,6 +100,11 @@ define([
             }
         },
         onShow: function() {
+            var self = this;
+            $("html").click(function(){
+                self.ui.loginBox.hide();
+                self.ui.loginBox.parent().removeClass("login-onSelect");
+            });
             $("#logout").hide();
             // init page: check cookie and register user if login using social account for the first time 
             if (cookie.read("username")) {

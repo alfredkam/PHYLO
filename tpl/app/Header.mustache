@@ -41,19 +41,19 @@
      <div id='nav' class='col-md-6'>
          <ul>
              <li>
-             <a id='play' class='isTab' href="#!/{{lang}}/{{header.field 1}}"><div>{{header.field 1}}</div></a>
+             <a id='play' class='isTab' href="#!/{{lang}}/Play"><div>{{header.field 1}}</div></a>
              </li><li>
-             <a id='tutorial' class='isTab' href='#!/{{lang}}/{{header.field 2}}'><div>{{header.field 2}}</div></a>
+             <a id='tutorial' class='isTab' href='#!/{{lang}}/Tutorial'><div>{{header.field 2}}</div></a>
              </li><li>
-             <a id='about' class='isTab' href='#!/{{lang}}/{{header.field 3}}'><div>{{header.field 3}}</div></a>
+             <a id='about' class='isTab' href='#!/{{lang}}/About'><div>{{header.field 3}}</div></a>
              </li><li>
-             <a id='credits' class='isTab' href='#!/{{lang}}/{{header.field 4}}'><div>{{header.field 4}}</div></a>
+             <a id='credits' class='isTab' href='#!/{{lang}}/Credits'><div>{{header.field 4}}</div></a>
              </li><li>
-             <a id='ranking' class='isTab' href='#!/{{lang}}/{{header.field 5}}'><div>{{header.field 5}}</div></a>
+             <a id='ranking' class='isTab' href='#!/{{lang}}/Ranking'><div>{{header.field 5}}</div></a>
              </li><li class='showInLogin'>
-             <a id='history' class='isTab' href='#!/{{lang}}/{{header.field 15}}'><div>{{header.field 15}}</div></a>
+             <a id='history' class='isTab' href='#!/{{lang}}/History'><div>{{header.field 15}}</div></a>
              </li><li class='showInLogin showExpertOptions'>
-             <a id='expert' class='isTab' href='#!/{{lang}}/{{header.field 16}}'><div>{{header.field 16}}</div></a>
+             <a id='expert' class='isTab' href='#!/{{lang}}/Expert'><div>{{header.field 16}}</div></a>
              </li>
          </ul>
      </div>
@@ -64,20 +64,36 @@
                  </div>
                  <div id='login-box'>
                      <div class='login-warning'></div>
-                     <span class='email-holder'><input id='email' type='text' class='input-medium' placeholder='Email'/><br></span>
-                     <input id='username' type='text' class='input-medium' placeholder='Username'/>
-                     <br>
-                     <input id='password' type='password' class='input-medium' placeholder='Password'/><br>
-                     <button class='btn login-btn m_login'>Log In</button>
-                     <button class='btn btn-primary register-btn register-btn-shift' id='m_register'>Register</button>
-                     <button class='btn btn-danger cancel-btn' id='m_cancel'>Cancel</button>
-                     <br/><br/>
+                     <div class='row email-holder'>
+                        <input id='email' type='text' class='form-control' placeholder='Email'/>
+                     </div>
+                     <div class='row'>
+                     <input id='username' type='text' class='form-control' placeholder='Username'/>
+                     </div>
+                     <div class='row'>
+                     <input id='password' type='password' class='form-control' placeholder='Password'/>
+                     </div>
+                     <div class='row col-12'>
+                        <div class='col-6 col-lg-6 col-sm-6'>
+                            <button class='btn login-btn m_login'>Log In</button>
+                        </div>
+                        <div class='col-6 col-lg-6 col-sm-6'>
+                            <button class='btn btn-primary register-btn register-btn-shift col-6' id='m_register'>Register</button>
+                        </div>
+                        <div class='col-6 col-lg-6 col-sm-6'>
+                            <button class='btn btn-danger cancel-btn col-6' id='m_cancel'>Cancel</button>
+                        </div>
+                     </div>
                      <a href="#" class="zocial facebook" id="m_fb_signin">Sign-in with Facebook</a>
                      <a href="#" class="zocial twitter" id="m_tw_signin">Sign-in with Twitter</a>
+
                      <a href="#" class="zocial google" id="m_gg_signin">Sign-in with Google</a>
                      <a href="#" class="zocial linkedin" id="m_li_signin">Sign-in with LinkedIn</a>
-                     <br/><br/>
-                     <a href='http://phylo.cs.mcgill.ca/reset.php'>Forgot Password?</a>
+
+                     <div class='row'>
+                       <a href='http://phylo.cs.mcgill.ca/reset.php'>Forgot Password?</a>
+                   </div>
+
                  </div>
              </div>
              <div id='options'>

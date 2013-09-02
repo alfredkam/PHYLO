@@ -5,3 +5,21 @@
 #logo a:hover {
     color: rgb(113, 178, 226);
 }
+
+#login-box {
+    font-size:12px;
+}
+
+#login-box .row {
+    margin:8px 0px;
+}
+
+.zocial {
+    background-image: none;
+    margin:0;
+}
+
+#login:hover, .login-onSelect {
+    background-color:rgb(245, 245, 245);
+}
+
