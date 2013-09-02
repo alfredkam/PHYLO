@@ -67,7 +67,6 @@ define([
 
 				//langModel.fetch();
 				//console.log(langModel.toJSON());
-
 			}
 
 			if (!this.regions.headerRegion.currentView)
@@ -82,7 +81,17 @@ define([
 			{
 				this.regions.footerRegion.show(new FooterView({}));
 			}
-			// this.setActiveLink(pageName);
+			this.setActiveLink(pageName);
+		},
+		setActiveLink : function(pageName) {
+			var self = this;
+			$("#nav ul li").each(function(){
+				if($(this).children("a").attr("href") == "#!/"+self.lang+"/"+pageName){
+					$(this).children("a").children("div").addClass("onSelect");
+				} else {
+					$(this).children("a").children("div").removeClass("onSelect");
+				}
+			});
 		},
 		/* use this if to set up login */
 		/*
@@ -124,18 +133,6 @@ define([
 			// return isLoggedIn;
 			return false;
 		}, */
-
-		home : function() {
-			this.initHeaderFooter("home");
-			this.curretRoute = "#/home";
-			this.regions.contentRegion.show(new HomeView());
-//			this.regions.contentRegion.show(new DemoView({model:new Backbone.Model()}));
-		},
-		demo : function()
-		{
-			this.initHeaderFooter("demo");
-			this.regions.contentRegion.show(new DemoView({model:new Backbone.Model()}));
-		},
 		login : function()
 		{
 			console.log("rendering login view");
@@ -147,7 +144,7 @@ define([
 			this.regions.contentRegion.show(new LoginView());
 		},
 		anotherDefaultRoute : function(lang) {
-			this.initHeaderFooter("play", lang);
+			this.initHeaderFooter("Play", lang);
 			this.regions.contentRegion.reset();
 			this.regions.contentRegion.show(new TutorialView({
 				lang : this.lang,
@@ -188,13 +185,14 @@ define([
             // navBar.set(lang,"play");
             // playView.render(lang);
             // 
-            this.initHeaderFooter("play", lang);
+            this.initHeaderFooter("Play", lang);
             this.regions.contentRegion.reset();
           	this.regions.contentRegion.show(new IndexView({
           		lang : lang
           	}));
             // END FIXME
 		},
+		// this still in old format
 		tabletSettings : function(lang){
 			if(lang == undefined) {
 				lang = "EN";
@@ -210,7 +208,7 @@ define([
 			window.location = "http://phylo.cs.mcgill.ca/expert/welcome.php";
 		},
 		ranking : function(lang) {
-			this.initHeaderFooter("ranking", lang);
+			this.initHeaderFooter("Ranking", lang);
 			this.regions.contentRegion.reset();
 			this.regions.contentRegion.show(new RankingView({
 				lang : this.lang,
@@ -218,7 +216,7 @@ define([
 			}));
 		},
 		credits : function(lang){
-			this.initHeaderFooter("credits", lang);
+			this.initHeaderFooter("Credits", lang);
 			this.regions.contentRegion.reset();
 			this.regions.contentRegion.show(new CreditsView({
 				lang : this.lang,
@@ -226,15 +224,16 @@ define([
 			}));
 		},
 		about : function(lang){
-			this.initHeaderFooter("about", lang);
+			this.initHeaderFooter("About", lang);
 			this.regions.contentRegion.reset();
 			this.regions.contentRegion.show(new AboutView({
 				lang : this.lang,
 				model : this.langModel
 			}));
 		},
+		// what does history do? no memory of it
 		history : function(lang){
-			this.initHeaderFooter("history", lang);
+			this.initHeaderFooter("History", lang);
 			this.regions.contentRegion.reset();
 			this.regions.contentRegion.show(new HistoryView({
 				lang : this.lang,
@@ -242,9 +241,7 @@ define([
 			}));
 		},
 		tutorial : function(lang){
-			this.initHeaderFooter("tutorial", lang);
-
-
+			this.initHeaderFooter("Tutorial", lang);
 			$.ajax({
 				url :"assets/scripts/models/tutorial/"+this.lang+"-tutorial.js",
 				async: false,
@@ -265,14 +262,16 @@ define([
 				model : this.tutorialModel
 			}));
 		},
+		// should depreciate this?
 		rna : function(lang){
 			if(lang == undefined) {
 				lang = "EN";
 			} else lang.toUpperCase();
-			navBar.set(lang, "play");
+			navBar.set(lang, "Play");
 			var rnaView = new Views.RNA;
 			rnaView.render(lang);
 		},
+		// should depreciate this?
 		mechanicalTurk : function(lang, id) {
 			//you can write additional script here
 			
@@ -286,6 +285,7 @@ define([
 			var playView = new Views.Play;
 			playView.renderPuzzle(lang, id);
 		},
+		// need to update the format for this one
 		puzzle : function(lang, id){
 			if(lang == undefined) {
 				lang = "EN";
@@ -306,17 +306,10 @@ define([
 				}
 				
 			}
-			if(lang == undefined) {
-                console.log(lang);
-			} else lang.toUpperCase();
-			// navBar.set(lang,"play");
-			// var playView = new Views.Play;
-   //          console.log("render >> " +lang);
-			// playView.render(lang);
-			this.initHeaderFooter("play", lang);
+			this.initHeaderFooter("Play", lang);
 			this.regions.contentRegion.reset();
 			this.regions.contentRegion.show(new IndexView({
-				lang : lang
+				lang : this.lang
 			}));
 		}
 	});
