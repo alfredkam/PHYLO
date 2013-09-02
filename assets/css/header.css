@@ -33,3 +33,13 @@
     }
 }
 
+#language:hover #language-list {
+    display:block;
+}
+
+#options:hover #option-list {
+    display:block;
+    top:7px;
+    position:relative;
+}
+
