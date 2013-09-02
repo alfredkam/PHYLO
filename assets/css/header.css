@@ -1,0 +1,7 @@
+#logo a {
+    color: rgb(109, 109, 109);
+}
+
+#logo a:hover {
+    color: rgb(113, 178, 226);
+}

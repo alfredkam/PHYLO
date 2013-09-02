@@ -18,7 +18,14 @@ a:link, a:visited, a:active {
 #app-content {
 	top:70px;
 	position:relative;
-	padding-bottom:50px;
+	padding-bottom:20px;
+}
+
+a {
+    -moz-transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
 
 html, body {
