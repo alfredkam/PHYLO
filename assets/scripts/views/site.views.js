@@ -37,7 +37,7 @@
 										$("#draw").hide();
 										$("#menu").hide();
 										$.main.init({
-											type:"disease",
+											type : "disease",
 											num : id
 										});		
 									}
@@ -143,8 +143,8 @@
 					"http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang=" + lang.toUpperCase(),
 					function(re) {
 						if($("#ranking-wrapper").length != 0) {
-                            /* Now call the legend */
-                            request.getTemplate("templates/ranking_legend.html",function(legend) {
+        	                /* Now call the legend */
+							request.getTemplate("templates/ranking_legend.html",function(legend) {
                                 request.getJsonLang(lang, function(json) {
                                     $("#ranking-wrapper").prepend(re + "\n\n" + Mustache.render(legend,json.body.play));
                                     require(['views/DT_bootstrap_ranking.actions'],function() {
