@@ -4,15 +4,10 @@ define([
     //LIBRARIES
     "jquery",
     "marionette",
-    //OTHER
-
     //TEMPLATES
     "text!tpl/app/Header.mustache",
     "scripts/views/validation/cookie.validation"
-
-
     //NO EXPORTS
-
 ], function($, Marionette, tpl, cookie) {
     var HeaderView = Marionette.ItemView.extend({
         initialize: function(options) {
@@ -24,9 +19,13 @@ define([
         template: tpl,
         ui: {
             loginBox: "#login-box",
+            optionsBtn : "#options-button",
+            languageList : "#language-list"
         },
         events: {
             "click div#login": "login",
+            "click #options-button" : "optionsEvent",
+            "click #language" : "languageEvent",
             "click .zocial.facebook": function() {
                 this.socialLogin('Facebook');
             },
@@ -68,8 +67,20 @@ define([
             e.stopPropagation();
             this.ui.loginBox.show();
             this.ui.loginBox.parent().addClass("login-onSelect");
-            
-
+        },
+        languageEvent : function(e) {
+            e.stopPropagation();
+            this.ui.languageList.show();
+            e.target.addClass("dropDown-OptionOnSelect");
+        },
+        optionsEvent : function(e){
+            var self = this;
+            e.stopPropagation();
+            this.ui.optionsBtn.addClass("dropDown-OnSelect");
+            $(".dropDownTriangle").show();
+            $("#option-list").show();
+            self.ui.loginBox.hide();
+            self.ui.loginBox.parent().removeClass("login-onSelect");
         },
         register: function() {
             if ($(".cancel-btn").css("display") == "none") {

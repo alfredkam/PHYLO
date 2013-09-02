@@ -67,15 +67,21 @@ define([
 
 				//langModel.fetch();
 				//console.log(langModel.toJSON());
-			}
-
-			if (!this.regions.headerRegion.currentView)
-			{
+				this.regions.headerRegion.reset();
 				this.regions.headerRegion.show(new HeaderView({
 					model : this.langModel,
 					lang : lang
 				}));
 			}
+
+			// if (!this.regions.headerRegion.currentView)
+			// {
+			// 	this.regions.headerRegion.reset();
+			// 	this.regions.headerRegion.show(new HeaderView({
+			// 		model : this.langModel,
+			// 		lang : lang
+			// 	}));
+			// }
 
 			if (!this.regions.footerRegion.currentView)
 			{
@@ -91,6 +97,11 @@ define([
 				} else {
 					$(this).children("a").children("div").removeClass("onSelect");
 				}
+			});
+
+			$("#language-list div a").each(function(){
+				var lang = $(this).attr("name");
+				$(this).attr("href", "#!/"+lang+"/"+pageName);
 			});
 		},
 		/* use this if to set up login */
