@@ -161,12 +161,12 @@ require.config({
 		'DNA/lang.module' : {
 			deps : ['jquery']
 		},
-		'validation/cookie.validation' : {
-			deps : ['jquery']
-		},
-		'validation/login.validation' : {
-			deps : ['jquery', 'DNA/protocal.core', 'validation/cookie.validation']
-		},
+		// 'validation/cookie.validation' : {
+		// 	deps : ['jquery']
+		// },
+		// 'validation/login.validation' : {
+		// 	deps : ['jquery', 'DNA/protocal.core', 'validation/cookie.validation']
+		// },
 		'views/DT_bootstrap_ranking.actions' : {
 			deps : ['jquery','bootstrap','dataTables']
 		},
