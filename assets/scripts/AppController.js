@@ -243,10 +243,26 @@ define([
 		},
 		tutorial : function(lang){
 			this.initHeaderFooter("tutorial", lang);
+
+
+			$.ajax({
+				url :"assets/scripts/models/tutorial/"+this.lang+"-tutorial.js",
+				async: false,
+				dataType: 'json'
+			}).done(function(data,resp){
+				TutorialModel = data;
+			}).fail(function(data,resp){
+				console.log("failed")
+				TutorialModel = data;
+			});
+			//exporting it out
+			this.tutorialModel = (new Backbone.Model(TutorialModel));
+
+
 			this.regions.contentRegion.reset();
 			this.regions.contentRegion.show(new TutorialView({
 				lang : this.lang,
-				model : this.langModel
+				model : this.tutorialModel
 			}));
 		},
 		rna : function(lang){
