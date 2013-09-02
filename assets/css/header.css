@@ -22,9 +22,13 @@
 #login:hover, .login-onSelect {
     background-color:rgb(245, 245, 245);
 }
+/*
+#login:hover #login-box {
+    display:block;
+}*/
 
 #options .icon-cog {
-    left: 3px;
+    left: 7px;
 }
 
 @media(max-width:1180px) {
