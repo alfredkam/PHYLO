@@ -8,7 +8,7 @@ define([
 
     //TEMPLATES
     "text!tpl/app/Header.mustache",
-    "scripts/views/validation/cookie.validation"
+    "scripts/views/validation/cookie.validation.amd"
 
 
     //NO EXPORTS
