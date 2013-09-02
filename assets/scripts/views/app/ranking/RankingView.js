@@ -5,17 +5,24 @@ define([
          "backbone",
          "marionette",
          //TEMPLATES
-         "text!tpl/app/index/Index.mustache",
+         "text!tpl/app/ranking/Ranking.mustache",
+         //Modules
+         "dataTables"
 ], function(
         $, _, Backbone, Marionette,
-        tpl
+        tpl,
+        dataTables
+
 ) {
-     var IndexView = Marionette.ItemView.extend({
+     var RankingView = Marionette.ItemView.extend({
          initialize : function(options) {
             this.lang = options.lang || {};
          },
-         template : tpl
+         template : tpl,
+         onShow : function() {
+            dataTables.init();
+         }
      });
-     return IndexView;
+     return RankingView;
 });
         

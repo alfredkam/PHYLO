@@ -18,17 +18,11 @@ define([
             this.model.set({
                 lang : this.lang
             });
-            console.log(this.model.toJSON());
         },
 		template: tpl,
 		events: {
 			//"click button.logout": "logout"
 		}
-		//enable if have login
-		/*logout: function(e){
-			$(e.target.form).submit();
-		} */
-		
 	});
 	
   return HeaderView;

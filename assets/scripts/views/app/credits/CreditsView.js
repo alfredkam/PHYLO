@@ -5,17 +5,17 @@ define([
          "backbone",
          "marionette",
          //TEMPLATES
-         "text!tpl/app/index/Index.mustache",
+         "text!tpl/app/credits/Credits.mustache",
 ], function(
         $, _, Backbone, Marionette,
         tpl
 ) {
-     var IndexView = Marionette.ItemView.extend({
+     var CreditsView = Marionette.ItemView.extend({
          initialize : function(options) {
             this.lang = options.lang || {};
          },
          template : tpl
      });
-     return IndexView;
+     return CreditsView;
 });
         

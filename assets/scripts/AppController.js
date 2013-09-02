@@ -2,13 +2,18 @@
 
 define([ 
         //LIBRARIES
-         "jquery", 
-         "backbone", 
+         "jquery",
+         "backbone",
          "marionette",
          //VIEWS
          "scripts/views/HeaderView",
          "scripts/views/FooterView",
          "scripts/views/app/index/IndexView",
+         "scripts/views/app/tutorial/TutorialView",
+         "scripts/views/app/about/AboutView",
+         "scripts/views/app/credits/CreditsView",
+         "scripts/views/app/ranking/RankingView",
+         "scripts/views/app/history/HistoryView",
          //LAYOUT
          "scripts/views/AppLayout"
          //Modules
@@ -16,7 +21,7 @@ define([
          //NO EXPORTS goes last
 ], function(
 		$, Backbone, Marionette, 
-		HeaderView, FooterView, IndexView,
+		HeaderView, FooterView, IndexView, TutorialView, AboutView, CreditsView, RankingView, HistoryView,
 		AppLayout
 ) {
 	var DashboardController = Marionette.Controller.extend({
@@ -38,9 +43,9 @@ define([
 		initHeaderFooter : function(pageName, lang)
 		{
 			var langModel = {};
-
 			if(!lang) 
-				lang = "EN";	
+				lang = "EN";
+			else lang.toUpperCase();
 			// a good place for code that needs to be ran every page
 			// 
 			if(!this.lang || this.lang != lang) {
@@ -54,9 +59,11 @@ define([
 					langModel = data;
 				}).fail(function(data,resp){
 					console.log("failed")
-					langModel= data;
+					langModel = data;
 				});
+				//exporting it out
 				window.lang = langModel.lang;
+				this.langModel = (new Backbone.Model(langModel.lang));
 
 				//langModel.fetch();
 				//console.log(langModel.toJSON());
@@ -66,7 +73,7 @@ define([
 			if (!this.regions.headerRegion.currentView)
 			{
 				this.regions.headerRegion.show(new HeaderView({
-					model : (new Backbone.Model(langModel.lang)),
+					model : this.langModel,
 					lang : lang
 				}));
 			}
@@ -140,12 +147,12 @@ define([
 			this.regions.contentRegion.show(new LoginView());
 		},
 		anotherDefaultRoute : function(lang) {
-			if(lang == undefined) {
-				lang = "EN";
-			} else lang.toUpperCase();
-			navBar.set(lang,"play");
-			var playView = new Views.Play;
-			playView.render(lang);
+			this.initHeaderFooter("play", lang);
+			this.regions.contentRegion.reset();
+			this.regions.contentRegion.show(new TutorialView({
+				lang : this.lang,
+				model : this.langModel
+			}));
 		},
 		defaultRoute : function(lang) {
 
@@ -203,47 +210,44 @@ define([
 			window.location = "http://phylo.cs.mcgill.ca/expert/welcome.php";
 		},
 		ranking : function(lang) {
-			if(lang == undefined) {
-				lang = "EN";
-			} else lang.toUpperCase();
-			navBar.set(lang,"ranking");
-			var rankingView = new Views.Ranking;
-			rankingView.render(lang);
+			this.initHeaderFooter("ranking", lang);
+			this.regions.contentRegion.reset();
+			this.regions.contentRegion.show(new RankingView({
+				lang : this.lang,
+				model : this.langModel
+			}));
 		},
 		credits : function(lang){
-			if(lang == undefined) {
-				lang = "EN";
-			} else lang.toUpperCase();
-			navBar.set(lang,"credits");
-			var creditsView = new Views.Credits;
-			creditsView.render(lang);
+			this.initHeaderFooter("credits", lang);
+			this.regions.contentRegion.reset();
+			this.regions.contentRegion.show(new CreditsView({
+				lang : this.lang,
+				model : this.langModel
+			}));
 		},
 		about : function(lang){
-			if(lang == undefined) {
-				lang = "EN";
-			} else lang.toUpperCase();
-			navBar.set(lang,"about");
-			var aboutView = new Views.About;
-			aboutView.render(lang);
+			this.initHeaderFooter("about", lang);
+			this.regions.contentRegion.reset();
+			this.regions.contentRegion.show(new AboutView({
+				lang : this.lang,
+				model : this.langModel
+			}));
 		},
 		history : function(lang){
-			if(lang == undefined) {
-				lang = "EN";
-			} else lang.toUpperCase();
-			navBar.set(lang,"history");
-			var historyView = new Views.History;	
-			historyView.render(lang);
+			this.initHeaderFooter("history", lang);
+			this.regions.contentRegion.reset();
+			this.regions.contentRegion.show(new HistoryView({
+				lang : this.lang,
+				model : this.langModel
+			}));
 		},
 		tutorial : function(lang){
-			if(lang == undefined) {
-				lang = "EN";
-			} else lang.toUpperCase();
-			navBar.set(lang,"tutorial");
-			var tutorialModel = new Models.Tutorial({lang:lang});
-			var tutorialView = new Views.Tutorial;
-	        tutorialModel.fetch({success:function(){
-			    tutorialView.render(tutorialModel.get("data"));}
-	        });
+			this.initHeaderFooter("tutorial", lang);
+			this.regions.contentRegion.reset();
+			this.regions.contentRegion.show(new TutorialView({
+				lang : this.lang,
+				model : this.langModel
+			}));
 		},
 		rna : function(lang){
 			if(lang == undefined) {
@@ -289,10 +293,15 @@ define([
 			if(lang == undefined) {
                 console.log(lang);
 			} else lang.toUpperCase();
-			navBar.set(lang,"play");
-			var playView = new Views.Play;
-            console.log("render >> " +lang);
-			playView.render(lang);
+			// navBar.set(lang,"play");
+			// var playView = new Views.Play;
+   //          console.log("render >> " +lang);
+			// playView.render(lang);
+			this.initHeaderFooter("play", lang);
+			this.regions.contentRegion.reset();
+			this.regions.contentRegion.show(new IndexView({
+				lang : lang
+			}));
 		}
 	});
 
