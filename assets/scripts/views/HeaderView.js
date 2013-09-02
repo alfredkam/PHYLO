@@ -15,6 +15,9 @@ define([
 	var HeaderView = Marionette.ItemView.extend({
         initialize : function (options){
             this.lang = options.lang;
+            this.model.set({
+                lang : this.lang
+            });
             console.log(this.model.toJSON());
         },
 		template: tpl,
