@@ -5,11 +5,19 @@
 
 		init : function(callBack) {
             return callBack();
+
+            ///  **** NOTE ****
+            //
+            //depreciated this entire script, handled through marionette/backbone model
+            //
+            //
+            //
+
+
 			//checks if language file is already loaded.
 			//if not loaded, load it into the dom
             
             //moved hash to be outside so it can be used in all cases
-            ///depreciated this entire script, handled through marionette/backbone model
    //          var hash;
    //          try {
    //              hash = $.helper.get("lang").toString().toUpperCase().replace(/!.*/,"");
