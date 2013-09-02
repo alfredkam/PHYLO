@@ -23,3 +23,13 @@
     background-color:rgb(245, 245, 245);
 }
 
+#options .icon-cog {
+    left: 3px;
+}
+
+@media(max-width:1180px) {
+    #options .icon-cog {
+        top:5px;
+    }
+}
+
