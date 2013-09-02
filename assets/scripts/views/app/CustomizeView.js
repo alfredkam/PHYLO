@@ -6,6 +6,7 @@ define([
          "marionette",
          //TEMPLATES
          "text!tpl/app/Customize.mustache",
+      "scripts/views/validation/cookie.validation.amd"
 ], function(
         $, _, Backbone, Marionette,
         tpl

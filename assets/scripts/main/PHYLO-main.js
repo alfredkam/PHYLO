@@ -41,7 +41,9 @@ require.config({
 		util : 'scripts/util',
 		//remapping js -> scripts
 		js : 'scripts/',
-		tpl : "../tpl"
+		tpl : "../tpl",
+
+
 	},
 
 	/*
@@ -76,7 +78,6 @@ require.config({
 		"backbone.wreqr" : {
 			deps : [ "backbone" ]
 		},
-		
 		mustache : [ "json" ],
 		spectrum: ['jquery'],
 		'jquery-ui' : {

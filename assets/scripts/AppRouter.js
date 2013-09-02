@@ -18,6 +18,7 @@ define([
 			"!/:lang/Play" : "play",
 			"!/:lang/Play/:AMA": "play",
 			"!/Play" : "play",
+			"!/Play/puzzle/:id" : "puzzle",
 			"!/:lang/Tutorial" : "tutorial",
 			"!/Tutorial" : "tutorial",
 			"!/:lang/History" : "history",
