@@ -6,7 +6,7 @@ define([
     "marionette",
     //TEMPLATES
     "text!tpl/app/Header.mustache",
-    "scripts/views/validation/cookie.validation"
+    "scripts/views/validation/cookie.validation.amd"
     //NO EXPORTS
 ], function($, Marionette, tpl, cookie) {
     var HeaderView = Marionette.ItemView.extend({
@@ -261,7 +261,7 @@ define([
                 // show buttons. NB: hide expert button if necessary
                 $.ajax({
                     type: "POST",
-                    url: "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php",
+                    url: "/phpdb/phyloExpertDB.php",
                     data: "mode=8&user=" + username
                 }).done(function(re) {
                     $(".showInLogin").show();

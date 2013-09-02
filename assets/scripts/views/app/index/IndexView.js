@@ -6,6 +6,9 @@ define([
          "marionette",
          //TEMPLATES
          "text!tpl/app/index/Index.mustache",
+         //this one is the jquery one
+         "scripts/views/validation/cookie.validation"
+
 ], function(
         $, _, Backbone, Marionette,
         tpl

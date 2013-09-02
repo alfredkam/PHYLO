@@ -562,6 +562,7 @@
 						var ranNumber = Math.floor(Math.random()*2)+1 - 1;	
 						$("#draw").hide();		
 						$("#menu").hide();
+						console.log("calling random main ")
 						$.main.init({
 							type: "random",
 							num: (i+ranNumber),		
