@@ -123,7 +123,7 @@ require.config({
 				'DNA/endGame.theme','DNA/events.engine','DNA/engine.core','DNA/stage.core',
 				'DNA/sequence.core','DNA/splash.theme','DNA/tree.core','DNA/multiSelect.core',
 				'DNA/newick.core','DNA/lang.module','DNA/fitch.core','DNA/board.theme','DNA/highlighter.theme',
-				'DNA/protocal.core','DNA/score.theme','views/customizeGame.actions']	
+				'DNA/protocal.core','DNA/score.theme']	
 		},
 		'DNA/protocal.core' : {
 			deps : ['jquery']
@@ -258,7 +258,7 @@ function(Marionette, Mustache, App)
 // require(['jquery/jquery.notify']);
 require(['dev']);
 require(['views/detectIE.actions']);
-require(['views/customizeGame.actions']);
+// require(['views/customizeGame.actions']);
 require(['bootbox']);
 window.setTimeout(function() {
 require(['validation/login.validation']);

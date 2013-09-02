@@ -8,6 +8,7 @@ define([
 	
 	var AppLayout = Marionette.Layout.extend({
 		regions: {
+            customizeRegion : "#customizeRegion",
 			headerRegion: "#header-wrapper",
 			contentRegion: "#app-content",
 			footerRegion: "#footer"			

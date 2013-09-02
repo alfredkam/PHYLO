@@ -14,6 +14,7 @@ define([
          "scripts/views/app/credits/CreditsView",
          "scripts/views/app/ranking/RankingView",
          "scripts/views/app/history/HistoryView",
+         "scripts/views/app/CustomizeView",
          //LAYOUT
          "scripts/views/AppLayout"
          //Modules
@@ -21,7 +22,7 @@ define([
          //NO EXPORTS goes last
 ], function(
 		$, Backbone, Marionette, 
-		HeaderView, FooterView, IndexView, TutorialView, AboutView, CreditsView, RankingView, HistoryView,
+		HeaderView, FooterView, IndexView, TutorialView, AboutView, CreditsView, RankingView, HistoryView, CustomizeView,
 		AppLayout
 ) {
 	var DashboardController = Marionette.Controller.extend({
@@ -46,8 +47,15 @@ define([
 			if(!lang) 
 				lang = "EN";
 			else lang.toUpperCase();
-			// a good place for code that needs to be ran every page
-			// 
+
+			if(!this.regions.customizeRegion.currentView) 
+			{
+				this.regions.customizeRegion.show(new CustomizeView({}));
+			}
+
+			// a good place for code that needs to be ran every page 
+			
+
 			if(!this.lang || this.lang != lang) {
 				this.lang = lang;
 
