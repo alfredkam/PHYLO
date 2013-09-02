@@ -1,6 +1,4 @@
-(function() {
-    function g() {};
-    g.prototype.lang = [{
+{
 	"info": {
 	    "lang": "简体中文",
 	    "author": "James Junzhi Wen",
@@ -222,15 +220,8 @@
             "field 33" : "Phylo 是一个拼图游戏，而且每完成的一个拼图都有助於了解人类的遗传性疾病。 请帮忙遗传性疾病研究，并祝您游戏愉快",
         },
 		"footer": {
-		    "field 1": "Phylo是一个挑战科学难题的Flash游戏，游戏中的每个难关与人类疾病密切相关。了解更多",
+		    "field 1": "Phylo是一个挑战科学难题的HTML5游戏，游戏中的每个难关与人类疾病密切相关。了解更多",
 		    "field 2": "加入Phylo的Facebook社区，给我们竖一个大拇指吧。",
-		},
-	},
-    }];
-
-        var proto = g.prototype,
-	    attr = [
-		    ["lang",proto.lang],
-		    ];
-        common.exportSingleton("ZH-CNscript",g,proto);
-})();
+		}
+	}
+}

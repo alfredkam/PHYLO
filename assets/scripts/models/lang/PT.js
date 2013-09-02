@@ -1,6 +1,4 @@
-(function() {
-	function g() {};
-	g.prototype.lang = [{
+{
 	"info": {
 		"lang": "Portuguese (BR)",
 		"author": "Gustavo Hime",
@@ -224,12 +222,6 @@
 	"footer": {
 		"field 1": "Phylo é um jogo desafiante em Flash, no qual cada quebra-cabeça resolvido contribui para o mapeamento de doenças no DNA humano. Saiba mais.",
 		"field 2": "Junte-se à comunidade Phylo no Facebook ou simplesmente curta.",
-		},
-	},
-}];
-	var proto = g.prototype,
-		attr = [
-			["lang",proto.lang],
-			];
-	common.exportSingleton("PTscript",g,attr);
-})();
+		}
+	}
+}

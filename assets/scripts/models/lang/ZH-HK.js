@@ -1,6 +1,4 @@
-(function() {
-    function g() {};
-    g.prototype.lang = [{
+{
 	"info": {
 	    "lang": "正體中文",
 	    "author": "Li Chun Lin",
@@ -222,17 +220,11 @@
             "field 30": "以***為帳號登入",
             "field 31" : "DNA拼圖",
             "field 32" : "會員登入",
-            "field 33": "Phylo 是一個拼圖遊戲，而且每完成的一個拼圖都有助於了解人類的遺傳性疾病。 請幫忙遺傳性疾病研究，並祝您遊戲愉快",
+            "field 33": "Phylo 是一個拼圖遊戲，而且每完成的一個拼圖都有助於了解人類的遺傳性疾病。 請幫忙遺傳性疾病研究，並祝您遊戲愉快"
         },
         "footer": {
-            "field 1": "Phylo是一個挑戰科學難題的Flash遊戲，遊戲中的每個難關與人類疾病密切相關。瞭解更多",
-            "field 2": "加入Phylo的Facebook社區，給我們豎一個大拇指吧。",
-        },
-    },
-}];
- var proto = g.prototype,
-            attr = [
-                    ["lang",proto.lang],
-                    ];
-    common.exportSingleton("ZH-HKscript",g,proto);
-})();
+            "field 1": "Phylo是一個挑戰科學難題的Flash遊戲，遊戲中的每個難關與人類疾病密切相關。瞭解更多"
+            "field 2": "加入Phylo的Facebook社區，給我們豎一個大拇指吧。"
+        }
+    }
+}

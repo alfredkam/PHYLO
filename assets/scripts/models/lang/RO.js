@@ -1,6 +1,4 @@
-(function(){
-	function g() {};
-	g.prototype.romanian = [{
+{
     "info": {
         "lang" : "Română",
         "author" : "Alexandru Badea & Dr. Sabina Scorţescu",
@@ -50,9 +48,9 @@
             "field 22" : "Recomandă prietenilor",
             "field 23" : "Puzzle-uri AND",
             "field 24" : "Află mai mult",
-    },
-    "play": {
-        "gameselect": {
+        },
+        "play": {
+            "gameselect": {
                 "login": {
                     "field 1" : "Logare ca invitat",
                     "field 2" : "Logare",
@@ -76,36 +74,36 @@
                     "field 20" : "Numele de utilizator sau Parola lipsesc",
                     "field 21" : "Nu s-a reuşit conectarea la server. Va rugam încercaţi din nou.",
                     "field 22" : "Numele de utilzator există deja.",
-    },
-    "levelselect": {
-        "header" : "Selectare nivel. Alegeţi un nivel după dificultate, ID sau boală asociată",
-        "random": {
-            "field 1" : "Alegeţi numărul de secvenţe.",
-            "field 2" : "Aleator",
-            "field 3" : "Uşor - Dificil",
-        },
-        "level id": {
-            "field 1" : "Introduceţi ID-ul nivelului pe care doriţi să-l jucaţi",
-            "field 2" : "ID Nivel",
-            "field 3" : "Introduceţi ID-ul nivelului",
-            "field 4" : "Trimite",
-        },
-        "disease": {
-            "field 1" : "Alegeţi o boală pentru a primi un nivel asociat cu aceasta",
-            "field 2" : "Boală",
-            "field 3" : "SÂNGE ŞI SISTEM IMUNITAR",
-            "field 4" : "OS ŞI PIELE",
-            "field 5" : "CREIER ŞI SISTEM NERVOS",
-            "field 6" : "CANCER",
-            "field 7" : "SISTEM DIGESTIV",
-            "field 8" : "INIMĂ ŞI SISTEM CIRCULATOR",
-            "field 9" : "TULBURĂRI METABOLICE",
-            "field 10" : "MUŞCHI",
-            "field 11" : "SISTEM REPRODUCĂTOR",
-            "field 12" : "SISTEM RESPIRATOR",
-            "field 13" : "SISTEM SENZORIAL",
-        },
-    },
+                },
+                "levelselect": {
+                    "header" : "Selectare nivel. Alegeţi un nivel după dificultate, ID sau boală asociată",
+                    "random": {
+                        "field 1" : "Alegeţi numărul de secvenţe.",
+                        "field 2" : "Aleator",
+                        "field 3" : "Uşor - Dificil",
+                    },
+                    "level id": {
+                        "field 1" : "Introduceţi ID-ul nivelului pe care doriţi să-l jucaţi",
+                        "field 2" : "ID Nivel",
+                        "field 3" : "Introduceţi ID-ul nivelului",
+                        "field 4" : "Trimite",
+                    },
+                    "disease": {
+                        "field 1" : "Alegeţi o boală pentru a primi un nivel asociat cu aceasta",
+                        "field 2" : "Boală",
+                        "field 3" : "SÂNGE ŞI SISTEM IMUNITAR",
+                        "field 4" : "OS ŞI PIELE",
+                        "field 5" : "CREIER ŞI SISTEM NERVOS",
+                        "field 6" : "CANCER",
+                        "field 7" : "SISTEM DIGESTIV",
+                        "field 8" : "INIMĂ ŞI SISTEM CIRCULATOR",
+                        "field 9" : "TULBURĂRI METABOLICE",
+                        "field 10" : "MUŞCHI",
+                        "field 11" : "SISTEM REPRODUCĂTOR",
+                        "field 12" : "SISTEM RESPIRATOR",
+                        "field 13" : "SISTEM SENZORIAL",
+                    },
+                },
                 "game board": {
                     "field 1" : "Scor",
                     "field 2" : "Minim de puncte necesar",
@@ -120,7 +118,7 @@
                     "field 11" : "Decalaje",
                     "field 12" : "Extinderi de decalaje",
                     "field 13" : "Punctează acum",
-    },
+                },
                 "end of game": {
                     "field 1" : "Vă mulţumim",
                     "field 2" : "Apreciem contribuţia dumneavoastră la ştiinţă. Ştiaţi că:",
@@ -138,8 +136,8 @@
                     "field 14" : "Provoacaţi un prieten",
                     "field 15" : "Meniu",
                     "field 16" : "Apăsaţi din nou pe stea pentru a trimite scorul dumneavoastră acum, sau continuaţi să jucaţi pentru a obţine cel mai bun rezultat posibil!",
-    },
-    },
+                },
+            },
             "about": {
                 "field 1" : "Despre ce este vorba în Phylo?",
                 "field 2" : "Compararea genoamelor diverselor specii este una dintre cele mai fundamentale si puternice tehnici in biologia moleculara. Ne ajută la descifrarea ADN-ului şi la identificarea de noi gene. Deşi poate părea un simplu joc, Phylo este în realitate un cadru de valorificare a puterii de calcul a omenirii pentru soluţionarea problemei Aliniamentelor Secvenţiale Multiple.",
@@ -154,7 +152,7 @@
                 "field 11" : "Pentru mai multe informaţii cu privire la aceste teme, apăsaţi aici.",
                 "field 12": "Publicații",
                 "field 13": "Mass-media",
-    },
+            },
             "credit": {
                 "field 1" : "Liderii de proiect (Contact media şi ştiinţific)",
                 "field 2" : "Echipa de proiectare",
@@ -167,7 +165,7 @@
                 "field 9" : "Traducere",
                 "field 10": "Alumni",
                 "field 11": "Suport tehnic",
-    },
+            },
             "ranking": {
                 "field 1" : "Toate timpurile",
                 "field 2" : "Lunar",
@@ -187,9 +185,9 @@
                 "field 16" : "Scor",
                 "field 17" : "Daţi click pe ID-ul de nivel pentru a juca puzzle-ul",
                 "field 18" : "Nul",
-    },
-    },
-    "social": {
+            },
+        },
+        "social": {
             "field 1" : "a început sa joace Phylo.",
             "field 2" : "Aţi fost înregistrat. Vă rugăm ajutati-ne să facem cunoscut acest joc şi anunţaţi-vă prietenii despre contribuţia dumneavoastră la ştiinţă. Phylo nu va păstra datele dumneavoastră personale, cu excepţia numelui de utilizator şi a adresei de e-mail. Veţi avea ocazia să vă afişaţi realizările dacă veţi solicita acest fapt.",
             "field 3" : "Date lipsă. Vă rugăm să vă verificaţi contul ***.",
@@ -223,16 +221,10 @@
             "field 31" : "Puzzle-uri AND",
             "field 32" : "Logare",
             "field 33": "Phylo este un joc puzzle in care fiecare puzzle completat contribuie la cartografierea bolilor din cadrul ADN-ului uman. Distraţi-vă şi ajutaţi cercetarea genetică!",
-    },
-    "footer": {
-        "field 1" : "Phylo este un joc solicitant în care fiecare puzzle completat contribuie la cartografierea bolilor din cadrul ADN-ului uman. Află <a href='?pid=about"+window.location.hash+"'>mai mult</a>.",
-        "field 2" : "Alătură-te la <a href='https://www.facebook.com/groups/127713783941517/'>comunitatea</a>Phylo pe Facebook",
-    },
-},
-}];
-	var proto = g.prototype,
-		attr = [
-			["lang",proto.romanian]
-			];
-	common.exportSingleton("ROscript",g,attr);
-})();
+        },
+        "footer": {
+            "field 1" : "Phylo este un joc solicitant în care fiecare puzzle completat contribuie la cartografierea bolilor din cadrul ADN-ului uman. Află <a href='?pid=about"+window.location.hash+"'>mai mult</a>.",
+            "field 2" : "Alătură-te la <a href='https://www.facebook.com/groups/127713783941517/'>comunitatea</a>Phylo pe Facebook",
+        }
+    }
+}

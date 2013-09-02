@@ -52,7 +52,7 @@ define([
 				this.lang = lang;
 
 				$.ajax({
-					url :"assets/lang/"+lang+".js",
+					url :"assets/scripts/models/lang/"+lang+".js",
 					async: false,
 					dataType: 'json'
 				}).done(function(data,resp){
@@ -62,8 +62,8 @@ define([
 					langModel = data;
 				});
 				//exporting it out
-				window.lang = langModel.lang;
-				this.langModel = (new Backbone.Model(langModel.lang));
+				window.lang = langModel;
+				this.langModel = (new Backbone.Model(langModel));
 
 				//langModel.fetch();
 				//console.log(langModel.toJSON());

@@ -1,6 +1,4 @@
-(function() {
-	function g() {};
-	g.prototype.lang = [{
+{
 	 "info": {
 		"lang": "русский", 
 		"author": "Валерия Назарова",
@@ -224,12 +222,6 @@
 	"footer": {
 		"field 1": "Phylo - это испытывающая человеческие способности Flash-игра, в которой каждая решенная головоломка помогает соотнести медицинский заболевания с геномом человека. Узнай об этом больше.",
 		"field 2": "Присоединись к сообществу Phylo на Facebook",
-		},
-	},
-}];
-	var proto = g.prototype,
-		attr = [
-			["lang",proto.lang],
-			];
-	common.exportSingleton("RUscript",g,attr);
-})();
+		}
+	}
+}

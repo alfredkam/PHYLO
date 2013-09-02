@@ -1,9 +1,7 @@
-(function(){
-	function g() {};
-	g.prototype.german = [{
+{
     "info": {
         "lang": "Deutsch",
-        "author": "Albrecht Degering",
+        "author": "Albrecht Degering"
     },
     "header": {
        "field 1": "Spielen",
@@ -22,7 +20,7 @@
        "field 14": "Zurück zur klassischen Version",
        "field 15": "Chronik",
        "field 16": "Experte",
-       "field 17": "Einstellungen",
+       "field 17": "Einstellungen"
     },
 	"body": {
 		"misc" : {
@@ -49,7 +47,7 @@
            "field 21": "Spiel neu starten",
            "field 22": "Mit Freunden teilen",
            "field 23": "DNA-Puzzle",
-           "field 24": "Mehr erfahren",
+           "field 24": "Mehr erfahren"
 		},
 		"play": {
 			"gameselect": {
@@ -75,20 +73,20 @@
                    "field 19": "Willkommen zurück!",
                    "field 20": "Nutzername oder Passwort fehlt",
                    "field 21": "Serververbindung fehlgeschlagen. Bitte versuchen Sie es noch einmal.",
-                   "field 22": "Nutzername bereits vergeben",
+                   "field 22": "Nutzername bereits vergeben"
                 },
                 "levelselect": {
                     "header": "Level-Auswahl. Wählen Sie ein Level nach Schwierigkeit, Nummer oder zugehöriger Krankheit.",
                     "random": {
                         "field 1": "Anzahl der Sequenzen auswählen.",
                         "field 2": "Zufälliges Spiel",
-                        "field 3": "Leicht-Schwer",
+                        "field 3": "Leicht-Schwer"
                     },
                     "level id": {
                         "field 1": "Geben Sie die Nummer der Levels ein, das Sie spielen möchten.",
                         "field 2": "Level-Nr.",
                         "field 3": "Level-Nr. eingeben",
-                        "field 4": "Absenden",
+                        "field 4": "Absenden"
                     },
                     "disease": {
                         "field 1": "Wählen Sie eine Krankheit für ein entsprechendes Level",
@@ -103,7 +101,7 @@
                         "field 10": "MUSKELN",
                         "field 11": "FORTPFLANZUNGSSYSTEM",
                         "field 12": "ATMUNGSYSTEM",
-                        "field 13": "SENSORISCHES SYSTEM",
+                        "field 13": "SENSORISCHES SYSTEM"
                     },
                 },
                 "game board": {
@@ -119,7 +117,7 @@
                         "field 10": "Ungleich",
                         "field 11": "Lücken",
                         "field 12": "Erweiterungen",
-                        "field 13": "Aktuelles Ergebnis",
+                        "field 13": "Aktuelles Ergebnis"
                 },
                 "end of game": {
                         "field 1": "Danke",
@@ -137,7 +135,7 @@
                         "field 13": "Teilen",
                         "field 14": "Einen Freund herausfordern",
                         "field 15": "Menü",
-                        "field 16": "Klicken Sie auf den Stern, um Ihr Ergebnis abzuschicken, oder spielen Sie weiter und finden Sie das bestmögliche Ergebnis!",
+                        "field 16": "Klicken Sie auf den Stern, um Ihr Ergebnis abzuschicken, oder spielen Sie weiter und finden Sie das bestmögliche Ergebnis!"
                 },
             },
             "about": {
@@ -153,7 +151,7 @@
                 "field 10": "Alle Anordnungen wurden großzügigerweise durch den USCG Genome Browser zur Verfügung gestellt. Tatsächlich enthalten alle Sequenzen Ausschnitte aus der menschlichen DNA, von denen vermutet wird, dass sie mit Brustkrebs in Verbindung stehen. Jede Anordnung wird empfangen, analysiert und in einer Datenbank gespeichert, aus der sie zuletzt als Optimierung zurück in die globale Anordnung eingefügt wird.",
                 "field 11": "Für mehr Informationen zu einem der Themen klicken Sie bitte hier.",
                 "field 12": "Publikationen",
-                "field 13": "In den Medien",
+                "field 13": "In den Medien"
             },
             "credit": {
                 "field 1": "Projektleiter (Kontakt für Medien und wissenschaftliche Fragen)",
@@ -166,7 +164,7 @@
                 "field 8": "Wissenschaftliche Beratung",
                 "field 9": "Übersetzung",
                 "field 10": "Alumni",
-                "field 11": "Technische Unterstützung",
+                "field 11": "Technische Unterstützung"
             },
             "ranking": {
                 "field 1": "Gesamt",
@@ -186,7 +184,7 @@
                 "field 15": "Krankheit",
                 "field 16": "Ergebnis",
                 "field 17": "Klicken Sie zum Spielen auf die Level-Nr.",
-                "field 18": "Null",
+                "field 18": "Null"
             },
         },
         "social": {
@@ -222,17 +220,11 @@
                "field 30": "Mit *** anmelden.",
                "field 31": "DNA-Puzzle",
                "field 32": "Anmelden",
-               "field 33": "Phylo ist ein Spiel, bei dem jedes gelöste Puzzle einen Beitrag zur Verortung genetischer Krankheiten innerhalb der menschlichen DNA leistet. Helfen Sie der Genforschung mit Spaß!",
+               "field 33": "Phylo ist ein Spiel, bei dem jedes gelöste Puzzle einen Beitrag zur Verortung genetischer Krankheiten innerhalb der menschlichen DNA leistet. Helfen Sie der Genforschung mit Spaß!"
         },
         "footer": {
-                "field 1": "Phylo ist ein herausforderndes graphisches Spiel, bei dem jedes gelöste Puzzle einen Beitrag zur Verortung genetischer Krankheiten innerhalb der menschlichen DNA leistet. <a href='?pid=about"+window.location.hash+"'>Mehr erfahren</a>.",
-                "field 2": "Treten Sie der <a href='https://www.facebook.com/groups/127713783941517/'>Phylo-Gruppe</a> auf Facebook bei oder geben Sie uns ein Like!",
-        },
-    },
-}];
-	var proto = g.prototype,
-		attr = [
-			["lang",proto.german]
-			];
-	common.exportSingleton("DEscript",g,attr);
-})();
+                "field 1": "Phylo ist ein herausforderndes graphisches Spiel, bei dem jedes gelöste Puzzle einen Beitrag zur Verortung genetischer Krankheiten innerhalb der menschlichen DNA leistet. <a href='#!/DE/About'>Mehr erfahren</a>.",
+                "field 2": "Treten Sie der <a href='https://www.facebook.com/groups/127713783941517/'>Phylo-Gruppe</a> auf Facebook bei oder geben Sie uns ein Like!"
+        }
+    }
+}
