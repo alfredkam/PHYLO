@@ -1,4 +1,6 @@
 (function () {
+	var sound = new Audio("/assets/sounds/level_complete_2.wav"); // buffers automatically when created
+
 	$.html5 = {};
 	$.html5.score = {
 		settings : {
@@ -13,6 +15,7 @@
 			prevMid : 4
 		},
 		setScore : function(newScore) {
+			sound.play();
 			this.draw(newScore);			
 		},
 		draw_old : function(score) {

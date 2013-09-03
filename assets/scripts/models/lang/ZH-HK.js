@@ -20,7 +20,9 @@
         "field 14": "改回舊版",
         "field 15": "記錄",
         "field 16": "專家",
-        "field 17": "設定"
+        "field 17": "設定",
+        "field 18" : "博客",
+        "field 19" : "論壇"
     },
     "body": {
         "misc": {

@@ -46,7 +46,7 @@
 			var self = this;
 			//disables background music
 			if(window.DEV.disableMusic == false) {	
-				$("#musicPlayerSpot").html("<audio autoplay='autoplay' loop='loop' id='game-audio' preload='auto' autobuffer style='display:none'><source src='music/Valent%20-%20The%20Buckle.mp3' />Your browser does not support audio element</audio>");
+				$("#musicPlayerSpot").html("<audio loop='loop' id='game-audio' preload='auto' autobuffer style='display:none'><source src='assets/sounds/Valent%20-%20The%20Buckle.mp3' />Your browser does not support audio element</audio>");
 			}
 
 			//disable this

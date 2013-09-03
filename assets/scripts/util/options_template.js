@@ -4,7 +4,7 @@ window.showInLogin = false;
 window.showExpertOptions = false;
 window.DEV = {
 	disableMenu : true,
-	disableSplash : true,
+	disableSplash : false,
 	disableMusic : false,
 	enableTableMode : false,
 	logging : false
