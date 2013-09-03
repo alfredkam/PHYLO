@@ -7,7 +7,7 @@ define([
 		"marionette"
 ], function(
 		$, Backbone, Marionette
-){	
+){
 	
 	var DashboardRouter = Backbone.Marionette.AppRouter.extend({
 		appRoutes:{
@@ -32,7 +32,7 @@ define([
 			"!/:lang/Expert" : "expert",
 			"!/Expert" : "expert",
 			"!/:lang/tablet:settings" : "tabletSettings",
-			"!/:lang" : "anotherDefaultRoute",
+			"!/:lang" : "play",
 			"*actions" : "defaultRoute"
 		}
 	});
