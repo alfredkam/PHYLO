@@ -9,6 +9,7 @@ define([
          "scripts/views/HeaderView",
          "scripts/views/FooterView",
          "scripts/views/app/index/IndexView",
+         "scripts/views/app/index/PlayByIdView",
          "scripts/views/app/tutorial/TutorialView",
          "scripts/views/app/about/AboutView",
          "scripts/views/app/credits/CreditsView",
@@ -22,7 +23,7 @@ define([
          //NO EXPORTS goes last
 ], function(
 		$, Backbone, Marionette, 
-		HeaderView, FooterView, IndexView, TutorialView, AboutView, CreditsView, RankingView, HistoryView, CustomizeView,
+		HeaderView, FooterView, IndexView, PlayByIdView, TutorialView, AboutView, CreditsView, RankingView, HistoryView, CustomizeView,
 		AppLayout
 ) {
 	var DashboardController = Marionette.Controller.extend({
@@ -309,9 +310,14 @@ define([
 			if(lang == undefined) {
 				lang = "EN";
 			} else lang.toUpperCase();
-			navBar.set(lang, "play");
-			var playView = new Views.Play;
-			playView.renderPuzzle(lang, id);	
+			this.initHeaderFooter("Play", lang);
+			this.regions.contentRegion.reset();
+
+			var playView = new PlayByIdView({
+				lang: lang,
+				id: id
+			});
+			this.regions.contentRegion.show(playView);
 		},
 		play : function(lang, dev){
 			if(dev) {

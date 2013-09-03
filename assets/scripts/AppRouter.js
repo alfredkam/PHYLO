@@ -13,8 +13,8 @@ define([
 		appRoutes:{
 			'!/contribute' : "contribute",
 			"!/:lang/BETA/RNA" : "rna",
-			"!/:lang/play/puzzle/:id" : "puzzle",
-			"!/:lang/play/aws/:id" : "mechanicalTurk",
+			"!/:lang/Play/puzzle/:id" : "puzzle",
+			"!/:lang/Play/aws/:id" : "mechanicalTurk",
 			"!/:lang/Play" : "play",
 			"!/:lang/Play/:AMA": "play",
 			"!/Play" : "play",

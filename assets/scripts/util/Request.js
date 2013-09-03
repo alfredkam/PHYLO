@@ -1,7 +1,7 @@
     define([
-        'jquery/jquery',
-        'underscore/underscore',
-        'backbone/backbone'
+        'jquery',
+        'underscore',
+        'backbone'
     ],function($,_, Backbone) {
         var Request = Backbone.View.extend({
             change : function(context,lang) {
@@ -46,11 +46,24 @@
                     lang = "EN";
                 }
                 console.log("language set up : " + lang);
-                require(['lang/'+lang],function() {
-                    window.langOpt = lang;
-                    var json = window[lang+"script"].lang[0];
-                    callBack(json);
-                });
+                // require(['scripts/models/lang/'+lang],function() {
+                //     window.langOpt = lang;
+                //     var json = window[lang+"script"].lang[0];
+                //     callBack(json);
+                // });
+
+                $.ajax({
+                                    url :"assets/scripts/models/lang/"+lang+".js",
+                                    async: false,
+                                    dataType: 'json'
+                                }).done(function(data,resp){
+                                    window.langOpt = lang;
+                                    callBack(data);
+                                    langModel = data;
+                                }).fail(function(data,resp){
+                                    console.log("failed")
+                                    langModel = data;
+                                });
             },
             getTemplate : function(url,lang) {
                 var self = this;
