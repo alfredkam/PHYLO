@@ -25,9 +25,12 @@ define([
         render: function() {
             var request = new Request();
             // selectTab("play");
+            var self = this;
             request.getJsonLang(this.lang, function(json) {
                 window.lang = json;
-                $("#mid-panel").html(Mustache.render(this.template, json));
+                console.log(self.template);
+                // self.$el.html(Mustache.render(self.template, json));
+                self.$el.html(Marionette.Renderer.render(self.template,json));
                 request.complete();
                 require(["views/gameMenu.actions", "DNA/main.core"], function() {
                     if ($.main == undefined) {
