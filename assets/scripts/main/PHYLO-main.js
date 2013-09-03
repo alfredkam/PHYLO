@@ -22,7 +22,7 @@ require.config({
 		yepnope : "bower_components/yepnope/yepnope",
 		"moment" : "bower_components/moment/moment",
 		bootbox : "bower_components/bootbox/bootbox.min",
-		dataTables : "bower_components/dataTables/media/js/jquery.dataTables",
+		dataTables : "bower_components/datatables/media/js/jquery.dataTables",
         DNA : 'scripts/phylo-lib',
         RNA : 'scripts/RNA',
 		validation : 'scripts/views/validation',
