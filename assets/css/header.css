@@ -27,8 +27,13 @@
     display:block;
 }*/
 
+#nav li a div{
+    line-height: 16px;
+}
+
 #options .icon-cog {
     left: 7px;
+    top:3px;
 }
 
 @media(max-width:1180px) {
@@ -46,4 +51,21 @@
     top:7px;
     position:relative;
 }
+@media(max-width:1200px) {
+    .container {
+        max-width: none;
+    }
+}
 
+@media(max-width:768px) {
+    #logo {
+        width:25%;
+        display:inline-block;
+        float:left;
+    }
+    #nav {
+        width:75%;
+        left:0px;
+        display:inherit;
+    }
+}

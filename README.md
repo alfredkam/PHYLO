@@ -1,3 +1,5 @@
+This version is an edge release - Marionettejs-AMD [Beta] : http://phylo.mcgill.ca/edge
+
 <a href='http://phylo.cs.mcgill.ca'>PHYLO</a>
 =====
 Aligning genomic data is a fundamental but difficult (NP-hard) problem in Biology. We developed Phylo, a casual video game which solutions are used to compare genomes.  In this project, we implemented a complete gaming framework and an API for human-computing video games in genomics.  <b>Come help solve science through playing games!</b>
@@ -76,24 +78,6 @@ Options may also be triggered through the following URLs:
   <tr><td>Show development logs</td><td>http://phylo.cs.mcgill.ca/master/#!/EN/play/IAMADEV</td></tr>
   <tr><td>Show debug logs</td><td>http://phylo.cs.mcgill.ca/master/#!/EN/play/IAMADEV+DEBUG</td></tr>
 </table>
-
-
-Router Setup
-====
-<table>
-  <tr><td>PHYLO DNA</td><td>index.html#!/<language>/play</td></tr>
-  <tr><td>PHYLO DNA with specified puzzle</td><td>index.html#!/<language>/play/puzzle/<puzzle id></td></tr>
-  <tr><td>PHYLO RNA</td><td>index.html#!/<langauge>/BETA/RNA</td><tr>
-</table>
-	
-To Learn more, see https://github.com/McGill-CSB/PHYLO/blob/master/js/controller/router.js
-
-Hot deploy branches
-=====
-Every single time a push is made to these branches, it is automatically deployed to the live server
-- [Master Branch] http://phylo.cs.mcgill.ca/master/index.html
-- [feature/RNA Branch] http://phylo.cs.mcgill.ca/feature/RNA/index.html#!/EN/BETA/RNA
-- If want your own hot deploy branch, you can create an issue here (https://github.com/McGill-CSB/PHYLO/issues) and assign it to @alfredkam
 
 Devices Supported
 =====

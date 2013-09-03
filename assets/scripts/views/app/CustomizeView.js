@@ -16,7 +16,7 @@ define([
             this.lang = options.lang || {};
          },
          template : tpl,
-         ui : {
+         events : {
             "click a.customize-cancel" : "customizeCancel",
             "click .customize-save" : "customizeSave",
             "click .customize-tab a" : "customizeTab",
