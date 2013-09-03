@@ -36,6 +36,11 @@
     top:3px;
 }
 
+#language-tag i.icon-language {
+    top:3px;
+    left:0px;
+}
+
 @media(max-width:1180px) {
     #options .icon-cog {
         top:5px;
