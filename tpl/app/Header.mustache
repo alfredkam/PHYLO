@@ -1,33 +1,3 @@
-{{! <div class='navbar navbar-inverse navbar-fixed-top'>
-	<div class="navbar-inner">
-		<div class="container">
-	        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-			    <span class="icon-bar"></span>
-			    <span class="icon-bar"></span>
-			    <span class="icon-bar"></span>
-	        </button>
-	        <!-- logout form; enable if require logout -->
-	        <!--
-	        <form method="post" action="logout">
-        		<button class="red logout" type="submit">
-        			Log Out
-        		</button>
-        	</form> -->
-	        <a class="brand" href="#/">App</a>
-	        <div class="nav-collapse collapse">
-		        <ul class="nav">
-			        <li class="">
-			        	<a href="#/">Home</a>
-			        </li>
-			        <li class="">
-			        	<a href="#/demo">Demo</a>
-			        </li>
-		        </ul>
-	        </div>
-		</div>
-	</div>
-</div>
- }}
  <link rel='stylesheet' href="assets/css/header.css"/>
  <div id='top-panel'>
      <div class='container'>
@@ -50,12 +20,8 @@
              <a id='credits' class='isTab' href='#!/{{lang}}/Credits'><div>{{header.field 4}}</div></a>
              </li><li>
              <a id='ranking' class='isTab' href='#!/{{lang}}/Ranking'><div>{{header.field 5}}</div></a>
-             </li>{{#header.field 18}}<li>
-             <a id='blog' class='isTab' href='http://blogs.cs.mcgill.ca/phylo/'><div>{{header.field 18}}</div></a>
-             </li>{{/header.field 18}}
-             {{#header.field 19}}<li>
-             <a id='forum' class='isTab' href='http://phylo.cs.mcgill.ca/forums'><div>{{header.field 19}}</div></a>
-             </li>{{/header.field 19}}<li class='showInLogin'>
+             </li>
+             <li class='showInLogin'>
              <a id='history' class='isTab' href='#!/{{lang}}/History'><div>{{header.field 15}}</div></a>
              </li><li class='showInLogin showExpertOptions'>
              <a id='expert' class='isTab' href='#!/{{lang}}/Expert'><div>{{header.field 16}}</div></a>

@@ -94,7 +94,10 @@ define([
 
 			if (!this.regions.footerRegion.currentView)
 			{
-				this.regions.footerRegion.show(new FooterView({}));
+				this.regions.footerRegion.show(new FooterView({
+					model : this.langModel,
+					lang : lang
+				}));
 			}
 			this.setActiveLink(pageName);
 		},

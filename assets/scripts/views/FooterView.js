@@ -8,7 +8,10 @@ define([
 ], function(backbone, Marionette, tpl){
 	
 	var FooterView = Marionette.ItemView.extend({
-		model : new Backbone.Model({ year : new Date().getFullYear() }),
+		initialize : function(options) {
+            this.lang = options.lang;
+            this.model.set("year",new Date().getFullYear());
+        },
 		template : tpl
 	});
 	
