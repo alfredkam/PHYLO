@@ -229,6 +229,8 @@ define([
             $("#weekly").hide();
             $("#monthly").hide();
             $("#alltime").show();
+
+            // $("#ranking-wrapper input").addClass("form-control");
         },
         onShow : function() {
             //  dataTables.init();
