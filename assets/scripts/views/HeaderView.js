@@ -73,6 +73,10 @@ define([
         },
         
         login: function(e) {
+            if($("#logout").css("display")==="block"){
+
+                return false;
+            }
             e.stopPropagation();
             this.ui.loginBox.show();
             this.ui.loginBox.parent().addClass("login-onSelect");
