@@ -1,5 +1,5 @@
 (function () {
-	var sound = new Audio("assets/sounds/level_complete_2.wav"); // buffers automatically when created
+	var sound = new Audio("assets/sounds/btn2.wav"); // buffers automatically when created
 
 	$.html5 = {};
 	$.html5.score = {
