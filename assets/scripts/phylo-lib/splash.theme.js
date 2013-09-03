@@ -10,6 +10,7 @@
 			$.splash.count = function() {
 				if(i==0) {
 					startSound.play();
+					$("#game-audio")[0].play();
 					$("#countDown").fadeOut("fast");
 					fn();
 				} else {
