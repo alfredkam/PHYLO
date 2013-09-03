@@ -1,4 +1,4 @@
-Marionette-AMD Alpha Release : http://phylo.mcgill.ca/edge
+This branch is an edge releae - Marionettejs-AMD [Alpha] : http://phylo.mcgill.ca/edge
 
 <a href='http://phylo.cs.mcgill.ca'>PHYLO</a>
 =====
