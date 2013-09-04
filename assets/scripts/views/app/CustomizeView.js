@@ -60,6 +60,7 @@ define([
             $(".nuc-C").css({backgroundColor: C});
             $(".nuc-T").css({backgroundColor: T});      
             $(".bgCell").css({backgroundColor: bg});
+            
             $(".customize").hide();
         },
         customizeTab : function(e) {
