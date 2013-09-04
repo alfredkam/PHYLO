@@ -20,9 +20,7 @@
         "field 14": "Go back to classic edition",
         "field 15": "History",
         "field 16": "Expert",
-        "field 17": "Settings",
-        "field 18" : "Blog",
-        "field 19" : "Forum"
+        "field 17": "Settings"
     },
     "body": {
         "misc": {
@@ -226,7 +224,9 @@
         },
         "footer": {
             "field 1": "Phylo is a challenging video game in which every puzzle completed contributes to mapping diseases within human DNA. Learn <a href='#!/EN/About'>more</a>.",
-            "field 2": "Join the phylo <a href='https://www.facebook.com/groups/127713783941517/'>community</a> on facebook or give us a thumbs up."
+            "field 2": "Join the phylo <a href='https://www.facebook.com/groups/127713783941517/'>community</a> on facebook or give us a thumbs up.",
+            "field 3" : "Blog",
+            "field 4" : "Forum"
         }
     }
 }

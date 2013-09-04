@@ -20,9 +20,8 @@
         "field 14": "改回舊版",
         "field 15": "記錄",
         "field 16": "專家",
-        "field 17": "設定",
-        "field 18" : "博客",
-        "field 19" : "論壇"
+        "field 17": "設定"
+
     },
     "body": {
         "misc": {
@@ -226,7 +225,9 @@
         },
         "footer": {
             "field 1": "Phylo是一個挑戰科學難題的Flash遊戲，遊戲中的每個難關與人類疾病密切相關。瞭解更多",
-            "field 2": "加入Phylo的Facebook社區，給我們豎一個大拇指吧。"
+            "field 2": "加入Phylo的Facebook社區，給我們豎一個大拇指吧。",
+            "field 3" : "博客",
+            "field 4" : "論壇"
         }
     }
 }
