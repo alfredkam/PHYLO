@@ -34,7 +34,7 @@
 		learnMore : function(json) {
 			var context = "";
 			try {
-			var endGameContext = lang.body.play.gameselect["end of game"];
+			var endGameContext = window.lang.body.play.gameselect["end of game"];
 			context = endGameContext["field 5"].replace("***","<label class='end-color'>"+$.phylo.id+"</label>") +
 						" <label class='end-color'>"+json.disease_link+"</label>.  "+endGameContext["field 6"].replace("***","<label class='end-color'>"+json.play_count+"</label>").replace(".",".<br>").replace("***","<label class='end-color'>"+json.fail_count+"</label>")+
 						endGameContext["field 7"].replace("***","<label class='end-color'>"+json.best_score+"</label>")+" "+
@@ -170,15 +170,16 @@
 		//events for the end game messages
 		//new game or replay game
 		events : function() {
+            langFiles = window.lang.body.play.gameselect["end of game"];
 			$("#endGame-learnMore-content").hide();
 	
-			$("#endGame-learnMore-tag button").unbind().click(function() {
+			$("#endGame-learnMore-tag button").html(window.lang.body.misc["field 24"]).unbind().click(function() {
 				$("#endGame-learnMore-content").slideToggle("fast",function() {
 
 				});
 			});
 
-			$("#endGame-new button").unbind().click(function() {
+			$("#endGame-new button").html(langFiles["field 11"]).unbind().click(function() {
 				//window.location.reload(true);
 				$("#game").hide();
 				$("#endGame").fadeOut();
@@ -188,7 +189,7 @@
 				//window.location.hash = "#!play";
 			});
 				
-			$("#endGame-replay button").unbind().click(function(){
+			$("#endGame-replay button").html(langFiles["field 12"]).unbind().click(function(){
 				$.main.clear();
 				$("#endGame").fadeOut();
 				$("#tree").html("");
@@ -198,7 +199,7 @@
 				$("#countDown").fadeIn();
 			});
  
-            $("#endGame-share button").unbind().click(function(){
+            $("#endGame-share button").html(langFiles["field 13"]).unbind().click(function(){
 		if(DEBUG)
                 console.log("Click share event");
                 $.endGame.share('test');
