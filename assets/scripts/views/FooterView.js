@@ -12,6 +12,7 @@ define([
             this.lang = options.lang;
             this.model.set("year",new Date().getFullYear());
         },
+
 		template : tpl
 	});
 	

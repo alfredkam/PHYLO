@@ -81,6 +81,10 @@ define([
 					model : this.langModel,
 					lang : lang
 				}));
+				this.regions.footerRegion.show(new FooterView({
+									model : this.langModel,
+									lang : lang
+								}));
 			}
 
 			// if (!this.regions.headerRegion.currentView)
@@ -92,13 +96,10 @@ define([
 			// 	}));
 			// }
 
-			if (!this.regions.footerRegion.currentView)
-			{
-				this.regions.footerRegion.show(new FooterView({
-					model : this.langModel,
-					lang : lang
-				}));
-			}
+			// if (!this.regions.footerRegion.currentView)
+			// {
+				
+			// }
 			this.setActiveLink(pageName);
 		},
 		setActiveLink : function(pageName) {
