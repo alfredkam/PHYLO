@@ -80,7 +80,7 @@ require.config({
 		'views/customizeGame.actions' : {
 			deps : ['jquery']
 		},
-		'views/gameMenu.actions' : {
+		'scripts/phylo-lib/menu/gameMenu.actions' : {
 			deps : ['jquery','models/disease.data','DNA/main.core']
 		},		
 		'DNA/stage.core' : {

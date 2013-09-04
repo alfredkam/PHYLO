@@ -28,7 +28,7 @@
 						window.lang = json;
 						$("#mid-panel").html(Mustache.render(context,json));
 						request.complete();
-						require(["views/gameMenu.actions","DNA/main.core"], function() {
+						require(["scripts/phylo-lib/menu/gameMenu.actions","DNA/main.core"], function() {
 							if($.main == undefined) {
 								var fn = function() {
 									if($.main == undefined) { 
