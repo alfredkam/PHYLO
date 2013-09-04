@@ -32,7 +32,7 @@ define([
                 // self.$el.html(Mustache.render(self.template, json));
                 self.$el.html(Marionette.Renderer.render(self.template,json));
                 request.complete();
-                require(["views/gameMenu.actions", "DNA/main.core"], function() {
+                require(["scripts/phylo-lib/menu/gameMenu.actions", "DNA/main.core"], function() {
                     if ($.main == undefined) {
                         var fn = function() {
                             if ($.main == undefined) {
