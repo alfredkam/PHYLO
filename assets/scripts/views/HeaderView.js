@@ -50,7 +50,7 @@ define([
                 cookie.delete("logid");
                 $("#logout").hide();
                 window.guest = 'guest';
-                self.user.set("name", "");
+                this.user.set("name", "");
                 $("#login-box").hide();
                 $(".login-btn").click(function() {
                     this.classicLogin();
