@@ -88,4 +88,4 @@ Quick Crash Course
 =====
 <a href="http://alfredkam.com/best-way-to-develop-a-website/">Overview</a><br>
 <a href="http://addyosmani.github.io/backbone-fundamentals/">Awesome Book on Backbone</a><br>
-<a href="https://github.com/alfredkam/jsBoilerplate">Boiler Plate (stock version) </a>
+<a href="https://github.com/alfredkam/Boilerplate">Various Boilerplates</a>

@@ -16,6 +16,9 @@ define([
             this.lang = options.lang || {};
          },
          template : tpl,
+         ui  : {
+            themeCell : ".customize-theme-cell"
+         },
          events : {
             "click a.customize-cancel" : "customizeCancel",
             "click .customize-save" : "customizeSave",
@@ -60,27 +63,28 @@ define([
             $(".nuc-C").css({backgroundColor: C});
             $(".nuc-T").css({backgroundColor: T});      
             $(".bgCell").css({backgroundColor: bg});
-            
+
             $(".customize").hide();
         },
         customizeTab : function(e) {
-            e.target.each(function(){
-                $(this).removeClass("customize-tab-onselect");
-            })
-            e.target.addClass("customize-tab-onselect");
-            if(e.target.hasClass("tag-theme")) {
-                $(".customize-theme").show();
-                $(".customize-music").hide();
-            } else {
-                $(".customize-theme").hide();
-                $(".customize-music").show();
-            }
+            // e.target.each(function(){
+            //     $(this).removeClass("customize-tab-onselect");
+            // })
+            // e.target.addClass("customize-tab-onselect");
+            // if(e.target.hasClass("tag-theme")) {
+            //     $(".customize-theme").show();
+            //     $(".customize-music").hide();
+            // } else {
+            //     $(".customize-theme").hide();
+            //     $(".customize-music").show();
+            // }
         },
         customizeThemeCell : function(e){
-            e.target.each(function(){
+            console.log(e.target);
+            this.ui.themeCell.each(function(){
                 $(this).removeClass("customize-theme-onpick");
             });
-            e.target.addClass("customize-theme-onpick");
+            $(e.target).addClass("customize-theme-onpick");
         },
         customizeThemeReset : function(){
             $(".colorCell").css({ backgroundColor:"white"});
