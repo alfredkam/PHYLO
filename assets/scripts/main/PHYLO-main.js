@@ -117,9 +117,6 @@ require.config({
 		// 'controller/site.controller' : {
 		// 	deps : ['jquery']
 		// },
-		'menu/navBar.actions' : {
-			deps : ['jquery','views/request.views']
-		},
 		'menu/tailor.menu' : {
 			deps : ['jquery']
 		},
