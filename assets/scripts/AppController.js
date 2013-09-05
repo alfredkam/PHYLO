@@ -39,6 +39,9 @@ define([
 				});
 				this.currentRoute = "/";
 				this.isInit = true;
+				this.user = (new Backbone.Model({
+					name : ""
+				}));
 			}
 		},
 
@@ -79,6 +82,7 @@ define([
 				this.regions.headerRegion.reset();
 				this.regions.headerRegion.show(new HeaderView({
 					model : this.langModel,
+					user : this.user,
 					lang : lang
 				}));
 				this.regions.footerRegion.show(new FooterView({
@@ -261,7 +265,8 @@ define([
 			this.regions.contentRegion.reset();
 			this.regions.contentRegion.show(new HistoryView({
 				lang : this.lang,
-				model : this.langModel
+				model : this.langModel,
+				user : this.user
 			}));
 		},
 		tutorial : function(lang){

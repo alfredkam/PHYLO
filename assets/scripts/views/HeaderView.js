@@ -12,8 +12,10 @@ define([
     var HeaderView = Marionette.ItemView.extend({
         initialize: function(options) {
             this.lang = options.lang;
+            this.user = options.user;
             this.model.set({
-                lang: this.lang
+                lang: this.lang,
+                user : this.user.toJSON().name
             });
         },
         template: tpl,
@@ -41,12 +43,14 @@ define([
             },
             "click .m_logout": function() {
                 window.guest = "Guest";
+                this.user.set("name", "");
                 cookie.delete("username");
                 cookie.delete("fullname");
                 cookie.delete("loginmode");
                 cookie.delete("logid");
                 $("#logout").hide();
                 window.guest = 'guest';
+                self.user.set("name", "");
                 $("#login-box").hide();
                 $(".login-btn").click(function() {
                     this.classicLogin();
@@ -96,6 +100,7 @@ define([
             self.ui.loginBox.parent().removeClass("login-onSelect");
         },
         register: function() {
+            var self = this;
             if ($(".cancel-btn").css("display") == "none") {
                 $(".login-warning").hide();
                 $(".email-holder").show();
@@ -116,6 +121,7 @@ define([
                         $(".m_login").html(name);
                         $("#logout").show();
                         window.guest = name;
+                        self.user.set("name", name);
                         $("#login-box").hide();
                     } else {
                         $("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 22"]);
@@ -198,6 +204,7 @@ define([
                                                     cookie.delete("logid");
                                                     $("#logout").hide();
                                                     window.guest = 'guest';
+                                                    self.user.set("name", "");
                                                     $("#login-box").hide();
                                                     $(".login-btn").click(function() {
                                                         this.classicLogin();
@@ -218,6 +225,7 @@ define([
                                     cookie.delete("logid");
                                     $("#logout").hide();
                                     window.guest = 'guest';
+                                    self.user.set("name", "");
                                     $("#login-box").hide();
                                     $(".login-btn").click(function() {
                                         this.classicLogin();
@@ -230,6 +238,7 @@ define([
                                 // display login
                                 $(".m_login").html(fullname.replace("+", " "));
                                 window.guest = fullname;
+                                self.user.set("name", fullname);
                             } else {
                                 //bootbox.alert("Data conflict. Please, login again.");
                                 cookie.delete("username");
@@ -238,6 +247,7 @@ define([
                                 cookie.delete("logid");
                                 $("#logout").hide();
                                 window.guest = 'guest';
+                                self.user.set("name", "");
                                 $("#login-box").hide();
                                 $(".login-btn").click(function() {
                                     this.classicLogin();
@@ -256,6 +266,7 @@ define([
                             cookie.delete("logid");
                             $("#logout").hide();
                             window.guest = 'guest';
+                            self.user.set("name", "");
                             $("#login-box").hide();
                             $(".login-btn").click(function() {
                                 this.classicLogin();
@@ -269,6 +280,7 @@ define([
                 }
                 $("#logout").show();
                 window.guest = fullname;
+                self.user.set("name", fullname);
                 $("#login-box").hide();
                 $(".login-btn").unbind("click");
                 // show buttons. NB: hide expert button if necessary
@@ -301,6 +313,7 @@ define([
         classicLogin : function() {
             var username = $("#username").val().trim();
             var password = $("#password").val().trim();
+            var self = this;
             if ((username == "" || password == "")) {
                 $("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 20"]);
                 return;
@@ -317,6 +330,7 @@ define([
                     cookie.create("logid", -1, 365);
                     $("#logout").show();
                     window.guest = username;
+                    self.user.set("name", username);
                     $("#login-box").hide();
                     $(".login-btn").unbind("click");
                     // show buttons. NB: hide expert button if necessary

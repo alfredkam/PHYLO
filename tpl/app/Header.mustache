@@ -20,16 +20,25 @@
              <a id='credits' class='isTab' href='#!/{{lang}}/Credits'><div>{{header.field 4}}</div></a>
              </li><li>
              <a id='ranking' class='isTab' href='#!/{{lang}}/Ranking'><div>{{header.field 5}}</div></a>
-         </li>
-             <li class='showInLogin'>
+            </li>
+            {{#user}}
+             <li>
              <a id='history' class='isTab' href='#!/{{lang}}/History'><div>{{header.field 15}}</div></a>
-             </li><li class='showInLogin showExpertOptions'>
+             </li>
+             {{/user}}
+             <li class='showInLogin showExpertOptions'>
              <a id='expert' class='isTab' href='#!/{{lang}}/Expert'><div>{{header.field 16}}</div></a>
              </li>
          </ul>
      </div>
          <div id='top-panel-right'>
              <div id='login'>
+                {{#user}}
+                <div id='login-tag'>
+                    {{user}}
+                </div>
+                {{/user}}
+                {{^user}}
                  <div id='login-tag' class='m_login'>
                      Login
                  </div>
@@ -66,6 +75,7 @@
                    </div>
 
                  </div>
+                 {{/user}}
              </div>
              <div id='options'>
                  <div id='options-button'>
