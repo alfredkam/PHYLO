@@ -1,4 +1,4 @@
-	requireder.config({
+require.config({
 	waitSeconds : 15,
 	baseUrl : "assets/",
 
