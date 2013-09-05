@@ -1,4 +1,4 @@
-require.config({
+	requireder.config({
 	waitSeconds : 15,
 	baseUrl : "assets/",
 
@@ -141,15 +141,15 @@ require.config({
 		'DNA/helper.core' : {
 			deps : ['jquery']
 		},
+		"views/HeaderView" : {
+			deps : ['validation/cookie.validation.amd']
+		},
 		'views/site.views' : {
 			deps : ['views/request.views','views/variable.listener']
 		},	
-		'views/navBar.views' : {
-			deps : ['jquery','underscore', 'backbone','DNA/timer.core','views/lang.views']
-		},
-		'controller/router' : {
-			deps : ['jquery','underscore','backbone','views/site.views','views/navBar.views']
-		},
+		// 'views/navBar.views' : {
+		// 	deps : ['jquery','underscore', 'backbone','DNA/timer.core','views/lang.views']
+		// },
 		'dev/devTools' : {
 			deps : ['jquery']
 		},
