@@ -376,7 +376,7 @@
 	line-height: normal;
 	position:relative;
 	margin-bottom:30px;
-	left:-35px;
+	/*left:-35px;*/
 }
 #endGame-score-result i {
 	font-size: 50px;
