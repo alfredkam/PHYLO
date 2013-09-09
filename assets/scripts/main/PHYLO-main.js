@@ -158,7 +158,10 @@ require.config({
 		},
 		'util/example' : {
 			deps : ['jquery', 'backbone', 'underscore','mustache']
-		}	
+		},
+		'scripts/views/validation/cookie.validation' : {
+			deps : ['jquery']
+		}
 	}
 });
 

@@ -9,7 +9,7 @@ define([
       "scripts/views/validation/cookie.validation.amd"
 ], function(
         $, _, Backbone, Marionette,
-        tpl
+        tpl,cookie
         ) {
      var CustomizeView = Marionette.ItemView.extend({
          initialize : function(options) {
@@ -30,19 +30,19 @@ define([
             console.log("asda");
             $(".customize").hide();
             $(".colorCell").css({
-                backgroundColor: $.cookie.read("bgCell")
+                backgroundColor: cookie.read("bgCell")
             });
             $(".colorA").css({
-                backgroundColor: $.cookie.read("nuc-A")
+                backgroundColor: cookie.read("nuc-A")
             });
             $(".colorG").css({
-                backgroundColor: $.cookie.read("nuc-G")
+                backgroundColor: cookie.read("nuc-G")
             });
             $(".colorC").css({
-                backgroundColor: $.cookie.read("nuc-C")
+                backgroundColor: cookie.read("nuc-C")
             });
             $(".colorT").css({
-                backgroundColor: $.cookie.read("nuc-T")
+                backgroundColor: cookie.read("nuc-T")
             });
         },
         customizeSave : function() {
@@ -52,11 +52,11 @@ define([
             var C = $(".colorC").css("background-color");
             var T = $(".colorT").css("background-color");
             
-            $.cookie.create("bgCell",bg,365);
-            $.cookie.create("nuc-A",A,365);
-            $.cookie.create("nuc-G",G,365);
-            $.cookie.create("nuc-C",C,365);
-            $.cookie.create("nuc-T",T,365);
+            cookie.create("bgCell",bg,365);
+            cookie.create("nuc-A",A,365);
+            cookie.create("nuc-G",G,365);
+            cookie.create("nuc-C",C,365);
+            cookie.create("nuc-T",T,365);
 
             $(".nuc-A").css({backgroundColor: A});
             $(".nuc-G").css({backgroundColor: G});
@@ -96,36 +96,36 @@ define([
         customizeFnDump : function(){
             $.customize = {
                 "default" : function() {
-                    if($.cookie.read("bgCell")) {
-                        $(".colorBG").css({backgroundColor : $.cookie.read("bgCell")});
-                        $(".bgCell").css({backgroundColor : $.cookie.read("bgCell")});
+                    if(cookie.read("bgCell")) {
+                        $(".colorBG").css({backgroundColor : cookie.read("bgCell")});
+                        $(".bgCell").css({backgroundColor : cookie.read("bgCell")});
                     } else {
-                        $.cookie.create("bgCell","white",365);
+                        cookie.create("bgCell","white",365);
                     }   
 
-                    if($.cookie.read("nuc-A")) {
-                        $(".nuc-A").css({backgroundColor : $.cookie.read("nuc-A") });
-                        $(".colorA").css({backgroundColor : $.cookie.read("nuc-A") });
+                    if(cookie.read("nuc-A")) {
+                        $(".nuc-A").css({backgroundColor : cookie.read("nuc-A") });
+                        $(".colorA").css({backgroundColor : cookie.read("nuc-A") });
                     } else {
-                        $.cookie.create("nuc-A","#71B2E2",365);
+                        cookie.create("nuc-A","#71B2E2",365);
                     }
-                    if($.cookie.read("nuc-G")) {
-                        $(".nuc-G").css({backgroundColor : $.cookie.read("nuc-G")});
-                        $(".colorG").css({backgroundColor : $.cookie.read("nuc-G")});
+                    if(cookie.read("nuc-G")) {
+                        $(".nuc-G").css({backgroundColor : cookie.read("nuc-G")});
+                        $(".colorG").css({backgroundColor : cookie.read("nuc-G")});
                     } else {
-                        $.cookie.create("nuc-G","#9932CC",365);
+                        cookie.create("nuc-G","#9932CC",365);
                     }
-                    if($.cookie.read("nuc-C")) {
-                        $(".nuc-C").css({backgroundColor : $.cookie.read("nuc-C")});
-                        $(".colorC").css({backgroundColor : $.cookie.read("nuc-C")});
+                    if(cookie.read("nuc-C")) {
+                        $(".nuc-C").css({backgroundColor : cookie.read("nuc-C")});
+                        $(".colorC").css({backgroundColor : cookie.read("nuc-C")});
                     } else {
-                        $.cookie.create("nuc-C","#008000",365); 
+                        cookie.create("nuc-C","#008000",365); 
                     }
-                    if($.cookie.read("nuc-T")) {
-                        $(".nuc-T").css({backgroundColor : $.cookie.read("nuc-T")});
-                        $(".colorT").css({backgroundColor : $.cookie.read("nuc-T")});
+                    if(cookie.read("nuc-T")) {
+                        $(".nuc-T").css({backgroundColor : cookie.read("nuc-T")});
+                        $(".colorT").css({backgroundColor : cookie.read("nuc-T")});
                     } else {
-                        $.cookie.create("nuc-T","#FFA500",365);
+                        cookie.create("nuc-T","#FFA500",365);
                     }
                 }
             };
