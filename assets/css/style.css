@@ -894,7 +894,7 @@ td.social-link {
 
 #wrapper {
     position:relative;
-    background: url(assets/img/bg-light.png) no-repeat center 60px;
+    /*background: url("assets/img/bg-light.png") no-repeat center 60px;*/
     z-index:0;
     height:500px;
 }
