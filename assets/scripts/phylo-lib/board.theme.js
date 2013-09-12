@@ -1,5 +1,8 @@
 /* this scripts generates the board features */
 (function() {
+	//insert sound here
+	var lightUpSound = new Audio("assets/sounds/startSound.wav"); // buffers automatically when created
+	var starClickSound = new Audio("assets/sounds/startSound.wav");
 	var doc = document, win = window;
 	$.board = {
 		//generates the grid 
@@ -94,6 +97,7 @@
 			});
 			//next stage
 			$("#star").unbind().click(function(){
+				starClickSound.play();
 				if($.phylo.currentScore >= $.sequence.par) 
 					$.stage.round();
 			});
@@ -111,6 +115,7 @@
 					self.unapprove();
 					return;
 				} 
+				lightUpSound.play();
 				$("#star").animate({
 					opacity: 0.2
 				},300,function() {

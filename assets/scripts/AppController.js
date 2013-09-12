@@ -69,16 +69,15 @@ define([
 					dataType: 'json'
 				}).done(function(data,resp){
 					langModel = data;
+					window.lang= langModel;
 				}).fail(function(data,resp){
 					console.log("failed")
 					langModel = data;
+					window.lang = langModel;
 				});
 				//exporting it out
-				window.lang = langModel;
 				this.langModel = (new Backbone.Model(langModel));
 
-				//langModel.fetch();
-				//console.log(langModel.toJSON());
 				this.regions.headerRegion.reset();
 				this.regions.headerRegion.show(new HeaderView({
 					model : this.langModel,
