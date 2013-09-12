@@ -1,4 +1,6 @@
 (function() {
+	var endGameSound = new Audio("assets/sounds/startSound.wav");
+
 	$.stage = {
 		//the current stage
 		current : -1,
@@ -13,6 +15,7 @@
 			} else if(this.current === this.last) {
 				this.end = true;
 				$.timer.stop();
+				ehdGameSound.play();
 				$.endGame.complete();
 				return "end game";
 			} 
