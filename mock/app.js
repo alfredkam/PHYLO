@@ -8,7 +8,6 @@ var http = require("http"),
 var app = express();
 
 //common configurations
-
 app.configure(function(){
     app.use(express.bodyParser());
     app.use(express.cookieParser());
@@ -24,7 +23,8 @@ app.configure('development', function(){
     app.use(express.errorHandler());
 });
 
-// Mock
+/* start of mocking routes */
+
 // app.post("/phpdb/phyloExpertDB.php",function(req, res){
 //    res.send(200);
 // });
@@ -56,6 +56,7 @@ app.delete("/", function(req, res){
     // using either res.send() or res.json()
     res.json({});
 });
+/* end of mocking routes */
 
 //set server to listen to ...
 http.createServer(app).listen(app.get('port'), function(){
