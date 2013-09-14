@@ -4,8 +4,6 @@ This version is an edge release - Marionettejs-AMD [Beta] : http://phylo.mcgill.
 =====
 Aligning genomic data is a fundamental but difficult (NP-hard) problem in Biology. We developed Phylo, a casual video game which solutions are used to compare genomes.  In this project, we implemented a complete gaming framework and an API for human-computing video games in genomics.  <b>Come help solve science through playing games!</b>
 
-The most recent experimental release can be found at http://phylo.cs.mcgill.ca/master/index.html
-
 I want to contribute!
 =====
 That is awesome! Just fork the project on github.  Create a topic branch, write some code and let us know! <a href='#getting-started'>Click here to jump to Getting Started</a><br>
