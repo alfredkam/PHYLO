@@ -933,4 +933,11 @@ h2.slide-caption {
 }
 
 
+/* one moment */
+.oneMoment {
+	color:rgb(109, 109, 109);
+	font-size:20px;
+	text-shadow: -1px 0px #444, -1px -1px #444;
+}
+
 
