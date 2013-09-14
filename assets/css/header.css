@@ -37,7 +37,7 @@
 }
 
 #language-tag i.icon-language {
-    top:3px;
+    top:2px;
     left:0px;
 }
 
@@ -47,7 +47,7 @@
 
 #options:hover #option-list {
     display:block;
-    top:4px;
+    top:3px;
     position:relative;
 }
 @media(max-width:1200px) {
@@ -55,7 +55,7 @@
         max-width: none;
     }
     #options:hover #option-list {
-        top:7px;
+        top:6px;
     }
 }
 
