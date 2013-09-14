@@ -1,6 +1,8 @@
 (function() {
-	var endGameSound = new Audio("assets/sounds/startSound.wav");
-
+	// var endGameSound = new Audio("assets/sounds/startSound.wav");
+	if ($("#SFXPlayerSpot #endGameSound").length === 0) {
+		$("#SFXPlayerSpot").append("<audio id='endGameSound' preload='auto' autobuffer style='display:none'><source src='assets/sounds/startSound.wav' />Your browser does not support audio element</audio>");
+	}
 	$.stage = {
 		//the current stage
 		current : -1,
@@ -15,7 +17,7 @@
 			} else if(this.current === this.last) {
 				this.end = true;
 				$.timer.stop();
-				ehdGameSound.play();
+				document.getElementById("endGameSound").play();
 				$.endGame.complete();
 				return "end game";
 			} 

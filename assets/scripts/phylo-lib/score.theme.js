@@ -1,6 +1,8 @@
 (function () {
-	var sound = new Audio("assets/sounds/btn2.wav"); // buffers automatically when created
-
+	// var sound = new Audio("assets/sounds/btn2.wav"); // buffers automatically when created
+	if ($("#SFXPlayerSpot #redrawSound").length === 0) {
+		$("#SFXPlayerSpot").append("<audio id='redrawSound' preload='auto' autobuffer style='display:none'><source src='assets/sounds/btn2.wav' />Your browser does not support audio element</audio>");
+	}
 	$.html5 = {};
 	$.html5.score = {
 		settings : {
@@ -15,7 +17,7 @@
 			prevMid : 4
 		},
 		setScore : function(newScore) {
-			sound.play();
+			document.getElementById("redrawSound").play();
 			this.draw(newScore);			
 		},
 		draw_old : function(score) {

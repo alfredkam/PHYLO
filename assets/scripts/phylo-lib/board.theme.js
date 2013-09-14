@@ -4,6 +4,7 @@
 	var lightUpSound = new Audio("assets/sounds/startSound.wav"); // buffers automatically when created
 	var starClickSound = new Audio("assets/sounds/startSound.wav");
 	var doc = document, win = window;
+	var musicList = [{name:"Valent - The Buckle",loc:"assets/sounds/Valent%20-%20The%20Buckle.mp3"}];
 	$.board = {
 		//generates the grid 
 		build : function() {
@@ -49,6 +50,7 @@
 			var self = this;
 			//disables background music
 			if(window.DEV.disableMusic == false) {	
+
 				$("#musicPlayerSpot").html("<audio loop='loop' id='game-audio' preload='auto' autobuffer style='display:none'><source src='assets/sounds/Valent%20-%20The%20Buckle.mp3' />Your browser does not support audio element</audio>");
 			}
 
@@ -57,30 +59,43 @@
 			//volume control
 			$("#volumeOff").hide();
 			//cookie for music
-			if($.cookie.read("music-level")) {
+			if ($.cookie.read("music-level")) {
 				try {
-					document.getElementById("game-audio").volume = $.cookie.read("music-level");
-					if($.cookie.read("music-level") == 0) {
+					var volume = $.cookie.read("music-level");
+					document.getElementById("game-audio").volume = volume;
+					document.getElementById("endGameSound").volume = volume;
+					document.getElementById("redrawSound").volume = volume;
+
+					lightUpSound.volume = volume;
+					starClickSound.volume = volume;
+					if (volume == 0) {
 						$("#volumeOn").hide();
 						$("#volumeOff").show();
 					} else {
 						$("#volumeOn").show();
 						$("#volumeOff").hide();
 					}
-				} catch (err) {
-				}
+				} catch (err) {}
 			} 
 			$("#volumeOn").unbind().click(function() {
-				$.cookie.create("music-level",0,365);
-				document.getElementById("game-audio").volume=0;
+				$.cookie.create("music-level", 0, 365);
+				document.getElementById("game-audio").volume = 0;
+				lightUpSound.volume = 0;
+				starClickSound.volume = 0;
+				document.getElementById("endGameSound").volume = 0;
+				document.getElementById("redrawSound").volume = 0;
 				$("#volumeOn").hide();
 				$("#volumeOff").show();
 			});
 			$("#volumeOff").unbind().click(function() {
-				$.cookie.create("music-level",1,365);
-				document.getElementById("game-audio").volume=1;
-				$("#volumeOff").hide();
-				$("#volumeOn").show()
+					$.cookie.create("music-level", 1, 365);
+					document.getElementById("game-audio").volume = 1;
+					lightUpSound.volume = 1;
+					starClickSound.volume = 1;
+					document.getElementById("endGameSound").volume = 1;
+					document.getElementById("redrawSound").volume = 1;
+					$("#volumeOff").hide();
+					$("#volumeOn").show()
 			});
 			//roll back to best score
 			$("#cycle").unbind().click(function(){
@@ -116,6 +131,7 @@
 					return;
 				} 
 				lightUpSound.play();
+				console.log(lightUpSound.volume);
 				$("#star").animate({
 					opacity: 0.2
 				},300,function() {
