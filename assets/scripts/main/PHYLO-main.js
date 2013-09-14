@@ -227,7 +227,3 @@ require([
 // require(['jquery/jquery.notify']);
 require(['dev']);
 require(['views/detectIE.actions']);
-// require(['views/customizeGame.actions']);
-window.setTimeout(function() {
-// require(['validation/login.validation']);
-// },500);
