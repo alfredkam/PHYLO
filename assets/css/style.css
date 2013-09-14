@@ -439,19 +439,20 @@ a.btn {
 #nav #about div:hover, #nav #about div.onSelect, .tablet-about-btn div, .tablet-feedback-btn div, .tablet-history-btn div {
 	background-color: green;
 }
-#nav #credits div:hover, #nav #credits div.onSelect, .tablet-credits-btn div {
+/*#nav #credits div:hover, #nav #credits div.onSelect, .tablet-credits-btn div {
+	background-color: orange;
+}*/
+#nav #ranking div:hover, #nav #ranking div.onSelect, .tablet-ranking-btn div {
+	/*background-color:#EF4136;*/
 	background-color: orange;
 }
-
-#nav #ranking div:hover, #nav #ranking div.onSelect, .tablet-ranking-btn div {
+#nav #history div:hover, #nav #history div.onSelect {
+	/*background-color: #71B2E2;*/
 	background-color:#EF4136;
 }
-
-#nav #history div:hover, #nav #history div.onSelect {
-	background-color: #71B2E2;
-}
 #nav #expert div:hover, #nav #expert div.onSelect, .tablet-expert-btn div {
-	background-color: darkOrchid;
+	background-color: #71B2E2;
+	/*background-color: darkOrchid;*/
 }
 
 #menu {

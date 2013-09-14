@@ -32,7 +32,7 @@
 }
 
 #options .icon-cog {
-    left: 7px;
+    left: 6px;
     top:3px;
 }
 
@@ -41,24 +41,27 @@
     left:0px;
 }
 
-@media(max-width:1180px) {
-    #options .icon-cog {
-        top:5px;
-    }
-}
-
 #language:hover #language-list {
     display:block;
 }
 
 #options:hover #option-list {
     display:block;
-    top:7px;
+    top:4px;
     position:relative;
 }
 @media(max-width:1200px) {
     .container {
         max-width: none;
+    }
+    #options:hover #option-list {
+        top:7px;
+    }
+}
+
+@media(max-width:1180px) {
+    #options .icon-cog {
+        top:5px;
     }
 }
 
