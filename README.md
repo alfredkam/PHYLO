@@ -28,56 +28,8 @@ Copyright (2012) McGill University, Alfred Kam, Jerome Waldispuhl and other cont
 
 Getting Started
 =====
-Checkout this link if you are new to git: <a href='http://www.alfredkam.com/git-cheat-sheet/'>Git CheatSheet</a>
-- Master Branch is the bleeding edge build
-- feature/RNA Branch is used for PHYLO-RNA experimental release
-- feature/integration Branch is used for integration testing 
-- Production Branch contains the most recent stable release
+Coming soon...
 
-We are using Model - View - Controller + Observer Design Pattern<br>
-All versions contains an offline mode with dummy data for development<br> 
-
-Before hacking away, a quick note on the dev environment<br>
-If you are using chrome for development, you will need to execute this in your terminal : 
-
-	open /Applications/Google\ Chrome.app --args --allow-file-access-from-files --allow-access-control-allow-origin
-
-This will tackle the cross domain issue when working locally. 
-
-This build includes options, it can be found at `controller/options_template.js`
-
-	window.DEBUG //enables debug log
-	window.guest //tell us its anoymous
-	window.DEV.disableMenu //disables Menu
-	window.DEV.disableSplash //disables Splash 
-	window.DEV.disableMusic //disables the background music
-	window.DEV.enableTabletMode //forces browsers to load tablet mode.
-	window.DEV.logging //prompts on screen logging
-
-To prompt on-screen logging, similar to Growl on a mac
-
-	//code under devTools.prompts.notify
-	console.notify({ title : "" , text : "" , type : <optional>});
-	console.notify("any string");
-
-To enable options with `.gitignore`, make sure the `.gitignore` is under the directory of `options_template.js` and it contains the value of `- options.js`. Subsequently, in a terminal
-
-	cd controller
-	cp options_template.js options.js
-	
-You can edit `options.js` to modify the development options.<br>
-Note: Do not delete `options_template.js`.
-
-To ensure your options file is not tracked by git, execute in a terminal
-
-	git rm --cache options.js
-	git commit -a -m 'untrack options.js'
-
-Options may also be triggered through the following URLs:
-<table>
-  <tr><td>Show development logs</td><td>http://phylo.cs.mcgill.ca/master/#!/EN/play/IAMADEV</td></tr>
-  <tr><td>Show debug logs</td><td>http://phylo.cs.mcgill.ca/master/#!/EN/play/IAMADEV+DEBUG</td></tr>
-</table>
 
 Devices Supported
 =====
