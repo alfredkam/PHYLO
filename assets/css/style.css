@@ -122,7 +122,7 @@ body {
 /* theme controller css */
 /* for now hidden for production */
 .tag-music {
-	/*display:none;*/
+	display:none;
 }
 /* end of hidden */
 a.btn {
