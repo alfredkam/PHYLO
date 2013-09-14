@@ -5,5 +5,5 @@ Setup
 
 To Run It
 ======
-node-dev app.js <br>
-or to define a specific port : PORT=XXXX node-dev app.js
+default on port 3000 : node-dev app.js <br>
+or define a port : PORT=XXXX node-dev app.js
