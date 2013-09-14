@@ -2,3 +2,7 @@
     float:right;
     margin-top:21px;
 }
+
+.footer.container {
+    width:1000px !important;
+}
