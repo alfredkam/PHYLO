@@ -74,7 +74,6 @@
     	<!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-        <div id="fb-root"></div>
         <div style='display:none'>
             <img src='assets/img/phylo.png'/>
         </div>
@@ -91,14 +90,6 @@
                 <a class='ui-notify-cross ui-notify-close' href='#'>x</a>
                 <h1><i class='icon-warning-sign' style='top:2.5px;position:relative;'></i>&nbsp;#{title}</h1>
                 <p>#{text}</p>
-            </div>
-        </div>
-        <div class='tablet-login tablet-property'>
-            <div id='tablet-login-tag' class='m_login'>Login</div>
-            <div id='tablet-logout-tag' class='m_logout'>Logout</div>
-            <div id='tablet-login-template'>
-                <div id='tablet-login-box-bg'></div>
-                <div id='tablet-login-box'></div>
             </div>
         </div>
               
@@ -131,108 +122,8 @@
             
         </header>
 <!--         wrapper -->
-        <div id="wrapper">
-                        <div id='tabletSettingUp' class='m_settingUp'>
-                            Setting Up. One moment please.  
-                        </div>
-                        <div id='tabletPanel'>
-                            <div class='tablet-title'> PHYLO | DNA Puzzles</div>
-                            <!-- <div class='tablet-title'> PHYLO | DNA Puzzles <span class='beta'>Beta UX</span></div> -->
-                            <div id='tablet-grid-2'>
-                                <!--<img src='img/loading.gif'/>-->
-                                <i class='icon-spin2 animate-spin'></i>
-                            </div>
-                            <div id='tablet-grid'>
-                                <a class='tablet-grid tablet-play-btn tablet-tab' href='javascript:void(0);' name='play'>
-                                    <div>
-                                        <div>
-                                            <i class='tablet-style-stroke'></i>
-                                            <i class='icon-stop-1'></i>
-                                            <i class='icon-stop-1'></i>
-                                            <i class='icon-stop-1'></i>
-                                        </div>
-                                        <div>{{header.field 1}}</div>
-                                    </div>
-                                </a>
-                                <a class='tablet-grid tablet-tutorial-btn tablet-tab' href='javascript:void(0);' name='tutorial'>
-                                    <div>
-                                        <div>
-                                            <i class='icon-lamp-1'></i>
-                                        </div>
-                                        <div>{{header.field 2}}</div>
-                                    </div>
-                                </a>
-                                <a class='tablet-grid tablet-about-btn tablet-tab' href='javascript:void(0);' name='about'>
-                                    <div>
-                                        <div>
-                                            <i class='icon-info-circle'></i>
-                                        </div>
-                                        <div>{{header.field 3}}</div>
-                                    </div>
-                                </a>
-                                <a class='tablet-grid tablet-credits-btn tablet-tab' href='javascript:void(0);' name='credits'>
-                                    <div>
-                                        <div>
-                                            <i class='icon-beaker'></i>
-                                        </div>
-                                        <div>{{header.field 4}}</div>
-                                    </div>
-                                </a>
-                                <a class='tablet-grid tablet-ranking-btn tablet-tab' href='javascript:void(0);' name='ranking'>
-                                    <div>
-                                        <div>
-                                            <i class='icon-trophy'></i>
-                                        </div>
-                                        <div>{{header.field 5}}</div>
-                                    </div>
-                                </a>
-                                <!--
-                                <a class='tablet-grid tablet-login-btn tablet-login' href='javascript:void(0);' name='tablet:login'>
-                                    <div>
-                                        <div>
-                                            <i class='icon-chevron-right'></i>
-                                        </div>
-                                        <div>Login</div>
-                                    </div>
-                                </a>
-                                -->
-                                <a class='tablet-grid tablet-settings-btn tablet-tab' href='javascript:void(0);' name='tablet:settings'>
-                                    <div>
-                                        <div>
-                                            <i class='icon-cog-alt'></i>
-                                        </div>
-                                        <div>{{header.field 17}}</div>
-                                    </div>
-                                </a>
-                                <!--
-                                <a class='tablet-grid tablet-feedback-btn' href='javascript:void(0);' name='feedback'>
-                                    <div>
-                                        <div>
-                                            <i class='icon-comment'></i>
-                                        </div>
-                                        <div>Feedback</div>
-                                    </div>
-                                </a>
-                                -->
-                                <a class='tablet-grid tablet-history-btn tablet-tab' href='javascript:void(0);' name='history'>
-                                    <div class='showInLogin'>
-                                        <div>
-                                            <i class='icon-book-1'></i>
-                                        </div>
-                                        <div>{{header.field 15}}</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                            <a class='tablet-grid tablet-back-btn' href='javascript:void(0);' name='back'>
-                                <div>
-                                    <div>
-                                        <i class='icon-left-circled'></i>
-                                    </div>      
-                                    <div class='m_back'>Back</div>  
-                                </div>
-                            </a>
-<!--         	content -->
+        <div id="wrapper">        
+<!--     app  	content -->
         	<div id="app-content">
                 <div id='loading-panel'>
                     <img src='assets/img/loading.gif'/>
@@ -243,8 +134,6 @@
                     </div> -->
                 </div>
             </div>
-<!--             <div id='mid-panel' class='forceDisplayNone'>
-            </div> -->
 <!--         	push -->
         	<div id="push"></div>
         </div>
@@ -281,7 +170,7 @@
                  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=254079141380941";
                  fjs.parentNode.insertBefore(js, fjs);
                  }(document, 'script', 'facebook-jssdk'));</script>
-
+        <!-- /FB -->
         <!-- Twitter -->
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         <!-- Overray notifications -->

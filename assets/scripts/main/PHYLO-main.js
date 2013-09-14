@@ -198,10 +198,11 @@ require(['yepnope'],
 	}
 );
 
-require(
-[ "marionette", "mustache", "scripts/App","jquery"],
-function(Marionette, Mustache, App)
-{
+require([ 
+	"marionette", "mustache", "scripts/App","jquery", "bootbox"
+], function(
+	Marionette, Mustache, App
+){
 	// var consoleUtils = new WebConsoleUtils({
 	// debug: config.DEBUG
 	// });
@@ -226,8 +227,3 @@ function(Marionette, Mustache, App)
 // require(['jquery/jquery.notify']);
 require(['dev']);
 require(['views/detectIE.actions']);
-// require(['views/customizeGame.actions']);
-require(['bootbox']);
-window.setTimeout(function() {
-require(['validation/login.validation']);
-},500);
