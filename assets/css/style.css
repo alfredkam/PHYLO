@@ -296,7 +296,7 @@ a.btn {
 	min-height:500px;
 }
 #top-panel {
-	z-index:1000;
+	z-index:99;
 	font-family: Helvetica, Arial, sans-serif;
 	text-align:center;
 	height:36px;

@@ -17,10 +17,11 @@ define([
          "scripts/views/app/history/HistoryView",
          "scripts/views/app/CustomizeView",
          //LAYOUT
-         "scripts/views/AppLayout"
+         "scripts/views/AppLayout",
          //Modules
 
          //NO EXPORTS goes last
+         "nprogress"
 ], function(
 		$, Backbone, Marionette, 
 		HeaderView, FooterView, IndexView, PlayByIdView, TutorialView, AboutView, CreditsView, RankingView, HistoryView, CustomizeView,
@@ -47,6 +48,7 @@ define([
 
 		initHeaderFooter : function(pageName, lang)
 		{
+			NProgress.start();
 			var langModel = {};
 			if(!lang) 
 				lang = "EN";
@@ -177,6 +179,7 @@ define([
 				lang : this.lang,
 				model : this.langModel
 			}));
+			NProgress.done();
 		},
 		defaultRoute : function(lang) {
 
@@ -217,6 +220,7 @@ define([
           	this.regions.contentRegion.show(new IndexView({
           		lang : lang
           	}));
+          	NProgress.done();
             // END FIXME
 		},
 		// this still in old format
@@ -241,6 +245,7 @@ define([
 				lang : this.lang,
 				model : this.langModel
 			}));
+			NProgress.done();
 		},
 		credits : function(lang){
 			this.initHeaderFooter("Credits", lang);
@@ -249,6 +254,7 @@ define([
 				lang : this.lang,
 				model : this.langModel
 			}));
+			NProgress.done();
 		},
 		about : function(lang){
 			this.initHeaderFooter("About", lang);
@@ -257,6 +263,7 @@ define([
 				lang : this.lang,
 				model : this.langModel
 			}));
+			NProgress.done();
 		},
 		// what does history do? no memory of it
 		history : function(lang){
@@ -267,6 +274,7 @@ define([
 				model : this.langModel,
 				user : this.user
 			}));
+			NProgress.done();
 		},
 		tutorial : function(lang){
 			this.initHeaderFooter("Tutorial", lang);
@@ -289,6 +297,7 @@ define([
 				lang : this.lang,
 				model : this.tutorialModel
 			}));
+			NProgress.done();
 		},
 		// should depreciate this?
 		rna : function(lang){
@@ -298,6 +307,7 @@ define([
 			navBar.set(lang, "Play");
 			var rnaView = new Views.RNA;
 			rnaView.render(lang);
+			NProgress.done();
 		},
 		// should depreciate this?
 		mechanicalTurk : function(lang, id) {
@@ -312,6 +322,7 @@ define([
 			navBar.set(lang, "play");
 			var playView = new Views.Play;
 			playView.renderPuzzle(lang, id);
+			NProgress.done();
 		},
 		// need to update the format for this one
 		puzzle : function(lang, id){
@@ -326,6 +337,7 @@ define([
 				id: id
 			});
 			this.regions.contentRegion.show(playView);
+			NProgress.done();
 		},
 		play : function(lang, dev){
 			if(dev) {
@@ -344,6 +356,7 @@ define([
 			this.regions.contentRegion.show(new IndexView({
 				lang : this.lang
 			}));
+			NProgress.done();
 		}
 	});
 
