@@ -242,8 +242,13 @@ a.btn {
 .customize-tab-onselect, .customize-tab a:hover {
 	background-color: whitesmoke !important; 
 	color:black !important;
+	font-weight:bold;
 }
+.customize-tab a {
+	background-color: whitesmoke; 
 
+	color: DarkSlateGray;
+}
 .customize .customize-buttons {
 	color:white;
 	margin-top:10px;
