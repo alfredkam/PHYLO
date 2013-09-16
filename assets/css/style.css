@@ -296,7 +296,7 @@ a.btn {
 	min-height:500px;
 }
 #top-panel {
-	z-index:1000;
+	z-index:99;
 	font-family: Helvetica, Arial, sans-serif;
 	text-align:center;
 	height:36px;
@@ -932,5 +932,12 @@ h2.slide-caption {
     color: #EFEFEF;
 }
 
+
+/* one moment */
+.oneMoment {
+	color:rgb(109, 109, 109);
+	font-size:20px;
+	text-shadow: -1px 0px #444, -1px -1px #444;
+}
 
 

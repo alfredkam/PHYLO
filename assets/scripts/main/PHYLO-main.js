@@ -36,8 +36,7 @@ require.config({
 		//remapping js -> scripts
 		js : 'scripts/',
 		tpl : "../tpl",
-
-
+		nprogress : "bower_components/nprogress/nprogress"
 	},
 
 	/*
@@ -161,6 +160,9 @@ require.config({
 		},
 		'scripts/views/validation/cookie.validation' : {
 			deps : ['jquery']
+		},
+		"nprogress" : {
+			deps : ["jquery"]
 		}
 	}
 });
@@ -199,10 +201,12 @@ require(['yepnope'],
 );
 
 require([ 
-	"marionette", "mustache", "scripts/App","jquery", "bootbox"
+	"marionette", "mustache", "scripts/App","jquery", "nprogress", "bootbox"
 ], function(
 	Marionette, Mustache, App
 ){
+	//should configure nprogress here
+	NProgress.start();
 	// var consoleUtils = new WebConsoleUtils({
 	// debug: config.DEBUG
 	// });
