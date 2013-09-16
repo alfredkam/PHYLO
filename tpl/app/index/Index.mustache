@@ -30,7 +30,11 @@
         <div id='bottomPanel'>
             <div id='volumePanel'>
                 <div id='musicPlayerSpot'></div>
-                <div id='SFXPlayerSpot'></div>
+                <div id='SFXPlayerSpot'>
+                    <audio id='redrawSound' preload='auto' autobuffer style='display:none'><source src='assets/sounds/btn2.wav' />Your browser does not support audio element</audio>
+                    
+                    <audio id='endGameSound' preload='auto' autobuffer style='display:none'><source src='assets/sounds/startSound.wav' />Your browser does not support audio element</audio>
+                </div>
                 <div id='volumeOn'>
                 <!--    <img src='img/speaker_off.png'/>
                 -->
