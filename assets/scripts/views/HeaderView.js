@@ -88,7 +88,7 @@ define([
         languageEvent : function(e) {
             e.stopPropagation();
             this.ui.languageList.show();
-            e.target.addClass("dropDown-OptionOnSelect");
+            $(e.target).addClass("dropDown-OptionOnSelect");
         },
         optionsEvent : function(e){
             var self = this;
