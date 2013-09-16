@@ -18,7 +18,9 @@
 		},
 		setScore : function(newScore) {
 			this.draw(newScore);			
-
+			if ($("#SFXPlayerSpot #redrawSound").length === 0) {
+				$("#SFXPlayerSpot").append("<audio id='redrawSound' preload='auto' autobuffer style='display:none'><source src='assets/sounds/btn2.wav' />Your browser does not support audio element</audio>");
+			}
 			document.getElementById("redrawSound").play();
 		},
 		draw_old : function(score) {
