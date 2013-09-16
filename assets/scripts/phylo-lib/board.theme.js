@@ -131,7 +131,6 @@
 					return;
 				} 
 				lightUpSound.play();
-				console.log(lightUpSound.volume);
 				$("#star").animate({
 					opacity: 0.2
 				},300,function() {

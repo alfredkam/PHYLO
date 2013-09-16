@@ -132,8 +132,8 @@ define([
         onShow: function() {
             var self = this;
             $("html").click(function(){
-                self.ui.loginBox.hide();
-                self.ui.loginBox.parent().removeClass("login-onSelect");
+               $("#login-box").hide();
+                $("#login-box").parent().removeClass("login-onSelect");
             });
             $("#logout").hide();
             // init page: check cookie and register user if login using social account for the first time 

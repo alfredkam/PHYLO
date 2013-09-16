@@ -17,8 +17,9 @@
 			prevMid : 4
 		},
 		setScore : function(newScore) {
-			document.getElementById("redrawSound").play();
 			this.draw(newScore);			
+
+			document.getElementById("redrawSound").play();
 		},
 		draw_old : function(score) {
 			var self = this;
