@@ -35,7 +35,7 @@ define([
 		initialize : function()
 		{
 			this.isInit = this.isInit || false;
-			this.isTablet = true;
+			this.isTablet = false;
 
 			if (!this.isInit)
 			{
@@ -89,7 +89,7 @@ define([
 					model : this.langModel,
 					user : this.user,
 					lang : lang,
-					format : "tablet"
+					format : (this.isTablet? "tablet" : "desktop")
 				}));
 				this.regions.footerRegion.show(new FooterView({
 									model : this.langModel,
@@ -356,6 +356,8 @@ define([
 		},
 		tabletUX : function(lang) {
 			//assume its tablet
+			//force set to tablet
+			this.isTablet = true;
 			this.initHeaderFooter("",lang);
 			this.regions.contentRegion.reset();
 			this.regions.contentRegion.show(new TabletView({
