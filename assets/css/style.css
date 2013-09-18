@@ -59,7 +59,7 @@ body {
 	min-width:1024px;
 }
 /*disables tablet */
-	.tablet-property {
+/*	.tablet-property {
 		display:none;
 	}
 	
@@ -78,7 +78,7 @@ body {
 	#tabletSettingUp {
 		display:none;
 	}
-
+*/
 /* disables the game */
 #level_inputbox {
 	display:none;

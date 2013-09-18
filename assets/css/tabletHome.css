@@ -1,0 +1,27 @@
+#header-wrapper {
+    display:none;
+}
+
+#app-content {
+    top: 30px;
+}
+
+#tablet-grid {
+    max-width:1000px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:30px;
+    padding-right:30px;
+}
+
+.row.first {
+    margin-bottom:30px;
+}
+
+.tablet-title {
+    font-size:60px;
+}
+
+.row div[class*="tablet-"] {
+
+}

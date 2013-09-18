@@ -6,9 +6,11 @@ define([
     "marionette",
     //TEMPLATES
     "text!tpl/app/Header.mustache",
-    "scripts/views/validation/cookie.validation.amd"
+    "scripts/views/validation/cookie.validation.amd",
+    //tablet tpl
+    "text!tpl/tablet/TabletHeader.mustache"
     //NO EXPORTS
-], function($, Marionette, tpl, cookie) {
+], function($, Marionette, tpl, cookie, tabletTpl) {
     var HeaderView = Marionette.ItemView.extend({
         initialize: function(options) {
             this.lang = options.lang;
@@ -17,6 +19,9 @@ define([
                 lang: this.lang,
                 user : this.user.toJSON().name
             });
+            if(this.options.format == "tablet") {
+                this.template = tabletTpl;
+            }
         },
         template: tpl,
         ui: {

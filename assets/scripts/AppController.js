@@ -89,7 +89,7 @@ define([
 					model : this.langModel,
 					user : this.user,
 					lang : lang,
-					format : this.isTablet
+					format : "tablet"
 				}));
 				this.regions.footerRegion.show(new FooterView({
 									model : this.langModel,
@@ -354,12 +354,16 @@ define([
 			}));
 			NProgress.done();
 		},
-		tabletUX : function(lang, dev) {
+		tabletUX : function(lang) {
 			//assume its tablet
+			this.initHeaderFooter("",lang);
 			this.regions.contentRegion.reset();
 			this.regions.contentRegion.show(new TabletView({
-				lang : this.lang
+				model : this.langModel,
+				lang : this.lang,
+				user : this.user
 			}));
+			NProgress.done();
 		}
 	});
 
