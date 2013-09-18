@@ -11,6 +11,8 @@ define([
 	
 	var DashboardRouter = Backbone.Marionette.AppRouter.extend({
 		appRoutes:{
+			"!/mobile/:lang/" : "tabletUX",
+			"!/mobile" : "tabletUX",
 			'!/contribute' : "contribute",
 			"!/:lang/BETA/RNA" : "rna",
 			"!/:lang/Play/Puzzle/:id" : "puzzle",

@@ -16,6 +16,8 @@ define([
          "scripts/views/app/ranking/RankingView",
          "scripts/views/app/history/HistoryView",
          "scripts/views/app/CustomizeView",
+         //tablet view
+         "scripts/views/tablet/TabletView",
          //LAYOUT
          "scripts/views/AppLayout",
          //Modules
@@ -25,6 +27,7 @@ define([
 ], function(
 		$, Backbone, Marionette, 
 		HeaderView, FooterView, IndexView, PlayByIdView, TutorialView, AboutView, CreditsView, RankingView, HistoryView, CustomizeView,
+		TabletView,
 		AppLayout
 ) {
 	var DashboardController = Marionette.Controller.extend({
@@ -32,6 +35,7 @@ define([
 		initialize : function()
 		{
 			this.isInit = this.isInit || false;
+			this.isTablet = true;
 
 			if (!this.isInit)
 			{
@@ -84,7 +88,8 @@ define([
 				this.regions.headerRegion.show(new HeaderView({
 					model : this.langModel,
 					user : this.user,
-					lang : lang
+					lang : lang,
+					format : this.isTablet
 				}));
 				this.regions.footerRegion.show(new FooterView({
 									model : this.langModel,
@@ -171,15 +176,6 @@ define([
 			this.regions.contentRegion.reset();
 
 			this.regions.contentRegion.show(new LoginView());
-		},
-		anotherDefaultRoute : function(lang) {
-			this.initHeaderFooter("Play", lang);
-			this.regions.contentRegion.reset();
-			this.regions.contentRegion.show(new TutorialView({
-				lang : this.lang,
-				model : this.langModel
-			}));
-			NProgress.done();
 		},
 		defaultRoute : function(lang) {
 
@@ -357,6 +353,13 @@ define([
 				lang : this.lang
 			}));
 			NProgress.done();
+		},
+		tabletUX : function(lang, dev) {
+			//assume its tablet
+			this.regions.contentRegion.reset();
+			this.regions.contentRegion.show(new TabletView({
+				lang : this.lang
+			}));
 		}
 	});
 
