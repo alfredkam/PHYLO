@@ -39,7 +39,7 @@ define([
 			window.isTablet = navigator.userAgent.match(/(iPad|Android .* Chrome\/[.0-9]* (?!Mobile)|Opera Tablet|Android .* (?!Mobile)|Tablet|silk|kindle fire)/i) != null;
 			yepnope({
 				test : isTablet,
-				yep : ['assets/css/tablet.css','assets/scripts/views/tablet.js'],
+				yep : ['assets/css/tablet.css'],//,'assets/scripts/views/tablet.js'],
 				nope : ['assets/css/media1280.css','assets/css/media1180.css','assets/css/media1024.css']
 			});
 			//check if ipad and load ipad fix
@@ -63,6 +63,7 @@ define([
 				test : isWinFF,
 				yep : ['assets/css/FF-Win-fix.css']
 			});
+
 			this.isTablet = window.isTablet;
 
 			if (!this.isInit)
@@ -93,7 +94,6 @@ define([
 
 			// a good place for code that needs to be ran every page 
 			
-
 			if(!this.lang || this.lang != lang) {
 				this.lang = lang;
 
@@ -210,7 +210,7 @@ define([
 				Backbone.history.navigator("#!/mobile");
 
 			// BEGIN FIXME (Quick hack to detect language)
-            var lang;
+            var lang = "EN";
             var userLang = navigator.language || navigator.userLanguage;
             var language = userLang.substring(0,2).toUpperCase();
             switch (language) {

@@ -4,7 +4,7 @@ define([
     "marionette",
     "underscore",
     //tpl
-    "text!tpl/tablet/main_layout.mustache"
+    "text!tpl/tablet/TabletIndex.mustache"
 ], function(
     $, Backbone, Marionette, _,
     tpl
