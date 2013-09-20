@@ -16,7 +16,7 @@ define([
 			'!/contribute' : "contribute",
 			"!/:lang/BETA/RNA" : "rna",
 			"!/:lang/Play/Puzzle/:id" : "puzzle",
-			"!/:lang/Play/aws/:id" : "mechanicalTurk",
+			// "!/:lang/Play/aws/:id" : "mechanicalTurk",
 			"!/:lang/Play" : "play",
 			"!/:lang/Play/:AMA": "play",
 			"!/Play" : "play",

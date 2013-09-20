@@ -23,9 +23,10 @@ define([
          //Modules
 
          //NO EXPORTS goes last
-         "nprogress"
+         "nprogress",
+         "yepnope"
 ], function(
-		$, Backbone, Marionette, 
+		$, Backbone, Marionette,
 		HeaderView, FooterView, IndexView, PlayByIdView, TutorialView, AboutView, CreditsView, RankingView, HistoryView, CustomizeView,
 		TabletView,
 		AppLayout
@@ -35,7 +36,34 @@ define([
 		initialize : function()
 		{
 			this.isInit = this.isInit || false;
-			this.isTablet = false;
+			window.isTablet = navigator.userAgent.match(/(iPad|Android .* Chrome\/[.0-9]* (?!Mobile)|Opera Tablet|Android .* (?!Mobile)|Tablet|silk|kindle fire)/i) != null;
+			yepnope({
+				test : isTablet,
+				yep : ['assets/css/tablet.css','assets/scripts/views/tablet.js'],
+				nope : ['assets/css/media1280.css','assets/css/media1180.css','assets/css/media1024.css']
+			});
+			//check if ipad and load ipad fix
+			var isiPad = navigator.userAgent.match(/(ipad)/i);
+			yepnope({
+				test : isiPad,
+				yep : ['assets/css/ipad-fix.css']
+			});
+			//test mode script injection
+			yepnope({
+				test : window.DEV.enableTabletMode,
+				yep : 'assets/css/tablet.css'
+			});
+			//check if mobile phone
+			var isMobile = navigator.userAgent.match(/(iPhone|Android .* Mobile)/i) != null;
+			// if(isMobile) 
+			// 	window.location = "http://phylo.cs.mcgill.ca/archive/js/F2011";
+			//check if Win 64 FF
+			var isWinFF = navigator.userAgent.match(/Windows .* Firefox/) != null;
+			yepnope({
+				test : isWinFF,
+				yep : ['assets/css/FF-Win-fix.css']
+			});
+			this.isTablet = window.isTablet;
 
 			if (!this.isInit)
 			{
@@ -178,6 +206,8 @@ define([
 			this.regions.contentRegion.show(new LoginView());
 		},
 		defaultRoute : function(lang) {
+			if(this.isTablet)
+				Backbone.history.navigator("#!/mobile");
 
 			// BEGIN FIXME (Quick hack to detect language)
             var lang;
