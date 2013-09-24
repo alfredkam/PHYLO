@@ -2,6 +2,7 @@
 	/*left: 0px !important;*/
 	/*position:absolute;*/
     position:relative;
+    width:100%;
 }
 
 i.tablet-style-stroke { 
