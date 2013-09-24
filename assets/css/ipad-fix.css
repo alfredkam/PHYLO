@@ -4,8 +4,9 @@
     position:relative;
     left:-240px !important;
 }
+
 #controlPanel {
-    display:block;
+    left:500px !important;
 }
 
 i.tablet-style-stroke { 
