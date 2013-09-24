@@ -9,4 +9,10 @@
 	padding-left: 20px;
 }
 
+#tabletBackBtn {
+    position: absolute;
+    top:-8px;
+    z-index:999;
+}
+
 /* now the rest */

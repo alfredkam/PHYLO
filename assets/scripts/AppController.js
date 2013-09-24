@@ -37,11 +37,11 @@ define([
 		{
 			this.isInit = this.isInit || false;
 			window.isTablet = navigator.userAgent.match(/(iPad|Android .* Chrome\/[.0-9]* (?!Mobile)|Opera Tablet|Android .* (?!Mobile)|Tablet|silk|kindle fire)/i) != null;
-			yepnope({
-				test : isTablet,
-				yep : ['assets/css/tablet.css'],//,'assets/scripts/views/tablet.js'],
-				nope : ['assets/css/media1280.css','assets/css/media1180.css','assets/css/media1024.css']
-			});
+			// yepnope({
+			// 	test : isTablet,
+			// 	yep : ['assets/css/tablet.css'],//,'assets/scripts/views/tablet.js'],
+			// 	nope : ['assets/css/media1280.css','assets/css/media1180.css','assets/css/media1024.css']
+			// });
 			//check if ipad and load ipad fix
 			var isiPad = navigator.userAgent.match(/(ipad)/i);
 			yepnope({
