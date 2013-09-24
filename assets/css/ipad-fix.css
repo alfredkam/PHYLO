@@ -1,4 +1,8 @@
-
+#bottomPanel {
+	/*left: 0px !important;*/
+	/*position:absolute;*/
+    position:relative;
+}
 
 i.tablet-style-stroke { 
 	left: 20px;
