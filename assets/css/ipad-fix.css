@@ -6,7 +6,8 @@
 }
 
 #controlPanel {
-    left:1200px !important;
+    left:100px !important;
+    top:-30px !important;
 }
 
 i.tablet-style-stroke { 
