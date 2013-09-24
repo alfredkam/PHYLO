@@ -55,6 +55,7 @@ define([
 			});
 			//check if mobile phone
 			var isMobile = navigator.userAgent.match(/(iPhone|Android .* Mobile)/i) != null;
+			this.isMobile = isMobile;
 			// if(isMobile) 
 			// 	window.location = "http://phylo.cs.mcgill.ca/archive/js/F2011";
 			//check if Win 64 FF
@@ -210,6 +211,8 @@ define([
 			if(this.isTablet)
 				window.location = "#!/mobile";
 				//Backbone.history.navigator("#!/mobile");
+			if(this.isMobile)
+				window.location = "#!/mobile";
 
 			// BEGIN FIXME (Quick hack to detect language)
             var lang = "EN";
