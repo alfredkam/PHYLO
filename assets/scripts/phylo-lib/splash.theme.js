@@ -1,7 +1,7 @@
 (function() {
 	var startSound = new Audio("assets/sounds/startSound.wav"); // buffers automatically when created
 
-	var countdownSound = new Audio("assets/sounds/level_complete_2.wav"); // buffers automatically when created
+	var countdownSound = new Audio("assets/sounds/countdownComplete.wav"); // buffers automatically when created
 	$.splash = {
 		//does the splash screen count down to start the game
 		countDown : function(fn) {
