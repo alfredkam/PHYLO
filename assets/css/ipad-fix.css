@@ -3,6 +3,7 @@
 	/*position:absolute;*/
     position:relative;
     width:100%;
+    left:0px !important;
 }
 
 i.tablet-style-stroke { 
