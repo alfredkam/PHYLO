@@ -1,7 +1,7 @@
 /* this scripts generates the board features */
 (function() {
 	//insert sound here
-	var lightUpSound = new Audio("assets/sounds/startSound.wav"); // buffers automatically when created
+	var lightUpSound = new Audio("assets/sounds/starLightUp.wav"); // buffers automatically when created
 	var starClickSound = new Audio("assets/sounds/startSound.wav");
 	var doc = document, win = window;
 	var musicList = [{name:"Valent - The Buckle",loc:"assets/sounds/Valent%20-%20The%20Buckle.mp3"}];
