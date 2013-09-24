@@ -10,6 +10,10 @@
     top:-40px !important;
 }
 
+#ancestorSeq-filling {
+    top:5px;
+}
+
 i.tablet-style-stroke { 
 	left: 20px;
 }
