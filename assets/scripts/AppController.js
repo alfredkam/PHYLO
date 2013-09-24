@@ -206,8 +206,10 @@ define([
 			this.regions.contentRegion.show(new LoginView());
 		},
 		defaultRoute : function(lang) {
+			// alert(this.isTablet);
 			if(this.isTablet)
-				Backbone.history.navigator("#!/mobile");
+				window.location = "#!/mobile";
+				//Backbone.history.navigator("#!/mobile");
 
 			// BEGIN FIXME (Quick hack to detect language)
             var lang = "EN";
