@@ -55,6 +55,7 @@ define([
 			});
 			//check if mobile phone
 			var isMobile = navigator.userAgent.match(/(iPhone|Android .* Mobile)/i) != null;
+			window.isMobile = isMobile;
 			// if(isMobile) 
 			// 	window.location = "http://phylo.cs.mcgill.ca/archive/js/F2011";
 			//check if Win 64 FF
