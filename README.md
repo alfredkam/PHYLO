@@ -1,4 +1,4 @@
-This version is an edge release - Marionettejs-AMD [Beta] : http://phylo.mcgill.ca/edge
+This version is an edge release - Marionettejs-AMD [Stable / support tablets] : http://phylo.mcgill.ca/edge
 
 <a href='http://phylo.cs.mcgill.ca'>PHYLO</a>
 =====
