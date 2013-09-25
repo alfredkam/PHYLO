@@ -2,6 +2,9 @@
     padding:20px 10px;
     display:inline-block;
 }
+#langList a {
+    display:inline-block;
+}
 #langList {
     padding-bottom:20px;
 }
