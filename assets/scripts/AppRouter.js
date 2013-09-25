@@ -27,7 +27,10 @@ define([
 			"!/:lang/About" : "about",
 			"!/:lang/Credits" : "credits",
 			"!/:lang/Expert" : "expert",
-			"!/*path" : "defaultRoute"
+			"!/:lang/" : "defaultRoute",
+			"!/:lang" : "defaultRoute",
+			"!/*path" : "defaultRoute",
+			"" :"defaultRoute"
 		}
 	});
 	return DashboardRouter;
