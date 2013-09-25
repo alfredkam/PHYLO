@@ -26,7 +26,7 @@ Copyright (2012) McGill University, Alfred Kam, Jerome Waldispuhl and other cont
 
 Getting Started
 =====
-Coming soon...
+Fork it! Then let me know if you have a new module or bug fix and ill integrate it in :)
 
 
 Devices Supported
