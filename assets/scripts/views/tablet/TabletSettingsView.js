@@ -4,7 +4,7 @@ define([
     "marionette",
     "underscore",
     //tpl
-    "text!tpl/tablet/TabletMenu.mustache"
+    "text!tpl/tablet/TabletSettings.mustache"
 ], function(
     $, Backbone, Marionette, _,
     tpl
@@ -13,10 +13,10 @@ define([
         initialize : function(options){
             // console.log(this.model.toJSON());
             this.lang = options.lang;
-            this.user = options.user;
             this.model.set({
                 lang: this.lang,
-                user : this.user.toJSON().name
+            }, {
+                silent : true
             });
         },
         template : tpl

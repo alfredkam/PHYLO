@@ -18,6 +18,7 @@ define([
          "scripts/views/app/CustomizeView",
          //tablet view
          "scripts/views/tablet/TabletView",
+         "scripts/views/tablet/TabletSettingsView",
          //LAYOUT
          "scripts/views/AppLayout",
          //Modules
@@ -28,7 +29,7 @@ define([
 ], function(
 		$, Backbone, Marionette,
 		HeaderView, FooterView, IndexView, PlayByIdView, TutorialView, AboutView, CreditsView, RankingView, HistoryView, CustomizeView,
-		TabletView,
+		TabletView, TabletSettingsView,
 		AppLayout
 ) {
 	var DashboardController = Marionette.Controller.extend({
@@ -256,12 +257,15 @@ define([
 		},
 		// this still in old format
 		tabletSettings : function(lang){
-			if(lang == undefined) {
-				lang = "EN";
-			} else lang.toUpperCase();
-			navBar.set(lang,"play");
-			var tabletSettingsView = new Views.TabletSettings;
-			tabletSettingsView.render(lang);	
+			//force set to true
+			this.isTablet = true;
+			this.initHeaderFooter("", lang);
+			this.regions.contentRegion.reset();
+			this.regions.contentRegion.show(new TabletSettingsView({
+				lang : this.lang,
+				model : this.langModel
+			}));
+			NProgress.done();
 		},
 		contribute : function() {
 			window.location = "http://phylo.cs.mcgill.ca/contribute";
