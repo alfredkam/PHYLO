@@ -316,7 +316,10 @@
 									"Sensory": "assets/img/disease/sensory.png", 
 									"Brain": "assets/img/disease/brain.png", 
 									"Muscles": "assets/img/disease/muscles.png", 
-									"Lung": "assets/img/disease/lung.png"
+									"Lung": "assets/img/disease/lung.png",
+									"Infectious" : "assets/img/disease/infectious.svg",
+									"Mental" : "assets/img/disease/mental.jpg",
+									"Misc" : "assets/img/disease/misc.png"
 
 								};
 								//TODO: a fail case
@@ -346,7 +349,7 @@
 								ctx.closePath();
 								selection = [];
 								window.setTimeout(function() {
-									for (var j = 0; j < diseaseorder.length; j++) {
+									for (var j = 0; j < diseaseorder.length && j < 8; j++) {
 										// if (diseaseList[diseaseorder[j].name].length == 0)
 										// 	selection.push(new emptyDisease(ctx, diseaseorder[j], j))d
 										// else
@@ -493,7 +496,7 @@
 				var img = new Image();
 				var img_hover = new Image();
 				if(!items.image){
-					items.image=  "assets/img/random.png"
+					items.image=  "assets/img/disease/misc.png"
 				}
 				img.src = items.image;
 				img_hover.src = items.image.replace('.png', '_hover.png');
