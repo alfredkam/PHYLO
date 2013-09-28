@@ -78,7 +78,7 @@ define([
 				this.currentRoute = "/";
 				this.isInit = true;
 				this.user = (new Backbone.Model({
-					name : "Alfred Kam"
+					name : ""
 				}));
 
 				this.user.on("change", this.updateHeader, this);

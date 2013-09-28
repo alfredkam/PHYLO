@@ -836,6 +836,12 @@ td.social-link {
 	min-height:300px;
 }
 
+#ranking-wrapper #loading-panel img {
+	width:80px;
+	top:-30px;
+	position: relative;
+}
+
 #mid-panel {
 	display:none;
 	padding-bottom:10px;
