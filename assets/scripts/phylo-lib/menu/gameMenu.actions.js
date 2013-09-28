@@ -349,12 +349,16 @@
 								ctx.closePath();
 								selection = [];
 								window.setTimeout(function() {
-									for (var j = 0; j < diseaseorder.length && j < 8; j++) {
-										// if (diseaseList[diseaseorder[j].name].length == 0)
-										// 	selection.push(new emptyDisease(ctx, diseaseorder[j], j))d
-										// else
-											selection.push(new disease(ctx, diseaseorder[j], j));
+								for (var j = 0; j < diseaseorder.length && j < 8; j++) {
+									// if (diseaseList[diseaseorder[j].name].length == 0)
+									// selection.push(new emptyDisease(ctx, diseaseorder[j], j))d
+									// else
+									if (diseaseorder[j].data.length == 0) {
+										selection.push(new emptyDisease(ctx, diseaseorder[j], j));
+									} else {
+										selection.push(new disease(ctx, diseaseorder[j], j));
 									}
+								}
 								}, 50);
 								selection.push(new back(ctx));
 							return;
@@ -437,7 +441,7 @@
 						}).fail(function(data) {
 								$("#draw").hide();
 								$("#menu").hide();
-								$("#level_inputbox").hide();
+								$("#level_in/putbox").hide();
 								$("#level_inputbox").val("");
 								$.main.init({
 									type: "disease",
@@ -477,14 +481,16 @@
 
 			var emptyDisease = function(ctx, items, i) {
 				var img = new Image();
-				var img_hover = new Image();
-				img.src = items[1];
-				img_hover.src = items[1].replace('.png', '_hover.png');
-				var hovered = false;
+				if (!items.image) {
+					items.image = "assets/img/disease/misc.png"
+				}
+				img.src = items.image;
 				img.onload = function() {
 					ctx.beginPath();
 					ctx.globalAlpha = 0.5;
-					ctx.drawImage(img, 335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
+					ctx.drawImage(img,300+110*(i>3?i-4:i),i>3?235:125,70,70);
+					ctx.fillText("test",300+110*(i>3?i-4:i),i>3?315:205);
+
 					ctx.globalAlpha = 1;
 					ctx.closePath();
 				};
@@ -506,11 +512,13 @@
 					ctx.globalAlpha = 1;
 					//ctx.drawImage(img, 335+110*(i>=4?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
 					//ctx.drawImage(img, 335+110*(i>=4?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
-					ctx.drawImage(img,300+110*(i>3?i-4:i),i>3?225:125,70,70);
+					ctx.drawImage(img,300+110*(i>3?i-4:i),i>3?235:125,70,70);
+
+
 					ctx.closePath();
 				};
 				this.onClick = function(eX, eY) {
-					if (300 + 110 * (i > 3 ? i - 4 : i) < eX && eX < 370 + 110 * (i > 3 ? i - 4 : i) && (i > 3 ? 225 : 125) < eY && eY < (i > 3 ? 295 : 195)) {
+					if (300 + 110 * (i > 3 ? i - 4 : i) < eX && eX < 370 + 110 * (i > 3 ? i - 4 : i) && (i > 3 ? 235 : 125) < eY && eY < (i > 3 ? 330 : 220)) {
 						//var id = diseaseList[items.name][Math.floor(Math.random()*diseaseList[items.name].length)];
 						var id = items.data[Math.floor(Math.random()*items.data.length)];
 						$("#draw").hide();		
@@ -524,17 +532,22 @@
 					}
 				};
 				this.onOver = function(eX, eY) {
-					if (300 + 110 * (i > 3 ? i - 4 : i) < eX && eX < 370 + 110 * (i > 3 ? i - 4 : i) && (i > 3 ? 225 : 125) < eY && eY < (i > 3 ? 295 : 195)) {
+					if (300 + 110 * (i > 3 ? i - 4 : i) < eX && eX < 370 + 110 * (i > 3 ? i - 4 : i) && (i > 3 ? 235 : 125) < eY && eY < (i > 3 ? 330 : 220)) {
 						ctx.beginPath();
-						ctx.clearRect(300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 225 : 125, 70, 70);
-						ctx.drawImage(img_hover, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 225 : 125, 70, 70);
+						ctx.clearRect(300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 105, 105);
+						ctx.drawImage(img_hover, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
 						ctx.closePath();
-						hovered = true;
+
+						ctx.font = '13pt Helvetica';
+						ctx.textAlign = "center";
+						ctx.fillText(items.name,335+110*(i>3?i-4:i),i>3?325:215);						hovered = true;
 					} else {
 						if (hovered) {
 							ctx.beginPath();
-							ctx.clearRect(300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 225 : 125, 70, 70);
-							ctx.drawImage(img, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 225 : 125, 70, 70);
+							ctx.clearRect(295 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 115, 105);
+							ctx.drawImage(img, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
+							//ctx.fillText("test",300+110*(i>3?i-4:i),i>3?315:205);
+
 							ctx.closePath();
 							hovered = false;
 						}
