@@ -70,6 +70,7 @@ define([
 
 			if (!this.isInit)
 			{
+				this.currentPage = "";
 				this.regions = this.regions || new AppLayout({
 					el : "#app"
 				});
@@ -84,12 +85,14 @@ define([
 		},
 		updateHeader : function(){
 			this.regions.headerRegion.reset();
-				this.regions.headerRegion.show(new HeaderView({
-					model : this.langModel,
-					user : this.user,
-					lang : lang,
-					format : (this.isTablet? "tablet" : "desktop")
-				}));
+			this.regions.headerRegion.show(new HeaderView({
+				model : this.langModel,
+				user : this.user,
+				lang : lang,
+				format : (this.isTablet? "tablet" : "desktop")
+			}));
+			pageName = this.currentPage;
+			this.setActiveLink(pageName);
 		},
 		initHeaderFooter : function(pageName, lang)
 		{
@@ -150,6 +153,7 @@ define([
 			// {
 				
 			// }
+			this.currentPage = pageName;
 			this.setActiveLink(pageName);
 		},
 		setActiveLink : function(pageName) {
