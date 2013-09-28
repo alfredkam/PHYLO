@@ -70,6 +70,7 @@ define([
 
 			if (!this.isInit)
 			{
+				this.currentLang = "EN";
 				this.currentPage = "";
 				this.regions = this.regions || new AppLayout({
 					el : "#app"
@@ -88,7 +89,7 @@ define([
 			this.regions.headerRegion.show(new HeaderView({
 				model : this.langModel,
 				user : this.user,
-				lang : lang,
+				lang : this.currentLang,
 				format : (this.isTablet? "tablet" : "desktop")
 			}));
 			pageName = this.currentPage;
@@ -98,12 +99,12 @@ define([
 		{
 			NProgress.start();
 			var langModel = {};
-			if(!lang) 
+			if(!lang) {
 				lang = "EN";
+			}
 			else lang.toUpperCase();
 
-			if(!this.regions.customizeRegion.currentView) 
-			{
+			if(!this.regions.customizeRegion.currentView) {
 				this.regions.customizeRegion.show(new CustomizeView({}));
 			}
 
@@ -135,9 +136,9 @@ define([
 					format : (this.isTablet? "tablet" : "desktop")
 				}));
 				this.regions.footerRegion.show(new FooterView({
-									model : this.langModel,
-									lang : lang
-								}));
+					model : this.langModel,
+					lang : lang
+				}));
 			}
 
 			// if (!this.regions.headerRegion.currentView)
@@ -153,6 +154,7 @@ define([
 			// {
 				
 			// }
+			this.currentLang = lang;
 			this.currentPage = pageName;
 			this.setActiveLink(pageName);
 		},
