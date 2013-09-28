@@ -31,8 +31,8 @@ define([
 			"!/:lang/Expert" : "expert",
 			"!/:lang/" : "defaultRoute",
 			"!/:lang" : "defaultRoute",
-			"!/*path" : "defaultRoute",
-			"" :"defaultRoute"
+			// "!*path" : "defaultRoute",
+			"*path" :"defaultRoute"
 		}
 	});
 	return DashboardRouter;
