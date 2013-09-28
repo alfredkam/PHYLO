@@ -15,4 +15,10 @@
     z-index:999;
 }
 
+#login {
+    float:right;
+    background-color:rgb(200,94,54);
+    color:white;
+}
+
 /* now the rest */
