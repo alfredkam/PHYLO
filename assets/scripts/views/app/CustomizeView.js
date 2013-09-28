@@ -1,15 +1,17 @@
 define([
-        //LIBRARIES
-         "jquery",
-         "underscore",
-         "backbone",
-         "marionette",
-         //TEMPLATES
-         "text!tpl/app/Customize.mustache",
+    //LIBRARIES
+     "jquery",
+     "underscore",
+     "backbone",
+     "marionette",
+     "mustache",
+     //TEMPLATES
+     "text!tpl/app/Customize.mustache",
+     "text!tpl/app/index/css.mustache",
       "scripts/views/validation/cookie.validation.amd"
 ], function(
-        $, _, Backbone, Marionette,
-        tpl,cookie
+        $, _, Backbone, Marionette, Mustache,
+        tpl, CssTpl, cookie
         ) {
      var CustomizeView = Marionette.ItemView.extend({
          initialize : function(options) {
@@ -17,7 +19,8 @@ define([
          },
          template : tpl,
          ui  : {
-            themeCell : ".customize-theme-cell"
+            themeCell : ".customize-theme-cell",
+            setCSS :"#hiddenCssComponents"
          },
          events : {
             "click a.customize-cancel" : "customizeCancel",
@@ -58,18 +61,13 @@ define([
             cookie.create("nuc-C",C,365);
             cookie.create("nuc-T",T,365);
 
-            $(".nuc-A").css({backgroundColor: A});
-            $(".nuc-G").css({backgroundColor: G});
-            $(".nuc-C").css({backgroundColor: C});
-            $(".nuc-T").css({backgroundColor: T});      
-            $(".bgCell").css({backgroundColor: bg});
-            // $(".highlighter-2").css({
-            //     "box-shadow" : "inset 0 0 0 4px "+bg,
-            //     "-moz-box-shadow" : "inset 0 0 0 4px "+bg,
-            //     "-webkit-box-shadow" : "inset 0 0 0 4px "+bg,
-            //     "-o-box-shadow" : "inset 0 0 0 4px "+bg,
-            //     "-khtml-box-shadow" : "inset 0 0 0 4px "+bg
-            // });
+            this.ui.setCSS.html(Mustache.render(CssTpl, {
+                backgroundColor : bg,
+                A : A,
+                G : G,
+                C : C,
+                T : T
+            }));
 
             $(".customize").hide();
         },
@@ -95,11 +93,19 @@ define([
             $(e.target).addClass("customize-theme-onpick");
         },
         customizeThemeReset : function(){
-            $(".colorCell").css({ backgroundColor:"white"});
-            $(".colorA").css({backgroundColor:"#71B2E2"});
-            $(".colorG").css({backgroundColor:"#9932CC"});
-            $(".colorC").css({backgroundColor:"#008000"});
-            $(".colorT").css({backgroundColor:"#FFA500"});
+            // $(".colorCell").css({ backgroundColor:"white"});
+            // $(".colorA").css({backgroundColor:"#71B2E2"});
+            // $(".colorG").css({backgroundColor:"#9932CC"});
+            // $(".colorC").css({backgroundColor:"#008000"});
+            // $(".colorT").css({backgroundColor:"#FFA500"});
+            this.ui.setCSS.html(Mustache.render(CssTpl, {
+                backgroundColor : "#FFF",
+                A : "#71B2E2",
+                G : "#9932CC",
+                C : "#008000",
+                T : "#FFA500"
+            }));
+
         },
         customizeFnDump : function(){
             $.customize = {
@@ -237,9 +243,19 @@ define([
             };
             imageObj.src = "assets/img/color_picker.png";
         },
+        setPlayerDefaultColor : function(){
+            this.ui.setCSS.html(Mustache.render(CssTpl, {
+                backgroundColor : cookie.read("bgCell") || "white",
+                A : cookie.read("nuc-A")||"#71B2E2",
+                G : cookie.read("nuc-G")||"#9932CC",
+                C : cookie.read("nuc-C")||"#008000",
+                T : cookie.read("nuc-T")||"#FFA500"
+            }));
+        },
         onShow: function() {
             this.customizeFnDump();
             this.colorPadDump();
+            this.setPlayerDefaultColor();
         }
      });
      return CustomizeView;
