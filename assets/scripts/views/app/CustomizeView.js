@@ -246,11 +246,11 @@ define([
         setPlayerDefaultColor : function(){
             var self = this;
             this.ui.setCSS.html(Mustache.render(CssTpl, {
-                backgroundColor : self.decode(cookie.read("bgCell")) || "white",
-                A : self.decode(cookie.read("nuc-A"))||"#71B2E2",
-                G : self.decode(cookie.read("nuc-G"))||"#9932CC",
-                C : self.decode(cookie.read("nuc-C"))||"#008000",
-                T : self.decode(cookie.read("nuc-T"))||"#FFA500"
+                backgroundColor : self.deCode(cookie.read("bgCell")) || "white",
+                A : self.deCode(cookie.read("nuc-A"))||"#71B2E2",
+                G : self.deCode(cookie.read("nuc-G"))||"#9932CC",
+                C : self.deCode(cookie.read("nuc-C"))||"#008000",
+                T : self.deCode(cookie.read("nuc-T"))||"#FFA500"
             }));
         },
         deCode : function(code) {
