@@ -95,7 +95,7 @@
 				}
 				$.stage.last = $.phylo.tree[$.phylo.tree.length-1].lv;
 
-				$.customize.default();
+				// $.customize.default();
 
 				if(window.DEV.disableSplash) {
 					$("#countDown").hide();

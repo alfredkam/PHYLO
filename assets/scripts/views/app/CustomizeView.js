@@ -110,14 +110,14 @@ define([
         },
         customizeFnDump : function(){
             var self = this;
-            $.customize = {
-                "default" : function() {
+            // $.customize = {
+            //     "default" : function() {
                     if(cookie.read("bgCell")) {
                         $(".colorBG").css({backgroundColor : self.deCode(cookie.read("bgCell"))});
                         $(".bgCell").css({backgroundColor : self.deCode(cookie.read("bgCell"))});
                     } else {
                         cookie.create("bgCell","white",365);
-                    }   
+                    }
 
                     if(cookie.read("nuc-A")) {
                         $(".nuc-A").css({backgroundColor : self.deCode(cookie.read("nuc-A")) });
@@ -127,7 +127,7 @@ define([
                     }
                     if(cookie.read("nuc-G")) {
                         $(".nuc-G").css({backgroundColor : self.deCode(cookie.read("nuc-G"))});
-                        $(".colorG").css({backgroundColor : seld.deCode(cookie.read("nuc-G"))});
+                        $(".colorG").css({backgroundColor : self.deCode(cookie.read("nuc-G"))});
                     } else {
                         cookie.create("nuc-G","#9932CC",365);
                     }
@@ -143,8 +143,8 @@ define([
                     } else {
                         cookie.create("nuc-T","#FFA500",365);
                     }
-                }
-            };
+            //     }
+            // };
         },
         colorPadDump : function(){
         //color pad code from http://www.html5canvastutorials.com/labs/html5-canvas-color-picker/  ### modified to suit the requirements for this page
