@@ -519,7 +519,9 @@ a.btn {
 .wrapper-inner::-moz-selection {
 	background:lightblue;
 }
-
+#ranking-wrapper {
+	border-radius: 3px;
+}
 .wrapper-inner {	
 	border-radius: 3px;
 	-webkit-touch-callout: text;
