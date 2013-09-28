@@ -349,12 +349,16 @@
 								ctx.closePath();
 								selection = [];
 								window.setTimeout(function() {
-									for (var j = 0; j < diseaseorder.length && j < 8; j++) {
-										// if (diseaseList[diseaseorder[j].name].length == 0)
-										// 	selection.push(new emptyDisease(ctx, diseaseorder[j], j))d
-										// else
-											selection.push(new disease(ctx, diseaseorder[j], j));
+								for (var j = 0; j < diseaseorder.length && j < 8; j++) {
+									// if (diseaseList[diseaseorder[j].name].length == 0)
+									// selection.push(new emptyDisease(ctx, diseaseorder[j], j))d
+									// else
+									if (diseaseorder[j].data.length == 0) {
+										selection.push(new emptyDisease(ctx, diseaseorder[j], j));
+									} else {
+										selection.push(new disease(ctx, diseaseorder[j], j));
 									}
+								}
 								}, 50);
 								selection.push(new back(ctx));
 							return;
@@ -477,14 +481,14 @@
 
 			var emptyDisease = function(ctx, items, i) {
 				var img = new Image();
-				var img_hover = new Image();
-				img.src = items[1];
-				img_hover.src = items[1].replace('.png', '_hover.png');
-				var hovered = false;
+				if (!items.image) {
+					items.image = "assets/img/disease/misc.png"
+				}
+				img.src = items.image;
 				img.onload = function() {
 					ctx.beginPath();
 					ctx.globalAlpha = 0.5;
-					ctx.drawImage(img, 335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
+					ctx.drawImage(img,300+110*(i>3?i-4:i),i>3?225:125,70,70);
 					ctx.globalAlpha = 1;
 					ctx.closePath();
 				};
