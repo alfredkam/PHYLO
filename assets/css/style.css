@@ -101,6 +101,7 @@ body {
 }
 
 #draw {
+	border-radius:3px;
 	box-shadow: 0 1px 1px #ccc;
 	-webkit-box-shadow:0 1px 1px #ccc;
 	-khtml-box-shadow:0 1px 1px #ccc;
@@ -520,6 +521,7 @@ a.btn {
 }
 
 .wrapper-inner {	
+	border-radius: 3px;
 	-webkit-touch-callout: text;
 	-webkit-user-select: text;
 	-khtml-user-select: text;

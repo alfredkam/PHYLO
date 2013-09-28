@@ -27,6 +27,15 @@
     display:block;
 }*/
 
+#login #login-box.logoutBtn {
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border:0px;
+    color:#666;
+    padding:5px 20px;
+    box-shadow: 0px 1px 1px #999;
+}
+
 #nav li a div{
     line-height: 16px;
 }
@@ -49,6 +58,11 @@
     display:block;
     top:3px;
     position:relative;
+}
+
+#option-list, #language-list{
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
 }
 @media(max-width:1200px) {
     .container {
