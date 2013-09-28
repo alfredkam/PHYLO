@@ -333,7 +333,12 @@
 										console.log(x);
 										console.log(data[x]);
 										console.log(diseaseImages[x]);
-										diseaseorder.push({name:x,data:data[x],image:diseaseImages[x]});
+										diseaseorder.push({
+											name:x,
+											data:data[x],
+											image:diseaseImages[x],
+											localName: lang.body.play.gameselect.levelselect.disease[x]||x
+										});
 									}
 									// diseaseorder = data;
 
@@ -540,7 +545,7 @@
 
 						ctx.font = '13pt Helvetica';
 						ctx.textAlign = "center";
-						ctx.fillText(items.name,335+110*(i>3?i-4:i),i>3?325:215);						hovered = true;
+						ctx.fillText(items.localName,335+110*(i>3?i-4:i),i>3?325:215);						hovered = true;
 					} else {
 						if (hovered) {
 							ctx.beginPath();
