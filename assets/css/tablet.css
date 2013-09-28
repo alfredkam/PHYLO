@@ -33,4 +33,11 @@
     margin-bottom: 5px;
 }
 
+#login #login-box.tabletLogoutBtn {
+    border:0px;
+    box-shadow: 0 0px 1px #999;
+    background:#FFF;
+    border-radius: 3px;
+}
+
 /* now the rest */

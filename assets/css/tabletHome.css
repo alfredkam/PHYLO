@@ -34,6 +34,7 @@ a[class*="tablet-"]:hover {
 
 a[class*="tablet-"] > div {
     padding:40px 10px;
+    border-radius: 3px;
 }
 
 a[class*="tablet-"] i {
