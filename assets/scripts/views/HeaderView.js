@@ -30,6 +30,7 @@ define([
             languageList : "#language-list"
         },
         events: {
+            "click div.tabletLogoutBtn" : "logoutFn",
             "click div#login": "login",
             // "click #options-button" : "optionsEvent",
             "click #language" : "languageEvent",
@@ -46,24 +47,7 @@ define([
             "click .zocial.LinkedIn": function() {
                 this.socialLogin('LinkedIn');
             },
-            "click .m_logout": function() {
-                window.guest = "Guest";
-                this.user.set("name", "");
-                cookie.delete("username");
-                cookie.delete("fullname");
-                cookie.delete("loginmode");
-                cookie.delete("logid");
-                $("#logout").hide();
-                window.guest = 'guest';
-                this.user.set("name", "");
-                $("#login-box").hide();
-                $(".login-btn").click(function() {
-                    this.classicLogin();
-                });
-                $(".m_login").html(window.lang.body.play.gameselect.login["field 2"]);
-                $(".showInLogin").hide();
-                window.showInLogin = false;
-            },
+            "click .m_logout": "logoutFn",
             "click .register-btn": "register",
             "click .cancel-btn": function() {
                 $(".email-holder").hide();
@@ -72,6 +56,24 @@ define([
                 $(".cancel-btn").hide();
             },
             "click .login-btn" : "classicLogin"
+        },
+        logoutFn : function(){
+            window.guest = "Guest";
+            // this.user.set("name", "");
+            cookie.delete("username");
+            cookie.delete("fullname");
+            cookie.delete("loginmode");
+            cookie.delete("logid");
+            // $("#logout").hide();
+            window.guest = 'guest';
+            this.user.set("name", "");
+            // $("#login-box").hide();
+            // $(".login-btn").click(function() {
+            //     this.classicLogin();
+            // });
+            // $(".m_login").html(window.lang.body.play.gameselect.login["field 2"]);
+            // $(".showInLogin").hide();
+            window.showInLogin = false;
         },
         customizeShow : function(event) {
             $(".customize").show();
@@ -285,10 +287,10 @@ define([
                 }
                 $("#logout").show();
                 window.guest = fullname;
-                self.user.set("name", fullname);
                 $("#login-box").hide();
                 $(".login-btn").unbind("click");
                 // show buttons. NB: hide expert button if necessary
+                self.user.set("name", fullname);
                 $.ajax({
                     type: "POST",
                     url: "/phpdb/phyloExpertDB.php",

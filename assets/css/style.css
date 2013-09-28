@@ -434,14 +434,14 @@ a.btn {
 #nav div:hover, #nav div.onSelect {
 	color: #f1f2f3;
 }
-#nav #play div:hover, #nav #play div.onSelect, .tablet-play-btn div, .tablet-login-btn div {
+#nav #play div:hover, #nav #play div.onSelect, .tablet-play-btn div, .tablet-login-btn div, .tablet-history-btn div {
 	background-color: #71B2E2;
 }
 
-#nav #tutorial div:hover, #nav #tutorial div.onSelect, .tablet-tutorial-btn div, .tablet-settings-btn div {
+#nav #tutorial div:hover, #nav #tutorial div.onSelect, .tablet-tutorial-btn div {
 	background-color: darkOrchid;
 }
-#nav #about div:hover, #nav #about div.onSelect, .tablet-about-btn div, .tablet-feedback-btn div, .tablet-history-btn div {
+#nav #about div:hover, #nav #about div.onSelect, .tablet-about-btn div, .tablet-feedback-btn div {
 	background-color: green;
 }
 /*#nav #credits div:hover, #nav #credits div.onSelect, .tablet-credits-btn div {
@@ -451,7 +451,7 @@ a.btn {
 	/*background-color:#EF4136;*/
 	background-color: orange;
 }
-#nav #history div:hover, #nav #history div.onSelect {
+#nav #history div:hover, #nav #history div.onSelect, .tablet-settings-btn div{
 	/*background-color: #71B2E2;*/
 	background-color:#EF4136;
 }

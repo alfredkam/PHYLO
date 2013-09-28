@@ -76,11 +76,21 @@ define([
 				this.currentRoute = "/";
 				this.isInit = true;
 				this.user = (new Backbone.Model({
-					name : ""
+					name : "Alfred Kam"
 				}));
+
+				this.user.on("change", this.updateHeader, this);
 			}
 		},
-
+		updateHeader : function(){
+			this.regions.headerRegion.reset();
+				this.regions.headerRegion.show(new HeaderView({
+					model : this.langModel,
+					user : this.user,
+					lang : lang,
+					format : (this.isTablet? "tablet" : "desktop")
+				}));
+		},
 		initHeaderFooter : function(pageName, lang)
 		{
 			NProgress.start();

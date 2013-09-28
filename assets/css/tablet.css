@@ -13,12 +13,24 @@
     position: absolute;
     top:-8px;
     z-index:999;
+    left:-13px;
 }
 
 #login {
     float:right;
     background-color:rgb(200,94,54);
     color:white;
+    text-align:center;
+    border-radius: 3px;
+    top:12px;
+    position: relative;
+    left:-14px;
+}
+
+#login .row {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 5px;
 }
 
 /* now the rest */
