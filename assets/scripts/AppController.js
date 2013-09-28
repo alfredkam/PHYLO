@@ -94,6 +94,7 @@ define([
 		{
 			NProgress.start();
 			var langModel = {};
+			var self = this;
 			lang = lang || "EN";
 			lang.toUpperCase();
 
@@ -114,9 +115,21 @@ define([
 					langModel = data;
 					window.lang= langModel;
 				}).fail(function(data,resp){
-					console.log("failed")
+					console.log("@controller, grab file failed");
 					langModel = data;
 					window.lang = langModel;
+				}).error(function(){
+					console.log("@controller, lanuage does not exist, defaulting to EN");
+					self.lang = "EN";
+					lang = "EN";
+					$.ajax({
+						url : "assets/scripts/models/lang/EN.js",
+						async: false,
+						dataType : 'json'
+					}).done(function(data, resp){
+						langModel = data;
+						window.lang = langModel;
+					});
 				});
 				//exporting it out
 				this.langModel = (new Backbone.Model(langModel));
