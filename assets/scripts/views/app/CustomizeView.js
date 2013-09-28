@@ -244,13 +244,28 @@ define([
             imageObj.src = "assets/img/color_picker.png";
         },
         setPlayerDefaultColor : function(){
+            var self = this;
             this.ui.setCSS.html(Mustache.render(CssTpl, {
-                backgroundColor : cookie.read("bgCell") || "white",
-                A : cookie.read("nuc-A")||"#71B2E2",
-                G : cookie.read("nuc-G")||"#9932CC",
-                C : cookie.read("nuc-C")||"#008000",
-                T : cookie.read("nuc-T")||"#FFA500"
+                backgroundColor : self.decode(cookie.read("bgCell")) || "white",
+                A : self.decode(cookie.read("nuc-A"))||"#71B2E2",
+                G : self.decode(cookie.read("nuc-G"))||"#9932CC",
+                C : self.decode(cookie.read("nuc-C"))||"#008000",
+                T : self.decode(cookie.read("nuc-T"))||"#FFA500"
             }));
+        },
+        deCode : function(code) {
+            var arr = [
+                "%2C", ",",
+                "%28", "(",
+                "%20", " ",
+                "%29", ")"
+            ];
+
+            for(var i in arr) {
+                code = code.replace(arr[i][0],arr[i][1]);
+            }
+
+            return code;
         },
         onShow: function() {
             this.customizeFnDump();
