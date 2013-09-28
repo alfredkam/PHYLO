@@ -27,7 +27,7 @@ define([
             // selectTab("play");
             var self = this;
             json=window.lang;
-            console.log(self.template);
+            //console.log(self.template);
             // self.$el.html(Mustache.render(self.template, json));
             self.$el.html(Marionette.Renderer.render(self.template, json));
             $("#mid-panel").fadeIn();
@@ -44,7 +44,7 @@ define([
                             $("#menu").hide();
                             $.main.init({
                                 type: "disease",
-                                num: this.id
+                                num: self.id
                             });
                         }
                     };
@@ -54,41 +54,14 @@ define([
                     $("#menu").hide();
                     $.main.init({
                         type: "disease",
-                        num: this.id
+                        num: self.id
                     });
                 }
             });
             $("#m_contribute").unbind().click(function() {
                 window.location.hash = $(this).attr("href");
             });
-        },
-        // render: function(lang) {
-        //     selectTab("play");
-        //     request.getTemplate("templates/play.html", function(context) {
-        //         request.getJsonLang(lang, function(json) {
-        //             window.lang = json;
-        //             $("#mid-panel").html(Mustache.render(context, json));
-        //             request.complete();
-        //             if (window.DEV.disableMenu) {
-        //                 window.setTimeout(function() {
-        //                     $("#draw").hide();
-        //                     $("#menu").hide();
-        //                     if (window.location.hash.match(/rna/i) != null) {
-        //                         //  $.rna.init();
-        //                     } else {
-        //                         $.main.init({
-        //                             type: "random",
-        //                             num: 3
-        //                         });
-        //                     }
-        //                 }, 500);
-        //             }
-        //         });
-        //     });
-        //     $("#m_contribute").unbind().click(function() {
-        //         window.location.hash = $(this).attr("href");
-        //     });
-        // }
+        }
     });
     return IndexView;
 });
