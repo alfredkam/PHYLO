@@ -63,13 +63,13 @@ define([
             $(".nuc-C").css({backgroundColor: C});
             $(".nuc-T").css({backgroundColor: T});      
             $(".bgCell").css({backgroundColor: bg});
-            $(".highlighter-2").css({
-                "box-shadow" : "inset 0 0 0 4px "+bg,
-                "-moz-box-shadow" : "inset 0 0 0 4px "+bg,
-                "-webkit-box-shadow" : "inset 0 0 0 4px "+bg,
-                "-o-box-shadow" : "inset 0 0 0 4px "+bg,
-                "-khtml-box-shadow" : "inset 0 0 0 4px "+bg
-            });
+            // $(".highlighter-2").css({
+            //     "box-shadow" : "inset 0 0 0 4px "+bg,
+            //     "-moz-box-shadow" : "inset 0 0 0 4px "+bg,
+            //     "-webkit-box-shadow" : "inset 0 0 0 4px "+bg,
+            //     "-o-box-shadow" : "inset 0 0 0 4px "+bg,
+            //     "-khtml-box-shadow" : "inset 0 0 0 4px "+bg
+            // });
 
             $(".customize").hide();
         },

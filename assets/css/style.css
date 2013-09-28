@@ -258,6 +258,7 @@ a.btn {
 /* end of theme controller css */
 
 #game {
+	border-radius: 3px;
 	display:inline-block;
 	box-shadow: 0 6px 6px -6px #CCC;
 	-webkit-box-shadow: 0 6px 6px -6px #CCC;
