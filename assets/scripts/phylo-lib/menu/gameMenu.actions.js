@@ -493,7 +493,7 @@
 				var img = new Image();
 				var img_hover = new Image();
 				if(!items.image){
-					items.image=  "assets/img/random.png";
+					items.image=  "assets/img/random.png"
 				}
 				img.src = items.image;
 				img_hover.src = items.image.replace('.png', '_hover.png');
@@ -501,7 +501,9 @@
 				img.onload = function() {
 					ctx.beginPath();
 					ctx.globalAlpha = 1;
-					ctx.drawImage(img, 335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
+					//ctx.drawImage(img, 335+110*(i>=4?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
+					//ctx.drawImage(img, 335+110*(i>=4?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
+					ctx.drawImage(img,300+110*(i>3?i-4:i),i>3?225:125,70,70);
 					ctx.closePath();
 				};
 				this.onClick = function(eX, eY) {
