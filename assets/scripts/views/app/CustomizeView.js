@@ -255,14 +255,16 @@ define([
         },
         deCode : function(code) {
             var arr = [
-                "%2C", ",",
-                "%28", "(",
-                "%20", " ",
-                "%29", ")"
+                ["%2C", ","],
+                ["%28", "("],
+                ["%20", " "],
+                ["%29", ")"]
             ];
 
             for(var i in arr) {
-                code = code.replace(arr[i][0],arr[i][1]);
+                var pat = new RegExp(arr[i][0],"gi");
+                code = code.replace(pat,arr[i][1]);
+                // console.log(code);
             }
 
             return code;
@@ -271,6 +273,7 @@ define([
             this.customizeFnDump();
             this.colorPadDump();
             this.setPlayerDefaultColor();
+            // console.log(this.deCode("rgb%28255%2C%20255%2C%20255%29"));
         }
      });
      return CustomizeView;
