@@ -30,22 +30,23 @@ define([
             "click .customize-theme-reset" : "customizeThemeReset"
          },
          customizeCancel : function() {
-            console.log("asda");
+            // console.log("asda");
+            var self = this;
             $(".customize").hide();
             $(".colorCell").css({
-                backgroundColor: cookie.read("bgCell")
+                backgroundColor: self.deCode(cookie.read("bgCell"))
             });
             $(".colorA").css({
-                backgroundColor: cookie.read("nuc-A")
+                backgroundColor: self.deCode(cookie.read("nuc-A"))
             });
             $(".colorG").css({
-                backgroundColor: cookie.read("nuc-G")
+                backgroundColor: self.deCode(cookie.read("nuc-G"))
             });
             $(".colorC").css({
-                backgroundColor: cookie.read("nuc-C")
+                backgroundColor: self.deCode(cookie.read("nuc-C"))
             });
             $(".colorT").css({
-                backgroundColor: cookie.read("nuc-T")
+                backgroundColor: self.deCode(cookie.read("nuc-T"))
             });
         },
         customizeSave : function() {
@@ -108,36 +109,37 @@ define([
 
         },
         customizeFnDump : function(){
+            var self = this;
             $.customize = {
                 "default" : function() {
                     if(cookie.read("bgCell")) {
-                        $(".colorBG").css({backgroundColor : cookie.read("bgCell")});
-                        $(".bgCell").css({backgroundColor : cookie.read("bgCell")});
+                        $(".colorBG").css({backgroundColor : self.deCode(cookie.read("bgCell"))});
+                        $(".bgCell").css({backgroundColor : self.deCode(cookie.read("bgCell"))});
                     } else {
                         cookie.create("bgCell","white",365);
                     }   
 
                     if(cookie.read("nuc-A")) {
-                        $(".nuc-A").css({backgroundColor : cookie.read("nuc-A") });
-                        $(".colorA").css({backgroundColor : cookie.read("nuc-A") });
+                        $(".nuc-A").css({backgroundColor : self.deCode(cookie.read("nuc-A")) });
+                        $(".colorA").css({backgroundColor : self.deCode(cookie.read("nuc-A")) });
                     } else {
                         cookie.create("nuc-A","#71B2E2",365);
                     }
                     if(cookie.read("nuc-G")) {
-                        $(".nuc-G").css({backgroundColor : cookie.read("nuc-G")});
-                        $(".colorG").css({backgroundColor : cookie.read("nuc-G")});
+                        $(".nuc-G").css({backgroundColor : self.deCode(cookie.read("nuc-G"))});
+                        $(".colorG").css({backgroundColor : seld.deCode(cookie.read("nuc-G"))});
                     } else {
                         cookie.create("nuc-G","#9932CC",365);
                     }
                     if(cookie.read("nuc-C")) {
-                        $(".nuc-C").css({backgroundColor : cookie.read("nuc-C")});
-                        $(".colorC").css({backgroundColor : cookie.read("nuc-C")});
+                        $(".nuc-C").css({backgroundColor : self.deCode(cookie.read("nuc-C")) });
+                        $(".colorC").css({backgroundColor : self.deCode(cookie.read("nuc-C")) });
                     } else {
-                        cookie.create("nuc-C","#008000",365); 
+                        cookie.create("nuc-C","#008000",365);
                     }
                     if(cookie.read("nuc-T")) {
-                        $(".nuc-T").css({backgroundColor : cookie.read("nuc-T")});
-                        $(".colorT").css({backgroundColor : cookie.read("nuc-T")});
+                        $(".nuc-T").css({backgroundColor : self.deCode(cookie.read("nuc-T")) });
+                        $(".colorT").css({backgroundColor : self.deCode(cookie.read("nuc-T")) });
                     } else {
                         cookie.create("nuc-T","#FFA500",365);
                     }
