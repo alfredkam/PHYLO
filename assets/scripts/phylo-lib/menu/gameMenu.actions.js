@@ -507,12 +507,12 @@
 					ctx.closePath();
 				};
 				this.onClick = function(eX, eY) {
-					if( 335+110*(i>=3?(i>=6?i-6:i-3):i) < eX && eX < 405+110*(i>=3?(i>=6?i-6:i-3):i) &&
-						150+(i>=3?(i>=6?200:100):0) < eY && eY < 220+(i>=3?(i>=6?200:100):0)) {
+					if (300 + 110 * (i > 3 ? i - 4 : i) < eX && eX < 370 + 110 * (i > 3 ? i - 4 : i) && (i > 3 ? 225 : 125) < eY && eY < (i > 3 ? 295 : 195)) {
 						//var id = diseaseList[items.name][Math.floor(Math.random()*diseaseList[items.name].length)];
 						var id = items.data[Math.floor(Math.random()*items.data.length)];
 						$("#draw").hide();		
 						$("#menu").hide();
+						console.log(id);
 						$.main.init({
 							type: "disease",
 							num: id,		
@@ -520,24 +520,22 @@
 						return;
 					}
 				};
-				    
 				this.onOver = function(eX, eY) {
-				    if( 335+110*(i>=3?(i>=6?i-6:i-3):i) < eX && eX < 405+110*(i>=3?(i>=6?i-6:i-3):i) &&
-					150+(i>=3?(i>=6?200:100):0) < eY && eY < 220+(i>=3?(i>=6?200:100):0)) {
-					ctx.beginPath();
-					ctx.clearRect(335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
-					ctx.drawImage(img_hover, 335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
-					ctx.closePath();
-					hovered = true;
-				    } else {
-					if(hovered) {
+					if (300 + 110 * (i > 3 ? i - 4 : i) < eX && eX < 370 + 110 * (i > 3 ? i - 4 : i) && (i > 3 ? 225 : 125) < eY && eY < (i > 3 ? 295 : 195)) {
 						ctx.beginPath();
-						ctx.clearRect(335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
-						ctx.drawImage(img, 335+110*(i>=3?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
+						ctx.clearRect(300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 225 : 125, 70, 70);
+						ctx.drawImage(img_hover, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 225 : 125, 70, 70);
 						ctx.closePath();
-						hovered = false;
+						hovered = true;
+					} else {
+						if (hovered) {
+							ctx.beginPath();
+							ctx.clearRect(300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 225 : 125, 70, 70);
+							ctx.drawImage(img, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 225 : 125, 70, 70);
+							ctx.closePath();
+							hovered = false;
+						}
 					}
-				    }
 				};
 			};
 
