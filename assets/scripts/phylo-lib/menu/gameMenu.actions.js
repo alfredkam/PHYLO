@@ -306,36 +306,55 @@
 								},50);
 								return;
 							case 2:
-								var diseaseorder =  [
-									["digestive","assets/img/disease/digestive.png","150px",""],
-									["heart", "assets/img/disease/heart.png","110px","30px"],
-									["cancer", "assets/img/disease/cancer.png","100px","55px"],
-									["metabolic", "assets/img/disease/metabolic.png","100px",""],
-									["blood","assets/img/disease/blood.png","50px","10px"],
-									["sensory","assets/img/disease/sensory.png","60px","30px"],
-									["brain","assets/img/disease/brain.png","80px",""],
-									["muscles","assets/img/disease/muscles.png","60px",""],
-									["lung","assets/img/disease/lung.png","60px",""]
-									];
+								var diseaseorder=[];
+								var diseaseImages = {
+									"Digestive": "assets/img/disease/digestive.png",
+									"Heart": "assets/img/disease/heart.png",
+									"Cancer": "assets/img/disease/cancer.png",
+									"Metabolic": "assets/img/disease/metabolic.png",
+									"Blood": "assets/img/disease/blood.png",
+									"Sensory": "assets/img/disease/sensory.png", 
+									"Brain": "assets/img/disease/brain.png", 
+									"Muscles": "assets/img/disease/muscles.png", 
+									"Lung": "assets/img/disease/lung.png"
+
+								};
+								//TODO: a fail case
+								$.ajax({
+									url: "/phpdb/openPhyloClassicDB.php",
+									dataType: "json",
+									async: false
+								}).done(function(data) {
+									//i need to do some arranging myself
+									for(var x in data){
+										console.log(x);
+										console.log(data[x]);
+										console.log(diseaseImages[x]);
+										diseaseorder.push({name:x,data:data[x],image:diseaseImages[x]});
+									}
+									// diseaseorder = data;
+
+									console.log("data added in!");
+								});
 								ctx.beginPath();
 								ctx.textAlign = "center";
-								ctx.clearRect(0, 0,1024,450);
+								ctx.clearRect(0, 0, 1024, 450);
 								ctx.fillStyle = menuStrColor;
-								ctx.font = "20pt Helvetica";	
-								ctx.fillText(lang.body.play.gameselect.levelselect.disease["field 1"],settings.width()/2, 100);
+								ctx.font = "20pt Helvetica";
+								ctx.fillText(lang.body.play.gameselect.levelselect.disease["field 1"], settings.width() / 2, 100);
 								ctx.textAlign = "left";
 								ctx.closePath();
 								selection = [];
 								window.setTimeout(function() {
-								for(var j=0; j<diseaseorder.length; j++) {
-									if(diseaseList[diseaseorder[j][0]].length == 0)
-										selection.push(new emptyDisease(ctx, diseaseorder[j],j))
-									else
-										selection.push(new disease(ctx,diseaseorder[j],j));	
-								}
-								},50);
+									for (var j = 0; j < diseaseorder.length; j++) {
+										// if (diseaseList[diseaseorder[j].name].length == 0)
+										// 	selection.push(new emptyDisease(ctx, diseaseorder[j], j))d
+										// else
+											selection.push(new disease(ctx, diseaseorder[j], j));
+									}
+								}, 50);
 								selection.push(new back(ctx));
-								return;
+							return;
 							case 0:
 								ctx.beginPath();
 								ctx.textAlign = "center";
@@ -473,8 +492,11 @@
 			var disease = function(ctx, items, i) {
 				var img = new Image();
 				var img_hover = new Image();
-				img.src = items[1];
-				img_hover.src = items[1].replace('.png', '_hover.png');
+				if(!items.image){
+					items.image=  "assets/img/random.png";
+				}
+				img.src = items.image;
+				img_hover.src = items.image.replace('.png', '_hover.png');
 				var hovered = false;
 				img.onload = function() {
 					ctx.beginPath();
@@ -485,7 +507,8 @@
 				this.onClick = function(eX, eY) {
 					if( 335+110*(i>=3?(i>=6?i-6:i-3):i) < eX && eX < 405+110*(i>=3?(i>=6?i-6:i-3):i) &&
 						150+(i>=3?(i>=6?200:100):0) < eY && eY < 220+(i>=3?(i>=6?200:100):0)) {
-						var id = diseaseList[items[0]][Math.floor(Math.random()*diseaseList[items[0]].length)];
+						//var id = diseaseList[items.name][Math.floor(Math.random()*diseaseList[items.name].length)];
+						var id = items.data[Math.floor(Math.random()*items.data.length)];
 						$("#draw").hide();		
 						$("#menu").hide();
 						$.main.init({

@@ -1,5 +1,6 @@
 'use strict'
-
+var USE_REALSERVER = false;
+var $ = require("jquery");
 var http = require("http"),
     request = require("request"),
     express = require("express"),
@@ -35,7 +36,34 @@ app.get("/", function(req, res){
     // using either res.send() or res.json()
     res.json({});
 });
+app.get("/phpdb/openPhyloClassicDB.php",function(req,res){
+        if(USE_REALSERVER){
+        $.ajax({
+            url:"http://phylo.cs.mcgill.ca/phpdb/openPhyloClassicDB.php",
+            //dataType:"json"
+            }).done(function(data){
+                res.send(data);
 
+            });
+        }
+        else{
+        res.send(JSON.stringify(
+
+            {"Brain":["1","2","3","50","51"],
+            "Metabolic": ["4", "5", "6", "7"],
+            "Blood": ["47", "48", "49", "61"],
+            "Heart": ["53", "54", "70"],
+            "": ["60", "64", "157", "169"],
+            "Muscles": ["65", "66", "67"],
+            "Cancer": ["89", "100", "126"],
+            "Digestive": ["99", "114"],
+            "Respiratory": ["1195", "1196"],
+            "Bone": ["1228", "1229", "1230"]
+            })
+            );
+
+        }
+});
 /* Example of mocking http POST */
 app.post("/", function(req, res){
     /* return your desired response */
