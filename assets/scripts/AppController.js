@@ -99,10 +99,12 @@ define([
 		{
 			NProgress.start();
 			var langModel = {};
-			if(!lang) {
-				lang = "EN";
-			}
-			else lang.toUpperCase();
+			// if(!lang) {
+			// 	lang = "EN";
+			// }
+			// else lang.toUpperCase();
+			lang = lang || "EN";
+			lang.toUpperCase();
 
 			if(!this.regions.customizeRegion.currentView) {
 				this.regions.customizeRegion.show(new CustomizeView({}));
