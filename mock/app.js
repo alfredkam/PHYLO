@@ -1,5 +1,5 @@
 'use strict'
-
+var $ = require("jquery");
 var http = require("http"),
     request = require("request"),
     express = require("express"),
@@ -35,7 +35,12 @@ app.get("/", function(req, res){
     // using either res.send() or res.json()
     res.json({});
 });
+app.get("/phpdb/openPhyloClassicDB.php",function(req,res){
+   $.ajax({url:"http://phylo.cs.mcgill.ca/phpdb/openPhyloClassicDB.php",dataType:"json"}).done(function(data){
+        res.send(data);
 
+   });
+});
 /* Example of mocking http POST */
 app.post("/", function(req, res){
     /* return your desired response */
