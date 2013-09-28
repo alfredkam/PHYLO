@@ -38,11 +38,6 @@ define([
 		{
 			this.isInit = this.isInit || false;
 			window.isTablet = navigator.userAgent.match(/(iPad|Android .* Chrome\/[.0-9]* (?!Mobile)|Opera Tablet|Android .* (?!Mobile)|Tablet|silk|kindle fire)/i) != null;
-			// yepnope({
-			// 	test : isTablet,
-			// 	yep : ['assets/css/tablet.css'],//,'assets/scripts/views/tablet.js'],
-			// 	nope : ['assets/css/media1280.css','assets/css/media1180.css','assets/css/media1024.css']
-			// });
 			//check if ipad and load ipad fix
 			var isiPad = navigator.userAgent.match(/(ipad)/i);
 			yepnope({
@@ -60,9 +55,9 @@ define([
 			// if(isMobile) 
 			// 	window.location = "http://phylo.cs.mcgill.ca/archive/js/F2011";
 			//check if Win 64 FF
-			var isWinFF = navigator.userAgent.match(/Windows .* Firefox/) != null;
+			var isFF = navigator.userAgent.match(/Mozilla.* Firefox/) != null;
 			yepnope({
-				test : isWinFF,
+				test : isFF,
 				yep : ['assets/css/FF-Win-fix.css']
 			});
 
@@ -99,10 +94,6 @@ define([
 		{
 			NProgress.start();
 			var langModel = {};
-			// if(!lang) {
-			// 	lang = "EN";
-			// }
-			// else lang.toUpperCase();
 			lang = lang || "EN";
 			lang.toUpperCase();
 
