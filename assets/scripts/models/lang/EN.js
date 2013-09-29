@@ -101,7 +101,15 @@
                         "field 10": "MUSCLES",
                         "field 11": "REPRODUCTION SYSTEM",
                         "field 12": "RESPIRATORY SYSTEM",
-                        "field 13": "SENSORY SYSTEM"
+                        "field 13": "SENSORY SYSTEM",
+                        "Infectious" : "Infectious disease",
+                        "Blood" : "Blood & immune system",
+                        "Cancer" : "Cancer",
+                        "Mental" : "Mental and behavioural disorders",
+                        "Metabolic" : "Metabolic disorders",
+                        "Brain" : "Brain & nervous diseases",
+                        "Heart" : "Heart & muscles",
+                        "Misc" : "Misc."
                     }
                 },
                 "game board": {
