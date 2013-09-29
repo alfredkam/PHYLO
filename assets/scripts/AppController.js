@@ -110,13 +110,15 @@ define([
 				$.ajax({
 					url :"assets/scripts/models/lang/"+lang+".js",
 					async: false,
-					dataType: 'json'
+					dataType: 'json',
+					// contentType	: 'application/x-www-form-urlencoded; charset=UTF-8'
 				}).done(function(data,resp){
 					langModel = data;
 					window.lang= langModel;
 				}).fail(function(data,resp){
 					console.log("@controller, grab file failed");
 					langModel = data;
+					// console.log(data);
 					window.lang = langModel;
 				}).error(function(){
 					console.log("@controller, lanuage does not exist, defaulting to EN");
