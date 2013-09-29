@@ -1,4 +1,5 @@
-This version is an edge release - Marionettejs-AMD [Stable / support tablets] : http://phylo.mcgill.ca/edge
+This branch is an edge release - Marionettejs-AMD [Stable / support tablets] : http://phylo.mcgill.ca/edge <br>
+Mobile UX : http://phylo.ca.mcgill.ca/edge/#!/mobile
 
 <a href='http://phylo.cs.mcgill.ca'>PHYLO</a>
 =====
@@ -28,11 +29,14 @@ Getting Started
 =====
 Fork it! Then let me know if you have a new module or bug fix and ill integrate it in :)
 
+We use Mariontte! You can easily creative an Marionette Itemview to create modules / components.
+
 
 Devices Supported
 =====
-Current version supports all major browsers (except IE 6-8) and tablet browsers with screen size bigger than 1024px * 768px.  Tablets have their own custome UX <br>
-For the Mobile Phone Development, please checkout either archive branch or http://phylo.cs.mcgill.ca/archive/js/F2011/index.shtml and it is no longer supported.  
+Current version supports most major browsers (except IE 6-8) and tablet browsers with screen size bigger than 1024px * 768px.  Tablets have their own custome UX <br>
+
+For legacy code that was dedicated to the mobile phones, please visit the archive branch.
 
 Quick Crash Course
 =====
