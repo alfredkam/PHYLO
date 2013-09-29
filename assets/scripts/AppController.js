@@ -117,6 +117,7 @@ define([
 				}).fail(function(data,resp){
 					console.log("@controller, grab file failed");
 					langModel = data;
+					console.log(data);
 					window.lang = langModel;
 				}).error(function(){
 					console.log("@controller, lanuage does not exist, defaulting to EN");
