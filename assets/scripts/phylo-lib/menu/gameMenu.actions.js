@@ -317,8 +317,8 @@
 									"Brain": "assets/img/disease/brain.png", 
 									"Muscles": "assets/img/disease/muscles.png", 
 									"Lung": "assets/img/disease/lung.png",
-									"Infectious" : "assets/img/disease/infectious.svg",
-									"Mental" : "assets/img/disease/mental.jpg",
+									"Infectious" : "assets/img/disease/infectious.png",
+									"Mental" : "assets/img/disease/mental.png",
 									"Misc" : "assets/img/disease/misc.png"
 
 								};
