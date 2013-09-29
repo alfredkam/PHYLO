@@ -157,7 +157,7 @@
 				}
 				
 				$("#ancestorSeq").html(seq);
-				$.customize.default();
+				// $.customize.default();
 				$("#ancestorSeq").show("slide",{direction : "left"},500);
 			},function() {
 				$("#ancestorSeq").hide();
