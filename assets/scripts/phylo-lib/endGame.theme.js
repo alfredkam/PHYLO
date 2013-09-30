@@ -32,6 +32,7 @@
 
 		},
 		learnMore : function(json) {
+            console.log(json);
             var context = "";
             try {
                 var endGameContext = window.lang.body.play.gameselect["end of game"];
@@ -52,6 +53,7 @@
                         endGameContext["field 9"].replace("***", "<label class='end-color'>" + json.highscore_user + "</label>");
                 }
             } catch (err) {
+                console.log(err);
                 context = "This disease is related to disease etc, you are helping...etc";
             }
             return context;
