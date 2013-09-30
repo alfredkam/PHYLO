@@ -224,7 +224,9 @@
         },
         "footer": {
                 "field 1": "Phylo ist ein herausforderndes graphisches Spiel, bei dem jedes gelöste Puzzle einen Beitrag zur Verortung genetischer Krankheiten innerhalb der menschlichen DNA leistet. <a href='#!/DE/About'>Mehr erfahren</a>.",
-                "field 2": "Treten Sie der <a href='https://www.facebook.com/groups/127713783941517/'>Phylo-Gruppe</a> auf Facebook bei oder geben Sie uns ein Like!"
+                "field 2": "Treten Sie der <a href='https://www.facebook.com/groups/127713783941517/'>Phylo-Gruppe</a> auf Facebook bei oder geben Sie uns ein Like!",
+                "field 3" : "Blog",
+                "field 4" : "Forum"
         }
     }
 }
