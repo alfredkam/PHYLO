@@ -112,26 +112,6 @@
 		//sets the color for the nucletide
 		color : function(x) {
 			return colorTag(x);
-		/*
-			switch(x) {
-				case 1: 
-					color = "#71B2E2";
-					break;
-				case 2: 
-					color = "#9932CC";
-					break;
-				case 3:
-					color = "#008000";
-					break;
-				case 4:
-					color = "#FFA500";
-					break;
-				default:
-					color = null;
-					break;
-			}
-			return color;
-			*/
 		},
 		//determines the color for the nucletide
 		translate : function(x) {

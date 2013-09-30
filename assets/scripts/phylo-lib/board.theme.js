@@ -213,32 +213,6 @@
 				return "A";
 			if (nuc.hasClass("nuc-T"))
 				return "T";
-			/*
-			if(color == "#71B2E2")
-				return "A";
-			if(color == "#9932CC")
-				return "G";
-			if(color == "#008000")
-				return "C";
-			if(color == "#FFA500")
-				return "T";
-			if(color == "rgb(153, 50, 204)")
-				return "G";
-			if(color == "rgb(0, 128, 0)")
-				return "C";
-			if(color == "rgb(113, 178, 226)")
-				return "A";
-			if(color == "rgb(255, 165, 0)")
-				return "T";
-			if(color == $(".nuc-A").css("backgroundColor"))
-				return "A";
-			if(color == $(".nuc-G").css("backgroundColor"))
-				return "G";
-			if(color == $(".nuc-C").css("backgroundColor"))	
-				return "C";
-			if(color == $(".nuc-T").css("backgroundColor"))
-				return "T";
-			*/
 			return null;
 		}
 	};

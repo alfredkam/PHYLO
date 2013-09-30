@@ -172,106 +172,106 @@
 					
 					return this.collect("Human");
 					
-				}else if(name == "panTro2" || name == "gorGor1"){
-					
-					return this.collect("ape");
-					
-				}else if(name == "ponAbe2" || name == "rheMac2" ||
-						 name == "papHam1" || name == "calJac1" ||
-						 name == "tarSyr1" || name == "micMur1" ||
-						 name == "otoGar1"){
-					
-					return this.collect("Monkey");
-					
-				}else if(name == "tupBel1" || name == "mm9" ||
-						 name == "rn4" || name == "dipOrd1" ||
-						 name == "cavPor3" || name == "eriEur1" ||
-						 name == "sorAra1"){
-					
-					return this.collect("Mouse");
-								
-				}else if(name == "speTri1"){
-					
-					return this.collect("Squirell");
-					
-				}else if(name == "oryCun2"){
-					
-					return this.collect("Rabbit");
-					
-				}else if(name == "ochPri2"){
-					
-					return this.collect("Ram");
-					
-				}else if(name == "turTru2"){
-					
-					return this.collect("Dolphin");
-					
-				}else if(name == "bosTau4"){
-					
-					return this.collect("Cow");
-					
-				}else if(name == "equCab2"){
-					
-					return this.collect("Horse")
-					
-				}else if(name == "felCat3"){
-					
-					return this.collect("Cat");
-					
-				}else if(name == "canFam2"){
-					
-					return this.collect("Dog");
-					
-				}else if(name == "myLuc1" || name == "pteVam1" || "myoluc1"){
-					
-					return this.collect("bat");
-					
-				}else if(name == "loxAfr3"){
-					
-					return this.collect("Elephant");
-					
-				}else if(name == "proCap1" || name == "echTel1" ||
-						 name == "dasNov2" || name == "ornAna1"){
-					
-					return this.collect("Beaver");
-					
-				}else if(name == "choHof1"){
-					
-					return this.collect("Sloth");
-					
-				}else if(name == "macEug"){
-					
-					return this.collect("Kangaroo");
-					
-				}else if(name == "monDom5"){
-					
-					return this.collect("Opossum");
-					
-				}else if(name == "galGal3" || name == "taeGut1"){
-					
-					return this.collect("bird");
-					
-				}else if(name == "anoCar1"){
-					
-					return this.collect("Lizard");
-					
-				}else if(name == "xenTro2" || name == "tetNig2" ||
-						 name == "fr2" || name == "gasAcu1" ||
-						 name == "oryLat2" || name == "danRer6"){
-					
-					return this.collect("Fish");
-					
-				}else if(name == "petMar1"){
-					
-					return this.collect("Eel");
-					
-				}else{
-					return this.collect(name);
-				}
+			} else if(name == "panTro2" || name == "gorGor1"){
+				
+				return this.collect("ape");
+				
+			} else if(name == "ponAbe2" || name == "rheMac2" ||
+					 name == "papHam1" || name == "calJac1" ||
+					 name == "tarSyr1" || name == "micMur1" ||
+					 name == "otoGar1"){
+				
+				return this.collect("Monkey");
+				
+			} else if(name == "tupBel1" || name == "mm9" ||
+					 name == "rn4" || name == "dipOrd1" ||
+					 name == "cavPor3" || name == "eriEur1" ||
+					 name == "sorAra1"){
+				
+				return this.collect("Mouse");
+							
+			} else if(name == "speTri1"){
+				
+				return this.collect("Squirell");
+				
+			} else if(name == "oryCun2"){
+				
+				return this.collect("Rabbit");
+				
+			} else if(name == "ochPri2"){
+				
+				return this.collect("Ram");
+				
+			} else if(name == "turTru2"){
+				
+				return this.collect("Dolphin");
+				
+			} else if(name == "bosTau4"){
+				
+				return this.collect("Cow");
+				
+			} else if(name == "equCab2"){
+				
+				return this.collect("Horse")
+				
+			} else if(name == "felCat3"){
+				
+				return this.collect("Cat");
+				
+			} else if(name == "canFam2"){
+				
+				return this.collect("Dog");
+				
+			} else if(name == "myLuc1" || name == "pteVam1" || "myoluc1"){
+				
+				return this.collect("bat");
+				
+			} else if(name == "loxAfr3"){
+				
+				return this.collect("Elephant");
+				
+			} else if(name == "proCap1" || name == "echTel1" ||
+					 name == "dasNov2" || name == "ornAna1"){
+				
+				return this.collect("Beaver");
+				
+			} else if(name == "choHof1"){
+				
+				return this.collect("Sloth");
+				
+			} else if(name == "macEug"){
+				
+				return this.collect("Kangaroo");
+				
+			} else if(name == "monDom5"){
+				
+				return this.collect("Opossum");
+				
+			} else if(name == "galGal3" || name == "taeGut1"){
+				
+				return this.collect("bird");
+				
+			} else if(name == "anoCar1"){
+				
+				return this.collect("Lizard");
+				
+			} else if(name == "xenTro2" || name == "tetNig2" ||
+					 name == "fr2" || name == "gasAcu1" ||
+					 name == "oryLat2" || name == "danRer6"){
+				
+				return this.collect("Fish");
+				
+			} else if(name == "petMar1"){
+				
+				return this.collect("Eel");
+				
+			} else {
+				return this.collect("unknown");
+			}
 		},
 		//gets the image
 		collect : function(name) {
-			return "assets/img/animal/"+name.toLowerCase()+".png";
+			return "assets/img/animal/"+name.toLowerCase()+".svg";
 		}
 	};
 })();
