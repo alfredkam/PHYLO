@@ -40,7 +40,7 @@
                     context+=endGameContext["levelId"].replace("***","<b>"+$.phylo.id+"</b>")+"<br>";
                     context+=endGameContext["userScore"].replace("***","<b>"+$.phylo.currentScore+"</b>")+"<br>";
                     context+=endGameContext["avgScore"].replace("***","<b>"+Math.round(json.running_score / json.play_count)+"</b>")+"<br>";
-                    context+=endGameContext["highscoreHolder"].replace("***","<b>"+json.best_score+"</b>")+"<br>";
+                    context+=endGameContext["highscore"].replace("***","<b>"+json.best_score+"</b>")+"<br>";
                     context+=endGameContext["highscoreHolder"].replace("***","<b>"+json.highscore_user+"</b>")+"<br>";
                     context+=endGameContext["dnaAssociation"].replace("***","<b>"+json.disease_link+"</b>")+"<br>";
                     context+=endGameContext["completions"].replace("***","<b>"+json.play_count+"</b>")+"<br>";
