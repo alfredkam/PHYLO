@@ -59,6 +59,7 @@ body {
 	user-select: none;
 	min-width:1024px;
 }
+
 #appBackground {
 	/*background-size:100%;	*/
 	background: url('../img/phylo-bg-2.svg') top left repeat;

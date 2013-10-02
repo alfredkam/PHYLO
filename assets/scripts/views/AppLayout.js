@@ -11,6 +11,7 @@ define([
             customizeRegion : "#customizeRegion",
 			headerRegion: "#header-wrapper",
 			contentRegion: "#app-content",
+            footerWidgetRegion : "#footer-widgets",
 			footerRegion: "#footer"			
 		}
 	});

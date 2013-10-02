@@ -6,3 +6,14 @@
 .footer.container {
     width:1000px !important;
 }
+
+.boxIt {
+    border-radius:3px;
+    box-shadow: 0 1px 1px #ccc;
+    -webkit-box-shadow:0 1px 1px #ccc;
+    -khtml-box-shadow:0 1px 1px #ccc;
+    -o-box-shadow:0 1px 1px #ccc;
+    -ms-box-shadow:0 1px 1px #ccc;
+    -ms-box-shadow:0 1px 1px #ccc;
+    background-color:white;
+}

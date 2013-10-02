@@ -7,7 +7,8 @@ define([
          "marionette",
          //VIEWS
          "scripts/views/HeaderView",
-         "scripts/views/FooterView",
+         // "scripts/views/FooterView",
+         "scripts/views/app/footer/FooterLayout",
          "scripts/views/app/index/IndexView",
          "scripts/views/app/index/PlayByIdView",
          "scripts/views/app/tutorial/TutorialView",
@@ -28,7 +29,8 @@ define([
          "yepnope"
 ], function(
 		$, Backbone, Marionette,
-		HeaderView, FooterView, IndexView, PlayByIdView, TutorialView, AboutView, CreditsView, RankingView, HistoryView, CustomizeView,
+		HeaderView, FooterLayout, IndexView, PlayByIdView, TutorialView, AboutView, CreditsView, RankingView, HistoryView, 
+		CustomizeView,
 		TabletView, TabletSettingsView,
 		AppLayout
 ) {
@@ -52,8 +54,6 @@ define([
 			//check if mobile phone
 			var isMobile = navigator.userAgent.match(/(iPhone|Android .* Mobile)/i) != null;
 			window.isMobile = isMobile;
-			// if(isMobile) 
-			// 	window.location = "http://phylo.cs.mcgill.ca/archive/js/F2011";
 			//check if Win 64 FF
 			var isFF = navigator.userAgent.match(/Mozilla.* Firefox/) != null;
 			yepnope({
@@ -75,8 +75,15 @@ define([
 				this.user = (new Backbone.Model({
 					name : ""
 				}));
-
+				this.langModel = (new Backbone.Model());
 				this.user.on("change", this.updateHeader, this);
+				this.regions.footerRegion.reset();
+				this.regions.footerRegion.show(new FooterLayout({
+					model : this.langModel
+				}));
+				// this.regions.footerRegion.show(new FooterView({
+				// 	model : this.langModel
+				// }));
 			}
 		},
 		updateHeader : function(){
@@ -134,7 +141,8 @@ define([
 					});
 				});
 				//exporting it out
-				this.langModel = (new Backbone.Model(langModel));
+				langModel.lang = lang;
+				this.langModel.set(langModel); //= (new Backbone.Model(langModel));
 
 				this.regions.headerRegion.reset();
 				this.regions.headerRegion.show(new HeaderView({
@@ -142,10 +150,6 @@ define([
 					user : this.user,
 					lang : lang,
 					format : (this.isTablet? "tablet" : "desktop")
-				}));
-				this.regions.footerRegion.show(new FooterView({
-					model : this.langModel,
-					lang : lang
 				}));
 			}
 
