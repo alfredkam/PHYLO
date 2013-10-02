@@ -31,19 +31,25 @@
 			});
 
 		},
+        split : function(string) {
+            var pair = string.split(":");
+            return "<tr><td>"+$.trim(pair[0])+"   :   </td><td>"+$.trim(pair[1])+"</td></tr>";
+        },
 		learnMore : function(json) {
-            var context = "";
+            var context = "<table>";
+            var self = this;
             try {
                 var endGameContext = window.lang.body.play.gameselect["end of game"];
                 if (endGameContext.levelId) {
-                    context+=endGameContext["levelId"].replace("***","<b>"+$.phylo.id+"</b>")+"<br>";
-                    context+=endGameContext["userScore"].replace("***","<b>"+$.phylo.currentScore+"</b>")+"<br>";
-                    context+=endGameContext["avgScore"].replace("***","<b>"+Math.round(json.running_score / json.play_count)+"</b>")+"<br>";
-                    context+=endGameContext["highscore"].replace("***","<b>"+json.best_score+"</b>")+"<br>";
-                    context+=endGameContext["highscoreHolder"].replace("***","<b>"+json.highscore_user+"</b>")+"<br>";
-                    context+=endGameContext["dnaAssociation"].replace("***","<b>"+json.disease_link+"</b>")+"<br>";
-                    context+=endGameContext["completions"].replace("***","<b>"+json.play_count+"</b>")+"<br>";
 
+                    context+=self.split(endGameContext["levelId"].replace("***","<b>"+$.phylo.id+"</b>"));
+                    context+=self.split(endGameContext["userScore"].replace("***","<b>"+$.phylo.currentScore+"</b>"));
+                    context+=self.split(endGameContext["avgScore"].replace("***","<b>"+Math.round(json.running_score / json.play_count)+"</b>"));
+                    context+=self.split(endGameContext["highscore"].replace("***","<b>"+json.best_score+"</b>"));
+                    context+=self.split(endGameContext["highscoreHolder"].replace("***","<b>"+json.highscore_user+"</b>"));
+                    context+=self.split(endGameContext["dnaAssociation"].replace("***","<b>"+json.disease_link+"</b>"));
+                    context+=self.split(endGameContext["completions"].replace("***","<b>"+json.play_count+"</b>"));
+                    context+="</table>";
                 } else {
                     context = endGameContext["field 5"].replace("***", "<label class='end-color'>" + $.phylo.id + "</label>") +
                         " <label class='end-color'>" + json.disease_link + "</label>.  " + endGameContext["field 6"].replace("***", "<label class='end-color'>" + json.play_count + "</label>").replace(".", ".<br>").replace("***", "<label class='end-color'>" + json.fail_count + "</label>") +
