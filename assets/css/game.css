@@ -130,6 +130,7 @@
 	position:absolute;
 	display:inline-block;
 	z-index:2;
+	border-radius:3px;
 }
 .nodeImg:hover {
 	background-color: black; 
@@ -444,9 +445,6 @@
 	z-index:200;
 }
 
-#endGame-learnMore-content {
-	display:none;
-}
 
 /* css for score */
 #score {
