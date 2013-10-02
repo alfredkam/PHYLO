@@ -336,10 +336,12 @@
 	display:none;
 	position:absolute;
 	top:0px;	
-	background-color: black;
+	/*background-color: black;*/
 	z-index: 20;
 	width:100%;
 	height:100%;
+	background: url('../img/endGame.svg') center center no-repeat;
+	background-size:110%;
 }
 
 #endGame-bg {
@@ -355,16 +357,20 @@
 #endGame-content {
 	color: #333;
 	position:relative;
-	top:20px;
-	background-color: #D3D3D3;
+	/*top:20px;*/
+	/*background-color: #D3D3D3;*/
 	margin-left:auto;
 	margin-right:auto;
 	text-align:center;
 	height: 400px;
-	width:900px;
-	border:5px solid #DDD;
+	width:650px;
+	/*border:5px solid #DDD;*/
 	padding: 5px 10px;
 }
+.icon-star-1 {
+	color: rgb(236, 216, 46);
+}
+
 #endGame-content div {
 	line-height:30px;
 }
@@ -377,8 +383,8 @@
 	display:inline-block;
 	line-height: normal;
 	position:relative;
-	margin-bottom:30px;
-	/*left:-35px;*/
+	margin-bottom:13px;
+	margin-top:22px;
 }
 #endGame-score-result i {
 	font-size: 50px;
@@ -388,8 +394,10 @@
 	font-size:30px;
 }
 #endGame-learnMore-content {
-	border:1px solid #333;
+	/*border:1px solid #333;*/
 	line-height:14px !important;
+	margin-top:29px;
+	margin-bottom:19px;
 }
 
 #endGame-learnMore-content label {
