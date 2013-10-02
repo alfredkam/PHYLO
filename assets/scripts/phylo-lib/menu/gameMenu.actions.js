@@ -540,18 +540,20 @@
 					if (300 + 110 * (i > 3 ? i - 4 : i) < eX && eX < 370 + 110 * (i > 3 ? i - 4 : i) && (i > 3 ? 235 : 125) < eY && eY < (i > 3 ? 330 : 220)) {
 						ctx.beginPath();
 						ctx.clearRect(300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 105, 105);
-						ctx.clearRect(200,i>3?310:200,650,21);
-
+						//ctx.clearRect(200,i>3?310:200,650,21);
+						ctx.clearRect(200,200,650,30);
 						ctx.drawImage(img_hover, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
 						ctx.closePath();
 
 						ctx.font = '13pt Helvetica';
 						ctx.textAlign = "center";
-						ctx.fillText(items.localName,335+110*(i>3?i-4:i),i>3?325:215);						hovered = true;
+						//ctx.fillText(items.localName,335+110*(i>3?i-4:i),i>3?325:215);						hovered = true;
+						ctx.fillText(items.localName,512,225);
 					} else {
 						if (hovered) {
 							ctx.beginPath();
-							ctx.clearRect(200,i>3?310:200,650,21);
+							//ctx.clearRect(200,i>3?310:200,650,21);
+							ctx.clearRect(200,200,650,25);
 
 							ctx.clearRect(295 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 115, 105);
 							ctx.drawImage(img, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
