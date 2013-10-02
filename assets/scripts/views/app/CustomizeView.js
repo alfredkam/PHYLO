@@ -94,18 +94,18 @@ define([
             $(e.target).addClass("customize-theme-onpick");
         },
         customizeThemeReset : function(){
-            // $(".colorCell").css({ backgroundColor:"white"});
-            // $(".colorA").css({backgroundColor:"#71B2E2"});
-            // $(".colorG").css({backgroundColor:"#9932CC"});
-            // $(".colorC").css({backgroundColor:"#008000"});
-            // $(".colorT").css({backgroundColor:"#FFA500"});
-            this.ui.setCSS.html(Mustache.render(CssTpl, {
-                backgroundColor : "#FFF",
-                A : "#71B2E2",
-                G : "#9932CC",
-                C : "#008000",
-                T : "#FFA500"
-            }));
+            $(".colorCell").css({ backgroundColor:"white"});
+            $(".colorA").css({backgroundColor:"#71B2E2"});
+            $(".colorG").css({backgroundColor:"#9932CC"});
+            $(".colorC").css({backgroundColor:"#008000"});
+            $(".colorT").css({backgroundColor:"#FFA500"});
+            // this.ui.setCSS.html(Mustache.render(CssTpl, {
+            //     backgroundColor : "#FFF",
+            //     A : "#71B2E2",
+            //     G : "#9932CC",
+            //     C : "#008000",
+            //     T : "#FFA500"
+            // }));
 
         },
         customizeFnDump : function(){
