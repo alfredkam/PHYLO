@@ -17,7 +17,7 @@
 					fn();
 				} else {
 					$("#countDown-text").html(i);
-					countdownSound.play();
+					document.getElementById("countdownSound").play();
 					console.log("counting down")
 					i -= 1;
 
