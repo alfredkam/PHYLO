@@ -101,7 +101,15 @@
                         "field 10": "MUSCLES",
                         "field 11": "SYSTEME DE REPRODUCTION",
                         "field 12": "SYSTEME RESPIRATOIRE",
-                        "field 13": "SYSTEME SENSITIF"
+                        "field 13": "SYSTEME SENSITIF",
+                        "Blood" : "Maladies du sang et du système immunitaire",
+                        "Brain" : "Maladies du cerveau et des systèmes nerveux et sensoriels",
+                        "Cancer" : "Cancers",
+                        "Digestive" : "Maldies des système digestif et respiratoire",
+                        "Heart" : "Maladies du coeurs et des muscles",
+                        "Metabolic" : "Maladies métaboliques",
+                        "Infectious" : "Maladies infectueuse",
+                        "Misc" : "Autres maladies"
                     }
                 },
                 "game board": {

@@ -102,14 +102,14 @@
                         "field 11": "REPRODUCTION SYSTEM",
                         "field 12": "RESPIRATORY SYSTEM",
                         "field 13": "SENSORY SYSTEM",
-                        "Infectious" : "Infectious disease",
-                        "Blood" : "Blood & immune system",
-                        "Cancer" : "Cancer",
-                        "Mental" : "Mental and behavioural disorders",
-                        "Metabolic" : "Metabolic disorders",
-                        "Brain" : "Brain & nervous diseases",
-                        "Heart" : "Heart & muscles",
-                        "Misc" : "Misc."
+                        "Blood" : "Blood and immune system diseases",
+                        "Brain" : "Brain, nervous and sensory system diseases",
+                        "Cancer" : "Cancers",
+                        "Digestive" : "Digestive and respiratory system diseases",
+                        "Heart" : "Heart and muscles diseases",
+                        "Metabolic" : "Metabolic diseases",
+                        "Infectious" : "Infectious diseases",
+                        "Misc" : "Other diseases"
                     }
                 },
                 "game board": {

@@ -102,7 +102,15 @@
                         "field 10": "肌肉",
                         "field 11": "生殖系統",
                         "field 12": "呼吸系統",
-                        "field 13": "感覺系統"
+                        "field 13": "感覺系統",
+                        "Blood":"血液和免疫系統疾病",
+                        "Brain":"大腦和神經和感官系統疾病的",
+                        "Cancer":"癌症",
+                        "Digestive":"消化道和呼吸道系統疾病",
+                        "Heart":"心臟和肌肉的疾病",
+                        "Metabolic":"代謝性疾病",
+                        "Infectious":"傳染病",
+                        "Misc":"其他疾病"
                     }
                 },
                 "game board": {
