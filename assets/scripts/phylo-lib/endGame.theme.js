@@ -181,7 +181,7 @@
 		//new game or replay game
 		events : function() {
             langFiles = window.lang.body.play.gameselect["end of game"];
-			$("#endGame-learnMore-content").hide();
+			// $("#endGame-learnMore-content").hide();
 	
 			$("#endGame-learnMore-tag button").html(window.lang.body.misc["field 24"]).unbind().click(function() {
 				$("#endGame-learnMore-content").slideToggle("fast",function() {

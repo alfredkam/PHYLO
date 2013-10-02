@@ -101,7 +101,15 @@
                         "field 10" : "MUŞCHI",
                         "field 11" : "SISTEM REPRODUCĂTOR",
                         "field 12" : "SISTEM RESPIRATOR",
-                        "field 13" : "SISTEM SENZORIAL"
+                        "field 13" : "SISTEM SENZORIAL",
+                        "Blood": "sânge și boli ale sistemului imunitar",
+                        "Brain": "boli ale sistemului creier, nervos și senzoriale",
+                        "Cancer": "cancer",
+                        "Digestive": "boli ale sistemului digestiv și respirator",
+                        "Heart": "inimii și al mușchilor boli",
+                        "Metabolic": "Boli metabolice",
+                        "Infecțious": "boli infecțioase",
+                        "Misc": "Alte boli"
                     }
                 },
                 "game board": {
