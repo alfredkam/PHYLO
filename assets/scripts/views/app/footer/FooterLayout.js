@@ -6,11 +6,12 @@ define([
     'marionette',
     //Views,
     "scripts/views/app/footer/FooterNavView",
+    "scripts/views/app/footer/RecentNewsView",
     //Templates
     'text!tpl/app/footer/FooterLayout.mustache'
 ], function(
     $, _ , Backbone, Marionette,
-    FooterNav,
+    FooterNav, RecentNewsView,
     tpl
 ){
     var FooterLayout = Marionette.Layout.extend({
@@ -22,6 +23,9 @@ define([
         regions : {
             nav : new Marionette.Region({
                 el : "#footerNav"
+            }),
+            recentNews : new Marionette.Region({
+                el : "#recentNews"
             })
         },
         updateTemplate : function(){
@@ -31,7 +35,9 @@ define([
             }));
         },
         onShow : function() {
-            
+            this.regions.recentNews.show(new RecentNewsView({
+
+            }));
         }
     });
     return FooterLayout;
