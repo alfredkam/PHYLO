@@ -17,7 +17,7 @@ define([
             this.user = options.user;
             this.model.set({
                 lang: this.lang,
-                user : this.user.toJSON().name
+                user : this.user.toJSON().name.replace("+"," ")
             });
             if(this.options.format == "tablet") {
                 this.template = tabletTpl;
