@@ -1,8 +1,45 @@
 #social-links {
     float:right;
-    margin-top:21px;
+    /*margin-top:21px;*/
 }
 
 .footer.container {
     width:1000px !important;
+}
+
+.boxIt {
+    /*border-radius:3px;
+    box-shadow: 0 1px 1px #ccc;
+    -webkit-box-shadow:0 1px 1px #ccc;
+    -khtml-box-shadow:0 1px 1px #ccc;
+    -o-box-shadow:0 1px 1px #ccc;
+    -ms-box-shadow:0 1px 1px #ccc;
+    -ms-box-shadow:0 1px 1px #ccc;
+    background-color:white;*/
+    padding:10px 20px;
+    margin-bottom:7px;
+}
+
+label.footer-title {
+    color:#333;
+}
+
+.boxIt a {
+    color:rgb(109, 109, 109) !important;
+}
+
+.boxIt a:hover {
+    color:rgb(200,94,54) !important;
+}
+
+.recentNews div {
+    border-bottom: 1px solid rgb(109, 109, 109);
+    margin-bottom:10px;
+    padding-bottom:10px;
+}
+
+.recentNews div:last-child {
+    border-bottom: 0;
+    margin-bottom:0;
+    padding-bottom:0;
 }

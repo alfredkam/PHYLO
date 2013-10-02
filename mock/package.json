@@ -6,7 +6,21 @@
     "mocha": "~1.12.0",
     "express": "~3.3.5",
     "request": "~2.27.0",
-    "jquery": "~1.8.3"
+    "jquery": "~1.8.3",
+    "jsdom": "~0.8.6",
+    "cookie-jar": "~0.3.0",
+    "qs": "~0.6.5",
+    "oauth-sign": "~0.4.0",
+    "hawk": "~1.1.2",
+    "aws-sign": "~0.3.0",
+    "http-signature": "~0.10.0",
+    "node-uuid": "~1.4.1",
+    "mime": "~1.2.11",
+    "tunnel-agent": "~0.3.0",
+    "json-stringify-safe": "~5.0.0",
+    "forever-agent": "~0.5.0",
+    "form-data": "~0.1.1",
+    "xmlhttprequest": "~1.6.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

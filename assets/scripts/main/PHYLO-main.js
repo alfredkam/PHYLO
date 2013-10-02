@@ -35,7 +35,7 @@ require.config({
 		util : 'scripts/util',
 		//remapping js -> scripts
 		js : 'scripts/',
-		tpl : "../tpl",
+		tpl : "tpl",
 		nprogress : "bower_components/nprogress/nprogress"
 	},
 

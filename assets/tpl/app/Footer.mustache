@@ -1,0 +1,42 @@
+
+<div class='wrapper'>
+    <div class='footer-inner'>
+        <div class='row'>
+            <div class='col-4 col-lg-4 col-sm-4'>
+                <div class='boxIt'>
+                    Recent News
+                </div>
+            </div>
+             <div class='col-4 col-lg-4 col-sm-4'>
+                <div class='boxIt'>
+        
+                </div>
+            </div>
+             <div class='col-4 col-lg-4 col-sm-4'>
+                <div class='boxIt'>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='footer-inner'>
+        <table>
+        <tr>
+        <td class='contribute'>
+            <a class='btn btn-info btn-xs' href='#!/contribute' id='m_contribute'>Contribute</a>&nbsp;
+           <a class='btn btn-warning btn-xs' href='https://github.com/McGill-CSB/PHYLO/issues' id='m_feedback'>Report a bug</a>&nbsp;
+            {{#body.footer.field 3}}
+                <a class='btn btn-primary btn-xs' href='http://blogs.cs.mcgill.ca/phylo/'>{{body.footer.field 3}}</a>
+            {{/body.footer.field 3}}
+            {{#body.footer.field 4}}
+                <a class='btn btn-primary btn-xs' href='http://phylo.cs.mcgill.ca/forums'>{{body.footer.field 4}}</a>
+            {{/body.footer.field 4}}
+            <a id='credits' class='btn btn-primary btn-xs' href='#!/{{lang}}/Credits'><div>{{header.field 4}}</div></a>
+        </td>
+        </tr>
+        </table>
+    <div id='copyright' class='footer-inner'>
+         &#169; <a href='http://www.mcgill.ca'>McGill University</a>, 2010-{{year}}
+    </div>  
+    </div>
+</div>

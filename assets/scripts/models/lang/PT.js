@@ -221,7 +221,9 @@
         },
         "footer": {
             "field 1": "Phylo é um jogo desafiante em Flash, no qual cada quebra-cabeça resolvido contribui para o mapeamento de doenças no DNA humano. Saiba mais.",
-            "field 2": "Junte-se à comunidade Phylo no Facebook ou simplesmente curta."
+            "field 2": "Junte-se à comunidade Phylo no Facebook ou simplesmente curta.",
+            "field 3" : "Blog",
+            "field 4" : "Fórum"
         }
     }
 }
