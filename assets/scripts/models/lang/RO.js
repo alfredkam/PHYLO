@@ -224,7 +224,9 @@
         },
         "footer": {
             "field 1" : "Phylo este un joc solicitant în care fiecare puzzle completat contribuie la cartografierea bolilor din cadrul ADN-ului uman. Află <a href='?pid=about#!/RO'>more</a>mai mult</a>.",
-            "field 2" : "Alătură-te la <a href='https://www.facebook.com/groups/127713783941517/'>comunitatea</a>Phylo pe Facebook"
+            "field 2" : "Alătură-te la <a href='https://www.facebook.com/groups/127713783941517/'>comunitatea</a>Phylo pe Facebook",
+            "field 3" : "Blog",
+            "field 4" : "For"
         }
     }
 }
