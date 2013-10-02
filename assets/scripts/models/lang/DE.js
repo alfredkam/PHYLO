@@ -101,7 +101,15 @@
                         "field 10": "MUSKELN",
                         "field 11": "FORTPFLANZUNGSSYSTEM",
                         "field 12": "ATMUNGSYSTEM",
-                        "field 13": "SENSORISCHES SYSTEM"
+                        "field 13": "SENSORISCHES SYSTEM",
+                        "Blood": "Blut und Immunsystem Krankheiten",
+                        "Brain": "Gehirn, Nervensystem und sensorisches System Krankheiten",
+                        "Cancer": "Krebs",
+                        "Digestive": "Verdauungs-und Atemwegserkrankungen",
+                        "Heart": "Herz und Muskeln Krankheiten",
+                        "Metabolic": "Stoffwechselkrankheiten"
+                        "Infectious": "Infektionskrankheiten",
+                        "Misc": "Andere Erkrankungen"
                     }
                 },
                 "game board": {

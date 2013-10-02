@@ -101,7 +101,15 @@
 						"field 10": "근육",
 						"field 11": "생식 기관",
 						"field 12": "호흡계",
-						"field 13": "감각 시스템"
+						"field 13": "감각 시스템",
+                        "Blood": "혈액과 면역 체계의 질병",
+                        "Brain": "두뇌와 신경계 및 감각계 질환",
+                        "Cancer": "암",
+                        "Digestive": "소화기 및 호흡기 질환",
+                        "Heart": "심장과 근육 질환",
+                        "Metabolic": "대사 질환",
+                        "Infectious": "전염병",
+                        "Misc": "기타 질병"
 					}
 				},
 				"game board": {
