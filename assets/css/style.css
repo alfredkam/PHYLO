@@ -45,6 +45,7 @@ body {
 	/*background: #f4f4f4 url(../img/background.png);
 	*/
 	background-color: #ebebeb;
+
 	font-family: 'helveticathin', Helvetica, Arial, sans-serif;
 	color:black;
 	/* background-color: #1C1C1C; */
@@ -57,6 +58,15 @@ body {
 	-ms-user-select: none;
 	user-select: none;
 	min-width:1024px;
+}
+#appBackground {
+	/*background-size:100%;	*/
+	background: url('../img/phylo-bg-2.svg') top left repeat;
+	height:100%;
+	width:100%;
+	position:absolute;
+	opacity: 0.2;
+	top:0;
 }
 /*disables tablet */
 /*	.tablet-property {
