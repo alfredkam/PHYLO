@@ -68,6 +68,13 @@
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
 }
+
+@media(max-width:1280px) {
+    #options .icon-cog {
+        left:0px;
+        top:8px;
+    }
+}
 @media(max-width:1200px) {
     .container {
         max-width: none;
@@ -79,7 +86,7 @@
 
 @media(max-width:1180px) {
     #options .icon-cog {
-        top:5px;
+        top:8px;
     }
 }
 
