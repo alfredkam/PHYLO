@@ -540,7 +540,7 @@
 					if (300 + 110 * (i > 3 ? i - 4 : i) < eX && eX < 370 + 110 * (i > 3 ? i - 4 : i) && (i > 3 ? 235 : 125) < eY && eY < (i > 3 ? 330 : 220)) {
 						ctx.beginPath();
 						ctx.clearRect(300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 105, 105);
-						ctx.clearRect(225,i>3?315:203,450,16);
+						ctx.clearRect(200,i>3?310:200,650,21);
 
 						ctx.drawImage(img_hover, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
 						ctx.closePath();
@@ -551,7 +551,7 @@
 					} else {
 						if (hovered) {
 							ctx.beginPath();
-							ctx.clearRect(225,i>3?315:200,450,16);
+							ctx.clearRect(200,i>3?310:200,650,21);
 
 							ctx.clearRect(295 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 115, 105);
 							ctx.drawImage(img, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
