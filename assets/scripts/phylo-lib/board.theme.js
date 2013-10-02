@@ -1,8 +1,11 @@
 /* this scripts generates the board features */
 (function() {
 	//insert sound here
-	var lightUpSound = new Audio("assets/sounds/starLightUp.wav"); // buffers automatically when created
-	var starClickSound = new Audio("assets/sounds/startSound.wav");
+	//var lightUpSound = new Audio("assets/sounds/starLightUp.wav"); // buffers automatically when created
+	//var starClickSound = new Audio("assets/sounds/startSound.wav");
+	var lighUpSound = document.getElementById("lighUpSound");
+	var starClickSound = document.getElementById("starClickSound");
+
 	var doc = document,
 		win = window;
 	var musicList = [{
