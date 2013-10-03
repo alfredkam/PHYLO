@@ -91,7 +91,7 @@
                 var provider = $.cookie.read("loginmode");
                 var c_logid = $.cookie.read("logid");
  
-                if ((provider=="Facebook")||(provider=="Twitter")||(provider=="LinkedIn")) {
+                if ((provider=="Facebook")||(provider=="Twitter")||(provider=="LinkedIn")||(provider=="Google")) {
   
                     $.protocal.sendEndGameScore("info", function(data) {
                                                 
@@ -142,11 +142,28 @@
                                 } else {
                                     var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 18"] + ".\n" + window.lang.body.social["field 20"];
                                 }
-                            }
-                            //var caption = window.lang.body.social["field 26"];
+}                            //var caption = window.lang.body.social["field 26"];
                             //var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
-                            var data = "provider="+provider+"&id="+c_logid+"&description="+message;
+                            var data = "provider=" + provider + "&id=" + c_logid + "&description=" + message;
                         }
+                        else if (provider == "Google") {
+                            if (puzzle_disease) {
+                                if ($.phylo.currentScore >= puzzle_disease) {
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 15"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
+                                } else {
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 16"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
+                                }
+                            } else {
+                                if ($.phylo.currentScore >= puzzle_disease) {
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 17"] + ".\n" + window.lang.body.social["field 20"];
+                                } else {
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 18"] + ".\n" + window.lang.body.social["field 20"];
+                                }
+                        }
+                        //var caption = window.lang.body.social["field 26"];
+                        //var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
+                        var data = "provider=" + provider + "&id=" + c_logid + "&description=" + message;
+                    }
                         var options = {
                             message: window.lang.body.social["field 22"] + "<br/>\n" + message,
                            // window.lang.body.social["field 27"],
