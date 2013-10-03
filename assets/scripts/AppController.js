@@ -123,6 +123,7 @@ define([
 					langModel = data;
 					window.lang= langModel;
 				}).fail(function(data,resp){
+					console.log(lang,data);
 					console.log("@controller, grab file failed");
 					langModel = data;
 					// console.log(data);
