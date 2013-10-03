@@ -542,7 +542,7 @@
 						ctx.beginPath();
 						ctx.clearRect(300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 105, 105);
 						//ctx.clearRect(200,i>3?310:200,650,21);
-						ctx.clearRect(200,300,650,40);
+						ctx.clearRect(200,310,650,40);
 						ctx.drawImage(img_hover, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
 						ctx.closePath();
 
@@ -555,7 +555,7 @@
 						if (hovered) {
 							ctx.beginPath();
 							//ctx.clearRect(200,i>3?310:200,650,21);
-							ctx.clearRect(200,300,650,40);
+							ctx.clearRect(200,310,650,40);
 
 							ctx.clearRect(300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 105, 105);
 							ctx.drawImage(img, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
