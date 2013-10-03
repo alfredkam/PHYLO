@@ -342,6 +342,7 @@
 	height:100%;
 	background: url('../img/endGame.svg') center center no-repeat;
 	background-size:110%;
+	border-radius: 3px;
 }
 
 #endGame-bg {
@@ -431,6 +432,7 @@
 	-ms-box-shadow: 0 6px 6px -6px #CCC;
 	-o-box-shadow: 0 6px 6px -6px #CCC;
 	-khtml-box-shaodw: 0 6px 6px -6px #CCC;
+	border-radius: 3px;
 }
 #countDown-text {
 	text-align:left;
