@@ -8,8 +8,9 @@ define([
     "text!tpl/app/Header.mustache",
     "scripts/views/validation/cookie.validation.amd",
     //tablet tpl
-    "text!tpl/tablet/TabletHeader.mustache"
+    "text!tpl/tablet/TabletHeader.mustache",
     //NO EXPORTS
+    "scripts/phylo-lib/protocal.core"
 ], function($, Marionette, tpl, cookie, tabletTpl) {
     var HeaderView = Marionette.ItemView.extend({
         initialize: function(options) {
