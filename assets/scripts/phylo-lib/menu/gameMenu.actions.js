@@ -506,6 +506,7 @@
 			var disease = function(ctx, items, i) {
 				var img = new Image();
 				var img_hover = new Image();
+				//no image case
 				if(!items.image){
 					items.image=  "assets/img/disease/misc.png"
 				}
@@ -541,20 +542,20 @@
 						ctx.beginPath();
 						ctx.clearRect(300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 105, 105);
 						//ctx.clearRect(200,i>3?310:200,650,21);
-						ctx.clearRect(200,200,650,30);
+						ctx.clearRect(200,330,650,40);
 						ctx.drawImage(img_hover, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
 						ctx.closePath();
 
-						ctx.font = '13pt Helvetica';
+						ctx.font = '16pt Helvetica';
 						ctx.textAlign = "center";
-						ctx.fillText(items.localName,500,225);
+						ctx.fillText(items.localName,500,360);
 						hovered=true;
 						//ctx.fillText(items.localName,335+110*(i>3?i-4:i),i>3?325:215);						hovered = true;
 					} else {
 						if (hovered) {
 							ctx.beginPath();
 							//ctx.clearRect(200,i>3?310:200,650,21);
-							ctx.clearRect(200,200,650,30);
+							ctx.clearRect(200,330,650,40);
 
 							ctx.clearRect(300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 105, 105);
 							ctx.drawImage(img, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
