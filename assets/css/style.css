@@ -62,11 +62,11 @@ body {
 
 #appBackground {
 	/*background-size:100%;	*/
-	background: url('../img/phylo-bg-2.svg') top left repeat;
+	background: url('../img/phylo-bg-4.svg') top left repeat;
 	height:100%;
 	width:100%;
 	position:absolute;
-	opacity: 0.2;
+	opacity: 0.15;
 	top:0;
 }
 /*disables tablet */
