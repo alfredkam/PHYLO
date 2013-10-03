@@ -147,20 +147,26 @@
                             //var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
                             var data = "provider="+provider+"&id="+c_logid+"&description="+message;
                         }
+                        var options = {
+                            message: window.lang.body.social["field 22"] + "<br/>\n" + message,
+                           // window.lang.body.social["field 27"],
+                            'callback': function(result) {
+                                if (result) {
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+                                        data: data,
+                                    }).done(function(re) {
+                                        //bootbox.alert("Your achievement has been posted!");
+                                    }).fail(function() {
+                                        bootbox.alert(window.lang.body.social["field 23"]);
+                                    });
+                                }
+                            },
+                            confirm : window.lang.body.social["field 25"],
 
-                        bootbox.confirm(window.lang.body.social["field 22"] + "<br/>\n" + message,window.lang.body.social["field 27"],window.lang.body.social["field 25"], function(result) {
-                            if (result) {
-                                $.ajax({
-                                    type: "POST",
-                                    url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
-                                    data : data,
-                                }).done(function(re) {
-                                    //bootbox.alert("Your achievement has been posted!");
-                                }).fail(function() {
-                                    bootbox.alert(window.lang.body.social["field 23"]);
-                                });
-                            }
-                        });
+                        };
+                        bootbox.confirm(options);
                     });
                 } else {
 			if(DEBUG)

@@ -190,20 +190,41 @@ define([
                                                     } else {
                                                         var data = "provider=" + provider + "&id=" + c_logid + "&description=" + message;
                                                     }
-                                                    bootbox.confirm(window.lang.body.social["field 2"], window.lang.body.social["field 26"], window.lang.body.social["field 25"], function(result) {
-                                                        if (result) {
-                                                            console.log("post on " + provider + " : " + data);
-                                                            $.ajax({
-                                                                type: "POST",
-                                                                url: "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
-                                                                data: data
-                                                            }).done(function(re) {
-                                                                //bootbox.alert("Thank you for sharing the word. You can now start to play!");
-                                                            }).fail(function() {
-                                                                bootbox.alert(window.lang.body.social["field 4"]);
-                                                            });
+                                                    var options = {
+                                                        message: window.lang.body.social["field 2"],
+                                                        cancel: window.lang.body.social["field 26"],
+                                                        confirm: window.lang.body.social["field 25"],
+                                                        callback: function(result) {
+                                                            if (result) {
+                                                                console.log("post on " + provider + " : " + data);
+                                                                $.ajax({
+                                                                    type: "POST",
+                                                                    url: "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+                                                                    data: data
+                                                                }).done(function(re) {
+                                                                    //bootbox.alert("Thank you for sharing the word. You can now start to play!");
+                                                                }).fail(function() {
+                                                                    bootbox.alert(window.lang.body.social["field 4"]);
+                                                                });
+                                                            }
                                                         }
-                                                    });
+
+                                                    };
+                                                    // bootbox.confirm(window.lang.body.social["field 2"], window.lang.body.social["field 26"], window.lang.body.social["field 25"], function(result) {
+                                                    //     if (result) {
+                                                    //         console.log("post on " + provider + " : " + data);
+                                                    //         $.ajax({
+                                                    //             type: "POST",
+                                                    //             url: "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+                                                    //             data: data
+                                                    //         }).done(function(re) {
+                                                    //             //bootbox.alert("Thank you for sharing the word. You can now start to play!");
+                                                    //         }).fail(function() {
+                                                    //             bootbox.alert(window.lang.body.social["field 4"]);
+                                                    //         });
+                                                    //     }
+                                                    // });
+                                                    bootbox(options);
                                                 } else {
                                                     console.log(provider + " registration failed.");
                                                     $("div.login-warning").show().html(window.lang.body.social["field 5"].replace("***", provider));
