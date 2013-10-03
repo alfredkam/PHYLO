@@ -391,13 +391,14 @@
 	padding:0 15px;
 }
 #endGame-text {
-	font-size:30px;
+	font-size:25px;
 }
 #endGame-learnMore-content {
 	/*border:1px solid #333;*/
 	line-height:14px !important;
 	margin-top:29px;
 	margin-bottom:12px;
+	font-size:16px;
 }
 #endGame-learnMore-content table {
 	margin-left:auto;
