@@ -57,12 +57,19 @@ td.contribute {
 td.contribute a {
     /*display:inline-block;*/
     color: rgb(109, 109, 109) !important;
+    padding-right:10px;
+    text-decoration: underline;
 }
-
+    
 td.contribute a:hover {
     color: rgb(200,94,54) !important;
 }
 
 div#copyright {
     color:#828282;
+    font-size:13px;
+}
+
+div#copyright a {
+    font-size:13px;
 }
