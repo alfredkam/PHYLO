@@ -106,7 +106,7 @@
                         "Brain": "Las enfermedades del sistema cerebral y nervioso y sensorial",
                         "Cancer": "El cáncer",
                         "Digestive": "Enfermedades del aparato digestivo y de las vías respiratorias",
-                        "Heart": "Corazón y los músculos enfermedades»,
+                        "Heart": "Corazón y los músculos enfermedades",
                         "Metabolic": "Enfermedades Metabólicas",
                         "Infectious": "Enfermedades infecciosas",
                         "Misc": "Otras enfermedades"
