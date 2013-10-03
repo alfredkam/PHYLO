@@ -200,7 +200,7 @@
         },
         "social": {
             "field 1": "started to play Phylo.",
-            "field 2": "You are now registered. Please, help us to share the word and announce to your friend your novel contribution to science! Phylo will not store any personal data beside your username and email. You will have the opportunity to post your achievements if you request it.",
+            "field 2": "You are now registered. Please, help us to spread the word and announce to your friends your novel contribution to science! Phylo will not store any personal data except your username and email. You will have the opportunity to post your achievements if you request it.",
             "field 3": "Missing data. Please, check your *** account.",
             "field 4": "We are sorry. We have not been able to update your status. However, you can still start to play!",
             "field 5": "We are sorry. We cannot register you using your *** account.",
