@@ -48,6 +48,7 @@ define([
                 this.socialLogin('LinkedIn');
             },
             "click .m_logout": "logoutFn",
+            "click div#login-box.logoutBtn" : "logoutFn",
             "click .register-btn": "register",
             "click .cancel-btn": function() {
                 $(".email-holder").hide();
