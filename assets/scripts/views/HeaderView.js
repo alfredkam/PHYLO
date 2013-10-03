@@ -41,11 +41,11 @@ define([
             "click .zocial.twitter": function() {
                 this.socialLogin('Twitter');
             },
-            "click .zocial.google": function() {
+            "click .zocial.Google": function() {
                 console.log("google clicked");
                 this.socialLogin('Google');
             },
-            "click .zocial.linkedin": function() {
+            "click .zocial.LinkedIn": function() {
                 this.socialLogin('LinkedIn');
             },
             "click .m_logout": "logoutFn",
