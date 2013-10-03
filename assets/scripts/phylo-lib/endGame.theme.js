@@ -178,7 +178,7 @@
                 window.guest = 'guest';
                 $("#login-box").hide();
                 $(".login-btn").click(function() { eClick(); });
-                $("#login-tag").html(window.lang.play.gameselect.login["field 2"]);
+                $("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]);
                 $(".showInLogin").hide();
                 return;
             }
