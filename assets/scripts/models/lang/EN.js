@@ -242,7 +242,10 @@
             "field 2": "Join the phylo <a href='https://www.facebook.com/groups/127713783941517/'>community</a> on facebook or give us a thumbs up.",
             "field 3" : "Blog",
             "field 4" : "Forum",
-            "field 5"  : "Report a bug"
+            "field 5"  : "Report a bug",
+            "recentNews" : "Recent News",
+            "totalPuzzles" : "Contributed Puzzles",
+            "recentSubmit" : "Recent Submits"
         }
     }
 }

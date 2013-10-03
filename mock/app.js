@@ -64,6 +64,11 @@ app.get("/phpdb/openPhyloClassicDB.php",function(req,res){
 
         }
 });
+app.get("/phpdb/openPhyloClassicStatus.php", function(req, res){
+    res.json(
+        {"total":110514,"last":[{"user":"LouisSloboda","PuzzleID":"695","date":"2013-10-03","diseaseCategory":"Cancer","diseaseName":"BRCA1"},{"user":"jerome","PuzzleID":"1219","date":"2013-10-03","diseaseCategory":null,"diseaseName":"BRCA1"},{"user":"LouisSloboda","PuzzleID":"737","date":"2013-10-03","diseaseCategory":"Cancer","diseaseName":"p53-1"},{"user":"Guest","PuzzleID":"174","date":"2013-10-03","diseaseCategory":"Cancer","diseaseName":"P53-1"},{"user":"jerome","PuzzleID":"481","date":"2013-10-03","diseaseCategory":"","diseaseName":"p53-1"}]}
+    );
+});
 /* Example of mocking http POST */
 app.post("/", function(req, res){
     /* return your desired response */
