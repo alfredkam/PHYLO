@@ -33,7 +33,7 @@
 		},
         split : function(string) {
             var pair = string.split(":");
-            return "<tr><td>"+$.trim(pair[0])+"&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</td><td>"+$.trim(pair[1])+"</td></tr>";
+            return "<tr><td>"+$.trim(pair[0])+"&nbsp;&nbsp;&nbsp;:</td><td>&nbsp;&nbsp;&nbsp;"+$.trim(pair[1])+"</td></tr>";
         },
 		learnMore : function(json) {
             var context = "<table>";
