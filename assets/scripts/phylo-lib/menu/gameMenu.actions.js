@@ -547,7 +547,7 @@
 
 						ctx.font = '13pt Helvetica';
 						ctx.textAlign = "center";
-						ctx.fillText(items.localName,512,225);
+						ctx.fillText(items.localName,500,225);
 						hovered=true;
 						//ctx.fillText(items.localName,335+110*(i>3?i-4:i),i>3?325:215);						hovered = true;
 					} else {
