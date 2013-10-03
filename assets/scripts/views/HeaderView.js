@@ -42,6 +42,7 @@ define([
                 this.socialLogin('Twitter');
             },
             "click .zocial.Google": function() {
+                console.log("google clicked");
                 this.socialLogin('Google');
             },
             "click .zocial.LinkedIn": function() {
