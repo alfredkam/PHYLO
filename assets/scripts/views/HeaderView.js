@@ -58,6 +58,7 @@ define([
             "click .login-btn" : "classicLogin"
         },
         logoutFn : function(){
+            console.log("clicked?");
             window.guest = "Guest";
             // this.user.set("name", "");
             cookie.delete("username");
