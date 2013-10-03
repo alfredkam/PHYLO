@@ -107,7 +107,7 @@
                         "Cancer": "Krebs",
                         "Digestive": "Verdauungs-und Atemwegserkrankungen",
                         "Heart": "Herz und Muskeln Krankheiten",
-                        "Metabolic": "Stoffwechselkrankheiten"
+                        "Metabolic": "Stoffwechselkrankheiten",
                         "Infectious": "Infektionskrankheiten",
                         "Misc": "Andere Erkrankungen"
                     }
