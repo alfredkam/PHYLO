@@ -239,7 +239,7 @@ define([
             $.ajax({
                 method : "POST",
                 //http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username=alfredkam&lang=EN
-                url : "http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username="+window.guest+"&lang="+this.lang
+                url : "http://phylo.cs.mcgill.ca/phpdb/openPhyloClassicUserHistory?username="+window.guest+"&lang="+this.lang
                 // url : "http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang="+this.lang
             }).done(function(data){
                 self.addHtml(data);

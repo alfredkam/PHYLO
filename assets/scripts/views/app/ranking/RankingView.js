@@ -238,7 +238,7 @@ define([
             var self = this;
             $.ajax({
                 method : "POST",
-                url : "http://phylo.cs.mcgill.ca/phpdb/fullrankingsget.php?lang="+this.lang
+                url : "http://phylo.cs.mcgill.ca/phpdb/openPhyloClassicRanking.php?lang="+this.lang
             }).done(function(data){
                 self.addHtml(data);
             }).fail(function(){
