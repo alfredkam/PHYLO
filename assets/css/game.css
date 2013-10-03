@@ -418,6 +418,10 @@
 	color: red;
 }
 
+#endGame-learnMode-footerContent {
+	line-height: 15px !important;
+}
+
 #countDown {
 	position:absolute;
 	top:0px;

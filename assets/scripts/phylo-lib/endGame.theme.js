@@ -7,10 +7,18 @@
 			$.protocal.sendEndGameScore("completed", function(data) {
 				self.events();
 				self.score("completed",data.best_score);
+                var endMsg = window.lang.body.play.gameselect["end of game"];
 				//var msg = "<b>Congratulations!</b> You have solved the puzzle";
-				var msg = window.lang.body.play.gameselect["end of game"]["field 3"];
+				var msg = endMsg["headerMessage"];
 				$("#endGame-text").html(msg);
 				$("#endGame-learnMore-content").html(self.learnMore(data));
+                $("#endGame-learnMode-footerContent").html(
+                        endMsg["replayMessage"] +
+                    "<br>"+
+                        endMsg["completeXMessage"]+
+                    "<br><b>"+
+                        endMsg["thankyouMessage"]+"<b>"
+                );
 				$("#endGame").fadeIn();
 			});
 
@@ -23,10 +31,18 @@
 				self.events();
 				self.score("bail",data.best_score);
 				//var msg = "Too bad! You did not succeed to solve this puzzle!";
-				var msg = window.lang.body.play.gameselect["end of game"]["field 4"];
+                var endMsg = window.lang.body.play.gameselect["end of game"];
+				var msg = endMsg["headerMessage"];
 				$("#endGame-text").html(msg);
 				//$("#endGame-learnMore-content").html("This disease is related to diseases etc, you are helping...etc");
 				$("#endGame-learnMore-content").html(self.learnMore(data));
+                $("#endGame-learnMode-footerContent").html(
+                        endMsg["replayMessage"] +
+                    "<br>"+
+                        endMsg["completeXMessage"]+
+                    "<br><b>"+
+                        endMsg["thankyouMessage"]+"<b>"
+                );
 				$("#endGame").fadeIn();
 			});
 

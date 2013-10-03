@@ -129,8 +129,8 @@
                 },
                 "end of game": {
                     "headerMessage" : "Stats and information about this level",
-                    "replayMessage" : "You can use the Level *** to play this level again anytime.",
-                    "completeXMessage" : "Complete X more puzzles to unlock Expert mode with harder puzzles and additional features.",
+                    "replayMessage" : "You can use the Level ID to play this level again anytime.",
+                    "completeXMessage" : "Complete *** more puzzles to unlock Expert mode with harder puzzles and additional features.",
                     "thankyouMessage" :"Thank you for contributing to Genomic mapping!",
                     "field 1": "Thank you",
                     "field 2": "We appreciate your contribution to science. Did you know:",
