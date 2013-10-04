@@ -237,63 +237,31 @@
                         message: "Please choose a social network to share",
                         buttons: {
                             facebook: {
-                                label: "Sign-in with Facebok",
-                                className: "zocial facebook",
+                                label: "Share via Facebok",
+                                className: "zocial facebook footerButton",
                                 callback: function() {
-                                    $.ajax({
-                                        type: "POST",
-                                        url: "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
-                                        data: data,
-                                    }).done(function(re) {
-                                        //bootbox.alert("Your achievement has been posted!");
-                                    }).fail(function() {
-                                        bootbox.alert(window.lang.body.social["field 23"]);
-                                    });
+                              
                                 }
                             },
                             twitter: {
-                                label: "Sign-in with Twitter",
-                                className: "zocial twitter",
+                                label: "Share via Twitter",
+                                className: "zocial twitter footerButton",
                                 callback: function() {
-                                    $.ajax({
-                                        type: "POST",
-                                        url: "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
-                                        data: data,
-                                    }).done(function(re) {
-                                        //bootbox.alert("Your achievement has been posted!");
-                                    }).fail(function() {
-                                        bootbox.alert(window.lang.body.social["field 23"]);
-                                    });
+                                   
                                 }
                             },
                             linkedin: {
-                                label: "Sign-in with LinkedIn",
-                                className: "zocial linkedin",
+                                label: "Share via LinkedIn",
+                                className: "zocial linkedin footerButton",
                                 callback: function() {
-                                    $.ajax({
-                                        type: "POST",
-                                        url: "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
-                                        data: data,
-                                    }).done(function(re) {
-                                        //bootbox.alert("Your achievement has been posted!");
-                                    }).fail(function() {
-                                        bootbox.alert(window.lang.body.social["field 23"]);
-                                    });
+                                 
                                 }
                             },
                             google: {
-                                label: "Sign-in with Google",
-                                className: "zocial google",
+                                label: "Share via Google",
+                                className: "zocial google footerButton",
                                 callback: function() {
-                                    $.ajax({
-                                        type: "POST",
-                                        url: "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
-                                        data: data,
-                                    }).done(function(re) {
-                                        //bootbox.alert("Your achievement has been posted!");
-                                    }).fail(function() {
-                                        bootbox.alert(window.lang.body.social["field 23"]);
-                                    });
+                                  
                                 }
                             }
                         }
