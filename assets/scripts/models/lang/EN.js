@@ -247,7 +247,7 @@
             "recentNews" : "Recent News",
             "totalPuzzles" : "Completed puzzles",
             "recentSubmit" : "Latest achievements",
-            "puzzleID" : "De Puzzle ID",
+            "puzzleID" : "Puzzle ID",
             "user" : "User",
             "unclassified" : "Unclassified"
         }
