@@ -7,6 +7,7 @@
 			$.protocal.sendEndGameScore("completed", function(data) {
 				self.events();
 				self.score("completed",data.best_score);
+                console.log(data);
                 var endMsg = window.lang.body.play.gameselect["end of game"];
 				//var msg = "<b>Congratulations!</b> You have solved the puzzle";
 				var msg = endMsg["headerMessage"];
@@ -29,6 +30,7 @@
 			$.multiSelect.deactive();
 			$.protocal.sendEndGameScore("bail", function(data) {
 				self.events();
+                console.log(data);
 				self.score("bail",data.best_score);
 				//var msg = "Too bad! You did not succeed to solve this puzzle!";
                 var endMsg = window.lang.body.play.gameselect["end of game"];
