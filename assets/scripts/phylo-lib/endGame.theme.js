@@ -233,14 +233,12 @@
                 } 
                 else if (provider === "Classic") {
                     var options = {
-                        //title: window.lang.body.social["field 29"],
-                        
+                        title: window.lang.body.social["field 29"],
                         message: loginBox,
                         buttons: {
                             facebook: {
-                                label: "Share via Facebok",
+                                label: "Sign-in with Facebok",
                                 className: "zocial facebook",
-                                message : "please select a social network to share in!",
                                 callback: function() {
                                     $.ajax({
                                         type: "POST",
@@ -254,7 +252,7 @@
                                 }
                             },
                             twitter: {
-                                label: "Share via Twitter",
+                                label: "Sign-in with Twitter",
                                 className: "zocial twitter",
                                 callback: function() {
                                     $.ajax({
@@ -269,7 +267,7 @@
                                 }
                             },
                             linkedin: {
-                                label: "Share via LinkedIn",
+                                label: "Sign-in with LinkedIn",
                                 className: "zocial linkedin",
                                 callback: function() {
                                     $.ajax({
@@ -284,7 +282,7 @@
                                 }
                             },
                             google: {
-                                label: "Share via Google",
+                                label: "Sign-in with Google",
                                 className: "zocial google",
                                 callback: function() {
                                     $.ajax({
@@ -297,10 +295,11 @@
                                         bootbox.alert(window.lang.body.social["field 23"]);
                                     });
                                 }
-                            },
-
+                            }
                         }
-                    } else {
+                    };
+                    
+                } else {
                     if (DEBUG)
                         console.log(window.lang.body.social["field 28"].replace("***", provider));
                     return;
