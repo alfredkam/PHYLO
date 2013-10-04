@@ -1,4 +1,5 @@
 (function(){
+    var submitterURl = "http://phylo.cs.mcgill.ca/profile/index.php?user=";
 	$.endGame = {
 		//displays message of completing the game
 		complete : function() {
@@ -7,19 +8,28 @@
 			$.protocal.sendEndGameScore("completed", function(data) {
 				self.events();
 				self.score("completed",data.best_score);
-                console.log(data);
+                self.submitterLocation = submitterURl+data.submitter;
+                var puzzlesLeft = ((20 - data.puzzles_completed) > 0 ? 0 : 20-data.puzzles_completed) || 20;
                 var endMsg = window.lang.body.play.gameselect["end of game"];
 				//var msg = "<b>Congratulations!</b> You have solved the puzzle";
 				var msg = endMsg["headerMessage"];
 				$("#endGame-text").html(msg);
 				$("#endGame-learnMore-content").html(self.learnMore(data));
-                $("#endGame-learnMode-footerContent").html(
-                        endMsg["replayMessage"] +
-                    "<br>"+
-                        endMsg["completeXMessage"]+
-                    "<br><b>"+
-                        endMsg["thankyouMessage"]+"<b>"
-                );
+                if(window.guest != "guest" && window.guest != "") {
+                    $("#endGame-learnMode-footerContent").html(
+                            endMsg["replayMessage"] +
+                        "<br>"+
+                            endMsg["completeXMessage"].replace("***",puzzlesLeft) +
+                        "<br><b>"+
+                            endMsg["thankyouMessage"]+"<b>"
+                    );
+                } else {
+                    $("#endGame-learnMode-footerContent").html(
+                            endMsg["replayMessage"] +
+                        "<br><b>"+
+                            endMsg["thankyouMessage"]+"<b>"
+                    );
+                }
 				$("#endGame").fadeIn();
 			});
 
@@ -32,19 +42,29 @@
 				self.events();
                 console.log(data);
 				self.score("bail",data.best_score);
+                self.submitterLocation = submitterURl+data.submitter;
 				//var msg = "Too bad! You did not succeed to solve this puzzle!";
+                var puzzlesLeft = ((20 - data.puzzles_completed) > 0 ? 0 : 20-data.puzzles_completed) || 20;          //
                 var endMsg = window.lang.body.play.gameselect["end of game"];
 				var msg = endMsg["headerMessage"];
 				$("#endGame-text").html(msg);
 				//$("#endGame-learnMore-content").html("This disease is related to diseases etc, you are helping...etc");
 				$("#endGame-learnMore-content").html(self.learnMore(data));
-                $("#endGame-learnMode-footerContent").html(
-                        endMsg["replayMessage"] +
-                    "<br>"+
-                        endMsg["completeXMessage"]+
-                    "<br><b>"+
-                        endMsg["thankyouMessage"]+"<b>"
-                );
+                if(window.guest != "guest" && window.guest != "") {
+                    $("#endGame-learnMode-footerContent").html(
+                            endMsg["replayMessage"] +
+                        "<br>"+
+                            endMsg["completeXMessage"].replace("***",puzzlesLeft) +
+                        "<br><b>"+
+                            endMsg["thankyouMessage"]+"<b>"
+                    );
+                } else {
+                    $("#endGame-learnMode-footerContent").html(
+                            endMsg["replayMessage"] +
+                        "<br><b>"+
+                            endMsg["thankyouMessage"]+"<b>"
+                    );
+                }
 				$("#endGame").fadeIn();
 			});
 
@@ -227,6 +247,7 @@
 		//events for the end game messages
 		//new game or replay game
 		events : function() {
+            var self = this;
             langFiles = window.lang.body.play.gameselect["end of game"];
 			// $("#endGame-learnMore-content").hide();
 	
@@ -255,6 +276,10 @@
 				$("#countDown-text").html("<img src='assets/img/loading.gif'/>");
 				$("#countDown").fadeIn();
 			});
+
+            $("#endGame-submitter button").html(langFiles["submitter"]).unbind().click(function(){
+                window.location = self.submitterLocation;
+            });
  
             $("#endGame-share button").html(langFiles["field 13"]).unbind().click(function(){
 		if(DEBUG)
