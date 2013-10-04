@@ -259,9 +259,7 @@
             var self = this;
             langFiles = window.lang.body.play.gameselect["end of game"];
             // $("#endGame-learnMore-content").hide();
-
-            $("#endGame-learnMore-tag button").html(window.lang.body.misc["field 24"]).unbind().click(function() {
-                $("#endGame-learnMore-content").slideToggle("fast", function() {
+            console.log("events fired");
 
                     $("#endGame-new button").html(langFiles["field 11"]).unbind().click(function() {
                         //window.location.reload(true);
@@ -292,8 +290,6 @@
                             console.log("Click share event");
                         $.endGame.share('test');
                     });
-                });
-            });
         },
         //a pop up message to check if really want to bail out from the game
         runAway: function() {
