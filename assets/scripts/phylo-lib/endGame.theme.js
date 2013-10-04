@@ -247,12 +247,25 @@
 		//a pop up message to check if really want to bail out from the game
 		runAway : function() {
 			$("#runaway").unbind().click(function() {
-				$.helper.popUp(window.lang.body.misc["field 19"], function(status) {
-					if(status == "ok") {
-						$.endGame.bail();
-						$.timer.active = false;
-					}
-				});
+                // $.helper.popUp(window.lang.body.misc["field 19"], function(status) {
+                //  if(status == "ok") {
+                //      $.endGame.bail();
+                //      $.timer.active = false;
+                //  }
+                // });
+                 options ={
+                    message: window.lang.body.misc["field 19"],
+                    confirm : window.lang.body.misc["field 18"],
+                    cancel : window.lang.body.misc["field 16"],
+                    callback: function(status){
+                        if(status){
+                            $.timer.active =false;
+                            $.endGame.bail();
+
+                        }
+                    }
+                 };
+                 bootbox.confirm(options);
 			});	
 		}
 	}
