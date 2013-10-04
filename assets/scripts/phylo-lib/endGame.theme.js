@@ -234,7 +234,8 @@
                 else if (provider === "Classic") {
                     var options = {
                         //title: window.lang.body.social["field 29"],
-                        message: "Please choose a social network to share",
+                        //message: "Please choose a social network to share",
+                        message : window.lang.body.social["chooseNetwork"] || "Please chooes a social network to share!",
                         buttons: {
                             facebook: {
                                 label: "Share via Facebok",

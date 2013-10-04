@@ -964,8 +964,9 @@ h2.slide-caption {
 }
 
 .modal-footer .footerButton.zocial{
+	width:44%;
 	font-size: 0.95em;
-	
+
 }
 .modal-footer .footerButton.zocial:hover{
 	color:whitesmoke;
