@@ -128,6 +128,17 @@
                     "field 13" : "Punctează acum"
                 },
                 "end of game": {
+                    "headerMessage" : "Statistici și informații despre acest puzzle.",
+                    "replayMessage" : "Folosiți ID Puzzle pentru a juca din nou acest puzzle.",
+                    "completeXMessage" : "Completați *** mai multe puzzle-uri pentru a debloca modul Expert cu puzzle-uri mai greu și caracteristici suplimentare.",
+                    "thankyouMessage" :"Vă mulțumim pentru a contribui la Cercetare genomice!",
+                    "levelId" : "Id puzzle: ***",
+                    "userScore" : "Scorul dvs. : ***",
+                    "avgScore" : "Scorul mediu : ***",
+                    "highscore" : "Cel mai mare scor : ***",
+                    "highscoreHolder" : "Deținătorul recordului : ***",
+                    "dnaAssociation" : "Boli asociate : ***",
+                    "completions" : "Numărul total de soluții : ***",
                     "field 1" : "Vă mulţumim",
                     "field 2" : "Apreciem contribuţia dumneavoastră la ştiinţă. Ştiaţi că:",
                     "field 3" : "Felicitări! Aţi completat ultimul stadiu, aliniamentul acestei sesiuni tocmai a fost trimis.",

@@ -129,6 +129,17 @@
                     "field 13": "立刻計分"
                 },
                 "end of game": {
+                    "headerMessage" : "關於這個謎的統計數據和信息。",
+                    "replayMessage" : "使用拼圖ID再次玩這個難題。",
+                    "completeXMessage" : "Complete *** more puzzles to unlock Expert mode with harder puzzles and additional features.",
+                    "thankyouMessage" :"謝謝你的基因組研究作出貢獻！",
+                    "levelId" : "益智ID : ***",
+                    "userScore" : "你的分數 : ***",
+                    "avgScore" : "平均得分 : ***",
+                    "highscore" : "最高得分 : ***",
+                    "highscoreHolder" : "紀錄保持者 : ***",
+                    "dnaAssociation" : "相關疾病 : ***",
+                    "completions" : "總數的解決方案 : ***",
                     "field 1": "感謝您",
                     "field 2": "我們非常感謝您對科學的貢獻！ 您知道嘛:",
                     "field 3": "恭喜！您已經破了此序列的最後一關，您的排序現在正被上傳到資料庫。",

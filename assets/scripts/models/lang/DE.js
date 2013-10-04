@@ -128,6 +128,17 @@
                         "field 13": "Aktuelles Ergebnis"
                 },
                 "end of game": {
+                        "headerMessage" : "Statistiken und Informationen zu diesem Rätsel.",
+                        "replayMessage" : "Verwenden Sie das Puzzle ID, um dieses Puzzle zu spielen.",
+                        "completeXMessage" : "Schließe *** mehr Puzzles Expert-Modus mit härteren Rätsel und zusätzliche Funktionen freizuschalten.",
+                        "thankyouMessage" :"Danke für den Beitrag zur Genomic Research!",
+                        "levelId" : "Puzzle Id : ***",
+                        "userScore" : "Ihr Ergebnis : ***",
+                        "avgScore" : "Durchschnittliche Punkte : ***",
+                        "highscore" : "Höchste Punktzahl : ***",
+                        "highscoreHolder" : "Rekordhalter : ***",
+                        "dnaAssociation" : "Assoziierten Erkrankung : ***",
+                        "completions" : "Anzahl der Lösungen : ***",
                         "field 1": "Danke",
                         "field 2": "Wir danken für Ihren Beitrag zur Wissenschaft. Wussten Sie schon:",
                         "field 3": "Herzlichen Glückwunsch! Sie haben die letzte Stufe abgeschlossen. Wir haben Ihre Anordnung für diese Sitzung gespeichert.",
