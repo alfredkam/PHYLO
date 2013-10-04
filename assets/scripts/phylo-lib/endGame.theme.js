@@ -233,8 +233,8 @@
                 } 
                 else if (provider === "Classic") {
                     var options = {
-                        title: window.lang.body.social["field 29"],
-                        message: loginBox,
+                        //title: window.lang.body.social["field 29"],
+                        message: "Please choose a social network to share",
                         buttons: {
                             facebook: {
                                 label: "Sign-in with Facebok",
