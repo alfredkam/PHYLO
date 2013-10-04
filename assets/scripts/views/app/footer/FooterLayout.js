@@ -18,6 +18,7 @@ define([
 ){
     var FooterLayout = Marionette.Layout.extend({
         initialize : function(){
+            var self = this;
             this.model.set("year",new Date().getFullYear());
             this.model.on("change", this.updateTemplate, this);
             var tempModel = Backbone.Model.extend({
@@ -26,6 +27,14 @@ define([
             this.statsModel = new tempModel();
             this.statsModel.on("change", this.updateStats, this);
             this.statsModel.fetch();
+            window.setInterval( function() {
+                self.statsModel.fetch({
+                    success : function() {
+                        self.updateStats();
+                    //    console.log("updated");
+                    }
+                });
+            }, 30000);
         },
         template : tpl,
         regions : {

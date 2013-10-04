@@ -10,7 +10,7 @@
 				self.score("completed",data.best_score);
                 self.submitterLocation = submitterURl+(data.submitter?data.submitter:"jerome");
                 self.submitter = data.submitter;
-                var puzzlesLeft = ((20 - data.puzzles_completed) > 0 ? 0 : 20-data.puzzles_completed) || 20;
+                var puzzlesLeft = ((20 - data.puzzles_completed) > 0 ? 20-data.puzzles_completed : 0);          //
                 var endMsg = window.lang.body.play.gameselect["end of game"];
 				//var msg = "<b>Congratulations!</b> You have solved the puzzle";
 				var msg = endMsg["headerMessage"];
@@ -44,9 +44,11 @@
                 // console.log(data);
 				self.score("bail",data.best_score);
                 self.submitter = data.submitter;
+                // data.puzzles_completed = 21;
+                // window.guest = "test";
                 self.submitterLocation = submitterURl+(data.submitter?data.submitter:"jerome");
 				//var msg = "Too bad! You did not succeed to solve this puzzle!";
-                var puzzlesLeft = ((20 - data.puzzles_completed) > 0 ? 0 : 20-data.puzzles_completed) || 20;          //
+                var puzzlesLeft = ((20 - data.puzzles_completed) > 0 ? 20-data.puzzles_completed : 0);          //
                 var endMsg = window.lang.body.play.gameselect["end of game"];
 				var msg = endMsg["headerMessage"];
 				$("#endGame-text").html(msg);
