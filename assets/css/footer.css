@@ -87,3 +87,14 @@ div#copyright a {
 #recentSubmitList a {
     text-decoration: underline;
 }
+
+#recentSubmitList table {
+    width:100%;
+}
+
+#recentSubmitList td {
+  white-space: nowrap;
+  max-width: 100px;                  
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
