@@ -230,7 +230,77 @@
                         };
                         bootbox.dialog(options);
                     });
-                } else {
+                } 
+                else if (provider === "Classic") {
+                    var options = {
+                        //title: window.lang.body.social["field 29"],
+                        
+                        message: loginBox,
+                        buttons: {
+                            facebook: {
+                                label: "Share via Facebok",
+                                className: "zocial facebook",
+                                message : "please select a social network to share in!",
+                                callback: function() {
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+                                        data: data,
+                                    }).done(function(re) {
+                                        //bootbox.alert("Your achievement has been posted!");
+                                    }).fail(function() {
+                                        bootbox.alert(window.lang.body.social["field 23"]);
+                                    });
+                                }
+                            },
+                            twitter: {
+                                label: "Share via Twitter",
+                                className: "zocial twitter",
+                                callback: function() {
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+                                        data: data,
+                                    }).done(function(re) {
+                                        //bootbox.alert("Your achievement has been posted!");
+                                    }).fail(function() {
+                                        bootbox.alert(window.lang.body.social["field 23"]);
+                                    });
+                                }
+                            },
+                            linkedin: {
+                                label: "Share via LinkedIn",
+                                className: "zocial linkedin",
+                                callback: function() {
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+                                        data: data,
+                                    }).done(function(re) {
+                                        //bootbox.alert("Your achievement has been posted!");
+                                    }).fail(function() {
+                                        bootbox.alert(window.lang.body.social["field 23"]);
+                                    });
+                                }
+                            },
+                            google: {
+                                label: "Share via Google",
+                                className: "zocial google",
+                                callback: function() {
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+                                        data: data,
+                                    }).done(function(re) {
+                                        //bootbox.alert("Your achievement has been posted!");
+                                    }).fail(function() {
+                                        bootbox.alert(window.lang.body.social["field 23"]);
+                                    });
+                                }
+                            },
+
+                        }
+                    } else {
                     if (DEBUG)
                         console.log(window.lang.body.social["field 28"].replace("***", provider));
                     return;
