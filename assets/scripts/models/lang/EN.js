@@ -139,7 +139,7 @@
                     "highscoreHolder" : "Record holder : ***",
                     "dnaAssociation" : "Associated disease : ***",
                     "completions" : "Total number of solutions : ***",
-                    "submitter" : "Submitter Profile",
+                    "submitter" : "Creator profile",
                     "field 1": "Thank you",
                     "field 2": "We appreciate your contribution to science. Did you know:",
                     "field 3": "Congratulations! You've completed the final stage, and we just submitted your alignment for this session.",
@@ -235,7 +235,8 @@
             "field 30": "Sign-in with ***",
             "field 31": "DNA Puzzles",
             "field 32": "Login",
-            "field 33": "Phylo is a game in which every puzzle completed contributes to mapping diseases within human DNA. Have fun and help genetic research!"
+            "field 33": "Phylo is a game in which every puzzle completed contributes to mapping diseases within human DNA. Have fun and help genetic research!",
+            "chooseNetwork" : "Please choose a social network to share"
         },
         "footer": {
             "field 1": "Phylo is a challenging video game in which every puzzle completed contributes to mapping diseases within human DNA. Learn <a href='#!/EN/About'>more</a>.",
@@ -246,7 +247,7 @@
             "recentNews" : "Recent News",
             "totalPuzzles" : "Completed puzzles",
             "recentSubmit" : "Latest achievements",
-            "puzzleID" : "Puzzle ID",
+            "puzzleID" : "De Puzzle ID",
             "user" : "User",
             "unclassified" : "Unclassified"
         }

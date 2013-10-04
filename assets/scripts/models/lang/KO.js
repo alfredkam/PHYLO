@@ -139,6 +139,7 @@
                     "highscoreHolder" : "기록 보유자 : ***",
                     "dnaAssociation" : "관련 질환 : ***",
                     "completions" : "솔루션의 총 수 : ***",
+                    "submitter" : "퍼즐의 창조자";
 					"field 1": "감사합니다",
 					"field 2": "과학을 향한 당신의 기여에 감사드립니다.",
 					"field 3": "축하합니다. 당신은 최종 단계를 통과하셨고, 이번 단계에서의 정렬 결과가 제출되었습니다.",
@@ -249,7 +250,10 @@
             "field 5"  : "버그 신고",
             "recentNews" : "최근 뉴스",
             "totalPuzzles" : "완성 된 퍼즐",
-            "recentSubmit" : "최근 업적"
+            "recentSubmit" : "최근 업적",
+            "puzzleID" : "퍼즐의 ID",
+            "user" : "사용자",
+            "unclassified" : "분류되지 않음"
 		}
 	}
 }

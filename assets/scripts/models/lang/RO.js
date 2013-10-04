@@ -139,6 +139,7 @@
                     "highscoreHolder" : "Deținătorul recordului : ***",
                     "dnaAssociation" : "Boli asociate : ***",
                     "completions" : "Numărul total de soluții : ***",
+                    "submitter" : "Creator de puzzle";
                     "field 1" : "Vă mulţumim",
                     "field 2" : "Apreciem contribuţia dumneavoastră la ştiinţă. Ştiaţi că:",
                     "field 3" : "Felicitări! Aţi completat ultimul stadiu, aliniamentul acestei sesiuni tocmai a fost trimis.",
@@ -249,7 +250,10 @@
             "field 5"  : "Raportați o eroare",
             "recentNews" : "Știri recente",
             "totalPuzzles" : "Puzzle-uri terminate",
-            "recentSubmit" : "Ultimele realizări"
+            "recentSubmit" : "Ultimele realizări",
+            "puzzleID" : "ID-ul de puzzle",
+            "user" : "Utilizator",
+            "unclassified" : "Neclasificate"
         }
     }
 }

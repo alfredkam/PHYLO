@@ -140,6 +140,7 @@
                     "highscoreHolder" : "紀錄保持者 : ***",
                     "dnaAssociation" : "相關疾病 : ***",
                     "completions" : "總數的解決方案 : ***",
+                    "submitter" : "拼圖的創造者",
                     "field 1": "感謝您",
                     "field 2": "我們非常感謝您對科學的貢獻！ 您知道嘛:",
                     "field 3": "恭喜！您已經破了此序列的最後一關，您的排序現在正被上傳到資料庫。",
@@ -250,7 +251,10 @@
             "field 5"  : "報告錯誤",
             "recentNews" : "近期新聞",
             "totalPuzzles" : "完成拼圖",
-            "recentSubmit" : "最新成果"
+            "recentSubmit" : "最新成果",
+            "puzzleID" : "拼圖的ID",
+            "user" : "用戶",
+            "unclassified" : "未分類"
         }
     }
 }

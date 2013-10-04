@@ -139,6 +139,7 @@
                         "highscoreHolder" : "Rekordhalter : ***",
                         "dnaAssociation" : "Assoziierten Erkrankung : ***",
                         "completions" : "Anzahl der Lösungen : ***",
+                        "submitter" : "Schöpfer des Puzzles";
                         "field 1": "Danke",
                         "field 2": "Wir danken für Ihren Beitrag zur Wissenschaft. Wussten Sie schon:",
                         "field 3": "Herzlichen Glückwunsch! Sie haben die letzte Stufe abgeschlossen. Wir haben Ihre Anordnung für diese Sitzung gespeichert.",
@@ -249,7 +250,10 @@
             "field 5"  : "Fehler melden",
             "recentNews" : "Aktuelle Nachrichten",
             "totalPuzzles" : "Abgeschlossen Puzzles",
-            "recentSubmit" : "Neueste Errungenschaften"
+            "recentSubmit" : "Neueste Errungenschaften",
+            "puzzleID" : "Puzzle ID",
+            "user" : "Benutzer",
+            "unclassified" : "Nicht klassifiziert"
         }
     }
 }
