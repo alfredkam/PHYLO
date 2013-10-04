@@ -9,11 +9,12 @@ define([
     "scripts/views/app/footer/RecentNewsView",
     "scripts/views/app/footer/FooterStatsView",
     //Templates
-    'text!tpl/app/footer/FooterLayout.mustache'
+    'text!tpl/app/footer/FooterLayout.mustache',
+    'text!tpl/app/footer/RecentNewsTitle.mustache'
 ], function(
     $, _ , Backbone, Marionette,
     FooterNav, RecentNewsView, FooterStatsView,
-    tpl
+    tpl, recentNewsTitleTpl
 ){
     var FooterLayout = Marionette.Layout.extend({
         initialize : function(){
@@ -36,6 +37,9 @@ define([
             }),
             stats : new Marionette.Region({
                 el : "#statsWidget"
+            }),
+            recentNewsTitle : new Marionette.Region({
+                el : "#recentNewsTitle"
             })
         },
         updateStats : function() {
@@ -45,7 +49,11 @@ define([
                 model : this.statsModel
             }));
         },
+        recentNewsTitleView : Marionette.ItemView.extend({
+            template : recentNewsTitleTpl
+        }),
         updateTemplate : function(){
+            var self = this;
             //nav region
             this.regions.nav.reset();
             this.regions.nav.show(new FooterNav({
@@ -57,14 +65,19 @@ define([
                 langModel : this.model,
                 model : this.statsModel
             }));
-            this.regions.recentNews.reset();
-            this.regions.recentNews.show(new RecentNewsView({
+            // this.regions.recentNews.reset();
+            // this.regions.recentNews.show(new RecentNewsView({
+            //     model : this.model
+            // }));
+            this.regions.recentNewsTitle.reset();
+            this.regions.recentNewsTitle.show(new self.recentNewsTitleView({
                 model : this.model
             }));
+        },
+        onShow : function() {
+            this.regions.recentNews.reset();
+            this.regions.recentNews.show(new RecentNewsView());
         }
-        // onShow : function() {
-        //     this.regions.recentNews.show(new RecentNewsView());
-        // }
     });
     return FooterLayout;
 });

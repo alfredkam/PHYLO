@@ -18,7 +18,6 @@ define([
             var temp = "";
             var counter = 1;
             for (var i=total.length-1;i>=0;i--) {
-                console.log(total[i]);
                 if(counter == 3) {
                     temp= ","+total[i]+temp;
                     counter = 0;
