@@ -72,12 +72,12 @@
 				$("#endGame").fadeIn();
 			});
 
-		},
-        split : function(string) {
-            var pair = string.split(":");
-            return "<tr><td>"+$.trim(pair[0])+"&nbsp;&nbsp;&nbsp;:</td><td>&nbsp;&nbsp;&nbsp;"+$.trim(pair[1])+"</td></tr>";
         },
-		learnMore : function(json) {
+        split: function(string) {
+            var pair = string.split(":");
+            return "<tr><td>" + $.trim(pair[0]) + "&nbsp;&nbsp;&nbsp;:</td><td>&nbsp;&nbsp;&nbsp;" + $.trim(pair[1]) + "</td></tr>";
+        },
+        learnMore: function(json) {
             var context = "<table>";
             var self = this;
             // try {
@@ -105,92 +105,75 @@
             //     context = "This disease is related to disease etc, you are helping...etc";
             // }
             return context;
-		},
-		//scores the game
-		score : function(status, highscore) {
-			//remove background music... make it stop!
-			$("#musicPlayerSpot").html("");
-			//gets current score		
-			var setDefault = "<i class='icon-star-empty'></i><i class='icon-star-empty'></i><i class='icon-star-empty'></i>";	
-			$("#endGame-score-result").html(setDefault);
+        },
+        //scores the game
+        score: function(status, highscore) {
+            //remove background music... make it stop!
+            $("#musicPlayerSpot").html("");
+            //gets current score		
+            var setDefault = "<i class='icon-star-empty'></i><i class='icon-star-empty'></i><i class='icon-star-empty'></i>";
+            $("#endGame-score-result").html(setDefault);
             $("#endGame-share").show();
-			if(status == "bail")
-				return;
-			var currentScore = $.phylo.currentScore;
-			var par = $.sequence.par;
-			if(par < currentScore && currentScore < highscore) {
-				setDefault = "<i class='icon-star-1'></i><i class='icon-star-1'></i><i class='icon-star-empty'></i>";
-			} else if( highscore <= currentScore) {
-				setDefault = "<i class='icon-star-1'></i><i class='icon-star-1'></i><i class='icon-star-1'></i>";	
-			} else { //exactly par score
-				setDefault = "<i class='icon-star-1'></i><i class='icon-star-empty'></i><i class='icon-star-empty'></i>";	
-			}
-			$("#endGame-score-result").html(setDefault);
-		},
+            if (status == "bail")
+                return;
+            var currentScore = $.phylo.currentScore;
+            var par = $.sequence.par;
+            if (par < currentScore && currentScore < highscore) {
+                setDefault = "<i class='icon-star-1'></i><i class='icon-star-1'></i><i class='icon-star-empty'></i>";
+            } else if (highscore <= currentScore) {
+                setDefault = "<i class='icon-star-1'></i><i class='icon-star-1'></i><i class='icon-star-1'></i>";
+            } else { //exactly par score
+                setDefault = "<i class='icon-star-1'></i><i class='icon-star-empty'></i><i class='icon-star-empty'></i>";
+            }
+            $("#endGame-score-result").html(setDefault);
+        },
         // share highscore on social network
-        share : function() {
-            if($.cookie.read("username")) {
+        share: function() {
+            if ($.cookie.read("username")) {
                 var username = $.cookie.read("username");
                 var fullname = $.cookie.read("fullname");
                 var provider = $.cookie.read("loginmode");
                 var c_logid = $.cookie.read("logid");
- 
-                if ((provider=="Facebook")||(provider=="Twitter")||(provider=="LinkedIn")||(provider=="Google")) {
-  
+                console.log(provider);
+                if ((provider == "Facebook") || (provider == "Twitter") || (provider == "LinkedIn") || (provider == "Google")) {
+
                     $.protocal.sendEndGameScore("info", function(data) {
-                                                
+
                         var puzzle_disease = data.disease_link;
                         var puzzle_highscore = data.best_score;
-                        
-                        if (provider=="Facebook") {
+
+                        if (provider == "Facebook") {
                             if (puzzle_disease) {
-                                if ($.phylo.currentScore>=puzzle_disease) {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 7"].replace("***",puzzle_disease) + "\n" + window.lang.body.social["field 20"];
+                                if ($.phylo.currentScore >= puzzle_disease) {
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 7"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
                                 } else {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 8"].replace("***",puzzle_disease) + "\n" + window.lang.body.social["field 20"];
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 8"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
                                 }
                             } else {
-                                if ($.phylo.currentScore>=puzzle_disease) {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 9"] + ".\n" + window.lang.body.social["field 20"];
+                                if ($.phylo.currentScore >= puzzle_disease) {
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 9"] + ".\n" + window.lang.body.social["field 20"];
                                 } else {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 10"] + ".";
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 10"] + ".";
                                 }
                             }
                             var caption = window.lang.body.social["field 31"];
-                            var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
-                        } else if (provider=="Twitter") {
+                            var data = "provider=" + provider + "&id=" + c_logid + "&caption=" + caption + "&description=" + message;
+                        } else if (provider == "Twitter") {
                             if (puzzle_disease) {
-                                if ($.phylo.currentScore>=puzzle_disease) {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 11"].replace("***",puzzle_disease) + " " + window.lang.body.social["field 20"] + "#Phylo #DNA #puzzles";
+                                if ($.phylo.currentScore >= puzzle_disease) {
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 11"].replace("***", puzzle_disease) + " " + window.lang.body.social["field 20"] + "#Phylo #DNA #puzzles";
                                 } else {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 12"].replace("***",puzzle_disease) + " " + window.lang.body.social["field 20"] + "#Phylo #DNA #puzzles";
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 12"].replace("***", puzzle_disease) + " " + window.lang.body.social["field 20"] + "#Phylo #DNA #puzzles";
                                 }
                             } else {
-                                if ($.phylo.currentScore>=puzzle_disease) {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 13"] + ".\"" + window.lang.body.social["field 20"] + "#Phylo #DNA #puzzles";
+                                if ($.phylo.currentScore >= puzzle_disease) {
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 13"] + ".\"" + window.lang.body.social["field 20"] + "#Phylo #DNA #puzzles";
                                 } else {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 14"] + ".\"" + window.lang.body.social["field 20"] + "#Phylo #DNA #puzzles";
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 14"] + ".\"" + window.lang.body.social["field 20"] + "#Phylo #DNA #puzzles";
                                 }
                             }
-                            var data = "provider="+provider+"&id="+c_logid+"&description="+message;
-                        } else if (provider=="LinkedIn") {
-                            if (puzzle_disease) {
-                                if ($.phylo.currentScore>=puzzle_disease) {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 15"].replace("***",puzzle_disease) + "\n" + window.lang.body.social["field 20"];
-                                } else {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 16"].replace("***",puzzle_disease) + "\n" + window.lang.body.social["field 20"];
-                                }
-                            } else {
-                                if ($.phylo.currentScore>=puzzle_disease) {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 17"] + ".\n" + window.lang.body.social["field 20"];
-                                } else {
-                                    var message = fullname.replace("+"," ") + " " + window.lang.body.social["field 18"] + ".\n" + window.lang.body.social["field 20"];
-                                }
-}                            //var caption = window.lang.body.social["field 26"];
-                            //var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
                             var data = "provider=" + provider + "&id=" + c_logid + "&description=" + message;
-                        }
-                        else if (provider == "Google") {
+                        } else if (provider == "LinkedIn") {
                             if (puzzle_disease) {
                                 if ($.phylo.currentScore >= puzzle_disease) {
                                     var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 15"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
@@ -203,35 +186,66 @@
                                 } else {
                                     var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 18"] + ".\n" + window.lang.body.social["field 20"];
                                 }
-                        }
-                        //var caption = window.lang.body.social["field 26"];
-                        //var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
-                        var data = "provider=" + provider + "&id=" + c_logid + "&description=" + message;
-                    }
-                        var options = {
-                            message: window.lang.body.social["field 22"] + "<br/>\n" + message,
-                           // window.lang.body.social["field 27"],
-                            'callback': function(result) {
-                                if (result) {
-                                    $.ajax({
-                                        type: "POST",
-                                        url: "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
-                                        data: data,
-                                    }).done(function(re) {
-                                        //bootbox.alert("Your achievement has been posted!");
-                                    }).fail(function() {
-                                        bootbox.alert(window.lang.body.social["field 23"]);
-                                    });
+                            } //var caption = window.lang.body.social["field 26"];
+                            //var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
+                            var data = "provider=" + provider + "&id=" + c_logid + "&description=" + message;
+                        } else if (provider == "Google") {
+                            if (puzzle_disease) {
+                                if ($.phylo.currentScore >= puzzle_disease) {
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 15"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
+                                } else {
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 16"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
                                 }
-                            },
-                            confirm : window.lang.body.social["field 25"],
-
+                            } else {
+                                if ($.phylo.currentScore >= puzzle_disease) {
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 17"] + ".\n" + window.lang.body.social["field 20"];
+                                } else {
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 18"] + ".\n" + window.lang.body.social["field 20"];
+                                }
+                            }
+                            //var caption = window.lang.body.social["field 26"];
+                            //var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
+                            var data = "provider=" + provider + "&id=" + c_logid + "&description=" + message;
+                        }
+                        var options = {
+                            message: window.lang.body.social["field 22"] + "<br/>via "+provider +"<br/>\n" + message,
+                            buttons: {
+                                confirm: {
+                                    label: window.lang.body.social["field 25"],
+                                    class : "btn-success",
+                                    callback: function() {
+                                        $.ajax({
+                                            type: "POST",
+                                            url: "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+                                            data: data,
+                                        }).done(function(re) {
+                                            //bootbox.alert("Your achievement has been posted!");
+                                        }).fail(function() {
+                                            bootbox.alert(window.lang.body.social["field 23"]);
+                                        });
+                                    }
+                                },
+                                cancel : {
+                                    label: window.lang.body.social["field 27"],
+                                }
+                            }
                         };
-                        bootbox.confirm(options);
+                        bootbox.dialog(options);
                     });
+                } 
+                else if (provider === "Classic") {
+                    var options = {
+                        message: window.lang.body.social["field 44"],
+                        buttons: {
+                            ok: {
+                                
+                            },
+                        }
+                    };
+                    bootbox.dialog(options);
                 } else {
-			if(DEBUG)
-                    console.log(window.lang.body.social["field 28"].replace("***",provider));
+                    if (DEBUG)
+                        console.log(window.lang.body.social["field 28"].replace("***", provider));
                     return;
                 }
             } else {
@@ -244,7 +258,9 @@
                 $("#logout").hide();
                 window.guest = 'guest';
                 $("#login-box").hide();
-                $(".login-btn").click(function() { eClick(); });
+                $(".login-btn").click(function() {
+                    eClick();
+                });
                 $("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]);
                 $(".showInLogin").hide();
                 return;
@@ -252,57 +268,69 @@
         },
 		//events for the end game messages
 		//new game or replay game
-		events : function() {
+        events: function() {
             var self = this;
             langFiles = window.lang.body.play.gameselect["end of game"];
-			// $("#endGame-learnMore-content").hide();
-	
-			$("#endGame-learnMore-tag button").html(window.lang.body.misc["field 24"]).unbind().click(function() {
-				$("#endGame-learnMore-content").slideToggle("fast",function() {
+            // $("#endGame-learnMore-content").hide();
 
-				});
-			});
+                    $("#endGame-new button").html(langFiles["field 11"]).unbind().click(function() {
+                        //window.location.reload(true);
+                        $("#game").hide();
+                        $("#endGame").fadeOut();
+                        interactiveMenu.restart();
+                        $("#draw").show();
+                        $("#menu").fadeIn();
+                        //window.location.hash = "#!play";
+                    });
 
-			$("#endGame-new button").html(langFiles["field 11"]).unbind().click(function() {
-				//window.location.reload(true);
-				$("#game").hide();
-				$("#endGame").fadeOut();
-				interactiveMenu.restart();
-				$("#draw").show();
-				$("#menu").fadeIn();
-				//window.location.hash = "#!play";
-			});
-				
-			$("#endGame-replay button").html(langFiles["field 12"]).unbind().click(function(){
-				$.main.clear();
-				$("#endGame").fadeOut();
-				$("#tree").html("");
-				$("#gameBoard").html("<img src='assets/img/loading.gif'/>");
-				$.protocal.replay();
-				$("#countDown-text").html("<img src='assets/img/loading.gif'/>");
-				$("#countDown").fadeIn();
-			});
+                    $("#endGame-replay button").html(langFiles["field 12"]).unbind().click(function() {
+                        $.main.clear();
+                        $("#endGame").fadeOut();
+                        $("#tree").html("");
+                        $("#gameBoard").html("<img src='assets/img/loading.gif'/>");
+                        $.protocal.replay();
+                        $("#countDown-text").html("<img src='assets/img/loading.gif'/>");
+                        $("#countDown").fadeIn();
+                    });
 
-            // $("#endGame-submitter button").html(langFiles["submitter"]).unbind().click(function(){
-            //     window.location = self.submitterLocation;
-            // });
- 
-            $("#endGame-share button").html(langFiles["field 13"]).unbind().click(function(){
-		if(DEBUG)
-                console.log("Click share event");
-                $.endGame.share('test');
+                    // $("#endGame-submitter button").html(langFiles["submitter"]).unbind().click(function(){
+                    //     window.location = self.submitterLocation;
+                    // });
+
+                    $("#endGame-share button").html(langFiles["field 13"]).unbind().click(function() {
+                        if (DEBUG)
+                            console.log("Click share event");
+                        $.endGame.share('test');
+                    });
+        },
+        //a pop up message to check if really want to bail out from the game
+        runAway: function() {
+            $("#runaway").unbind().click(function() {
+                // $.helper.popUp(window.lang.body.misc["field 19"], function(status) {
+                //  if(status == "ok") {
+                //      $.endGame.bail();
+                //      $.timer.active = false;
+                //  }
+                // });
+                options = {
+                    message: window.lang.body.misc["field 19"],
+                    buttons: {
+                        confirm: {
+                            label: window.lang.body.misc["field 18"],
+                            callback: function() {
+                                $.timer.active = false;
+                                $.endGame.bail();
+                            }
+                        },
+                        cancel: {
+                            label: window.lang.body.misc["field 16"],
+                        }
+                    }
+                };
+                bootbox.dialog(options);
+
             });
-		},
-		//a pop up message to check if really want to bail out from the game
-		runAway : function() {
-			$("#runaway").unbind().click(function() {
-				$.helper.popUp(window.lang.body.misc["field 19"], function(status) {
-					if(status == "ok") {
-						$.endGame.bail();
-						$.timer.active = false;
-					}
-				});
-			});	
-		}
-	}
+        }
+
+    };
 })();
