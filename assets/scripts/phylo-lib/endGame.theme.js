@@ -255,7 +255,7 @@
         },
 		//events for the end game messages
 		//new game or replay game
-		events : function() {
+        events: function() {
             var self = this;
             langFiles = window.lang.body.play.gameselect["end of game"];
             // $("#endGame-learnMore-content").hide();
@@ -263,34 +263,36 @@
             $("#endGame-learnMore-tag button").html(window.lang.body.misc["field 24"]).unbind().click(function() {
                 $("#endGame-learnMore-content").slideToggle("fast", function() {
 
-			$("#endGame-new button").html(langFiles["field 11"]).unbind().click(function() {
-				//window.location.reload(true);
-				$("#game").hide();
-				$("#endGame").fadeOut();
-				interactiveMenu.restart();
-				$("#draw").show();
-				$("#menu").fadeIn();
-				//window.location.hash = "#!play";
-			});
-				
-			$("#endGame-replay button").html(langFiles["field 12"]).unbind().click(function(){
-				$.main.clear();
-				$("#endGame").fadeOut();
-				$("#tree").html("");
-				$("#gameBoard").html("<img src='assets/img/loading.gif'/>");
-				$.protocal.replay();
-				$("#countDown-text").html("<img src='assets/img/loading.gif'/>");
-				$("#countDown").fadeIn();
-			});
+                    $("#endGame-new button").html(langFiles["field 11"]).unbind().click(function() {
+                        //window.location.reload(true);
+                        $("#game").hide();
+                        $("#endGame").fadeOut();
+                        interactiveMenu.restart();
+                        $("#draw").show();
+                        $("#menu").fadeIn();
+                        //window.location.hash = "#!play";
+                    });
 
-            // $("#endGame-submitter button").html(langFiles["submitter"]).unbind().click(function(){
-            //     window.location = self.submitterLocation;
-            // });
- 
-            $("#endGame-share button").html(langFiles["field 13"]).unbind().click(function(){
-		if(DEBUG)
-                console.log("Click share event");
-                $.endGame.share('test');
+                    $("#endGame-replay button").html(langFiles["field 12"]).unbind().click(function() {
+                        $.main.clear();
+                        $("#endGame").fadeOut();
+                        $("#tree").html("");
+                        $("#gameBoard").html("<img src='assets/img/loading.gif'/>");
+                        $.protocal.replay();
+                        $("#countDown-text").html("<img src='assets/img/loading.gif'/>");
+                        $("#countDown").fadeIn();
+                    });
+
+                    // $("#endGame-submitter button").html(langFiles["submitter"]).unbind().click(function(){
+                    //     window.location = self.submitterLocation;
+                    // });
+
+                    $("#endGame-share button").html(langFiles["field 13"]).unbind().click(function() {
+                        if (DEBUG)
+                            console.log("Click share event");
+                        $.endGame.share('test');
+                    });
+                });
             });
         },
         //a pop up message to check if really want to bail out from the game
