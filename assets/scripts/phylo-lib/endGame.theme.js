@@ -206,10 +206,10 @@
                             var data = "provider=" + provider + "&id=" + c_logid + "&description=" + message;
                         }
                         var options = {
-                            message: window.lang.body.social["field 22"] + "<br/>via+"+provider +"\n" + message,
+                            message: window.lang.body.social["field 22"] + "<br/>via "+provider +"<br/>\n" + message,
                             buttons: {
                                 confirm: {
-                                    label: window.lang.body.misc["field 25"],
+                                    label: window.lang.body.social["field 25"],
                                     class : "btn-success",
                                     callback: function() {
                                         $.ajax({
@@ -224,7 +224,7 @@
                                     }
                                 },
                                 cancel : {
-                                    label: window.lang.body.misc["field 27"],
+                                    label: window.lang.body.social["field 27"],
                                 }
                             }
                         };
