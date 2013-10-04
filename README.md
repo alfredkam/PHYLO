@@ -27,7 +27,7 @@ Copyright (2012) McGill University, Alfred Kam, Jerome Waldispuhl and other cont
 Getting Started
 =====
 Fork it! Then let me know if you have a new module or bug fix and ill integrate it in :)
-We use Mariontte! You can easily creative an <a href='https://github.com/marionettejs/backbone.marionette/blob/master/docs/marionette.itemview.md'>Marionette Itemview</a> to create modules / components.
+We use Mariontte! You can easily create an <a href='https://github.com/marionettejs/backbone.marionette/blob/master/docs/marionette.itemview.md'>Marionette Itemview</a> to create modules / components.
 
 We've based our boilerplate from this <a href='https://github.com/alfredkam/Boilerplates/tree/master/Marionette'>repo</a>
 
