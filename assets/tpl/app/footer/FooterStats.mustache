@@ -6,11 +6,11 @@
 <div id='recentSubmitList'>
     <table>
         <tr>
-            <th>User</th><th>Puzzle ID</th><th>Disease</th>
+            <th>{{user}}</th><th>{{puzzleID}}</th><th>{{disease}}</th>
         </tr>
     {{#last}}
     <tr>
-        <td>{{user}}</td><td><a href='#!/{{lang}}/Play/Puzzle/{{PuzzleID}}'>{{PuzzleID}}</a></td><td>{{diseaseName}}</td>
+        <td>{{user}}</td><td><a href='#!/{{lang}}/Play/Puzzle/{{PuzzleID}}'>{{PuzzleID}}</a></td><td>{{diseaseName}}{{^diseaseName}}{{unclassified}}{{/diseaseName}}</td>
     </tr>
     {{/last}}
     </table>

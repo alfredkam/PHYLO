@@ -65,9 +65,10 @@ body {
 	background: url('../img/phylo-bg-4.svg') top left repeat;
 	height:100%;
 	width:100%;
-	position:absolute;
+	position:fixed;
 	opacity: 0.05;
 	top:0;
+	left:0;
 }
 /*disables tablet */
 /*	.tablet-property {

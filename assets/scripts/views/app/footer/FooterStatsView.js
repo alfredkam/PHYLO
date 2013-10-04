@@ -28,9 +28,13 @@ define([
             }
             this.model.set({
                 "lang" : this.langModel.get("lang"),
+                "puzzleID" : this.langModel.toJSON().body.footer.puzzleID,
+                "user" : this.langModel.toJSON().body.footer.user,
+                "disease" : this.langModel.toJSON().body.play.ranking["field 15"],
                 "number" : temp,
                 "totalPuzzles" : this.langModel.toJSON().body.footer.totalPuzzles,
-                "recentSubmit" : this.langModel.toJSON().body.footer.recentSubmit
+                "recentSubmit" : this.langModel.toJSON().body.footer.recentSubmit,
+                "unclassified" : this.langModel.toJSON().body.footer.unclassified
             },{
                 silent : true
             });

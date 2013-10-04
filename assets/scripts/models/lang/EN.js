@@ -245,7 +245,10 @@
             "field 5"  : "Report a bug",
             "recentNews" : "Recent News",
             "totalPuzzles" : "Completed puzzles",
-            "recentSubmit" : "Latest achievements"
+            "recentSubmit" : "Latest achievements",
+            "puzzleID" : "Puzzle ID",
+            "user" : "User",
+            "unclassified" : "Unclassified"
         }
     }
 }
