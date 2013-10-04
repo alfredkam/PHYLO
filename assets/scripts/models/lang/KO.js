@@ -128,6 +128,17 @@
 					"field 13": "현재 점수"
 				},
 				"end of game": {
+                    "headerMessage" : "통계 및이 퍼즐에 대한 정보를 제공합니다.",
+                    "replayMessage" : "다시 퍼즐을 재생하는 퍼즐 ID를 사용합니다.",
+                    "completeXMessage" : "열심히 퍼즐과 추가 기능 전문가 모드의 잠금을 해제 *** 더 많은 퍼즐을 완성합니다.",
+                    "thankyouMessage" :"게놈 연구에 기여 주셔서 감사합니다!",
+                    "levelId" : "퍼즐 아이디 : ***",
+                    "userScore" : "점수 : ***",
+                    "avgScore" : "평균 점수 : ***",
+                    "highscore" : "최고 점수 : ***",
+                    "highscoreHolder" : "기록 보유자 : ***",
+                    "dnaAssociation" : "관련 질환 : ***",
+                    "completions" : "솔루션의 총 수 : ***",
 					"field 1": "감사합니다",
 					"field 2": "과학을 향한 당신의 기여에 감사드립니다.",
 					"field 3": "축하합니다. 당신은 최종 단계를 통과하셨고, 이번 단계에서의 정렬 결과가 제출되었습니다.",
@@ -234,7 +245,11 @@
 			"field 1": "Phylo는 모든 완성된 퍼즐이 인간 유전 질병을 연구하는데 도움이 되는 비디오 게임입니다. [더 알아보기]",
 			"field 2": "Phylo 페이스북 그룹에 가입하시거나 ‘좋아요’를 눌러주세요.",
             "field 3" : "블로그",
-            "field 4" : "포럼"
+            "field 4" : "포럼",
+            "field 5"  : "버그 신고",
+            "recentNews" : "최근 뉴스",
+            "totalPuzzles" : "완성 된 퍼즐",
+            "recentSubmit" : "최근 업적"
 		}
 	}
 }

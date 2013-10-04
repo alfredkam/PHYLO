@@ -125,6 +125,17 @@
                     "field 13": "当前分数"
                 },
                 "end of game": {
+                    "headerMessage" : "关于这个谜的统计数据和信息。",
+                    "replayMessage" : "使用拼图ID再次玩这个难题。",
+                    "completeXMessage" : "完成***谜题更难的难题和附加功能解锁专家模式。",
+                    "thankyouMessage" :"谢谢你的基因组研究作出贡献！",
+                    "levelId" : "益智ID : ***",
+                    "userScore" : "你的分数 : ***",
+                    "avgScore" : "平均得分 : ***",
+                    "highscore" : "最高得分 : ***",
+                    "highscoreHolder" : "纪录保持者 : ***",
+                    "dnaAssociation" : "相关疾病 : ***",
+                    "completions" : "总数的解决方案 : ***",
                     "field 1": "谢谢您",
                     "field 2": "我们感谢您对科学的贡献。您知道下面的数据吗",
                     "field 3": "恭喜你！你已经通关了，我们正提交你的成果",
@@ -231,7 +242,11 @@
             "field 1": "Phylo是一个挑战科学难题的HTML5游戏，游戏中的每个难关与人类疾病密切相关。了解更多",
             "field 2": "加入Phylo的Facebook社区，给我们竖一个大拇指吧。",
             "field 3" : "博客",
-            "field 4" : "论坛"
+            "field 4" : "论坛",
+            "field 5"  : "报告错误",
+            "recentNews" : "近期新闻",
+            "totalPuzzles" : "完成拼图",
+            "recentSubmit" : "Latest achievements"
         }
     }
 }

@@ -128,6 +128,17 @@
                     "field 13": "Puntaje ahora"
                 },
                 "end of game": {
+                    "headerMessage" : "Estadísticas e información acerca de este rompecabezas.",
+                    "replayMessage" : "Utilice el ID de Puzzle para jugar este rompecabezas de nuevo.",
+                    "completeXMessage" : "Completar *** más puzzles para desbloquear el modo Experto con los rompecabezas más difíciles y características adicionales.",
+                    "thankyouMessage" :"Gracias por contribuir con la investigación de Genomic usted!",
+                    "levelId" : "Puzzle Id : ***",
+                    "userScore" : "Su puntuación : ***",
+                    "avgScore" : "Promedio : ***",
+                    "highscore" : "Mayor puntuación : ***",
+                    "highscoreHolder" : "Poseedor del récord : ***",
+                    "dnaAssociation" : "Enfermedad asociada : ***",
+                    "completions" : "Número total de soluciones : ***",
                     "field 1": "Gracias",
                     "field 2": "Agradecemos su contribución a la ciencia:",
                     "field 3": "Felicitaciones! Ha completado el ultimo escenario, y enviaremos los alinemamientos de esta sesión.",
@@ -235,7 +246,11 @@
             "field 1": "Phylo es un video juego retador en el cual cada juego completado contribuye a mapear enfermedades con el ADN humano. Learn <a href='?pid=about#!/SP'>more</a>.",
             "field 2": "Unase a Phylo <a href='https://www.facebook.com/groups/127713783941517/'>community</a> en facebook or regalenos un pulgar arrriba.",
             "field 3" : "Blog",
-            "field 4" : "Foro"
+            "field 4" : "Foro",
+            "field 5"  : "Notificar un error",
+            "recentNews" : "Noticias recientes",
+            "totalPuzzles" : "Rompecabezas completadas",
+            "recentSubmit" : "Últimos"
         }
     }
 }

@@ -125,6 +125,17 @@
                     "field 13": "Pontuar agora"
                 },
                 "end of game": {
+                    "headerMessage" : "Estatísticas e informações sobre este puzzle.",
+                    "replayMessage" : "Use o ID de puzzle para jogar este quebra-cabeça novamente.",
+                    "completeXMessage" : "Conclua *** mais puzzles para destravar o modo Especialista com puzzles mais difíceis e recursos adicionais.",
+                    "thankyouMessage" :"Obrigado por contribuir para Pesquisa Genômica!",
+                    "levelId" : "Puzzle Id : ***",
+                    "userScore" : "Sua pontuação : ***",
+                    "avgScore" : "Pontuação média : ***",
+                    "highscore" : "maior pontuação : ***",
+                    "highscoreHolder" : "Recordista : ***",
+                    "dnaAssociation" : "Doença associada : ***",
+                    "completions" : "Número total de soluções : ***",
                     "field 1": "Obrigado",
                     "field 2": "Nós apreciamos sua contribuição à ciência. Você sabia:",
                     "field 3": "Parabéns! Você completou a última fase, e nós enviamos seu alinhamento desta sessão.",
@@ -231,7 +242,11 @@
             "field 1": "Phylo é um jogo desafiante em Flash, no qual cada quebra-cabeça resolvido contribui para o mapeamento de doenças no DNA humano. Saiba mais.",
             "field 2": "Junte-se à comunidade Phylo no Facebook ou simplesmente curta.",
             "field 3" : "Blog",
-            "field 4" : "Fórum"
+            "field 4" : "Fórum",
+            "field 5"  : "Reportar um bug",
+            "recentNews" : "Notícias recentes",
+            "totalPuzzles" : "Puzzles concluídos",
+            "recentSubmit" : "últimas conquistas"
         }
     }
 }

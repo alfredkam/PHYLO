@@ -73,3 +73,30 @@ div#copyright {
 div#copyright a {
     font-size:13px;
 }
+
+#numberofpuzzle {
+    font-size:50px;
+    line-height:normal;
+    color:rgb(109, 109, 109);
+}
+
+#recentSubmitList {
+    color: rgb(109, 109, 109);
+}
+
+#recentSubmitList a {
+    text-decoration: underline;
+    font-size:13px;
+}
+
+#recentSubmitList table {
+    width:100%;
+    font-size: 13px;
+}
+
+#recentSubmitList td {
+  white-space: nowrap;
+  max-width: 100px;                  
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

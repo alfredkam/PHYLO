@@ -128,6 +128,17 @@
                         "field 13": "Aktuelles Ergebnis"
                 },
                 "end of game": {
+                        "headerMessage" : "Statistiken und Informationen zu diesem Rätsel.",
+                        "replayMessage" : "Verwenden Sie das Puzzle ID, um dieses Puzzle zu spielen.",
+                        "completeXMessage" : "Schließe *** mehr Puzzles Expert-Modus mit härteren Rätsel und zusätzliche Funktionen freizuschalten.",
+                        "thankyouMessage" :"Danke für den Beitrag zur Genomic Research!",
+                        "levelId" : "Puzzle Id : ***",
+                        "userScore" : "Ihr Ergebnis : ***",
+                        "avgScore" : "Durchschnittliche Punkte : ***",
+                        "highscore" : "Höchste Punktzahl : ***",
+                        "highscoreHolder" : "Rekordhalter : ***",
+                        "dnaAssociation" : "Assoziierten Erkrankung : ***",
+                        "completions" : "Anzahl der Lösungen : ***",
                         "field 1": "Danke",
                         "field 2": "Wir danken für Ihren Beitrag zur Wissenschaft. Wussten Sie schon:",
                         "field 3": "Herzlichen Glückwunsch! Sie haben die letzte Stufe abgeschlossen. Wir haben Ihre Anordnung für diese Sitzung gespeichert.",
@@ -234,7 +245,11 @@
                 "field 1": "Phylo ist ein herausforderndes graphisches Spiel, bei dem jedes gelöste Puzzle einen Beitrag zur Verortung genetischer Krankheiten innerhalb der menschlichen DNA leistet. <a href='#!/DE/About'>Mehr erfahren</a>.",
                 "field 2": "Treten Sie der <a href='https://www.facebook.com/groups/127713783941517/'>Phylo-Gruppe</a> auf Facebook bei oder geben Sie uns ein Like!",
                 "field 3" : "Blog",
-                "field 4" : "Forum"
+            "field 4" : "Forum",
+            "field 5"  : "Fehler melden",
+            "recentNews" : "Aktuelle Nachrichten",
+            "totalPuzzles" : "Abgeschlossen Puzzles",
+            "recentSubmit" : "Neueste Errungenschaften"
         }
     }
 }

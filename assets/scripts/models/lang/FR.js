@@ -105,7 +105,7 @@
                         "Blood" : "Maladies du sang et du système immunitaire",
                         "Brain" : "Maladies du cerveau et des systèmes nerveux et sensoriels",
                         "Cancer" : "Cancers",
-                        "Digestive" : "Maldies des système digestif et respiratoire",
+                        "Digestive" : "Maladies des système digestif et respiratoire",
                         "Heart" : "Maladies du coeurs et des muscles",
                         "Metabolic" : "Maladies métaboliques",
                         "Infectious" : "Maladies infectueuse",
@@ -128,6 +128,17 @@
                     "field 13": "Évaluation"
                 },
                 "end of game": {
+                    "headerMessage" : "Statistiques et informations sur ce puzzle.",
+                    "replayMessage" : "Utilisez l'identitiant pour re-jouer ce puzzle.",
+                    "completeXMessage" : "Remplissez *** puzzles supplémentaires pour débloquer le mode Expert avec des puzzles plus difficiles et des fonctionnalités supplémentaires.",
+                    "thankyouMessage" :"Nous te remercions de contribuer à la recherche en génomique!",
+                    "levelId" : "Identifiant : ***",
+                    "userScore" : "Ton score : ***",
+                    "avgScore" : "Score moyen: ***",
+                    "highscore" : "Record : ***",
+                    "highscoreHolder" : "Tenant du record : ***",
+                    "dnaAssociation" : "Maladie associée : ***",
+                    "completions" : "Nombre Total de solutions : ***",
                     "field 1": "Merci",
                     "field 2": "Nous apprécions votre contribution à la science. Le saviez-vous:",
                     "field 3": "Félicitations! Tu as fini le dernier niveau et tu viens de soumettre ton alignement pour ce puzzle.",
@@ -235,7 +246,11 @@
             "field 1": "Phylo est un jeu Flash compétitif où chaque puzzle résolu contribue à améliorer notre compréhension de la relation entre l’ADN et les maladies. Apprenez en plus.",
             "field 2": "Rejoins la communauté de Phylo sur Facebook ou donne nous un coup de pouce.",
             "field 3" : "Blog",
-            "field 4" : "Forum"
+            "field 4" : "Forum",
+            "field 5"  : "Signaler un bug",
+            "recentNews" : "Nouvelles récentes",
+            "totalPuzzles" : "Puzzles complétés",
+            "recentSubmit" : "Dernières réalisations"
         }
     }
 }

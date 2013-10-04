@@ -128,6 +128,17 @@
                     "field 13" : "Punctează acum"
                 },
                 "end of game": {
+                    "headerMessage" : "Statistici și informații despre acest puzzle.",
+                    "replayMessage" : "Folosiți ID Puzzle pentru a juca din nou acest puzzle.",
+                    "completeXMessage" : "Completați *** mai multe puzzle-uri pentru a debloca modul Expert cu puzzle-uri mai greu și caracteristici suplimentare.",
+                    "thankyouMessage" :"Vă mulțumim pentru a contribui la Cercetare genomice!",
+                    "levelId" : "Id puzzle: ***",
+                    "userScore" : "Scorul dvs. : ***",
+                    "avgScore" : "Scorul mediu : ***",
+                    "highscore" : "Cel mai mare scor : ***",
+                    "highscoreHolder" : "Deținătorul recordului : ***",
+                    "dnaAssociation" : "Boli asociate : ***",
+                    "completions" : "Numărul total de soluții : ***",
                     "field 1" : "Vă mulţumim",
                     "field 2" : "Apreciem contribuţia dumneavoastră la ştiinţă. Ştiaţi că:",
                     "field 3" : "Felicitări! Aţi completat ultimul stadiu, aliniamentul acestei sesiuni tocmai a fost trimis.",
@@ -234,7 +245,11 @@
             "field 1" : "Phylo este un joc solicitant în care fiecare puzzle completat contribuie la cartografierea bolilor din cadrul ADN-ului uman. Află <a href='?pid=about#!/RO'>more</a>mai mult</a>.",
             "field 2" : "Alătură-te la <a href='https://www.facebook.com/groups/127713783941517/'>comunitatea</a>Phylo pe Facebook",
             "field 3" : "Blog",
-            "field 4" : "For"
+            "field 4" : "For",
+            "field 5"  : "Raportați o eroare",
+            "recentNews" : "Știri recente",
+            "totalPuzzles" : "Puzzle-uri terminate",
+            "recentSubmit" : "Ultimele realizări"
         }
     }
 }

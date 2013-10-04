@@ -1,7 +1,7 @@
 {
     "info": {
         "lang": "Hebrew",
-        "author": "Davidson institute with few update by Google"
+        "author": "Davidson institute with Google patch"
     },
     "header": {
         "field 1": "שחק",
@@ -106,7 +106,7 @@
                         "Heart": "לב ושרירי מחלות",
                         "Metabolic": "מחלות מטבוליות",
                         "Infectious": "מחלות זיהומיות",
-                        "Misc": "מחלות אחרות",
+                        "Misc": "מחלות אחרות"
                     }
                 },
                 "game board": {
@@ -125,6 +125,17 @@
                     "field 13": "תוצאה עכשיו"
                 },
                 "end of game": {
+                    "headerMessage" : "סטטיסטיקה ומידע על חידה זו.",
+                    "replayMessage" : "השתמש בפאזל מזהה לשחק את הפאזל מחדש.",
+                    "completeXMessage" : "השלם *** חידות נוספות כדי לבטל את נעילת מצב מומחה עם חידות קשות יותר ותכונות נוספות.",
+                    "thankyouMessage" :"תודה לך על תרומה למחקר הגנום!",
+                    "levelId" : "זיהוי חידה: ***",
+                    "userScore" : "הציון שלך: ***",
+                    "avgScore" : "ציון ממוצע: ***",
+                    "highscore" : "ציון הגבוה ביותר: ***",
+                    "highscoreHolder" : "שיאנית: ***",
+                    "dnaAssociation" : "מחלה קשורה: ***",
+                    "completions" : "מספר כולל של פתרונות: ***",
                     "field 1": "תודה",
                     "field 2": ":אנו מעריכים את תרומתך למדע. האם ידעת",
                     "field 3": ".כל הכבוד! סיימת את השלב האחרון, והוספנו את ההתאמה שלך לשלב זה",
@@ -231,7 +242,12 @@
             "field 1": "הוא משחק פלאש בו כל שלב שהושלם, תורם למיפוי מחלות בגנום האנושי. למד עודPhylo",
             "field 2": ".בפייסבוק או עשו לנו לייק Phylo הצטרף לקהילת",
             "field 3" : "בלוג",
-            "field 4" : "פורום"
+            "field 4" : "פורום",
+            "field 5"  : "דווח על באג",
+            "recentNews" : "החדשות האחרונות",
+            "totalPuzzles" : "חידות הושלמה",
+            "recentSubmit" : "ההישגים האחרונים"
+            
         }
     }
 }

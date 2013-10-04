@@ -129,6 +129,17 @@
                     "field 13": "立刻計分"
                 },
                 "end of game": {
+                    "headerMessage" : "關於這個謎的統計數據和信息。",
+                    "replayMessage" : "使用拼圖ID再次玩這個難題。",
+                    "completeXMessage" : "Complete *** more puzzles to unlock Expert mode with harder puzzles and additional features.",
+                    "thankyouMessage" :"謝謝你的基因組研究作出貢獻！",
+                    "levelId" : "益智ID : ***",
+                    "userScore" : "你的分數 : ***",
+                    "avgScore" : "平均得分 : ***",
+                    "highscore" : "最高得分 : ***",
+                    "highscoreHolder" : "紀錄保持者 : ***",
+                    "dnaAssociation" : "相關疾病 : ***",
+                    "completions" : "總數的解決方案 : ***",
                     "field 1": "感謝您",
                     "field 2": "我們非常感謝您對科學的貢獻！ 您知道嘛:",
                     "field 3": "恭喜！您已經破了此序列的最後一關，您的排序現在正被上傳到資料庫。",
@@ -235,7 +246,11 @@
             "field 1": "Phylo是一個挑戰科學難題的Flash遊戲，遊戲中的每個難關與人類疾病密切相關。瞭解更多",
             "field 2": "加入Phylo的Facebook社區，給我們豎一個大拇指吧。",
             "field 3" : "博客",
-            "field 4" : "論壇"
+            "field 4" : "論壇",
+            "field 5"  : "報告錯誤",
+            "recentNews" : "近期新聞",
+            "totalPuzzles" : "完成拼圖",
+            "recentSubmit" : "最新成果"
         }
     }
 }

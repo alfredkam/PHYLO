@@ -326,9 +326,12 @@
 	top:3px;
 }
 /*end game */
-#endGame-new, #endGame-replay, #endGame-share {
-	margin-top:20px;
+#endGame-links > div{
+	/*margin-top:29px;*/
 	display:inline-block;
+}
+#endGame-links {
+	margin-top:29px;
 }	
 #endGame-new {
 }
@@ -380,11 +383,11 @@
 	font-weight:bold;
 }
 #endGame-score-result {
-	padding:15px 0px;
+	/*padding:15px 0px;*/
 	display:inline-block;
 	line-height: normal;
 	position:relative;
-	margin-bottom:13px;
+	margin-bottom:20px;
 	margin-top:22px;
 }
 #endGame-score-result i {
@@ -398,7 +401,7 @@
 	/*border:1px solid #333;*/
 	line-height:14px !important;
 	margin-top:29px;
-	margin-bottom:12px;
+	margin-bottom:31px;
 	font-size:16px;
 }
 #endGame-learnMore-content table {
@@ -416,6 +419,10 @@
 	display:inline;
 	margin-bottom:0;
 	color: red;
+}
+
+#endGame-learnMode-footerContent {
+	line-height: 15px !important;
 }
 
 #countDown {

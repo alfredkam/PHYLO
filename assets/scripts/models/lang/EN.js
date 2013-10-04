@@ -128,18 +128,22 @@
                     "field 13": "Score now"
                 },
                 "end of game": {
+                    "headerMessage" : "Statistics and information about this puzzle.",
+                    "replayMessage" : "Use the Puzzle ID to play this puzzle again.",
+                    "completeXMessage" : "Complete *** more puzzles to unlock Expert mode with harder puzzles and additional features.",
+                    "thankyouMessage" :"Thank you for contributing to Genomic Research!",
+                    "levelId" : "Puzzle Id : ***",
+                    "userScore" : "Your score : ***",
+                    "avgScore" : "Average score : ***",
+                    "highscore" : "Highest score : ***",
+                    "highscoreHolder" : "Record holder : ***",
+                    "dnaAssociation" : "Associated disease : ***",
+                    "completions" : "Total number of solutions : ***",
+                    "submitter" : "Submitter Profile",
                     "field 1": "Thank you",
                     "field 2": "We appreciate your contribution to science. Did you know:",
                     "field 3": "Congratulations! You've completed the final stage, and we just submitted your alignment for this session.",
                     "field 4": "Unfortunately, you did not reach the par. Your alignment has not been submitted.",
-                    "levelId" : "Level Id : ***",
-                    "userScore" : "Your score : ***",
-                    "avgScore" : "Average Score : ***",
-                    "highscore" : "Highest Score : ***",
-                    "highscoreHolder" : "Record holder : ***",
-                    "dnaAssociation" : "DNA Association : ***",
-                    "completions" : "Total Completions : ***",
-
                     "field 10": "So far *** users have submitted *** alignments for *** different levels.",
                     "field 11": "New Game",
                     "field 12": "Replay Game",
@@ -238,7 +242,13 @@
             "field 2": "Join the phylo <a href='https://www.facebook.com/groups/127713783941517/'>community</a> on facebook or give us a thumbs up.",
             "field 3" : "Blog",
             "field 4" : "Forum",
-            "field 5"  : "Report a bug"
+            "field 5"  : "Report a bug",
+            "recentNews" : "Recent News",
+            "totalPuzzles" : "Completed puzzles",
+            "recentSubmit" : "Latest achievements",
+            "puzzleID" : "Puzzle ID",
+            "user" : "User",
+            "unclassified" : "Unclassified"
         }
     }
 }
