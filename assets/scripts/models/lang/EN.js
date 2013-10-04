@@ -244,8 +244,8 @@
             "field 4" : "Forum",
             "field 5"  : "Report a bug",
             "recentNews" : "Recent News",
-            "totalPuzzles" : "Contributed Puzzles",
-            "recentSubmit" : "Recent Submits"
+            "totalPuzzles" : "Completed puzzles",
+            "recentSubmit" : "Latest achievements"
         }
     }
 }

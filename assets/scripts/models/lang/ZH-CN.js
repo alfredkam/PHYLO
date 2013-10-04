@@ -231,7 +231,11 @@
             "field 1": "Phylo是一个挑战科学难题的HTML5游戏，游戏中的每个难关与人类疾病密切相关。了解更多",
             "field 2": "加入Phylo的Facebook社区，给我们竖一个大拇指吧。",
             "field 3" : "博客",
-            "field 4" : "论坛"
+            "field 4" : "论坛",
+            "field 5"  : "报告错误",
+            "recentNews" : "近期新闻",
+            "totalPuzzles" : "完成拼图",
+            "recentSubmit" : "Latest achievements"
         }
     }
 }

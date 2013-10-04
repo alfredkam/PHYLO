@@ -235,7 +235,11 @@
             "field 1": "Phylo es un video juego retador en el cual cada juego completado contribuye a mapear enfermedades con el ADN humano. Learn <a href='?pid=about#!/SP'>more</a>.",
             "field 2": "Unase a Phylo <a href='https://www.facebook.com/groups/127713783941517/'>community</a> en facebook or regalenos un pulgar arrriba.",
             "field 3" : "Blog",
-            "field 4" : "Foro"
+            "field 4" : "Foro",
+            "field 5"  : "Notificar un error",
+            "recentNews" : "Noticias recientes",
+            "totalPuzzles" : "Rompecabezas completadas",
+            "recentSubmit" : "Últimos"
         }
     }
 }

@@ -235,7 +235,11 @@
             "field 1": "Phylo est un jeu Flash compétitif où chaque puzzle résolu contribue à améliorer notre compréhension de la relation entre l’ADN et les maladies. Apprenez en plus.",
             "field 2": "Rejoins la communauté de Phylo sur Facebook ou donne nous un coup de pouce.",
             "field 3" : "Blog",
-            "field 4" : "Forum"
+            "field 4" : "Forum",
+            "field 5"  : "Signaler un bug",
+            "recentNews" : "Nouvelles récentes",
+            "totalPuzzles" : "Puzzles complétés",
+            "recentSubmit" : "Dernières réalisations"
         }
     }
 }

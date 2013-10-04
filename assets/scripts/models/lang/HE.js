@@ -1,7 +1,7 @@
 {
     "info": {
         "lang": "Hebrew",
-        "author": "Davidson institute with few update by Google"
+        "author": "Davidson institute with Google patch"
     },
     "header": {
         "field 1": "שחק",
@@ -106,7 +106,7 @@
                         "Heart": "לב ושרירי מחלות",
                         "Metabolic": "מחלות מטבוליות",
                         "Infectious": "מחלות זיהומיות",
-                        "Misc": "מחלות אחרות",
+                        "Misc": "מחלות אחרות"
                     }
                 },
                 "game board": {
@@ -231,7 +231,12 @@
             "field 1": "הוא משחק פלאש בו כל שלב שהושלם, תורם למיפוי מחלות בגנום האנושי. למד עודPhylo",
             "field 2": ".בפייסבוק או עשו לנו לייק Phylo הצטרף לקהילת",
             "field 3" : "בלוג",
-            "field 4" : "פורום"
+            "field 4" : "פורום",
+            "field 5"  : "דווח על באג",
+            "recentNews" : "החדשות האחרונות",
+            "totalPuzzles" : "חידות הושלמה",
+            "recentSubmit" : "ההישגים האחרונים"
+            
         }
     }
 }
