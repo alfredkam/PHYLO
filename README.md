@@ -21,7 +21,6 @@ Lead Developer / UX (Technical Inquiries) : @AlfredKam - alfred.kam@mail.mcgill.
 
 License
 =====
-
 PHYLO is released under the McGill - License, which has been specifically designed for human-computing and crowdsourcing software developments. Learn more at https://github.com/McGill-CSB/PHYLO/blob/master/McGill-LICENCE.txt<br>
 Copyright (2012) McGill University, Alfred Kam, Jerome Waldispuhl and other contributors.
 
