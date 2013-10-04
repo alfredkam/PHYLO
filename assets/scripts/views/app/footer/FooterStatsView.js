@@ -29,7 +29,7 @@ define([
             }
             this.model.set({
                 "lang" : this.langModel.get("lang"),
-                "total" : temp,
+                "number" : temp,
                 "totalPuzzles" : this.langModel.toJSON().body.footer.totalPuzzles,
                 "recentSubmit" : this.langModel.toJSON().body.footer.recentSubmit
             },{

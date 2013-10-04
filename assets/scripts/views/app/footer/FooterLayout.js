@@ -19,23 +19,12 @@ define([
         initialize : function(){
             this.model.set("year",new Date().getFullYear());
             this.model.on("change", this.updateTemplate, this);
-            // this.statsModel = (new Backbone.Model.extend({
-            //     url : "/phpdb/openPhyloClassicStatus.php"
-            // }));
             var tempModel = Backbone.Model.extend({
                 url: "/phpdb/openPhyloClassicStatus.php"
             });
             this.statsModel = new tempModel();
             this.statsModel.on("change", this.updateStats, this);
             this.statsModel.fetch();
-            // this.statsModel.fetch({
-            //     success : function(model) {
-            //         console.log(model.toJSON());
-            //     },
-            //     error : function(){
-            //         console.log("failed");
-            //     }
-            // });
         },
         template : tpl,
         regions : {
@@ -68,10 +57,14 @@ define([
                 langModel : this.model,
                 model : this.statsModel
             }));
-        },
-        onShow : function() {
-            this.regions.recentNews.show(new RecentNewsView());
+            this.regions.recentNews.reset();
+            this.regions.recentNews.show(new RecentNewsView({
+                model : this.model
+            }));
         }
+        // onShow : function() {
+        //     this.regions.recentNews.show(new RecentNewsView());
+        // }
     });
     return FooterLayout;
 });
