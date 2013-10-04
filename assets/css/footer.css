@@ -86,10 +86,12 @@ div#copyright a {
 
 #recentSubmitList a {
     text-decoration: underline;
+    font-size:13px;
 }
 
 #recentSubmitList table {
     width:100%;
+    font-size: 13px;
 }
 
 #recentSubmitList td {
