@@ -298,7 +298,6 @@
                             }
                         }
                     };
-                    
                 } else {
                     if (DEBUG)
                         console.log(window.lang.body.social["field 28"].replace("***", provider));
