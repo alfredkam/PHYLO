@@ -1,10 +1,12 @@
 <label class='footer-title'>{{totalPuzzles}}</label>
-<div>
+<div id='numberofpuzzle'>
     {{total}}
 </div>
 <label class='footer-title'>{{recentSubmit}}</label>
-{{#last}}
-<div>
-    {{user}} - {{PuzzleID}} - {{diseaseCategory}}
+<div id='recentSubmitList'>
+    {{#last}}
+    <div>
+        {{user}} : ID<a href='#!/{{lang}}/Play/Puzzle/{{PuzzleID}}'>{{PuzzleID}}</a> - {{diseaseName}}
+    </div>
+    {{/last}}
 </div>
-{{/last}}

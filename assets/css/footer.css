@@ -73,3 +73,17 @@ div#copyright {
 div#copyright a {
     font-size:13px;
 }
+
+#numberofpuzzle {
+    font-size:50px;
+    line-height:normal;
+    color:rgb(109, 109, 109);
+}
+
+#recentSubmitList {
+    color: rgb(109, 109, 109);
+}
+
+#recentSubmitList a {
+    text-decoration: underline;
+}

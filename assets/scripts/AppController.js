@@ -81,9 +81,6 @@ define([
 				this.regions.footerRegion.show(new FooterLayout({
 					model : this.langModel
 				}));
-				// this.regions.footerRegion.show(new FooterView({
-				// 	model : this.langModel
-				// }));
 			}
 		},
 		updateHeader : function(){
