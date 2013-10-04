@@ -132,7 +132,7 @@
                 var fullname = $.cookie.read("fullname");
                 var provider = $.cookie.read("loginmode");
                 var c_logid = $.cookie.read("logid");
-
+                console.log(provider);
                 if ((provider == "Facebook") || (provider == "Twitter") || (provider == "LinkedIn") || (provider == "Google")) {
 
                     $.protocal.sendEndGameScore("info", function(data) {
@@ -259,7 +259,6 @@
             var self = this;
             langFiles = window.lang.body.play.gameselect["end of game"];
             // $("#endGame-learnMore-content").hide();
-            console.log("events fired");
 
                     $("#endGame-new button").html(langFiles["field 11"]).unbind().click(function() {
                         //window.location.reload(true);
