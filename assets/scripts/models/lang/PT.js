@@ -136,7 +136,7 @@
                     "highscoreHolder" : "Recordista : ***",
                     "dnaAssociation" : "Doença associada : ***",
                     "completions" : "Número total de soluções : ***",
-                    "submitter" : "Criador do puzzle";
+                    "submitter" : "Criador do puzzle",
                     "field 1": "Obrigado",
                     "field 2": "Nós apreciamos sua contribuição à ciência. Você sabia:",
                     "field 3": "Parabéns! Você completou a última fase, e nós enviamos seu alinhamento desta sessão.",
