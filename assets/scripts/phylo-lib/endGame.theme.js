@@ -206,7 +206,7 @@
                             var data = "provider=" + provider + "&id=" + c_logid + "&description=" + message;
                         }
                         var options = {
-                            message: window.lang.body.social["field 22"] + "<br/>\n" + message,
+                            message: window.lang.body.social["field 22"] + "<br/>via+"+provider +"\n" + message,
                             buttons: {
                                 confirm: {
                                     label: window.lang.body.misc["field 25"],
