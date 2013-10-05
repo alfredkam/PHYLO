@@ -42,7 +42,7 @@
             "field 16": "Abandonner",
             "field 17": "Retour",
             "field 18": "Ok",
-            "field 19": "Etes-vous sûr de voulair abandonner?",
+            "field 19": "Etes-vous sûr de vouloir abandonner?",
             "field 20": "Nouveau puzzle",
             "field 21": "Re-jouer",
             "field 22": "Partage avec tes amis",
