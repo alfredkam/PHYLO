@@ -233,38 +233,11 @@
                 } 
                 else if (provider === "Classic") {
                     var options = {
-                        //title: window.lang.body.social["field 29"],
-                        //message: "Please choose a social network to share",
-                        message : window.lang.body.social["chooseNetwork"] || "Please chooes a social network to share!",
+                        message: window.lang.body.social["field 44"],
                         buttons: {
-                            facebook: {
-                                label: "Share via Facebok",
-                                className: "zocial facebook footerButton",
-                                callback: function() {
-                              
-                                }
+                            ok: {
+                                
                             },
-                            twitter: {
-                                label: "Share via Twitter",
-                                className: "zocial twitter footerButton",
-                                callback: function() {
-                                   
-                                }
-                            },
-                            linkedin: {
-                                label: "Share via LinkedIn",
-                                className: "zocial linkedin footerButton",
-                                callback: function() {
-                                 
-                                }
-                            },
-                            google: {
-                                label: "Share via Google",
-                                className: "zocial google footerButton",
-                                callback: function() {
-                                  
-                                }
-                            }
                         }
                     };
                     bootbox.dialog(options);
