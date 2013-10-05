@@ -250,7 +250,10 @@
             "field 5"  : "버그 신고",
             "recentNews" : "최근 뉴스",
             "totalPuzzles" : "완성 된 퍼즐",
-            "recentSubmit" : "최근 업적"
+            "recentSubmit" : "최근 업적",
+            "puzzleID" : "퍼즐의 ID",
+            "user" : "사용자",
+            "unclassified" : "분류되지 않음"
 		}
 	}
 }

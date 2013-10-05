@@ -247,8 +247,10 @@
             "field 5"  : "דווח על באג",
             "recentNews" : "החדשות האחרונות",
             "totalPuzzles" : "חידות הושלמה",
-            "recentSubmit" : "ההישגים האחרונים"
-            
+            "recentSubmit" : "ההישגים האחרונים",
+            "puzzleID" : "תעודת הזהות של פאזל",
+            "user" : "משתמש",
+            "unclassified" : "בַּלמָ'ס"
         }
     }
 }

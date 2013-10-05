@@ -251,7 +251,10 @@
             "field 5"  : "Signaler un bug",
             "recentNews" : "Nouvelles récentes",
             "totalPuzzles" : "Puzzles complétés",
-            "recentSubmit" : "Dernières réalisations"
+            "recentSubmit" : "Dernières réalisations",
+            "puzzleID" : "ID du puzzle",
+            "user" : "Utilisateur",
+            "unclassified" : "Non classé"
         }
     }
 }

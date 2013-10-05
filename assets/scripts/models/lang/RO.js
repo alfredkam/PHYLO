@@ -250,7 +250,10 @@
             "field 5"  : "Raportați o eroare",
             "recentNews" : "Știri recente",
             "totalPuzzles" : "Puzzle-uri terminate",
-            "recentSubmit" : "Ultimele realizări"
+            "recentSubmit" : "Ultimele realizări",
+            "puzzleID" : "ID-ul de puzzle",
+            "user" : "Utilizator",
+            "unclassified" : "Neclasificate"
         }
     }
 }

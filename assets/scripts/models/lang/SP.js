@@ -251,7 +251,10 @@
             "field 5"  : "Notificar un error",
             "recentNews" : "Noticias recientes",
             "totalPuzzles" : "Rompecabezas completadas",
-            "recentSubmit" : "Últimos"
+            "recentSubmit" : "Últimos",
+            "puzzleID" : "Puzzle ID",
+            "user" : "Usuario",
+            "unclassified" : "Sin clasificar"
         }
     }
 }

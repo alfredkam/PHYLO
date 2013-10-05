@@ -250,7 +250,10 @@
             "field 5"  : "Fehler melden",
             "recentNews" : "Aktuelle Nachrichten",
             "totalPuzzles" : "Abgeschlossen Puzzles",
-            "recentSubmit" : "Neueste Errungenschaften"
+            "recentSubmit" : "Neueste Errungenschaften",
+            "puzzleID" : "Puzzle ID",
+            "user" : "Benutzer",
+            "unclassified" : "Nicht klassifiziert"
         }
     }
 }

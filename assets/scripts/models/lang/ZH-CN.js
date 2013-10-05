@@ -247,7 +247,10 @@
             "field 5"  : "报告错误",
             "recentNews" : "近期新闻",
             "totalPuzzles" : "完成拼图",
-            "recentSubmit" : "Latest achievements"
+            "recentSubmit" : "最新成果",
+            "puzzleID" : "拼图的ID",
+            "user" : "用户",
+            "unclassified" : "未分类"
         }
     }
 }
