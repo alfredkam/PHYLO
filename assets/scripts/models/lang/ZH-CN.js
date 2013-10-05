@@ -136,6 +136,7 @@
                     "highscoreHolder" : "纪录保持者 : ***",
                     "dnaAssociation" : "相关疾病 : ***",
                     "completions" : "总数的解决方案 : ***",
+                    "submitter" : "拼图的创造者",
                     "field 1": "谢谢您",
                     "field 2": "我们感谢您对科学的贡献。您知道下面的数据吗",
                     "field 3": "恭喜你！你已经通关了，我们正提交你的成果",

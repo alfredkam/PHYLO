@@ -139,7 +139,7 @@
                     "highscoreHolder" : "Record holder : ***",
                     "dnaAssociation" : "Associated disease : ***",
                     "completions" : "Total number of solutions : ***",
-                    "submitter" : "Submitter Profile",
+                    "submitter" : "Creator profile",
                     "field 1": "Thank you",
                     "field 2": "We appreciate your contribution to science. Did you know:",
                     "field 3": "Congratulations! You've completed the final stage, and we just submitted your alignment for this session.",

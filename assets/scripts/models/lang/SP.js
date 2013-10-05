@@ -139,6 +139,7 @@
                     "highscoreHolder" : "Poseedor del récord : ***",
                     "dnaAssociation" : "Enfermedad asociada : ***",
                     "completions" : "Número total de soluciones : ***",
+                    "submitter" : "Creador del puzzle";
                     "field 1": "Gracias",
                     "field 2": "Agradecemos su contribución a la ciencia:",
                     "field 3": "Felicitaciones! Ha completado el ultimo escenario, y enviaremos los alinemamientos de esta sesión.",

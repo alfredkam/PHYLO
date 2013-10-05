@@ -130,7 +130,7 @@
                 "end of game": {
                     "headerMessage" : "Statistiques et informations sur ce puzzle.",
                     "replayMessage" : "Utilisez l'identitiant pour re-jouer ce puzzle.",
-                    "completeXMessage" : "Remplissez *** puzzles supplémentaires pour débloquer le mode Expert avec des puzzles plus difficiles et des fonctionnalités supplémentaires.",
+                    "completeXMessage" : "Remplis *** puzzles supplémentaires pour débloquer le mode Expert avec des puzzles plus difficiles et des fonctionnalités supplémentaires.",
                     "thankyouMessage" :"Nous te remercions de contribuer à la recherche en génomique!",
                     "levelId" : "Identifiant : ***",
                     "userScore" : "Ton score : ***",
@@ -139,6 +139,7 @@
                     "highscoreHolder" : "Tenant du record : ***",
                     "dnaAssociation" : "Maladie associée : ***",
                     "completions" : "Nombre Total de solutions : ***",
+                    "submitter" : "Créateur du puzzle",
                     "field 1": "Merci",
                     "field 2": "Nous apprécions votre contribution à la science. Le saviez-vous:",
                     "field 3": "Félicitations! Tu as fini le dernier niveau et tu viens de soumettre ton alignement pour ce puzzle.",
