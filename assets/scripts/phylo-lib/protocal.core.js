@@ -1,4 +1,4 @@
-define("jquery",function($){
+(function(){
 	var doc = document, win = window;
 	var url = "/phpdb/openPhyloClassicDB.php";
 	$.protocal = {
@@ -259,5 +259,4 @@ define("jquery",function($){
 			});
 		}
 	};
-	return this;
-});
+})();
