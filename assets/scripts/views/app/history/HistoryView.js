@@ -236,8 +236,6 @@ define([
             //  dataTables.init();
             var html = "";
             var self = this;
-            console.log(window.username);
-            console.log("http://phylo.cs.mcgill.ca/phpdb/openPhyloClassicUserHistory?username="+window.username+"&lang="+this.lang);
             $.ajax({
                 method : "POST",
                 //http://phylo.cs.mcgill.ca/phpdb/userrecordget.php?username=alfredkam&lang=EN
