@@ -151,11 +151,14 @@ define([
                 console.log("user found");
                 $(".login-btn").unbind("click");
                 var username = cookie.read("username");
+                window.username = username;
                 var fullname = cookie.read("fullname");
                 var provider = cookie.read("loginmode");
                 var c_logid = cookie.read("logid");
                 if (provider == "Classic") {
                     $(".m_login").html(username);
+                    window.username = username;
+
                 } else {
 
                     $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider + "&restart=0", function(data) {
@@ -235,6 +238,7 @@ define([
                                                     cookie.delete("logid");
                                                     $("#logout").hide();
                                                     window.guest = 'guest';
+                                                    window.username ="guest";
                                                     self.user.set("name", "");
                                                     $("#login-box").hide();
                                                     $(".login-btn").click(function() {
@@ -256,6 +260,7 @@ define([
                                     cookie.delete("logid");
                                     $("#logout").hide();
                                     window.guest = 'guest';
+                                    window.username = "guest";
                                     self.user.set("name", "");
                                     $("#login-box").hide();
                                     $(".login-btn").click(function() {
@@ -278,6 +283,7 @@ define([
                                 cookie.delete("logid");
                                 $("#logout").hide();
                                 window.guest = 'guest';
+                                window.username = "guest";
                                 self.user.set("name", "");
                                 $("#login-box").hide();
                                 $(".login-btn").click(function() {
@@ -297,6 +303,7 @@ define([
                             cookie.delete("logid");
                             $("#logout").hide();
                             window.guest = 'guest';
+                            window.username = "guest";
                             self.user.set("name", "");
                             $("#login-box").hide();
                             $(".login-btn").click(function() {
@@ -311,6 +318,7 @@ define([
                 }
                 $("#logout").show();
                 window.guest = fullname;
+                window.username = username;
                 $("#login-box").hide();
                 $(".login-btn").unbind("click");
                 // show buttons. NB: hide expert button if necessary

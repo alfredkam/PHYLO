@@ -36,7 +36,7 @@
 			if(status == "completed") {
 				mode = 4;
 			}
-			var data = "mode="+mode+"&id="+$.phylo.id+"&user="+window.guest+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.currentScore;
+			var data = "mode="+mode+"&id="+$.phylo.id+"&user="+window.username+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.currentScore;
             $.ajax({
 				type: "POST",
 				url : url,
