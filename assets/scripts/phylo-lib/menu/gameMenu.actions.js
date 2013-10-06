@@ -12,25 +12,25 @@
 				return 450;
 			},
 			numberOfSequence: 10,
-			sequenceLength : 25,
-			box : function() {
-				var x = this.boxWidth()/this.sequenceLength;
-				var y = this.boxHeight()/this.numberOfSequence;
-				if(x < y)
+			sequenceLength: 25,
+			box: function() {
+				var x = this.boxWidth() / this.sequenceLength;
+				var y = this.boxHeight() / this.numberOfSequence;
+				if (x < y)
 					return x;
 				else
 					return y;
 			},
-			boxLeft : function() {
-				return this.width()/5;
+			boxLeft: function() {
+				return this.width() / 5;
 			},
 			boxWidth: function() {
-				return this.width()/5*4;
-			},	
+				return this.width() / 5 * 4;
+			},
 			boxHeight: function() {
 				return 400;
 			},
-			color : [ "rgb(113, 178, 226)", "rgb(153, 50, 204)","rgb(0, 128, 0)", "rgb(255, 165, 0)"],
+			color: ["rgb(113, 178, 226)", "rgb(153, 50, 204)", "rgb(0, 128, 0)", "rgb(255, 165, 0)"],
 		};
 
 		g.prototype.determineSettings = function() {
@@ -39,22 +39,22 @@
 
 		var proto = g.prototype,
 			attr = [
-				["sequence",proto.sequence],
-				["desktopSettings",proto.desktopSettings]
-				];
-		common.exportSingleton("config",g,attr);		
+				["sequence", proto.sequence],
+				["desktopSettings", proto.desktopSettings]
+			];
+		common.exportSingleton("config", g, attr);
 	})();
 	//initalize for both desktop and tablet
 	(function() {
 		function a() {}
 		a.prototype.background = function(settings) {
 			var data = "<div id='background'>";
-			for(var i=0; i<settings.numberOfSequence;i++) {
-				for(var j=0;j<settings.sequenceLength;j++) {
-					data+= "<div class='bgBox' style='top:"+(i*settings.box())+"px;left:"+(j*settings.box()+settings.boxLeft())+"px;'></div>";
+			for (var i = 0; i < settings.numberOfSequence; i++) {
+				for (var j = 0; j < settings.sequenceLength; j++) {
+					data += "<div class='bgBox' style='top:" + (i * settings.box()) + "px;left:" + (j * settings.box() + settings.boxLeft()) + "px;'></div>";
 				}
-			}	
-			$("#sandbox").append(data+"</div>");
+			}
+			$("#sandbox").append(data + "</div>");
 			$(".bgBox").css({
 				width: settings.box(),
 				height: settings.box(),
@@ -64,12 +64,12 @@
 		a.prototype.buildCube = function() {
 
 		};
-		
+
 		var proto = a.prototype,
 			attr = [
 				["background", proto.background]
-				];
-		common.exportSingleton("generate",a,attr);
+			];
+		common.exportSingleton("generate", a, attr);
 
 		String.prototype.trim = function() {
 			return $.trim(this);
@@ -79,37 +79,39 @@
 			//initalizie sandbox
 			var settings = config.determineSettings();
 			$("#sandbox").css({
-				"width" : settings.width(),
-				"height" : settings.height()
-			});	
+				"width": settings.width(),
+				"height": settings.height()
+			});
 			generate.background(settings);
 		}
 
 	})();
-	
+
 	(function() {
 		function g() {};
 		g.prototype.start = function() {
 			$("#sandbox").html("");
-			var doc = document, win = window;
+			var doc = document,
+				win = window;
 			var settings = config.determineSettings();
-			this.loadBackground(doc,win,settings);
+			this.loadBackground(doc, win, settings);
 			$("#sandbox").css({
-				width : settings.width(),
-				height : settings.height()
+				width: settings.width(),
+				height: settings.height()
 			});
 			//this.loadStroke(doc,win,settings);
-			this.loadMenu(doc,win,settings);
+			this.loadMenu(doc, win, settings);
 			this.listenToReload();
 			/* temp fix */
 		};
 		g.prototype.restart = function() {
-			var doc = document, win = window;
+			var doc = document,
+				win = window;
 			var settings = config.determineSettings();
-			this.loadMenu(doc,win,settings);
+			this.loadMenu(doc, win, settings);
 		};
-		g.prototype.loadBackground = function(doc,win,settings) {
-			
+		g.prototype.loadBackground = function(doc, win, settings) {
+
 			var canvas = doc.createElement('canvas');
 			var sandbox = doc.getElementById("sandbox");
 			canvas.id = 'draw';
@@ -119,7 +121,7 @@
 			canvas.style.left = 0;
 			canvas.width = settings.width();
 			canvas.height = settings.height();
-		
+
 			sandbox.appendChild(canvas);
 		};
 		//depreciated
@@ -200,49 +202,49 @@
 			});
 		}; */
 
-		g.prototype.loadMenu = function(doc,win,settings) {
+		g.prototype.loadMenu = function(doc, win, settings) {
 			var f = this;
 			$("#splashLogo").remove();
 			var ctx = doc.getElementById('draw').getContext('2d');
 			ctx.beginPath();
 			ctx.globalAlpha = 1;
-			ctx.clearRect(0,0,settings.width(),settings.height());
-			
+			ctx.clearRect(0, 0, settings.width(), settings.height());
+
 			var banner = new Image();
 			var bannerValues = {
-				x : 212,
-				y : 30,
-				w : 600,
-				h : 200
+				x: 212,
+				y: 30,
+				w: 600,
+				h: 200
 
 			}
 			banner.onload = function() {
-				ctx.drawImage(banner,bannerValues.x,bannerValues.y,bannerValues.w,bannerValues.h);
+				ctx.drawImage(banner, bannerValues.x, bannerValues.y, bannerValues.w, bannerValues.h);
 			};
 			banner.src = 'assets/img/logo.png';
 			ctx.fillStyle = "#F1F1F1";
-			ctx.fillRect(212,250,600,120);
+			ctx.fillRect(212, 250, 600, 120);
 
 			ctx.closePath();
 			var selection = [];
 
-			var menuStr = [window.lang.body.play.gameselect.levelselect.random["field 2"],window.lang.body.play.gameselect.levelselect["level id"]["field 2"],window.lang.body.play.gameselect.levelselect.disease["field 1"]];
+			var menuStr = [window.lang.body.play.gameselect.levelselect.random["field 2"], window.lang.body.play.gameselect.levelselect["level id"]["field 2"], window.lang.body.play.gameselect.levelselect.disease["field 1"]];
 
 			var menuIcon = [
-					["assets/img/random.png",95,95],
-					["assets/img/id.png",95,95],
-					["assets/img/disease.png",95,95],
-					];	
-			var menuIconHover = ["assets/img/random_hover.png","assets/img/id_hover.png","assets/img/disease_hover.png"]	
+				["assets/img/random.png", 95, 95],
+				["assets/img/id.png", 95, 95],
+				["assets/img/disease.png", 95, 95],
+			];
+			var menuIconHover = ["assets/img/random_hover.png", "assets/img/id_hover.png", "assets/img/disease_hover.png"]
 
 			//var menuBar = [
-			var cell = function(ctx,x,y,i) {
+			var cell = function(ctx, x, y, i) {
 				var menuStrColor = '#444';
-				ctx.beginPath();			
+				ctx.beginPath();
 				ctx.fillStyle = settings.color[i];
 				var icon = new Image();
 				icon.onload = function() {
-					ctx.drawImage(icon,x,y,menuIcon[i][1],menuIcon[i][2]);
+					ctx.drawImage(icon, x, y, menuIcon[i][1], menuIcon[i][2]);
 				}
 				icon.src = menuIcon[i][0];
 				ctx.fillStyle = menuStrColor;
@@ -250,49 +252,49 @@
 				//ctx.fillText(menuStr[i],x+100,y+25);
 				ctx.closePath();
 				var iconOnHover = false;
-				this.onOver =  function(eX,eY) {
+				this.onOver = function(eX, eY) {
 					ctx.beginPath();
-					if(x <= eX && eX <= x+menuIcon[i][1] &&
-						y <= eY && eY <= y+menuIcon[i][2]) { 
-						if( iconOnHover == false && window.isTablet == false) {
-							ctx.clearRect(x,y,menuIcon[i][1],menuIcon[i][2])
+					if (x <= eX && eX <= x + menuIcon[i][1] &&
+						y <= eY && eY <= y + menuIcon[i][2]) {
+						if (iconOnHover == false && window.isTablet == false) {
+							ctx.clearRect(x, y, menuIcon[i][1], menuIcon[i][2])
 							ctx.fillStyle = "#F1F1F1";
-							ctx.fillRect(x,y,menuIcon[i][1],menuIcon[i][2]);
+							ctx.fillRect(x, y, menuIcon[i][1], menuIcon[i][2]);
 							var icon = new Image();
 							icon.onload = function() {
-								ctx.drawImage(icon,x,y,menuIcon[i][1],menuIcon[i][2]);
+								ctx.drawImage(icon, x, y, menuIcon[i][1], menuIcon[i][2]);
 							}
-							icon.src = menuIconHover[i];	
+							icon.src = menuIconHover[i];
 							ctx.fillStyle = "#6D6D6D";
 							ctx.font = "19pt Helvetica";
 							ctx.textAlign = "center";
-							ctx.fillText(menuStr[i],515,420);
+							ctx.fillText(menuStr[i], 515, 420);
 							iconOnHover = true;
 						}
 					} else {
-						if(iconOnHover) {
+						if (iconOnHover) {
 							ctx.fillStyle = "#F1F1F1";
-							ctx.fillRect(x,y,menuIcon[i][1],menuIcon[i][2]);
+							ctx.fillRect(x, y, menuIcon[i][1], menuIcon[i][2]);
 							var icon = new Image();
 							icon.onload = function() {
-								ctx.drawImage(icon,x,y,menuIcon[i][1],menuIcon[i][2]);
+								ctx.drawImage(icon, x, y, menuIcon[i][1], menuIcon[i][2]);
 							}
-							icon.src = menuIcon[i][0];	
+							icon.src = menuIcon[i][0];
 							iconOnHover = false;
-							ctx.clearRect(0,390,1024,50);
+							ctx.clearRect(0, 390, 1024, 50);
 						}
 					}
 					ctx.closePath();
 				};
-				this.onClick = function(eX,eY) {
+				this.onClick = function(eX, eY) {
 					var menuStrColor = '#444';
-					if(x <= eX && eX <= x+menuIcon[i][1] &&
-						y <= eY && eY <= y+menuIcon[i][2]) { 
-						console.log("clicked");
-						switch(i) {
+					if (x <= eX && eX <= x + menuIcon[i][1] &&
+						y <= eY && eY <= y + menuIcon[i][2]) {
+						// console.log("clicked");
+						switch (i) {
 							case 1:
 								ctx.beginPath();
-								ctx.clearRect(0,0,1024,450);
+								ctx.clearRect(0, 0, 1024, 450);
 								ctx.closePath();
 								selection = [];
 								ctx.beginPath();
@@ -303,10 +305,10 @@
 								selection.push(new levelselect(ctx));
 								window.setTimeout(function() {
 									selection.push(new back(ctx));
-								},50);
+								}, 50);
 								return;
 							case 2:
-								var diseaseorder=[];
+								var diseaseorder = [];
 								var diseaseImages = {
 									// "Digestive": "assets/img/disease/digestive.png",
 									"Heart": "assets/img/disease/heart.png",
@@ -314,12 +316,12 @@
 									"Metabolic": "assets/img/disease/metabolic.png",
 									"Blood": "assets/img/disease/blood.png",
 									// "Sensory": "assets/img/disease/sensory.png", 
-									"Brain": "assets/img/disease/brain.png", 
+									"Brain": "assets/img/disease/brain.png",
 									// "Muscles": "assets/img/disease/muscles.png", 
 									// "Lung": "assets/img/disease/lung.png",
-									"Infectious" : "assets/img/disease/infectious.png",
-									"Mental" : "assets/img/disease/mental.png",
-									"Misc" : "assets/img/disease/misc.png"
+									"Infectious": "assets/img/disease/infectious.png",
+									"Mental": "assets/img/disease/mental.png",
+									"Misc": "assets/img/disease/misc.png"
 
 								};
 								//TODO: a fail case
@@ -328,7 +330,7 @@
 									dataType: "json",
 									async: false
 								}).done(function(data) {
-										//i need to do some arranging myself
+									//i need to do some arranging myself
 									for (var x in data) {
 										//console.log(x);
 										//console.log(data[x]);
@@ -344,21 +346,18 @@
 										delete diseaseImages[x];
 									}
 									//adding in the null ones
-									for( var y in diseaseImages){
-										console.log(y);
-										console.log(data[y]);
-										console.log(diseaseImages[y]);
+									for (var y in diseaseImages) {
 										diseaseorder.push({
 											name: y,
-											data : [],
-											image : diseaseImages[y],
+											data: [],
+											image: diseaseImages[y],
 											localName: lang.body.play.gameselect.levelselect.disease[y] || y
 										});
 										delete diseaseImages[y];
 
 									}
 
-								
+
 									// diseaseorder = data;
 
 									console.log("data added in!");
@@ -373,84 +372,84 @@
 								ctx.closePath();
 								selection = [];
 								window.setTimeout(function() {
-								for (var j = 0; j < diseaseorder.length && j < 8; j++) {
-									// if (diseaseList[diseaseorder[j].name].length == 0)
-									// selection.push(new emptyDisease(ctx, diseaseorder[j], j))d
-									// else
-									if (diseaseorder[j].data.length == 0) {
-										selection.push(new emptyDisease(ctx, diseaseorder[j], j));
-									} else {
-										selection.push(new disease(ctx, diseaseorder[j], j));
+									for (var j = 0; j < diseaseorder.length && j < 8; j++) {
+										// if (diseaseList[diseaseorder[j].name].length == 0)
+										// selection.push(new emptyDisease(ctx, diseaseorder[j], j))d
+										// else
+										if (diseaseorder[j].data.length == 0) {
+											selection.push(new emptyDisease(ctx, diseaseorder[j], j));
+										} else {
+											selection.push(new disease(ctx, diseaseorder[j], j));
+										}
 									}
-								}
 								}, 50);
 								selection.push(new back(ctx));
-							return;
+								return;
 							case 0:
 								ctx.beginPath();
 								ctx.textAlign = "center";
-								ctx.clearRect(0,0,1024,450);
+								ctx.clearRect(0, 0, 1024, 450);
 								ctx.fillStyle = menuStrColor;
-								ctx.font = "20pt Helvetica";	
-								ctx.fillText(lang.body.play.gameselect.levelselect.random["field 1"], settings.width()/2+60,120);
-								ctx.fillText(lang.body.play.gameselect.levelselect.random["field 3"], settings.width()/2+60,240);
+								ctx.font = "20pt Helvetica";
+								ctx.fillText(lang.body.play.gameselect.levelselect.random["field 1"], settings.width() / 2 + 60, 120);
+								ctx.fillText(lang.body.play.gameselect.levelselect.random["field 3"], settings.width() / 2 + 60, 240);
 								ctx.textAlign = "left";
 								ctx.closePath();
 								selection = [];
 								var k = 0;
-								for(var j=3;j<=10;j+=2) {
-									selection.push(new random(ctx,j,k));
-									k+=1;
+								for (var j = 3; j <= 10; j += 2) {
+									selection.push(new random(ctx, j, k));
+									k += 1;
 								}
 								window.setTimeout(function() {
 									selection.push(new back(ctx));
-								},50);
+								}, 50);
 								return;
 						}
 					}
 				};
-			} 
+			}
 
 
-			var levelselect = function(ctx) {	
+			var levelselect = function(ctx) {
 				var menuStrColor = '#444';
 				$("#level_inputbox").show();
 				ctx.beginPath();
 				ctx.save();
 				ctx.fillStyle = "rgb(153,50,204)";
-				ctx.fillRect(405,220,170,50);
+				ctx.fillRect(405, 220, 170, 50);
 				ctx.fillStyle = menuStrColor;
 				ctx.font = '19pt Helvetica';
 				ctx.textAlign = "center";
-				ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 4"],490,252);
+				ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 4"], 490, 252);
 				ctx.textAlign = "left";
 				ctx.restore();
 				ctx.closePath();
 				this.onClick = function(eX, eY) {
-					if(405 < eX && eX < 525 &&
-						220 < eY && eY < 270 ){
+					if (405 < eX && eX < 525 &&
+						220 < eY && eY < 270) {
 						var id = parseInt($("#level_inputbox").val().trim());
-						if(isNaN(id)) {
+						if (isNaN(id)) {
 							$.helper.popUp("Numbers Only!", function(status) {
-								
+
 							}, {
-								cancel : false,
+								cancel: false,
 							});
 							return;
 						}
 						$.ajax({
-							url : "../phpdb/phyloExpertDB.php", 
-							data : "mode=2&id="+id,
-							type : "POST",
+							url: "../phpdb/phyloExpertDB.php",
+							data: "mode=2&id=" + id,
+							type: "POST",
 						}).done(function(data) {
-							if(data == "" ) {
+							if (data == "") {
 								//$.invalid.level();
 								$.helper.popUp("Invalid level!", function(status) {
-									
+
 								}, {
-									cancel : false,
+									cancel: false,
 								});
-								
+
 							} else {
 								$("#draw").hide();
 								$("#menu").hide();
@@ -458,49 +457,49 @@
 								$("#level_inputbox").val("");
 								$.main.init({
 									type: "disease",
-									num: id,		
-								});	
+									num: id,
+								});
 							}
 							return;
 						}).fail(function(data) {
-								$("#draw").hide();
-								$("#menu").hide();
-								$("#level_in/putbox").hide();
-								$("#level_inputbox").val("");
-								$.main.init({
-									type: "disease",
-									num: id,		
-								});	
+							$("#draw").hide();
+							$("#menu").hide();
+							$("#level_in/putbox").hide();
+							$("#level_inputbox").val("");
+							$.main.init({
+								type: "disease",
+								num: id,
+							});
 
 						});
-					}	
+					}
 				};
-				this.onOver = function(eX,eY) {
+				this.onOver = function(eX, eY) {
 					ctx.beginPath();
 					ctx.save();
-					if(405 < eX && eX < 525 &&
-						220 < eY && eY < 270 ){
+					if (405 < eX && eX < 525 &&
+						220 < eY && eY < 270) {
 
-					ctx.fillStyle = "#6D6D6D";
-					ctx.fillRect(405,220,170,50);
-					ctx.fillStyle = "white";
-					ctx.font = '19pt Helvetica';
-					ctx.textAlign = "center";
-					ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 4"],490,252);
-					ctx.textAlign = "left";
+						ctx.fillStyle = "#6D6D6D";
+						ctx.fillRect(405, 220, 170, 50);
+						ctx.fillStyle = "white";
+						ctx.font = '19pt Helvetica';
+						ctx.textAlign = "center";
+						ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 4"], 490, 252);
+						ctx.textAlign = "left";
 					} else {
-					ctx.fillStyle = "rgb(153,50,204)";
-					ctx.fillRect(405,220,170,50);
-					ctx.fillStyle = "white";
-					ctx.font = '19pt Helvetica';
-					ctx.textAlign = "center";
-					ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 4"],490,252);
-					ctx.textAlign = "left";
+						ctx.fillStyle = "rgb(153,50,204)";
+						ctx.fillRect(405, 220, 170, 50);
+						ctx.fillStyle = "white";
+						ctx.font = '19pt Helvetica';
+						ctx.textAlign = "center";
+						ctx.fillText(lang.body.play.gameselect.levelselect["level id"]["field 4"], 490, 252);
+						ctx.textAlign = "left";
 
 					}
 					ctx.restore();
 					ctx.closePath();
-				};		
+				};
 			};
 
 			var emptyDisease = function(ctx, items, i) {
@@ -513,13 +512,13 @@
 				img.onload = function() {
 					ctx.beginPath();
 					ctx.globalAlpha = 0.5;
-					ctx.drawImage(img,300+110*(i>3?i-4:i),i>3?235:125,70,70);
+					ctx.drawImage(img, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
 					//ctx.fillText("test",300+110*(i>3?i-4:i),i>3?315:205);
 
 					ctx.globalAlpha = 1;
 					ctx.closePath();
 				};
-				this.onClick = function(eX, eY) { };
+				this.onClick = function(eX, eY) {};
 				this.onOver = function(eX, eY) {
 					if (300 + 110 * (i > 3 ? i - 4 : i) < eX && eX < 370 + 110 * (i > 3 ? i - 4 : i) && (i > 3 ? 235 : 125) < eY && eY < (i > 3 ? 330 : 220)) {
 						ctx.clearRect(200, 330, 650, 40);
@@ -542,8 +541,8 @@
 				var img = new Image();
 				var img_hover = new Image();
 				//no image case
-				if(!items.image){
-					items.image=  "assets/img/disease/misc.png"
+				if (!items.image) {
+					items.image = "assets/img/disease/misc.png"
 				}
 				img.src = items.image;
 				img_hover.src = items.image.replace('.png', '_hover.png');
@@ -553,7 +552,7 @@
 					ctx.globalAlpha = 1;
 					//ctx.drawImage(img, 335+110*(i>=4?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
 					//ctx.drawImage(img, 335+110*(i>=4?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
-					ctx.drawImage(img,300+110*(i>3?i-4:i),i>3?235:125,70,70);
+					ctx.drawImage(img, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
 
 
 					ctx.closePath();
@@ -561,14 +560,14 @@
 				this.onClick = function(eX, eY) {
 					if (300 + 110 * (i > 3 ? i - 4 : i) < eX && eX < 370 + 110 * (i > 3 ? i - 4 : i) && (i > 3 ? 235 : 125) < eY && eY < (i > 3 ? 330 : 220)) {
 						//var id = diseaseList[items.name][Math.floor(Math.random()*diseaseList[items.name].length)];
-						var id = items.data[Math.floor(Math.random()*items.data.length)];
-						$("#draw").hide();		
+						var id = items.data[Math.floor(Math.random() * items.data.length)];
+						$("#draw").hide();
 						$("#menu").hide();
-						console.log(id);
+						// console.log(id);
 						$.main.init({
 							type: "disease",
-							num: id,		
-						});	
+							num: id,
+						});
 						return;
 					}
 				};
@@ -577,20 +576,20 @@
 						ctx.beginPath();
 						ctx.clearRect(300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 105, 105);
 						//ctx.clearRect(200,i>3?310:200,650,21);
-						ctx.clearRect(200,330,650,40);
+						ctx.clearRect(200, 330, 650, 40);
 						ctx.drawImage(img_hover, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
 						ctx.closePath();
 
 						ctx.font = '16pt Helvetica';
 						ctx.textAlign = "center";
-						ctx.fillText(items.localName,500,360);
-						hovered=true;
+						ctx.fillText(items.localName, 500, 360);
+						hovered = true;
 						//ctx.fillText(items.localName,335+110*(i>3?i-4:i),i>3?325:215);						hovered = true;
 					} else {
 						if (hovered) {
 							ctx.beginPath();
 							//ctx.clearRect(200,i>3?310:200,650,21);
-							ctx.clearRect(200,330,650,40);
+							ctx.clearRect(200, 330, 650, 40);
 
 							ctx.clearRect(300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 105, 105);
 							ctx.drawImage(img, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
@@ -605,86 +604,86 @@
 
 			var onHover = false;
 			var random = function(ctx, i, k) {
-				var color= [ "rgb(113, 178, 226)", "rgb(153, 50, 204)","rgb(0, 128, 0)", "rgb(255, 165, 0)"];
+				var color = ["rgb(113, 178, 226)", "rgb(153, 50, 204)", "rgb(0, 128, 0)", "rgb(255, 165, 0)"];
 				ctx.beginPath();
 				ctx.save();
-				ctx.fillStyle = color[(k>3?k-4:k)];
-				ctx.fillRect(100+70*i, 150, 100,50);
+				ctx.fillStyle = color[(k > 3 ? k - 4 : k)];
+				ctx.fillRect(100 + 70 * i, 150, 100, 50);
 				ctx.fillStyle = 'white';
 				ctx.font = '19pt Helvetica';
 				ctx.textAlign = "center";
-				ctx.fillText(i+" - "+(i+1),150+70*i,185);
+				ctx.fillText(i + " - " + (i + 1), 150 + 70 * i, 185);
 				ctx.restore();
 				ctx.closePath();
-				this.onOver = function(eX,eY) {
-					if(100+70*i < eX && eX < 200+70*i &&
-						150 < eY && eY< 200) {
+				this.onOver = function(eX, eY) {
+					if (100 + 70 * i < eX && eX < 200 + 70 * i &&
+						150 < eY && eY < 200) {
 						ctx.beginPath();
 						ctx.save();
 						ctx.fillStyle = "#6D6D6D";
-						ctx.fillRect(100+70*i, 150, 100, 50);
+						ctx.fillRect(100 + 70 * i, 150, 100, 50);
 						ctx.fillStyle = 'white';
 						ctx.font = '19pt Helvetica';
 						ctx.textAlign = "center";
-						ctx.fillText(i+" - "+(i+1),150+70*i,185);
+						ctx.fillText(i + " - " + (i + 1), 150 + 70 * i, 185);
 						ctx.restore();
 						ctx.closePath();
 
 					} else {
 						ctx.beginPath();
 						ctx.save();
-						ctx.fillStyle = color[(k>3?k-4:k)];
-						ctx.fillRect(100+70*i, 150, 100,50);
+						ctx.fillStyle = color[(k > 3 ? k - 4 : k)];
+						ctx.fillRect(100 + 70 * i, 150, 100, 50);
 						ctx.fillStyle = 'white';
 						ctx.font = '19pt Helvetica';
 						ctx.textAlign = "center";
-						ctx.fillText(i+" - "+(i+1),150+70*i,185);
+						ctx.fillText(i + " - " + (i + 1), 150 + 70 * i, 185);
 						ctx.restore();
 						ctx.closePath();
 					}
 				};
 				this.onClick = function(eX, eY) {
-					if(100+70*i <eX && eX < 200+70*i  &&
-						150 < eY && eY< 200) {
-						var ranNumber = Math.floor(Math.random()*2)+1 - 1;	
-						$("#draw").hide();		
+					if (100 + 70 * i < eX && eX < 200 + 70 * i &&
+						150 < eY && eY < 200) {
+						var ranNumber = Math.floor(Math.random() * 2) + 1 - 1;
+						$("#draw").hide();
 						$("#menu").hide();
 						console.log("calling random main ")
 						$.main.init({
 							type: "random",
-							num: (i+ranNumber),		
-						});	
+							num: (i + ranNumber),
+						});
 						return;
 					}
 				};
-				 
+
 			};
 
 			var back = function(ctx) {
 				ctx.beginPath();
 				ctx.save();
 				ctx.fillStyle = "#EF4136";
-				ctx.fillRect(150,120,50,110);
+				ctx.fillRect(150, 120, 50, 110);
 				ctx.fillStyle = 'white';
 				ctx.rotate(1.56);
 				ctx.font = '19pt Helvetica';
 				ctx.textAlign = "center";
-				ctx.fillText(lang.header["field 9"],175,-165);
+				ctx.fillText(lang.header["field 9"], 175, -165);
 				ctx.textAlign = "left";
 				ctx.restore();
 				ctx.closePath();
-				this.onOver = function(eX,eY) {
-					if(150 < eX && eX < 200 &&
+				this.onOver = function(eX, eY) {
+					if (150 < eX && eX < 200 &&
 						120 < eY && eY < 230) {
 						ctx.beginPath();
 						ctx.save();
 						ctx.fillStyle = "#6D6D6D";
-						ctx.fillRect(150,120,50,110);
+						ctx.fillRect(150, 120, 50, 110);
 						ctx.fillStyle = "white";
 						ctx.rotate(1.56);
 						ctx.font = '19pt Helvetica';
 						ctx.textAlign = "center";
-						ctx.fillText(lang.header["field 9"],175,-165);
+						ctx.fillText(lang.header["field 9"], 175, -165);
 						ctx.textAlign = "left";
 						ctx.restore();
 						ctx.closePath();
@@ -692,61 +691,61 @@
 						ctx.beginPath();
 						ctx.save();
 						ctx.fillStyle = "#EF4136";
-						ctx.fillRect(150,120,50,110);
+						ctx.fillRect(150, 120, 50, 110);
 						ctx.fillStyle = 'white';
 						ctx.rotate(1.56);
 						ctx.font = '19pt Helvetica';
 						ctx.textAlign = "center";
-						ctx.fillText(lang.header["field 9"],175,-165);
+						ctx.fillText(lang.header["field 9"], 175, -165);
 						ctx.textAlign = "left";
 						ctx.restore();
 						ctx.closePath();
 					}
-				
-				};	
-				this.onClick = function(eX,eY) {
-					if(150 < eX && eX < 200 &&
+
+				};
+				this.onClick = function(eX, eY) {
+					if (150 < eX && eX < 200 &&
 						120 < eY && eY < 230) {
 						ctx.beginPath();
-						ctx.clearRect(0,60,1024,400);
+						ctx.clearRect(0, 60, 1024, 400);
 						ctx.closePath();
 						selection = [];
 						//selection.push(new highscore(ctx));
-						for(var i=0;i<3;i++) {
-							selection.push(new cell(ctx, 310+(160*i), 260,i));
+						for (var i = 0; i < 3; i++) {
+							selection.push(new cell(ctx, 310 + (160 * i), 260, i));
 						}
 						var banner = new Image();
 						banner.onload = function() {
-							ctx.drawImage(banner,bannerValues.x,bannerValues.y,bannerValues.w,bannerValues.h);
+							ctx.drawImage(banner, bannerValues.x, bannerValues.y, bannerValues.w, bannerValues.h);
 						};
 						$('#draw').mousemove(function(e) {
 							var k = getCursorPosition(e);
-							for(var i=0;i<selection.length;i++) {
-								selection[i].onOver(k[0],k[1]);		
+							for (var i = 0; i < selection.length; i++) {
+								selection[i].onOver(k[0], k[1]);
 							}
 						});
 						banner.src = 'assets/img/logo.png';
 						ctx.fillStyle = "#F1F1F1";
-						ctx.fillRect(212,250,600,120);
+						ctx.fillRect(212, 250, 600, 120);
 						$("#level_inputbox").val("").hide();
 					}
 				};
 			};
 
-			for(var i=0;i<3;i++) {
+			for (var i = 0; i < 3; i++) {
 				//selection.push(new cell(ctx,150,120+(50*i),i));
-				selection.push(new cell(ctx, 310+(160*i), 260,i));
+				selection.push(new cell(ctx, 310 + (160 * i), 260, i));
 			}
 
 			$('#draw').unbind().mousemove(function(e) {
 				var k = getCursorPosition(e);
-				for(var i=0;i<selection.length;i++) {
-					selection[i].onOver(k[0],k[1]);		
+				for (var i = 0; i < selection.length; i++) {
+					selection[i].onOver(k[0], k[1]);
 				}
 			}).click(function(e) {
 				var k = getCursorPosition(e);
-				for(var i=0;i<selection.length;i++) {
-					selection[i].onClick(k[0],k[1]);		
+				for (var i = 0; i < selection.length; i++) {
+					selection[i].onClick(k[0], k[1]);
 				}
 			});
 		};
@@ -770,21 +769,21 @@
 				y = e.pageY;
 			} else {
 				x = e.clientX + document.body.scrollLeft +
-				    document.documentElement.scrollLeft;
+					document.documentElement.scrollLeft;
 				y = e.clientY + document.body.scrollTop +
-				    document.documentElement.scrollTop;
+					document.documentElement.scrollTop;
 			}
 			// Convert to coordinates relative to the canvas
 			x -= gCanvasElement.offsetLeft;
 			y -= menu.offsetTop;
-			return [x,y]
+			return [x, y]
 		}
-			
+
 		var proto = g.prototype,
 			attr = [
-				["start",proto.start],
-				["restart",proto.restart]
-				];
-		common.exportSingleton("interactiveMenu",g,attr);
+				["start", proto.start],
+				["restart", proto.restart]
+			];
+		common.exportSingleton("interactiveMenu", g, attr);
 	})();
 })()
