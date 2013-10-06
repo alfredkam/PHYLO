@@ -10,7 +10,7 @@ define([
     //tablet tpl
     "text!tpl/tablet/TabletHeader.mustache",
     //NO EXPORTS
-   "scripts/phylo-lib/protocal.core",
+   //"scripts/phylo-lib/protocal.core",
    
 ], function($, Marionette, tpl, cookie, tabletTpl) {
     var HeaderView = Marionette.ItemView.extend({

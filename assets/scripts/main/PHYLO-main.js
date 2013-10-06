@@ -167,7 +167,9 @@ require.config({
 			deps : ["jquery"]
 		},
 		"scripts/phylo-lib/protocal.core" : {
-			deps : ['jquery']
+			deps : ['jquery'],
+			exports : "jQuery"
+
 		}
 
 	}
