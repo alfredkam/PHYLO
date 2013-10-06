@@ -308,15 +308,15 @@
 							case 2:
 								var diseaseorder=[];
 								var diseaseImages = {
-									"Digestive": "assets/img/disease/digestive.png",
+									// "Digestive": "assets/img/disease/digestive.png",
 									"Heart": "assets/img/disease/heart.png",
 									"Cancer": "assets/img/disease/cancer.png",
 									"Metabolic": "assets/img/disease/metabolic.png",
 									"Blood": "assets/img/disease/blood.png",
-									"Sensory": "assets/img/disease/sensory.png", 
+									// "Sensory": "assets/img/disease/sensory.png", 
 									"Brain": "assets/img/disease/brain.png", 
-									"Muscles": "assets/img/disease/muscles.png", 
-									"Lung": "assets/img/disease/lung.png",
+									// "Muscles": "assets/img/disease/muscles.png", 
+									// "Lung": "assets/img/disease/lung.png",
 									"Infectious" : "assets/img/disease/infectious.png",
 									"Mental" : "assets/img/disease/mental.png",
 									"Misc" : "assets/img/disease/misc.png"
@@ -328,18 +328,37 @@
 									dataType: "json",
 									async: false
 								}).done(function(data) {
-									//i need to do some arranging myself
-									for(var x in data){
-										console.log(x);
-										console.log(data[x]);
-										console.log(diseaseImages[x]);
-										diseaseorder.push({
-											name:x,
-											data:data[x],
-											image:diseaseImages[x],
-											localName: lang.body.play.gameselect.levelselect.disease[x]||x
-										});
+										//i need to do some arranging myself
+									for (var x in data) {
+										//console.log(x);
+										//console.log(data[x]);
+										//console.log(diseaseImages[x]);
+										//if it exists in the array
+										if (diseaseImages[x])
+											diseaseorder.push({
+												name: x,
+												data: data[x],
+												image: diseaseImages[x],
+												localName: lang.body.play.gameselect.levelselect.disease[x] || x
+											});
+										delete diseaseImages[x];
 									}
+									//adding in the null ones
+									for( var y in diseaseImages){
+										console.log(y);
+										console.log(data[y]);
+										console.log(diseaseImages[y]);
+										diseaseorder.push({
+											name: y,
+											data : [],
+											image : diseaseImages[y],
+											localName: lang.body.play.gameselect.levelselect.disease[y] || y
+										});
+										delete diseaseImages[y];
+
+									}
+
+								
 									// diseaseorder = data;
 
 									console.log("data added in!");
@@ -485,6 +504,7 @@
 			};
 
 			var emptyDisease = function(ctx, items, i) {
+				var hovered = false;
 				var img = new Image();
 				if (!items.image) {
 					items.image = "assets/img/disease/misc.png"
@@ -494,13 +514,28 @@
 					ctx.beginPath();
 					ctx.globalAlpha = 0.5;
 					ctx.drawImage(img,300+110*(i>3?i-4:i),i>3?235:125,70,70);
-					ctx.fillText("test",300+110*(i>3?i-4:i),i>3?315:205);
+					//ctx.fillText("test",300+110*(i>3?i-4:i),i>3?315:205);
 
 					ctx.globalAlpha = 1;
 					ctx.closePath();
 				};
 				this.onClick = function(eX, eY) { };
-				this.onOver = function(eX, eY) {};
+				this.onOver = function(eX, eY) {
+					if (300 + 110 * (i > 3 ? i - 4 : i) < eX && eX < 370 + 110 * (i > 3 ? i - 4 : i) && (i > 3 ? 235 : 125) < eY && eY < (i > 3 ? 330 : 220)) {
+						ctx.clearRect(200, 330, 650, 40);
+
+						ctx.font = '16pt Helvetica';
+						ctx.textAlign = "center";
+						ctx.fillText(items.localName, 500, 360);
+						hovered = true;
+						//ctx.fillText(items.localName,335+110*(i>3?i-4:i),i>3?325:215);						hovered = true;
+					} else {
+						if (hovered) {
+							ctx.clearRect(200, 330, 650, 40);
+							hovered = false;
+						}
+					}
+				};
 			};
 
 			var disease = function(ctx, items, i) {
