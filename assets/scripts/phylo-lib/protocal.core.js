@@ -63,7 +63,7 @@
 			//this function is currently turned off.
 			return;
 			var self = this;
-			var data = "mode=4&id="+$.phylo.id+"&user="+window.guest+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.bestScore;
+			var data = "mode=4&id="+$.phylo.id+"&user="+window.username+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.bestScore;
 			$.ajax({
 				type : "POST",
 				url : url,

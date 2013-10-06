@@ -69,6 +69,7 @@ define([
             cookie.delete("logid");
             // $("#logout").hide();
             window.guest = 'guest';
+            window.username = "guest";
             this.user.set("name", "");
             // $("#login-box").hide();
             // $(".login-btn").click(function() {
@@ -131,6 +132,7 @@ define([
                         $(".m_login").html(name);
                         $("#logout").show();
                         window.guest = name;
+                        window.username = name;
                         self.user.set("name", name);
                         $("#login-box").hide();
                     } else {
@@ -274,6 +276,7 @@ define([
                                 // display login
                                 $(".m_login").html(fullname.replace("+", " "));
                                 window.guest = fullname;
+                                window.username = username;
                                 self.user.set("name", fullname);
                             } else {
                                 //bootbox.alert("Data conflict. Please, login again.");
