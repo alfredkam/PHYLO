@@ -38,6 +38,7 @@ require.config({
 		js : 'scripts/',
 		tpl : "tpl",
 		nprogress : "bower_components/nprogress/nprogress"
+
 	},
 
 	/*
@@ -164,7 +165,11 @@ require.config({
 		},
 		"nprogress" : {
 			deps : ["jquery"]
+		},
+		"scripts/phylo-lib/protocal.core" : {
+			deps : ['jquery']
 		}
+
 	}
 });
 
