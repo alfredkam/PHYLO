@@ -314,13 +314,15 @@
 									"Heart": "assets/img/disease/heart.png",
 									"Cancer": "assets/img/disease/cancer.png",
 									"Metabolic": "assets/img/disease/metabolic.png",
+									"Digestive": "assets/img/disease/lung.png",
+
 									"Blood": "assets/img/disease/blood.png",
 									// "Sensory": "assets/img/disease/sensory.png", 
 									"Brain": "assets/img/disease/brain.png",
 									// "Muscles": "assets/img/disease/muscles.png", 
 									// "Lung": "assets/img/disease/lung.png",
 									"Infectious": "assets/img/disease/infectious.png",
-									"Mental": "assets/img/disease/mental.png",
+									//"Mental": "assets/img/disease/mental.png",
 									"Misc": "assets/img/disease/misc.png"
 
 								};
