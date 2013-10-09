@@ -311,19 +311,19 @@
 								var diseaseorder = [];
 								var diseaseImages = {
 									// "Digestive": "assets/img/disease/digestive.png",
-									"Heart": "assets/img/disease/heart.png",
-									"Cancer": "assets/img/disease/cancer.png",
-									"Metabolic": "assets/img/disease/metabolic.png",
-									"Digestive": "assets/img/disease/lung.png",
+									"Heart": "assets/img/disease/heart.svg",
+									"Cancer": "assets/img/disease/cancer.svg",
+									"Metabolic": "assets/img/disease/metabolic.svg",
+									"Digestive": "assets/img/disease/lung.svg",
 
-									"Blood": "assets/img/disease/blood.png",
-									// "Sensory": "assets/img/disease/sensory.png", 
-									"Brain": "assets/img/disease/brain.png",
-									// "Muscles": "assets/img/disease/muscles.png", 
-									// "Lung": "assets/img/disease/lung.png",
-									"Infectious": "assets/img/disease/infectious.png",
-									//"Mental": "assets/img/disease/mental.png",
-									"Misc": "assets/img/disease/misc.png"
+									"Blood": "assets/img/disease/blood.svg",
+									// "Sensory": "assets/img/disease/sensory.svg", 
+									"Brain": "assets/img/disease/brain.svg",
+									// "Muscles": "assets/img/disease/muscles.svg", 
+									// "Lung": "assets/img/disease/lung.svg",
+									"Infectious": "assets/img/disease/infectious.svg",
+									//"Mental": "assets/img/disease/mental.svg",
+									"Misc": "assets/img/disease/misc.svg"
 
 								};
 								//TODO: a fail case
@@ -514,7 +514,7 @@
 				img.onload = function() {
 					ctx.beginPath();
 					ctx.globalAlpha = 0.5;
-					ctx.drawImage(img, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
+					ctx.drawSvg(items.image, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
 					//ctx.fillText("test",300+110*(i>3?i-4:i),i>3?315:205);
 
 					ctx.globalAlpha = 1;
@@ -544,17 +544,17 @@
 				var img_hover = new Image();
 				//no image case
 				if (!items.image) {
-					items.image = "assets/img/disease/misc.png"
+					items.image = "assets/img/disease/misc.svg"
 				}
 				img.src = items.image;
-				img_hover.src = items.image.replace('.png', '_hover.png');
+				img_hover.src = items.image.replace('.svg', '_hover.svg');
 				var hovered = false;
 				img.onload = function() {
 					ctx.beginPath();
 					ctx.globalAlpha = 1;
 					//ctx.drawImage(img, 335+110*(i>=4?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
 					//ctx.drawImage(img, 335+110*(i>=4?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
-					ctx.drawImage(img, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
+					ctx.drawSvg(img.src, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
 
 
 					ctx.closePath();
@@ -579,7 +579,7 @@
 						ctx.clearRect(300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 105, 105);
 						//ctx.clearRect(200,i>3?310:200,650,21);
 						ctx.clearRect(200, 330, 650, 40);
-						ctx.drawImage(img_hover, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
+						ctx.drawSvg(img_hover.src, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
 						ctx.closePath();
 
 						ctx.font = '16pt Helvetica';
@@ -594,7 +594,7 @@
 							ctx.clearRect(200, 330, 650, 40);
 
 							ctx.clearRect(300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 105, 105);
-							ctx.drawImage(img, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
+							ctx.drawSvg(img.src, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
 							//ctx.fillText("test",300+110*(i>3?i-4:i),i>3?315:205);
 
 							ctx.closePath();
