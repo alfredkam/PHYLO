@@ -168,100 +168,103 @@
 			if(name == "thankyou") {
 				return this.ty; 
 			}
-			if(name == "hg19" || name == "GRCh37"){
+			if(name == "hg19" || name == "GRCh37" || name == "human" || name == "Human"){
 					
 					return this.collect("Human");
 					
-			} else if(name == "panTro2" || name == "gorGor1"){
+			} else if(name == "panTro2" || name == "gorGor1" || name == "ape" || name == "Ape"){
 				
 				return this.collect("ape");
 				
 			} else if(name == "ponAbe2" || name == "rheMac2" ||
 					 name == "papHam1" || name == "calJac1" ||
 					 name == "tarSyr1" || name == "micMur1" ||
-					 name == "otoGar1"){
+					 name == "otoGar1" || name == "monkey" || name == "Monkey"){
 				
 				return this.collect("Monkey");
 				
 			} else if(name == "tupBel1" || name == "mm9" ||
 					 name == "rn4" || name == "dipOrd1" ||
 					 name == "cavPor3" || name == "eriEur1" ||
-					 name == "sorAra1"){
+					 name == "sorAra1" || name == "mouse" || name == "Mouse"){
 				
 				return this.collect("Mouse");
 							
-			} else if(name == "speTri1"){
+			} else if(name == "speTri1" || name == "squirrel" || name == "Squirrel"){
 				
 				return this.collect("Squirell");
 				
-			} else if(name == "oryCun2"){
+			} else if(name == "oryCun2" || name == "rabbit" || name == "Rabbit"){
 				
 				return this.collect("Rabbit");
 				
-			} else if(name == "ochPri2"){
+			} else if(name == "ochPri2" || name == "ram" || name == "Ram"){
 				
 				return this.collect("Ram");
 				
-			} else if(name == "turTru2"){
+			} else if(name == "turTru2" || name == "dolphin" || name == "Dolphin"){
 				
 				return this.collect("Dolphin");
 				
-			} else if(name == "bosTau4"){
+			} else if(name == "bosTau4" || name == "cow" || name == "Cow" || name == "taurus" || name == "Taurus"){
 				
 				return this.collect("Cow");
 				
-			} else if(name == "equCab2"){
+			} else if(name == "equCab2" || name == "hores" || name == "Horse" || name == "donkey" || name == "Donkey"){
 				
 				return this.collect("Horse")
 				
-			} else if(name == "felCat3"){
+			} else if(name == "felCat3" || name == "cat" || name == "Cat" ||
+                      name == "lion" || name == "Lion" || name == "tiger" || name == "Tiger" ||
+                      name == "panther" || name == "Panther" || name == "jaguar" || name == "Jaguar" ||
+                      name == "lynx" || name == "Lynx"){
 				
 				return this.collect("Cat");
 				
-			} else if(name == "canFam2"){
+			} else if(name == "canFam2" || name == "dog" || name == "Dog" || name == "wolf" || name == "Wolf"){
 				
 				return this.collect("Dog");
 				
-			} else if(name == "myLuc1" || name == "pteVam1" || "myoluc1"){
+			} else if(name == "myLuc1" || name == "pteVam1" || "myoluc1" || name == "bat" || name == "Bat"){
 				
 				return this.collect("bat");
 				
-			} else if(name == "loxAfr3"){
+			} else if(name == "loxAfr3" || name == "elephant" || name == "Elephant"){
 				
 				return this.collect("Elephant");
 				
 			} else if(name == "proCap1" || name == "echTel1" ||
-					 name == "dasNov2" || name == "ornAna1"){
+                      name == "dasNov2" || name == "ornAna1" || name == "beaver" || name == "Beaver"){
 				
 				return this.collect("Beaver");
 				
-			} else if(name == "choHof1"){
+			} else if(name == "choHof1" || name == "sloth" || name == "Sloth"){
 				
 				return this.collect("Sloth");
 				
-			} else if(name == "macEug"){
+			} else if(name == "macEug" || name == "Kangaroo" || name == "Kangaroo"){
 				
 				return this.collect("Kangaroo");
 				
-			} else if(name == "monDom5"){
+			} else if(name == "monDom5" || name == "opossum" || name == "Opossum"){
 				
 				return this.collect("Opossum");
 				
-			} else if(name == "galGal3" || name == "taeGut1"){
+			} else if(name == "galGal3" || name == "taeGut1" || name == "bird" || name == "Bird"){
 				
 				return this.collect("bird");
 				
-			} else if(name == "anoCar1"){
+			} else if(name == "anoCar1" || name == "lizard" || name == "Lizard"){
 				
 				return this.collect("Lizard");
 				
 			} else if(name == "xenTro2" || name == "tetNig2" ||
 					 name == "fr2" || name == "gasAcu1" ||
-					 name == "oryLat2" || name == "danRer6"){
+					 name == "oryLat2" || name == "danRer6" || name == "fish" || name == "Fish"){
 				
 				return this.collect("Fish");
 				
-			} else if(name == "petMar1"){
+			} else if(name == "petMar1" || name == "eel" || name == "Eel"){
 				
 				return this.collect("Eel");
 				
