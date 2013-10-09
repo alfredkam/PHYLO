@@ -20,7 +20,8 @@
         "field 14": "Go back to classic edition",
         "field 15": "History",
         "field 16": "Expert",
-        "field 17": "Settings"
+        "field 17": "Settings",
+        "moto": "Solve DNA Puzzles and fight diseases"
     },
     "body": {
         "misc": {
