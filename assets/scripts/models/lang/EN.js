@@ -21,7 +21,7 @@
         "field 15": "History",
         "field 16": "Expert",
         "field 17": "Settings",
-        "moto": "Solve DNA Puzzles and fight diseases"
+        "moto": "Solve DNA Puzzles and help genetic research!"
     },
     "body": {
         "misc": {
