@@ -5,6 +5,7 @@ define([
     "backbone",
     "marionette",
     "mustache",
+    "bootbox",
     "scripts/util/Request",
     //TEMPLATES
     "text!tpl/app/index/Index.mustache",
@@ -12,7 +13,8 @@ define([
     "scripts/views/validation/cookie.validation"
 
 ], function(
-    $, _, Backbone, Marionette, Mustache, Request,
+    $, _, Backbone, Marionette, Mustache, Bootbox,
+    Request,
     tpl
 ) {
     var IndexView = Marionette.ItemView.extend({
@@ -22,7 +24,23 @@ define([
             console.log("init");
         },
         template: tpl,
-        render: function() {
+        render : function() {
+            var self = this;
+            $.ajax({
+                url: "../phpdb/phyloExpertDB.php",
+                data: "mode=2&id=" + id,
+                type: "POST",
+            }).done(function(data) {
+                if(data == "") {
+                    Bootbox.alert("Sorry this puzzle is not avalible anymore", function() {
+                        window.location = "#!/"+window.lang;
+                    });
+                } else {
+                    self.loadGame();
+                }
+            });
+        },
+        loadGame: function() {
             var request = new Request();
             // selectTab("play");
             var self = this;
