@@ -213,16 +213,16 @@
 			var banner = new Image();
 			var bannerValues = {
 				x: 200,
-				y: 15,
+				y: 20,
 				w: 600,
-				h: 200
+				h: 160
 
 			}
 			banner.onload = function() {
 				ctx.drawImage(banner, bannerValues.x, bannerValues.y, bannerValues.w, bannerValues.h);
 			};
-			banner.src = 'assets/img/phylo.png';
-			//banner.src = 'assets/img/logo.png';
+			// banner.src = 'assets/img/phylo.png';
+			banner.src = 'assets/img/logo.png';
 			ctx.fillStyle = "#F1F1F1";
 			ctx.fillRect(212, 250, 600, 120);
 
