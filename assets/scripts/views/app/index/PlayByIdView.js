@@ -32,7 +32,6 @@ define([
                 type: "POST",
             }).done(function(data) {
                 if(data == "") {
-                    
                     bootbox.alert(self.model.toJSON().body.misc.invalidPuzzle, function() {
                         window.location = "#!/"+self.lang;
                     });
