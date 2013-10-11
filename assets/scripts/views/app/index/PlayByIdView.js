@@ -32,8 +32,9 @@ define([
                 type: "POST",
             }).done(function(data) {
                 if(data == "") {
-                    bootbox.alert("Sorry this puzzle is not avalible anymore", function() {
-                        window.location = "#!/"+window.lang;
+                    
+                    bootbox.alert(self.model.toJSON().body.misc.invalidPuzzle, function() {
+                        window.location = "#!/"+self.lang;
                     });
                 } else {
                     self.loadGame();
