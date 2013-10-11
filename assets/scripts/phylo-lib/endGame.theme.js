@@ -89,7 +89,7 @@
                     context+=self.split(endGameContext["avgScore"].replace("***","<b>"+Math.round(json.running_score / json.play_count)+"</b>"));
                     context+=self.split(endGameContext["highscore"].replace("***","<b>"+json.best_score+"</b>"));
                     context+=self.split(endGameContext["highscoreHolder"].replace("***","<b>"+json.highscore_user+"</b>"));
-                    context+=self.split(endGameContext["dnaAssociation"].replace("***","<b>"+json.disease_link+"</b>"));
+                    context+=self.split(endGameContext["dnaAssociation"].replace("***","<b>"+(json.disease_link || window.lang.body.footer.unclassified)+"</b>"));
                     context+=self.split(endGameContext["completions"].replace("***","<b>"+json.play_count+"</b>"));
                     context+="<tr><td>"+endGameContext["submitter"]+"&nbsp;&nbsp;&nbsp;:</td><td>&nbsp;&nbsp;&nbsp;<a href='"+self.submitterLocation+"'>"+(self.submitter?self.submitter:"jerome")+"</a></td></tr>";
                     context+="</table>";
