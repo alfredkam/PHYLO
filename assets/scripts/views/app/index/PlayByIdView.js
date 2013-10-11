@@ -13,7 +13,7 @@ define([
     "scripts/views/validation/cookie.validation"
 
 ], function(
-    $, _, Backbone, Marionette, Mustache, Bootbox,
+    $, _, Backbone, Marionette, Mustache, bootbox,
     Request,
     tpl
 ) {
@@ -32,7 +32,7 @@ define([
                 type: "POST",
             }).done(function(data) {
                 if(data == "") {
-                    Bootbox.alert("Sorry this puzzle is not avalible anymore", function() {
+                    bootbox.alert("Sorry this puzzle is not avalible anymore", function() {
                         window.location = "#!/"+window.lang;
                     });
                 } else {
