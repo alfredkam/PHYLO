@@ -28,7 +28,7 @@ define([
             var self = this;
             $.ajax({
                 url: "../phpdb/phyloExpertDB.php",
-                data: "mode=2&id=" + id,
+                data: "mode=2&id=" + self.id,
                 type: "POST",
             }).done(function(data) {
                 if(data == "") {
