@@ -457,7 +457,7 @@
 								// }, {
 								// 	cancel: false,
 								// });
-								bootbox.alert(self.model.toJSON().body.misc.invalidPuzzle);
+								bootbox.alert(window.lang.body.misc.invalidPuzzle);
 
 							} else {
 								$("#draw").hide();
