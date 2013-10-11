@@ -5,15 +5,15 @@ define([
     "backbone",
     "marionette",
     "mustache",
-    "bootbox",
     "scripts/util/Request",
     //TEMPLATES
     "text!tpl/app/index/Index.mustache",
     //this one is the jquery one
-    "scripts/views/validation/cookie.validation"
-
+    "scripts/views/validation/cookie.validation",
+    //NO EXPORT
+    "bootbox"
 ], function(
-    $, _, Backbone, Marionette, Mustache, bootbox,
+    $, _, Backbone, Marionette, Mustache,
     Request,
     tpl
 ) {
