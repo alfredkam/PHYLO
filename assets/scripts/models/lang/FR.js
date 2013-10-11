@@ -254,7 +254,7 @@
             "recentSubmit" : "Dernières réalisations",
             "puzzleID" : "ID du puzzle",
             "user" : "Utilisateur",
-            "unclassified" : "Non classé"
+            "unclassified" : "Non classée"
         }
     }
 }
