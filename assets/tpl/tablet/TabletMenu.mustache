@@ -1,0 +1,95 @@
+<link rel="stylesheet" href="assets/css/tabletHome.css"/>
+<style>
+    #tabletBackBtn {
+        display:none;
+    }
+</style>
+<div id='tablet-grid'>
+    <div class='row'>
+        {{! <div class='col-12 col-lg-12 col-sm-12'> }}
+            <div class='tablet-title'> PHYLO | DNA Puzzles</div>
+        {{! </div> }}
+    <div class='row first'>
+        <a class='tablet-play-btn col-4 col-xs-4 col-md-4 col-sm-4 col-lg-4' href='#!/{{lang}}/Play'>
+            <div>
+                <div>
+                    {{! <i class='tablet-style-stroke'></i> }}
+                    <i class='icon-stop-1'></i>
+                    <i class='icon-stop-1'></i>
+                    <i class='icon-stop-1'></i>
+                </div>
+                <div>{{header.field 1}}</div>
+            </div>
+        </a>
+        <a class='tablet-tutorial-btn col-xs-4 col-4 col-md-4 col-sm-4 col-lg-4' href='#!/{{lang}}/Tutorial' >
+            <div>
+                <div>
+                    <i class='icon-lamp-1'></i>
+                </div>
+                <div>{{header.field 2}}</div>
+            </div>
+        </a>
+        <a class='tablet-about-btn col-4 col-xs-4 col-md-4 col-sm-4 col-lg-4' href='#!/{{lang}}/About'>
+            <div>
+                <div>
+                    <i class='icon-info-circle'></i>
+                </div>
+                <div>{{header.field 3}}</div>
+            </div>
+        </a>
+    </div>
+    <div class='row'>
+  <!--      <a class='tablet-grid tablet-credits-btn tablet-tab' href='' name='credits'>
+            <div>
+                <div>
+                    <i class='icon-beaker'></i>
+                </div>
+                <div>{{header.field 4}}</div>
+            </div>
+        </a> -->
+            <a class='tablet-ranking-btn col-xs-4 col-4 col-md-4 col-sm-4 col-lg-4' href='#!/{{lang}}/Ranking'>
+                <div>
+                    <div>
+                        <i class='icon-trophy'></i>
+                    </div>
+                    <div>{{header.field 5}}</div>
+                </div>
+            </a>
+            <!--
+            <a class='tablet-grid tablet-login-btn tablet-login' href='javascript:void(0);' name='tablet:login'>
+                <div>
+                    <div>
+                        <i class='icon-chevron-right'></i>
+                    </div>
+                    <div>Login</div>
+                </div>
+            </a>
+        -->
+        <a class='tablet-settings-btn col-xs-4 col-4 col-md-4 col-sm-4 col-lg-4' href='#!/mobile/{{lang}}/settings'>
+            <div>
+                <div>
+                    <i class='icon-cog-alt'></i>
+                </div>
+                <div>{{header.field 17}}</div>
+            </div>
+        </a>
+            <!--
+            <a class='tablet-grid tablet-feedback-btn' href='javascript:void(0);' name='feedback'>
+                <div>
+                    <div>
+                        <i class='icon-comment'></i>
+                    </div>
+                    <div>Feedback</div>
+                </div>
+            </a>
+        -->
+        <a class='tablet-history-btn col-xs-4 col-4 col-md-4 col-sm-4 col-lg-4' href='#!/{{lang}}/History'>
+            <div class='showInLogin'>
+                <div>
+                    <i class='icon-book-1'></i>
+                </div>
+                <div>{{header.field 15}}</div>
+            </div>
+        </a>
+    </div>
+</div>

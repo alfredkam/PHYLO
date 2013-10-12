@@ -1,0 +1,36 @@
+.wrapper-inner {
+    width:1024px;
+}
+
+.carousel-caption {
+    bottom:0px;
+    text-align: left;
+    color: #333;
+    padding-bottom:10px;
+}
+
+.carousel-caption h2 {
+    color: #333;
+}
+
+.carousel-caption h4 {
+    font-size:14px;
+    margin-bottom:0px;
+    padding-bottom: 0px;
+}
+
+.carousel-control.right {
+    background-image: -webkit-gradient(linear,0 top,100% top,from(rgba(0,0,0,0.0001)),to(rgba(0,0,0,0.1)));
+    background-image: -webkit-linear-gradient(left,color-stop(rgba(0,0,0,0.0001) 0),color-stop(rgba(0,0,0,0.1) 100%));
+    background-image: -moz-linear-gradient(left,rgba(0,0,0,0.0001) 0,rgba(0,0,0,0.1) 100%);
+    background-image: linear-gradient(to right,rgba(0,0,0,0.0001) 0,rgba(0,0,0,0.1) 100%);
+    color: #333;
+}
+
+.carousel-control.left {
+    background-image: -webkit-gradient(linear,0 top,100% top,from(rgba(0,0,0,0.1)),to(rgba(0,0,0,0.0001)));
+    background-image: -webkit-linear-gradient(left,color-stop(rgba(0,0,0,0.1) 0),color-stop(rgba(0,0,0,0.0001) 100%));
+    background-image: -moz-linear-gradient(left,rgba(0,0,0,0.1) 0,rgba(0,0,0,0.0001) 100%);
+    background-image: linear-gradient(to right,rgba(0,0,0,0.1) 0,rgba(0,0,0,0.0001) 100%);
+    color:#333;
+}

@@ -1,0 +1,67 @@
+<!--<table>
+    <tr>
+        <td>
+            <img class="startable" src="assets/img/1star.png"><img class="startable" src="assets/img/1star.png"><img class="startable" src="assets/img/1star.png">
+        </td>
+        <td>: {{body.play.ranking.field 11}} </td>
+    </tr>
+    <tr>
+        <td>
+            <img class="startable" src="assets/img/1star.png"><img class="startable" src="assets/img/1star.png">
+        </td>
+        <td>: {{body.play.ranking.field 10}}</td>
+    </tr>
+    <tr>
+        <td>
+            <img class="startable" src="assets/img/1star.png">
+        </td>
+        <td>: {{body.play.ranking.field 9}}</td>
+    </tr>
+</table>-->
+
+
+<style>
+    #ranking-wrapper input {
+        border:1px solid #ccc;
+        border-radius:4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+        -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    }
+
+    #ranking-wrapper .row {
+        padding-top:11px;
+        position:relative;
+    }
+</style>
+
+<div id='mid-panel' style='display:block; top:0px;'>
+    <div id='ranking-wrapper' style='margin-bottom:0px;g'>
+        <div id='ranking-body'>
+            <div id='loading-panel'>
+                <img src='assets/img/loading.gif'/>
+            </div>
+        </div>
+        <table>
+            <tr>
+                <td>
+                    <img class="startable" src="assets/img/1star.png"><img class="startable" src="assets/img/1star.png"><img class="startable" src="assets/img/1star.png">
+                </td>
+                <td>: {{body.play.ranking.field 11}} </td>
+            </tr>
+            <tr>
+                <td>
+                    <img class="startable" src="assets/img/1star.png"><img class="startable" src="assets/img/1star.png">
+                </td>
+                <td>: {{body.play.ranking.field 10}}</td>
+            </tr>
+            <tr>
+                <td>
+                    <img class="startable" src="assets/img/1star.png">
+                </td>
+                <td>: {{body.play.ranking.field 9}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

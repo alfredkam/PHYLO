@@ -1,0 +1,7 @@
+{
+  "name": "components-json",
+  "version": "2012-10-08",
+  "description": "JSON component",
+  "keywords": ["json"],
+  "main": "./json2.js"
+}

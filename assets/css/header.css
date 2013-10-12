@@ -1,0 +1,105 @@
+#logo a {
+    color: rgb(109, 109, 109);
+}
+
+#logo a:hover {
+    color: rgb(113, 178, 226);
+}
+
+#login-box {
+    font-size:12px;
+}
+
+#login-box .row {
+    margin:8px 0px;
+}
+
+#top-panel {
+    border:0px;
+}
+
+.zocial {
+    background-image: none;
+    margin:0;
+}
+
+#login:hover, .login-onSelect {
+    background-color:rgb(245, 245, 245);
+}
+/*
+#login:hover #login-box {
+    display:block;
+}*/
+
+#login #login-box.logoutBtn {
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border:0px;
+    color:#666;
+    padding:5px 20px;
+    box-shadow: 0px 1px 1px #999;
+    font-size:13px;
+}
+
+#nav li a div{
+    line-height: 16px;
+}
+
+#options .icon-cog {
+    left: 6px;
+    top:3px;
+}
+
+#language-tag i.icon-language {
+    top:2px;
+    left:0px;
+}
+
+#language:hover #language-list {
+    display:block;
+}
+
+#options:hover #option-list {
+    display:block;
+    top:3px;
+    position:relative;
+}
+
+#option-list, #language-list{
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+@media(max-width:1280px) {
+    #options .icon-cog {
+        left:0px;
+        top:8px;
+    }
+}
+@media(max-width:1200px) {
+    .container {
+        max-width: none;
+    }
+    #options:hover #option-list {
+        top:6px;
+    }
+}
+
+@media(max-width:1180px) {
+    #options .icon-cog {
+        top:8px;
+    }
+}
+
+@media(max-width:768px) {
+    #logo {
+        width:25%;
+        display:inline-block;
+        float:left;
+    }
+    #nav {
+        width:75%;
+        left:0px;
+        display:inherit;
+    }
+}

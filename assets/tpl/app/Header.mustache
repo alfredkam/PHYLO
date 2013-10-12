@@ -1,0 +1,115 @@
+ <link rel='stylesheet' href='assets/css/media1280.css'/>
+ <link rel='stylesheet' href='assets/css/media1180.css'/>
+ <link rel='styhesheet' href='assets/css/media1024.css'/>
+ <link rel='stylesheet' href="assets/css/header.css"/>
+ <div id='top-panel'>
+     <div class='container'>
+     <div id='logo' class='col-3 col-sm-3 col-lg-3'><a href="#!/{{lang}}"><div>PHYLO | DNA Puzzles</div></a></div>
+     <!-- <div id='logo' class='col-md-3'><div>PHYLO | DNA Puzzles</div><div class='beta2'>Beta</div></div> -->
+     <a href="http://phylo.cs.mcgill.ca/submit">
+         <!--<div id='dropDown-logoTriangle'></div>
+         --> 
+         <div id='dropDown-logo' class='col-md-3'>PHYLO | Research</div>
+     </a>
+     <div id='nav' class='col-9 col-sm-9 col-lg-9'>
+         <ul>
+             <li>
+             <a id='play' class='isTab' href="#!/{{lang}}/Play"><div>{{header.field 1}}</div></a>
+             </li><li>
+             <a id='tutorial' class='isTab' href='#!/{{lang}}/Tutorial'><div>{{header.field 2}}</div></a>
+             </li>
+             <li>
+                <a id='about' class='isTab' href='#!/{{lang}}/About'><div>{{header.field 3}}</div></a>
+            </li>
+             <li>
+             <a id='ranking' class='isTab' href='#!/{{lang}}/Ranking'><div>{{header.field 5}}</div></a>
+            </li>
+             <li class='showInLogin'>
+             <a id='history' class='isTab' href='#!/{{lang}}/History'><div>{{header.field 15}}</div></a>
+             </li>
+             <li class='showInLogin showExpertOptions'>
+             <a id='expert' class='isTab' href='#!/{{lang}}/Expert'><div>{{header.field 16}}</div></a>
+             </li>
+         </ul>
+     </div>
+         <div id='top-panel-right'>
+             <div id='login'>
+                {{#user}}
+                <div id='login-tag'>
+                    {{user}}
+                </div>
+                <div id='login-box' class='logoutBtn'>
+                    Logout
+                </div>
+                {{/user}}
+                {{^user}}
+                 <div id='login-tag' class='m_login'>
+                     Login
+                 </div>
+                 <div id='login-box'>
+                     <div class='login-warning'></div>
+                     <div class='row email-holder'>
+                        <input id='email' type='text' class='form-control' placeholder='Email'/>
+                     </div>
+                     <div class='row'>
+                     <input id='username' type='text' class='form-control' placeholder='Username'/>
+                     </div>
+                     <div class='row'>
+                     <input id='password' type='password' class='form-control' placeholder='Password'/>
+                     </div>
+                     <div class='row col-12'>
+                        <div class='col-6 col-lg-6 col-sm-6'>
+                            <button class='btn login-btn m_login'>Log In</button>
+                        </div>
+                        <div class='col-6 col-lg-6 col-sm-6'>
+                            <button class='btn btn-primary register-btn register-btn-shift col-6' id='m_register'>Register</button>
+                        </div>
+                        <div class='col-6 col-lg-6 col-sm-6'>
+                            <button class='btn btn-danger cancel-btn col-6' id='m_cancel'>Cancel</button>
+                        </div>
+                     </div>
+                     <a href="#" class="zocial facebook" id="m_fb_signin">Sign-in with Facebook</a>
+                     <a href="#" class="zocial twitter" id="m_tw_signin">Sign-in with Twitter</a>
+
+                     <a href="#" class="zocial google" id="m_gg_signin">Sign-in with Google</a>
+                     <a href="#" class="zocial linkedin" id="m_li_signin">Sign-in with LinkedIn</a>
+
+                     <div class='row'>
+                       <a href='http://phylo.cs.mcgill.ca/reset.php'>Forgot Password?</a>
+                   </div>
+
+                 </div>
+                 {{/user}}
+             </div>
+             <div id='options'>
+                 <div id='options-button'>
+                     <i class='icon-cog'></i>
+                 </div>
+                 <div id='option-list' class='list-shadow'>
+                     <div id='language' class='option-list'>
+                         <div id='language-tag'>
+                             <i class='icon-language'></i>
+                         </div>          
+                         <div id='language-list'>
+                             <div class='language-list list-shadow'>
+                                 <a href='' name='EN'><div>English</div></a>
+                                 <a href='' name='SP'><div>Español</div></a>
+                                 <a href='' name='FR'><div>Français</div></a>
+                                 <a href='' name='DE'><div>Deutsch</div></a>
+                                 <a href='' name='RU'><div>Pусский</div></a>
+                                 <a href='' name='ZH-HK'><div>中文繁體</div></a>
+                                 <a href='' name='ZH-CN'><div>中文简体</div></a>
+                                 <a href='' name='KO'><div>한국어</div></a>
+                                 <a href='' name='HE'><div>עברית</div></a>
+                                 <a href='' name='RO'><div>Română</div></a>
+                                 <a href='' name='PT'><div>Português</div></a>
+                             </div>
+                         </div>
+                     </div>
+                     <div id='customize' class='option-list' class='m_customize'><img src="assets/img/customize1.png"/></div>
+
+                 </div>
+             </div>  
+         </div>  
+         </div>
+     </div>

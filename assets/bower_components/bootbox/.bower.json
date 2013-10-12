@@ -1,0 +1,22 @@
+{
+  "name": "bootbox.js",
+  "version": "4.0.0",
+  "main": "./bootbox.js",
+  "ignore": [
+    "**/.*"
+  ],
+  "dependencies": {
+    "bootstrap": ">= 3.0.0"
+  },
+  "homepage": "https://github.com/makeusabrew/bootbox",
+  "_release": "4.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v4.0.0",
+    "commit": "b88f10be419d578af2e305779f1a66ae178bc763"
+  },
+  "_source": "git://github.com/makeusabrew/bootbox.git",
+  "_target": "~4.0.0",
+  "_originalSource": "bootbox",
+  "_direct": true
+}

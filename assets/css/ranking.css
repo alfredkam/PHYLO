@@ -1,0 +1,7 @@
+div#ranking-wrapper {
+    margin-bottom:0px;
+}
+
+ul.pagination li:active a {
+    color:white;
+}

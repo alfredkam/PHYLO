@@ -1,0 +1,17 @@
+<label class='footer-title'>{{totalPuzzles}}</label>
+<div id='numberofpuzzle'>
+    {{number}}
+</div>
+<label class='footer-title'>{{recentSubmit}}</label>
+<div id='recentSubmitList'>
+    <table>
+        <tr>
+            <th>{{user}}</th><th>{{puzzleID}}</th><th>{{disease}}</th>
+        </tr>
+    {{#last}}
+    <tr>
+        <td>{{user}}</td><td><a href='#!/{{lang}}/Play/Puzzle/{{PuzzleID}}'>{{PuzzleID}}</a></td><td>{{diseaseName}}{{^diseaseName}}{{unclassified}}{{/diseaseName}}</td>
+    </tr>
+    {{/last}}
+    </table>
+</div>

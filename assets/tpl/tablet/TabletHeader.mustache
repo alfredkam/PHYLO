@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="assets/css/tablet.css"/>
+<a id="tabletBackBtn" href='#!/mobile/{{lang}}' name='back'>
+    <div>
+        <div>
+            <i class='icon-left-circled'></i>
+        </div>      
+        <div class='m_back'>Back</div>  
+    </div>
+</a>
+ <div id='login'>
+        {{#user}}
+        <div id='login-tag'>
+            {{user}}
+        </div>
+        <div id='login-box' class='tabletLogoutBtn'>
+            Logout
+        </div>
+        {{/user}}
+        {{^user}}
+         <div id='login-tag' class='m_login'>
+             Login
+         </div>
+         <div id='login-box'>
+             <div class='login-warning'></div>
+             <div class='row email-holder'>
+                <input id='email' type='text' class='form-control' placeholder='Email'/>
+             </div>
+             <div class='row'>
+             <input id='username' type='text' class='form-control' placeholder='Username'/>
+             </div>
+             <div class='row'>
+             <input id='password' type='password' class='form-control' placeholder='Password'/>
+             </div>
+             <div class='row col-12'>
+                <div class='col-6 col-lg-6 col-sm-6'>
+                    <button class='btn login-btn m_login'>Log In</button>
+                </div>
+                <div class='col-6 col-lg-6 col-sm-6'>
+                    <button class='btn btn-primary register-btn register-btn-shift col-6' id='m_register'>Register</button>
+                </div>
+                <div class='col-6 col-lg-6 col-sm-6'>
+                    <button class='btn btn-danger cancel-btn col-6' id='m_cancel'>Cancel</button>
+                </div>
+             </div>
+             <a href="#" class="zocial facebook" id="m_fb_signin">Sign-in with Facebook</a>
+             <a href="#" class="zocial twitter" id="m_tw_signin">Sign-in with Twitter</a>
+
+             <a href="#" class="zocial google" id="m_gg_signin">Sign-in with Google</a>
+             <a href="#" class="zocial linkedin" id="m_li_signin">Sign-in with LinkedIn</a>
+
+             <div class='row'>
+               <a href='http://phylo.cs.mcgill.ca/reset.php'>Forgot Password?</a>
+           </div>
+         </div>
+         {{/user}}
+     </div> 

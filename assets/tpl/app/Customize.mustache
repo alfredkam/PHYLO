@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="assets/css/customize.css"/>
+<div id='hiddenCssComponents'></div>
+<div class='customize customize-bg'></div>
+<div class='customize customize-wrapper'>
+    <div class='row customize-title m_customize'>
+        Customize
+    </div>
+    <div class='customize-tab'>
+        <div class='row'>
+            <a href='javascript:void(0)' class='customize-tab-onselect col-md-2 tag-theme m_theme'>Theme</a>
+            <a href='javascript:void(0)' class='col-md-2 tag-music m_music' >Music</a>
+        </div>
+    </div>
+    <div class='customize-body'>
+        <div class='container'>
+            <div class='row'>
+                <div class='customize-theme row'>
+                    <div class='col-md-4' >
+                        <div class='customize-boardColor'>
+                            <div class='row customize-title m_boardColor'>
+                                Board Color:
+                            </div>
+                            <div class='row'>
+                                <div class='colorCell customize-theme-cell customize-theme-onpick colorBG'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='customize-dnaColor'>
+                            <div class='customize-title row m_dnaColor'>
+                                DNA Color:
+                            </div>
+                            <div class='row'>
+                                <div class='colorCell customize-theme-cell colorA'>
+                                </div>
+                                <div class='colorCell customize-theme-cell colorG '>
+                                </div>
+                                <div class='colorCell customize-theme-cell colorC'>
+                                </div>
+                                <div class='colorCell customize-theme-cell colorT'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <br><br>
+                            <a href='javascript:void(0);' class='customize-theme-reset btn-danger btn m_restoreDefault'>
+                                Restore Default 
+                            </a>    
+                        </div>
+                    </div>
+                    <div class='col-md-5'>
+                        <canvas id='colorpad' width='256' height='256'>
+                        </canvas>
+                    </div>
+                </div>
+                <div class='customize-music'>
+                    <div class='row customize-title'>
+                        Current Music Theme 
+                    </div>
+                    <div class='row'>
+
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <div class='customize-buttons'>
+        <div class='row'>
+            <a href='javascript:void(0)' class='customize-save btn btn-primary offset4 col-md-2 m_save'>
+                Save
+            </a>
+            <a href='#' class='customize-cancel btn btn-primary col-md-2 m_cancel col-md-offset-1'>
+                Cancel
+            </a>
+        </div>
+    </div>
+</div>

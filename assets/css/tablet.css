@@ -1,0 +1,43 @@
+/* Back button */
+#tabletBackBtn div {
+	display:inline-block;
+	font-size:30px;
+}
+
+#tabletBackBtn > div{
+	padding-top:20px;
+	padding-left: 20px;
+}
+
+#tabletBackBtn {
+    position: absolute;
+    top:-8px;
+    z-index:999;
+    left:-13px;
+}
+
+#login {
+    float:right;
+    background-color:rgb(200,94,54);
+    color:white;
+    text-align:center;
+    border-radius: 3px;
+    top:12px;
+    position: relative;
+    left:-14px;
+}
+
+#login .row {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 5px;
+}
+
+#login #login-box.tabletLogoutBtn {
+    border:0px;
+    box-shadow: 0 0px 1px #999;
+    background:#FFF;
+    border-radius: 3px;
+}
+
+/* now the rest */

@@ -1,0 +1,61 @@
+
+/* personalized navbar */
+body .navbar {
+  font-size: 13px;
+}
+
+body .navbar .brand {
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 20px;
+  float: right;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
+  -webkit-transition: all .2s linear;
+     -moz-transition: all .2s linear;
+          transition: all .2s linear;
+}
+body .navbar .brand:hover {
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
+}
+/* body and footer */
+body #app-content {
+	min-height:550px;
+}
+
+body {
+	background-color:#262C36;
+}
+body #wrapper {
+	background-color:whitesmoke;
+		padding-top:41px;
+}
+footer {
+	background-color:#262C36;
+	position:relative;
+	width:100%;
+	box-shadow: black 0px 10px 10px -10px inset;
+	-moz-box-shadow:black 0px 10px 10px -10px inset;
+	-ms-box-shadow:black 0px 10px 10px -10px inset;
+	-khtml-box-shadow:black 0px 10px 10px -10px inset;
+	-o-box-shadow:black 0px 10px 10px -10px inset;
+	-webkit-box-shadow: black 0px 10px 10px -10px inset;
+}
+
+footer h4 {
+	text-shadow:rgba(102, 120, 138, 0.45) 0px 1px 0px;
+	color: #111;
+	margin-left:100px;
+	padding-top:30px;
+	margin-top:0px;
+}
+
+footer h4 span.copyright {
+	color:rgba(148, 163, 179, 0.3);
+	font-size:11px;
+	text-shadow:none;
+}
+
+/* end of body css */

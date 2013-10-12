@@ -1,0 +1,132 @@
+<div id='menu'>
+    <div id='sandbox'>
+        <div class='settingUp'>
+            {{body.misc.field 2}}
+        </div>
+    </div>
+    <input id='level_inputbox'/>
+</div>
+<div class='wrapper'>
+    <div id='game'>
+        <canvas id='score' width="827" height="50"></canvas>
+        <div id='selectBox'></div>
+        <div id='tree'>
+
+        </div>
+        <div id='gameBoard'>
+            <img src='assets/img/loading.gif'/>
+        </div>
+        <div id='splash'>
+        </div>
+        <div id='countDown'>
+            <div id='countDown-text'>
+            </div>  
+        </div>
+        <div id='ancestorSeq-filling'>
+            <div id='ancestorSeq'>
+            </div>
+        </div>
+        <div id='bottomPanel-wrapper'> 
+        <div id='bottomPanel'>
+            <div id='volumePanel'>
+                <div id='musicPlayerSpot'></div>
+                <div id='SFXPlayerSpot'>
+                    <audio id='redrawSound' preload='auto' autobuffer style='display:none'><source src='assets/sounds/btn1.wav' />Your browser does not support audio element</audio>
+                    
+                    <audio id='endGameSound' preload='auto' autobuffer style='display:none'><source src='assets/sounds/startSound.wav' /></audio>
+
+                    <audio id='lightUpSound' preload='auto' autobuffer style='display:none'><source src='assets/sounds/starLightUp.wav' /></audio>
+
+                    <audio id='starClickSound' preload='auto' autobuffer style='display:none'><source src='assets/sounds/startSound.wav' />\</audio>
+
+                    <audio id='startSound' preload='auto' autobuffer style='display:none'><source src='assets/sounds/startSound.wav' />\</audio>
+
+                    <audio id='countdownSound' preload='auto' autobuffer style='display:none'><source src='assets/sounds/countdownComplete.wav' />\</audio>
+
+                </div>
+                <div id='volumeOn'>
+                <!--    <img src='img/speaker_off.png'/>
+                -->
+                    <i class='icon-volume-up-1'></i>
+                </div>
+                <div id='volumeOff'>
+                    <i class='icon-volume-off-1'></i>
+                    <!--<img src='img/speaker_on.png'/>
+                    -->
+                </div>
+            </div>
+            <div id='runaway' class='icon-bucket' title='kick the bucket'></div>
+            <div id='timerPanel'>
+                <canvas id='timer' width='66px' height='66px'>
+                </canvas>   
+            </div>
+            <div id='scorePanel'>
+                <div id='userScore'>
+                </div>
+                <div id='bestScore'>
+                </div>
+                <div id='parScore'>
+                </div>
+            </div>
+            <div id='statsPanel'>
+                
+            </div>
+            <div id='controlPanel'>
+                <div id='star'>
+                    <i class='icon-star-1' title='move to next stage'></i>
+                </div>
+                <div id='cycle'>
+                    <img src='assets/img/cycle.png'/>
+                </div>
+            </div>
+        </div>
+            </div>
+        <div id='dump'>
+
+        </div>
+        <div id='endGame'>
+            {{! <div id='endGame-bg'> }}
+                <div id='endGame-content'>
+                    <div id='endGame-score'>
+                        <div id='endGame-score-tag'>
+                        </div>
+                        <div id='endGame-score-result'>
+                        </div>
+                    </div>
+                    <div id='endGame-text'> 
+                                            
+                    </div>
+                    <div id='endGame-learnMore'>
+                        <div id='endGame-learnMore-content'></div>  
+                        <div id='endGame-learnMode-footerContent'></div>
+                    </div>
+                    <div class='wrapper' id='endGame-links'>
+                        <div id='endGame-new'>
+                            <button class='btn btn-primary'>
+                                {{body.misc.field 20}}
+                            </button>
+                        </div>
+                        <div id='endGame-replay'>
+                            <button class='btn btn-primary'>
+                                {{body.misc.field 21}}
+                            </button>
+                        </div>
+                        <div id='endGame-share'>
+                            <button class='btn btn-success'>
+                                {{body.misc.field 22}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            {{! </div> }}
+        </div>
+    </div>
+</div>
+<script>
+    require(['scripts/phylo-lib/menu/gameMenu.actions'], function() {
+       interactiveMenu.start();
+    }); 
+</script>
+<script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/rgbcolor.js"></script> 
+<script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/StackBlur.js"></script>
+<script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/canvg.js"></script> 

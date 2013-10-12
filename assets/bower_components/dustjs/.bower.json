@@ -1,0 +1,13 @@
+{
+  "name": "dustjs",
+  "homepage": "https://github.com/akdubya/dustjs",
+  "version": "0.3.0",
+  "_release": "0.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.0",
+    "commit": "b5385be484f34c9153e51df3210612405da0e9a7"
+  },
+  "_source": "git://github.com/akdubya/dustjs.git",
+  "_target": "~0.3.0"
+}

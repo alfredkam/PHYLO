@@ -1,0 +1,42 @@
+/*#header-wrapper {
+    display:none;
+}*/
+
+#app-content {
+    top: 30px;
+}
+
+#tablet-grid {
+    max-width:1000px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:30px;
+    padding-right:30px;
+}
+
+.row.first {
+    margin-bottom:30px;
+}
+
+.tablet-title {
+    font-size:60px;
+}
+
+a[class*="tablet-"] {
+    text-align:center;
+    font-size:20px;
+    color:#333;
+}
+
+a[class*="tablet-"]:hover {
+    color:#555;
+}
+
+a[class*="tablet-"] > div {
+    padding:40px 10px;
+    border-radius: 3px;
+}
+
+a[class*="tablet-"] i {
+    font-size:50px;
+}
