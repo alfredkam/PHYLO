@@ -226,7 +226,7 @@
 			ctx.fillStyle = "#F1F1F1";
 			ctx.fillRect(212, 250, 600, 120);
 
-			var motto = window.lang.header.moto||"2323";
+			var motto = window.lang.header.moto||"";
 			ctx.font ="19pt Helvetica";
 			ctx.textAlign = "center";
 			ctx.fillStyle = "#000";
