@@ -212,8 +212,8 @@
 
 			var banner = new Image();
 			var bannerValues = {
-				x: 212,
-				y: 20,
+				x: 200,
+				y: 15,
 				w: 600,
 				h: 200
 
@@ -226,9 +226,14 @@
 			ctx.fillStyle = "#F1F1F1";
 			ctx.fillRect(212, 250, 600, 120);
 
+			var motto = window.lang.header.moto||"2323";
+			ctx.font ="19pt Helvetica";
+			ctx.textAlign = "center";
+			ctx.fillStyle = "#000";
+			ctx.fillText(motto, 512, 230);
+
 			ctx.closePath();
 			var selection = [];
-
 			var menuStr = [window.lang.body.play.gameselect.levelselect.random["field 2"], window.lang.body.play.gameselect.levelselect["level id"]["field 2"], window.lang.body.play.gameselect.levelselect.disease["field 1"]];
 
 			var menuIcon = [
