@@ -735,6 +735,12 @@
 						banner.src = 'assets/img/logo.png';
 						ctx.fillStyle = "#F1F1F1";
 						ctx.fillRect(212, 250, 600, 120);
+
+						var motto = window.lang.header.moto||"2323";
+						ctx.font ="19pt Helvetica";
+						ctx.textAlign = "center";
+						ctx.fillStyle = "#000";
+						ctx.fillText(motto, 512, 220);
 						$("#level_inputbox").val("").hide();
 					}
 				};
