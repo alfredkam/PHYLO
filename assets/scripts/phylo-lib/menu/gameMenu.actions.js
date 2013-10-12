@@ -230,7 +230,7 @@
 			ctx.font ="19pt Helvetica";
 			ctx.textAlign = "center";
 			ctx.fillStyle = "#000";
-			ctx.fillText(motto, 512, 230);
+			ctx.fillText(motto, 512, 220);
 
 			ctx.closePath();
 			var selection = [];
