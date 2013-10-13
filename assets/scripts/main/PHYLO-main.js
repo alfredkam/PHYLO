@@ -67,8 +67,7 @@ require.config({
 			deps : [ "jquery", "backbone", "underscore" ],
 			exports : "Marionette"		
 		},
-		bootstrap : ['jquery'],
-		
+		bootstrap : ['jquery'],	
 		"backbone.wreqr" : {
 			deps : [ "backbone" ]
 		},
@@ -115,9 +114,6 @@ require.config({
 		'bootbox' : {
 			deps : ['jquery','bootstrap']
 		},
-		// 'controller/site.controller' : {
-		// 	deps : ['jquery']
-		// },
 		'menu/tailor.menu' : {
 			deps : ['jquery']
 		},
@@ -127,12 +123,6 @@ require.config({
 		'DNA/lang.module' : {
 			deps : ['jquery']
 		},
-		// 'validation/cookie.validation' : {
-		// 	deps : ['jquery']
-		// },
-		// 'validation/login.validation' : {
-		// 	deps : ['jquery', 'DNA/protocal.core', 'validation/cookie.validation']
-		// },
 		'views/DT_bootstrap_ranking.actions' : {
 			deps : ['jquery','bootstrap','dataTables']
 		},
@@ -142,15 +132,12 @@ require.config({
 		'DNA/helper.core' : {
 			deps : ['jquery']
 		},
-		"views/HeaderView" : {
+		"views/HeaderView" : {	//previously navBar.view
 			deps : ['validation/cookie.validation.amd']
 		},
 		'views/site.views' : {
 			deps : ['views/request.views','views/variable.listener']
 		},	
-		// 'views/navBar.views' : {
-		// 	deps : ['jquery','underscore', 'backbone','DNA/timer.core','views/lang.views']
-		// },
 		'dev/devTools' : {
 			deps : ['jquery']
 		},

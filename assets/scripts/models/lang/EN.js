@@ -25,6 +25,7 @@
     },
     "body": {
         "misc": {
+            "invalidPuzzle" : "Sorry this puzzle is not avaliable any more",
             "field 1": "Contribute",
             "field 2": "Setting Up! One moment please.",
             "field 3": "Leave a Feedback",

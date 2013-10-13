@@ -212,22 +212,28 @@
 
 			var banner = new Image();
 			var bannerValues = {
-				x: 212,
-				y: 30,
+				x: 200,
+				y: 20,
 				w: 600,
-				h: 200
+				h: 160
 
 			}
 			banner.onload = function() {
 				ctx.drawImage(banner, bannerValues.x, bannerValues.y, bannerValues.w, bannerValues.h);
 			};
+			// banner.src = 'assets/img/phylo.png';
 			banner.src = 'assets/img/logo.png';
 			ctx.fillStyle = "#F1F1F1";
 			ctx.fillRect(212, 250, 600, 120);
 
+			var motto = window.lang.header.moto||"";
+			ctx.font ="19pt Helvetica";
+			ctx.textAlign = "center";
+			ctx.fillStyle = "#000";
+			ctx.fillText(motto, 512, 220);
+
 			ctx.closePath();
 			var selection = [];
-
 			var menuStr = [window.lang.body.play.gameselect.levelselect.random["field 2"], window.lang.body.play.gameselect.levelselect["level id"]["field 2"], window.lang.body.play.gameselect.levelselect.disease["field 1"]];
 
 			var menuIcon = [
@@ -446,11 +452,12 @@
 						}).done(function(data) {
 							if (data == "") {
 								//$.invalid.level();
-								$.helper.popUp("Invalid level!", function(status) {
+								// $.helper.popUp("Invalid level!", function(status) {
 
-								}, {
-									cancel: false,
-								});
+								// }, {
+								// 	cancel: false,
+								// });
+								bootbox.alert(window.lang.body.misc.invalidPuzzle);
 
 							} else {
 								$("#draw").hide();
@@ -729,6 +736,12 @@
 						banner.src = 'assets/img/logo.png';
 						ctx.fillStyle = "#F1F1F1";
 						ctx.fillRect(212, 250, 600, 120);
+
+						var motto = window.lang.header.moto||"";
+						ctx.font ="19pt Helvetica";
+						ctx.textAlign = "center";
+						ctx.fillStyle = "#000";
+						ctx.fillText(motto, 512, 220);
 						$("#level_inputbox").val("").hide();
 					}
 				};
