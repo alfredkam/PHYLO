@@ -20,7 +20,8 @@
         "field 14": "Retornar do modo para celular",
         "field 15": "História",
         "field 16": "Especialista",
-        "field 17": "Configurações"
+        "field 17": "Configurações",
+        "moto": "Um jogo de puzzle que contribui para a pesquisa de doenças genéticas"
     },
     "body": {
         "misc": {

@@ -20,7 +20,8 @@
         "field 14": "Retour à la version classique",
         "field 15": "Historique",
         "field 16": "Expert",
-        "field 17": "Paramètres"
+        "field 17": "Paramètres",
+        "moto": "Un puzzle pour contribuer à la recherche sur les maladies génétiques"
     },
     "body": {
         "misc": {

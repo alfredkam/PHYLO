@@ -20,7 +20,8 @@
         "field 14" : "Înapoi la versiunea clasic",
         "field 15" : "Istoric",
         "field 16" : "Expert",
-        "field 17" : "Setări"
+        "field 17" : "Setări",
+        "moto": "Un joc de puzzle care contribuie la cercetarea bolilor genetice"
     },
     "body": {
         "misc": {

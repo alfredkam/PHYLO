@@ -21,7 +21,7 @@
         "field 15": "History",
         "field 16": "Expert",
         "field 17": "Settings",
-        "moto": "Solve DNA Puzzles and help genetic research!"
+        "moto": "A puzzle game that contributes to genetic disease research"
     },
     "body": {
         "misc": {

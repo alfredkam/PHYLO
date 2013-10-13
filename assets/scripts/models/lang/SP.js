@@ -20,7 +20,8 @@
         "field 14": "Regresar a la edición clásica",
         "field 15": "Historia",
         "field 16": "Experto",
-        "field 17": "Escenario de juego"
+        "field 17": "Escenario de juego",
+        "moto": "Un puzzle que contribuye a la investigación de enfermedades genéticas"
     },
     "body": {
         "misc": {

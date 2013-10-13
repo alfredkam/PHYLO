@@ -20,7 +20,8 @@
        "field 14": "Zurück zur klassischen Version",
        "field 15": "Chronik",
        "field 16": "Experte",
-       "field 17": "Einstellungen"
+        "field 17": "Einstellungen",
+        "moto": "Ein Puzzle-Spiel das die genetische Erforschung von Krankheiten beiträgt"
     },
 	"body": {
 		"misc" : {
