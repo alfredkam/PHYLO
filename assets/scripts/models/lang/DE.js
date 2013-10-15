@@ -25,6 +25,7 @@
     },
 	"body": {
 		"misc" : {
+           "invalidPuzzle" : "Leider ist dieses Rätsel nicht mehr verfügbar.",
            "field 1": "Beitragen",
            "field 2": "Lade... Einen Moment, bitte.",
            "field 3": "Feedback schreiben",

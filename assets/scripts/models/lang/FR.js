@@ -25,6 +25,7 @@
     },
     "body": {
         "misc": {
+            "invalidPuzzle" : "Désolé, ce puzzle n'est plus disponible.",
             "field 1": "Contribuer",
             "field 2": "Chargement! Veuillez patienter.",
             "field 3": "Donner votre avis",

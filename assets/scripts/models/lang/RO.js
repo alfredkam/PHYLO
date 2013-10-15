@@ -25,6 +25,7 @@
     },
     "body": {
         "misc": {
+            "invalidPuzzle" : "Ne pare rău, acest puzzle nu mai este disponibil.",
             "field 1" : "Contribuie",
             "field 2" : "Setări! Un moment, vă rog.",
             "field 3" : "Lăsaţi un comentariu",
