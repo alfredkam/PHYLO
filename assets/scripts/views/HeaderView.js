@@ -130,7 +130,7 @@ define([
                 $.protocal.register(name, name, password, email, 'Classic', 0, function(re) {
                     if (re == "succ") {
                         $(".login-btn").unbind("click");
-                        $(".m_login").html(name);
+                        $(".m_login").html(decodeURI(name));
                         $("#logout").show();
                         window.guest = name;
                         window.username = name;
@@ -159,7 +159,7 @@ define([
                 var provider = cookie.read("loginmode");
                 var c_logid = cookie.read("logid");
                 if (provider == "Classic") {
-                    $(".m_login").html(username);
+                    $(".m_login").html(decodeURI(username));
                     window.username = username;
 
                 } else {
@@ -366,7 +366,7 @@ define([
 
             $.protocal.login(username, password, function(re) {
                 if (re == "succ") {
-                    $(".m_login").html(username);
+                    $(".m_login").html(decodeURI(name));
                     cookie.create("username", username, 365);
                     cookie.create("fullname", username, 365);
                     cookie.create("loginmode", "Classic", 365);
