@@ -20,10 +20,12 @@
        "field 14": "Zurück zur klassischen Version",
        "field 15": "Chronik",
        "field 16": "Experte",
-       "field 17": "Einstellungen"
+        "field 17": "Einstellungen",
+        "moto": "Ein Puzzle-Spiel das die genetische Erforschung von Krankheiten beiträgt"
     },
 	"body": {
 		"misc" : {
+           "invalidPuzzle" : "Leider ist dieses Rätsel nicht mehr verfügbar.",
            "field 1": "Beitragen",
            "field 2": "Lade... Einen Moment, bitte.",
            "field 3": "Feedback schreiben",

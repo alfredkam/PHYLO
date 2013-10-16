@@ -9,10 +9,12 @@ define([
     //TEMPLATES
     "text!tpl/app/index/Index.mustache",
     //this one is the jquery one
-    "scripts/views/validation/cookie.validation"
-
+    "scripts/views/validation/cookie.validation",
+    //NO EXPORT
+    "bootbox"
 ], function(
-    $, _, Backbone, Marionette, Mustache, Request,
+    $, _, Backbone, Marionette, Mustache,
+    Request,
     tpl
 ) {
     var IndexView = Marionette.ItemView.extend({
@@ -22,7 +24,23 @@ define([
             console.log("init");
         },
         template: tpl,
-        render: function() {
+        render : function() {
+            var self = this;
+            $.ajax({
+                url: "../phpdb/phyloExpertDB.php",
+                data: "mode=2&id=" + self.id,
+                type: "POST",
+            }).done(function(data) {
+                if(data == "") {
+                    bootbox.alert(self.model.toJSON().body.misc.invalidPuzzle, function() {
+                        window.location = "#!/"+self.lang;
+                    });
+                } else {
+                    self.loadGame();
+                }
+            });
+        },
+        loadGame: function() {
             var request = new Request();
             // selectTab("play");
             var self = this;

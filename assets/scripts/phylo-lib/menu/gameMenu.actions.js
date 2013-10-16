@@ -452,11 +452,12 @@
 						}).done(function(data) {
 							if (data == "") {
 								//$.invalid.level();
-								$.helper.popUp("Invalid level!", function(status) {
+								// $.helper.popUp("Invalid level!", function(status) {
 
-								}, {
-									cancel: false,
-								});
+								// }, {
+								// 	cancel: false,
+								// });
+								bootbox.alert(window.lang.body.misc.invalidPuzzle);
 
 							} else {
 								$("#draw").hide();
