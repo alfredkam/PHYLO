@@ -8,7 +8,7 @@ define([
          "text!tpl/app/history/History.mustache",
          //No Export
          "dataTables",
-         "scripts/util/DatatablesNumHtmlSort"
+         "scripts/util/datatablesNumHtmlSort"
 ], function(
         $, _, Backbone, Marionette,
         tpl
