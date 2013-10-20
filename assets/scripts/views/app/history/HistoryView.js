@@ -7,11 +7,13 @@ define([
          //TEMPLATES
          "text!tpl/app/history/History.mustache",
          //No Export
-         "dataTables"
+         "dataTables",
+         "scripts/util/DatatablesNumHtmlSort"
 ], function(
         $, _, Backbone, Marionette,
         tpl
 ) {
+
     var RankingView = Marionette.ItemView.extend({
         initialize : function(options) {
             this.lang = options.lang || {};
@@ -181,20 +183,27 @@ define([
                    //console.log("fnDrawCallback:"+oSettings);
                    if ( oSettings.bSorted || oSettings.bFiltered ) {
                        for ( var i=0, iLen=oSettings.aiDisplay.length ; i<iLen ; i++ ) {
-                            $('td:eq(0)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html( i+1 );
-                       }
-                       /*
+                            $('td:eq(0)', oSettings.aoData[oSettings.aiDisplay[i]].nTr).html(i + 1);
+                        }
+                        /*
                        this.$('td:first-child', {"filter":"applied"}).each( function (i) {
                            that.fnUpdate( i+1, this.parentNode, 0, false, false );
                        });
                         */
-                                 
-                   }
-               },
 
-               "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 0 ]},{ "sSortDataType": "dom-text", "sType": "numeric" ,"aTargets":[1]} ],
-               "sPaginationType": "bootstrap",
-               "bAutoWidth": false,
+                    }
+                },
+
+                "aoColumnDefs": [{
+                    "bSortable": false,
+                    "aTargets": [0,5]
+                }, {
+                    //"sSortDataType": "html",
+                    "sType": "num-html",
+                    "aTargets": [1],
+                }],
+                "sPaginationType": "bootstrap",
+                "bAutoWidth": false,
            });
             $("#showall").unbind().click(function(){
                 $("#weekly").hide();
