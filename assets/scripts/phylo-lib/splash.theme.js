@@ -11,13 +11,13 @@
 			$("#countDown-text").html(3);
 			$.splash.count = function() {
 				if ($.cookie.read("music-level")) {
-								try {
-									var volume = $.cookie.read("music-level");
-									document.getElementById("startSound").volume = volume;
-									document.getElementById("countdownSound").volume = volume;
+					try {
+						var volume = $.cookie.read("music-level");
+						document.getElementById("startSound").volume = volume;
+						document.getElementById("countdownSound").volume = volume;
 
-								} catch (err) {}
-							}
+					} catch (err) {}
+				}
 
 				if (i == 0) {
 					document.getElementById("startSound").play();
