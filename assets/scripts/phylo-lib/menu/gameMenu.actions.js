@@ -124,6 +124,15 @@
 
 			sandbox.appendChild(canvas);
 		};
+		g.prototype.resetMenuSound = function(){
+
+			if ($.cookie.read("music-level")) {
+				try {
+					var volume = $.cookie.read("music-level");
+					document.getElementById("menuSound").volume = volume;
+				} catch (err) {}
+			}
+		};
 		//depreciated
 		/* but its a cool way to start a game */
 		/*
@@ -206,6 +215,8 @@
 			var f = this;
 			$("#splashLogo").remove();
 			var ctx = doc.getElementById('draw').getContext('2d');
+			this.resetMenuSound();
+
 			ctx.beginPath();
 			ctx.globalAlpha = 1;
 			ctx.clearRect(0, 0, settings.width(), settings.height());
