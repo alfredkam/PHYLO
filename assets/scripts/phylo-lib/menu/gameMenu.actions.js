@@ -297,6 +297,7 @@
 					if (x <= eX && eX <= x + menuIcon[i][1] &&
 						y <= eY && eY <= y + menuIcon[i][2]) {
 						// console.log("clicked");
+						document.getElementById("menuSound").play();
 						switch (i) {
 							case 1:
 								ctx.beginPath();
@@ -436,6 +437,8 @@
 				this.onClick = function(eX, eY) {
 					if (405 < eX && eX < 525 &&
 						220 < eY && eY < 270) {
+						document.getElementById("menuSound").play();
+
 						var id = parseInt($("#level_inputbox").val().trim());
 						if (isNaN(id)) {
 							$.helper.popUp("Numbers Only!", function(status) {
@@ -569,6 +572,8 @@
 				this.onClick = function(eX, eY) {
 					if (300 + 110 * (i > 3 ? i - 4 : i) < eX && eX < 370 + 110 * (i > 3 ? i - 4 : i) && (i > 3 ? 235 : 125) < eY && eY < (i > 3 ? 330 : 220)) {
 						//var id = diseaseList[items.name][Math.floor(Math.random()*diseaseList[items.name].length)];
+						document.getElementById("menuSound").play();
+
 						var id = items.data[Math.floor(Math.random() * items.data.length)];
 						$("#draw").hide();
 						$("#menu").hide();
@@ -654,6 +659,8 @@
 				this.onClick = function(eX, eY) {
 					if (100 + 70 * i < eX && eX < 200 + 70 * i &&
 						150 < eY && eY < 200) {
+						document.getElementById("menuSound").play();
+
 						var ranNumber = Math.floor(Math.random() * 2) + 1 - 1;
 						$("#draw").hide();
 						$("#menu").hide();
@@ -715,6 +722,8 @@
 				this.onClick = function(eX, eY) {
 					if (150 < eX && eX < 200 &&
 						120 < eY && eY < 230) {
+						document.getElementById("menuSound").play();
+
 						ctx.beginPath();
 						ctx.clearRect(0, 60, 1024, 400);
 						ctx.closePath();
