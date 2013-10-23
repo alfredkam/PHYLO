@@ -251,7 +251,8 @@
             "recentSubmit" : "Latest achievements",
             "puzzleID" : "Puzzle ID",
             "user" : "User",
-            "unclassified" : "Unclassified"
+            "unclassified" : "Unclassified",
+            "education" : "Education Purpose"
         }
     }
 }
