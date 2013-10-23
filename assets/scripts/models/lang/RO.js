@@ -255,7 +255,9 @@
             "recentSubmit" : "Ultimele realizări",
             "puzzleID" : "ID-ul de puzzle",
             "user" : "Utilizator",
-            "unclassified" : "Neclasificate"
+            "unclassified" : "Neclasificate",
+            "openPhylo" : "Pentru cercetători",
+            "education" : "Pentru profesori"
         }
     }
 }

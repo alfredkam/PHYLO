@@ -252,7 +252,9 @@
             "recentSubmit" : "ההישגים האחרונים",
             "puzzleID" : "תעודת הזהות של פאזל",
             "user" : "משתמש",
-            "unclassified" : "בַּלמָ'ס"
+            "unclassified" : "בַּלמָ'ס",
+            "openPhylo" : "לחוקרים",
+            "education" : "למורים"
         }
     }
 }

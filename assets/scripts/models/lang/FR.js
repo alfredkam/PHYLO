@@ -256,7 +256,9 @@
             "recentSubmit" : "Dernières réalisations",
             "puzzleID" : "ID du puzzle",
             "user" : "Utilisateur",
-            "unclassified" : "Non classée"
+            "unclassified" : "Non classée",
+            "openPhylo" : "Pour les chercheurs",
+            "education" : "Pour les enseignants"
         }
     }
 }

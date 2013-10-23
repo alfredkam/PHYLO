@@ -252,7 +252,8 @@
             "puzzleID" : "Puzzle ID",
             "user" : "User",
             "unclassified" : "Unclassified",
-            "education" : "Education Purpose"
+            "openPhylo" : "For researchers",
+            "education" : "For teachers"
         }
     }
 }

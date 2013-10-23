@@ -252,7 +252,9 @@
             "recentSubmit" : "最新成果",
             "puzzleID" : "拼图的ID",
             "user" : "用户",
-            "unclassified" : "未分类"
+            "unclassified" : "未分类",
+            "openPhylo" : "对于研究人员",
+            "education" : "对于教师"
         }
     }
 }

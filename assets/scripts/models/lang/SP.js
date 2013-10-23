@@ -256,7 +256,9 @@
             "recentSubmit" : "Últimos",
             "puzzleID" : "Puzzle ID",
             "user" : "Usuario",
-            "unclassified" : "Sin clasificar"
+            "unclassified" : "Sin clasificar",
+            "openPhylo" : "Para los investigadores",
+            "education" : "Para los profesores"
         }
     }
 }

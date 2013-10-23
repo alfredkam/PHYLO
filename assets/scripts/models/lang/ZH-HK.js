@@ -255,7 +255,9 @@
             "recentSubmit" : "最新成果",
             "puzzleID" : "拼圖的ID",
             "user" : "用戶",
-            "unclassified" : "未分類"
+            "unclassified" : "未分類",
+            "openPhylo" : "對於研究人員",
+            "education" : "對於教師"
         }
     }
 }

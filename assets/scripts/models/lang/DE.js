@@ -255,7 +255,9 @@
             "recentSubmit" : "Neueste Errungenschaften",
             "puzzleID" : "Puzzle ID",
             "user" : "Benutzer",
-            "unclassified" : "Nicht klassifiziert"
+            "unclassified" : "Nicht klassifiziert",
+            "openPhylo" : "Für Forscher",
+            "education" : "Für Lehrerinnen und Lehrer"
         }
     }
 }
