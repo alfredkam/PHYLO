@@ -82,7 +82,7 @@
                     "random": {
                         "field 1": "Seleccionar el número de secuencias.",
                         "field 2": "Aleatorio",
-                        "field 3": "Facil - Avanzado"
+                        "field 3": "Fácil - Avanzado"
                     },
                     "level id": {
                         "field 1": "Entrar la ID del nivel que desea jugar ",
@@ -252,11 +252,13 @@
             "field 4" : "Foro",
             "field 5"  : "Notificar un error",
             "recentNews" : "Noticias recientes",
-            "totalPuzzles" : "Rompecabezas completadas",
+            "totalPuzzles" : "Rompecabezas completados",
             "recentSubmit" : "Últimos",
             "puzzleID" : "Puzzle ID",
             "user" : "Usuario",
-            "unclassified" : "Sin clasificar"
+            "unclassified" : "Sin clasificar",
+            "openPhylo" : "Para los investigadores",
+            "education" : "Para los profesores"
         }
     }
 }

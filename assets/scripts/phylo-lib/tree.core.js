@@ -210,7 +210,7 @@
 				
 				return this.collect("Cow");
 				
-			} else if(name == "equCab2" || name == "hores" || name == "Horse" || name == "donkey" || name == "Donkey"){
+			} else if(name == "equCab2" || name == "horse" || name == "Horse" || name == "donkey" || name == "Donkey"){
 				
 				return this.collect("Horse")
 				

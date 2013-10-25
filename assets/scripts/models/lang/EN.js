@@ -251,7 +251,9 @@
             "recentSubmit" : "Latest achievements",
             "puzzleID" : "Puzzle ID",
             "user" : "User",
-            "unclassified" : "Unclassified"
+            "unclassified" : "Unclassified",
+            "openPhylo" : "For researchers",
+            "education" : "For teachers"
         }
     }
 }

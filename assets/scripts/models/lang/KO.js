@@ -255,7 +255,9 @@
             "recentSubmit" : "최근 업적",
             "puzzleID" : "퍼즐의 ID",
             "user" : "사용자",
-            "unclassified" : "분류되지 않음"
+            "unclassified" : "분류되지 않음",
+            "openPhylo" : "연구원",
+            "education" : "교사를위한"
 		}
 	}
 }
