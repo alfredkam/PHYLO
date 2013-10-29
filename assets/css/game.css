@@ -15,6 +15,7 @@
 	position:absolute;
 	display:inline-block;	
 	line-height:normal;
+	top:20px;
 }
 #movingParts {
 	position: absolute;
