@@ -334,7 +334,7 @@
 									imageCache[imgs].normal = $("#svg-"+imgs)[0];
 									imageCache[imgs].hover = $("#svg-"+imgs+"-hover")[0];
 								}
-								console.log(imageCache);
+								// console.log(imageCache);
 								$.ajax({
 									url: "/phpdb/openPhyloClassicDB.php",
 									dataType: "json",
@@ -370,7 +370,7 @@
 
 									// diseaseorder = data;
 
-									console.log("data added in!");
+									// console.log("data added in!");
 								});
 								ctx.beginPath();
 								ctx.textAlign = "center";
