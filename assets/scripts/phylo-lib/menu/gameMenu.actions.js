@@ -232,6 +232,7 @@
 			banner.onload = function() {
 				ctx.drawImage(banner, bannerValues.x, bannerValues.y, bannerValues.w, bannerValues.h);
 			};
+		
 			// banner.src = 'assets/img/phylo.png';
 			banner.src = 'assets/img/logo.png';
 			ctx.fillStyle = "#F1F1F1";
@@ -326,44 +327,7 @@
 								return;
 							case 2:
 								var diseaseorder = [];
-								var diseaseImages = {
-									// "Digestive": "assets/img/disease/digestive.png",
-									"Heart": "assets/img/disease/heart.svg",
-									"Cancer": "assets/img/disease/cancer.svg",
-									"Metabolic": "assets/img/disease/metabolic.svg",
-									"Digestive": "assets/img/disease/lung.svg",
-
-									"Blood": "assets/img/disease/blood.svg",
-									// "Sensory": "assets/img/disease/sensory.svg", 
-									"Brain": "assets/img/disease/brain.svg",
-									// "Muscles": "assets/img/disease/muscles.svg", 
-									// "Lung": "assets/img/disease/lung.svg",
-									"Infectious": "assets/img/disease/infectious.svg",
-									//"Mental": "assets/img/disease/mental.svg",
-									"Misc": "assets/img/disease/misc.svg"
-
-								};
-
-								//TODO: a fail case
-								
-								//caching by drawing it inside a canvas
-								//so it can get retrieved later on
-								if($("#svgPreload").children().length==0){
-									for(var toPreload in diseaseImages){
-										var preLoadCan = document.createElement('canvas');
-										var preLoadCanHover = document.createElement('canvas');
-										preLoadCan.setAttribute("id","svg-"+toPreload);
-										preLoadCanHover.setAttribute("id","svg-"+toPreload+"-hover");
-
-										var preloadCtx = preLoadCan.getContext('2d');
-										preloadCtx.drawSvg(diseaseImages[toPreload],0,0,70,70);
-										// preLoadCtx.close();
-										var preloadHoverCtx = preLoadCanHover.getContext('2d');
-										preloadHoverCtx.drawSvg(diseaseImages[toPreload].replace(".svg","_hover.svg"),0,0,70,70);
-										$("#svgPreload").append(preLoadCan);
-										$("#svgPreload").append(preLoadCanHover);
-									}
-								}
+							
 								var imageCache={};
 								for(var imgs in diseaseImages){
 									imageCache[imgs]={};
@@ -454,6 +418,42 @@
 						}
 					}
 				};
+				var diseaseImages = {
+					// "Digestive": "assets/img/disease/digestive.png",
+					"Heart": "assets/img/disease/heart.svg",
+					"Cancer": "assets/img/disease/cancer.svg",
+					"Metabolic": "assets/img/disease/metabolic.svg",
+					"Digestive": "assets/img/disease/lung.svg",
+
+					"Blood": "assets/img/disease/blood.svg",
+					// "Sensory": "assets/img/disease/sensory.svg", 
+					"Brain": "assets/img/disease/brain.svg",
+					// "Muscles": "assets/img/disease/muscles.svg", 
+					// "Lung": "assets/img/disease/lung.svg",
+					"Infectious": "assets/img/disease/infectious.svg",
+					//"Mental": "assets/img/disease/mental.svg",
+					"Misc": "assets/img/disease/misc.svg"
+
+				};
+
+				//caching by drawing it inside a canvas
+				//so it can get retrieved later on
+				if($("#svgPreload").children().length==0){
+					for(var toPreload in diseaseImages){
+						var preLoadCan = document.createElement('canvas');
+						var preLoadCanHover = document.createElement('canvas');
+						preLoadCan.setAttribute("id","svg-"+toPreload);
+						preLoadCanHover.setAttribute("id","svg-"+toPreload+"-hover");
+
+						var preloadCtx = preLoadCan.getContext('2d');
+						preloadCtx.drawSvg(diseaseImages[toPreload],0,0,70,70);
+						// preLoadCtx.close();
+						var preloadHoverCtx = preLoadCanHover.getContext('2d');
+						preloadHoverCtx.drawSvg(diseaseImages[toPreload].replace(".svg","_hover.svg"),0,0,70,70);
+						$("#svgPreload").append(preLoadCan);
+						$("#svgPreload").append(preLoadCanHover);
+					}
+				}
 			}
 
 
