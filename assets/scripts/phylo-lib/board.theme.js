@@ -20,10 +20,17 @@
 				str += "<div class='bgRow'>";
 				for (var j = 0; j < $.phylo.seqLen; j++) {
 					str += "<div class='bgCell' style='left:" + $.sequence.calcPos(j) + "px'></div>";
+					// str += "<div class='bgCell'></div>";
 				}
 				str += "</div>";
 			}
 			$("#gameBoard").html("<div id='bg'>" + str + "</div>");
+			// $("#gameBoard").html("<div id='bg'><canvas width='824px' height='350px' id='canvasBG'></div>");
+			// var canvas = document.getElementById("canvasBG");
+			// var c = canvas.getContext("2d");
+			// c.globalAlpha = 1;
+			// c.clearRect(0,0,824,350);
+			
 
 		},
 		//updates and displays the score
