@@ -61,11 +61,14 @@
 		},
 		//calculates the cell position
 		calcPos : function(pos) {
+			//console.log(pos);
+			//return 32*pos;
 			return 32*pos+(pos);
 		},
 		//builds the sequence
 		build : function(seq) {
 			var str = "";
+			var self = this;
 			this.posList = [];
 			this.posListReverse = [];
 			this.nucleotide = [];
@@ -96,6 +99,7 @@
 				str+="</div>";
 			} 
 			$("#gameBoard").append("<div id='movingParts'>"+str+"<div>");
+			$(".boardRow").css("height",self.calcPos(1));
 		},
 		//gets the color tag of respected nucletide 
 		colorTag : function(x) {	
