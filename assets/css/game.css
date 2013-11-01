@@ -8,20 +8,27 @@
 	color: #6D6D6D;
 	width: 841px;
 	height:340px;
-	padding-top:20px;
+	top:20px;
+	float:right;
 }
 #bg {
 	display:none;
 	position:absolute;
 	display:inline-block;	
 	line-height:normal;
-	top:20px;
+	/*top:20px;*/
 }
+#canvasBG {
+	position:absolute;
+	left:-2.5px;
+} 
 #movingParts {
-	position: absolute;
+	position: relative;
+	top:0px;
+	left:0px;
 	display:inline-block;
 	z-index: 10;	
-	top:19px;
+	/*top:19px;*/
 }
 
 #movingParts .current .sequence {
@@ -40,7 +47,7 @@
 	height: 15px;
 }
 .sequence {
-	height:29px;
+	height:28px;
 }
 .sequence:hover {
 	box-shadow: 0px 0px 10px red;
@@ -51,19 +58,21 @@
 	-khtml-box-shadow: 0px 0px 10px red;
 }
 .sequence , .ancestor {
-	width:29px;
+	width:28px;
 	position:absolute;
 	display:inline-block;
 	border:0px solid #383838;
 	z-index: 11;
-	margin-top: 2px;
+	/*margin-top: 2px;*/
 	margin-left: 1px;
 }
 
 .boardRow {
 	width: 824px;
 	position:relative;
-	height:34px;
+	/*height:33px;*/
+	/*margin-top:1px;*/
+	top:3.5px;
 }
 
 .bgCell {
