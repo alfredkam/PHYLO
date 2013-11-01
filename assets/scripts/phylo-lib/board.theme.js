@@ -38,7 +38,7 @@
 				c.lineWidth = 2;
 				c.moveTo($.sequence.calcPos(i)+1, 0);
 				c.lineTo($.sequence.calcPos(i)+1, 350);
-				c.strokeStyle = "#6D6D6D";
+				c.strokeStyle = "#C4C4C4";
 				c.stroke();	
 				c.closePath();
 			}
@@ -47,7 +47,7 @@
 				c.lineWidth = 2;
 				c.moveTo(0, $.sequence.calcPos(i)+1);
 				c.lineTo(827, $.sequence.calcPos(i)+1);
-				c.strokeStyle = "#6D6D6D";
+				c.strokeStyle = "#C4C4C4";
 				c.stroke();	
 				c.closePath();
 			}
