@@ -203,7 +203,8 @@
 #ancestorSeq-filling {
 	position:relative;
 	height:15px;
-	top:12px;
+	top:8px;
+	padding-left:1px;
 }
 
 #ancestorSeq {
