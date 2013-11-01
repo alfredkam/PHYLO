@@ -20,7 +20,7 @@ define([
     var IndexView = Marionette.ItemView.extend({
         initialize: function(options) {
             this.lang = options.lang || {};
-            this._id = options.id;
+            this.puzzle_id = options.puzzle_id;
             console.log("init");
         },
         template: tpl,
@@ -28,7 +28,7 @@ define([
             var self = this;
             $.ajax({
                 url: "../phpdb/phyloExpertDB.php",
-                data: "mode=2&id=" + self._id,
+                data: "mode=2&id=" + self.puzzle_id,
                 type: "POST",
             }).done(function(data) {
                 if(data == "") {
@@ -62,7 +62,7 @@ define([
                             $("#menu").hide();
                             $.main.init({
                                 type: "disease",
-                                num: self._id
+                                num: self.puzzle_id
                             });
                         }
                     };
@@ -72,7 +72,7 @@ define([
                     $("#menu").hide();
                     $.main.init({
                         type: "disease",
-                        num: self._id
+                        num: self.puzzle_id
                     });
                 }
             });

@@ -368,7 +368,7 @@ define([
 
 			var playView = new PlayByIdView({
 				lang: lang,
-				id: id,
+				puzzle_id: id,
 				model : this.langModel
 			});
 			this.regions.contentRegion.show(playView);
