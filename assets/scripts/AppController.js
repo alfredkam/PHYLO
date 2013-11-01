@@ -193,53 +193,54 @@ define([
             var userLang = navigator.language || navigator.userLanguage;
             var language = userLang.substring(0,2).toUpperCase();
             var validLang = false;
-            switch (lang) {
-                case "EN":
-                case "FR":
-                case "SP":
-                case "DE":
-                case "PT":
-                case "RO":
-                case "RU":
-                case "KO":
-                case "HE":
-                case "ZH-HK":
-                case "ZH-CN":
-                    validLang = true;
-                    break;
-                default:
-                	validLang=false;
-                	break;
-             }
+            var lang = lang || language;
+   //          switch (lang) {
+   //              case "EN":
+   //              case "FR":
+   //              case "SP":
+   //              case "DE":
+   //              case "PT":
+   //              case "RO":
+   //              case "RU":
+   //              case "KO":
+   //              case "HE":
+   //              case "ZH-HK":
+   //              case "ZH-CN":
+   //                  validLang = true;
+   //                  break;
+   //              default:
+   //              	validLang=false;
+   //              	break;
+   //           }
              
-			if (!validLang) {
-				lang = "EN";
-				switch (language) {
-					case "EN":
-					case "FR":
-					case "SP":
-					case "DE":
-					case "PT":
-					case "RO":
-					case "RU":
-					case "KO":
-					case "HE":
-						lang = language;
-						break;
+			// if (!validLang) {
+			// 	lang = "EN";
+			// 	switch (language) {
+			// 		case "EN":
+			// 		case "FR":
+			// 		case "SP":
+			// 		case "DE":
+			// 		case "PT":
+			// 		case "RO":
+			// 		case "RU":
+			// 		case "KO":
+			// 		case "HE":
+			// 			lang = language;
+			// 			break;
 
-					case "ZH":
-						var languageExtension = headers['Accept-Language'].substring(0, 5).toUpperCase();
-						if (languageExtension == "ZH-HK") {
-							lang = "ZH-HK";
-						} else {
-							lang = "ZH-CN";
-						};
-						break;
-					default:
-						lang = "EN";
-						break;
-				}
-			}
+			// 		case "ZH":
+			// 			var languageExtension = headers['Accept-Language'].substring(0, 5).toUpperCase();
+			// 			if (languageExtension == "ZH-HK") {
+			// 				lang = "ZH-HK";
+			// 			} else {
+			// 				lang = "ZH-CN";
+			// 			};
+			// 			break;
+			// 		default:
+			// 			lang = "EN";
+			// 			break;
+			// 	}
+			// }
 
 			// var playView = new Views.Play;
 			// navBar.set(lang,"play");
@@ -248,7 +249,7 @@ define([
 			this.initHeaderFooter("Play", lang);
 			this.regions.contentRegion.reset();
 			this.regions.contentRegion.show(new IndexView({
-				lang: lang
+				lang: this.lang
 			}));
 			NProgress.done();
             // END FIXME
