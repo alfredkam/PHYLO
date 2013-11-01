@@ -232,6 +232,7 @@
 			banner.onload = function() {
 				ctx.drawImage(banner, bannerValues.x, bannerValues.y, bannerValues.w, bannerValues.h);
 			};
+		
 			// banner.src = 'assets/img/phylo.png';
 			banner.src = 'assets/img/logo.png';
 			ctx.fillStyle = "#F1F1F1";
@@ -253,7 +254,6 @@
 				["assets/img/disease.png", 95, 95],
 			];
 			var menuIconHover = ["assets/img/random_hover.png", "assets/img/id_hover.png", "assets/img/disease_hover.png"]
-
 			//var menuBar = [
 			var cell = function(ctx, x, y, i) {
 				var menuStrColor = '#444';
@@ -327,24 +327,14 @@
 								return;
 							case 2:
 								var diseaseorder = [];
-								var diseaseImages = {
-									// "Digestive": "assets/img/disease/digestive.png",
-									"Heart": "assets/img/disease/heart.svg",
-									"Cancer": "assets/img/disease/cancer.svg",
-									"Metabolic": "assets/img/disease/metabolic.svg",
-									"Digestive": "assets/img/disease/lung.svg",
-
-									"Blood": "assets/img/disease/blood.svg",
-									// "Sensory": "assets/img/disease/sensory.svg", 
-									"Brain": "assets/img/disease/brain.svg",
-									// "Muscles": "assets/img/disease/muscles.svg", 
-									// "Lung": "assets/img/disease/lung.svg",
-									"Infectious": "assets/img/disease/infectious.svg",
-									//"Mental": "assets/img/disease/mental.svg",
-									"Misc": "assets/img/disease/misc.svg"
-
-								};
-								//TODO: a fail case
+							
+								var imageCache={};
+								for(var imgs in diseaseImages){
+									imageCache[imgs]={};
+									imageCache[imgs].normal = $("#svg-"+imgs)[0];
+									imageCache[imgs].hover = $("#svg-"+imgs+"-hover")[0];
+								}
+								// console.log(imageCache);
 								$.ajax({
 									url: "/phpdb/openPhyloClassicDB.php",
 									dataType: "json",
@@ -360,7 +350,7 @@
 											diseaseorder.push({
 												name: x,
 												data: data[x],
-												image: diseaseImages[x],
+												image: imageCache[x],
 												localName: lang.body.play.gameselect.levelselect.disease[x] || x
 											});
 										delete diseaseImages[x];
@@ -370,7 +360,7 @@
 										diseaseorder.push({
 											name: y,
 											data: [],
-											image: diseaseImages[y],
+											image: imageCache[y],
 											localName: lang.body.play.gameselect.levelselect.disease[y] || y
 										});
 										delete diseaseImages[y];
@@ -380,7 +370,7 @@
 
 									// diseaseorder = data;
 
-									console.log("data added in!");
+									// console.log("data added in!");
 								});
 								ctx.beginPath();
 								ctx.textAlign = "center";
@@ -428,6 +418,42 @@
 						}
 					}
 				};
+				var diseaseImages = {
+					// "Digestive": "assets/img/disease/digestive.png",
+					"Heart": "assets/img/disease/heart.svg",
+					"Cancer": "assets/img/disease/cancer.svg",
+					"Metabolic": "assets/img/disease/metabolic.svg",
+					"Digestive": "assets/img/disease/lung.svg",
+
+					"Blood": "assets/img/disease/blood.svg",
+					// "Sensory": "assets/img/disease/sensory.svg", 
+					"Brain": "assets/img/disease/brain.svg",
+					// "Muscles": "assets/img/disease/muscles.svg", 
+					// "Lung": "assets/img/disease/lung.svg",
+					"Infectious": "assets/img/disease/infectious.svg",
+					//"Mental": "assets/img/disease/mental.svg",
+					"Misc": "assets/img/disease/misc.svg"
+
+				};
+
+				//caching by drawing it inside a canvas
+				//so it can get retrieved later on
+				if($("#svgPreload").children().length==0){
+					for(var toPreload in diseaseImages){
+						var preLoadCan = document.createElement('canvas');
+						var preLoadCanHover = document.createElement('canvas');
+						preLoadCan.setAttribute("id","svg-"+toPreload);
+						preLoadCanHover.setAttribute("id","svg-"+toPreload+"-hover");
+
+						var preloadCtx = preLoadCan.getContext('2d');
+						preloadCtx.drawSvg(diseaseImages[toPreload],0,0,70,70);
+						// preLoadCtx.close();
+						var preloadHoverCtx = preLoadCanHover.getContext('2d');
+						preloadHoverCtx.drawSvg(diseaseImages[toPreload].replace(".svg","_hover.svg"),0,0,70,70);
+						$("#svgPreload").append(preLoadCan);
+						$("#svgPreload").append(preLoadCanHover);
+					}
+				}
 			}
 
 
@@ -527,20 +553,20 @@
 
 			var emptyDisease = function(ctx, items, i) {
 				var hovered = false;
-				var img = new Image();
-				if (!items.image) {
-					items.image = "assets/img/disease/misc.png"
-				}
-				img.src = items.image;
-				img.onload = function() {
+				// var img = new Image();
+				// if (!items.image) {
+				// 	items.image = "assets/img/disease/misc.png"
+				// }
+				var img = items.image.normal;
+				//img.onload = function() {
 					ctx.beginPath();
 					ctx.globalAlpha = 0.5;
-					ctx.drawSvg(items.image, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
+					ctx.drawImage(img, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125);
 					//ctx.fillText("test",300+110*(i>3?i-4:i),i>3?315:205);
 
 					ctx.globalAlpha = 1;
 					ctx.closePath();
-				};
+				//};
 				this.onClick = function(eX, eY) {};
 				this.onOver = function(eX, eY) {
 					if (300 + 110 * (i > 3 ? i - 4 : i) < eX && eX < 370 + 110 * (i > 3 ? i - 4 : i) && (i > 3 ? 235 : 125) < eY && eY < (i > 3 ? 330 : 220)) {
@@ -561,25 +587,25 @@
 			};
 
 			var disease = function(ctx, items, i) {
-				var img = new Image();
-				var img_hover = new Image();
+				//var img = new Image();
+				//var img_hover = new Image();
 				//no image case
-				if (!items.image) {
-					items.image = "assets/img/disease/misc.svg"
-				}
-				img.src = items.image;
-				img_hover.src = items.image.replace('.svg', '_hover.svg');
+				// if (!items.image) {
+				// 	items.image = "assets/img/disease/misc.svg"
+				// }
+				var img= items.image.normal;
+				var img_hover = items.image.hover;
 				var hovered = false;
-				img.onload = function() {
+				//img.onload = function() {
 					ctx.beginPath();
 					ctx.globalAlpha = 1;
 					//ctx.drawImage(img, 335+110*(i>=4?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
 					//ctx.drawImage(img, 335+110*(i>=4?(i>=6?i-6:i-3):i), 150+(i>=3?(i>=6?200:100):0), 70, 70);
-					ctx.drawSvg(img.src, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
+					ctx.drawImage(img, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125);
 
 
 					ctx.closePath();
-				};
+				//};
 				this.onClick = function(eX, eY) {
 					if (300 + 110 * (i > 3 ? i - 4 : i) < eX && eX < 370 + 110 * (i > 3 ? i - 4 : i) && (i > 3 ? 235 : 125) < eY && eY < (i > 3 ? 330 : 220)) {
 						//var id = diseaseList[items.name][Math.floor(Math.random()*diseaseList[items.name].length)];
@@ -602,7 +628,7 @@
 						ctx.clearRect(300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 105, 105);
 						//ctx.clearRect(200,i>3?310:200,650,21);
 						ctx.clearRect(200, 330, 650, 40);
-						ctx.drawSvg(img_hover.src, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
+						ctx.drawImage(img_hover, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125);
 						ctx.closePath();
 
 						ctx.font = '16pt Helvetica';
@@ -617,7 +643,7 @@
 							ctx.clearRect(200, 330, 650, 40);
 
 							ctx.clearRect(300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 105, 105);
-							ctx.drawSvg(img.src, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125, 70, 70);
+							ctx.drawImage(img, 300 + 110 * (i > 3 ? i - 4 : i), i > 3 ? 235 : 125);
 							//ctx.fillText("test",300+110*(i>3?i-4:i),i>3?315:205);
 
 							ctx.closePath();

@@ -17,43 +17,7 @@
    sodipodi:docname="blood_hover.svg">
   <defs
      id="defs14" />
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1191"
-     inkscape:window-height="662"
-     id="namedview12"
-     showgrid="false"
-     inkscape:zoom="1.2586667"
-     inkscape:cx="-75.778504"
-     inkscape:cy="64.038577"
-     inkscape:window-x="0"
-     inkscape:window-y="22"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svg2"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0" />
-  <metadata
-     id="metadata4">
-Created by potrace 1.10, written by Peter Selinger 2001-2011
-<rdf:RDF>
-  <cc:Work
-     rdf:about="">
-    <dc:format>image/svg+xml</dc:format>
-    <dc:type
-       rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-    <dc:title></dc:title>
-  </cc:Work>
-</rdf:RDF>
-</metadata>
+  
   <g
      transform="matrix(0.1,0,0,-0.1,-23.440598,129.33713)"
      id="g6"

@@ -190,10 +190,10 @@ define([
 				window.location = "#!/mobile";
 
 			// BEGIN FIXME (Quick hack to detect language)
-            var lang = "EN";
             var userLang = navigator.language || navigator.userLanguage;
             var language = userLang.substring(0,2).toUpperCase();
-            switch (language) {
+            var validLang = false;
+            switch (lang) {
                 case "EN":
                 case "FR":
                 case "SP":
@@ -203,30 +203,54 @@ define([
                 case "RU":
                 case "KO":
                 case "HE":
-                    lang = language;
-                    break;
-                case "ZH":
-                    var languageExtension = headers['Accept-Language'].substring(0,5).toUpperCase();
-                    if (languageExtension == "ZH-HK") {
-                        lang = "ZH-HK";
-                    } else {
-                        lang = "ZH-CN";
-                    };
+                case "ZH-HK":
+                case "ZH-CN":
+                    validLang = true;
                     break;
                 default:
-                    lang = "EN";
-                    break;
-            }
-            // var playView = new Views.Play;
-            // navBar.set(lang,"play");
-            // playView.render(lang);
-            // 
-            this.initHeaderFooter("Play", lang);
-            this.regions.contentRegion.reset();
-          	this.regions.contentRegion.show(new IndexView({
-          		lang : lang
-          	}));
-          	NProgress.done();
+                	validLang=false;
+                	break;
+             }
+             
+			if (!validLang) {
+				lang = "EN";
+				switch (language) {
+					case "EN":
+					case "FR":
+					case "SP":
+					case "DE":
+					case "PT":
+					case "RO":
+					case "RU":
+					case "KO":
+					case "HE":
+						lang = language;
+						break;
+
+					case "ZH":
+						var languageExtension = headers['Accept-Language'].substring(0, 5).toUpperCase();
+						if (languageExtension == "ZH-HK") {
+							lang = "ZH-HK";
+						} else {
+							lang = "ZH-CN";
+						};
+						break;
+					default:
+						lang = "EN";
+						break;
+				}
+			}
+
+			// var playView = new Views.Play;
+			// navBar.set(lang,"play");
+			// playView.render(lang);
+			// 
+			this.initHeaderFooter("Play", lang);
+			this.regions.contentRegion.reset();
+			this.regions.contentRegion.show(new IndexView({
+				lang: lang
+			}));
+			NProgress.done();
             // END FIXME
 		},
 		// this still in old format
