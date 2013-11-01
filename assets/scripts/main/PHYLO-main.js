@@ -133,7 +133,7 @@ require.config({
 			deps : ['jquery']
 		},
 		"views/HeaderView" : {	//previously navBar.view
-			deps : ['validation/cookie.validation.amd']
+			deps : ['validation/cookie.validation.amd','DNA/main.core']
 		},
 		'views/site.views' : {
 			deps : ['views/request.views','views/variable.listener']
