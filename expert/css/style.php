@@ -345,8 +345,14 @@ body{
 .navbar-inner {
     background:white !important;
 }
+.logo h3 {
+    color: rgb(109, 109, 109) !important;
+}
 .navbar-inner a {
     color:rgb(109, 109, 109) !important;
+}
+.navbar .nav > li > a {
+    line-height : 35px;
 }
 
 #main-wrapper {
