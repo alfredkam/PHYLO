@@ -343,10 +343,10 @@ body{
 
 /* phylo theme by ak */
 .navbar-inner {
-    background-color:white;
+    background:white !important;
 }
 .navbar-inner a {
-    color:rgb(109, 109, 109);
+    color:rgb(109, 109, 109) !important;
 }
 
 #main-wrapper {
