@@ -341,7 +341,14 @@ body{
     background: #334455;
 }
 
-/* fixes by ak */
+/* phylo theme by ak */
+.navbar-inner {
+    background-color:white;
+}
+.navbar-inner a {
+    color:rgb(109, 109, 109);
+}
+
 #main-wrapper {
     background:#fff;
 }
