@@ -340,6 +340,13 @@ label {
 body{
     background: #334455;
 }
+
+/* fixes by ak */
+#main-wrapper {
+    background:#fff;
+}
+
+
 CSS;
 /**
 body{
