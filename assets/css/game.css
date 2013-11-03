@@ -225,14 +225,20 @@
 
 #bottomPanel-wrapper {
 	height:80px;
-	top:5px;
+	/*top:5px;*/
 	position:relative;
 }
 #bottomPanel {
 	position:absolute;
 	display:inline-block;
 	height:80px;
-	left:182px;
+	margin-left:182px;
+	width:826px;
+}
+#utilPanel {
+	width:17%;
+	float:left;
+	top:15px;
 }
 #bottomPanel div{
 	display:inline-block;
@@ -243,11 +249,11 @@
 	position:relative;
 } 
 #statsPanel {
-	left:60px;
-	max-width:534px;
+	width:70%;
 	color:#6D6D6D;
 	position:relative;
 	top:15px;
+	float:left;
 }
 .gap {
 	padding-left:15px;
@@ -262,7 +268,9 @@
 }
 #controlPanel {
 	position: relative;
-	left:97px;
+	width:13%;
+	float:left;
+	top:7px;
 }
 
 #scorePanel {
