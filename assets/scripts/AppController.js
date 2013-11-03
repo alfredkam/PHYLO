@@ -251,7 +251,7 @@ define([
 			this.regions.contentRegion.show(new IndexView({
 				lang: this.lang
 			}));
-			NProgress.done();
+			// NProgress.done();
             // END FIXME
 		},
 		// this still in old format
@@ -391,7 +391,7 @@ define([
 			this.regions.contentRegion.show(new IndexView({
 				lang : this.lang
 			}));
-			NProgress.done();
+			// NProgress.done();
 		},
 		tabletUX : function(lang) {
 			//assume its tablet

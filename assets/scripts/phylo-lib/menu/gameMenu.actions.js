@@ -123,6 +123,7 @@
 			canvas.height = settings.height();
 
 			sandbox.appendChild(canvas);
+			NProgress.done();
 		};
 		g.prototype.resetMenuSound = function(){
 
