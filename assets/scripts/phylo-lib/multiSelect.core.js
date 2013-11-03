@@ -89,7 +89,7 @@
 				var row = parseInt($(this).parent().attr("id").replace(/row/,""));
 				var curr = {
 					X: parseInt($(this).css("left").replace(/px/,"")),
-					Y: (window.isFF?35.5:34.5)*row,
+					Y: 35*row,//(window.isFF?35.5:34.5)*row,
 					H: parseInt($(this).css("height").replace(/px/,"")),
 					W: parseInt($(this).css("width").replace(/px/,""))
 				};
@@ -135,7 +135,8 @@
 						select.X = curr.X;
 					}	
 					if(curr.Y < select.Y) {
-						select.Y = curr.Y
+						console.log(curr);
+						select.Y = $("#"+$(self).attr("id")).offset().top-199;//curr.Y;
 					}
 					if(curr.Y+curr.H > select.H) {
 						select.H = curr.Y+curr.H;
