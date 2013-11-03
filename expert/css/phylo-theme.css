@@ -45,6 +45,15 @@ a:link, a:visited, a:active {
 }
 .navbar-inner {
     background:#fff;
+    width:100%;
+        -webkit-box-shadow: 0 6px 6px -5px #ccc;
+           -moz-box-shadow: 0 6px 6px -5px #ccc;
+            -ms-box-shadow: 0 6px 6px -5px #ccc;
+         -khtml-box-shadow: 0 6px 6px -5px #ccc;
+             -o-box-shadow: 0 6px 6px -5px #ccc;
+           -moz-box-shadow: 0 6px 6px -5px #ccc;
+                box-shadow: 0 6px 6px -5px #ccc;
+    border-bottom:1px solid #bbb;
 }
 
 .navbar-inner {
@@ -68,9 +77,28 @@ a:link, a:visited, a:active {
     padding:10px 20px;
     border-radius:5px;
 }
-#inner-wrapper li, #inner-wrapper p {
+
+#inner-wrapper h1, #inner-wrapper h3 {
+    color:#444;
+}
+#inner-wrapper li, #inner-wrapper p, #inner-wrapper label, #inner-wrapper td, .dataTables_info {
     color:#4A4A4A;
 }
+#inner-wrapper a {
+    color : #428bca;
+    text-decoration: none;
+}
+#inner-wrapper a:hover, #inner-wrapper a:focus {
+    color:#2a6496;
+    -moz-transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+#inner-wrapper td {
+    background-color:white;
+}
+
 div#main-wrapper {
     background:#FFF;
 }

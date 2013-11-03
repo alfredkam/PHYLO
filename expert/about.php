@@ -20,7 +20,7 @@
         <div id="header">
 	</div>
       </div>
-
+      <div id="inner-wrapper">
       <h3>Project leaders (Media and scientific contact)</h3>
 
       <ul>
@@ -67,5 +67,6 @@
 
     </div>
   </div>
+</div>
 </body> 
 </html> 

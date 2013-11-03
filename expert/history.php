@@ -24,7 +24,7 @@
         <div id="header">
 	</div>
       </div>
-
+      <div id='inner-wrapper'>
       <h1>Puzzle Selection</h1>
 
       <p>
@@ -55,6 +55,7 @@
 
     </div>
   </div>
+</div>
 
 
   <script type="text/javascript">

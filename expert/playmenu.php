@@ -24,6 +24,7 @@
 	  HELLO
 	</div>
       </div>
+      <div id='inner-wrapper'>
 
       <h1>Puzzle Selection</h1>
 
@@ -55,6 +56,7 @@
 
     </div>
   </div>
+</div>
   <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-27559307-1']);
