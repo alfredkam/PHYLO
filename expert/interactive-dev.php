@@ -50,6 +50,7 @@ args.ui_showscore="<? echo htmlspecialchars($_GET['subscore']); ?>";
       
     </div>
 </div>
+<div id='inner-wrapper'>
 <div id="main-wrapper">
     <canvas id="scorebar-area" width="1400" height="100"></canvas>
     <div id="canvas-container">
@@ -116,7 +117,7 @@ args.ui_showscore="<? echo htmlspecialchars($_GET['subscore']); ?>";
 </div>
 <div id="selection-box"></div>
 </div>
-
+</div>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];

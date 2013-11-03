@@ -170,7 +170,7 @@ function ScoreBar(canvas){
             barAlpha: 0.9,
             barTextFill: "white",
             barTextShadow: "rgba(0,0,0,0.9)",
-            scoreText: "rgba(220,220,220,0.9)"
+            scoreText: "rgba(74,74,74,0.9)"//"rgba(220,220,220,0.9)"
         }
     };
     this.listeners = {

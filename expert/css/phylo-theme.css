@@ -76,13 +76,17 @@ a:link, a:visited, a:active {
     color:#444;
     padding:10px 20px;
     border-radius:5px;
+    width:100%;
 }
 
-#inner-wrapper h1, #inner-wrapper h3 {
+#inner-wrapper h1, #inner-wrapper h3, b {
     color:#444;
 }
 #inner-wrapper li, #inner-wrapper p, #inner-wrapper label, #inner-wrapper td, .dataTables_info {
     color:#4A4A4A;
+}
+table#stats tbody * {
+    color:#4A4A4A !important;
 }
 #inner-wrapper a {
     color : #428bca;
@@ -97,8 +101,4 @@ a:link, a:visited, a:active {
 }
 #inner-wrapper td {
     background-color:white;
-}
-
-div#main-wrapper {
-    background:#FFF;
 }

@@ -159,6 +159,7 @@ args.id="s1";
       
     </div>
 </div>
+<div id='inner-wrapper'>
 <div id="main-wrapper">
     <canvas id="scorebar-area" width="1400" height="100"></canvas>
     <div id="canvas-container">
@@ -224,6 +225,7 @@ args.id="s1";
 
 </div>
 <div id="selection-box"></div>
+</div>
 </div>
 
 <script type="text/javascript">
