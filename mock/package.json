@@ -21,7 +21,6 @@
     "forever-agent": "~0.5.0",
     "form-data": "~0.1.1",
     "xmlhttprequest": "~1.6.0",
-    "php-node": "0.0.2",
     "php-express": "0.0.1"
   },
   "devDependencies": {
