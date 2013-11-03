@@ -100,7 +100,12 @@ app.delete("/", function(req, res){
 });
 
 /* render php / expert mock*/
+// we also mock the login
 app.get("/expert/welcome", function(req, res){
+    res.cookie('logid','132474510',{maxAge:900000, httpOnly: false});
+    res.cookie('fullname', 'developer', {maxAge:900000, httpOnly: false});
+    res.cookie('loginmode', 'Classic', {maxAge:900000, httpOnly: false});
+    res.cookie('username', 'Twitter_11111111', { maxAge: 900000, httpOnly: false});
     res.render("expert/welcome.php");
 });
 app.get("/expert/playmenu", function(req, res){

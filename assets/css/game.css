@@ -239,6 +239,7 @@
 	width:17%;
 	float:left;
 	top:15px;
+	position:relative;
 }
 #bottomPanel div{
 	display:inline-block;
