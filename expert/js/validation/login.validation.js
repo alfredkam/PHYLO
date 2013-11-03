@@ -103,7 +103,7 @@
 	   
             $.ajax({
                 type: "POST",
-                url : "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php",
+                url : "/phpdb/phyloExpertDB.php",
                 data : "mode=8&user="+username,
             }).done(function(re) {
                 if (re!='succ') {

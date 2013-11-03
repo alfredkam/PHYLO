@@ -104,7 +104,9 @@ app.get("/expert/welcome", function(req, res){
     res.render("expert/welcome.php");
 });
 app.get("/expert/playmenu", function(req, res){
-    //cookie to be accessible by client side
+    // cookie to be accessible by client side
+    res.cookie('logid','132474510',{maxAge:900000, httpOnly: false});
+    res.cookie('fullname', 'developer', {maxAge:900000, httpOnly: false});
     res.cookie('loginmode', 'Classic', {maxAge:900000, httpOnly: false});
     res.cookie('username', 'Twitter_11111111', { maxAge: 900000, httpOnly: false});
     res.render("expert/playmenu.php");

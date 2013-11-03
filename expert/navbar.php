@@ -22,7 +22,7 @@
    }(document));
 </script>
 <script src='js/validation/cookie.validation.js' type='text/javascript'></script>
-<!-- <script src='js/validation/login.validation.js' type='text/javascript'></script> -->
+<script src='js/validation/login.validation.js' type='text/javascript'></script>
 <script src='js/validation/protocal.core.js' type='text/javascript'></script>
 <script>
   $('.dropdown-menu').find('form').click(function (e) {
