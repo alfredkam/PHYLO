@@ -26,8 +26,8 @@ args.id="s1";
 <script type="text/javascript" src="js/window.js"></script>
 <script type="text/javascript" src="js/htmlelements.js"></script>
 <script type="text/javascript" src="js/lib/bootbox.min.js"></script>
-<!-- <script type="text/javascript" src="js/validation/cookie.validation.js"></script>
-<script type="text/javascript" src="js/validation/login2.validation.js"></script> -->
+<script type="text/javascript" src="js/validation/cookie.validation.js"></script>
+<script type="text/javascript" src="js/validation/login2.validation.js"></script>
 </head> 
 <body> 
 <script type="text/javascript" src="js/lib/bootbox.min.js"></script>
@@ -53,7 +53,7 @@ args.id="s1";
    }(document));
 </script>
 <script src='js/validation/cookie.validation.js' type='text/javascript'></script>
-<script src='js/validation/login.validation.js' type='text/javascript'></script>
+<!-- <script src='js/validation/login.validation.js' type='text/javascript'></script> -->
 <script src='js/validation/protocal.core.js' type='text/javascript'></script>
 <script>
   $('.dropdown-menu').find('form').click(function (e) {

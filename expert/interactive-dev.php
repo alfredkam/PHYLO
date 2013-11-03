@@ -36,9 +36,9 @@ args.ui_showscore="<? echo htmlspecialchars($_GET['subscore']); ?>";
 <script type="text/javascript" src="js/ui.js"></script>
 <script type="text/javascript" src="js/window.js"></script>
 <script type="text/javascript" src="js/htmlelements.js"></script>
-<script type="text/javascript" src="js/lib/bootbox.min.js"></script><!-- 
+<script type="text/javascript" src="js/lib/bootbox.min.js"></script>
 <script type="text/javascript" src="js/validation/cookie.validation.js"></script>
-<script type="text/javascript" src="js/validation/login2.validation.js"></script -->>
+<script type="text/javascript" src="js/validation/login2.validation.js"></script>
 </head> 
 <body> 
 <?php $THIS_PAGE = 'play'; include 'navbar.php'; ?>    

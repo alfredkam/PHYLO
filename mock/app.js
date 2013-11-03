@@ -99,25 +99,26 @@ app.delete("/", function(req, res){
     res.json({});
 });
 
-/* render php */
+/* render php / expert mock*/
 app.get("/expert/welcome", function(req, res){
     res.render("expert/welcome.php");
 });
 app.get("/expert/playmenu", function(req, res){
+    //cookie to be accessible by client side
+    res.cookie('loginmode', 'Classic', {maxAge:900000, httpOnly: false});
+    res.cookie('username', 'Twitter_11111111', { maxAge: 900000, httpOnly: false});
     res.render("expert/playmenu.php");
 });
 app.get("/expert/interactive-dev",function(req, res){
     res.render("mock/expert/interactive-dev.php");
 });
-app.get("/phpdb/hybridauth/signin/login.php?provider=Twitter&restart=0", function(req,res){
-    res.json(
-        {"identifier":132474510,"webSiteURL":"http:\/\/t.co\/8M0iR4X6xs","profileURL":"http:\/\/twitter.com\/alfredkam","photoURL":"http:\/\/pbs.twimg.com\/profile_images\/2892237988\/6919a72302869a3d2be94a203f2b016c_normal.png","displayName":"alfredkam","description":"Entrepreneur\/Engineer who's enthusiastic about software, biomedical and food. HongKonger. Founder of @appfuel with @andrewcboos & @rexkm. http:\/\/t.co\/WGOCqHJ4Jm","firstName":"Alfred Kam","lastName":null,"gender":null,"language":null,"age":null,"birthDay":null,"birthMonth":null,"birthYear":null,"email":null,"emailVerified":null,"phone":null,"address":null,"country":null,"region":"Toronto, Ontario","city":null,"zip":null}
-    );
+//mock phylo expert response
+app.post("/phpdb/phyloExpertDB.php", function(req,res){
+    res.send("succ");
 });
-app.get("phpdb/phyloExpertDB.php", function(req,res){
-    res.response("succ");
+app.get("/phpdb/phyloExpertDB.php", function(req,res){
+    res.send("succ");
 });
-
 /* end of mocking routes */
 
 //set server to listen to ...

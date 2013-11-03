@@ -11,8 +11,8 @@
 <script type="text/javascript" src="js/jquery.dataTables.js"></script>
 <script type="text/javascript" src="js/DT_bootstrap.js"></script>
 <script type="text/javascript" src="js/lib/bootbox.min.js"></script>
-<!-- <script type="text/javascript" src="js/validation/cookie.validation.js"></script> -->
-<!-- <script type="text/javascript" src="js/validation/login2.validation.js"></script> -->
+<script type="text/javascript" src="js/validation/cookie.validation.js"></script>
+<script type="text/javascript" src="js/validation/login2.validation.js"></script>
 </head>
 <body> 
 <?php $THIS_PAGE = 'play'; include 'navbar.php'; ?>
