@@ -3,12 +3,12 @@
 <head>
 <link href="css/trontastic/jquery-ui-1.8.17.custom.css" rel="stylesheet" type="text/css" />
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-<link href="css/style.php" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/lib/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/lib/JSON.js"></script> 
 <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>-->
-<script type="text/javascript" src="js/consts.php"></script>
+<script type="text/javascript" src="js/consts.js"></script>
 <script type="text/javascript">
 var args = {};
 <? if (isset($_GET['rand'])){ ?>
@@ -36,9 +36,9 @@ args.ui_showscore="<? echo htmlspecialchars($_GET['subscore']); ?>";
 <script type="text/javascript" src="js/ui.js"></script>
 <script type="text/javascript" src="js/window.js"></script>
 <script type="text/javascript" src="js/htmlelements.js"></script>
-<script type="text/javascript" src="js/lib/bootbox.min.js"></script>
+<script type="text/javascript" src="js/lib/bootbox.min.js"></script><!-- 
 <script type="text/javascript" src="js/validation/cookie.validation.js"></script>
-<script type="text/javascript" src="js/validation/login2.validation.js"></script>
+<script type="text/javascript" src="js/validation/login2.validation.js"></script -->>
 </head> 
 <body> 
 <?php $THIS_PAGE = 'play'; include 'navbar.php'; ?>    
