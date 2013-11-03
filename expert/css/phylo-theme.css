@@ -70,11 +70,34 @@ a:link, a:visited, a:active {
     padding-left:20px !important;
     padding-right:20px !important;
 }
+
+#menu-home a:hover, #menu-home.active a{
+    background-color: orange;
+}
+
+#menu-play a:hover, #menu-play.active a{
+    background-color:#71B2E2;
+}
+#menu-history a:hover, #menu-history.active a {
+    background-color:#EF4136;
+}
+#menu-about a:hover, #menu-about.active a {
+    background-color:green;
+}
+
+.caret {
+    border-top:6px solid #000 !important;
+    border-left:6px solid transparent !important;
+    border-right:6px solid transparent !important;
+    border-top-color : #4a4a4a !important;
+    border-bottom-color:#4a4a4a !important;
+    margin-top:13px !important;
+}
 /* body */
 #inner-wrapper {
     background:#FFF;
     color:#444;
-    padding:10px 20px;
+    padding:20px 20px;
     border-radius:5px;
     width:100%;
 }

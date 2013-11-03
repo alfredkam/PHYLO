@@ -335,7 +335,7 @@ function BCIcon(arg){
 
 BCIcon.imageSrcs = {
     "black": "img/glyphicons-halflings.png",
-    "white": "img/glyphicons-halflings-white.png"
+    "white": "img/glyphicons-halflings.png" //modified to use black instead
 };
 
 BCIcon.coords = {

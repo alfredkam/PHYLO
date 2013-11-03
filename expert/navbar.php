@@ -74,7 +74,7 @@
             <ul class="nav pull-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="icon-wrench icon-white"></i>
+                        <i class="icon-wrench"></i>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
