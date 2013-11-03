@@ -74,7 +74,7 @@ args.id="s1";
         </ul>
         <div class="container">
             <ul class="nav">
-                <li id='menu-home'><a href='welcome.php'>Home</a></li><li id='menu-play' class='active'><a href='playmenu.php'>Play</a></li><li id='menu-history'><a href='history.php'>History</a></li><li id='menu-about'><a href='about.php'>About</a></li>            </ul>
+                <li id='menu-home'><a href='welcome'>Home</a></li><li id='menu-play' class='active'><a href='playmenu'>Play</a></li><li id='menu-history'><a href='history'>History</a></li><li id='menu-about'><a href='about'>About</a></li>            </ul>
             <ul class="nav pull-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">

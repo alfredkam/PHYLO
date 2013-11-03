@@ -112,7 +112,25 @@ app.get("/expert/playmenu", function(req, res){
     res.render("expert/playmenu.php");
 });
 app.get("/expert/interactive-dev",function(req, res){
+    res.cookie('logid','132474510',{maxAge:900000, httpOnly: false});
+    res.cookie('fullname', 'developer', {maxAge:900000, httpOnly: false});
+    res.cookie('loginmode', 'Classic', {maxAge:900000, httpOnly: false});
+    res.cookie('username', 'Twitter_11111111', { maxAge: 900000, httpOnly: false});
     res.render("mock/expert/interactive-dev.php");
+});
+app.get("/expert/history", function(req, res){
+    res.cookie('logid','132474510',{maxAge:900000, httpOnly: false});
+    res.cookie('fullname', 'developer', {maxAge:900000, httpOnly: false});
+    res.cookie('loginmode', 'Classic', {maxAge:900000, httpOnly: false});
+    res.cookie('username', 'Twitter_11111111', { maxAge: 900000, httpOnly: false});
+    res.render("expert/history.php");
+});
+app.get("/expert/about", function(req, res){
+    res.cookie('logid','132474510',{maxAge:900000, httpOnly: false});
+    res.cookie('fullname', 'developer', {maxAge:900000, httpOnly: false});
+    res.cookie('loginmode', 'Classic', {maxAge:900000, httpOnly: false});
+    res.cookie('username', 'Twitter_11111111', { maxAge: 900000, httpOnly: false});
+    res.render("expert/about.php");
 });
 //mock phylo expert response
 app.post("/phpdb/phyloExpertDB.php", function(req,res){

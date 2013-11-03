@@ -30,7 +30,7 @@ $blockmenu = json_decode($result,true);
 <tbody>
 <?php
 foreach ($blockmenu as $level_id => $info) {
-	echo "<tr><td>" . $level_id . "</td><td><a href=\"interactive-dev.php?id=s" . $level_id . "\">" . $level_id . "</a></td><td>" . $info['numseqs']. "</td><td>" . $info['disease_category']. "</td><td>" . $info['submitter'] .  "</td><td>" . $info['game_par']. "</td><td><a href=\"interactive-dev.php?id=s" . $level_id . "\">" . $info['game_par'] . "</a></td><td>" . $info['game_highscore'] . "</td><td><a href=\"interactive-dev.php?id=x" . $info['expertid_highscore'] . "\">" . $info['game_highscore'] . "</a></td><td>" . $info['play_count'] . "</td></tr>\n";
+	echo "<tr><td>" . $level_id . "</td><td><a href=\"interactive-dev?id=s" . $level_id . "\">" . $level_id . "</a></td><td>" . $info['numseqs']. "</td><td>" . $info['disease_category']. "</td><td>" . $info['submitter'] .  "</td><td>" . $info['game_par']. "</td><td><a href=\"interactive-dev?id=s" . $level_id . "\">" . $info['game_par'] . "</a></td><td>" . $info['game_highscore'] . "</td><td><a href=\"interactive-dev?id=x" . $info['expertid_highscore'] . "\">" . $info['game_highscore'] . "</a></td><td>" . $info['play_count'] . "</td></tr>\n";
 }
 ?>
 </tbody>

@@ -44,10 +44,10 @@
      * 
      */
     $MENU = array(
-        array("home", "welcome.php", "Home"),
-        array("play", "playmenu.php", "Play"),
-        array("history", "history.php", "History"),
-        array("about", "about.php", "About"),
+        array("home", "welcome", "Home"),
+        array("play", "playmenu", "Play"),
+        array("history", "history", "History"),
+        array("about", "about", "About"),
     );
     $ACTIVE_STRING = ' class=\'active\'';
 
