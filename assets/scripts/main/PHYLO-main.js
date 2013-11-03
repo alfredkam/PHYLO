@@ -80,19 +80,26 @@ require.config({
 		'views/customizeGame.actions' : {
 			deps : ['jquery']
 		},
+		// 'scripts/phylo-lib/menu/gameMenu.actions' : {
+		// 	deps : ['jquery','models/disease.data','DNA/main.core']
+		// },
 		'scripts/phylo-lib/menu/gameMenu.actions' : {
-			deps : ['jquery','models/disease.data','DNA/main.core']
-		},		
-		'DNA/stage.core' : {
-			deps : ['DNA/physics.engine', 'DNA/events.engine','DNA/engine.core']
-		},
-		'DNA/main.core' : {
-			deps : ['jquery', 'jquery-ui','DNA/helper.core', 'DNA/timer.core','DNA/physics.engine',
+			deps : ['jquery', 'jquery-ui','models/disease.data','DNA/main.core','DNA/helper.core', 'DNA/timer.core','DNA/physics.engine',
 				'DNA/endGame.theme','DNA/events.engine','DNA/engine.core','DNA/stage.core',
 				'DNA/sequence.core','DNA/splash.theme','DNA/tree.core','DNA/multiSelect.core',
 				'DNA/newick.core','DNA/lang.module','DNA/fitch.core','DNA/board.theme','DNA/highlighter.theme',
 				'DNA/protocal.core','DNA/score.theme']	
 		},
+		'DNA/stage.core' : {
+			deps : ['DNA/physics.engine', 'DNA/events.engine','DNA/engine.core']
+		},
+		// 'DNA/main.core' : {
+		// 	deps : ['jquery', 'jquery-ui','DNA/helper.core', 'DNA/timer.core','DNA/physics.engine',
+		// 		'DNA/endGame.theme','DNA/events.engine','DNA/engine.core','DNA/stage.core',
+		// 		'DNA/sequence.core','DNA/splash.theme','DNA/tree.core','DNA/multiSelect.core',
+		// 		'DNA/newick.core','DNA/lang.module','DNA/fitch.core','DNA/board.theme','DNA/highlighter.theme',
+		// 		'DNA/protocal.core','DNA/score.theme']	
+		// },
 		'DNA/protocal.core' : {
 			deps : ['jquery']
 		},
@@ -133,7 +140,7 @@ require.config({
 			deps : ['jquery']
 		},
 		"views/HeaderView" : {	//previously navBar.view
-			deps : ['validation/cookie.validation.amd','DNA/main.core']
+			deps : ['validation/cookie.validation.amd']//,'DNA/main.core']
 		},
 		'views/site.views' : {
 			deps : ['views/request.views','views/variable.listener']
