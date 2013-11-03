@@ -116,7 +116,7 @@ app.get("/expert/interactive-dev",function(req, res){
     res.cookie('fullname', 'developer', {maxAge:900000, httpOnly: false});
     res.cookie('loginmode', 'Classic', {maxAge:900000, httpOnly: false});
     res.cookie('username', 'Twitter_11111111', { maxAge: 900000, httpOnly: false});
-    res.render("mock/expert/interactive-dev.php");
+    res.render("mock/expert/interactive-dev.mock.php");
 });
 app.get("/expert/history", function(req, res){
     res.cookie('logid','132474510',{maxAge:900000, httpOnly: false});

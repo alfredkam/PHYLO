@@ -18,6 +18,7 @@
         <div id="header">
 	</div>
       </div>
+      <div id="inner-wrapper">
 
       <h2>Phylo Expert Edition</h2>
 
@@ -53,6 +54,7 @@
       </p>
 
     </div>
+  </div>
   </div>
 </body> 
 </html> 

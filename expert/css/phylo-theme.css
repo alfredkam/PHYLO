@@ -1,3 +1,76 @@
+/* global */
+@font-face {
+    font-family: 'helveticathin';
+    src: url('../../../assets/css/fonts/helveticaneueltstd-th-helv.eot');
+    src: url('../../../assets/css/fonts/helveticaneueltstd-th-helv.eot?#iefix') format('embedded-opentype'),
+         url('../../../assets/css/fonts/helveticaneueltstd-th-helv.woff') format('woff'),
+         url('../../../assets/css/fonts/helveticaneueltstd-th-helv.ttf') format('truetype'),
+         url('../../../assets/css/fonts/helveticaneueltstd-th-helv.svg#HelveticaNeueLTStd35Thin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background : rgb(235, 235, 235) !important;
+}
+a {
+    -moz-transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+a:link, a:visited, a:active {
+    text-decoration: none;
+    /* color:#333; */
+}
+#appBackground {
+   background: url('../../../assets/img/phylo-bg-4.svg') top left repeat;
+   height:100%;
+   width:100%;
+   position:fixed;
+   opacity: 0.05;
+   top:0;
+   left:0; 
+   z-index:-1;
+}
+/* nav */
+.logo h3 {
+    font-family:Helvetica, Arial, sans-serif;
+    color:rgb(109, 109, 109);
+    top:7px;
+    font-size:17px;
+    font-weight: normal;
+    position: relative;
+}
+.navbar-inner {
+    background:#fff;
+}
+
+.navbar-inner {
+    color:rgb(109, 109, 109);
+}
+
+.nav a, .nav i {
+    color:rgb(109, 109, 109);
+}
+
+.nav li a {
+    line-height: 35px !important;
+    font-size:16px;
+    padding-left:20px !important;
+    padding-right:20px !important;
+}
+/* body */
+#inner-wrapper {
+    background:#FFF;
+    color:#444;
+    padding:10px 20px;
+    border-radius:5px;
+}
+#inner-wrapper li, #inner-wrapper p {
+    color:#4A4A4A;
+}
 div#main-wrapper {
     background:#FFF;
 }
