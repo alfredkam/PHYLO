@@ -270,7 +270,7 @@ define([
 			window.location = "http://phylo.cs.mcgill.ca/contribute";
 		},
 		expert : function(lang) {
-			window.location = "http://phylo.cs.mcgill.ca/expert/welcome.php";
+			window.location = "expert/welcome";
 		},
 		ranking : function(lang) {
 			this.initHeaderFooter("Ranking", lang);
