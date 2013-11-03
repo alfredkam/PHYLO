@@ -1,5 +1,5 @@
 function getSequences(callback) {
-    var url = 'ajax/fetch.php?';
+    var url = 'ajax/fetch?';
     if (args['space']){
         url = url + 'space=' + args['space'] + '&';
     }
