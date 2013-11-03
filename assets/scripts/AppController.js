@@ -372,7 +372,7 @@ define([
 				model : this.langModel
 			});
 			this.regions.contentRegion.show(playView);
-			NProgress.done();
+			// NProgress.done();
 		},
 		play : function(lang, dev){
 			if(dev) {

@@ -64,6 +64,7 @@ define([
                                 type: "disease",
                                 num: self.puzzle_id
                             });
+                            NProgress.done();
                         }
                     };
                     fn();
@@ -74,6 +75,7 @@ define([
                         type: "disease",
                         num: self.puzzle_id
                     });
+                    NProgress.done();
                 }
             });
             $("#m_contribute").unbind().click(function() {
