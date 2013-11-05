@@ -189,7 +189,7 @@
 					if(DEV.logging)	
 						devTools.prompts.notify({ type:"error", title:"warning", text: "Puzzle: "+$.phylo.id +"<br> #Seq("+numOfSeq+") / #Nodes("+numOfNodes+") mismatch"});
 					$.ajax({
-						url : "https://api.github.com/repos/MMcGill-CSB/PHYLO/issues",
+						url : "https://api.github.com/repos/McGill-CSB/PHYLO/issues",
 						type : "POST",
 						dataType : "json",
 						data :  {
@@ -202,7 +202,7 @@
 				}
 
 				$.ajax({
-					url : "https://api.github.com/repos/MMcGill-CSB/PHYLO/issues",
+					url : "https://api.github.com/repos/McGill-CSB/PHYLO/issues",
 					type : "POST",
 					dataType : "json",
 					data :  {
