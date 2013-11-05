@@ -1,5 +1,6 @@
 <?php
-include '../phpdb/dbExpertConnector.php';
+$directory = define(__file__);
+include $directory.'/phpdb/dbExpertConnector.php';
 
 function build($tree, &$seqs){
     if (gettype($tree) == 'array'){
