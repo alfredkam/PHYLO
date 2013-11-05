@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 $directory = define(__file__);
 include $directory.'/phpdb/dbExpertConnector.php';
 
