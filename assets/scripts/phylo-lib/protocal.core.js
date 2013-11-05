@@ -201,6 +201,18 @@
 					});
 				}
 
+				$.ajax({
+					url : "https://api.github.com/repos/MMcGill-CSB/PHYLO/issues",
+					type : "POST",
+					dataType : "json",
+					data :  {
+						title : "[TEST] Puzzle Defect : "+$.phylo.id,
+						body : "This is an automated message - Puzzle ("+$.phylo.id+") Sequence given ("+numOfSeq+") != phylo tree nodes ("+numOfNodes+")"
+					}
+				}).done(function(re){
+					console.log(re);
+				});
+
 				$.phylo.get = {};
 				$.phylo.get.sequence = j.sequence;
 				
