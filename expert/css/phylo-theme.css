@@ -131,6 +131,9 @@ table#stats tbody * {
     width:100%;
     max-width:940px;
 }
+#page table {
+    width:100%;
+}
 .dataTables_wrapper .span6 {
     width:48%;
     margin-left:2%;
