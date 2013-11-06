@@ -57,7 +57,7 @@
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <ul class="nav logo">
-                <h3>PHYLO | DNA Puzzles</h3>
+                <h3>PHYLO | Expert Edition</h3>
         </ul>
         <div class="container">
             <ul class="nav">

@@ -1,5 +1,6 @@
 <!DOCTYPE HTML> 
 <html lang="en"> 
+<title>PHYLO | Expert Edition</title>
 <link href="css/trontastic/jquery-ui-1.8.17.custom.css" rel="stylesheet" type="text/css" />
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
