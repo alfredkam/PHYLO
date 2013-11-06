@@ -125,3 +125,13 @@ table#stats tbody * {
 #inner-wrapper td {
     background-color:white;
 }
+
+/*css tablet fix */
+#page .container {
+    width:100%;
+    max-width:940px;
+}
+.dataTables_wrapper .span6 {
+    width:48%;
+    margin-left:2%;
+}
