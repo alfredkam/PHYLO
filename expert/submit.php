@@ -1,8 +1,8 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-$directory = define(__file__);
-include $directory.'/phpdb/dbExpertConnector.php';
+define("ROOT_PATH", "/home/mcb/phylo/public_html");
+include $ROOT_PATH.'/phpdb/dbExpertConnector.php';
 
 function build($tree, &$seqs){
     if (gettype($tree) == 'array'){
