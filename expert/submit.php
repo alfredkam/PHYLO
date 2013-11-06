@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 // define("ROOT_PATH", "/home/mcb/phylo/public_html");
 // include $ROOT_PATH.'/phpdb/dbExpertConnector.php';
-include "../../phpdb/dbExpertConnector.php"
+include "/home/mcb/phylo/public_html/phpdb/dbExpertConnector.php"
 
 function build($tree, &$seqs){
     if (gettype($tree) == 'array'){
