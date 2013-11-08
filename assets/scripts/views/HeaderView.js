@@ -292,6 +292,7 @@ define([
                                 window.showInLogin = true;
                                 console.log("Expert validation failed. Could not connect to the server.");
                             });
+                            return;
                         });
                     }).fail(function() { // password generation failed
                         $("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 21"]);
