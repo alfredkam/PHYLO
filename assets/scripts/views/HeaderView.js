@@ -177,6 +177,7 @@ define([
             }
         },
         socialLogin: function(provider) {
+            var self = this;
             $.get("http://phylo.cs.mcgill.ca/phpdb/social/login.php?provider=" + provider,function(usrdata) {
                 var userinfo = eval("(" + usrdata + ")");
                 if (userinfo.identifier) { // user info retrieved
@@ -255,7 +256,7 @@ define([
                             cookie.create("logid", social_logid, 365);
                             window.guest = social_username;
                             window.username = social_username;
-                            //self.user.set("name", social_username);
+                            self.user.set("name", social_username);
                             // update screen
                             $(".m_login").html(decodeURI(social_fullname));
                             $("#logout").show();
@@ -302,7 +303,7 @@ define([
                     $(".m_login").html(social_fullname.replace("+", " "));
                     window.guest = social_fullname;
                     window.username = social_username;
-                    //self.user.set("name", social_fullname);
+                    self.user.set("name", social_fullname);
                 } else { // user info NOT retrieved
                     cookie.delete("username");
                     cookie.delete("fullname");
