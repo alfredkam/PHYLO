@@ -194,7 +194,7 @@ define([
                         data: "username=" + username + "&id=" + social_logid
                     }).done(function(mypasswd) { // password generated
                         var social_password = mypasswd;
-                        $.protocal.login(username, password, function(re) {
+                        $.protocal.login(username, social_password, function(re) {
                             if (re != "succ") { // login not successful -> try to register user
                                 $.protocal.register(social_username, social_fullname, social_password, social_email, provider, social_logid, function(registerout) {
                                     if (registerout != "succ") { // registration successfull
