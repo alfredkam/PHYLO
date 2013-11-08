@@ -174,6 +174,23 @@ define([
                 self.user.set("name", username);
                 $("#login-box").hide();
                 $(".login-btn").unbind("click");
+                // show buttons. NB: hide expert button if necessary
+                $.ajax({
+                    type: "POST",
+                    url: "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php",
+                    data: "mode=8&user=" + username
+                }).done(function(re) {
+                    $(".showInLogin").show();
+                    window.showInLogin = true;
+                    if (re != 'succ') {
+                        $(".showExpertOptions").hide();
+                        window.showExpertOptions = false;
+                    }
+                }).fail(function() {
+                    $(".showInLogin").show();
+                    window.showInLogin = true;
+                    console.log("Expert validation failed. Could not connect to the server.");
+                });
             }
         },
         socialLogin: function(provider) {
