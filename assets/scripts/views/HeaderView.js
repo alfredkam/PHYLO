@@ -197,7 +197,7 @@ define([
                         $.protocal.login(username, social_password, function(re) {
                             if (re != "succ") { // login not successful -> try to register user
                                 $.protocal.register(social_username, social_fullname, social_password, social_email, provider, social_logid, function(registerout) {
-                                    if (registerout != "succ") { // registration successfull
+                                    if (registerout == "succ") { // registration successfull
                                         // Prepare optional message to post on user feed
                                         var message = social_fullname.replace("+", " ") + " " + window.lang.body.social["field 1"] + " " + window.lang.body.social["field 20"];
                                         var caption = window.lang.body.social["field 31"];
@@ -247,7 +247,7 @@ define([
                                         return;
                                     }
                                 });
-                            } // If you reach this line, login is successful or registration ok
+                            } // If you reach this line, login is successful or login failed but registration worked 
                             console.log(provider + " login successful. username: " + username);
                             // create cookies
                             cookie.create("username", social_username, 365);
