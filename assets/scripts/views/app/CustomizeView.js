@@ -284,7 +284,7 @@ define([
 
             for(var i in sounds){
                 var id = "#customize-"+sounds[i].replace("Vol","");
-                if(cookie.read(sounds[i])==0){
+                if(cookie.read(sounds[i])===0){
                     $(id).addClass("musicDisabled");
                     //$(id).prop("checked",false);
                 }
