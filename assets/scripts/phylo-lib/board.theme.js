@@ -3,7 +3,7 @@
 	//insert sound here
 	//var lightUpSound = new Audio("assets/sounds/starLightUp.wav"); // buffers automatically when created
 	//var starClickSound = new Audio("assets/sounds/startSound.wav");
-	var lighUpSound = document.getElementById("lighUpSound");
+	var lighUpSound = document.getElementById("lightUpSound");
 	var starClickSound = document.getElementById("starClickSound");
 
 	var doc = document,
@@ -82,15 +82,18 @@
 		startListener: function() {
 			var self = this;
 			//disables background music
-			if (window.DEV.disableMusic == false) {
+			if (window.DEV.disableMusic == false){
 
 				$("#musicPlayerSpot").html("<audio loop='loop' id='game-audio' preload='auto' autobuffer style='display:none'><source src='assets/sounds/Valent%20-%20The%20Buckle.ogg' type='audio/ogg'/><source src='assets/sounds/Valent%20-%20The%20Buckle.mp3' type='audio/mp3'/>Your browser does not support audio element</audio>");
 			}
-
+			var sounds = ["#customize-music","#customize-countdown","#customize-redraw","#customize-star","#customize-fxOthers"];
+			for(var i in sounds){
+				$(sounds[i]).trigger("change");
+			}
 			//disable this
 			$("#scorePanel").hide();
 			//volume control
-			$("#volumeOff").hide();
+			/*$("#volumeOff").hide();
 			//cookie for music
 			if ($.cookie.read("music-level")) {
 				try {
@@ -136,6 +139,7 @@
 					$("#volumeOn").show()
 				});
 			}
+			*/
 			//roll back to best score
 			$("#cycle").unbind().click(function() {
 				$.helper.copy($.sequence.track, $.phylo.bestTrack);

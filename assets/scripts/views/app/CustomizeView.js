@@ -17,6 +17,14 @@ define([
          initialize : function(options) {
             this.lang = options.lang || {};
          },
+
+        volTargets: {
+            "musicVol": ["game-audio"],
+            "countdownVol": ["startSound", "countdownSound"],
+            "redrawVol": ["redrawSound"],
+            "starVol": ["lightUpSound", "starClickSound"],
+            "fxOthersVol": ["endGameSound"]
+        },
          template : tpl,
          ui  : {
             themeCell : ".customize-theme-cell",
@@ -27,7 +35,27 @@ define([
             "click .customize-save" : "customizeSave",
             "click .customize-tab a" : "customizeTab",
             "click .customize-theme-cell" : "customizeThemeCell",
-            "click .customize-theme-reset" : "customizeThemeReset"
+            "click .customize-theme-reset" : "customizeThemeReset",
+            "click a.btn[id|='customize']" : "volChanges",
+         },
+         volChanges : function(e){
+            //var vol = $(e.target).prop("checked")?1:0;
+            var vol = $(e.target).hasClass("musicDisabled")?1:0;
+            console.log(vol);
+            var target = e.target.id.replace("customize-","")+"Vol";
+            cookie.create(target,vol,365);
+            for (var i in this.volTargets[target]){
+                try{
+                    document.getElementById(this.volTargets[target][i]).volume = vol;
+                }catch (err) {}
+            }
+            if($(e.target).hasClass("musicDisabled")){
+                $(e.target).removeClass("musicDisabled");
+            }
+            else{
+                $(e.target).addClass("musicDisabled");
+            }
+            return false;
          },
          customizeCancel : function() {
             // console.log("asda");
@@ -251,6 +279,21 @@ define([
                 T : self.deCode(cookie.read("nuc-T"))||"#FFA500"
             }));
         },
+        getSoundSettings : function(){
+            var sounds = ["musicVol","countdownVol","redrawVol","starVol","fxOthersVol"];
+
+            for(var i in sounds){
+                var id = "#customize-"+sounds[i].replace("Vol","");
+                if(cookie.read(sounds[i])==0){
+                    $(id).addClass("musicDisabled");
+                    //$(id).prop("checked",false);
+                }
+                else{
+                    $(id).removeClass("musicDisabled");
+                    //$(id).attr("checked",true);
+                }
+            }
+        },
         deCode : function(code) {
             var arr = [
                 ["%2C", ","],
@@ -271,6 +314,9 @@ define([
             this.customizeFnDump();
             this.colorPadDump();
             this.setPlayerDefaultColor();
+            this.getSoundSettings();
+            $(".customize-music").hide();
+
             // console.log(this.deCode("rgb%28255%2C%20255%2C%20255%29"));
         }
      });

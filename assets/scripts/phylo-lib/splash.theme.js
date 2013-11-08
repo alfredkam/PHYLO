@@ -12,7 +12,7 @@
 			$.splash.count = function() {
 				if ($.cookie.read("music-level")) {
 					try {
-						var volume = $.cookie.read("music-level");
+						var volume = $.cookie.read("countdownVol");
 						document.getElementById("startSound").volume = volume;
 						document.getElementById("countdownSound").volume = volume;
 
@@ -21,7 +21,7 @@
 
 				if (i == 0) {
 					document.getElementById("startSound").play();
-					$("#game-audio")[0].play();
+					document.getElementById("game-audio").play();
 					$("#countDown").fadeOut("fast");
 					fn();
 				} else {

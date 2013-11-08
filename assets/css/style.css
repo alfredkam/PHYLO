@@ -137,7 +137,7 @@ body {
 /* theme controller css */
 /* for now hidden for production */
 .tag-music {
-	display:none;
+	/*display:none;*/
 }
 /* end of hidden */
 a.btn {
@@ -151,7 +151,24 @@ a.btn {
 	opacity:1.0 !important;
 }
 .customize-music {
-	display:none;
+	/*display:none;*/
+}
+a.btn[id|='customize']{
+	margin-bottom:15px;
+	background: #71B2E2;
+	color:#fff;
+}
+a.btn.musicDisabled{
+	background-color: #eee;
+	border-color: #eee;
+	color: rgba(111,111,111,0.5);
+
+}
+a.btn.musicDisabled:hover{
+	background-color: #d1d2d2;
+	border-color: #ddd;
+	color: rgba(111,111,111,1);
+
 }
 .customize.customize-bg {
 	display:none;
