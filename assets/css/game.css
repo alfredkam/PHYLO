@@ -65,6 +65,7 @@
 	z-index: 11;
 	/*margin-top: 2px;*/
 	margin-left: 1px;
+	border-radius: 3px;
 }
 
 .boardRow {
