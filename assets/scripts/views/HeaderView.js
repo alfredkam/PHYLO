@@ -167,6 +167,13 @@ define([
                     window.username = username;
                     window.guest = username;
                 }
+                // update login box
+                $("#logout").show();
+                window.guest = username;
+                window.username = username;
+                self.user.set("name", username);
+                $("#login-box").hide();
+                $(".login-btn").unbind("click");
             }
         },
         socialLogin: function(provider) {
@@ -295,7 +302,7 @@ define([
                     $(".m_login").html(social_fullname.replace("+", " "));
                     window.guest = social_fullname;
                     window.username = social_username;
-                    self.user.set("name", social_fullname);
+                    //self.user.set("name", social_fullname);
                 } else { // user info NOT retrieved
                     cookie.delete("username");
                     cookie.delete("fullname");
@@ -336,6 +343,7 @@ define([
                     cookie.create("logid", -1, 365);
                     $("#logout").show();
                     window.guest = username;
+                    window.username = username;
                     self.user.set("name", username);
                     $("#login-box").hide();
                     $(".login-btn").unbind("click");
