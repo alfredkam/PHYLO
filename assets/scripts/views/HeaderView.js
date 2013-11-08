@@ -163,7 +163,7 @@ define([
                     window.username = username;
                     window.guest = username;
                 } else {
-                    $(".m_login").html(decodeURI(fullrname));
+                    $(".m_login").html(decodeURI(fullname));
                     window.username = username;
                     window.guest = username;
                 }
@@ -247,7 +247,7 @@ define([
                                         return;
                                     }
                                 });
-                            } // If you reach this line, login is successful or login failed but registration worked 
+                            } // If you reach this line, login is successful or login failed but registration worked
                             console.log(provider + " login successful. username: " + username);
                             // create cookies
                             cookie.create("username", social_username, 365);
