@@ -157,7 +157,7 @@ define([
                 window.username = username;
                 var fullname = cookie.read("fullname");
                 var provider = cookie.read("loginmode");
-                var c_logid = cookie.read("logid");
+                var logid = cookie.read("logid");
                 if (provider == "Classic") {
                     $(".m_login").html(decodeURI(username));
                     window.username = username;
@@ -170,14 +170,7 @@ define([
             }
         },
         socialLogin: function(provider) {
-            //$.ajax({
-            //    type: "GET",
-            //    url: "http://phylo.cs.mcgill.ca/phpdb/social/login.php",
-            //    data: "provider=" + provider
-            //}).done(function(usrdata) {
-                                                
             $.get("http://phylo.cs.mcgill.ca/phpdb/social/login.php?provider=" + provider,function(usrdata) {
-                console.log(usrdata);
                 var userinfo = eval("(" + usrdata + ")");
                 if (userinfo.identifier) { // user info retrieved
                     // store user info
@@ -190,7 +183,7 @@ define([
                     $.ajax({
                         type: "POST",
                         url: "http://phylo.cs.mcgill.ca/phpdb/passwdmanager.php",
-                        data: "username=" + username + "&id=" + c_logid
+                        data: "username=" + username + "&id=" + social_logid
                     }).done(function(mypasswd) { // password generated
                         var social_password = mypasswd;
                         $.protocal.login(username, password, function(re) {
