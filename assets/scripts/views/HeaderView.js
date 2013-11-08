@@ -191,7 +191,7 @@ define([
                                 $.protocal.register(social_username, social_fullname, social_password, social_email, provider, social_logid, function(registerout) {
                                     if (registerout != "succ") { // registration successfull
                                         // Prepare optional message to post on user feed
-                                        var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 1"] + " " + window.lang.body.social["field 20"];
+                                        var message = social_fullname.replace("+", " ") + " " + window.lang.body.social["field 1"] + " " + window.lang.body.social["field 20"];
                                         var caption = window.lang.body.social["field 31"];
                                         if (provider != 'Twitter') {
                                             var data = "provider=" + provider + "&id=" + social_logid + "&caption=" + caption + "&description=" + message;
@@ -248,7 +248,7 @@ define([
                             cookie.create("logid", social_logid, 365);
                             window.guest = social_username;
                             window.username = social_username;
-                            self.user.set("name", social_username);
+                            //self.user.set("name", social_username);
                             // update screen
                             $(".m_login").html(decodeURI(social_fullname));
                             $("#logout").show();
@@ -292,7 +292,7 @@ define([
                         return;
                     });
                     // display login
-                    $(".m_login").html(fullname.replace("+", " "));
+                    $(".m_login").html(social_fullname.replace("+", " "));
                     window.guest = social_fullname;
                     window.username = social_username;
                     self.user.set("name", social_fullname);
@@ -302,7 +302,7 @@ define([
                     cookie.delete("loginmode");
                     cookie.delete("logid");
                     $("#logout").hide();
-                    window.guest = 'guest';
+                    window.guest = "guest";
                     window.username = "guest";
                     self.user.set("name", "");
                     $("#login-box").hide();
