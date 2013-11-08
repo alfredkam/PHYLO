@@ -75,7 +75,7 @@ a:link, a:visited, a:active {
     background-color: orange;
 }
 
-#menu-play a:hover, #menu-play.active a{
+#menu-play a:hover, #menu-play.active a, #menu-classic a:hover {
     background-color:#71B2E2;
 }
 #menu-history a:hover, #menu-history.active a {

@@ -48,6 +48,7 @@
         array("play", "playmenu", "Play"),
         array("history", "history", "History"),
         array("about", "about", "About"),
+        array("classic","../","Classic")
     );
     $ACTIVE_STRING = ' class=\'active\'';
 
