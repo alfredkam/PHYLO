@@ -171,8 +171,7 @@ define([
         },
         socialLogin: function(provider) {
             $.get("http://phylo.cs.mcgill.ca/phpdb/social/login.php?provider=" + provider,function(data) {
-                  console.log("Social login");
-                  var_dump(data);
+                console.log("Social login:" + data);
                 var userinfo = eval("(" + data + ")");
                 if (userinfo.identifier) { // user info retrieved
                     // store user info
