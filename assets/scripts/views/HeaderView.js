@@ -61,15 +61,13 @@ define([
             "click .login-btn" : "classicLogin"
         },
         logoutFn : function(){
-            // console.log("clicked?");
-            window.guest = "Guest";
             // this.user.set("name", "");
             cookie.delete("username");
             cookie.delete("fullname");
             cookie.delete("loginmode");
             cookie.delete("logid");
             // $("#logout").hide();
-            window.guest = 'guest';
+            window.guest = "guest";
             window.username = "guest";
             this.user.set("name", "");
             // $("#login-box").hide();
@@ -154,22 +152,22 @@ define([
                 console.log("user found");
                 $(".login-btn").unbind("click");
                 var username = cookie.read("username");
-                window.username = username;
                 var fullname = cookie.read("fullname");
                 var provider = cookie.read("loginmode");
                 var logid = cookie.read("logid");
                 if (provider == "Classic") {
                     $(".m_login").html(decodeURI(username));
+                    window.username = username;
                     window.guest = username;
+                    self.user.set("name", username);
                 } else {
                     $(".m_login").html(decodeURI(fullname));
+                    window.username = username;
                     window.guest = fullname;
+                    self.user.set("name", username);
                 }
                 // update login box
                 $("#logout").show();
-                window.guest = username;
-                window.username = username;
-                self.user.set("name", username);
                 $("#login-box").hide();
                 $(".login-btn").unbind("click");
                 // show buttons. NB: hide expert button if necessary
@@ -249,7 +247,7 @@ define([
                                         cookie.delete("loginmode");
                                         cookie.delete("logid");
                                         $("#logout").hide();
-                                        window.guest = 'guest';
+                                        window.guest = "guest";
                                         window.username ="guest";
                                         self.user.set("name", "");
                                         $("#login-box").hide();
@@ -302,7 +300,7 @@ define([
                         cookie.delete("loginmode");
                         cookie.delete("logid");
                         $("#logout").hide();
-                        window.guest = 'guest';
+                        window.guest = "guest";
                         window.username = "guest";
                         self.user.set("name", "");
                         $("#login-box").hide();
@@ -314,11 +312,6 @@ define([
                         window.showInLogin = false;
                         return;
                     });
-                    // display login
-                    $(".m_login").html(social_fullname.replace("+", " "));
-                    window.guest = social_fullname;
-                    window.username = social_username;
-                    self.user.set("name", social_username);
                 } else { // user info NOT retrieved
                     cookie.delete("username");
                     cookie.delete("fullname");
