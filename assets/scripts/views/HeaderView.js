@@ -170,15 +170,7 @@ define([
             }
         },
         socialLogin: function(provider) {
-            start_url = "http://phylo.cs.mcgill.ca/phpdb/social/login.php?provider=" + provider + "&restart=1";
-            win = window.open(
-                start_url,
-                "hybridauth_social_signin",
-                "location=0,status=0,scrollbars=0,width=800,height=500"
-            );
-            // new
-            $.get("http://phylo.cs.mcgill.ca/phpdb/social/login.php?provider=" + provider,
-                function(data) {
+            $.get("http://phylo.cs.mcgill.ca/phpdb/social/login.php?provider=" + provider,function(data) {
                 var userinfo = eval("(" + data + ")");
                 if (userinfo.identifier) { // user info retrieved
                     // store user info
@@ -322,7 +314,7 @@ define([
                     window.showInLogin = false;
                     return;
                 }
-            }
+            });
         },
         classicLogin : function() {
             var username = $("#username").val().trim();
