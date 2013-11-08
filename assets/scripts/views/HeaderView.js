@@ -170,9 +170,15 @@ define([
             }
         },
         socialLogin: function(provider) {
-            $.get("http://phylo.cs.mcgill.ca/phpdb/social/login.php?provider=" + provider,function(data) {
-                console.log("Social login:" + data);
-                var userinfo = eval("(" + data + ")");
+            //$.ajax({
+            //    type: "GET",
+            //    url: "http://phylo.cs.mcgill.ca/phpdb/social/login.php",
+            //    data: "provider=" + provider
+            //}).done(function(usrdata) {
+                                                
+            $.get("http://phylo.cs.mcgill.ca/phpdb/social/login.php?provider=" + provider,function(usrdata) {
+                console.log(usrdata);
+                var userinfo = eval("(" + usrdata + ")");
                 if (userinfo.identifier) { // user info retrieved
                     // store user info
                     var social_logid = userinfo.identifier;
