@@ -161,7 +161,7 @@ define([
                     window.username = username;
                     self.user.set("name", username);
                 } else {
-                    $(".m_login").html(decodeURI(name));
+                    $(".m_login").html(decodeURI(fullname));
                     window.guest = fullname;
                     window.username = username;
                     self.user.set("name", username);
@@ -271,7 +271,7 @@ define([
                             window.username = social_username;
                             self.user.set("name", social_username);
                             // update screen
-                            $(".m_login").html(decodeURI(name));
+                            $(".m_login").html(decodeURI(social_fullname));
                             $("#logout").show();
                             $("#login-box").hide();
                             $(".login-btn").unbind("click");
@@ -345,7 +345,7 @@ define([
 
             $.protocal.login(username, password, function(re) {
                 if (re == "succ") {
-                    $(".m_login").html(decodeURI(name));
+                    $(".m_login").html(decodeURI(username));
                     cookie.create("username", username, 365);
                     cookie.create("fullname", username, 365);
                     cookie.create("loginmode", "Classic", 365);
