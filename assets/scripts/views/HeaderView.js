@@ -157,13 +157,13 @@ define([
                 var logid = cookie.read("logid");
                 if (provider == "Classic") {
                     $(".m_login").html(decodeURI(username));
-                    window.username = username;
                     window.guest = username;
+                    window.username = username;
                     self.user.set("name", username);
                 } else {
-                    $(".m_login").html(decodeURI(fullname));
-                    window.username = username;
+                    $(".m_login").html(decodeURI(name));
                     window.guest = fullname;
+                    window.username = username;
                     self.user.set("name", username);
                 }
                 // update login box
@@ -271,7 +271,7 @@ define([
                             window.username = social_username;
                             self.user.set("name", social_username);
                             // update screen
-                            $(".m_login").html(decodeURI(social_fullname));
+                            $(".m_login").html(decodeURI(name));
                             $("#logout").show();
                             $("#login-box").hide();
                             $(".login-btn").unbind("click");
