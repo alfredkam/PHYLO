@@ -29,7 +29,7 @@ Getting Started
 =====
 Fork it! Then let me know if you have a new module or bug fix and ill integrate it in :)
 
-Please refer to our <a href"https://github.com/McGill-CSB/PHYLO/tree/master/docs">docs page for more info</a>
+Please refer to our <a href"https://github.com/McGill-CSB/PHYLO/blob/master/docs/README.md">docs page for more info</a>
 
 Devices Supported
 =====
