@@ -6,14 +6,14 @@ require.config({
 		// Require Plugins
 		text : "bower_components/requirejs-text/text",
 		// Others
-		json : "bower_components/json/json2",
-		jquery: "bower_components/jquery/jquery.min",
-		underscore : "bower_components/underscore/underscore-min",
-		backbone : "bower_components/backbone/backbone-min",
-		marionette : "bower_components/marionette/lib/core/backbone.marionette.min",		
+		backbone : "bower_components/backbone/backbone-min",	
+		marionette : "bower_components/marionette/lib/backbone.marionette.min",	
 		"backbone.wreqr" : "bower_components/backbone.wreqr/lib/backbone.wreqr.min",
 		"backbone.babysitter" : "bower_components/marionette/public/backbone.babysitter",
 		// "backbone.eventbinder" : "bower_components/marionette/backbone.eventbinder",
+		json : "bower_components/json/json2",
+		jquery: "bower_components/jquery/jquery.min",
+		underscore : "bower_components/underscore/underscore-min",
 		mustache : "bower_components/mustache/mustache",
 		dust : "bower_components/dustjs/dust-full-0.3.0.min",
 		spectrum: "bower_components/spectrum/spectrum",
@@ -27,18 +27,17 @@ require.config({
         DNA : 'scripts/phylo-lib',
         RNA : 'scripts/RNA',
 		validation : 'scripts/views/validation',
-		controller : 'scripts/controller',
 		misc : 'scripts/misc',
 		lang : 'scripts/lang',
-		views : 'scripts/views',
-		models : 'scripts/models',
 		dev : 'scripts/util/devTools',
 		util : 'scripts/util',
 		//remapping js -> scripts
 		js : 'scripts/',
+		views : 'scripts/views',
+		models : 'scripts/models',
+		controller : 'scripts/controller',
 		tpl : "tpl",
-		nprogress : "bower_components/nprogress/nprogress"
-
+		nprogress : "bower_components/nprogress/nprogress",
 	},
 
 	/*
@@ -51,20 +50,21 @@ require.config({
 		json : {
 			exports : "JSON"
 		},
-		jquery : [ "json" ],
-
+		jquery : {
+			deps : [ "json" ],
+			exports : "jQuery"
+		},
 		underscore : {
 			deps : [ "json" ],
 			exports : "_"
 		},
 
 		backbone : {
-			deps : [ "json", "underscore", "jquery" ],
+			deps : [ "jquery", "underscore" ],
 			exports : "Backbone"
 		},
-		
 		marionette : {
-			deps : [ "jquery", "backbone", "underscore" ],
+			deps : [ "jquery", "backbone", "underscore"],
 			exports : "Marionette"		
 		},
 		bootstrap : ['jquery'],	
@@ -93,13 +93,6 @@ require.config({
 		'DNA/stage.core' : {
 			deps : ['DNA/physics.engine', 'DNA/events.engine','DNA/engine.core']
 		},
-		// 'DNA/main.core' : {
-		// 	deps : ['jquery', 'jquery-ui','DNA/helper.core', 'DNA/timer.core','DNA/physics.engine',
-		// 		'DNA/endGame.theme','DNA/events.engine','DNA/engine.core','DNA/stage.core',
-		// 		'DNA/sequence.core','DNA/splash.theme','DNA/tree.core','DNA/multiSelect.core',
-		// 		'DNA/newick.core','DNA/lang.module','DNA/fitch.core','DNA/board.theme','DNA/highlighter.theme',
-		// 		'DNA/protocal.core','DNA/score.theme']	
-		// },
 		'DNA/protocal.core' : {
 			deps : ['jquery']
 		},
@@ -140,7 +133,7 @@ require.config({
 			deps : ['jquery']
 		},
 		"views/HeaderView" : {	//previously navBar.view
-			deps : ['validation/cookie.validation.amd']//,'DNA/main.core']
+			deps : ['validation/cookie.validation.amd','marionette']//,'DNA/main.core']
 		},
 		'views/site.views' : {
 			deps : ['views/request.views','views/variable.listener']

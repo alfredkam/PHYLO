@@ -3,6 +3,9 @@
 .*.swp
 .*.swo
 
+##dist directory ##
+dist
+
 ###Node###
 
 lib-cov

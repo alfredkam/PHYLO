@@ -78,7 +78,9 @@
 	
 	else if(config.env === "production")
 	{
-		script.setAttribute("src", "scripts/build/"+sitename+".js");
+		//script.setAttribute("src", "dist/main.min.js");
+		script.setAttribute("src", "assets/bower_components/requirejs/require.js");
+		script.setAttribute("data-main", "dist/main.min.js");
 	}
 	
 	document.getElementsByTagName("body")[0].appendChild(script);
