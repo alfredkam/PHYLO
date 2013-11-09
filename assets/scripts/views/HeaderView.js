@@ -258,7 +258,11 @@ define([
                         console.log(provider + ": Login info created.");
                         var social_password = mypasswd;
                         $.protocal.login(username, social_password, function(re) {
-                            if (re != "succ") { // login not successful -> try to register user
+                            if (re == "succ") {
+                                console.log(provider + " login successful.");
+                                self.createLoginData(social_username,social_fullname,provider, social_logid);
+                                return;
+                            } else { // login not successful -> try to register user
                                 console.log(provider + ": User not found. registering...");
                                 $.protocal.register(social_username, social_fullname, social_password, social_email, provider, social_logid, function(registerout) {
                                     if (registerout == "succ") { // registration successfull
@@ -289,26 +293,26 @@ define([
                                                 }
                                             }
                                         };
+                                        console.log(provider + ": Registration successful.");
+                                        self.createLoginData(social_username,social_fullname,provider, social_logid);
                                         // Post welcome message
                                         bootbox(options);
                                     } else { // registration failed
                                         console.log(provider + " registration failed.");
-                                        deleteLoginData();
+                                        self.deleteLoginData();
                                         return;
                                     }
                                 });
-                            } // If you reach this line, login is successful or login failed but registration worked
-                            console.log(provider + " login successful. username: " + username);
-                            createLoginData(social_username,social_fullname,provider, social_logid);
+                            }
                         });
                     }).fail(function() { // password generation failed
                         console.log(provider + " login data generation failed.");
-                        deleteLoginData();
+                        self.deleteLoginData();
                         return;
                     });
                 } else { // user info NOT retrieved
                     console.log(provider + ": Cannot retrieve user info.");
-                    deleteLoginData();
+                    self.deleteLoginData();
                     return;
                 }
             });
