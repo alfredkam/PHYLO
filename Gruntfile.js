@@ -107,7 +107,8 @@ module.exports = function(grunt) {
                         src : [
                             '<%= config.app %>/../expert/*',
                             '<%= config.app %>/sounds/*',
-                            '<%= config.app %>/scripts/main/main.js'
+                            '<%= config.app %>/scripts/main/main.js',
+                            // '<%= config.app %>/css/*'
                         ]
                     }
                 ]
@@ -122,6 +123,14 @@ module.exports = function(grunt) {
                     "<%= config.dist %>/assets/scripts/phylo-lib/phylo-lib.min.js" : ['<%= config.app %>/scripts/phylo-lib/phylo-lib.js'],
                     "<%= config.app %>/scripts/phylo-lib/phylo-lib.min.js" : ['<%= config.app %>/scripts/phylo-lib/phylo-lib.js'],
                 }
+            }
+        },
+        cssmin : {
+            minify : {
+                expand : true,
+                cwd : "<%= config.app %>",
+                src : ["<%= config.app %>/css/*.css", "!<%= config.app %>/css/ipad-fix.css", "!<%= config.app %>/css/tablet.css"],
+                dest : "<%= config.dist %>/assets/css"
             }
         }
     });
@@ -142,12 +151,12 @@ module.exports = function(grunt) {
         'clean',
         'useminPrepare',
         'concat',
+        'cssmin',
         'uglify',
         'requirejs:compile',
         'imagemin',
         'htmlmin',
         'copy',
-        // 'concat',
          // 'copy',
 
     ]);

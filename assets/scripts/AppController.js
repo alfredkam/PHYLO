@@ -57,11 +57,7 @@ define([
 			//check if Win 64 FF
 			var isFF = navigator.userAgent.match(/Mozilla.* Firefox/) != null;
 			window.isFF = isFF;
-			yepnope({
-				test : isFF,
-				yep : ['assets/css/FF-Win-fix.css']
-			});
-
+			
 			this.isTablet = window.isTablet;
 
 			if (!this.isInit)
