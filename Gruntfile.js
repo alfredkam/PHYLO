@@ -17,7 +17,7 @@ module.exports = function(grunt) {
         },
         clean : {
             dist : ['.tmp', '<%= config.dist %>/*'],
-            server: '.tmp'
+            server : '.tmp'
         },
         imagemin : {
             // https://github.com/gruntjs/grunt-contrib-imagemin
@@ -25,22 +25,31 @@ module.exports = function(grunt) {
                 files : [{
                     expand : true,
                     cwd : "<%= config.app %>/img",
-                    src : '**/*.{png,jpg,jpeg,svg}',
+                    src : '**/*.{png,jpg,jpeg}',
                     dest : '<%= config.dist %>/assets/img'
                 }]
             }
         },
         htmlmin : {
             // https://github.com/gruntjs/grunt-contrib-htmlmin
-            dist: {                                      // Target
-              options: {                                 // Target options
-                removeComments: true,
-                collapseWhitespace: true
-              },
-              files: {                                   // Dictionary of files
-                '<%= config.dist %>/index.html': '<%= config.app %>/../index.html',     // 'destination': 'source'
-              }
+            prepare: {                                      // Target
+                options: {                                 // Target options
+                    removeComments: false,
+                    collapseWhitespace: false
+                },
+                files: {                                   // Dictionary of files
+                    '.tmp/index.html': '<%= config.app %>/../index.html'     // 'destination': 'source'
+                }
             },
+            dist :  {
+                options: {                                 // Target options
+                  removeComments: true,
+                  collapseWhitespace: true
+                },
+                files: {                                   // Dictionary of files
+                  '<%= config.dist %>/index.html': '.tmp/index.html'     // 'destination': '.tmp'
+                }
+            }
         },
         requirejs: {
             compile : {
@@ -61,13 +70,19 @@ module.exports = function(grunt) {
                     mainConfigFile : '<%= config.app %>/scripts/main/PHYLO-main-stage.js',
                     out : '<%= config.app %>/scripts/main/PHYLO-build-stage.compress.js'
                     //uglify2: {} // https://github.com/mishoo/UglifyJS2
-                }  
+                }
             }
         },
         useminPrepare: {
             html: '<%= config.app %>/../index.html',
             options: {
                 dest: '<%= config.dist %>'
+            }
+        },
+        usemin : {
+            html : [".tmp/index.html"],
+            options : {
+                dirs : ['<%= config.dist %>']
             }
         },
         concat : {
@@ -105,10 +120,22 @@ module.exports = function(grunt) {
                         expand : true,
                         dest : '<%= config.dist %>',
                         src : [
-                            '<%= config.app %>/../expert/*',
-                            '<%= config.app %>/sounds/*',
+                            '<%= config.app %>/../expert/**',
+                            '<%= config.app %>/sounds/**',
                             '<%= config.app %>/scripts/main/main.js',
-                            // '<%= config.app %>/css/*'
+                            '<%= config.app %>/img/**/*.{svg,gif}',
+                            '<%= config.app %>/scripts/util/options_template.js',
+                            '<%= config.app %>/bower_components/modernizr/modernizr.js',
+                            '<%= config.app %>/bower_components/requirejs/require.js',
+                            '<%= config.app %>/scripts/models/**',
+                            '<%= config.app %>/css/**'
+                            // '<%= config.app %>/css/footer.css',
+                            // '<%= config.app %>/css/customize.css',
+                            // '<%= config.app %>/css/media1280.css',
+                            // '<%= config.app %>/css/media1180.css',
+                            // '<%= config.app %>/css/header.css',
+                            // '<%= config.app %>/css/icons/**',
+                            // '<%= config.app %>/css/zocial'
                         ]
                     }
                 ]
@@ -128,28 +155,37 @@ module.exports = function(grunt) {
         cssmin : {
             combine : {
                 files : {
-                    "<%= config.dist %>/assets/css/components-setone.css" : [
-                        "<%= config.app %>/bower_components/normalize-css/normalize.css",
-                        "<%= config.app %>/bower_components/bootstrap/dist/css/bootstrap.min.css",
-                        "<%= config.app %>/bower_components/nprogress/nprogress.css",
-                        "<%= config.app %>/css/icons/fontello/css/fontello.css",
-                        "<%= config.app %>/css/icons/fontello/css/animation.css",
-                        "<%= config.app %>/css/icons/fontello/css/fontello-ie7.css",
-                        "<%= config.app %>/css/zocial.css",
-                        "<%= config.app %>/bower_components/jquery-ui/themes/base/minified/jquery-ui.min.css"
+                    "<%= config.dist %>/assets/css/components-setone.min.css" : [
+                        ".tmp/concat/assets/css/components-setone.min.css"
                     ],
-                    "<%= config.dist %>/assets/css/custom.css" : [
-                        "<%= config.app %>/css/style.css",
-                        "<%= config.app %>/css/game.css"
+                    "<%= config.dist %>/assets/css/custom.min.css" : [
+                        ".tmp/concat/assets/css/custom.min.css"
                     ],
-                    "<%= config.dist %>/assets/css/components-settwo.css" : [
-                        "<%= config.app %>/css/DT_bootstrap_addons.css",
-                        "<%= config.app %>/css/ui.notify.css"
+                    "<%= config.dist %>/assets/css/components-settwo.min.css" : [
+                        ".tmp/concat/assets/css/components-settwo.min.css"
                     ]
                 }
             }
         },
+        rev : {
+            options: {
+                encoding: 'utf8',
+                algorithm: 'md5',
+                length: 8
+            },
+            assets : {
+                files : [{
+                    src : [
+                        "<%= config.dist %>/scripts/**/*.js",
+                        "<%= config.dist %>/css/**/*.css",
+                        "<%= config.dist %>/img/**/*.{png, jpg, jpeg, gif,svg}",
+                        "<%= config.dist %>/css/fonts/**"
+                    ]
+                }]
+            }
+        },
         jshint : {
+            // https://github.com/gruntjs/grunt-contrib-jshint
             files : [
                 'Gruntfile.js',
                 '<%= config.app %>/scripts/**/*.js'
@@ -189,8 +225,11 @@ module.exports = function(grunt) {
         'uglify',
         'requirejs:compile',
         'imagemin',
-        'htmlmin',
+        'htmlmin:prepare',
         'copy',
+        'rev',
+        'usemin',
+        'htmlmin:dist'
          // 'copy',
 
     ]);

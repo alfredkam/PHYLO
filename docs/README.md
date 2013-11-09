@@ -42,6 +42,15 @@ Staging
 <br>
 This will concat and compress the assets/scripts directory into one non-uglify file.
 
+Production
+====
+1. set assets/scripts/main/main.js to "production" mode
+2. if neccessary, update assets/scripts/main/PHYLO-main-stage.js
+3. if neccessary, update Gruntfile.js
+4. grunt stage
+<br>
+This will concat and compress majority of the js / css files into uglify files.
+
 Partial Testing
 =====
 1. grunt test
