@@ -35,5 +35,12 @@ Skeleton
 ======
 We've based our skeleton from this <a href='https://github.com/alfredkam/Boilerplates/tree/master/Marionette'>repo</a> 
 
+Staging
+======
+1. Set assets/scripts/main/main.js to "stage" mode
+2. if neccessary update assets/scripts/main/PHYLO-main-stage.js 
+3. grunt stage
+
+
 
 
