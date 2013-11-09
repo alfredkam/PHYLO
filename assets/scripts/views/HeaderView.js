@@ -61,6 +61,7 @@ define([
             "click .login-btn" : "classicLogin"
         },
         createLoginData: function (myusername,myfullname,myloginmode,mylogid) {
+            var self = this;
             cookie.create("username", myusername, 365);
             cookie.create("fullname", myfullname, 365);
             cookie.create("loginmode", myloginmode, 365);
@@ -90,6 +91,7 @@ define([
             });
         },
         deleteLoginData: function () {
+            var self = this;
             //$("div.login-warning").show().html(window.lang.body.social["field 5"].replace("***", provider));
             cookie.delete("username");
             cookie.delete("fullname");
