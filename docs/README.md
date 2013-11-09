@@ -29,7 +29,7 @@ Configurations
 
 To extend this framework
 ======
-We use Mariontte! You can easily create an <a href='https://github.com/marionettejs/backbone.marionette/blob/master/docs/marionette.itemview.md'>Marionette Itemview</a> to create modules / components.  Expert for phylo-lib it uses object-literal.
+We use Mariontte! You can easily create an <a href='https://github.com/marionettejs/backbone.marionette/blob/master/docs/marionette.itemview.md'>Marionette Itemview</a> to create modules / components.  Exept for phylo-lib it uses object-literal.
 
 Skeleton
 ======
