@@ -3,8 +3,9 @@
 	//insert sound here
 	//var lightUpSound = new Audio("assets/sounds/starLightUp.wav"); // buffers automatically when created
 	//var starClickSound = new Audio("assets/sounds/startSound.wav");
-	var lighUpSound = document.getElementById("lightUpSound");
-	var starClickSound = document.getElementById("starClickSound");
+	//moved the 2 lines to its respective function
+	// var lighUpSound = document.getElementById("lightUpSound");
+	// var starClickSound = document.getElementById("starClickSound");
 
 	var doc = document,
 		win = window;
@@ -81,6 +82,7 @@
 		//listens to events
 		startListener: function() {
 			var self = this;
+			var starClickSound = document.getElementById("starClickSound");
 			//disables background music
 			if (window.DEV.disableMusic == false){
 
@@ -165,6 +167,7 @@
 		//tinkers the css on the star
 		approve: function() {
 			var self = this;
+			var lighUpSound = document.getElementById("lightUpSound");
 			$("#star").addClass("pass");
 			$("#star").animate({
 				opacity: 1

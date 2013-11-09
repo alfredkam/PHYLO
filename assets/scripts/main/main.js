@@ -78,7 +78,7 @@
 
 	if(config.env === "stage")
 	{
-		script.setAttribute("data-main", "assets/scripts/main/"+sitename+"-build-stage.min.js");
+		script.setAttribute("data-main", "assets/scripts/main/"+sitename+"-build-stage.compress.js");
 		script.setAttribute("src", "assets/bower_components/requirejs/require.js");
 	}
 	

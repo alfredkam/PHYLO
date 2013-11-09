@@ -24,7 +24,8 @@ require.config({
 		//bootbox : "bower_components/bootbox/bootbox.min",
 		bootbox : "bower_components/bootbox/bootbox",
 		dataTables : "bower_components/datatables/media/js/jquery.dataTables",
-		phyloStart : "scripts/phylo-lib/phylo-lib",
+		phyloStart : 'scripts/phylo-lib/menu/gameMenu.actions',
+		phyloLib : "scripts/phylo-lib/phylo-lib",
         DNA : 'scripts/phylo-lib',
         RNA : 'scripts/RNA',
 		validation : 'scripts/views/validation',
@@ -81,10 +82,8 @@ require.config({
 		'views/customizeGame.actions' : {
 			deps : ['jquery']
 		},
-		// 'scripts/phylo-lib/menu/gameMenu.actions' : {
-		// 	deps : ['jquery','models/disease.data','DNA/main.core']
-		// },
-		'phyloStart' : ['jquery','jquery-ui'],
+		'phyloStart' : ['jquery','jquery-ui','phyloLib'],
+		'phyloLib' : ['jquery'],
 		'jquery.dataTables' : {
 			deps : ['jquery','jquery-ui']
 		},

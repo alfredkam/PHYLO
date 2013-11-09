@@ -55,10 +55,11 @@ module.exports = function(grunt) {
             },
             stage : {
                 options: {
+                    optimize : 'none',
                     name : "scripts/main/PHYLO-main-stage",
                     baseUrl: '<%= config.app %>',
                     mainConfigFile : '<%= config.app %>/scripts/main/PHYLO-main-stage.js',
-                    out : '<%= config.app %>/scripts/main/PHYLO-build-stage.min.js'
+                    out : '<%= config.app %>/scripts/main/PHYLO-build-stage.compress.js'
                     //uglify2: {} // https://github.com/mishoo/UglifyJS2
                 }  
             }
@@ -90,8 +91,8 @@ module.exports = function(grunt) {
                     '<%= config.phyloLib %>/engine.core.js',
                     '<%= config.phyloLib %>/fitch.core.js',
                     '<%= config.phyloLib %>/tree.core.js',
-                    '<%= config.phyloLib %>/main.core.js',
-                    '<%= config.phyloLib %>/menu/gameMenu.actions.js'
+                    '<%= config.phyloLib %>/main.core.js'
+                    // '<%= config.phyloLib %>/menu/gameMenu.actions.js'
                 ],
                 dest : '<%= config.app %>/scripts/phylo-lib/phylo-lib.js'
             }
@@ -106,8 +107,7 @@ module.exports = function(grunt) {
                         src : [
                             '<%= config.app %>/../expert/*',
                             '<%= config.app %>/sounds/*',
-                            '<%= config.app %>/scripts/main/main.js',
-                            '<%= config.app %>/scripts/phylo-lib/menu/gameMenu.actions.js'
+                            '<%= config.app %>/scripts/main/main.js'
                         ]
                     }
                 ]
