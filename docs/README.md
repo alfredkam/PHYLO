@@ -27,6 +27,19 @@ Configurations
 1. assets/scripts/main/main.js - controls the environment {dev, stage, production} [Also the inital javascript initalization]
 2. assets/scripts/main/PHYLO-main* - the requirejs-AMD configurations
 
+Dev
+====
+1. Set assets/scripts/main/main.js to "dev" mode <br>
+This will allow you to work with non-concat / uncompressed files
+
+Staging
+======
+1. Set assets/scripts/main/main.js to "stage" mode
+2. if neccessary update assets/scripts/main/PHYLO-main-stage.js
+3. if neccessary update Gruntfile.js
+4. grunt stage
+This will partially concat / compress some of the files, yet still readable.
+
 To extend this framework
 ======
 We use Mariontte! You can easily create an <a href='https://github.com/marionettejs/backbone.marionette/blob/master/docs/marionette.itemview.md'>Marionette Itemview</a> to create modules / components.  Exept for phylo-lib it uses object-literal.
@@ -34,12 +47,6 @@ We use Mariontte! You can easily create an <a href='https://github.com/marionett
 Skeleton
 ======
 We've based our skeleton from this <a href='https://github.com/alfredkam/Boilerplates/tree/master/Marionette'>repo</a> 
-
-Staging
-======
-1. Set assets/scripts/main/main.js to "stage" mode
-2. if neccessary update assets/scripts/main/PHYLO-main-stage.js 
-3. grunt stage
 
 
 
