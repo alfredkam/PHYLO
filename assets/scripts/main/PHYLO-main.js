@@ -38,6 +38,7 @@ require.config({
 		controller : 'scripts/controller',
 		tpl : "tpl",
 		nprogress : "bower_components/nprogress/nprogress",
+		phyloStart : 'scripts/phylo-lib/menu/gameMenu.actions'
 	},
 
 	/*
@@ -83,7 +84,7 @@ require.config({
 		// 'scripts/phylo-lib/menu/gameMenu.actions' : {
 		// 	deps : ['jquery','models/disease.data','DNA/main.core']
 		// },
-		'scripts/phylo-lib/menu/gameMenu.actions' : {
+		phyloStart : {
 			deps : ['jquery', 'jquery-ui','models/disease.data','DNA/main.core','DNA/helper.core', 'DNA/timer.core','DNA/physics.engine',
 				'DNA/endGame.theme','DNA/events.engine','DNA/engine.core','DNA/stage.core',
 				'DNA/sequence.core','DNA/splash.theme','DNA/tree.core','DNA/multiSelect.core',

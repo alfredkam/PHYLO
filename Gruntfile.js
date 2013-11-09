@@ -12,6 +12,9 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         config : Config,
+        bower : {
+            install :{}
+        },
         clean : {
             dist : ['.tmp', '<%= config.dist %>/*'],
             server: '.tmp'
@@ -43,28 +46,21 @@ module.exports = function(grunt) {
             compile : {
                 // https://github.com/gruntjs/grunt-contrib-requirejs
                 options: {
-                    name : "scripts/main/PHYLO-main",
+                    name : "scripts/main/PHYLO-main-stage",
                     baseUrl: '<%= config.app %>',
-                    mainConfigFile : '<%= config.app %>/scripts/main/PHYLO-main.js',
-                    out : '<%= config.dist %>/main.min.js'
+                    mainConfigFile : '<%= config.app %>/scripts/main/PHYLO-main-stage.js',
+                    out : '<%= config.dist %>/assets/scripts/main/PHYLO-build.min.js'
                     //uglify2: {} // https://github.com/mishoo/UglifyJS2
                 }
-            }
-        },
-        copy : {
-            // https://github.com/gruntjs/grunt-contrib-copy
-            dist : {
-                files : [{
-                    expand: true,
-                    dot: true,
-                    cwd: '<%= config.app %>',
-                    dest: '<%= config.dist %>',
-                    src: [
-                        '*.{ico,txt}',
-                        '.htaccess',
-                        'img/{,*/}*.{webp,gif}'
-                    ]
-                }]
+            },
+            stage : {
+                options: {
+                    name : "scripts/main/PHYLO-main-stage",
+                    baseUrl: '<%= config.app %>',
+                    mainConfigFile : '<%= config.app %>/scripts/main/PHYLO-main-stage.js',
+                    out : '<%= config.app %>/scripts/main/PHYLO-build-stage.min.js'
+                    //uglify2: {} // https://github.com/mishoo/UglifyJS2
+                }  
             }
         },
         useminPrepare: {
@@ -74,12 +70,14 @@ module.exports = function(grunt) {
             }
         },
         concat : {
-            dist : {
+            phyloLib : {
                 src : [
-                    '<%= config.phyloLib %>/netwick.core.js',
+                    '<%= config.phyloLib %>/newick.core.js',
+                    '<%= config.phyloLib %>/stage.core.js',
                     '<%= config.phyloLib %>/board.theme.js',
+                    '<%= config.phyloLib %>/timer.core.js',
                     '<%= config.phyloLib %>/score.theme.js',
-                    '<%= config.phyloLib %>/highligher.theme.js',
+                    '<%= config.phyloLib %>/highlighter.theme.js',
                     '<%= config.phyloLib %>/helper.core.js',
                     '<%= config.phyloLib %>/sequence.core.js',
                     '<%= config.phyloLib %>/splash.theme.js',
@@ -88,7 +86,6 @@ module.exports = function(grunt) {
                     '<%= config.phyloLib %>/multiSelect.core.js',
                     '<%= config.phyloLib %>/lang.module.js',
                     '<%= config.phyloLib %>/endGame.theme.js',
-                    '<%= config.phyloLib %>/stage.core.js',
                     '<%= config.phyloLib %>/physics.engine.js',
                     '<%= config.phyloLib %>/engine.core.js',
                     '<%= config.phyloLib %>/fitch.core.js',
@@ -96,7 +93,34 @@ module.exports = function(grunt) {
                     '<%= config.phyloLib %>/main.core.js',
                     '<%= config.phyloLib %>/menu/gameMenu.actions.js'
                 ],
-                dest : '<%= config.dist %>/assets/scripts/phylo-lib.js'
+                dest : '<%= config.app %>/scripts/phylo-lib/phylo-lib.js'
+            }
+        },
+        copy : {
+            // https://github.com/gruntjs/grunt-contrib-copy
+            dist : {
+                files : [
+                    {
+                        expand : true,
+                        dest : '<%= config.dist %>',
+                        src : [
+                            '<%= config.app %>/../expert/*',
+                            '<%= config.app %>/sounds/*',
+                            '<%= config.app %>/scripts/main/main.js',
+                            '<%= config.app %>/scripts/phylo-lib/menu/gameMenu.actions.js'
+                        ]
+                    }
+                ]
+            }
+        },
+        uglify : {
+            options :  {
+                mangle : false,
+                my_target : {
+                    files : {
+                        './dist/scripts/phylo-lib/main.core.js' : ['<%= config.app %>/scripts/phylo-lib/main.core.js']
+                    }
+                }
             }
         }
     });
@@ -116,20 +140,28 @@ module.exports = function(grunt) {
     grunt.registerTask('build',[
         'clean',
         'useminPrepare',
-        'requirejs',
+        'concat',
+        'requirejs:compile',
         'imagemin',
         'htmlmin',
-        'concat',
+        'copy',
         // 'concat',
-        // 'uglify',
+        'uglify',
          // 'copy',
 
+    ]);
+    grunt.registerTask('stage',[
+        'clean',
+        'requirejs:stage',
+        'concat:phyloLib'
     ]);
     grunt.registerTask('test',[
         //for server mocha side
         'mochaTest'
     ]);
-
+    grunt.registerTask('setup'[
+        'bower'
+    ]);
     grunt.registerTask('default',[
         'test'
     ]);

@@ -16,7 +16,7 @@
 	var config = (namespace.config = namespace.config || {});
 	
 	//TODO: Change to either "dev" or "production"
-	config.env = "dev";
+	config.env = "stage";
 	
 	var dev = {
 			DEBUG: false,
@@ -75,12 +75,18 @@
 		script.setAttribute("data-main", "assets/scripts/main/"+sitename+"-main.js");
 		script.setAttribute("src", "assets/bower_components/requirejs/require.js");
 	}
+
+	if(config.env === "stage")
+	{
+		script.setAttribute("data-main", "assets/scripts/main/"+sitename+"-build-stage.min.js");
+		script.setAttribute("src", "assets/bower_components/requirejs/require.js");
+	}
 	
 	else if(config.env === "production")
 	{
 		//script.setAttribute("src", "dist/main.min.js");
 		script.setAttribute("src", "assets/bower_components/requirejs/require.js");
-		script.setAttribute("data-main", "dist/main.min.js");
+		script.setAttribute("data-main", "assets/scripts/main/"+sitename+"-build.min.js");
 	}
 	
 	document.getElementsByTagName("body")[0].appendChild(script);
