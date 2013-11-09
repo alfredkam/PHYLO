@@ -90,7 +90,7 @@ define([
             });
         },
         deleteLoginData: function () {
-            $("div.login-warning").show().html(window.lang.body.social["field 5"].replace("***", provider));
+            //$("div.login-warning").show().html(window.lang.body.social["field 5"].replace("***", provider));
             cookie.delete("username");
             cookie.delete("fullname");
             cookie.delete("loginmode");
@@ -103,7 +103,7 @@ define([
             $(".login-btn").click(function() {
                 this.classicLogin();
             });
-            $(".m_login").html(window.lang.body.play.gameselect.login["field 2"]);
+            //$(".m_login").html(window.lang.body.play.gameselect.login["field 2"]);
             $(".showInLogin").hide();
             window.showInLogin = false;
         },
