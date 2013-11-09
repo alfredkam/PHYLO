@@ -241,6 +241,7 @@ define([
             $.get("http://phylo.cs.mcgill.ca/phpdb/social/login.php?provider=" + provider,function(usrdata) {
                 var userinfo = eval("(" + usrdata + ")");
                 if (userinfo.identifier) { // user info retrieved
+                    console.log(provider + ": User info retrieved.");
                     // store user info
                     var social_logid = userinfo.identifier;
                     var social_email = userinfo.email;
@@ -253,11 +254,14 @@ define([
                         url: "http://phylo.cs.mcgill.ca/phpdb/passwdmanager.php",
                         data: "username=" + username + "&id=" + social_logid
                     }).done(function(mypasswd) { // password generated
+                        console.log(provider + ": Login info created.");
                         var social_password = mypasswd;
                         $.protocal.login(username, social_password, function(re) {
                             if (re != "succ") { // login not successful -> try to register user
+                                console.log(provider + ": User not found. registering...");
                                 $.protocal.register(social_username, social_fullname, social_password, social_email, provider, social_logid, function(registerout) {
                                     if (registerout == "succ") { // registration successfull
+                                        console.log(provider + ": Registering successful.");
                                         // Prepare optional message to post on user feed
                                         var message = social_fullname.replace("+", " ") + " " + window.lang.body.social["field 1"] + " " + window.lang.body.social["field 20"];
                                         var caption = window.lang.body.social["field 31"];
@@ -297,7 +301,7 @@ define([
                             createLoginData(social_username,social_fullname,provider, social_logid);
                         });
                     }).fail(function() { // password generation failed
-                        console.log(provider + " password generation failed.");
+                        console.log(provider + " login data generation failed.");
                         deleteLoginData();
                         return;
                     });
