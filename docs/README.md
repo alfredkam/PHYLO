@@ -29,7 +29,8 @@ Configurations
 
 Dev
 ====
-1. Set assets/scripts/main/main.js to "dev" mode <br>
+1. Set assets/scripts/main/main.js to "dev" mode 
+<br>
 This will allow you to work with non-concat / uncompressed files
 
 Staging
@@ -38,6 +39,7 @@ Staging
 2. if neccessary update assets/scripts/main/PHYLO-main-stage.js
 3. if neccessary update Gruntfile.js
 4. grunt stage
+<br>
 This will partially concat / compress some of the files, yet still readable.
 
 To extend this framework
