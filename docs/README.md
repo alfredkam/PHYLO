@@ -42,6 +42,12 @@ Staging
 <br>
 This will concat and compress the assets/scripts directory into one non-uglify file.
 
+Partial Testing
+=====
+1. grunt test
+<br>
+For now it will run task(s) - jshint.
+
 To extend this framework
 ======
 We use Mariontte! You can easily create an <a href='https://github.com/marionettejs/backbone.marionette/blob/master/docs/marionette.itemview.md'>Marionette Itemview</a> to create modules / components.  Exept for phylo-lib it uses object-literal.
