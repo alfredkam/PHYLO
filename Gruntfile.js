@@ -126,11 +126,37 @@ module.exports = function(grunt) {
             }
         },
         cssmin : {
-            minify : {
-                expand : true,
-                cwd : "<%= config.app %>",
-                src : ["<%= config.app %>/css/*.css", "!<%= config.app %>/css/ipad-fix.css", "!<%= config.app %>/css/tablet.css"],
-                dest : "<%= config.dist %>/assets/css"
+            combine : {
+                files : {
+                    "<%= config.dist %>/assets/css/components-setone.css" : [
+                        "<%= config.app %>/bower_components/normalize-css/normalize.css",
+                        "<%= config.app %>/bower_components/bootstrap/dist/css/bootstrap.min.css",
+                        "<%= config.app %>/bower_components/nprogress/nprogress.css",
+                        "<%= config.app %>/css/icons/fontello/css/fontello.css",
+                        "<%= config.app %>/css/icons/fontello/css/animation.css",
+                        "<%= config.app %>/css/icons/fontello/css/fontello-ie7.css",
+                        "<%= config.app %>/css/zocial.css",
+                        "<%= config.app %>/bower_components/jquery-ui/themes/base/minified/jquery-ui.min.css"
+                    ],
+                    "<%= config.dist %>/assets/css/custom.css" : [
+                        "<%= config.app %>/css/style.css",
+                        "<%= config.app %>/css/game.css"
+                    ],
+                    "<%= config.dist %>/assets/css/components-settwo.css" : [
+                        "<%= config.app %>/css/DT_bootstrap_addons.css",
+                        "<%= config.app %>/css/ui.notify.css"
+                    ]
+                }
+            }
+        },
+        jshint : {
+            files : ['Gruntfile.js', '<%= config.app %>/scripts/**/*.js'],
+            options : {
+                globals : {
+                    jQuery : true,
+                    console : true,
+                    module : true
+                }
             }
         }
     });
@@ -168,7 +194,7 @@ module.exports = function(grunt) {
     ]);
     grunt.registerTask('test',[
         //for server mocha side
-        'mochaTest'
+        'jshint'
     ]);
     grunt.registerTask('setup'[
         'bower'

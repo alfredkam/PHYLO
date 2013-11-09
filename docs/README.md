@@ -36,11 +36,11 @@ This will allow you to work with non-concat / uncompressed files
 Staging
 ======
 1. Set assets/scripts/main/main.js to "stage" mode
-2. if neccessary update assets/scripts/main/PHYLO-main-stage.js
-3. if neccessary update Gruntfile.js
+2. if neccessary, update assets/scripts/main/PHYLO-main-stage.js
+3. if neccessary, update Gruntfile.js
 4. grunt stage
 <br>
-This will partially concat / compress some of the files, yet still readable.
+This will concat and compress the assets/scripts directory into one non-uglify file.
 
 To extend this framework
 ======
