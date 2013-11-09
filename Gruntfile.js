@@ -150,13 +150,21 @@ module.exports = function(grunt) {
             }
         },
         jshint : {
-            files : ['Gruntfile.js', '<%= config.app %>/scripts/**/*.js'],
+            files : [
+                'Gruntfile.js',
+                '<%= config.app %>/scripts/**/*.js'
+            ],
             options : {
                 globals : {
                     jQuery : true,
                     console : true,
                     module : true
-                }
+                },
+                ignores : [
+                    "<%= config.app %>/scripts/main/PHYLO-build-stage.compress.js",
+                    "<%= config.app %>/scripts/phylo-lib/phylo-lib.js",
+                    "<%= config.app %>/scripts/phylo-lib/phylo-lib.min.js"
+                ]
             }
         }
     });
