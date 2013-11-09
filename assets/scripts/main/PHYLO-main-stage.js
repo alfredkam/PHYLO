@@ -25,7 +25,7 @@ require.config({
 		bootbox : "bower_components/bootbox/bootbox",
 		dataTables : "bower_components/datatables/media/js/jquery.dataTables",
 		phyloStart : 'scripts/phylo-lib/menu/gameMenu.actions',
-		phyloLib : "scripts/phylo-lib/phylo-lib",
+		phyloLib : "scripts/phylo-lib/phylo-lib.min",
         DNA : 'scripts/phylo-lib',
         RNA : 'scripts/RNA',
 		validation : 'scripts/views/validation',

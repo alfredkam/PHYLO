@@ -115,11 +115,12 @@ module.exports = function(grunt) {
         },
         uglify : {
             options :  {
-                mangle : false,
-                my_target : {
-                    files : {
-                        './dist/scripts/phylo-lib/main.core.js' : ['<%= config.app %>/scripts/phylo-lib/main.core.js']
-                    }
+                mangle : true,
+            },
+            my_target : {
+                files : {
+                    "<%= config.dist %>/assets/scripts/phylo-lib/phylo-lib.min.js" : ['<%= config.app %>/scripts/phylo-lib/phylo-lib.js'],
+                    "<%= config.app %>/scripts/phylo-lib/phylo-lib.min.js" : ['<%= config.app %>/scripts/phylo-lib/phylo-lib.js'],
                 }
             }
         }
@@ -141,19 +142,20 @@ module.exports = function(grunt) {
         'clean',
         'useminPrepare',
         'concat',
+        'uglify',
         'requirejs:compile',
         'imagemin',
         'htmlmin',
         'copy',
         // 'concat',
-        'uglify',
          // 'copy',
 
     ]);
     grunt.registerTask('stage',[
         'clean',
+        'concat:phyloLib',
+        'uglify',
         'requirejs:stage',
-        'concat:phyloLib'
     ]);
     grunt.registerTask('test',[
         //for server mocha side
