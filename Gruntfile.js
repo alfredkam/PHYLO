@@ -142,14 +142,18 @@ module.exports = function(grunt) {
             }
         },
         uglify : {
-            options :  {
-                mangle : true,
-            },
-            my_target : {
+            dist : {
                 files : {
                     "<%= config.dist %>/assets/scripts/phylo-lib/phylo-lib.min.js" : ['<%= config.app %>/scripts/phylo-lib/phylo-lib.js'],
+                }
+            },
+            dev : {
+                files : {
                     "<%= config.app %>/scripts/phylo-lib/phylo-lib.min.js" : ['<%= config.app %>/scripts/phylo-lib/phylo-lib.js'],
                 }
+            },
+            options :  {
+                mangle : true,
             }
         },
         cssmin : {
@@ -222,7 +226,7 @@ module.exports = function(grunt) {
         'useminPrepare',
         'concat',
         'cssmin',
-        'uglify',
+        'uglify:dist',
         'requirejs:compile',
         'imagemin',
         'htmlmin:prepare',
@@ -236,7 +240,7 @@ module.exports = function(grunt) {
     grunt.registerTask('stage',[
         'clean',
         'concat:phyloLib',
-        'uglify',
+        'uglify:dev',
         'requirejs:stage',
     ]);
     grunt.registerTask('test',[
