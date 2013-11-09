@@ -164,7 +164,7 @@ define([
                     $(".m_login").html(decodeURI(fullname));
                     window.guest = fullname;
                     window.username = username;
-                    self.user.set("name", username);
+                    self.user.set("name", fullname);
                 }
                 // update login box
                 $("#logout").show();
@@ -269,7 +269,7 @@ define([
                             cookie.create("logid", social_logid, 365);
                             window.guest = social_fullname;
                             window.username = social_username;
-                            self.user.set("name", social_username);
+                            self.user.set("name", social_fullname);
                             // update screen
                             $(".m_login").html(decodeURI(social_fullname));
                             $("#logout").show();
