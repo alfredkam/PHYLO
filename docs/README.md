@@ -1,6 +1,6 @@
 Docs page
 
-Setting up environment for osx
+Set up environment for OSX
 ======
 1. install homebrew (http://brew.sh/)
 2. brew install node
