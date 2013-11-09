@@ -69,11 +69,7 @@ define([
             $("#logout").show();
             window.guest = myfullname;
             window.username = myusername;
-            if (loginmode === "Classic") {
-                self.user.set("name", myfullname);
-            } else {
-                self.user.set("name", myfullname.replace("+", " "));
-            }
+            self.user.set("name",decodeURI(myfullname));
             $("#login-box").hide();
             $(".login-btn").unbind("click");
             // show buttons. NB: hide expert button if necessary
