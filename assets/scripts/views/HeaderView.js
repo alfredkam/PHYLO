@@ -259,7 +259,7 @@ define([
                     }).done(function(mypasswd) { // password generated
                         console.log(provider + ": Login info created.");
                         var social_password = mypasswd;
-                        $.protocal.login(username, social_password, function(re) {
+                        $.protocal.login(social_username, social_password, function(re) {
                             if (re == "succ") {
                                 console.log(provider + " login successful.");
                                 self.createLoginData(social_username,social_fullname,provider, social_logid);
