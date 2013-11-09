@@ -255,7 +255,7 @@ define([
                     $.ajax({
                         type: "POST",
                         url: "http://phylo.cs.mcgill.ca/phpdb/passwdmanager.php",
-                        data: "username=" + username + "&id=" + social_logid
+                        data: "username=" + social_username + "&id=" + social_logid
                     }).done(function(mypasswd) { // password generated
                         console.log(provider + ": Login info created.");
                         var social_password = mypasswd;
