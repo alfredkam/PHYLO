@@ -47,7 +47,7 @@ Production
 1. set assets/scripts/main/main.js to "production" mode
 2. if neccessary, update assets/scripts/main/PHYLO-main-stage.js
 3. if neccessary, update Gruntfile.js
-4. grunt stage
+4. grunt build
 <br>
 This will concat and compress majority of the js / css files into uglify files.
 
