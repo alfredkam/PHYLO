@@ -207,7 +207,7 @@ define([
                 if (provider == "Classic") {
                     self.createLoginData(username,fullname,provider,logid);
                 } else { // check if social user is connected, then if registered. Register if connected but not in our database.
-                    console.log("Check " + provider + " connection.");
+                    console.log("Check " + provider + " connection for user " + logid);
                     $.ajax({
                         type: "GET",
                         url: "http://phylo.cs.mcgill.ca/phpdb/social/isconnected.php",
