@@ -1,5 +1,5 @@
 require.config({
-	// waitSeconds : 15,
+	waitSeconds : 15,
 	baseUrl : "assets/",
 
 	paths : {
