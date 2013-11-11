@@ -207,13 +207,12 @@ define([
                 if (provider == "Classic") {
                     self.createLoginData(username,fullname,provider,logid);
                 } else { // check if social user is connected, then if registered. Register if connected but not in our database.
-                    console.log("Check " + provider + " connection. " + logid);
+                    console.log("Check " + provider + " connection.");
                     $.ajax({
                         type: "GET",
                         url: "http://phylo.cs.mcgill.ca/phpdb/social/isconnected.php",
-                        data: "username=" + username + "&logid=" + logid
+                        data: "provider=" + provider + "&logid=" + logid
                     }).done(function(connectBoolean) { // check connection
-                        console.log("result=" + connectBoolean);
                         if (connectBoolean == "succ") { // user connected
                             $.ajax({
                                 type: "POST",
