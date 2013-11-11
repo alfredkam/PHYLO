@@ -132,7 +132,7 @@ require.config({
 			deps : ['jquery']
 		},
 		"views/HeaderView" : {
-			deps : ['validation/cookie.validation.amd','marionette']
+			deps : ['validation/cookie.validation.amd','marionette', 'DNA/protocal.core']
 		},
 		'views/site.views' : {
 			deps : ['views/request.views','views/variable.listener']
