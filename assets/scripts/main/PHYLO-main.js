@@ -1,5 +1,5 @@
 require.config({
-	waitSeconds : 15,
+	// waitSeconds : 15,
 	baseUrl : "assets/",
 
 	paths : {
@@ -47,7 +47,6 @@ require.config({
 	 * module style.
 	 */
 	shim : {
-
 		json : {
 			exports : "JSON"
 		},
@@ -59,7 +58,6 @@ require.config({
 			deps : [ "json" ],
 			exports : "_"
 		},
-
 		backbone : {
 			deps : [ "jquery", "underscore" ],
 			exports : "Backbone"

@@ -19,7 +19,7 @@
 	config.env = "dev";
 	
 	var dev = {
-			DEBUG: false,
+			DEBUG: true,
 			
 			social: {
 				github: {
@@ -34,6 +34,21 @@
 			host : window.location.origin
 			
 	};	
+
+	var stage = {
+		DEBUG : true,
+		social: {
+			github: {
+				clientId: ""
+			},
+			
+			google: {
+				clientId: ""
+			}
+		},
+		
+		host : window.location.origin
+	};
 	
 	var production = {
 		DEBUG: false,

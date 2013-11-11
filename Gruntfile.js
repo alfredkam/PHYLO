@@ -7,7 +7,8 @@ module.exports = function(grunt) {
     var Config = {
         app : './assets',
         dist : './dist',
-        phyloLib : './assets/scripts/phylo-lib'
+        phyloLib : './assets/scripts/phylo-lib',
+        banner : "/* PHYLO Dist Package v3.0.1 */"
     };
 
     grunt.initConfig({
@@ -129,19 +130,13 @@ module.exports = function(grunt) {
                             '<%= config.app %>/bower_components/requirejs/require.js',
                             '<%= config.app %>/scripts/models/**',
                             '<%= config.app %>/css/**'
-                            // '<%= config.app %>/css/footer.css',
-                            // '<%= config.app %>/css/customize.css',
-                            // '<%= config.app %>/css/media1280.css',
-                            // '<%= config.app %>/css/media1180.css',
-                            // '<%= config.app %>/css/header.css',
-                            // '<%= config.app %>/css/icons/**',
-                            // '<%= config.app %>/css/zocial'
                         ]
                     }
                 ]
             }
         },
         uglify : {
+            // https://github.com/gruntjs/grunt-contrib-uglify
             dist : {
                 files : {
                     "<%= config.dist %>/assets/scripts/phylo-lib/phylo-lib.min.js" : ['<%= config.app %>/scripts/phylo-lib/phylo-lib.js'],
@@ -152,12 +147,26 @@ module.exports = function(grunt) {
                     "<%= config.app %>/scripts/phylo-lib/phylo-lib.min.js" : ['<%= config.app %>/scripts/phylo-lib/phylo-lib.js'],
                 }
             },
+            minify : {
+                files : [
+                    {
+                        expand : true,
+                        cwd : "<%= config.dist %>/assets/scripts",
+                        src : ['*/*.js', '!*/*.min.js'],
+                        dest : "<%= config.dist %>/assets/scripts",
+                    }
+                ]
+            },
             options :  {
                 mangle : true,
+                banner : "<%= config.banner %>"
             }
         },
         cssmin : {
             combine : {
+                options :{
+                    banner : "<%= config.banner %>"
+                },
                 files : {
                     "<%= config.dist %>/assets/css/components-setone.min.css" : [
                         ".tmp/concat/assets/css/components-setone.min.css"
@@ -169,6 +178,16 @@ module.exports = function(grunt) {
                         ".tmp/concat/assets/css/components-settwo.min.css"
                     ]
                 }
+            },
+            minify: {
+                options: {
+                    banner : "<%= config.banner %>",
+                },
+                expand: true,
+                cwd: '<%= config.dist %>/assets/css/',
+                src: ['**/*.css', '!**/*.min.css'],
+                dest: '<%= config.dist %>/assets/css',
+                ext: '.css'
             }
         },
         rev : {
@@ -225,12 +244,14 @@ module.exports = function(grunt) {
         'clean',
         'useminPrepare',
         'concat',
-        'cssmin',
+        'cssmin:combine',
         'uglify:dist',
         'requirejs:compile',
         'imagemin',
         'htmlmin:prepare',
         'copy',
+        'cssmin:minify',
+        'uglify:minify',
         'rev',
         'usemin',
         'htmlmin:dist'

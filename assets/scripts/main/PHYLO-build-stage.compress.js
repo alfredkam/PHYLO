@@ -15842,6 +15842,7 @@ define('scripts/views/app/CustomizeView',[
             var vol = $(e.target).hasClass("musicDisabled")?1:0;
             console.log(vol);
             var target = e.target.id.replace("customize-","")+"Vol";
+            console.log(target);
             cookie.create(target,vol,365);
             for (var i in this.volTargets[target]){
                 try{
@@ -16080,14 +16081,15 @@ define('scripts/views/app/CustomizeView',[
         },
         getSoundSettings : function(){
             var sounds = ["musicVol","countdownVol","redrawVol","starVol","fxOthersVol"];
-
             for(var i in sounds){
                 var id = "#customize-"+sounds[i].replace("Vol","");
-                if(cookie.read(sounds[i])===0){
+
+                if(parseInt(cookie.read(sounds[i]))===0){
                     $(id).addClass("musicDisabled");
                     //$(id).prop("checked",false);
                 }
                 else{
+                    console.log("132123");
                     $(id).removeClass("musicDisabled");
                     //$(id).attr("checked",true);
                 }
