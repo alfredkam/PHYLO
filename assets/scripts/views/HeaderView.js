@@ -210,7 +210,7 @@ define([
                     $.ajax({
                         type: "GET",
                         url: "http://phylo.cs.mcgill.ca/phpdb/social/isconnected.php",
-                        data: "username=" + username + "&id=" + logid
+                        data: "username=" + username + "&logid=" + logid
                     }).done(function(connectBoolean) { // password generated
                         if (connectBoolean == "succ") { // user connected
                             $.ajax({
