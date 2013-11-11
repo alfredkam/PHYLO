@@ -71,6 +71,11 @@
 	{
 		config.dev[attr] = dev[attr];
 	}
+
+	config.stage = config.stage || {};
+	for(var attr in stage) {
+		config.stage[attr] = stage[attr];
+	}
 	
 	config.production = config.production || {};
 	for(var attr in production)

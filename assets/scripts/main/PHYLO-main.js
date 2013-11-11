@@ -162,24 +162,20 @@ require.config({
 });
 
 require([ 
-	"marionette", "mustache", "scripts/App","jquery", "nprogress", "bootbox"
+	"marionette", "mustache", "scripts/App", "scripts/util/WebConsoleUtils", "jquery", "nprogress", "bootbox"
 ], function(
-	Marionette, Mustache, App
+	Marionette, Mustache, App, WebConsoleUtils
 ){
-	//should configure nprogress here
 	NProgress.start();
-	// var consoleUtils = new WebConsoleUtils({
-	// debug: config.DEBUG
-	// });
-	//	
-	// consoleUtils.initConsole();
+	var config = window["PHYLO"].getConfig();
+	var consoleUtils = new WebConsoleUtils({
+		debug: config.DEBUG
+	});	
+	consoleUtils.initConsole();
+	// console.log(config.DEBUG);
 
-	// var dashboard = new DashboardRouter();
-	// Backbone.history.start();
 	// Assigning Renderer
 	Backbone.Marionette.Renderer.render = function(template, data) {
-		//console.log("rendering with this now:");
-//		console.log(data);
 		if (typeof template === "function") {
 			return Mustache.render(template(), data);
 		}
