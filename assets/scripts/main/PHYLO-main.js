@@ -131,8 +131,8 @@ require.config({
 		'DNA/helper.core' : {
 			deps : ['jquery']
 		},
-		"views/HeaderView" : {	//previously navBar.view
-			deps : ['validation/cookie.validation.amd','marionette']//,'DNA/main.core']
+		"views/HeaderView" : {
+			deps : ['validation/cookie.validation.amd','marionette']
 		},
 		'views/site.views' : {
 			deps : ['views/request.views','views/variable.listener']
@@ -162,17 +162,20 @@ require.config({
 });
 
 require([ 
-	"marionette", "mustache", "scripts/App", "scripts/util/WebConsoleUtils", "jquery", "nprogress", "bootbox"
+	"marionette", "mustache", "scripts/App", "scripts/util/WebConsoleUtils", 
+	//NO EXPORT
+	"jquery", "nprogress", "bootbox"
 ], function(
 	Marionette, Mustache, App, WebConsoleUtils
 ){
 	NProgress.start();
+	//get configs from main.js
 	var config = window["PHYLO"].getConfig();
+	//config if to display console
 	var consoleUtils = new WebConsoleUtils({
 		debug: config.DEBUG
 	});	
 	consoleUtils.initConsole();
-	// console.log(config.DEBUG);
 
 	// Assigning Renderer
 	Backbone.Marionette.Renderer.render = function(template, data) {
@@ -181,7 +184,7 @@ require([
 		}
 		return Mustache.render(template, data);
 	};	
-
+	
 	App.start();
 });
 

@@ -127,24 +127,23 @@ require.config({
 });
 
 require([ 
-	"marionette", "mustache", "scripts/App","jquery", "nprogress", "bootbox"
+	"marionette", "mustache", "scripts/App","scripts/util/WebConsoleUtils",
+	//NO EXPORT
+	"jquery", "nprogress", "bootbox"
 ], function(
-	Marionette, Mustache, App
+	Marionette, Mustache, App, WebConsoleUtils
 ){
-	//should configure nprogress here
 	NProgress.start();
-	// var consoleUtils = new WebConsoleUtils({
-	// debug: config.DEBUG
-	// });
-	//	
-	// consoleUtils.initConsole();
+	//get configs from main.js
+	var config = window["PHYLO"].getConfig();
+	//configs to display console
+	var consoleUtils = new WebConsoleUtils({
+		debug: config.DEBUG
+	});
+	consoleUtils.initConsole();
 
-	// var dashboard = new DashboardRouter();
-	// Backbone.history.start();
 	// Assigning Renderer
 	Backbone.Marionette.Renderer.render = function(template, data) {
-		//console.log("rendering with this now:");
-//		console.log(data);
 		if (typeof template === "function") {
 			return Mustache.render(template(), data);
 		}
