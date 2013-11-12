@@ -216,7 +216,7 @@
                                     callback: function() {
                                         $.ajax({
                                             type: "POST",
-                                            url: "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+                                            url: "http://phylo.cs.mcgill.ca/phpdb/social/feed.php",
                                             data: data,
                                         }).done(function(re) {
                                             //bootbox.alert("Your achievement has been posted!");
