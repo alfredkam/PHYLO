@@ -90,7 +90,9 @@
 			}
 			var sounds = ["#customize-music","#customize-countdown","#customize-redraw","#customize-star","#customize-fxOthers"];
 			for(var i in sounds){
-				$(sounds[i]).trigger("change");
+				$(sounds[i]).trigger("click");
+				$(sounds[i]).trigger("click");
+
 			}
 			//disable this
 			$("#scorePanel").hide();

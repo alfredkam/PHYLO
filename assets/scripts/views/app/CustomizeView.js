@@ -54,7 +54,24 @@ define([
             else{
                 $(e.target).addClass("musicDisabled");
             }
+            this.checkMuteStat();
             return false;
+         },
+         checkMuteStat : function(){
+            var tot =0;
+            //checks if its all muted or not;
+            for(var i in this.volTargets){
+                for(var j in this.volTargets[i].length){
+                    tot+=document.getElementById(this.volTargets[i][j]).volume;
+                }
+            }
+            if(tot===0){
+                $("#volume i").removeClass("icon-volume-up-1").addClass("icon-volume-off-1");
+            }
+            else{
+                $("#volume i").addClass("icon-volume-up-1").removeClass("icon-volume-off-1");
+
+            }
          },
          customizeCancel : function() {
             // console.log("asda");
@@ -285,6 +302,7 @@ define([
 
                 if(parseInt(cookie.read(sounds[i]))===0){
                     $(id).addClass("musicDisabled");
+                    
                     //$(id).prop("checked",false);
                 }
                 else{
