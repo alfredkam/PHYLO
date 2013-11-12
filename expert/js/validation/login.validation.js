@@ -21,13 +21,8 @@
                     window.guest = username;
                     $(".showInLogin").show();
                 } else {
-                    $.get("http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider=" + provider + "&restart=0",function(data){
-                        var userinfo = eval ("(" + data + ")");
-                        if (userinfo.identifier) {
-                          // complete infos stored in cookie
-                          var net_logid = userinfo.identifier;
-                          var email = userinfo.email;
-                          if (c_logid==net_logid) {
+                    $.get("http://phylo.cs.mcgill.ca/phpdb/social/isconnected.php?provider=" + provider + "&logid=" + c_logid,function(testconnect){
+                        if (testconnect == "succ") {
                             // check is user exists
                             $.ajax({
                                    type: "POST",
@@ -70,19 +65,6 @@
                             $(".showlogout").show();
                             window.guest = username;
                             $(".showInLogin").show();
-                        } else {
-                            bootbox.alert("You do not seem connected to the correct " + provider + "account. Please, login again.");
-                            window.guest = "Guest";
-                            $.cookie.delete("username");
-                            $.cookie.delete("fullname");
-                            $.cookie.delete("loginmode");
-                            $.cookie.delete("logid");
-                            $(".showlogout").hide();
-                            $(".showlogin").show();
-                            $(".login-btn").click(function() { eClick(); });
-                            window.location = "http://phylo.cs.mcgill.ca/expert/welcome.php";
-                            return;
-                        }
                     } else {
                         // failed to connect
                         console.log(provider + " connection failed. Please, check that you are already connected to " + provider + ".");
@@ -107,28 +89,28 @@
                 data : "mode=8&user="+username,
             }).done(function(re) {
                 if (re!='succ') {
-		    window.guest = "Guest";
-		    $.cookie.delete("username");
-		    $.cookie.delete("fullname");
-		    $.cookie.delete("loginmode");
-		    $.cookie.delete("logid");
-		    $(".showlogout").hide();
-		    $(".showlogin").show();
-		    $(".login-btn").click(function() { eClick(); }); 
-		    bootbox.alert("You must complete 20 puzzles of the classic edition before accessing the Expert version.",function() {
-			    window.location = "http://phylo.cs.mcgill.ca/expert/welcome.php";
-			});
+                    window.guest = "Guest";
+                    $.cookie.delete("username");
+                    $.cookie.delete("fullname");
+                    $.cookie.delete("loginmode");
+                    $.cookie.delete("logid");
+                    $(".showlogout").hide();
+                    $(".showlogin").show();
+                    $(".login-btn").click(function() { eClick(); });
+                    bootbox.alert("You must complete 20 puzzles of the classic edition before accessing the Expert version.",function() {
+                        window.location = "http://phylo.cs.mcgill.ca/expert/welcome.php";
+                    });
                 }
             }).fail(function() {
                 $(".showInLogin").show();
                 console.log("Expert validation failed. Could not connect to the server.");
-		$.cookie.delete("username");
-		$.cookie.delete("fullname");
-		$.cookie.delete("loginmode");
-		$.cookie.delete("logid");
-		$(".showlogout").hide();
-		$(".showlogin").show();
-		$(".login-btn").click(function() { eClick(); });
+                $.cookie.delete("username");
+                $.cookie.delete("fullname");
+                $.cookie.delete("loginmode");
+                $.cookie.delete("logid");
+                $(".showlogout").hide();
+                $(".showlogin").show();
+                $(".login-btn").click(function() { eClick(); });
                 window.location = "http://phylo.cs.mcgill.ca/expert/welcome.php";
             });
 	      
@@ -167,12 +149,10 @@
 		};
 
 		var socialLogin = function(provider) {
-            start_url = "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/login.php?provider="+provider+"&restart=1";
-            win = window.open(
-                start_url,
-                "hybridauth_social_signin",
-                "location=0,status=0,scrollbars=0,width=800,height=500"
-            );
+            console.log("Try social login with " + provider);
+            // cookies will be created by php script iff user grants access
+            var loginURL = "http://phylo.cs.mcgill.ca/phpdb/social/login.php?provider=" + provider + "&returnto=" + document.URL;
+            window.location.href= loginURL;
         };
 		
 		//login click event

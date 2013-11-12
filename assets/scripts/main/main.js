@@ -19,7 +19,7 @@
 	config.env = "dev";
 	
 	var dev = {
-			DEBUG: false,
+			DEBUG: true,
 			
 			social: {
 				github: {
@@ -34,6 +34,21 @@
 			host : window.location.origin
 			
 	};	
+
+	var stage = {
+		DEBUG : true,
+		social: {
+			github: {
+				clientId: ""
+			},
+			
+			google: {
+				clientId: ""
+			}
+		},
+		
+		host : window.location.origin
+	};
 	
 	var production = {
 		DEBUG: false,
@@ -55,6 +70,11 @@
 	for(var attr in dev)
 	{
 		config.dev[attr] = dev[attr];
+	}
+
+	config.stage = config.stage || {};
+	for(var attr in stage) {
+		config.stage[attr] = stage[attr];
 	}
 	
 	config.production = config.production || {};

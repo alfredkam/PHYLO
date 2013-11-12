@@ -24,7 +24,7 @@ Prerequisites to this framework
 
 Configurations
 ======
-1. assets/scripts/main/main.js - controls the environment {dev, stage, production} [Also the inital javascript initalization]
+1. assets/scripts/main/main.js - controls the source map {dev, stage, production} [Also the inital javascript initalization]
 2. assets/scripts/main/PHYLO-main* - the requirejs-AMD configurations
 
 Dev
@@ -40,22 +40,30 @@ Staging
 3. if neccessary, update Gruntfile.js
 4. grunt stage
 <br>
-This will concat and compress the assets/scripts directory into one non-uglify file.
+This will concat the assets/scripts directory into one non-uglify file.
 
-Production
+Production / Dist Build
 ====
 1. set assets/scripts/main/main.js to "production" mode
 2. if neccessary, update assets/scripts/main/PHYLO-main-stage.js
 3. if neccessary, update Gruntfile.js
 4. grunt build
 <br>
-This will concat and compress majority of the js / css files into uglify files.
+This will concat and uglify majority of the js / css files into uglify files.
 
 Partial Testing
 =====
 1. grunt test
 <br>
 For now it will run task(s) - jshint.
+
+Expert / Expert Subtree
+=====
+The Expert build is a subtree and is included in this branch, its subtree is located at https://github.com/McGill-CSB/PHYLO-Expert
+
+Dist Subtree
+=====
+It is located at https://github.com/McGill-CSB/PHYLO-Dist
 
 To extend this framework
 ======

@@ -1651,7 +1651,7 @@ define('scripts/views/HeaderView',[
     //tablet tpl
     "text!tpl/tablet/TabletHeader.mustache",
     //NO EXPORTS
-   //"scripts/phylo-lib/protocal.core",
+   // "scripts/phylo-lib/protocal.core",
    
 ], function($, Marionette, tpl, cookie, tabletTpl) {
     var HeaderView = Marionette.ItemView.extend({
@@ -1703,10 +1703,10 @@ define('scripts/views/HeaderView',[
         },
         createLoginData: function (myusername,myfullname,myloginmode,mylogid) {
             var self = this;
-            cookie.create("username", myusername, 365);
-            cookie.create("fullname", myfullname, 365);
-            cookie.create("loginmode", myloginmode, 365);
-            cookie.create("logid", mylogid, 365);
+            //cookie.create("username", myusername, 365);
+            //cookie.create("fullname", myfullname, 365);
+            //cookie.create("loginmode", myloginmode, 365);
+            //cookie.create("logid", mylogid, 365);
             $("#logout").show();
             window.guest = myfullname;
             window.username = myusername;
@@ -1832,133 +1832,107 @@ define('scripts/views/HeaderView',[
         onShow: function() {
             var self = this;
             $("html").click(function(){
-               $("#login-box").hide();
+                $("#login-box").hide();
                 $("#login-box").parent().removeClass("login-onSelect");
             });
             $("#logout").hide();
-            // init page: check cookie and register user if login using social account for the first time 
+            // init page: check cookie and register user if login using social account for the first time
             if (cookie.read("username")) {
                 console.log("user found");
                 $(".login-btn").unbind("click");
+                // collect cookies data
                 var username = cookie.read("username");
                 var fullname = cookie.read("fullname");
                 var provider = cookie.read("loginmode");
                 var logid = cookie.read("logid");
                 if (provider == "Classic") {
-                    $(".m_login").html(decodeURI(username));
-                    window.guest = username;
-                    window.username = username;
-                    self.user.set("name", username);
-                } else {
-                    $(".m_login").html(decodeURI(fullname));
-                    window.guest = fullname;
-                    window.username = username;
-                    self.user.set("name", fullname);
-                }
-                // update login box
-                $("#logout").show();
-                $("#login-box").hide();
-                $(".login-btn").unbind("click");
-                // show buttons. NB: hide expert button if necessary
-                $.ajax({
-                    type: "POST",
-                    url: "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php",
-                    data: "mode=8&user=" + username
-                }).done(function(re) {
-                    $(".showInLogin").show();
-                    window.showInLogin = true;
-                    if (re != 'succ') {
-                        $(".showExpertOptions").hide();
-                        window.showExpertOptions = false;
-                    }
-                }).fail(function() {
-                    $(".showInLogin").show();
-                    window.showInLogin = true;
-                    console.log("Expert validation failed. Could not connect to the server.");
-                });
-            }
-        },
-        socialLogin: function(provider) {
-            var self = this;
-            console.log("Try social login with " + provider);
-            $.get("http://phylo.cs.mcgill.ca/phpdb/social/login.php?provider=" + provider,function(usrdata) {
-                console.log(provider + ": login called.");
-                var userinfo = eval("(" + usrdata + ")");
-                if (userinfo.identifier) { // user info retrieved
-                    console.log(provider + ": User info retrieved.");
-                    // store user info
-                    var social_logid = userinfo.identifier;
-                    var social_email = userinfo.email;
-                    var social_username = provider + "_" + userinfo.identifier;
-                    var social_fullname = userinfo.displayName;
-                    var social_email = userinfo.email;
-                    // check is user is registered
+                    self.createLoginData(username,fullname,provider,logid);
+                } else { // check if social user is connected, then if registered. Register if connected but not in our database.
+                    console.log("Check " + provider + " connection for user " + logid);
                     $.ajax({
-                        type: "POST",
-                        url: "http://phylo.cs.mcgill.ca/phpdb/passwdmanager.php",
-                        data: "username=" + social_username + "&id=" + social_logid
-                    }).done(function(mypasswd) { // password generated
-                        console.log(provider + ": Login info created.");
-                        var social_password = mypasswd;
-                        $.protocal.login(social_username, social_password, function(re) {
-                            if (re == "succ") {
-                                console.log(provider + " login successful.");
-                                self.createLoginData(social_username,social_fullname,provider, social_logid);
-                                return;
-                            } else { // login not successful -> try to register user
-                                console.log(provider + ": User not found. registering...");
-                                $.protocal.register(social_username, social_fullname, social_password, social_email, provider, social_logid, function(registerout) {
-                                    if (registerout == "succ") { // registration successfull
-                                        console.log(provider + ": Registering successful.");
-                                        // Prepare optional message to post on user feed
-                                        var message = social_fullname.replace("+", " ") + " " + window.lang.body.social["field 1"] + " " + window.lang.body.social["field 20"];
-                                        var caption = window.lang.body.social["field 31"];
-                                        if (provider != 'Twitter') {
-                                            var data = "provider=" + provider + "&id=" + social_logid + "&caption=" + caption + "&description=" + message;
-                                        } else { // Twitter message is shorter
-                                            var data = "provider=" + provider + "&id=" + social_logid + "&description=" + message;
-                                        }
-                                        var options = {
-                                            message: window.lang.body.social["field 2"],
-                                            cancel: window.lang.body.social["field 26"],
-                                            confirm: window.lang.body.social["field 25"],
-                                            callback: function(result) {
-                                                if (result) {
-                                                    console.log("post on " + provider + " : " + data);
-                                                    $.ajax({
-                                                        type: "POST",
-                                                        url: "http://phylo.cs.mcgill.ca/phpdbsocial/feed.php",
-                                                        data: data
-                                                    }).done(function(re) {
-                                                    }).fail(function() {
-                                                        bootbox.alert(window.lang.body.social["field 4"]);
-                                                    });
-                                                }
-                                            }
-                                        };
-                                        console.log(provider + ": Registration successful.");
-                                        self.createLoginData(social_username,social_fullname,provider, social_logid);
-                                        // Post welcome message
-                                        bootbox(options);
-                                    } else { // registration failed
-                                        console.log(provider + " registration failed.");
-                                        self.deleteLoginData();
+                        type: "GET",
+                        url: "http://phylo.cs.mcgill.ca/phpdb/social/isconnected.php",
+                        data: "provider=" + provider + "&logid=" + logid
+                    }).done(function(connectBoolean) { // check connection
+                        if (connectBoolean == "succ") { // user connected
+                            $.ajax({
+                                type: "POST",
+                                url: "http://phylo.cs.mcgill.ca/phpdb/passwdmanager.php",
+                                data: "username=" + username + "&id=" + logid
+                            }).done(function(mypasswd) { // password generated
+                                console.log(provider + ": password generated.");
+                                var password = mypasswd;
+                                $.protocal.login(username, password, function(re) {
+                                    if (re == "succ") {
+                                        console.log(provider + " login successful.");
+                                        self.createLoginData(username,fullname,provider,logid);
                                         return;
+                                    } else { // login not successful -> try to register user
+                                        console.log(provider + ": User not found. Registering...");
+                                        $.protocal.register(username,fullname,password,email,provider,logid,function(registerout) {
+                                            if (registerout == "succ") { // registration successfull
+                                                console.log(provider + ": Registering successful.");
+                                                // Prepare optional message to post on user feed
+                                                var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 1"] + " " + window.lang.body.social["field 20"];
+                                                var caption = window.lang.body.social["field 31"];
+                                                if (provider != 'Twitter') {
+                                                    var data = "provider=" + provider + "&id=" + logid + "&caption=" + caption + "&description=" + message;
+                                                } else { // Twitter message is shorter
+                                                    var data = "provider=" + provider + "&id=" + logid + "&description=" + message;
+                                                }
+                                                var options = {
+                                                    message: window.lang.body.social["field 2"],
+                                                    cancel: window.lang.body.social["field 26"],
+                                                    confirm: window.lang.body.social["field 25"],
+                                                    callback: function(result) {
+                                                        if (result) {
+                                                            console.log("post on " + provider + " : " + data);
+                                                            $.ajax({
+                                                                type: "POST",
+                                                                url: "http://phylo.cs.mcgill.ca/phpdb/social/feed.php",
+                                                                data: data
+                                                            }).done(function(re) {
+                                                            }).fail(function() {
+                                                                bootbox.alert(window.lang.body.social["field 4"]);
+                                                            });
+                                                        }
+                                                    }
+                                                };
+                                                console.log(provider + ": Registration successful.");
+                                                self.createLoginData(username,fullname,provider,logid);
+                                                // Post welcome message
+                                                bootbox(options);
+                                            } else { // registration failed
+                                                console.log(provider + " registration failed.");
+                                                self.deleteLoginData();
+                                                return;
+                                            }
+                                        });
                                     }
                                 });
-                            }
-                        });
-                    }).fail(function() { // password generation failed
-                        console.log(provider + " login data generation failed.");
+                            }).fail(function() { // password generation failed
+                                console.log(provider + " login data generation failed.");
+                                self.deleteLoginData();
+                                return;
+                            });
+                        } else { // user is not connected -- logout
+                            console.log(provider + " user is not connected.");
+                            self.deleteLoginData();
+                            return;
+                        }
+                    }).fail(function() {
+                        console.log(provider + " connection test failed.");
                         self.deleteLoginData();
                         return;
                     });
-                } else { // user info NOT retrieved
-                    console.log(provider + ": Cannot retrieve user info.");
-                    self.deleteLoginData();
-                    return;
                 }
-            });
+            }
+        },
+        socialLogin: function(provider) {
+            console.log("Try social login with " + provider);
+            // cookies will be created by php script iff user grants access
+            var loginURL = "http://phylo.cs.mcgill.ca/phpdb/social/login.php?provider=" + provider + "&returnto=" + document.URL;
+            window.location.href= loginURL;
         },
         classicLogin : function() {
             var username = $("#username").val().trim();
@@ -1973,36 +1947,16 @@ define('scripts/views/HeaderView',[
 
             $.protocal.login(username, password, function(re) {
                 if (re == "succ") {
-                    $(".m_login").html(decodeURI(username));
+                    console.log("Login using classic mode.");
                     cookie.create("username", username, 365);
                     cookie.create("fullname", username, 365);
                     cookie.create("loginmode", "Classic", 365);
                     cookie.create("logid", -1, 365);
-                    $("#logout").show();
-                    window.guest = username;
-                    window.username = username;
-                    self.user.set("name", username);
-                    $("#login-box").hide();
-                    $(".login-btn").unbind("click");
-                    // show buttons. NB: hide expert button if necessary
-                    $.ajax({
-                        type: "POST",
-                        url: "http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php",
-                        data: "mode=8&user=" + username
-                    }).done(function(re) {
-                        $(".showInLogin").show();
-                        window.showInLogin = true;
-                        if (re != 'succ') {
-                            $(".showExpertOptions").hide();
-                            window.showExpertOptions = false;
-                        }
-                    }).fail(function() {
-                        $(".showInLogin").show();
-                        window.showInLogin = true;
-                        console.log("Expert validation failed. Could not connect to the server.");
-                    });
+                    self.createLoginData(username,username,provider,logid);
                 } else {
                     $("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 16"]);
+                    console.log("Classic login test failed.");
+                    self.deleteLoginData();
                 }
             });
         }
@@ -15842,6 +15796,7 @@ define('scripts/views/app/CustomizeView',[
             var vol = $(e.target).hasClass("musicDisabled")?1:0;
             console.log(vol);
             var target = e.target.id.replace("customize-","")+"Vol";
+            console.log(target);
             cookie.create(target,vol,365);
             for (var i in this.volTargets[target]){
                 try{
@@ -16080,14 +16035,15 @@ define('scripts/views/app/CustomizeView',[
         },
         getSoundSettings : function(){
             var sounds = ["musicVol","countdownVol","redrawVol","starVol","fxOthersVol"];
-
             for(var i in sounds){
                 var id = "#customize-"+sounds[i].replace("Vol","");
-                if(cookie.read(sounds[i])===0){
+
+                if(parseInt(cookie.read(sounds[i]))===0){
                     $(id).addClass("musicDisabled");
                     //$(id).prop("checked",false);
                 }
                 else{
+                    console.log("132123");
                     $(id).removeClass("musicDisabled");
                     //$(id).attr("checked",true);
                 }
@@ -18727,24 +18683,23 @@ require.config({
 });
 
 require([ 
-	"marionette", "mustache", "scripts/App","jquery", "nprogress", "bootbox"
+	"marionette", "mustache", "scripts/App","scripts/util/WebConsoleUtils",
+	//NO EXPORT
+	"jquery", "nprogress", "bootbox"
 ], function(
-	Marionette, Mustache, App
+	Marionette, Mustache, App, WebConsoleUtils
 ){
-	//should configure nprogress here
 	NProgress.start();
-	// var consoleUtils = new WebConsoleUtils({
-	// debug: config.DEBUG
-	// });
-	//	
-	// consoleUtils.initConsole();
+	//get configs from main.js
+	var config = window["PHYLO"].getConfig();
+	//configs to display console
+	var consoleUtils = new WebConsoleUtils({
+		debug: config.DEBUG
+	});
+	consoleUtils.initConsole();
 
-	// var dashboard = new DashboardRouter();
-	// Backbone.history.start();
 	// Assigning Renderer
 	Backbone.Marionette.Renderer.render = function(template, data) {
-		//console.log("rendering with this now:");
-//		console.log(data);
 		if (typeof template === "function") {
 			return Mustache.render(template(), data);
 		}

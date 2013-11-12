@@ -83,7 +83,7 @@ function initHTMLElements(){
 							console.log("post on " + provider + " : " + message);
 							$.ajax({
 							    type: "POST",
-							    url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+							    url : "http://phylo.cs.mcgill.ca/phpdb/social/feed.php",
 						     	    data : data,
 							}).done(function(re) {
 							    bootbox.alert("Your achievement has been posted!");
@@ -100,7 +100,7 @@ function initHTMLElements(){
 							console.log("post on " + provider + " : " + message);
 							$.ajax({
 							    type: "POST",
-							    url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+							    url : "http://phylo.cs.mcgill.ca/phpdb/social/feed.php",
 							    data : data,
 							}).done(function(re) {
 							    bootbox.alert("Your achievement has been posted!");
@@ -117,7 +117,7 @@ function initHTMLElements(){
 							console.log("post on " + provider + " : " + data);
 							$.ajax({
 							    type: "POST",
-							    url : "http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",
+							    url : "http://phylo.cs.mcgill.ca/phpdb/social/feed.php",
 							    data : data,
 						        }).done(function(re) {
 							    bootbox.alert("Your achievement has been posted!");

@@ -47,7 +47,6 @@ require.config({
 	 * module style.
 	 */
 	shim : {
-
 		json : {
 			exports : "JSON"
 		},
@@ -59,7 +58,6 @@ require.config({
 			deps : [ "json" ],
 			exports : "_"
 		},
-
 		backbone : {
 			deps : [ "jquery", "underscore" ],
 			exports : "Backbone"
@@ -133,8 +131,8 @@ require.config({
 		'DNA/helper.core' : {
 			deps : ['jquery']
 		},
-		"views/HeaderView" : {	//previously navBar.view
-			deps : ['validation/cookie.validation.amd','marionette']//,'DNA/main.core']
+		"views/HeaderView" : {
+			deps : ['validation/cookie.validation.amd','marionette', 'DNA/protocal.core']
 		},
 		'views/site.views' : {
 			deps : ['views/request.views','views/variable.listener']
@@ -164,30 +162,29 @@ require.config({
 });
 
 require([ 
-	"marionette", "mustache", "scripts/App","jquery", "nprogress", "bootbox"
+	"marionette", "mustache", "scripts/App", "scripts/util/WebConsoleUtils", 
+	//NO EXPORT
+	"jquery", "nprogress", "bootbox"
 ], function(
-	Marionette, Mustache, App
+	Marionette, Mustache, App, WebConsoleUtils
 ){
-	//should configure nprogress here
 	NProgress.start();
-	// var consoleUtils = new WebConsoleUtils({
-	// debug: config.DEBUG
-	// });
-	//	
-	// consoleUtils.initConsole();
+	//get configs from main.js
+	var config = window["PHYLO"].getConfig();
+	//config if to display console
+	var consoleUtils = new WebConsoleUtils({
+		debug: config.DEBUG
+	});	
+	consoleUtils.initConsole();
 
-	// var dashboard = new DashboardRouter();
-	// Backbone.history.start();
 	// Assigning Renderer
 	Backbone.Marionette.Renderer.render = function(template, data) {
-		//console.log("rendering with this now:");
-//		console.log(data);
 		if (typeof template === "function") {
 			return Mustache.render(template(), data);
 		}
 		return Mustache.render(template, data);
 	};	
-
+	
 	App.start();
 });
 
