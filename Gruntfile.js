@@ -53,7 +53,7 @@ module.exports = function(grunt) {
                 files: [{               // Dictionary of files
                     expand: true,       // Enable dynamic expansion.
                     cwd: '<%= config.app %>/img',     // Src matches are relative to this path.
-                    src: ['**/*.svg'],  // Actual pattern(s) to match.
+                    src: ['**/*.svg','!disease/*.svg'],  // Actual pattern(s) to match.
                     dest: '<%= config.dist %>/assets/img'       // Destination path prefix.
                     // ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
                 }]
@@ -155,7 +155,8 @@ module.exports = function(grunt) {
                             '<%= config.app %>/img/**/*.gif',
                             '<%= config.app %>/scripts/util/options_template.js',
                             '<%= config.app %>/scripts/models/**',
-                            '<%= config.app %>/css/**'
+                            '<%= config.app %>/css/**',
+                            '<%= config.app %>/img/disease/**'
                         ]
                     },
                     {

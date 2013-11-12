@@ -1594,7 +1594,7 @@ define('text',['module'], function (module) {
     return text;
 });
 
-define('text!tpl/app/Header.mustache',[],function () { return ' <link rel=\'stylesheet\' href=\'assets/css/media1280.css\'/>\n <link rel=\'stylesheet\' href=\'assets/css/media1180.css\'/>\n <link rel=\'styhesheet\' href=\'assets/css/media1024.css\'/>\n <link rel=\'stylesheet\' href="assets/css/header.css"/>\n <div id=\'top-panel\'>\n     <div class=\'container\'>\n     <div id=\'logo\' class=\'col-3 col-sm-3 col-lg-3\'><a href="#!/{{lang}}"><div>PHYLO | DNA Puzzles</div></a></div>\n     <!-- <div id=\'logo\' class=\'col-md-3\'><div>PHYLO | DNA Puzzles</div><div class=\'beta2\'>Beta</div></div> -->\n     <a href="http://phylo.cs.mcgill.ca/submit">\n         <!--<div id=\'dropDown-logoTriangle\'></div>\n         --> \n         <div id=\'dropDown-logo\' class=\'col-md-3\'>PHYLO | Research</div>\n     </a>\n     <div id=\'nav\' class=\'col-9 col-sm-9 col-lg-9\'>\n         <ul>\n             <li>\n             <a id=\'play\' class=\'isTab\' href="#!/{{lang}}/Play"><div>{{header.field 1}}</div></a>\n             </li><li>\n             <a id=\'tutorial\' class=\'isTab\' href=\'#!/{{lang}}/Tutorial\'><div>{{header.field 2}}</div></a>\n             </li>\n             <li>\n                <a id=\'about\' class=\'isTab\' href=\'#!/{{lang}}/About\'><div>{{header.field 3}}</div></a>\n            </li>\n             <li>\n             <a id=\'ranking\' class=\'isTab\' href=\'#!/{{lang}}/Ranking\'><div>{{header.field 5}}</div></a>\n            </li>\n             <li class=\'showInLogin\'>\n             <a id=\'history\' class=\'isTab\' href=\'#!/{{lang}}/History\'><div>{{header.field 15}}</div></a>\n             </li>\n             <li class=\'showInLogin showExpertOptions\'>\n             <a id=\'expert\' class=\'isTab\' href=\'#!/{{lang}}/Expert\'><div>{{header.field 16}}</div></a>\n             </li>\n         </ul>\n     </div>\n         <div id=\'top-panel-right\'>\n             <div id=\'login\'>\n                {{#user}}\n                <div id=\'login-tag\'>\n                    {{user}}\n                </div>\n                <div id=\'login-box\' class=\'logoutBtn\'>\n                    Logout\n                </div>\n                {{/user}}\n                {{^user}}\n                 <div id=\'login-tag\' class=\'m_login\'>\n                     Login\n                 </div>\n                 <div id=\'login-box\'>\n                     <div class=\'login-warning\'></div>\n                     <div class=\'row email-holder\'>\n                        <input id=\'email\' type=\'text\' class=\'form-control\' placeholder=\'Email\'/>\n                     </div>\n                     <div class=\'row\'>\n                     <input id=\'username\' type=\'text\' class=\'form-control\' placeholder=\'Username\'/>\n                     </div>\n                     <div class=\'row\'>\n                     <input id=\'password\' type=\'password\' class=\'form-control\' placeholder=\'Password\'/>\n                     </div>\n                     <div class=\'row col-12\'>\n                        <div class=\'col-6 col-lg-6 col-sm-6\'>\n                            <button class=\'btn login-btn m_login\'>Log In</button>\n                        </div>\n                        <div class=\'col-6 col-lg-6 col-sm-6\'>\n                            <button class=\'btn btn-primary register-btn register-btn-shift col-6\' id=\'m_register\'>Register</button>\n                        </div>\n                        <div class=\'col-6 col-lg-6 col-sm-6\'>\n                            <button class=\'btn btn-danger cancel-btn col-6\' id=\'m_cancel\'>Cancel</button>\n                        </div>\n                     </div>\n                     <a href="#" class="zocial facebook" id="m_fb_signin">Sign-in with Facebook</a>\n                     <a href="#" class="zocial twitter" id="m_tw_signin">Sign-in with Twitter</a>\n\n                     <a href="#" class="zocial google" id="m_gg_signin">Sign-in with Google</a>\n                     <a href="#" class="zocial linkedin" id="m_li_signin">Sign-in with LinkedIn</a>\n\n                     <div class=\'row\'>\n                       <a href=\'http://phylo.cs.mcgill.ca/reset.php\'>Forgot Password?</a>\n                   </div>\n\n                 </div>\n                 {{/user}}\n             </div>\n             <div id=\'options\'>\n                 <div id=\'options-button\'>\n                     <i class=\'icon-cog\'></i>\n                 </div>\n                 <div id=\'option-list\' class=\'list-shadow\'>\n                     <div id=\'language\' class=\'option-list\'>\n                         <div id=\'language-tag\'>\n                             <i class=\'icon-language\'></i>\n                         </div>          \n                         <div id=\'language-list\'>\n                             <div class=\'language-list list-shadow\'>\n                                 <a href=\'\' name=\'EN\'><div>English</div></a>\n                                 <a href=\'\' name=\'SP\'><div>Español</div></a>\n                                 <a href=\'\' name=\'FR\'><div>Français</div></a>\n                                 <a href=\'\' name=\'DE\'><div>Deutsch</div></a>\n                                 <a href=\'\' name=\'RU\'><div>Pусский</div></a>\n                                 <a href=\'\' name=\'ZH-HK\'><div>中文繁體</div></a>\n                                 <a href=\'\' name=\'ZH-CN\'><div>中文简体</div></a>\n                                 <a href=\'\' name=\'KO\'><div>한국어</div></a>\n                                 <a href=\'\' name=\'HE\'><div>עברית</div></a>\n                                 <a href=\'\' name=\'RO\'><div>Română</div></a>\n                                 <a href=\'\' name=\'PT\'><div>Português</div></a>\n                             </div>\n                         </div>\n                     </div>\n                     <div id=\'customize\' class=\'option-list\' class=\'m_customize\'><img src="assets/img/customize1.png"/></div>\n\n                 </div>\n             </div>  \n         </div>  \n         </div>\n     </div>';});
+define('text!tpl/app/Header.mustache',[],function () { return ' <link rel=\'stylesheet\' href=\'assets/css/media1280.css\'/>\n <link rel=\'stylesheet\' href=\'assets/css/media1180.css\'/>\n <link rel=\'styhesheet\' href=\'assets/css/media1024.css\'/>\n <link rel=\'stylesheet\' href="assets/css/header.css"/>\n <div id=\'top-panel\'>\n     <div class=\'container\'>\n     <div id=\'logo\' class=\'col-3 col-sm-3 col-lg-3\'><a href="#!/{{lang}}"><div>PHYLO | DNA Puzzles</div></a></div>\n     <!-- <div id=\'logo\' class=\'col-md-3\'><div>PHYLO | DNA Puzzles</div><div class=\'beta2\'>Beta</div></div> -->\n     <a href="http://phylo.cs.mcgill.ca/submit">\n         <!--<div id=\'dropDown-logoTriangle\'></div>\n         --> \n         <div id=\'dropDown-logo\' class=\'col-md-3\'>PHYLO | Research</div>\n     </a>\n     <div id=\'nav\' class=\'col-9 col-sm-9 col-lg-9\'>\n         <ul>\n             <li>\n             <a id=\'play\' class=\'isTab\' href="#!/{{lang}}/Play"><div>{{header.field 1}}</div></a>\n             </li><li>\n             <a id=\'tutorial\' class=\'isTab\' href=\'#!/{{lang}}/Tutorial\'><div>{{header.field 2}}</div></a>\n             </li>\n             <li>\n                <a id=\'about\' class=\'isTab\' href=\'#!/{{lang}}/About\'><div>{{header.field 3}}</div></a>\n            </li>\n             <li>\n             <a id=\'ranking\' class=\'isTab\' href=\'#!/{{lang}}/Ranking\'><div>{{header.field 5}}</div></a>\n            </li>\n             <li class=\'showInLogin\'>\n             <a id=\'history\' class=\'isTab\' href=\'#!/{{lang}}/History\'><div>{{header.field 15}}</div></a>\n             </li>\n             <li class=\'showInLogin showExpertOptions\'>\n             <a id=\'expert\' class=\'isTab\' href=\'#!/{{lang}}/Expert\'><div>{{header.field 16}}</div></a>\n             </li>\n         </ul>\n     </div>\n         <div id=\'top-panel-right\'>\n             <div id=\'login\'>\n                {{#user}}\n                <div id=\'login-tag\'>\n                    {{user}}\n                </div>\n                <div id=\'login-box\' class=\'logoutBtn\'>\n                    {{! Logout }}\n                    {{body.play.gameselect.login.field 5}}\n                </div>\n                {{/user}}\n                {{^user}}\n                 <div id=\'login-tag\' class=\'m_login\'>\n                     {{! Login }}\n                     {{body.play.gameselect.login.field 2}}\n                 </div>\n                 <div id=\'login-box\'>\n                     <div class=\'login-warning\'></div>\n                     <div class=\'row email-holder\'>\n                        <input id=\'email\' type=\'text\' class=\'form-control\' placeholder=\'Email\'/>\n                     </div>\n                     <div class=\'row\'>\n                     <input id=\'username\' type=\'text\' class=\'form-control\' placeholder=\'Username\'/>\n                     </div>\n                     <div class=\'row\'>\n                     <input id=\'password\' type=\'password\' class=\'form-control\' placeholder=\'Password\'/>\n                     </div>\n                     <div class=\'row col-12\'>\n                        <div class=\'col-6 col-lg-6 col-sm-6\'>\n                            <button class=\'btn login-btn m_login\'>Log In</button>\n                        </div>\n                        <div class=\'col-6 col-lg-6 col-sm-6\'>\n                            <button class=\'btn btn-primary register-btn register-btn-shift col-6\' id=\'m_register\'>Register</button>\n                        </div>\n                        <div class=\'col-6 col-lg-6 col-sm-6\'>\n                            <button class=\'btn btn-danger cancel-btn col-6\' id=\'m_cancel\'>Cancel</button>\n                        </div>\n                     </div>\n                     <a href="#" class="zocial facebook" id="m_fb_signin">Sign-in with Facebook</a>\n                     <a href="#" class="zocial twitter" id="m_tw_signin">Sign-in with Twitter</a>\n\n                     <a href="#" class="zocial google" id="m_gg_signin">Sign-in with Google</a>\n                     <a href="#" class="zocial linkedin" id="m_li_signin">Sign-in with LinkedIn</a>\n\n                     <div class=\'row\'>\n                       <a href=\'http://phylo.cs.mcgill.ca/reset.php\'>Forgot Password?</a>\n                   </div>\n\n                 </div>\n                 {{/user}}\n             </div>\n             <div id=\'options\'>\n                 <div id=\'options-button\'>\n                     <i class=\'icon-cog\'></i>\n                 </div>\n                 <div id=\'option-list\' class=\'list-shadow\'>\n                     <div id=\'language\' class=\'option-list\'>\n                         <div id=\'language-tag\'>\n                             <i class=\'icon-language\'></i>\n                         </div>          \n                         <div id=\'language-list\'>\n                             <div class=\'language-list list-shadow\'>\n                                 <a href=\'\' name=\'EN\'><div>English</div></a>\n                                 <a href=\'\' name=\'SP\'><div>Español</div></a>\n                                 <a href=\'\' name=\'FR\'><div>Français</div></a>\n                                 <a href=\'\' name=\'DE\'><div>Deutsch</div></a>\n                                 <a href=\'\' name=\'RU\'><div>Pусский</div></a>\n                                 <a href=\'\' name=\'ZH-HK\'><div>中文繁體</div></a>\n                                 <a href=\'\' name=\'ZH-CN\'><div>中文简体</div></a>\n                                 <a href=\'\' name=\'KO\'><div>한국어</div></a>\n                                 <a href=\'\' name=\'HE\'><div>עברית</div></a>\n                                 <a href=\'\' name=\'RO\'><div>Română</div></a>\n                                 <a href=\'\' name=\'PT\'><div>Português</div></a>\n                             </div>\n                         </div>\n                     </div>\n                     <div id=\'customize\' class=\'option-list\' class=\'m_customize\'><img src="assets/img/customize1.png"/></div>\n                     <div id=\'musicOptions\' class=\'option-list\'><i class="icon-headphones"></i></div>\n\n                 </div>\n             </div>  \n         </div>  \n         </div>\n     </div>';});
 
 define('scripts/views/validation/cookie.validation.amd',[
 	//NO EXPORTS goes last
@@ -1651,9 +1651,10 @@ define('scripts/views/HeaderView',[
     //tablet tpl
     "text!tpl/tablet/TabletHeader.mustache",
     //NO EXPORTS
-   // "scripts/phylo-lib/protocal.core",
+    // "scripts/phylo-lib/protocal.core",
    
 ], function($, Marionette, tpl, cookie, tabletTpl) {
+    var baseUrl = "/phpdb/openPhyloClassicDB.php";
     var HeaderView = Marionette.ItemView.extend({
         initialize: function(options) {
             this.lang = options.lang;
@@ -1672,12 +1673,41 @@ define('scripts/views/HeaderView',[
             optionsBtn : "#options-button",
             languageList : "#language-list"
         },
+        login : function(username, password, fn) {
+            var url = baseUrl;
+            var mode = 7;
+            var data = "mode="+mode+"&user="+username+"&pass="+password;
+            $.ajax({
+                type: "POST",
+                url : url,
+                data : data
+            }).done(function(re) {
+                fn(re);
+            }).fail(function() {
+                $("div.login-warning").show().html("Could not connect to server, please try again later");
+            });
+        },
+        registerUser : function(username, displayname, password, email, network, network_id, fn) {
+            var url = baseUrl;
+            var mode = 6;
+            var data = "mode="+mode+"&user="+username+"&displayname="+displayname+"&pass="+password+"&email="+email+"&network="+network+"&network_id="+network_id;
+            $.ajax({
+                type: "POST",
+                url : url,
+                data : data
+            }).done(function(re) {
+                fn(re);
+            }).fail(function() {
+                $("div.login-warning").show().html("Could not connect to server, please try again later");
+            });
+        },
         events: {
             "click div.tabletLogoutBtn" : "logoutFn",
-            "click div#login": "login",
+            "click div#login": "loginBtn",
             // "click #options-button" : "optionsEvent",
             "click #language" : "languageEvent",
             "click #customize" : "customizeShow",
+            "click #musicOptions" : "musicShow",
             "click .zocial.facebook": function() {
                 this.socialLogin('Facebook');
             },
@@ -1769,13 +1799,22 @@ define('scripts/views/HeaderView',[
             window.showInLogin = false;
         },
         customizeShow : function(event) {
-            $(".customize").show();
+            $(".customize").hide();
+                        $(".colorOptions").show();
             $(".customize-bg").css({
                 width: $(document).width(),
                 height: $(document).height()
             });
         },
-        login: function(e) {
+        musicShow : function(e){
+            $(".customize").hide();
+            $(".musicOptions").show();
+            $(".customize-bg").css({
+                width: $(document).width(),
+                height: $(document).height()
+            });
+        },
+        loginBtn: function(e) {
             if($("#logout").css("display")==="block"){
 
                 return false;
@@ -1810,11 +1849,11 @@ define('scripts/views/HeaderView',[
                 var name = $("#username").val().trim();
                 var password = $("#password").val().trim();
                 var email = $("#email").val().trim();
-                if ((name == "" || password == "") || email == "") {
+                if ((name === "" || password === "") || email === "") {
                     $("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 20"]);
                     return;
                 }
-                $.protocal.register(name, name, password, email, 'Classic', 0, function(re) {
+                self.registerUser(name, name, password, email, 'Classic', 0, function(re) {
                     if (re == "succ") {
                         $(".login-btn").unbind("click");
                         $(".m_login").html(decodeURI(name));
@@ -1862,14 +1901,14 @@ define('scripts/views/HeaderView',[
                             }).done(function(mypasswd) { // password generated
                                 console.log(provider + ": password generated.");
                                 var password = mypasswd;
-                                $.protocal.login(username, password, function(re) {
+                                self.login(username, password, function(re) {
                                     if (re == "succ") {
                                         console.log(provider + " login successful.");
                                         self.createLoginData(username,fullname,provider,logid);
                                         return;
                                     } else { // login not successful -> try to register user
                                         console.log(provider + ": User not found. Registering...");
-                                        $.protocal.register(username,fullname,password,email,provider,logid,function(registerout) {
+                                        self.registerUser(username,fullname,password,email,provider,logid,function(registerout) {
                                             if (registerout == "succ") { // registration successfull
                                                 console.log(provider + ": Registering successful.");
                                                 // Prepare optional message to post on user feed
@@ -1938,21 +1977,21 @@ define('scripts/views/HeaderView',[
             var username = $("#username").val().trim();
             var password = $("#password").val().trim();
             var self = this;
-            if ((username == "" || password == "")) {
+            if ((username === "" || password === "")) {
                 $("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 20"]);
                 return;
             }
 
             $("div.login-warning").hide();
 
-            $.protocal.login(username, password, function(re) {
+            self.login(username, password, function(re) {
                 if (re == "succ") {
                     console.log("Login using classic mode.");
                     cookie.create("username", username, 365);
                     cookie.create("fullname", username, 365);
                     cookie.create("loginmode", "Classic", 365);
                     cookie.create("logid", -1, 365);
-                    self.createLoginData(username,username,provider,logid);
+                    self.createLoginData(username,username,"Classic",-1);
                 } else {
                     $("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 16"]);
                     console.log("Classic login test failed.");
@@ -1983,7 +2022,7 @@ define('scripts/views/app/footer/FooterNavView',[
 	return FooterView;
 });
 
-define('text!tpl/app/footer/RecentNews.mustache',[],function () { return '<div>\n    <a href=\'https://www.mcgill.ca/newsroom/node/19281/\'>\n        Sharing the power of the crowd [McGill News]\n    </a>\n</div>\n<div>\n    <a href=\'http://www.biomedcentral.com/biome/open-phylo-open-science-and-the-multiple-sequence-alignment-problem/\'>\n        Open-Phylo, Open Science and the multiple sequence alignment problem [Biome]\n    </a>\n</div>\n<div>\n    <a href=\'http://www.theglobeandmail.com/report-on-business/economy/canada-competes/a-canadian-computer-game-that-lets-anyone-contribute-to-scientific-research/article14589102/\'>A Canadian computer game that lets anyone contribute to scientific research [Globe & Mail]\n    </a>\n</div>\n';});
+define('text!tpl/app/footer/RecentNews.mustache',[],function () { return '<div>\n    <a href=\'http://scienceline.org/2013/11/are-those-genes-in-my-tetris/\'>Are those genes in my Tetris? [Scienceline]\n    </a>\n</div>\n<div>\n    <a href=\'http://www.biomedcentral.com/biome/open-phylo-open-science-and-the-multiple-sequence-alignment-problem/\'>\n        Open-Phylo, Open Science and the multiple sequence alignment problem [Biome]\n    </a>\n</div>\n<div>\n    <a href=\'http://www.theglobeandmail.com/report-on-business/economy/canada-competes/a-canadian-computer-game-that-lets-anyone-contribute-to-scientific-research/article14589102/\'>A Canadian computer game that lets anyone contribute to scientific research [Globe & Mail]\n    </a>\n</div>\n';});
 
 define('scripts/views/app/footer/RecentNewsView',[
         "backbone",
@@ -2144,7 +2183,7 @@ define('scripts/views/app/footer/FooterLayout',[
     });
     return FooterLayout;
 });
-define('text!tpl/app/index/Index.mustache',[],function () { return '<div id=\'menu\'>\n    <div id=\'sandbox\'>\n        <div class=\'settingUp\'>\n            {{body.misc.field 2}}\n        </div>\n    </div>\n    <input id=\'level_inputbox\'/>\n</div>\n<div class=\'wrapper\'>\n    <div id=\'game\'>\n        <canvas id=\'score\' width="827" height="50"></canvas>\n        <div id=\'selectBox\'></div>\n        <div id=\'tree\'>\n\n        </div>\n        <div id=\'gameBoard\'>\n            <img src=\'assets/img/loading.gif\'/>\n        </div>\n        <div id=\'splash\'>\n        </div>\n        <div id=\'countDown\'>\n            <div id=\'countDown-text\'>\n            </div>  \n        </div>\n        <div id=\'ancestorSeq-filling\'>\n            <div id=\'ancestorSeq\'>\n            </div>\n        </div>\n        <div id=\'bottomPanel-wrapper\'> \n        <div id=\'bottomPanel\'>\n            <div id=\'utilPanel\'>\n            <div id=\'volumePanel\'>\n                <div id=\'musicPlayerSpot\'></div>\n                <div id=\'SFXPlayerSpot\'>\n                    <audio id=\'menuSound\' preload=\'auto\' autobuffer style=\'display:none\'><source src=\'assets/sounds/startSound.wav\' /></audio>\n\n                    <audio id=\'redrawSound\' preload=\'auto\' autobuffer style=\'display:none\'><source src=\'assets/sounds/btn1.wav\' />Your browser does not support audio element</audio>\n                    \n                    <audio id=\'endGameSound\' preload=\'auto\' autobuffer style=\'display:none\'><source src=\'assets/sounds/startSound.wav\' /></audio>\n\n                    <audio id=\'lightUpSound\' preload=\'auto\' autobuffer style=\'display:none\'><source src=\'assets/sounds/starLightUp.wav\' /></audio>\n\n                    <audio id=\'starClickSound\' preload=\'auto\' autobuffer style=\'display:none\'><source src=\'assets/sounds/startSound.wav\' />\\</audio>\n\n                    <audio id=\'startSound\' preload=\'auto\' autobuffer style=\'display:none\'><source src=\'assets/sounds/startSound.wav\' />\\</audio>\n\n                    <audio id=\'countdownSound\' preload=\'auto\' autobuffer style=\'display:none\'><source src=\'assets/sounds/countdownComplete.wav\' />\\</audio>\n\n                </div>\n                \n            </div>\n            <div id=\'runaway\' class=\'icon-bucket\' title=\'kick the bucket\'></div>\n            <div id=\'timerPanel\'>\n                <canvas id=\'timer\' width=\'66px\' height=\'66px\'>\n                </canvas>   \n            </div>\n        </div>\n{{!             <div id=\'scorePanel\'>\n                <div id=\'userScore\'>\n                </div>\n                <div id=\'bestScore\'>\n                </div>\n                <div id=\'parScore\'>\n                </div>\n            </div> }}\n            <div id=\'statsPanel\'>\n                \n            </div>\n            <div id=\'controlPanel\'>\n                <div id=\'star\'>\n                    <i class=\'icon-star-1\' title=\'move to next stage\'></i>\n                </div>\n                <div id=\'cycle\'>\n                    <img src=\'assets/img/cycle.png\'/>\n                </div>\n            </div>\n        </div>\n            </div>\n        <div id=\'dump\'>\n\n        </div>\n        <div id=\'endGame\'>\n            {{! <div id=\'endGame-bg\'> }}\n                <div id=\'endGame-content\'>\n                    <div id=\'endGame-score\'>\n                        <div id=\'endGame-score-tag\'>\n                        </div>\n                        <div id=\'endGame-score-result\'>\n                        </div>\n                    </div>\n                    <div id=\'endGame-text\'> \n                                            \n                    </div>\n                    <div id=\'endGame-learnMore\'>\n                        <div id=\'endGame-learnMore-content\'></div>  \n                        <div id=\'endGame-learnMode-footerContent\'></div>\n                    </div>\n                    <div class=\'wrapper\' id=\'endGame-links\'>\n                        <div id=\'endGame-new\'>\n                            <button class=\'btn btn-primary\'>\n                                {{body.misc.field 20}}\n                            </button>\n                        </div>\n                        <div id=\'endGame-replay\'>\n                            <button class=\'btn btn-primary\'>\n                                {{body.misc.field 21}}\n                            </button>\n                        </div>\n                        <div id=\'endGame-share\'>\n                            <button class=\'btn btn-success\'>\n                                {{body.misc.field 22}}\n                            </button>\n                        </div>\n                    </div>\n                </div>\n            {{! </div> }}\n        </div>\n    </div>\n</div>\n<div class=\'hide\' id=\'svgPreload\'>\n</div>\n<script>\n    require([\'phyloStart\',\'http://canvg.googlecode.com/svn/trunk/rgbcolor.js\',\'http://canvg.googlecode.com/svn/trunk/StackBlur.js\',\'http://canvg.googlecode.com/svn/trunk/canvg.js\'], function() {\n       interactiveMenu.start();\n    }); \n</script>\n\n';});
+define('text!tpl/app/index/Index.mustache',[],function () { return '<div id=\'menu\'>\n    <div id=\'sandbox\'>\n        <div class=\'settingUp\'>\n            {{body.misc.field 2}}\n        </div>\n    </div>\n    <input id=\'level_inputbox\'/>\n</div>\n<div class=\'wrapper\'>\n    <div id=\'game\'>\n        <canvas id=\'score\' width="827" height="50"></canvas>\n        <div id=\'selectBox\'></div>\n        <div id=\'tree\'>\n\n        </div>\n        <div id=\'gameBoard\'>\n            <img src=\'assets/img/loading.gif\'/>\n        </div>\n        <div id=\'splash\'>\n        </div>\n        <div id=\'countDown\'>\n            <div id=\'countDown-text\'>\n            </div>  \n        </div>\n        <div id=\'ancestorSeq-filling\'>\n            <div id=\'ancestorSeq\'>\n            </div>\n        </div>\n        <div id=\'bottomPanel-wrapper\'> \n        <div id=\'bottomPanel\'>\n            <div id=\'utilPanel\'>\n            <div id=\'volumePanel\'>\n                <div id=\'musicPlayerSpot\'></div>\n                <div id=\'SFXPlayerSpot\'>\n                    <audio id=\'menuSound\' preload=\'auto\' autobuffer style=\'display:none\'><source src=\'assets/sounds/startSound.wav\' /></audio>\n\n                    <audio id=\'redrawSound\' preload=\'auto\' autobuffer style=\'display:none\'><source src=\'assets/sounds/btn1.wav\' />Your browser does not support audio element</audio>\n                    \n                    <audio id=\'endGameSound\' preload=\'auto\' autobuffer style=\'display:none\'><source src=\'assets/sounds/startSound.wav\' /></audio>\n\n                    <audio id=\'lightUpSound\' preload=\'auto\' autobuffer style=\'display:none\'><source src=\'assets/sounds/starLightUp.wav\' /></audio>\n\n                    <audio id=\'starClickSound\' preload=\'auto\' autobuffer style=\'display:none\'><source src=\'assets/sounds/startSound.wav\' />\\</audio>\n\n                    <audio id=\'startSound\' preload=\'auto\' autobuffer style=\'display:none\'><source src=\'assets/sounds/startSound.wav\' />\\</audio>\n\n                    <audio id=\'countdownSound\' preload=\'auto\' autobuffer style=\'display:none\'><source src=\'assets/sounds/countdownComplete.wav\' />\\</audio>\n\n                </div>\n                <div id=\'volume\'>\n                 <i class=\'icon-volume-up-1\'></i>\n                 </div>\n            </div>\n            <div id=\'runaway\' class=\'icon-bucket\' title=\'kick the bucket\'></div>\n            <div id=\'timerPanel\'>\n                <canvas id=\'timer\' width=\'66px\' height=\'66px\'>\n                </canvas>   \n            </div>\n        </div>\n{{!             <div id=\'scorePanel\'>\n                <div id=\'userScore\'>\n                </div>\n                <div id=\'bestScore\'>\n                </div>\n                <div id=\'parScore\'>\n                </div>\n            </div> }}\n            <div id=\'statsPanel\'>\n                \n            </div>\n            <div id=\'controlPanel\'>\n                <div id=\'star\'>\n                    <i class=\'icon-star-1\' title=\'move to next stage\'></i>\n                </div>\n                <div id=\'cycle\'>\n                    <img src=\'assets/img/cycle.png\'/>\n                </div>\n            </div>\n        </div>\n            </div>\n        <div id=\'dump\'>\n\n        </div>\n        <div id=\'endGame\'>\n            {{! <div id=\'endGame-bg\'> }}\n                <div id=\'endGame-content\'>\n                    <div id=\'endGame-score\'>\n                        <div id=\'endGame-score-tag\'>\n                        </div>\n                        <div id=\'endGame-score-result\'>\n                        </div>\n                    </div>\n                    <div id=\'endGame-text\'> \n                                            \n                    </div>\n                    <div id=\'endGame-learnMore\'>\n                        <div id=\'endGame-learnMore-content\'></div>  \n                        <div id=\'endGame-learnMode-footerContent\'></div>\n                    </div>\n                    <div class=\'wrapper\' id=\'endGame-links\'>\n                        <div id=\'endGame-new\'>\n                            <button class=\'btn btn-primary\'>\n                                {{body.misc.field 20}}\n                            </button>\n                        </div>\n                        <div id=\'endGame-replay\'>\n                            <button class=\'btn btn-primary\'>\n                                {{body.misc.field 21}}\n                            </button>\n                        </div>\n                        <div id=\'endGame-share\'>\n                            <button class=\'btn btn-success\'>\n                                {{body.misc.field 22}}\n                            </button>\n                        </div>\n                    </div>\n                </div>\n            {{! </div> }}\n        </div>\n    </div>\n</div>\n<div class=\'hide\' id=\'svgPreload\'>\n</div>\n<script>\n    require([\'phyloStart\',\'http://canvg.googlecode.com/svn/trunk/rgbcolor.js\',\'http://canvg.googlecode.com/svn/trunk/StackBlur.js\',\'http://canvg.googlecode.com/svn/trunk/canvg.js\'], function() {\n       interactiveMenu.start();\n    }); \n</script>\n\n';});
 
 (function() {
 
@@ -2205,7 +2244,25 @@ define('scripts/views/app/index/IndexView',[
          initialize : function(options) {
             this.lang = options.lang || {};
          },
-         template : tpl
+         template : tpl,
+         events:{
+            "click #volume i":"toggleVolume"
+
+         },
+         toggleVolume: function(e){
+            var vol=0;
+            if($(e.target).hasClass("icon-volume-up-1")){
+                $(e.target).removeClass("icon-volume-up-1").addClass("icon-volume-off-1");
+            }
+            else{
+                vol=1;
+
+                $(e.target).addClass("icon-volume-up-1").removeClass("icon-volume-off-1");
+            }
+            var cusEvent = jQuery.Event( {type:"mute",  vol: vol } );
+            $("#muteBtn").trigger(cusEvent);
+            return false;
+         },
      });
      return IndexView;
 });
@@ -15747,71 +15804,42 @@ define('scripts/views/app/history/HistoryView',[
 });
         
 
-define('text!tpl/app/Customize.mustache',[],function () { return '<link rel="stylesheet" href="assets/css/customize.css"/>\n<div id=\'hiddenCssComponents\'></div>\n<div class=\'customize customize-bg\'></div>\n<div class=\'customize customize-wrapper\'>\n    <div class=\'row customize-title m_customize\'>\n        Customize\n    </div>\n    <div class=\'customize-tab\'>\n        <div class=\'row\'>\n            <a href=\'javascript:void(0)\' class=\'customize-tab-onselect col-md-2 tag-theme m_theme\'>Theme</a>\n            <a href=\'javascript:void(0)\' class=\'col-md-2 tag-music m_music\' >Music</a>\n        </div>\n    </div>\n    <div class=\'customize-body\'>\n        <div class=\'container\'>\n            <div class=\'row\'>\n                <div class=\'customize-theme row\'>\n                    <div class=\'col-md-4\' >\n                        <div class=\'customize-boardColor\'>\n                            <div class=\'row customize-title m_boardColor\'>\n                                Board Color:\n                            </div>\n                            <div class=\'row\'>\n                                <div class=\'colorCell customize-theme-cell customize-theme-onpick colorBG\'>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\'customize-dnaColor\'>\n                            <div class=\'customize-title row m_dnaColor\'>\n                                DNA Color:\n                            </div>\n                            <div class=\'row\'>\n                                <div class=\'colorCell customize-theme-cell colorA\'>\n                                </div>\n                                <div class=\'colorCell customize-theme-cell colorG \'>\n                                </div>\n                                <div class=\'colorCell customize-theme-cell colorC\'>\n                                </div>\n                                <div class=\'colorCell customize-theme-cell colorT\'>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\'row\'>\n                            <br><br>\n                            <a href=\'javascript:void(0);\' class=\'customize-theme-reset btn-danger btn m_restoreDefault\'>\n                                Restore Default \n                            </a>    \n                        </div>\n                    </div>\n                    <div class=\'col-md-5\'>\n                        <canvas id=\'colorpad\' width=\'256\' height=\'256\'>\n                        </canvas>\n                    </div>\n                </div>\n                <div class=\'customize-music\'>\n                   {{!  <div class=\'row customize-title\'>\n                        Current Music Theme \n                    </div> }}\n                    <div class=\'row\'>\n                        <div class="col-md-4">\n                        <h3>Music</h3>\n                        {{! <input type="checkbox" id="customize-music">  }}\n                        <a class="btn btn-default musicDisabled" href="#" id="customize-music">Music</a>\n                        </div>\n                        <div class="col-md-4">\n                            <h3>SoundFx</h3>\n                           \n                             <a class="btn btn-default musicDisabled" href="#" role="button" id="customize-countdown">Countdown</a>\n                             <br>\n                             <a class="btn btn-default musicDisabled" href="#" role="button" id="customize-redraw">Redraw</a>\n                             <br>\n                             <a class="btn btn-default musicDisabled" href="#" role="button" id="customize-star">Star</a>\n                             <br>\n                             <a class="btn btn-default musicDisabled" href="#" role="button" id="customize-fxOthers">Others</a>\n                        </div>\n                    </div>\n                </div>  \n            </div>\n        </div>\n    </div>\n    <div class=\'customize-buttons\'>\n        <div class=\'row\'>\n            <a href=\'javascript:void(0)\' class=\'customize-save btn btn-primary offset4 col-md-2 m_save\'>\n                Save\n            </a>\n            <a href=\'#\' class=\'customize-cancel btn btn-primary col-md-2 m_cancel col-md-offset-1\'>\n                Cancel\n            </a>\n        </div>\n    </div>\n</div>';});
+define('text!tpl/app/Customize.mustache',[],function () { return '<link rel="stylesheet" href="assets/css/customize.css"/>\n<div id=\'hiddenCssComponents\'></div>\n<div class=\'colorOptions customize customize-bg\'></div>\n<div class=\'colorOptions customize customize-wrapper\'>\n    <div class=\'row customize-title m_customize\'>\n        {{lang.options.customize}}\n    </div>\n    <div class=\'customize-tab\'>\n        <div class=\'row\'>\n            <a href=\'javascript:void(0)\' class=\'customize-tab-onselect col-md-2 tag-theme m_theme\'>Theme</a>\n        </div>\n    </div>\n    <div class=\'customize-body\'>\n        <div class=\'container\'>\n            <div class=\'row\'>\n                <div class=\'customize-theme row\'>\n                    <div class=\'col-md-4\' >\n                        <div class=\'customize-boardColor\'>\n                            <div class=\'row customize-title m_boardColor\'>\n                               {{lang.options.boardColor}}\n                            </div>\n                            <div class=\'row\'>\n                                <div class=\'colorCell customize-theme-cell customize-theme-onpick colorBG\'>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\'customize-dnaColor\'>\n                            <div class=\'customize-title row m_dnaColor\'>\n                                {{lang.options.dnaColor}}\n                            </div>\n                            <div class=\'row\'>\n                                <div class=\'colorCell customize-theme-cell colorA\'>\n                                </div>\n                                <div class=\'colorCell customize-theme-cell colorG \'>\n                                </div>\n                                <div class=\'colorCell customize-theme-cell colorC\'>\n                                </div>\n                                <div class=\'colorCell customize-theme-cell colorT\'>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\'row\'>\n                            <br><br>\n                            <a href=\'javascript:void(0);\' class=\'customize-theme-reset btn-danger btn m_restoreDefault\'>\n                                {{lang.options.default}}\n                            </a>    \n                        </div>\n                    </div>\n                    <div class=\'col-md-5\'>\n                        <canvas id=\'colorpad\' width=\'256\' height=\'256\'>\n                        </canvas>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\'customize-buttons\'>\n        <div class=\'row\'>\n            <a href=\'javascript:void(0)\' class=\'customize-save btn btn-primary offset4 col-md-2 m_save\'>\n                {{lang.options.save}}\n            </a>\n            <a href=\'javascript:void(0)\' class=\'customize-cancel btn btn-primary col-md-2 m_cancel col-md-offset-1\'>\n                {{lang.options.cancel}}\n            </a>\n        </div>\n    </div>\n</div>';});
 
 define('text!tpl/app/index/css.mustache',[],function () { return '<style>\n.highlighter-2 {\n    box-shadow: inset 0px 0px 0px 4px {{backgroundColor}} !important;\n    -ms-box-shadow: inset 0px 0px 0px 4px {{backgroundColor}} !important;\n    -moz-box-shadow: inset 0px 0px 0px 4px {{backgroundColor}} !important;\n    -webkit-box-shadow: inset 0px 0px 0px 4px {{backgroundColor}} !important;\n    -o-box-shadow: inset 0px 0px 0px 4px {{backgroundColor}} !important;\n    -khtml-box-shadow: inset 0px 0px 0px 4px {{backgroundColor}} !important;\n}  \n\n#canvasBG {\n    background: {{backgroundColor}} !important;\n}\n\n.nuc-A {\n    background: {{A}} !important; \n}\n\n.nuc-G {\n    background :{{G}} !important;\n}\n\n.nuc-T {\n    background : {{T}} !important;\n}\n\n.nuc-C {\n    background: {{C}} !important;\n}\n\n</style>';});
 
 define('scripts/views/app/CustomizeView',[
     //LIBRARIES
-     "jquery",
-     "underscore",
-     "backbone",
-     "marionette",
-     "mustache",
-     //TEMPLATES
-     "text!tpl/app/Customize.mustache",
-     "text!tpl/app/index/css.mustache",
-      "scripts/views/validation/cookie.validation.amd"
+    "jquery",
+    "underscore",
+    "backbone",
+    "marionette",
+    "mustache",
+    //TEMPLATES
+    "text!tpl/app/Customize.mustache",
+    "text!tpl/app/index/css.mustache",
+    "scripts/views/validation/cookie.validation.amd"
 ], function(
-        $, _, Backbone, Marionette, Mustache,
-        tpl, CssTpl, cookie
-        ) {
-     var CustomizeView = Marionette.ItemView.extend({
-         initialize : function(options) {
+    $, _, Backbone, Marionette, Mustache,
+    tpl, CssTpl, cookie
+) {
+    var CustomizeView = Marionette.ItemView.extend({
+        initialize: function(options) {
             this.lang = options.lang || {};
-         },
-
-        volTargets: {
-            "musicVol": ["game-audio"],
-            "countdownVol": ["startSound", "countdownSound"],
-            "redrawVol": ["redrawSound"],
-            "starVol": ["lightUpSound", "starClickSound"],
-            "fxOthersVol": ["endGameSound"]
         },
-         template : tpl,
-         ui  : {
-            themeCell : ".customize-theme-cell",
-            setCSS :"#hiddenCssComponents"
-         },
-         events : {
-            "click a.customize-cancel" : "customizeCancel",
-            "click .customize-save" : "customizeSave",
-            "click .customize-tab a" : "customizeTab",
-            "click .customize-theme-cell" : "customizeThemeCell",
-            "click .customize-theme-reset" : "customizeThemeReset",
-            "click a.btn[id|='customize']" : "volChanges",
-         },
-         volChanges : function(e){
-            //var vol = $(e.target).prop("checked")?1:0;
-            var vol = $(e.target).hasClass("musicDisabled")?1:0;
-            console.log(vol);
-            var target = e.target.id.replace("customize-","")+"Vol";
-            console.log(target);
-            cookie.create(target,vol,365);
-            for (var i in this.volTargets[target]){
-                try{
-                    document.getElementById(this.volTargets[target][i]).volume = vol;
-                }catch (err) {}
-            }
-            if($(e.target).hasClass("musicDisabled")){
-                $(e.target).removeClass("musicDisabled");
-            }
-            else{
-                $(e.target).addClass("musicDisabled");
-            }
-            return false;
-         },
-         customizeCancel : function() {
+        template: tpl,
+        ui: {
+            themeCell: ".customize-theme-cell",
+            setCSS: "#hiddenCssComponents"
+        },
+        events: {
+            "click a.customize-cancel": "customizeCancel",
+            "click .customize-save": "customizeSave",
+            // "click .customize-tab a": "customizeTab",
+            "click .customize-theme-cell": "customizeThemeCell",
+            "click .customize-theme-reset": "customizeThemeReset",
+        },
+        customizeCancel: function() {
             // console.log("asda");
             var self = this;
             $(".customize").hide();
@@ -15831,56 +15859,66 @@ define('scripts/views/app/CustomizeView',[
                 backgroundColor: self.deCode(cookie.read("nuc-T"))
             });
         },
-        customizeSave : function() {
+        customizeSave: function() {
             var bg = $(".colorCell").css("background-color");
             var A = $(".colorA").css("background-color");
             var G = $(".colorG").css("background-color");
             var C = $(".colorC").css("background-color");
             var T = $(".colorT").css("background-color");
-            
-            cookie.create("bgCell",bg,365);
-            cookie.create("nuc-A",A,365);
-            cookie.create("nuc-G",G,365);
-            cookie.create("nuc-C",C,365);
-            cookie.create("nuc-T",T,365);
+
+            cookie.create("bgCell", bg, 365);
+            cookie.create("nuc-A", A, 365);
+            cookie.create("nuc-G", G, 365);
+            cookie.create("nuc-C", C, 365);
+            cookie.create("nuc-T", T, 365);
 
             this.ui.setCSS.html(Mustache.render(CssTpl, {
-                backgroundColor : bg,
-                A : A,
-                G : G,
-                C : C,
-                T : T
+                backgroundColor: bg,
+                A: A,
+                G: G,
+                C: C,
+                T: T
             }));
 
             $(".customize").hide();
         },
-        customizeTab : function(e) {
-            $(".customize-tab .row a").each(function(){
-                $(this).removeClass("customize-tab-onselect");
-            })
-            // $(".customize-tab .row").
-            $(e.target).addClass("customize-tab-onselect");
-            if($(e.target).hasClass("tag-theme")) {
-                $(".customize-theme").show();
-                $(".customize-music").hide();
-            } else {
-                $(".customize-theme").hide();
-                $(".customize-music").show();
-            }
-        },
-        customizeThemeCell : function(e){
+        // customizeTab: function(e) {
+        //     $(".customize-tab .row a").each(function() {
+        //         $(this).removeClass("customize-tab-onselect");
+        //     })
+        //     // $(".customize-tab .row").
+        //     $(e.target).addClass("customize-tab-onselect");
+        //     if ($(e.target).hasClass("tag-theme")) {
+        //         $(".customize-theme").show();
+        //         $(".customize-music").hide();
+        //     } else {
+        //         $(".customize-theme").hide();
+        //         $(".customize-music").show();
+        //     }
+        // },
+        customizeThemeCell: function(e) {
             console.log(e.target);
-            this.ui.themeCell.each(function(){
+            this.ui.themeCell.each(function() {
                 $(this).removeClass("customize-theme-onpick");
             });
             $(e.target).addClass("customize-theme-onpick");
         },
-        customizeThemeReset : function(){
-            $(".colorCell").css({ backgroundColor:"white"});
-            $(".colorA").css({backgroundColor:"#71B2E2"});
-            $(".colorG").css({backgroundColor:"#9932CC"});
-            $(".colorC").css({backgroundColor:"#008000"});
-            $(".colorT").css({backgroundColor:"#FFA500"});
+        customizeThemeReset: function() {
+            $(".colorCell").css({
+                backgroundColor: "white"
+            });
+            $(".colorA").css({
+                backgroundColor: "#71B2E2"
+            });
+            $(".colorG").css({
+                backgroundColor: "#9932CC"
+            });
+            $(".colorC").css({
+                backgroundColor: "#008000"
+            });
+            $(".colorT").css({
+                backgroundColor: "#FFA500"
+            });
             // this.ui.setCSS.html(Mustache.render(CssTpl, {
             //     backgroundColor : "#FFF",
             //     A : "#71B2E2",
@@ -15890,43 +15928,63 @@ define('scripts/views/app/CustomizeView',[
             // }));
 
         },
-        customizeFnDump : function(){
+        customizeFnDump: function() {
             var self = this;
-            if(cookie.read("bgCell")) {
-                $(".colorBG").css({backgroundColor : self.deCode(cookie.read("bgCell"))});
-                $("#canvasBG").css({backgroundColor : self.deCode(cookie.read("bgCell"))});
+            if (cookie.read("bgCell")) {
+                $(".colorBG").css({
+                    backgroundColor: self.deCode(cookie.read("bgCell"))
+                });
+                $("#canvasBG").css({
+                    backgroundColor: self.deCode(cookie.read("bgCell"))
+                });
             } else {
-                cookie.create("bgCell","white",365);
+                cookie.create("bgCell", "white", 365);
             }
 
-            if(cookie.read("nuc-A")) {
-                $(".nuc-A").css({backgroundColor : self.deCode(cookie.read("nuc-A")) });
-                $(".colorA").css({backgroundColor : self.deCode(cookie.read("nuc-A")) });
+            if (cookie.read("nuc-A")) {
+                $(".nuc-A").css({
+                    backgroundColor: self.deCode(cookie.read("nuc-A"))
+                });
+                $(".colorA").css({
+                    backgroundColor: self.deCode(cookie.read("nuc-A"))
+                });
             } else {
-                cookie.create("nuc-A","#71B2E2",365);
+                cookie.create("nuc-A", "#71B2E2", 365);
             }
-            if(cookie.read("nuc-G")) {
-                $(".nuc-G").css({backgroundColor : self.deCode(cookie.read("nuc-G"))});
-                $(".colorG").css({backgroundColor : self.deCode(cookie.read("nuc-G"))});
+            if (cookie.read("nuc-G")) {
+                $(".nuc-G").css({
+                    backgroundColor: self.deCode(cookie.read("nuc-G"))
+                });
+                $(".colorG").css({
+                    backgroundColor: self.deCode(cookie.read("nuc-G"))
+                });
             } else {
-                cookie.create("nuc-G","#9932CC",365);
+                cookie.create("nuc-G", "#9932CC", 365);
             }
-            if(cookie.read("nuc-C")) {
-                $(".nuc-C").css({backgroundColor : self.deCode(cookie.read("nuc-C")) });
-                $(".colorC").css({backgroundColor : self.deCode(cookie.read("nuc-C")) });
+            if (cookie.read("nuc-C")) {
+                $(".nuc-C").css({
+                    backgroundColor: self.deCode(cookie.read("nuc-C"))
+                });
+                $(".colorC").css({
+                    backgroundColor: self.deCode(cookie.read("nuc-C"))
+                });
             } else {
-                cookie.create("nuc-C","#008000",365);
+                cookie.create("nuc-C", "#008000", 365);
             }
-            if(cookie.read("nuc-T")) {
-                $(".nuc-T").css({backgroundColor : self.deCode(cookie.read("nuc-T")) });
-                $(".colorT").css({backgroundColor : self.deCode(cookie.read("nuc-T")) });
+            if (cookie.read("nuc-T")) {
+                $(".nuc-T").css({
+                    backgroundColor: self.deCode(cookie.read("nuc-T"))
+                });
+                $(".colorT").css({
+                    backgroundColor: self.deCode(cookie.read("nuc-T"))
+                });
             } else {
-                cookie.create("nuc-T","#FFA500",365);
+                cookie.create("nuc-T", "#FFA500", 365);
             }
         },
-        colorPadDump : function(){
-        //color pad code from http://www.html5canvastutorials.com/labs/html5-canvas-color-picker/  ### modified to suit the requirements for this page
-            function getMousePos(canvas, evt){
+        colorPadDump: function() {
+            //color pad code from http://www.html5canvastutorials.com/labs/html5-canvas-color-picker/  ### modified to suit the requirements for this page
+            function getMousePos(canvas, evt) {
                 // get canvas position
                 var obj = canvas;
                 var top = 0;
@@ -15936,7 +15994,7 @@ define('scripts/views/app/CustomizeView',[
                     left += obj.offsetLeft;
                     obj = obj.offsetParent;
                 }
-                
+
                 // return relative mouse position
                 var mouseX = evt.clientX - left + window.pageXOffset;
                 var mouseY = evt.clientY - top + window.pageYOffset;
@@ -15945,8 +16003,8 @@ define('scripts/views/app/CustomizeView',[
                     y: mouseY
                 };
             }
-            
-            function drawColorSquare(canvas, color, imageObj){
+
+            function drawColorSquare(canvas, color, imageObj) {
                 var colorSquareSize = 100;
                 var padding = 0;
                 var context = canvas.getContext("2d");
@@ -15957,17 +16015,17 @@ define('scripts/views/app/CustomizeView',[
                 context.fillRect(squareX, squareY, colorSquareSize, colorSquareSize);
                 context.strokeRect(squareX, squareY, colorSquareSize, colorSquareSize);
             }
-            
-            function init(imageObj){
+
+            function init(imageObj) {
                 var padding = 0;
                 var canvas = document.getElementById("colorpad");
                 var context = canvas.getContext("2d");
                 var mouseDown = false;
-                
+
                 context.strokeStyle = "#444";
                 context.lineWidth = 2;
-                
-              /*  canvas.addEventListener("mousedown", function(){
+
+                /*  canvas.addEventListener("mousedown", function(){
                     mouseDown = true;
                 }, false);
                 
@@ -15978,9 +16036,9 @@ define('scripts/views/app/CustomizeView',[
                 
                 canvas.addEventListener("mousemove", function(evt){
                     */
-                    canvas.addEventListener("mousedown",function(evt) {
-                        var mousePos = getMousePos(canvas, evt);
-                        var color = undefined;
+                canvas.addEventListener("mousedown", function(evt) {
+                    var mousePos = getMousePos(canvas, evt);
+                    var color = undefined;
 
                     //if (mouseDown &&
                     /*
@@ -15994,62 +16052,61 @@ define('scripts/views/app/CustomizeView',[
                          * color picker image is 256x256 and is offset by 10px
                          * from top and bottom
                          */
-                         var imageData = context.getImageData(padding, padding, imageObj.width, imageObj.width);
-                         var data = imageData.data;
-                         var x = mousePos.x - padding;
-                         var y = mousePos.y - padding;
-                         var red = data[((imageObj.width * y) + x) * 4];
-                         var green = data[((imageObj.width * y) + x) * 4 + 1];
-                         var blue = data[((imageObj.width * y) + x) * 4 + 2];
-                         color = "rgb(" + red + "," + green + "," + blue + ")";
-                 //   }
-                 console.log(color);
+                    var imageData = context.getImageData(padding, padding, imageObj.width, imageObj.width);
+                    var data = imageData.data;
+                    var x = mousePos.x - padding;
+                    var y = mousePos.y - padding;
+                    var red = data[((imageObj.width * y) + x) * 4];
+                    var green = data[((imageObj.width * y) + x) * 4 + 1];
+                    var blue = data[((imageObj.width * y) + x) * 4 + 2];
+                    color = "rgb(" + red + "," + green + "," + blue + ")";
+                    //   }
+                    console.log(color);
 
-                 if (color) {
-                       // drawColorSquare(canvas, color, imageObj);
-                       $(".customize-theme-onpick").css({
-                        backgroundColor : color
-                    });
-                   }
-               }, false);
+                    if (color) {
+                        // drawColorSquare(canvas, color, imageObj);
+                        $(".customize-theme-onpick").css({
+                            backgroundColor: color
+                        });
+                    }
+                }, false);
 
                 context.drawImage(imageObj, padding, padding);
                 //drawColorSquare(canvas, "white", imageObj);
             }
-            
+
             var imageObj = new Image();
-            imageObj.onload = function(){
+            imageObj.onload = function() {
                 init(this);
             };
             imageObj.src = "assets/img/color_picker.png";
         },
-        setPlayerDefaultColor : function(){
+        setPlayerDefaultColor: function() {
             var self = this;
             this.ui.setCSS.html(Mustache.render(CssTpl, {
-                backgroundColor : self.deCode(cookie.read("bgCell")) || "white",
-                A : self.deCode(cookie.read("nuc-A"))||"#71B2E2",
-                G : self.deCode(cookie.read("nuc-G"))||"#9932CC",
-                C : self.deCode(cookie.read("nuc-C"))||"#008000",
-                T : self.deCode(cookie.read("nuc-T"))||"#FFA500"
+                backgroundColor: self.deCode(cookie.read("bgCell")) || "white",
+                A: self.deCode(cookie.read("nuc-A")) || "#71B2E2",
+                G: self.deCode(cookie.read("nuc-G")) || "#9932CC",
+                C: self.deCode(cookie.read("nuc-C")) || "#008000",
+                T: self.deCode(cookie.read("nuc-T")) || "#FFA500"
             }));
         },
-        getSoundSettings : function(){
-            var sounds = ["musicVol","countdownVol","redrawVol","starVol","fxOthersVol"];
-            for(var i in sounds){
-                var id = "#customize-"+sounds[i].replace("Vol","");
+        getSoundSettings: function() {
+            var sounds = ["musicVol", "countdownVol", "redrawVol", "starVol", "fxOthersVol"];
+            for (var i in sounds) {
+                var id = "#customize-" + sounds[i].replace("Vol", "");
 
-                if(parseInt(cookie.read(sounds[i]))===0){
+                if (parseInt(cookie.read(sounds[i])) === 0) {
                     $(id).addClass("musicDisabled");
+
                     //$(id).prop("checked",false);
-                }
-                else{
-                    console.log("132123");
+                } else {
                     $(id).removeClass("musicDisabled");
                     //$(id).attr("checked",true);
                 }
             }
         },
-        deCode : function(code) {
+        deCode: function(code) {
             var arr = [
                 ["%2C", ","],
                 ["%28", "("],
@@ -16057,9 +16114,9 @@ define('scripts/views/app/CustomizeView',[
                 ["%29", ")"]
             ];
 
-            for(var i in arr) {
-                var pat = new RegExp(arr[i][0],"gi");
-                code = code.replace(pat,arr[i][1]);
+            for (var i in arr) {
+                var pat = new RegExp(arr[i][0], "gi");
+                code = code.replace(pat, arr[i][1]);
                 // console.log(code);
             }
 
@@ -16069,16 +16126,155 @@ define('scripts/views/app/CustomizeView',[
             this.customizeFnDump();
             this.colorPadDump();
             this.setPlayerDefaultColor();
+
+            // console.log(this.deCode("rgb%28255%2C%20255%2C%20255%29"));
+        },
+        templateHelpers: function() {
+            return {
+                lang: this.lang
+            };
+        },
+    });
+    return CustomizeView;
+});
+define('text!tpl/app/CustomizeMusic.mustache',[],function () { return '<link rel="stylesheet" href="assets/css/customize.css"/>\n<div id=\'hiddenCssComponents\'></div>\n<div class=\'musicOptions customize customize-bg\'></div>\n<div class=\'musicOptions customize customize-wrapper\'>\n    <div class=\'row customize-title m_customize\'>\n    </div>\n    <div class=\'customize-tab\'>\n        <div class=\'row\'>\n            <a href=\'javascript:void(0)\' class=\'customize-tab-onselect col-md-2 tag-theme m_theme\'>Music</a>\n            <!-- previous class tags: col-md-2 tag-music m_music -->\n        </div>\n    </div>\n    <div class=\'customize-body\'>\n        <div class=\'container\'>\n            <div class="hide" id="muteBtn"></div>\n            <div class=\'row\'>\n                <div class=\'customize-music\'>\n                   {{!  <div class=\'row customize-title\'>\n                        Current Music Theme \n                    </div> }}\n                    <div class=\'row\'>\n                        <div class="col-md-4">\n                        <h3>{{lang.options.music}}</h3>\n                        {{! <input type="checkbox" id="customize-music">  }}\n                        <a class="btn btn-default musicDisabled" href="#" id="customize-music">{{lang.options.music}}</a>\n                        </div>\n                        <div class="col-md-4">\n                            <h3>{{lang.options.soundFX}}</h3>\n                           \n                             <a class="btn btn-default musicDisabled" href="#" role="button" id="customize-countdown">{{lang.options.countdown}}</a>\n                             <br>\n                             <a class="btn btn-default musicDisabled" href="#" role="button" id="customize-redraw">{{lang.options.redraw}}</a>\n                             <br>\n                             <a class="btn btn-default musicDisabled" href="#" role="button" id="customize-star">{{lang.options.star}}</a>\n                             <br>\n                             <a class="btn btn-default musicDisabled" href="#" role="button" id="customize-fxOthers">{{lang.options.others}}</a>\n                        </div>\n                    </div>\n                </div>  \n            </div>\n        </div>\n    </div>\n    <div class=\'customize-buttons\'>\n        <div class=\'row\'>\n            <a href=\'javascript:void(0)\' class=\'customize-save btn btn-primary offset4 col-md-2 m_save\'>\n                {{lang.options.accept}}\n            </a>\n        </div>\n    </div>\n</div>';});
+
+define('scripts/views/app/CustomizeMusicView',[
+    //LIBRARIES
+    "jquery",
+    "underscore",
+    "backbone",
+    "marionette",
+    "mustache",
+    //TEMPLATES
+    "text!tpl/app/CustomizeMusic.mustache",
+    "scripts/views/validation/cookie.validation.amd"
+], function(
+    $, _, Backbone, Marionette, Mustache,
+    tpl, cookie
+) {
+    var CustomizeView = Marionette.ItemView.extend({
+        initialize: function(options) {
+            this.lang = options.lang || {};
+        },
+
+        volTargets: {
+            "musicVol": ["game-audio"],
+            "countdownVol": ["startSound", "countdownSound"],
+            "redrawVol": ["redrawSound"],
+            "starVol": ["lightUpSound", "starClickSound"],
+            "fxOthersVol": ["endGameSound"]
+        },
+        template: tpl,
+        ui: {},
+        events: {
+            "click .customize-save": "customizeSave",
+            // "click .customize-tab a": "customizeTab",
+            "click a.btn[id|='customize']": "volChanges",
+            "mute #muteBtn": "muteToggle",
+        },
+        volChanges: function(e) {
+            //var vol = $(e.target).prop("checked")?1:0;
+            var vol = $(e.target).hasClass("musicDisabled") ? 1 : 0;
+            var target = e.target.id.replace("customize-", "") + "Vol";
+            cookie.create(target, vol, 365);
+            for (var i in this.volTargets[target]) {
+                try {
+                    document.getElementById(this.volTargets[target][i]).volume = vol;
+                } catch (err) {}
+            }
+            if ($(e.target).hasClass("musicDisabled")) {
+                $(e.target).removeClass("musicDisabled");
+            } else {
+                $(e.target).addClass("musicDisabled");
+            }
+            this.checkMuteStat();
+            return false;
+        },
+        muteToggle: function(e) {
+            for (var i in this.volTargets) {
+                var id = "#customize-" + i.replace("Vol", "");
+
+                if (e.originalEvent.vol === 0) {
+                    $(id).addClass("musicDisabled");
+
+                    //$(id).prop("checked",false);
+                } else {
+                    $(id).removeClass("musicDisabled");
+                    //$(id).attr("checked",true);
+                }
+                // for (var j in this.volTargets[i]) {
+                //         document.getElementById(this.volTargets[i][j]).volume = e.data===0?0:1;
+                // }
+                $(id).trigger("click").trigger("click");
+            }
+            return false;
+        },
+        checkMuteStat: function() {
+            var tot = 0;
+            //checks if its all muted or not;
+            for (var i in this.volTargets) {
+                for (var j in this.volTargets[i]) {
+                    try {
+                        tot += document.getElementById(this.volTargets[i][j]).volume;
+                    } catch (e) {
+
+                    }
+                }
+            }
+            if (tot === 0) {
+                $("#volume i").removeClass("icon-volume-up-1").addClass("icon-volume-off-1");
+            } else {
+                $("#volume i").addClass("icon-volume-up-1").removeClass("icon-volume-off-1");
+            }
+        },
+        customizeSave: function() {
+
+            $(".musicOptions.customize").hide();
+        },
+        // customizeTab: function(e) {
+        //     $(".customize-tab .row a").each(function() {
+        //         $(this).removeClass("customize-tab-onselect");
+        //     })
+        //     // $(".customize-tab .row").
+        //     $(e.target).addClass("customize-tab-onselect");
+        //     if ($(e.target).hasClass("tag-theme")) {
+        //         $(".customize-theme").show();
+        //         $(".customize-music").hide();
+        //     } else {
+        //         $(".customize-theme").hide();
+        //         $(".customize-music").show();
+        //     }
+        // },
+        getSoundSettings: function() {
+            var sounds = ["musicVol", "countdownVol", "redrawVol", "starVol", "fxOthersVol"];
+            for (var i in sounds) {
+                var id = "#customize-" + sounds[i].replace("Vol", "");
+
+                if (parseInt(cookie.read(sounds[i])) === 0) {
+                    $(id).addClass("musicDisabled");
+
+                    //$(id).prop("checked",false);
+                } else {
+                    $(id).removeClass("musicDisabled");
+                    //$(id).attr("checked",true);
+                }
+            }
+        },
+        templateHelpers: function() {
+            return {
+                lang: this.lang
+            };
+        },
+        onShow: function() {
             this.getSoundSettings();
-            $(".customize-music").hide();
+            // $(".customize-music").hide();
 
             // console.log(this.deCode("rgb%28255%2C%20255%2C%20255%29"));
         }
-     });
-     return CustomizeView;
+    });
+    return CustomizeView;
 });
-        
-
 define('text!tpl/tablet/TabletMenu.mustache',[],function () { return '<link rel="stylesheet" href="assets/css/tabletHome.css"/>\n<style>\n    #tabletBackBtn {\n        display:none;\n    }\n</style>\n<div id=\'tablet-grid\'>\n    <div class=\'row\'>\n        {{! <div class=\'col-12 col-lg-12 col-sm-12\'> }}\n            <div class=\'tablet-title\'> PHYLO | DNA Puzzles</div>\n        {{! </div> }}\n    <div class=\'row first\'>\n        <a class=\'tablet-play-btn col-4 col-xs-4 col-md-4 col-sm-4 col-lg-4\' href=\'#!/{{lang}}/Play\'>\n            <div>\n                <div>\n                    {{! <i class=\'tablet-style-stroke\'></i> }}\n                    <i class=\'icon-stop-1\'></i>\n                    <i class=\'icon-stop-1\'></i>\n                    <i class=\'icon-stop-1\'></i>\n                </div>\n                <div>{{header.field 1}}</div>\n            </div>\n        </a>\n        <a class=\'tablet-tutorial-btn col-xs-4 col-4 col-md-4 col-sm-4 col-lg-4\' href=\'#!/{{lang}}/Tutorial\' >\n            <div>\n                <div>\n                    <i class=\'icon-lamp-1\'></i>\n                </div>\n                <div>{{header.field 2}}</div>\n            </div>\n        </a>\n        <a class=\'tablet-about-btn col-4 col-xs-4 col-md-4 col-sm-4 col-lg-4\' href=\'#!/{{lang}}/About\'>\n            <div>\n                <div>\n                    <i class=\'icon-info-circle\'></i>\n                </div>\n                <div>{{header.field 3}}</div>\n            </div>\n        </a>\n    </div>\n    <div class=\'row\'>\n  <!--      <a class=\'tablet-grid tablet-credits-btn tablet-tab\' href=\'\' name=\'credits\'>\n            <div>\n                <div>\n                    <i class=\'icon-beaker\'></i>\n                </div>\n                <div>{{header.field 4}}</div>\n            </div>\n        </a> -->\n            <a class=\'tablet-ranking-btn col-xs-4 col-4 col-md-4 col-sm-4 col-lg-4\' href=\'#!/{{lang}}/Ranking\'>\n                <div>\n                    <div>\n                        <i class=\'icon-trophy\'></i>\n                    </div>\n                    <div>{{header.field 5}}</div>\n                </div>\n            </a>\n            <!--\n            <a class=\'tablet-grid tablet-login-btn tablet-login\' href=\'javascript:void(0);\' name=\'tablet:login\'>\n                <div>\n                    <div>\n                        <i class=\'icon-chevron-right\'></i>\n                    </div>\n                    <div>Login</div>\n                </div>\n            </a>\n        -->\n        <a class=\'tablet-settings-btn col-xs-4 col-4 col-md-4 col-sm-4 col-lg-4\' href=\'#!/mobile/{{lang}}/settings\'>\n            <div>\n                <div>\n                    <i class=\'icon-cog-alt\'></i>\n                </div>\n                <div>{{header.field 17}}</div>\n            </div>\n        </a>\n            <!--\n            <a class=\'tablet-grid tablet-feedback-btn\' href=\'javascript:void(0);\' name=\'feedback\'>\n                <div>\n                    <div>\n                        <i class=\'icon-comment\'></i>\n                    </div>\n                    <div>Feedback</div>\n                </div>\n            </a>\n        -->\n        <a class=\'tablet-history-btn col-xs-4 col-4 col-md-4 col-sm-4 col-lg-4\' href=\'#!/{{lang}}/History\'>\n            <div class=\'showInLogin\'>\n                <div>\n                    <i class=\'icon-book-1\'></i>\n                </div>\n                <div>{{header.field 15}}</div>\n            </div>\n        </a>\n    </div>\n</div>';});
 
 define('scripts/views/tablet/TabletView',[
@@ -16146,6 +16342,8 @@ define('scripts/views/AppLayout',[
 	var AppLayout = Marionette.Layout.extend({
 		regions: {
             customizeRegion : "#customizeRegion",
+            customizeMusicRegion : "#customizeMusicRegion",
+
 			headerRegion: "#header-wrapper",
 			contentRegion: "#app-content",
             footerWidgetRegion : "#footer-widgets",
@@ -17017,6 +17215,8 @@ define('scripts/AppController',[
          "scripts/views/app/ranking/RankingView",
          "scripts/views/app/history/HistoryView",
          "scripts/views/app/CustomizeView",
+         "scripts/views/app/CustomizeMusicView",
+
          //tablet view
          "scripts/views/tablet/TabletView",
          "scripts/views/tablet/TabletSettingsView",
@@ -17030,7 +17230,7 @@ define('scripts/AppController',[
 ], function(
 		$, Backbone, Marionette,
 		HeaderView, FooterLayout, IndexView, PlayByIdView, TutorialView, AboutView, CreditsView, RankingView, HistoryView, 
-		CustomizeView,
+		CustomizeView, CustomizeMusicView,
 		TabletView, TabletSettingsView,
 		AppLayout
 ) {
@@ -17098,11 +17298,6 @@ define('scripts/AppController',[
 			var self = this;
 			lang = lang || "EN";
 			lang.toUpperCase();
-
-			if(!this.regions.customizeRegion.currentView) {
-				this.regions.customizeRegion.show(new CustomizeView({}));
-			}
-
 			// a good place for code that needs to be ran every page 
 			
 			if(!this.lang || this.lang != lang) {
@@ -17146,6 +17341,14 @@ define('scripts/AppController',[
 					lang : lang,
 					format : (this.isTablet? "tablet" : "desktop")
 				}));
+				//if(!this.regions.customizeMusicRegion.currentView ) {
+				this.regions.customizeRegion.reset();
+				this.regions.customizeMusicRegion.reset();
+					this.regions.customizeMusicRegion.show(new CustomizeMusicView({lang:langModel}));
+				//}
+				//if(!this.regions.customizeRegion.currentView) {
+							this.regions.customizeRegion.show(new CustomizeView({lang:langModel}));
+				//		}
 			}
 
 			this.currentLang = lang;
@@ -17507,6 +17710,1402 @@ define('scripts/App',[
 	
 	return App;
 });	
+/*!
+ * Modernizr v2.6.2
+ * www.modernizr.com
+ *
+ * Copyright (c) Faruk Ates, Paul Irish, Alex Sexton
+ * Available under the BSD and MIT licenses: www.modernizr.com/license/
+ */
+
+/*
+ * Modernizr tests which native CSS3 and HTML5 features are available in
+ * the current UA and makes the results available to you in two ways:
+ * as properties on a global Modernizr object, and as classes on the
+ * <html> element. This information allows you to progressively enhance
+ * your pages with a granular level of control over the experience.
+ *
+ * Modernizr has an optional (not included) conditional resource loader
+ * called Modernizr.load(), based on Yepnope.js (yepnopejs.com).
+ * To get a build that includes Modernizr.load(), as well as choosing
+ * which tests to include, go to www.modernizr.com/download/
+ *
+ * Authors        Faruk Ates, Paul Irish, Alex Sexton
+ * Contributors   Ryan Seddon, Ben Alman
+ */
+
+window.Modernizr = (function( window, document, undefined ) {
+
+    var version = '2.6.2',
+
+    Modernizr = {},
+
+    /*>>cssclasses*/
+    // option for enabling the HTML classes to be added
+    enableClasses = true,
+    /*>>cssclasses*/
+
+    docElement = document.documentElement,
+
+    /**
+     * Create our "modernizr" element that we do most feature tests on.
+     */
+    mod = 'modernizr',
+    modElem = document.createElement(mod),
+    mStyle = modElem.style,
+
+    /**
+     * Create the input element for various Web Forms feature tests.
+     */
+    inputElem /*>>inputelem*/ = document.createElement('input') /*>>inputelem*/ ,
+
+    /*>>smile*/
+    smile = ':)',
+    /*>>smile*/
+
+    toString = {}.toString,
+
+    // TODO :: make the prefixes more granular
+    /*>>prefixes*/
+    // List of property values to set for css tests. See ticket #21
+    prefixes = ' -webkit- -moz- -o- -ms- '.split(' '),
+    /*>>prefixes*/
+
+    /*>>domprefixes*/
+    // Following spec is to expose vendor-specific style properties as:
+    //   elem.style.WebkitBorderRadius
+    // and the following would be incorrect:
+    //   elem.style.webkitBorderRadius
+
+    // Webkit ghosts their properties in lowercase but Opera & Moz do not.
+    // Microsoft uses a lowercase `ms` instead of the correct `Ms` in IE8+
+    //   erik.eae.net/archives/2008/03/10/21.48.10/
+
+    // More here: github.com/Modernizr/Modernizr/issues/issue/21
+    omPrefixes = 'Webkit Moz O ms',
+
+    cssomPrefixes = omPrefixes.split(' '),
+
+    domPrefixes = omPrefixes.toLowerCase().split(' '),
+    /*>>domprefixes*/
+
+    /*>>ns*/
+    ns = {'svg': 'http://www.w3.org/2000/svg'},
+    /*>>ns*/
+
+    tests = {},
+    inputs = {},
+    attrs = {},
+
+    classes = [],
+
+    slice = classes.slice,
+
+    featureName, // used in testing loop
+
+
+    /*>>teststyles*/
+    // Inject element with style element and some CSS rules
+    injectElementWithStyles = function( rule, callback, nodes, testnames ) {
+
+      var style, ret, node, docOverflow,
+          div = document.createElement('div'),
+          // After page load injecting a fake body doesn't work so check if body exists
+          body = document.body,
+          // IE6 and 7 won't return offsetWidth or offsetHeight unless it's in the body element, so we fake it.
+          fakeBody = body || document.createElement('body');
+
+      if ( parseInt(nodes, 10) ) {
+          // In order not to give false positives we create a node for each test
+          // This also allows the method to scale for unspecified uses
+          while ( nodes-- ) {
+              node = document.createElement('div');
+              node.id = testnames ? testnames[nodes] : mod + (nodes + 1);
+              div.appendChild(node);
+          }
+      }
+
+      // <style> elements in IE6-9 are considered 'NoScope' elements and therefore will be removed
+      // when injected with innerHTML. To get around this you need to prepend the 'NoScope' element
+      // with a 'scoped' element, in our case the soft-hyphen entity as it won't mess with our measurements.
+      // msdn.microsoft.com/en-us/library/ms533897%28VS.85%29.aspx
+      // Documents served as xml will throw if using &shy; so use xml friendly encoded version. See issue #277
+      style = ['&#173;','<style id="s', mod, '">', rule, '</style>'].join('');
+      div.id = mod;
+      // IE6 will false positive on some tests due to the style element inside the test div somehow interfering offsetHeight, so insert it into body or fakebody.
+      // Opera will act all quirky when injecting elements in documentElement when page is served as xml, needs fakebody too. #270
+      (body ? div : fakeBody).innerHTML += style;
+      fakeBody.appendChild(div);
+      if ( !body ) {
+          //avoid crashing IE8, if background image is used
+          fakeBody.style.background = '';
+          //Safari 5.13/5.1.4 OSX stops loading if ::-webkit-scrollbar is used and scrollbars are visible
+          fakeBody.style.overflow = 'hidden';
+          docOverflow = docElement.style.overflow;
+          docElement.style.overflow = 'hidden';
+          docElement.appendChild(fakeBody);
+      }
+
+      ret = callback(div, rule);
+      // If this is done after page load we don't want to remove the body so check if body exists
+      if ( !body ) {
+          fakeBody.parentNode.removeChild(fakeBody);
+          docElement.style.overflow = docOverflow;
+      } else {
+          div.parentNode.removeChild(div);
+      }
+
+      return !!ret;
+
+    },
+    /*>>teststyles*/
+
+    /*>>mq*/
+    // adapted from matchMedia polyfill
+    // by Scott Jehl and Paul Irish
+    // gist.github.com/786768
+    testMediaQuery = function( mq ) {
+
+      var matchMedia = window.matchMedia || window.msMatchMedia;
+      if ( matchMedia ) {
+        return matchMedia(mq).matches;
+      }
+
+      var bool;
+
+      injectElementWithStyles('@media ' + mq + ' { #' + mod + ' { position: absolute; } }', function( node ) {
+        bool = (window.getComputedStyle ?
+                  getComputedStyle(node, null) :
+                  node.currentStyle)['position'] == 'absolute';
+      });
+
+      return bool;
+
+     },
+     /*>>mq*/
+
+
+    /*>>hasevent*/
+    //
+    // isEventSupported determines if a given element supports the given event
+    // kangax.github.com/iseventsupported/
+    //
+    // The following results are known incorrects:
+    //   Modernizr.hasEvent("webkitTransitionEnd", elem) // false negative
+    //   Modernizr.hasEvent("textInput") // in Webkit. github.com/Modernizr/Modernizr/issues/333
+    //   ...
+    isEventSupported = (function() {
+
+      var TAGNAMES = {
+        'select': 'input', 'change': 'input',
+        'submit': 'form', 'reset': 'form',
+        'error': 'img', 'load': 'img', 'abort': 'img'
+      };
+
+      function isEventSupported( eventName, element ) {
+
+        element = element || document.createElement(TAGNAMES[eventName] || 'div');
+        eventName = 'on' + eventName;
+
+        // When using `setAttribute`, IE skips "unload", WebKit skips "unload" and "resize", whereas `in` "catches" those
+        var isSupported = eventName in element;
+
+        if ( !isSupported ) {
+          // If it has no `setAttribute` (i.e. doesn't implement Node interface), try generic element
+          if ( !element.setAttribute ) {
+            element = document.createElement('div');
+          }
+          if ( element.setAttribute && element.removeAttribute ) {
+            element.setAttribute(eventName, '');
+            isSupported = is(element[eventName], 'function');
+
+            // If property was created, "remove it" (by setting value to `undefined`)
+            if ( !is(element[eventName], 'undefined') ) {
+              element[eventName] = undefined;
+            }
+            element.removeAttribute(eventName);
+          }
+        }
+
+        element = null;
+        return isSupported;
+      }
+      return isEventSupported;
+    })(),
+    /*>>hasevent*/
+
+    // TODO :: Add flag for hasownprop ? didn't last time
+
+    // hasOwnProperty shim by kangax needed for Safari 2.0 support
+    _hasOwnProperty = ({}).hasOwnProperty, hasOwnProp;
+
+    if ( !is(_hasOwnProperty, 'undefined') && !is(_hasOwnProperty.call, 'undefined') ) {
+      hasOwnProp = function (object, property) {
+        return _hasOwnProperty.call(object, property);
+      };
+    }
+    else {
+      hasOwnProp = function (object, property) { /* yes, this can give false positives/negatives, but most of the time we don't care about those */
+        return ((property in object) && is(object.constructor.prototype[property], 'undefined'));
+      };
+    }
+
+    // Adapted from ES5-shim https://github.com/kriskowal/es5-shim/blob/master/es5-shim.js
+    // es5.github.com/#x15.3.4.5
+
+    if (!Function.prototype.bind) {
+      Function.prototype.bind = function bind(that) {
+
+        var target = this;
+
+        if (typeof target != "function") {
+            throw new TypeError();
+        }
+
+        var args = slice.call(arguments, 1),
+            bound = function () {
+
+            if (this instanceof bound) {
+
+              var F = function(){};
+              F.prototype = target.prototype;
+              var self = new F();
+
+              var result = target.apply(
+                  self,
+                  args.concat(slice.call(arguments))
+              );
+              if (Object(result) === result) {
+                  return result;
+              }
+              return self;
+
+            } else {
+
+              return target.apply(
+                  that,
+                  args.concat(slice.call(arguments))
+              );
+
+            }
+
+        };
+
+        return bound;
+      };
+    }
+
+    /**
+     * setCss applies given styles to the Modernizr DOM node.
+     */
+    function setCss( str ) {
+        mStyle.cssText = str;
+    }
+
+    /**
+     * setCssAll extrapolates all vendor-specific css strings.
+     */
+    function setCssAll( str1, str2 ) {
+        return setCss(prefixes.join(str1 + ';') + ( str2 || '' ));
+    }
+
+    /**
+     * is returns a boolean for if typeof obj is exactly type.
+     */
+    function is( obj, type ) {
+        return typeof obj === type;
+    }
+
+    /**
+     * contains returns a boolean for if substr is found within str.
+     */
+    function contains( str, substr ) {
+        return !!~('' + str).indexOf(substr);
+    }
+
+    /*>>testprop*/
+
+    // testProps is a generic CSS / DOM property test.
+
+    // In testing support for a given CSS property, it's legit to test:
+    //    `elem.style[styleName] !== undefined`
+    // If the property is supported it will return an empty string,
+    // if unsupported it will return undefined.
+
+    // We'll take advantage of this quick test and skip setting a style
+    // on our modernizr element, but instead just testing undefined vs
+    // empty string.
+
+    // Because the testing of the CSS property names (with "-", as
+    // opposed to the camelCase DOM properties) is non-portable and
+    // non-standard but works in WebKit and IE (but not Gecko or Opera),
+    // we explicitly reject properties with dashes so that authors
+    // developing in WebKit or IE first don't end up with
+    // browser-specific content by accident.
+
+    function testProps( props, prefixed ) {
+        for ( var i in props ) {
+            var prop = props[i];
+            if ( !contains(prop, "-") && mStyle[prop] !== undefined ) {
+                return prefixed == 'pfx' ? prop : true;
+            }
+        }
+        return false;
+    }
+    /*>>testprop*/
+
+    // TODO :: add testDOMProps
+    /**
+     * testDOMProps is a generic DOM property test; if a browser supports
+     *   a certain property, it won't return undefined for it.
+     */
+    function testDOMProps( props, obj, elem ) {
+        for ( var i in props ) {
+            var item = obj[props[i]];
+            if ( item !== undefined) {
+
+                // return the property name as a string
+                if (elem === false) return props[i];
+
+                // let's bind a function
+                if (is(item, 'function')){
+                  // default to autobind unless override
+                  return item.bind(elem || obj);
+                }
+
+                // return the unbound function or obj or value
+                return item;
+            }
+        }
+        return false;
+    }
+
+    /*>>testallprops*/
+    /**
+     * testPropsAll tests a list of DOM properties we want to check against.
+     *   We specify literally ALL possible (known and/or likely) properties on
+     *   the element including the non-vendor prefixed one, for forward-
+     *   compatibility.
+     */
+    function testPropsAll( prop, prefixed, elem ) {
+
+        var ucProp  = prop.charAt(0).toUpperCase() + prop.slice(1),
+            props   = (prop + ' ' + cssomPrefixes.join(ucProp + ' ') + ucProp).split(' ');
+
+        // did they call .prefixed('boxSizing') or are we just testing a prop?
+        if(is(prefixed, "string") || is(prefixed, "undefined")) {
+          return testProps(props, prefixed);
+
+        // otherwise, they called .prefixed('requestAnimationFrame', window[, elem])
+        } else {
+          props = (prop + ' ' + (domPrefixes).join(ucProp + ' ') + ucProp).split(' ');
+          return testDOMProps(props, prefixed, elem);
+        }
+    }
+    /*>>testallprops*/
+
+
+    /**
+     * Tests
+     * -----
+     */
+
+    // The *new* flexbox
+    // dev.w3.org/csswg/css3-flexbox
+
+    tests['flexbox'] = function() {
+      return testPropsAll('flexWrap');
+    };
+
+    // The *old* flexbox
+    // www.w3.org/TR/2009/WD-css3-flexbox-20090723/
+
+    tests['flexboxlegacy'] = function() {
+        return testPropsAll('boxDirection');
+    };
+
+    // On the S60 and BB Storm, getContext exists, but always returns undefined
+    // so we actually have to call getContext() to verify
+    // github.com/Modernizr/Modernizr/issues/issue/97/
+
+    tests['canvas'] = function() {
+        var elem = document.createElement('canvas');
+        return !!(elem.getContext && elem.getContext('2d'));
+    };
+
+    tests['canvastext'] = function() {
+        return !!(Modernizr['canvas'] && is(document.createElement('canvas').getContext('2d').fillText, 'function'));
+    };
+
+    // webk.it/70117 is tracking a legit WebGL feature detect proposal
+
+    // We do a soft detect which may false positive in order to avoid
+    // an expensive context creation: bugzil.la/732441
+
+    tests['webgl'] = function() {
+        return !!window.WebGLRenderingContext;
+    };
+
+    /*
+     * The Modernizr.touch test only indicates if the browser supports
+     *    touch events, which does not necessarily reflect a touchscreen
+     *    device, as evidenced by tablets running Windows 7 or, alas,
+     *    the Palm Pre / WebOS (touch) phones.
+     *
+     * Additionally, Chrome (desktop) used to lie about its support on this,
+     *    but that has since been rectified: crbug.com/36415
+     *
+     * We also test for Firefox 4 Multitouch Support.
+     *
+     * For more info, see: modernizr.github.com/Modernizr/touch.html
+     */
+
+    tests['touch'] = function() {
+        var bool;
+
+        if(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+          bool = true;
+        } else {
+          injectElementWithStyles(['@media (',prefixes.join('touch-enabled),('),mod,')','{#modernizr{top:9px;position:absolute}}'].join(''), function( node ) {
+            bool = node.offsetTop === 9;
+          });
+        }
+
+        return bool;
+    };
+
+
+    // geolocation is often considered a trivial feature detect...
+    // Turns out, it's quite tricky to get right:
+    //
+    // Using !!navigator.geolocation does two things we don't want. It:
+    //   1. Leaks memory in IE9: github.com/Modernizr/Modernizr/issues/513
+    //   2. Disables page caching in WebKit: webk.it/43956
+    //
+    // Meanwhile, in Firefox < 8, an about:config setting could expose
+    // a false positive that would throw an exception: bugzil.la/688158
+
+    tests['geolocation'] = function() {
+        return 'geolocation' in navigator;
+    };
+
+
+    tests['postmessage'] = function() {
+      return !!window.postMessage;
+    };
+
+
+    // Chrome incognito mode used to throw an exception when using openDatabase
+    // It doesn't anymore.
+    tests['websqldatabase'] = function() {
+      return !!window.openDatabase;
+    };
+
+    // Vendors had inconsistent prefixing with the experimental Indexed DB:
+    // - Webkit's implementation is accessible through webkitIndexedDB
+    // - Firefox shipped moz_indexedDB before FF4b9, but since then has been mozIndexedDB
+    // For speed, we don't test the legacy (and beta-only) indexedDB
+    tests['indexedDB'] = function() {
+      return !!testPropsAll("indexedDB", window);
+    };
+
+    // documentMode logic from YUI to filter out IE8 Compat Mode
+    //   which false positives.
+    tests['hashchange'] = function() {
+      return isEventSupported('hashchange', window) && (document.documentMode === undefined || document.documentMode > 7);
+    };
+
+    // Per 1.6:
+    // This used to be Modernizr.historymanagement but the longer
+    // name has been deprecated in favor of a shorter and property-matching one.
+    // The old API is still available in 1.6, but as of 2.0 will throw a warning,
+    // and in the first release thereafter disappear entirely.
+    tests['history'] = function() {
+      return !!(window.history && history.pushState);
+    };
+
+    tests['draganddrop'] = function() {
+        var div = document.createElement('div');
+        return ('draggable' in div) || ('ondragstart' in div && 'ondrop' in div);
+    };
+
+    // FF3.6 was EOL'ed on 4/24/12, but the ESR version of FF10
+    // will be supported until FF19 (2/12/13), at which time, ESR becomes FF17.
+    // FF10 still uses prefixes, so check for it until then.
+    // for more ESR info, see: mozilla.org/en-US/firefox/organizations/faq/
+    tests['websockets'] = function() {
+        return 'WebSocket' in window || 'MozWebSocket' in window;
+    };
+
+
+    // css-tricks.com/rgba-browser-support/
+    tests['rgba'] = function() {
+        // Set an rgba() color and check the returned value
+
+        setCss('background-color:rgba(150,255,150,.5)');
+
+        return contains(mStyle.backgroundColor, 'rgba');
+    };
+
+    tests['hsla'] = function() {
+        // Same as rgba(), in fact, browsers re-map hsla() to rgba() internally,
+        //   except IE9 who retains it as hsla
+
+        setCss('background-color:hsla(120,40%,100%,.5)');
+
+        return contains(mStyle.backgroundColor, 'rgba') || contains(mStyle.backgroundColor, 'hsla');
+    };
+
+    tests['multiplebgs'] = function() {
+        // Setting multiple images AND a color on the background shorthand property
+        //  and then querying the style.background property value for the number of
+        //  occurrences of "url(" is a reliable method for detecting ACTUAL support for this!
+
+        setCss('background:url(https://),url(https://),red url(https://)');
+
+        // If the UA supports multiple backgrounds, there should be three occurrences
+        //   of the string "url(" in the return value for elemStyle.background
+
+        return (/(url\s*\(.*?){3}/).test(mStyle.background);
+    };
+
+
+
+    // this will false positive in Opera Mini
+    //   github.com/Modernizr/Modernizr/issues/396
+
+    tests['backgroundsize'] = function() {
+        return testPropsAll('backgroundSize');
+    };
+
+    tests['borderimage'] = function() {
+        return testPropsAll('borderImage');
+    };
+
+
+    // Super comprehensive table about all the unique implementations of
+    // border-radius: muddledramblings.com/table-of-css3-border-radius-compliance
+
+    tests['borderradius'] = function() {
+        return testPropsAll('borderRadius');
+    };
+
+    // WebOS unfortunately false positives on this test.
+    tests['boxshadow'] = function() {
+        return testPropsAll('boxShadow');
+    };
+
+    // FF3.0 will false positive on this test
+    tests['textshadow'] = function() {
+        return document.createElement('div').style.textShadow === '';
+    };
+
+
+    tests['opacity'] = function() {
+        // Browsers that actually have CSS Opacity implemented have done so
+        //  according to spec, which means their return values are within the
+        //  range of [0.0,1.0] - including the leading zero.
+
+        setCssAll('opacity:.55');
+
+        // The non-literal . in this regex is intentional:
+        //   German Chrome returns this value as 0,55
+        // github.com/Modernizr/Modernizr/issues/#issue/59/comment/516632
+        return (/^0.55$/).test(mStyle.opacity);
+    };
+
+
+    // Note, Android < 4 will pass this test, but can only animate
+    //   a single property at a time
+    //   daneden.me/2011/12/putting-up-with-androids-bullshit/
+    tests['cssanimations'] = function() {
+        return testPropsAll('animationName');
+    };
+
+
+    tests['csscolumns'] = function() {
+        return testPropsAll('columnCount');
+    };
+
+
+    tests['cssgradients'] = function() {
+        /**
+         * For CSS Gradients syntax, please see:
+         * webkit.org/blog/175/introducing-css-gradients/
+         * developer.mozilla.org/en/CSS/-moz-linear-gradient
+         * developer.mozilla.org/en/CSS/-moz-radial-gradient
+         * dev.w3.org/csswg/css3-images/#gradients-
+         */
+
+        var str1 = 'background-image:',
+            str2 = 'gradient(linear,left top,right bottom,from(#9f9),to(white));',
+            str3 = 'linear-gradient(left top,#9f9, white);';
+
+        setCss(
+             // legacy webkit syntax (FIXME: remove when syntax not in use anymore)
+              (str1 + '-webkit- '.split(' ').join(str2 + str1) +
+             // standard syntax             // trailing 'background-image:'
+              prefixes.join(str3 + str1)).slice(0, -str1.length)
+        );
+
+        return contains(mStyle.backgroundImage, 'gradient');
+    };
+
+
+    tests['cssreflections'] = function() {
+        return testPropsAll('boxReflect');
+    };
+
+
+    tests['csstransforms'] = function() {
+        return !!testPropsAll('transform');
+    };
+
+
+    tests['csstransforms3d'] = function() {
+
+        var ret = !!testPropsAll('perspective');
+
+        // Webkit's 3D transforms are passed off to the browser's own graphics renderer.
+        //   It works fine in Safari on Leopard and Snow Leopard, but not in Chrome in
+        //   some conditions. As a result, Webkit typically recognizes the syntax but
+        //   will sometimes throw a false positive, thus we must do a more thorough check:
+        if ( ret && 'webkitPerspective' in docElement.style ) {
+
+          // Webkit allows this media query to succeed only if the feature is enabled.
+          // `@media (transform-3d),(-webkit-transform-3d){ ... }`
+          injectElementWithStyles('@media (transform-3d),(-webkit-transform-3d){#modernizr{left:9px;position:absolute;height:3px;}}', function( node, rule ) {
+            ret = node.offsetLeft === 9 && node.offsetHeight === 3;
+          });
+        }
+        return ret;
+    };
+
+
+    tests['csstransitions'] = function() {
+        return testPropsAll('transition');
+    };
+
+
+    /*>>fontface*/
+    // @font-face detection routine by Diego Perini
+    // javascript.nwbox.com/CSSSupport/
+
+    // false positives:
+    //   WebOS github.com/Modernizr/Modernizr/issues/342
+    //   WP7   github.com/Modernizr/Modernizr/issues/538
+    tests['fontface'] = function() {
+        var bool;
+
+        injectElementWithStyles('@font-face {font-family:"font";src:url("https://")}', function( node, rule ) {
+          var style = document.getElementById('smodernizr'),
+              sheet = style.sheet || style.styleSheet,
+              cssText = sheet ? (sheet.cssRules && sheet.cssRules[0] ? sheet.cssRules[0].cssText : sheet.cssText || '') : '';
+
+          bool = /src/i.test(cssText) && cssText.indexOf(rule.split(' ')[0]) === 0;
+        });
+
+        return bool;
+    };
+    /*>>fontface*/
+
+    // CSS generated content detection
+    tests['generatedcontent'] = function() {
+        var bool;
+
+        injectElementWithStyles(['#',mod,'{font:0/0 a}#',mod,':after{content:"',smile,'";visibility:hidden;font:3px/1 a}'].join(''), function( node ) {
+          bool = node.offsetHeight >= 3;
+        });
+
+        return bool;
+    };
+
+
+
+    // These tests evaluate support of the video/audio elements, as well as
+    // testing what types of content they support.
+    //
+    // We're using the Boolean constructor here, so that we can extend the value
+    // e.g.  Modernizr.video     // true
+    //       Modernizr.video.ogg // 'probably'
+    //
+    // Codec values from : github.com/NielsLeenheer/html5test/blob/9106a8/index.html#L845
+    //                     thx to NielsLeenheer and zcorpan
+
+    // Note: in some older browsers, "no" was a return value instead of empty string.
+    //   It was live in FF3.5.0 and 3.5.1, but fixed in 3.5.2
+    //   It was also live in Safari 4.0.0 - 4.0.4, but fixed in 4.0.5
+
+    tests['video'] = function() {
+        var elem = document.createElement('video'),
+            bool = false;
+
+        // IE9 Running on Windows Server SKU can cause an exception to be thrown, bug #224
+        try {
+            if ( bool = !!elem.canPlayType ) {
+                bool      = new Boolean(bool);
+                bool.ogg  = elem.canPlayType('video/ogg; codecs="theora"')      .replace(/^no$/,'');
+
+                // Without QuickTime, this value will be `undefined`. github.com/Modernizr/Modernizr/issues/546
+                bool.h264 = elem.canPlayType('video/mp4; codecs="avc1.42E01E"') .replace(/^no$/,'');
+
+                bool.webm = elem.canPlayType('video/webm; codecs="vp8, vorbis"').replace(/^no$/,'');
+            }
+
+        } catch(e) { }
+
+        return bool;
+    };
+
+    tests['audio'] = function() {
+        var elem = document.createElement('audio'),
+            bool = false;
+
+        try {
+            if ( bool = !!elem.canPlayType ) {
+                bool      = new Boolean(bool);
+                bool.ogg  = elem.canPlayType('audio/ogg; codecs="vorbis"').replace(/^no$/,'');
+                bool.mp3  = elem.canPlayType('audio/mpeg;')               .replace(/^no$/,'');
+
+                // Mimetypes accepted:
+                //   developer.mozilla.org/En/Media_formats_supported_by_the_audio_and_video_elements
+                //   bit.ly/iphoneoscodecs
+                bool.wav  = elem.canPlayType('audio/wav; codecs="1"')     .replace(/^no$/,'');
+                bool.m4a  = ( elem.canPlayType('audio/x-m4a;')            ||
+                              elem.canPlayType('audio/aac;'))             .replace(/^no$/,'');
+            }
+        } catch(e) { }
+
+        return bool;
+    };
+
+
+    // In FF4, if disabled, window.localStorage should === null.
+
+    // Normally, we could not test that directly and need to do a
+    //   `('localStorage' in window) && ` test first because otherwise Firefox will
+    //   throw bugzil.la/365772 if cookies are disabled
+
+    // Also in iOS5 Private Browsing mode, attempting to use localStorage.setItem
+    // will throw the exception:
+    //   QUOTA_EXCEEDED_ERRROR DOM Exception 22.
+    // Peculiarly, getItem and removeItem calls do not throw.
+
+    // Because we are forced to try/catch this, we'll go aggressive.
+
+    // Just FWIW: IE8 Compat mode supports these features completely:
+    //   www.quirksmode.org/dom/html5.html
+    // But IE8 doesn't support either with local files
+
+    tests['localstorage'] = function() {
+        try {
+            localStorage.setItem(mod, mod);
+            localStorage.removeItem(mod);
+            return true;
+        } catch(e) {
+            return false;
+        }
+    };
+
+    tests['sessionstorage'] = function() {
+        try {
+            sessionStorage.setItem(mod, mod);
+            sessionStorage.removeItem(mod);
+            return true;
+        } catch(e) {
+            return false;
+        }
+    };
+
+
+    tests['webworkers'] = function() {
+        return !!window.Worker;
+    };
+
+
+    tests['applicationcache'] = function() {
+        return !!window.applicationCache;
+    };
+
+
+    // Thanks to Erik Dahlstrom
+    tests['svg'] = function() {
+        return !!document.createElementNS && !!document.createElementNS(ns.svg, 'svg').createSVGRect;
+    };
+
+    // specifically for SVG inline in HTML, not within XHTML
+    // test page: paulirish.com/demo/inline-svg
+    tests['inlinesvg'] = function() {
+      var div = document.createElement('div');
+      div.innerHTML = '<svg/>';
+      return (div.firstChild && div.firstChild.namespaceURI) == ns.svg;
+    };
+
+    // SVG SMIL animation
+    tests['smil'] = function() {
+        return !!document.createElementNS && /SVGAnimate/.test(toString.call(document.createElementNS(ns.svg, 'animate')));
+    };
+
+    // This test is only for clip paths in SVG proper, not clip paths on HTML content
+    // demo: srufaculty.sru.edu/david.dailey/svg/newstuff/clipPath4.svg
+
+    // However read the comments to dig into applying SVG clippaths to HTML content here:
+    //   github.com/Modernizr/Modernizr/issues/213#issuecomment-1149491
+    tests['svgclippaths'] = function() {
+        return !!document.createElementNS && /SVGClipPath/.test(toString.call(document.createElementNS(ns.svg, 'clipPath')));
+    };
+
+    /*>>webforms*/
+    // input features and input types go directly onto the ret object, bypassing the tests loop.
+    // Hold this guy to execute in a moment.
+    function webforms() {
+        /*>>input*/
+        // Run through HTML5's new input attributes to see if the UA understands any.
+        // We're using f which is the <input> element created early on
+        // Mike Taylr has created a comprehensive resource for testing these attributes
+        //   when applied to all input types:
+        //   miketaylr.com/code/input-type-attr.html
+        // spec: www.whatwg.org/specs/web-apps/current-work/multipage/the-input-element.html#input-type-attr-summary
+
+        // Only input placeholder is tested while textarea's placeholder is not.
+        // Currently Safari 4 and Opera 11 have support only for the input placeholder
+        // Both tests are available in feature-detects/forms-placeholder.js
+        Modernizr['input'] = (function( props ) {
+            for ( var i = 0, len = props.length; i < len; i++ ) {
+                attrs[ props[i] ] = !!(props[i] in inputElem);
+            }
+            if (attrs.list){
+              // safari false positive's on datalist: webk.it/74252
+              // see also github.com/Modernizr/Modernizr/issues/146
+              attrs.list = !!(document.createElement('datalist') && window.HTMLDataListElement);
+            }
+            return attrs;
+        })('autocomplete autofocus list placeholder max min multiple pattern required step'.split(' '));
+        /*>>input*/
+
+        /*>>inputtypes*/
+        // Run through HTML5's new input types to see if the UA understands any.
+        //   This is put behind the tests runloop because it doesn't return a
+        //   true/false like all the other tests; instead, it returns an object
+        //   containing each input type with its corresponding true/false value
+
+        // Big thanks to @miketaylr for the html5 forms expertise. miketaylr.com/
+        Modernizr['inputtypes'] = (function(props) {
+
+            for ( var i = 0, bool, inputElemType, defaultView, len = props.length; i < len; i++ ) {
+
+                inputElem.setAttribute('type', inputElemType = props[i]);
+                bool = inputElem.type !== 'text';
+
+                // We first check to see if the type we give it sticks..
+                // If the type does, we feed it a textual value, which shouldn't be valid.
+                // If the value doesn't stick, we know there's input sanitization which infers a custom UI
+                if ( bool ) {
+
+                    inputElem.value         = smile;
+                    inputElem.style.cssText = 'position:absolute;visibility:hidden;';
+
+                    if ( /^range$/.test(inputElemType) && inputElem.style.WebkitAppearance !== undefined ) {
+
+                      docElement.appendChild(inputElem);
+                      defaultView = document.defaultView;
+
+                      // Safari 2-4 allows the smiley as a value, despite making a slider
+                      bool =  defaultView.getComputedStyle &&
+                              defaultView.getComputedStyle(inputElem, null).WebkitAppearance !== 'textfield' &&
+                              // Mobile android web browser has false positive, so must
+                              // check the height to see if the widget is actually there.
+                              (inputElem.offsetHeight !== 0);
+
+                      docElement.removeChild(inputElem);
+
+                    } else if ( /^(search|tel)$/.test(inputElemType) ){
+                      // Spec doesn't define any special parsing or detectable UI
+                      //   behaviors so we pass these through as true
+
+                      // Interestingly, opera fails the earlier test, so it doesn't
+                      //  even make it here.
+
+                    } else if ( /^(url|email)$/.test(inputElemType) ) {
+                      // Real url and email support comes with prebaked validation.
+                      bool = inputElem.checkValidity && inputElem.checkValidity() === false;
+
+                    } else {
+                      // If the upgraded input compontent rejects the :) text, we got a winner
+                      bool = inputElem.value != smile;
+                    }
+                }
+
+                inputs[ props[i] ] = !!bool;
+            }
+            return inputs;
+        })('search tel url email datetime date month week time datetime-local number range color'.split(' '));
+        /*>>inputtypes*/
+    }
+    /*>>webforms*/
+
+
+    // End of test definitions
+    // -----------------------
+
+
+
+    // Run through all tests and detect their support in the current UA.
+    // todo: hypothetically we could be doing an array of tests and use a basic loop here.
+    for ( var feature in tests ) {
+        if ( hasOwnProp(tests, feature) ) {
+            // run the test, throw the return value into the Modernizr,
+            //   then based on that boolean, define an appropriate className
+            //   and push it into an array of classes we'll join later.
+            featureName  = feature.toLowerCase();
+            Modernizr[featureName] = tests[feature]();
+
+            classes.push((Modernizr[featureName] ? '' : 'no-') + featureName);
+        }
+    }
+
+    /*>>webforms*/
+    // input tests need to run.
+    Modernizr.input || webforms();
+    /*>>webforms*/
+
+
+    /**
+     * addTest allows the user to define their own feature tests
+     * the result will be added onto the Modernizr object,
+     * as well as an appropriate className set on the html element
+     *
+     * @param feature - String naming the feature
+     * @param test - Function returning true if feature is supported, false if not
+     */
+     Modernizr.addTest = function ( feature, test ) {
+       if ( typeof feature == 'object' ) {
+         for ( var key in feature ) {
+           if ( hasOwnProp( feature, key ) ) {
+             Modernizr.addTest( key, feature[ key ] );
+           }
+         }
+       } else {
+
+         feature = feature.toLowerCase();
+
+         if ( Modernizr[feature] !== undefined ) {
+           // we're going to quit if you're trying to overwrite an existing test
+           // if we were to allow it, we'd do this:
+           //   var re = new RegExp("\\b(no-)?" + feature + "\\b");
+           //   docElement.className = docElement.className.replace( re, '' );
+           // but, no rly, stuff 'em.
+           return Modernizr;
+         }
+
+         test = typeof test == 'function' ? test() : test;
+
+         if (typeof enableClasses !== "undefined" && enableClasses) {
+           docElement.className += ' ' + (test ? '' : 'no-') + feature;
+         }
+         Modernizr[feature] = test;
+
+       }
+
+       return Modernizr; // allow chaining.
+     };
+
+
+    // Reset modElem.cssText to nothing to reduce memory footprint.
+    setCss('');
+    modElem = inputElem = null;
+
+    /*>>shiv*/
+    /*! HTML5 Shiv v3.6.1 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed */
+    ;(function(window, document) {
+    /*jshint evil:true */
+      /** Preset options */
+      var options = window.html5 || {};
+
+      /** Used to skip problem elements */
+      var reSkip = /^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i;
+
+      /** Not all elements can be cloned in IE **/
+      var saveClones = /^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i;
+
+      /** Detect whether the browser supports default html5 styles */
+      var supportsHtml5Styles;
+
+      /** Name of the expando, to work with multiple documents or to re-shiv one document */
+      var expando = '_html5shiv';
+
+      /** The id for the the documents expando */
+      var expanID = 0;
+
+      /** Cached data for each document */
+      var expandoData = {};
+
+      /** Detect whether the browser supports unknown elements */
+      var supportsUnknownElements;
+
+      (function() {
+        try {
+            var a = document.createElement('a');
+            a.innerHTML = '<xyz></xyz>';
+            //if the hidden property is implemented we can assume, that the browser supports basic HTML5 Styles
+            supportsHtml5Styles = ('hidden' in a);
+
+            supportsUnknownElements = a.childNodes.length == 1 || (function() {
+              // assign a false positive if unable to shiv
+              (document.createElement)('a');
+              var frag = document.createDocumentFragment();
+              return (
+                typeof frag.cloneNode == 'undefined' ||
+                typeof frag.createDocumentFragment == 'undefined' ||
+                typeof frag.createElement == 'undefined'
+              );
+            }());
+        } catch(e) {
+          supportsHtml5Styles = true;
+          supportsUnknownElements = true;
+        }
+
+      }());
+
+      /*--------------------------------------------------------------------------*/
+
+      /**
+       * Creates a style sheet with the given CSS text and adds it to the document.
+       * @private
+       * @param {Document} ownerDocument The document.
+       * @param {String} cssText The CSS text.
+       * @returns {StyleSheet} The style element.
+       */
+      function addStyleSheet(ownerDocument, cssText) {
+        var p = ownerDocument.createElement('p'),
+            parent = ownerDocument.getElementsByTagName('head')[0] || ownerDocument.documentElement;
+
+        p.innerHTML = 'x<style>' + cssText + '</style>';
+        return parent.insertBefore(p.lastChild, parent.firstChild);
+      }
+
+      /**
+       * Returns the value of `html5.elements` as an array.
+       * @private
+       * @returns {Array} An array of shived element node names.
+       */
+      function getElements() {
+        var elements = html5.elements;
+        return typeof elements == 'string' ? elements.split(' ') : elements;
+      }
+
+        /**
+       * Returns the data associated to the given document
+       * @private
+       * @param {Document} ownerDocument The document.
+       * @returns {Object} An object of data.
+       */
+      function getExpandoData(ownerDocument) {
+        var data = expandoData[ownerDocument[expando]];
+        if (!data) {
+            data = {};
+            expanID++;
+            ownerDocument[expando] = expanID;
+            expandoData[expanID] = data;
+        }
+        return data;
+      }
+
+      /**
+       * returns a shived element for the given nodeName and document
+       * @memberOf html5
+       * @param {String} nodeName name of the element
+       * @param {Document} ownerDocument The context document.
+       * @returns {Object} The shived element.
+       */
+      function createElement(nodeName, ownerDocument, data){
+        if (!ownerDocument) {
+            ownerDocument = document;
+        }
+        if(supportsUnknownElements){
+            return ownerDocument.createElement(nodeName);
+        }
+        if (!data) {
+            data = getExpandoData(ownerDocument);
+        }
+        var node;
+
+        if (data.cache[nodeName]) {
+            node = data.cache[nodeName].cloneNode();
+        } else if (saveClones.test(nodeName)) {
+            node = (data.cache[nodeName] = data.createElem(nodeName)).cloneNode();
+        } else {
+            node = data.createElem(nodeName);
+        }
+
+        // Avoid adding some elements to fragments in IE < 9 because
+        // * Attributes like `name` or `type` cannot be set/changed once an element
+        //   is inserted into a document/fragment
+        // * Link elements with `src` attributes that are inaccessible, as with
+        //   a 403 response, will cause the tab/window to crash
+        // * Script elements appended to fragments will execute when their `src`
+        //   or `text` property is set
+        return node.canHaveChildren && !reSkip.test(nodeName) ? data.frag.appendChild(node) : node;
+      }
+
+      /**
+       * returns a shived DocumentFragment for the given document
+       * @memberOf html5
+       * @param {Document} ownerDocument The context document.
+       * @returns {Object} The shived DocumentFragment.
+       */
+      function createDocumentFragment(ownerDocument, data){
+        if (!ownerDocument) {
+            ownerDocument = document;
+        }
+        if(supportsUnknownElements){
+            return ownerDocument.createDocumentFragment();
+        }
+        data = data || getExpandoData(ownerDocument);
+        var clone = data.frag.cloneNode(),
+            i = 0,
+            elems = getElements(),
+            l = elems.length;
+        for(;i<l;i++){
+            clone.createElement(elems[i]);
+        }
+        return clone;
+      }
+
+      /**
+       * Shivs the `createElement` and `createDocumentFragment` methods of the document.
+       * @private
+       * @param {Document|DocumentFragment} ownerDocument The document.
+       * @param {Object} data of the document.
+       */
+      function shivMethods(ownerDocument, data) {
+        if (!data.cache) {
+            data.cache = {};
+            data.createElem = ownerDocument.createElement;
+            data.createFrag = ownerDocument.createDocumentFragment;
+            data.frag = data.createFrag();
+        }
+
+
+        ownerDocument.createElement = function(nodeName) {
+          //abort shiv
+          if (!html5.shivMethods) {
+              return data.createElem(nodeName);
+          }
+          return createElement(nodeName, ownerDocument, data);
+        };
+
+        ownerDocument.createDocumentFragment = Function('h,f', 'return function(){' +
+          'var n=f.cloneNode(),c=n.createElement;' +
+          'h.shivMethods&&(' +
+            // unroll the `createElement` calls
+            getElements().join().replace(/\w+/g, function(nodeName) {
+              data.createElem(nodeName);
+              data.frag.createElement(nodeName);
+              return 'c("' + nodeName + '")';
+            }) +
+          ');return n}'
+        )(html5, data.frag);
+      }
+
+      /*--------------------------------------------------------------------------*/
+
+      /**
+       * Shivs the given document.
+       * @memberOf html5
+       * @param {Document} ownerDocument The document to shiv.
+       * @returns {Document} The shived document.
+       */
+      function shivDocument(ownerDocument) {
+        if (!ownerDocument) {
+            ownerDocument = document;
+        }
+        var data = getExpandoData(ownerDocument);
+
+        if (html5.shivCSS && !supportsHtml5Styles && !data.hasCSS) {
+          data.hasCSS = !!addStyleSheet(ownerDocument,
+            // corrects block display not defined in IE6/7/8/9
+            'article,aside,figcaption,figure,footer,header,hgroup,nav,section{display:block}' +
+            // adds styling not present in IE6/7/8/9
+            'mark{background:#FF0;color:#000}'
+          );
+        }
+        if (!supportsUnknownElements) {
+          shivMethods(ownerDocument, data);
+        }
+        return ownerDocument;
+      }
+
+      /*--------------------------------------------------------------------------*/
+
+      /**
+       * The `html5` object is exposed so that more elements can be shived and
+       * existing shiving can be detected on iframes.
+       * @type Object
+       * @example
+       *
+       * // options can be changed before the script is included
+       * html5 = { 'elements': 'mark section', 'shivCSS': false, 'shivMethods': false };
+       */
+      var html5 = {
+
+        /**
+         * An array or space separated string of node names of the elements to shiv.
+         * @memberOf html5
+         * @type Array|String
+         */
+        'elements': options.elements || 'abbr article aside audio bdi canvas data datalist details figcaption figure footer header hgroup mark meter nav output progress section summary time video',
+
+        /**
+         * A flag to indicate that the HTML5 style sheet should be inserted.
+         * @memberOf html5
+         * @type Boolean
+         */
+        'shivCSS': (options.shivCSS !== false),
+
+        /**
+         * Is equal to true if a browser supports creating unknown/HTML5 elements
+         * @memberOf html5
+         * @type boolean
+         */
+        'supportsUnknownElements': supportsUnknownElements,
+
+        /**
+         * A flag to indicate that the document's `createElement` and `createDocumentFragment`
+         * methods should be overwritten.
+         * @memberOf html5
+         * @type Boolean
+         */
+        'shivMethods': (options.shivMethods !== false),
+
+        /**
+         * A string to describe the type of `html5` object ("default" or "default print").
+         * @memberOf html5
+         * @type String
+         */
+        'type': 'default',
+
+        // shivs the document according to the specified `html5` object options
+        'shivDocument': shivDocument,
+
+        //creates a shived element
+        createElement: createElement,
+
+        //creates a shived documentFragment
+        createDocumentFragment: createDocumentFragment
+      };
+
+      /*--------------------------------------------------------------------------*/
+
+      // expose html5
+      window.html5 = html5;
+
+      // shiv the document
+      shivDocument(document);
+
+    }(this, document));
+    /*>>shiv*/
+
+    // Assign private properties to the return object with prefix
+    Modernizr._version      = version;
+
+    // expose these for the plugin API. Look in the source for how to join() them against your input
+    /*>>prefixes*/
+    Modernizr._prefixes     = prefixes;
+    /*>>prefixes*/
+    /*>>domprefixes*/
+    Modernizr._domPrefixes  = domPrefixes;
+    Modernizr._cssomPrefixes  = cssomPrefixes;
+    /*>>domprefixes*/
+
+    /*>>mq*/
+    // Modernizr.mq tests a given media query, live against the current state of the window
+    // A few important notes:
+    //   * If a browser does not support media queries at all (eg. oldIE) the mq() will always return false
+    //   * A max-width or orientation query will be evaluated against the current state, which may change later.
+    //   * You must specify values. Eg. If you are testing support for the min-width media query use:
+    //       Modernizr.mq('(min-width:0)')
+    // usage:
+    // Modernizr.mq('only screen and (max-width:768)')
+    Modernizr.mq            = testMediaQuery;
+    /*>>mq*/
+
+    /*>>hasevent*/
+    // Modernizr.hasEvent() detects support for a given event, with an optional element to test on
+    // Modernizr.hasEvent('gesturestart', elem)
+    Modernizr.hasEvent      = isEventSupported;
+    /*>>hasevent*/
+
+    /*>>testprop*/
+    // Modernizr.testProp() investigates whether a given style property is recognized
+    // Note that the property names must be provided in the camelCase variant.
+    // Modernizr.testProp('pointerEvents')
+    Modernizr.testProp      = function(prop){
+        return testProps([prop]);
+    };
+    /*>>testprop*/
+
+    /*>>testallprops*/
+    // Modernizr.testAllProps() investigates whether a given style property,
+    //   or any of its vendor-prefixed variants, is recognized
+    // Note that the property names must be provided in the camelCase variant.
+    // Modernizr.testAllProps('boxSizing')
+    Modernizr.testAllProps  = testPropsAll;
+    /*>>testallprops*/
+
+
+    /*>>teststyles*/
+    // Modernizr.testStyles() allows you to add custom styles to the document and test an element afterwards
+    // Modernizr.testStyles('#modernizr { position:absolute }', function(elem, rule){ ... })
+    Modernizr.testStyles    = injectElementWithStyles;
+    /*>>teststyles*/
+
+
+    /*>>prefixed*/
+    // Modernizr.prefixed() returns the prefixed or nonprefixed property name variant of your input
+    // Modernizr.prefixed('boxSizing') // 'MozBoxSizing'
+
+    // Properties must be passed as dom-style camelcase, rather than `box-sizing` hypentated style.
+    // Return values will also be the camelCase variant, if you need to translate that to hypenated style use:
+    //
+    //     str.replace(/([A-Z])/g, function(str,m1){ return '-' + m1.toLowerCase(); }).replace(/^ms-/,'-ms-');
+
+    // If you're trying to ascertain which transition end event to bind to, you might do something like...
+    //
+    //     var transEndEventNames = {
+    //       'WebkitTransition' : 'webkitTransitionEnd',
+    //       'MozTransition'    : 'transitionend',
+    //       'OTransition'      : 'oTransitionEnd',
+    //       'msTransition'     : 'MSTransitionEnd',
+    //       'transition'       : 'transitionend'
+    //     },
+    //     transEndEventName = transEndEventNames[ Modernizr.prefixed('transition') ];
+
+    Modernizr.prefixed      = function(prop, obj, elem){
+      if(!obj) {
+        return testPropsAll(prop, 'pfx');
+      } else {
+        // Testing DOM property e.g. Modernizr.prefixed('requestAnimationFrame', window) // 'mozRequestAnimationFrame'
+        return testPropsAll(prop, obj, elem);
+      }
+    };
+    /*>>prefixed*/
+
+
+    /*>>cssclasses*/
+    // Remove "no-js" class from <html> element, if it exists:
+    docElement.className = docElement.className.replace(/(^|\s)no-js(\s|$)/, '$1$2') +
+
+                            // Add the new classes to the <html> element.
+                            (enableClasses ? ' js ' + classes.join(' ') : '');
+    /*>>cssclasses*/
+
+    return Modernizr;
+
+})(this, this.document);
+
+define("modernizr", function(){});
+
 //Tools written by alfred
 (function() {
 	var url = "/phpdb/phyloExpertDB.php";
@@ -17674,8 +19273,17 @@ case 27:t.datepicker._hideDatepicker();break;case 33:t.datepicker._adjustDate(e.
 if(n){if(a=this._find(s),a.length)return a.find(".ui-tooltip-content").html(n),void 0;s.is("[title]")&&(i&&"mouseover"===i.type?s.attr("title",""):s.removeAttr("title")),a=this._tooltip(s),e(s,a.attr("id")),a.find(".ui-tooltip-content").html(n),this.options.track&&i&&/^mouse/.test(i.type)?(this._on(this.document,{mousemove:o}),o(i)):a.position(t.extend({of:s},this.options.position)),a.hide(),this._show(a,this.options.show),this.options.show&&this.options.show.delay&&(h=this.delayedShow=setInterval(function(){a.is(":visible")&&(o(l.of),clearInterval(h))},t.fx.interval)),this._trigger("open",i,{tooltip:a}),r={keyup:function(e){if(e.keyCode===t.ui.keyCode.ESCAPE){var i=t.Event(e);i.currentTarget=s[0],this.close(i,!0)}},remove:function(){this._removeTooltip(a)}},i&&"mouseover"!==i.type||(r.mouseleave="close"),i&&"focusin"!==i.type||(r.focusout="close"),this._on(!0,s,r)}},close:function(e){var s=this,n=t(e?e.currentTarget:this.element),o=this._find(n);this.closing||(clearInterval(this.delayedShow),n.data("ui-tooltip-title")&&n.attr("title",n.data("ui-tooltip-title")),i(n),o.stop(!0),this._hide(o,this.options.hide,function(){s._removeTooltip(t(this))}),n.removeData("ui-tooltip-open"),this._off(n,"mouseleave focusout keyup"),n[0]!==this.element[0]&&this._off(n,"remove"),this._off(this.document,"mousemove"),e&&"mouseleave"===e.type&&t.each(this.parents,function(e,i){t(i.element).attr("title",i.title),delete s.parents[e]}),this.closing=!0,this._trigger("close",e,{tooltip:o}),this.closing=!1)},_tooltip:function(e){var i="ui-tooltip-"+s++,n=t("<div>").attr({id:i,role:"tooltip"}).addClass("ui-tooltip ui-widget ui-corner-all ui-widget-content "+(this.options.tooltipClass||""));return t("<div>").addClass("ui-tooltip-content").appendTo(n),n.appendTo(this.document[0].body),this.tooltips[i]=e,n},_find:function(e){var i=e.data("ui-tooltip-id");return i?t("#"+i):t()},_removeTooltip:function(t){t.remove(),delete this.tooltips[t.attr("id")]},_destroy:function(){var e=this;t.each(this.tooltips,function(i,s){var n=t.Event("blur");n.target=n.currentTarget=s[0],e.close(n,!0),t("#"+i).remove(),s.data("ui-tooltip-title")&&(s.attr("title",s.data("ui-tooltip-title")),s.removeData("ui-tooltip-title"))})}})}(jQuery);
 define("jquery-ui", ["jquery"], function(){});
 
-!function(){function a(){}a.prototype.parse=function(a){for(var b=[],c={},d=a.split(/\s*(;|\(|\)|,|:)\s*/),e=0;e<d.length;e++){var f=d[e];switch(f){case"(":var g={};c.branchset=[g],b.push(c),c=g;break;case",":var g={};b[b.length-1].branchset.push(g),c=g;break;case")":c=b.pop();break;case":":break;default:var h=d[e-1];")"==h||"("==h||","==h?c.name=f:":"==h&&(c.length=parseFloat(f))}}return c};var b=a.prototype;[["parse",b.parse]],$.newick={},$.newick.parse=b.parse}(),function(){$.stage={current:-1,last:0,round:function(){if(this.current<this.last)this.current+=1,this.set(this.current);else if(this.current===this.last)return this.end=!0,$.timer.stop(),document.getElementById("endGameSound").play(),$.endGame.complete(),"end game"},set:function(a){0==a&&$.timer.start(),$.engine.deActive(),$(".boardRow").removeClass("current").removeClass("blocked");var b=function(a){var b=$.phylo.tree[a];0==b.child?($("#row"+b.node1).hide().show("slide",{direction:"right"},500),$("#row"+b.node2).hide().show("slide",{direction:"right"},500)):1==b.child&&$("#row"+b.node1).hide().show("slide",{direction:"right"},500)},c=function(a){var b=$.phylo.tree[a];0==b.child?($("#row"+b.node1).removeClass("hidden").addClass("current"),$("#row"+b.node2).removeClass("hidden").addClass("current")):1==b.child?($("#row"+b.node1).removeClass("hidden").addClass("current"),c(b.node2)):2==b.child&&(c(b.node1),c(b.node2))};this.splash(a),b(a),c(a),0==a&&$("#bg").show("slide",{direction:"left"},400),$(".boardRow").each(function(){0==$(this).hasClass("hidden")&&0==$(this).hasClass("current")&&$(this).addClass("blocked")});var a=$.phylo.tree[a];$.engine.active(),$.tree.buildAncestor();var d=[];$.phylo.bestTrack=[];for(var e=0;8>e;e++){for(var f=[],g=0;25>g;g++)f.push(0);d.push(f),$.phylo.bestTrack.push(f)}$.helper.copy(d,$.sequence.track),$.helper.copy($.sequence.track,$.phylo.origin);var h=$.fitch.score();$.helper.copy($.sequence.track,d),$.sequence.par=h,$.board.par(h);var i=$.fitch.score();$.phylo.bestScore=i,$.board.score(i),$.helper.copy($.phylo.bestTrack,$.sequence.track),$.board.bestScore(i),i>=h?$.board.approve():$.board.unapprove(),$.board.stats()},end:!1,splash:function(a){$("#splash").html("Stage "+(a+1)).show(),window.setTimeout(function(){$("#splash").fadeOut("fast")},800)}}}(),function(){$.board={build:function(){$("#gameBoard").html("<canvas width='827px' height='332px' id='canvasBG'></canvas>"),this.redrawBG()},redrawBG:function(){var a=document.getElementById("canvasBG"),b=a.getContext("2d");b.globalAlpha=1,b.clearRect(0,0,827,350);for(var c=0;c<$.phylo.seqLen+1;c++)b.beginPath(),b.lineWidth=2,b.moveTo($.sequence.calcPos(c)+1,0),b.lineTo($.sequence.calcPos(c)+1,350),b.strokeStyle="#C4C4C4",b.stroke(),b.closePath();for(var c=0;c<$.phylo.rows+1;c++)b.beginPath(),b.lineWidth=2,b.moveTo(0,$.sequence.calcPos(c)+1),b.lineTo(827,$.sequence.calcPos(c)+1),b.strokeStyle="#C4C4C4",b.stroke(),b.closePath()},score:function(a){$.phylo.currentScore=a,$("#userScore").html("Score: "+a),$.html5.score.setScore(a)},bestScore:function(a){$("#bestScore").html("Best: "+a),$.stage.current==$.stage.last&&a>$.sequence.par&&$.protocal.sendHighScore()},par:function(a){$("#parScore").html("Par: "+a)},stats:function(){var a=window.lang.body.play.gameselect["game board"];void 0==$.stage.stats?$("#statsPanel").html(a["field 3"]+": "+($.stage.current+1)+"/"+($.stage.last+1)):$("#statsPanel").html("<i class='icon-puzzle'></i> ID:&nbsp;&nbsp;"+$.phylo.id+"<br>"+a["field 3"]+": "+($.stage.current+1)+"/"+($.stage.last+1)+"<span class='gap'></span>"+a["field 9"]+": "+$.stage.stats.match+"<span class='gap'></span>"+a["field 10"]+": "+$.stage.stats.mismatch+"<span class='gap'></span>"+a["field 11"]+": "+$.stage.stats.open+"<span class='gap'></span>"+a["field 12"]+": "+$.stage.stats.extend+"<span class='gap'><span>"+a["field 2"]+": "+$.sequence.par)},startListener:function(){var a=this,b=document.getElementById("starClickSound");0==window.DEV.disableMusic&&$("#musicPlayerSpot").html("<audio loop='loop' id='game-audio' preload='auto' autobuffer style='display:none'><source src='assets/sounds/Valent%20-%20The%20Buckle.ogg' type='audio/ogg'/><source src='assets/sounds/Valent%20-%20The%20Buckle.mp3' type='audio/mp3'/>Your browser does not support audio element</audio>");var c=["#customize-music","#customize-countdown","#customize-redraw","#customize-star","#customize-fxOthers"];for(var d in c)$(c[d]).trigger("change");$("#scorePanel").hide(),$("#cycle").unbind().click(function(){$.helper.copy($.sequence.track,$.phylo.bestTrack);var b=$.fitch.score();$.board.score(b),$.physics.snapRandom(),$.phylo.bestScore>=$.sequence.par&&$.board.approve(),a.stats()}),$("#star").unbind().click(function(){b.play(),$.phylo.currentScore>=$.sequence.par&&$.stage.round()})},approve:function(){var a=this;document.getElementById("lightUpSound"),$("#star").addClass("pass"),$("#star").animate({opacity:1},300,function(){return $.phylo.currentScore<$.sequence.par?(a.unapprove(),void 0):(lightUpSound.play(),$("#star").animate({opacity:.2},300,function(){return $.phylo.currentScore<$.sequence.par?(a.unapprove(),void 0):($("#star").animate({opacity:1},500,function(){return $.phylo.currentScore<$.sequence.par?(a.unapprove(),void 0):($("#star").animate({opacity:.2},300,function(){return $.phylo.currentScore<$.sequence.par?(a.unapprove(),void 0):($("#star").animate({opacity:1},500,function(){return $.phylo.currentScore<$.sequence.par?(a.unapprove(),void 0):void 0}),void 0)}),void 0)}),void 0)}),void 0)})},unapprove:function(){$("#star").removeClass("pass"),$("#star").css({opacity:.4})},getJsonAlignments:function(){for(var a=this,b=$.sequence.track,c="[",d=0;d<b.length;d++){c+='{"';for(var e=0;e<b[d].length;e++)c+="x"==b[d][e]?"-":0!=d&&0==b[d][e]?"":a.convertColor($("#"+b[d][e]));c+='"}',d<b.length-2&&(c+=",")}return'{"alignments" : '+c+"]}"},convertColor:function(a){return a.hasClass("nuc-G")?"G":a.hasClass("nuc-C")?"C":a.hasClass("nuc-A")?"A":a.hasClass("nuc-T")?"T":null}}}(),function(){$.timer={elapsed:0,active:!1,count:function(){this.elapsed+=1},start:function(){0!=$("#game").length&&(this.elapsed=0,this.timer=setInterval("$.timer.count()",1e3),this.active=!0)},stop:function(){clearInterval(this.timer),this.active=!1}}}(),function(){$.html5={},$.html5.score={settings:{wBox:827,hBox:50,w:827/14.5,par:"#FF0000",current:"#6495ED",best:"#66CD00",color:"#6D6D6D",prev:0,prevMid:4},setScore:function(a){this.draw(a),document.getElementById("redrawSound").play()},draw_old:function(){var a=this,b=document.getElementById("score"),c=b.getContext("2d");c.globalAlpha=1,c.clearRect(0,0,a.settings.wBox,a.settings.hBox),this.setBorder(),this.drawCurrent(c),this.drawPar(c),this.drawBest(c),this.drawScale(c),this.dra4Key(c),this.settings.prev=$.phylo.currentScore,this.settings.prevPar=$.sequence.par},draw:function(){$.highlighter.set();var a=this,b=document.getElementById("score"),c=b.getContext("2d");c.globalAlpha=1,c.clearRect(0,0,a.settings.wBox,a.settings.hBox),this.setBorder(),this.drawScale2(c),this.settings.prev=$.phylo.currentScore},drawDelay:function(a){var b=this,c=$.phylo.currentScore,d=b.getDistance(c),e=b.getDistance(b.settings.prev),f=e-d,g=function(c){a.beginPath(),a.clearRect(0,0,765,b.settings.hBox),a.fillStyle=b.settings.current,a.fillRect(b.settings.w*b.midPoint,5,e+c,30),a.closePath(),f>0?c-=8:c+=8,b.drawPar(a),b.drawBest(a),b.drawScale(a),b.drawKey(a),0>f&&d>e+c?window.setTimeout(function(){g(c)},1):f>0&&e+c>d?window.setTimeout(function(){g(c)},1):(a.beginPath(),a.clearRect(0,0,765,b.settings.hBox),a.fillStyle=b.settings.current,a.fillRect(b.settings.w*b.midPoint,5,d,30),a.closePath(),b.drawPar(a),b.drawBest(a),b.drawScale(a),b.drawKey(a))};g(0);var h=b.settings.prev,i=$.phylo.currentScore,j=h-i,k=function(c){a.beginPath(),a.clearRect(765,0,62,50),a.font="20pt Helvetica",a.fillStyle=b.settings.current,a.fillText(h+c,770,35),a.closePath(),j>0?c-=1:c+=1,0>j&&i>h+c?window.setTimeout(function(){k(c)},1):f>0&&h+c>i?window.setTimeout(function(){k(c)},1):(a.beginPath(),a.clearRect(765,0,62,50),a.font="20pt Helvetica",a.fillStyle=b.settings.current,a.fillText(i,770,35),a.closePath())};k(0)},drawKey:function(a){var b=this,c=window.lang.body.play.gameselect["game board"];a.beginPath(),a.fillStyle=b.settings.par,a.fillRect(0,13,10,5),a.font="10.5pt Helvetica",a.fillStyle=b.settings.color,a.fillText(c["field 2"],16,20),a.fillStyle=b.settings.current,a.fillRect(0,27,10,5),a.font="10.5pt Helvetica",a.fillStyle=b.settings.color,a.fillText(c["field 1"],16,35),a.fillStyle=b.settings.best,a.fillRect(0,42,10,5),a.font="10pt Helvetica",a.fillStyle=b.settings.color,a.fillText(c["field 4"],16,50),a.closePath()},drawScale2:function(a){var b=this;if(0==b.midPoint-b.settings.prevMid)return b.drawDelay(a),void 0;var c=function(d){a.beginPath(),a.clearRect(0,0,765,b.settings.hBox);for(var e=2;14>e;e++){if(d>=e){var f;f=5==d?5*(d-e):3*(d-e),a.moveTo(b.settings.w*e,0+f),a.lineTo(b.settings.w*e,50-f)}else{var f;f=5==d?1.5*e:5*(e-d),a.moveTo(b.settings.w*e,0+f),a.lineTo(b.settings.w*e,50-f)}2==e&&(a.font="9pt Helvetica",a.fillStyle=b.settings.color,a.fillText(b.minBorder,b.settings.w*e+3,50)),e==d&&(a.font="9pt Helvetica",a.fillStyle=b.settings.color,a.fillText("0",b.settings.w*e+3,50)),13==e&&(a.font="9pt Helvetica",a.fillStyle=b.settings.color,a.fillText(b.maxBorder,b.settings.w*e+3,50))}a.strokeStyle=b.settings.color,a.stroke(),a.closePath(),b.drawKey(a),b.midPoint>b.settings.prevMid&&d!=b.midPoint?window.setTimeout(function(){c(d+1)},20):b.midPoint<b.settings.prevMid&&d!=b.midPoint?window.setTimeout(function(){c(d-1)},20):(b.settings.prevMid=b.midPoint,b.drawDelay(a))};c(parseInt(b.settings.prevMid))},drawScale:function(a){var b=this;a.beginPath();for(var c=2;14>c;c++){if(c<=b.midPoint){var d;d=5==b.midPoint?5*(b.midPoint-c):3*(b.midPoint-c),a.moveTo(b.settings.w*c,0+d),a.lineTo(b.settings.w*c,50-d)}else{var d;d=5==b.midPoint?1.5*c:5*(c-b.midPoint),a.moveTo(b.settings.w*c,0+d),a.lineTo(b.settings.w*c,50-d)}2==c&&(a.font="9pt Helvetica",a.fillStyle=b.settings.color,a.fillText(b.minBorder,b.settings.w*c+3,50)),c==b.midPoint&&(a.font="9pt Helvetica",a.fillStyle=b.settings.color,a.fillText("0",b.settings.w*c+3,50)),13==c&&(a.font="9pt Helvetica",a.fillStyle=b.settings.color,a.fillText(b.maxBorder,b.settings.w*c+3,50))}a.strokeStyle=b.settings.color,a.stroke(),a.closePath()},getDistance:function(a){var b=this;if(0>a){var c=b.settings.w*b.midPoint,d=2*b.settings.w,e=-1*(c-d)/Math.abs(b.minBorder)*Math.abs(a);return-1*(c-d)>=e?-1*(c-d)-10:e}if(a>=0){var d=b.settings.w*b.midPoint,c=13*b.settings.w;return a<=b.maxBorder?(c-d)/b.maxBorder*a:b.settings.wBox-d-1.2*b.settings.w}},setBorder:function(){var a=$.sequence.par,b=this;10>a?(b.maxBorder=30,b.midPoint=9,b.minBorder=a-50):(b.maxBorder=a+20,b.midPoint=5,b.minBorder=-30)},drawPar:function(a){var b,c=$.sequence.par,d=this;a.beginPath(),a.fillStyle=d.settings.par,a.strokeStyle=d.settings.par,b=d.getDistance(c),a.moveTo(d.settings.w*d.midPoint+b-5,0),a.lineTo(d.settings.w*d.midPoint+b+5,0),a.lineTo(d.settings.w*d.midPoint+b,5),a.lineTo(d.settings.w*d.midPoint+b-5,0),a.stroke(),a.fill(),a.closePath()},drawBest:function(a){var b,c=$.phylo.bestScore,d=this;b=d.getDistance(c),a.beginPath(),a.fillStyle=d.settings.best,a.strokeStyle=d.settings.best,a.moveTo(d.settings.w*d.midPoint+b-5,40),a.lineTo(d.settings.w*d.midPoint+b+5,40),a.lineTo(d.settings.w*d.midPoint+b,35),a.lineTo(d.settings.w*d.midPoint+b-5,40),a.stroke(),a.fill(),a.closePath()},drawCurrent:function(a){var b,c=$.phylo.currentScore,d=this;b=d.getDistance(c),a.beginPath(),a.fillStyle=d.settings.current,a.fillRect(d.settings.w*d.midPoint,5,b,30),a.closePath()}}}(),function(){$.highlighter={set:function(){if("DNA"==$.main.type){$(".sequence").removeClass("highlighter-2");for(var a=$.phylo.tree[$.stage.current].ancestor,b=$.sequence.track,c=this.getActiveRows(),d=0;d<c.length;d++)for(j=0,arr=b[c[d]],len=b[c[d]].length;len>j;j++)try{"x"==a[j].toString().toLowerCase()||0==a[j]||$("#"+arr[j]).hasClass("nuc-"+a[j].toString().toUpperCase())||$("#"+arr[j]).addClass("highlighter-2")}catch(e){console.log("Warning : Cell(s) fell off the chart"),DEV.logging&&console.notify("Warning : Cell(s) fell off the chart")}}},getActiveRows:function(){var a=[];return $(".boardRow").each(function(){$(this).hasClass("current")&&a.push(parseInt($(this).attr("id").replace(/row/,"")))}),a},remove:function(){$(".sequence").removeClass("highlighter-2")}}}(),function(){$.helper={dump:function(a){for(var b="",c=0;c<a.length;c++){for(var d=0;d<a[c].length;d++)b+="&nbsp;"+a[c][d];b+="<br>"}$("#dump").html(b)},get:function(a){var b={};return document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g,function(){function a(a){return decodeURIComponent(a.split("+").join(" "))}b[a(arguments[1])]=a(arguments[2])}),b[a]},copy:function(a,b){for(var c=0;c<b.length;c++)for(var d=0;d<b[c].length;d++)try{a[c][d]=b[c][d]}catch(e){try{a[c].push(b[c][d])}catch(e){var f=[];f.push(b[c][d]),a.push(f)}}},popUp:function(a,b,c){void 0!=c?void 0!=c.cancel&&0==c.cancel&&$(".warning-cancel").hide():$(".warning-cancel").show(),$(".warning-bg").css({height:$(document).height(),width:$(document).width()}),$(".warning-bg").fadeIn(),$(".warning").fadeIn(),$(".warning-msg").html(a),$(".warning-ok").unbind().click(function(){b("ok"),$(".warning").fadeOut(),$(".warning-bg").fadeOut()}),$(".warning-cancel").unbind().click(function(){b("cancel"),$(".warning").fadeOut(),$(".warning-bg").fadeOut()})}},window.common={exportSingleton:function(a,b,c){if(!window[a])for(var d=window[a]=new b,e=0;e<c.length;e++)try{d[c[e][0]]=c[e][1]}catch(f){}}},String.prototype.toInt=function(){return parseInt(this.replace(/px/,""))}}(),function(){$.sequence={checkEachRowLength:function(){var a=$.phylo.origin;$.phylo.eachRowLength=[];for(var b=0,c=a.length;c>b;b++){for(var d=0,e=0,f=a[b].length;f>e;e++)"x"!=a[b][e]&&(d+=1);$.phylo.eachRowLength.push(d)}},nuc:function(a){return"x"==a?"x":this.nucleotide[a]},nucArray:function(a){var b=[];for(var c in a)"x"==a[c]?b.push("x"):b.push(this.nuc(a[c]));return b},createCache:function(){for(var a=[],b=0,c=$.phylo.rows,d=$.phylo.seqLen;c*d>b;b++)a.push(0);return $(".sequence").each(function(){var b=$(this).attr("id");a[b]=document.getElementById(b).style}),a},createCache2:function(){for(var a=[],b=0,c=$.phylo.rows,d=$.phylo.seqLen;c*d>b;b++)a.push(0);return $(".sequence").each(function(){var b=$(this).attr("id");a[b]=document.getElementById(b)}),a},calcPos:function(a){return 32*a+a},build:function(a){var b="",c=this;this.posList=[],this.posListReverse=[],this.nucleotide=[];for(var d=0,e=$.phylo.rows,f=$.phylo.seqLen;e*f>d;d++)this.posList.push(0),this.posListReverse.push(0),this.nucleotide.push(0);for(var d=0;d<a.length;d++){b+="<div class='boardRow hidden' id='row"+d+"'>";for(var g=0,h=0;h<a[d].length;h++){var i=a[d].charAt(h);"_"!=i&&(this.posList[d*$.phylo.seqLen+g]=g,this.nucleotide[d*$.phylo.seqLen+g]=a[d].charAt(h),b+="<div class='sequence "+this.colorTag(this.translate(i))+"' id='"+(d*$.phylo.seqLen+g)+"' style='left:"+this.calcPos(h)+"px;'></div>",g++)}for(var j=0;g>j;j++)this.posListReverse[d*$.phylo.seqLen+j]=g-j;b+="<div class='red-line' id='red"+d+"'></div>",b+="</div>"}$("#gameBoard").append("<div id='movingParts'>"+b+"<div>"),$(".boardRow").css("height",c.calcPos(1))},colorTag:function(a){return 1==a?"nuc-A":2==a?"nuc-G":3==a?"nuc-C":4==a?"nuc-T":void 0},color:function(a){return colorTag(a)},translate:function(a){return"A"==a?1:"G"==a?2:"C"==a?3:"T"==a?4:null},buildRootAncester:function(){},track:[],prepareTracking:function(a){this.track=[];for(var b=0;b<a.length;b++){for(var c=[],d=0,e=0;e<$.phylo.seqLen;e++)b<a.length&&e<a[b].length?"_"!=a[b].charAt(e)?(c.push(b*$.phylo.seqLen+d),d+=1):c.push("x"):c.push("x");this.track.push(c)}},intify:function(a){return"x"==a?a:parseInt(0)},randomize:function(b){var c,d=[];DEBUG&&(console.log(">> in random 1"),console.log(b));for(var e=0;e<b.length;e++){c=[];for(var f=0;f<$.phylo.seqLen;f++)"_"==b[e][f]?c.push("x"):""==b[e][f].toString()?c.push("x"):c.push(b[e][f]);d.push(c)}DEBUG&&(console.log(">> in random 2"),console.log(d));for(var e=0;e<d.length;e++){for(c=d[e].toString().split("x,").join("").split(",");(a=c.length)<$.phylo.seqLen;)c.splice(Math.floor(Math.random()*a),0,"x");c=c.map($.sequence.intify),d[e]=c.slice(0)}for(var b=[],e=0;e<d.length;e++){c="";for(var f=0;f<d[e].length;f++)c+="x"==d[e][f]?"_":d[e][f];b.push(c)}return b}}}(),function(){$.splash={countDown:function(a){var b=3;$("#countDown-text").html(3),$.splash.count=function(){if($.cookie.read("music-level"))try{var c=$.cookie.read("countdownVol");document.getElementById("startSound").volume=c,document.getElementById("countdownSound").volume=c}catch(d){}0==b?(document.getElementById("startSound").play(),document.getElementById("game-audio").play(),$("#countDown").fadeOut("fast"),a()):($("#countDown-text").html(b),document.getElementById("countdownSound").play(),console.log("counting down"),b-=1,setTimeout($.splash.count,1e3))},setTimeout($.splash.count,1e3)}}}(),function(){$.events={move:function(){$(".current").each(function(){var a=parseInt(this.id.replace(/row/,""));$(this).children().each(function(){if($(this).hasClass("sequence")){var b=this;$.events.touch(b,{start:function(){$.events.touch(document,{move:function(c){$("#chosenArea").hide(),$("#red"+a).show("fast"),$.physics.move(b,c)},end:function(){$("#red"+a).hide("fast"),$.events.untouch(document,"move"),$.events.untouch(document,"end"),$.physics.snap();var b=$.fitch.score();$.phylo.bestScore<b&&($.phylo.bestScore=b,$.helper.copy($.phylo.bestTrack,$.sequence.track),$.board.bestScore(b)),$.board.score(b),$.phylo.currentScore=b,$.board.stats(),b>=$.sequence.par?$.board.approve():$.board.unapprove()}})}})}})})},untouch:function(a,b){var c="ontouchstart"in document.documentElement,d="ontouchmove"in document.documentElement,e="ontouchend"in document.documentElement,f="onmousedown"in document.documentElement,g="onmousemove"in document.documentElement,h="onmouseup"in document.documentElement;"start"==b&&(f&&$(a).unbind("mousedown"),c&&$(a).unbind("touchstart")),"move"==b&&(g&&$(a).unbind("mousemove"),d&&$(a).unbind("touchmove")),"end"==b&&(h&&$(a).unbind("mouseup"),e&&$(a).unbind("touchend"))},touch:function(a,b){var c="ontouchstart"in document.documentElement,d="ontouchmove"in document.documentElement,e="ontouchend"in document.documentElement,f="onmousedown"in document.documentElement,g="onmousemove"in document.documentElement,h="onmouseup"in document.documentElement,i=this;void 0!=b.start&&(f&&$(a).mousedown(function(a){b.start(i.getFingerPos(a))}),c&&$(a).bind("touchstart",function(a){a.preventDefault(),a.originalEvent.touches&&a.originalEvent.touches.length&&(a=a.originalEvent.touches[0]),b.start(i.getFingerPos(a))})),void 0!=b.move&&(g&&$(a).mousemove(function(a){b.move(i.getFingerPos(a))}),d&&$(a).bind("touchmove",function(a){a.preventDefault(),a.originalEvent.touches&&a.originalEvent.touches.length&&(a=a.originalEvent.touches[0]),b.move(i.getFingerPos(a))})),void 0!=b.end&&(h&&$(a).mouseup(function(a){b.end(i.getFingerPos(a))}),e&&$(a).bind("touchend",function(a){a.preventDefault(),a.originalEvent.touches&&a.originalEvent.touches.length&&(a=a.originalEvent.touches[0]),b.end(i.getFingerPos(a))}))},getFingerPos:function(a){var b=document.getElementById("game"),c=a.pageX-b.offsetLeft-185,d=a.pageY-b.offsetTop;return{pageX:c,pageY:d}},getMultiSelectFingerPos:function(a){var b=document.getElementById("game"),c=a.pageX-b.offsetLeft-5,d=a.pageY-b.offsetTop-65;return{pageX:c,pageY:d}}}}(),function(){var doc=document,win=window,url="/phpdb/openPhyloClassicDB.php";$.protocal={login:function(a,b,c){var d=7,e="mode="+d+"&user="+a+"&pass="+b;$.ajax({type:"POST",url:url,data:e}).done(function(a){c(a)}).fail(function(){$("div.login-warning").show().html("Could not connect to server, please try again later")})},register:function(a,b,c,d,e,f,g){var h=6,i="mode="+h+"&user="+a+"&displayname="+b+"&pass="+c+"&email="+d+"&network="+e+"&network_id="+f;$.ajax({type:"POST",url:url,data:i}).done(function(a){g(a)}).fail(function(){$("div.login-warning").show().html("Could not connect to server, please try again later")})},sendEndGameScore:function(status,fn){var mode=3;"completed"==status&&(mode=4);var data="mode="+mode+"&id="+$.phylo.id+"&user="+window.username+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.currentScore;$.ajax({type:"POST",url:url,data:data}).done(function(re){var json=eval("["+re+"]")[0];fn(json)}).fail(function(){console.log(">> failed to connect to database to submit end game score"),console.log(">> loading end game dummy data"),DEV.logging&&(devTools.prompts.notify({type:"error",title:"warning",text:"failed to connect to database to submit end game score"}),devTools.prompts.notify({type:"error",title:"warning",text:"loading end game dummy data"}));var dummy='{"0":"CONGENITAL PTOSIS","disease_link":"CONGENITAL PTOSIS","1":"67","play_count":"67","2":"13","fail_count":"13","3":"42","best_score":"42","4":"1375","running_score":"1375","5":"unki2aut","highscore_user":"unki2aut"}',json=eval("["+dummy+"]")[0];fn(json)})},sendHighScore:function(){return},getPuzzleInfo:function(){var data="mode=3&id="+$.phylo.id;$.ajax({type:"POST",url:url,data:data}).done(function(re){var json={};try{json=eval("["+re+"]")[0]}catch(err){return DEBUG&&console.log("@getPuzzleInfo error parsing"),void 0}}).fail(function(){})},read:function(a){if(void 0==a)this.type=$.helper.get("type"),this.score=$.helper.get(this.type);else{var b=a.type;this.tp=0,this.score=a.num,this.tp=b}},replay:function(){var data=$.protocal.previousData;DEBUG&&console.log(data);try{var j=eval("["+data+"]")[0].level}catch(err){return DEBUG&&console.log(err),void 0}$.phylo.id=j.attributes.id;for(var i=0;i<j.sequence.length;i++)j.sequence[i]=j.sequence[i].replace(/-/g,"_").toUpperCase();$.phylo.get={},$.phylo.get.sequence=j.sequence,DEBUG&&(j.sequence,j.tree),$.phylo.get.treeString=j.tree;var tree=$.newick.parse(j.tree);$.phylo.get.tree=tree,$.main.callBack()},request:function(setting){var str="",type=this.tp,score=this.score;"random"==type?str+="mode=1&diff="+score:"disease"==type?(mode=2,str+="mode=2&id="+score):"level"==type&&(mode=2,str+="mode=2&id="+score),$.ajax({url:url,data:str,type:"POST"}).done(function(data){data=data.replace("@",""),$.protocal.previousData=data,DEBUG^DEV.logging&&console.log(data);try{var j=eval("["+data+"]")[0].level}catch(err){return DEBUG&&console.log(err),void 0}$.phylo.id=j.attributes.id;for(var i=0;i<j.sequence.length;i++)j.sequence[i]=j.sequence[i].replace(/-/g,"_").toUpperCase();var numOfSeq=j.sequence.length,numOfNodes=j.tree.replace(/(\(|\)|\;)/,"").split(",").length;DEV.logging&&devTools.prompts.notify({title:"Puzzle Id",text:$.phylo.id}),numOfSeq!=numOfNodes&&(console.log(">> Detected Error -> Puzzle ("+$.phylo.id+") Sequence given ("+numOfSeq+") != phylo tree nodes ("+numOfNodes+")"),DEV.logging&&devTools.prompts.notify({type:"error",title:"warning",text:"Puzzle: "+$.phylo.id+"<br> #Seq("+numOfSeq+") / #Nodes("+numOfNodes+") mismatch"})),$.phylo.get={},$.phylo.get.sequence=j.sequence,DEBUG&&(j.sequence,j.tree),$.phylo.get.treeString=j.tree;var tree=$.newick.parse(j.tree);$.phylo.get.tree=tree,$.main.callBack()}).fail(function(){var dummy='{"level":{"attributes":{"id":"126"},"sequence":["CGGCCGCCGGGGG-------","CGGCCGCCGGGGG-------","CGGCCGCCGGGGG-------","CAACCCGTGGGTG-------","CGACCCGTGGATG-------","GCGGCGGCGGGCG-------","CGGCCGGCTGGGG-------","CCCCCCTCTCGGG-------","TCCCCCGAGGGAGGCGACCC"],"tree":"(((((hg19,gorGor1),papHam1),(((mm9,rn4),dipOrd1),cavPor3)),macEug1),ornAna1);"}}';console.log(">> Cannnot connect to database"),console.log(">> loading dummy data"),DEV.logging&&(devTools.prompts.notify({type:"error",title:"warning",text:"Cannot connect to database"}),devTools.prompts.notify({type:"error",title:"warning",text:"loading dummy data"})),$.protocal.previousData=dummy;try{var j=eval("["+dummy+"]")[0].level}catch(err){return DEBUG&&console.log(err),void 0}$.phylo.id=j.attributes.id;for(var i=0;i<j.sequence.length;i++)j.sequence[i]=j.sequence[i].replace(/-/g,"_").toUpperCase();var numOfSeq=j.sequence.length,numOfNodes=j.tree.replace(/(\(|\)|\;)/,"").split(",").length;numOfSeq!=numOfNodes&&(console.log(">> Detected Error -> Sequence given ("+numOfSeq+") != phylo tree nodes ("+numOfNodes+")"),DEV.logging&&devTools.prompts.notify({type:"error",title:"warning",text:"Puzzle: "+$.phylo.id+"<br> #Seq("+numOfSeq+") / #Nodes("+numOfNodes+") mismatch"})),$.phylo.get={},$.phylo.get.sequence=j.sequence,DEBUG&&(j.sequence,j.tree),$.phylo.get.treeString=j.tree;var tree=$.newick.parse(j.tree);$.phylo.get.tree=tree,$.main.callBack()})}}}(),function(){$.multiSelect={active:function(){var a=this;$("#movingParts").append("<div id='chosenArea'></div>"),$("#game").unbind().dblclick(function(b){b=$.events.getMultiSelectFingerPos(b),a.startTheEvents(b)})},deactive:function(){$("#game").unbind()},startTheEvents:function(a){var b=this;$("#selectBox").css({top:a.pageY,left:a.pageX,height:0,width:0});var c={Y:a.pageY,X:a.pageX};$("#selectBox").show(),$("#game").mousemove(function(a){a=$.events.getMultiSelectFingerPos(a),a.pageY-c.Y>0&&a.pageX-c.X>0?$("#selectBox").css({height:a.pageY-c.Y,width:a.pageX-c.X}):a.pageY-c.Y<0&&a.pageX-c.X<0?$("#selectBox").css({top:a.pageY-10,left:a.pageX,height:c.Y-a.pageY,width:c.X-a.pageX}):a.pageY-c.Y<0&&a.pageX-c.X>0?$("#selectBox").css({top:a.pageY,height:c.Y-a.pageY,width:a.pageX-c.X}):a.pageY-c.Y>0&&a.pageX-c.X<0&&$("#selectBox").css({left:a.pageX,height:a.pageY-c.Y,width:c.X-a.pageX})}),$("#game").click(function(){$(this).unbind("mousemove"),$(this).unbind("click"),b.capture(),$("#selectBox").hide()})},capture:function(){var a={X:parseInt($("#selectBox").css("left").replace(/px/,""))-parseInt($("#tree").css("width").replace(/px/,""))-4,Y:parseInt($("#selectBox").css("top").replace(/px/,""))-126,H:parseInt($("#selectBox").css("height").replace(/px/,"")),W:parseInt($("#selectBox").css("width").replace(/px/,""))},b={X:1e3,Y:1e3,H:-1,W:-1},c=[],d=[];return $(".current > .sequence").each(function(){var e=this,f=parseInt($(this).parent().attr("id").replace(/row/,"")),g={X:parseInt($(this).css("left").replace(/px/,"")),Y:35*f,H:parseInt($(this).css("height").replace(/px/,"")),W:parseInt($(this).css("width").replace(/px/,""))};(g.Y<=a.Y&&a.Y<=g.Y+g.H&&a.X<=g.X&&g.X<=a.X+a.W||g.Y<=a.Y&&a.Y+a.H<=g.Y+g.H&&g.X<=a.X&&a.X+a.W<=g.X+g.W||a.Y<=g.Y&&g.Y<=a.Y+a.H&&a.X<=g.X&&g.X<=a.X+a.W||g.Y<=a.Y&&a.Y<=g.Y+g.H&&g.X<=a.X&&a.X<=g.X+g.W||g.Y<=a.Y&&a.Y<=g.Y+g.H&&g.X<=a.X+a.W&&a.X+a.W<=g.X+g.W||a.Y<=g.Y&&g.Y<=a.Y+a.H&&g.X<=a.X&&a.X<=g.X+g.W||a.Y<=g.Y&&g.Y<=a.Y+a.H&&g.X<=a.X+a.W&&a.X+a.W<=g.X+g.W||g.Y<=a.Y+a.H&&a.Y+a.H<=g.Y+g.H&&a.X<=g.X&&g.X<=a.X+a.W)&&(c.push(e),d.push($(e).attr("id")),g.X<b.X&&(b.X=g.X),g.Y<b.Y&&(console.log(g),b.Y=$("#"+$(e).attr("id")).offset().top-199),g.Y+g.H>b.H&&(b.H=g.Y+g.H),g.X+g.W>b.W&&(b.W=g.X+g.W))}),b.H-=b.Y,b.W-=b.X,0==c.length?($("#chosenArea").hide(),void 0):($("#chosenArea").css({top:b.Y,left:b.X,width:b.W,height:b.H}),$("#chosenArea").show(),$.events.touch("#chosenArea",{start:function(a){var e=a.pageX-b.X;$.events.touch(document,{move:function(a){$.physics.shift_select(c,d,{old:parseInt($("#chosenArea").css("left").replace(/px/,"")),"new":a.pageX-e,obj:$("#chosenArea")})},end:function(){$.events.untouch(document,"move"),$.events.untouch("#chosenArea","start"),c=[],d=[],$("#chosenArea").hide(),$.physics.snap("mutli");var a=$.fitch.score();$.board.score(a),$.board.stats(),$.phylo.bestScore<a&&($.phylo.bestScore=a,$.helper.copy($.phylo.bestTrack,$.sequence.track),$.board.bestScore(a)),a>=$.sequence.par?$.board.approve():$.board.unapprove()}})}}),void 0)}}}(),function(){$.lang={init:function(a){return a()}}}(),function(){var a="http://phylo.cs.mcgill.ca/profile/index.php?user=";$.endGame={complete:function(){var b=this;$.multiSelect.deactive(),$.protocal.sendEndGameScore("completed",function(c){b.events(),b.score("completed",c.best_score),b.submitterLocation=a+(c.submitter?c.submitter:"jerome"),b.submitter=c.submitter;var d=20-c.puzzles_completed>0?20-c.puzzles_completed:0,e=window.lang.body.play.gameselect["end of game"],f=e.headerMessage;$("#endGame-text").html(f),$("#endGame-learnMore-content").html(b.learnMore(c)),"guest"!=window.guest&&""!=window.guest?$("#endGame-learnMode-footerContent").html(e.replayMessage+"<br>"+e.completeXMessage.replace("***",d)+"<br><b>"+e.thankyouMessage+"<b>"):$("#endGame-learnMode-footerContent").html(e.replayMessage+"<br><b>"+e.thankyouMessage+"<b>"),$("#endGame").fadeIn()})},bail:function(){var b=this;$.multiSelect.deactive(),$.protocal.sendEndGameScore("bail",function(c){b.events(),b.score("bail",c.best_score),b.submitter=c.submitter,b.submitterLocation=a+(c.submitter?c.submitter:"jerome");var d=20-c.puzzles_completed>0?20-c.puzzles_completed:0,e=window.lang.body.play.gameselect["end of game"],f=e.headerMessage;$("#endGame-text").html(f),$("#endGame-learnMore-content").html(b.learnMore(c)),"guest"!=window.guest&&""!=window.guest?$("#endGame-learnMode-footerContent").html(e.replayMessage+"<br>"+e.completeXMessage.replace("***",d)+"<br><b>"+e.thankyouMessage+"<b>"):$("#endGame-learnMode-footerContent").html(e.replayMessage+"<br><b>"+e.thankyouMessage+"<b>"),$("#endGame").fadeIn()})},split:function(a){var b=a.split(":");return"<tr><td>"+$.trim(b[0])+"&nbsp;&nbsp;&nbsp;:</td><td>&nbsp;&nbsp;&nbsp;"+$.trim(b[1])+"</td></tr>"},learnMore:function(a){var b="<table>",c=this,d=window.lang.body.play.gameselect["end of game"];return b+=c.split(d.levelId.replace("***","<b>"+$.phylo.id+"</b>")),b+=c.split(d.userScore.replace("***","<b>"+$.phylo.currentScore+"</b>")),b+=c.split(d.avgScore.replace("***","<b>"+Math.round(a.running_score/a.play_count)+"</b>")),b+=c.split(d.highscore.replace("***","<b>"+a.best_score+"</b>")),b+=c.split(d.highscoreHolder.replace("***","<b>"+a.highscore_user+"</b>")),b+=c.split(d.dnaAssociation.replace("***","<b>"+(a.disease_link||window.lang.body.footer.unclassified)+"</b>")),b+=c.split(d.completions.replace("***","<b>"+a.play_count+"</b>")),b+="<tr><td>"+d.submitter+"&nbsp;&nbsp;&nbsp;:</td><td>&nbsp;&nbsp;&nbsp;<a href='"+c.submitterLocation+"'>"+(c.submitter?c.submitter:"jerome")+"</a></td></tr>",b+="</table>"},score:function(a,b){$("#musicPlayerSpot").html("");var c="<i class='icon-star-empty'></i><i class='icon-star-empty'></i><i class='icon-star-empty'></i>";if($("#endGame-score-result").html(c),$("#endGame-share").show(),"bail"!=a){var d=$.phylo.currentScore,e=$.sequence.par;c=d>e&&b>d?"<i class='icon-star-1'></i><i class='icon-star-1'></i><i class='icon-star-empty'></i>":d>=b?"<i class='icon-star-1'></i><i class='icon-star-1'></i><i class='icon-star-1'></i>":"<i class='icon-star-1'></i><i class='icon-star-empty'></i><i class='icon-star-empty'></i>",$("#endGame-score-result").html(c)}},share:function(){if(!$.cookie.read("username"))return bootbox.alert(window.lang.body.social["field 29"]),$.cookie.delete("username"),$.cookie.delete("fullname"),$.cookie.delete("loginmode"),$.cookie.delete("logid"),$("#logout").hide(),window.guest="guest",$("#login-box").hide(),$(".login-btn").click(function(){eClick()}),$("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]),$(".showInLogin").hide(),void 0;$.cookie.read("username");var a=$.cookie.read("fullname"),b=$.cookie.read("loginmode"),c=$.cookie.read("logid");if(console.log(b),"Facebook"==b||"Twitter"==b||"LinkedIn"==b||"Google"==b)$.protocal.sendEndGameScore("info",function(d){var e=d.disease_link;if(d.best_score,"Facebook"==b){if(e)if($.phylo.currentScore>=e)var f=a.replace("+"," ")+" "+window.lang.body.social["field 7"].replace("***",e)+"\n"+window.lang.body.social["field 20"];else var f=a.replace("+"," ")+" "+window.lang.body.social["field 8"].replace("***",e)+"\n"+window.lang.body.social["field 20"];else if($.phylo.currentScore>=e)var f=a.replace("+"," ")+" "+window.lang.body.social["field 9"]+".\n"+window.lang.body.social["field 20"];else var f=a.replace("+"," ")+" "+window.lang.body.social["field 10"]+".";
-var g=window.lang.body.social["field 31"],d="provider="+b+"&id="+c+"&caption="+g+"&description="+f}else if("Twitter"==b){if(e)if($.phylo.currentScore>=e)var f=a.replace("+"," ")+" "+window.lang.body.social["field 11"].replace("***",e)+" "+window.lang.body.social["field 20"]+"#PhyloDNApuzzles";else var f=a.replace("+"," ")+" "+window.lang.body.social["field 12"].replace("***",e)+" "+window.lang.body.social["field 20"]+"#PhyloDNApuzzles";else if($.phylo.currentScore>=e)var f=a.replace("+"," ")+" "+window.lang.body.social["field 13"]+'."'+window.lang.body.social["field 20"]+"#PhyloDNApuzzles";else var f=a.replace("+"," ")+" "+window.lang.body.social["field 14"]+'."'+window.lang.body.social["field 20"]+"#PhyloDNApuzzles";var d="provider="+b+"&id="+c+"&description="+f}else if("LinkedIn"==b){if(e)if($.phylo.currentScore>=e)var f=a.replace("+"," ")+" "+window.lang.body.social["field 15"].replace("***",e)+"\n"+window.lang.body.social["field 20"];else var f=a.replace("+"," ")+" "+window.lang.body.social["field 16"].replace("***",e)+"\n"+window.lang.body.social["field 20"];else if($.phylo.currentScore>=e)var f=a.replace("+"," ")+" "+window.lang.body.social["field 17"]+".\n"+window.lang.body.social["field 20"];else var f=a.replace("+"," ")+" "+window.lang.body.social["field 18"]+".\n"+window.lang.body.social["field 20"];var d="provider="+b+"&id="+c+"&description="+f}else if("Google"==b){if(e)if($.phylo.currentScore>=e)var f=a.replace("+"," ")+" "+window.lang.body.social["field 15"].replace("***",e)+"\n"+window.lang.body.social["field 20"];else var f=a.replace("+"," ")+" "+window.lang.body.social["field 16"].replace("***",e)+"\n"+window.lang.body.social["field 20"];else if($.phylo.currentScore>=e)var f=a.replace("+"," ")+" "+window.lang.body.social["field 17"]+".\n"+window.lang.body.social["field 20"];else var f=a.replace("+"," ")+" "+window.lang.body.social["field 18"]+".\n"+window.lang.body.social["field 20"];var d="provider="+b+"&id="+c+"&description="+f}var h={message:window.lang.body.social["field 22"]+"<br/>via "+b+"<br/>\n"+f,buttons:{confirm:{label:window.lang.body.social["field 25"],"class":"btn-success",callback:function(){$.ajax({type:"POST",url:"http://phylo.cs.mcgill.ca/phpdb/hybridauth/signin/feed.php",data:d}).done(function(){}).fail(function(){bootbox.alert(window.lang.body.social["field 23"])})}},cancel:{label:window.lang.body.social["field 27"]}}};bootbox.dialog(h)});else{if("Classic"!==b)return DEBUG&&console.log(window.lang.body.social["field 28"].replace("***",b)),void 0;var d={message:window.lang.body.social["field 44"],buttons:{ok:{}}};bootbox.dialog(d)}},events:function(){langFiles=window.lang.body.play.gameselect["end of game"],$("#endGame-new button").html(langFiles["field 11"]).unbind().click(function(){$("#game").hide(),$("#endGame").fadeOut(),interactiveMenu.restart(),$("#draw").show(),$("#menu").fadeIn()}),$("#endGame-replay button").html(langFiles["field 12"]).unbind().click(function(){$.main.clear(),$("#endGame").fadeOut(),$("#tree").html(""),$("#gameBoard").html("<img src='assets/img/loading.gif'/>"),$.protocal.replay(),$("#countDown-text").html("<img src='assets/img/loading.gif'/>"),$("#countDown").fadeIn()}),$("#endGame-share button").html(langFiles["field 13"]).unbind().click(function(){DEBUG&&console.log("Click share event"),$.endGame.share("test")})},runAway:function(){$("#runaway").unbind().click(function(){options={message:window.lang.body.misc["field 19"],buttons:{confirm:{label:window.lang.body.misc["field 18"],callback:function(){$.timer.active=!1,$.endGame.bail()}},cancel:{label:window.lang.body.misc["field 16"]}}},bootbox.dialog(options)})}}}(),function(){$.physics={shift_select:function(a,b,c){var d=!0;$.sequence.posList,$.sequence.posListReverse;var e=$.phylo.domCache,f=$.sequence.track,g=c.new-c.old;c.new-c.old>0&&(d=!1);var h=parseInt(c.obj.css("width").replace(/px/,""));d?c.new<0&&(c.new=c.old):c.new+h>$.sequence.calcPos($.phylo.seqLen)&&(c.new=$.sequence.calcPos($.phylo.seqLen)-h);for(var i=function(b){for(var c in a)if($(a[c]).attr("id")==b)return!0;return!1},j=[],k=0,l=a.length;l>k;k++){var m=$(a[k]).parent().attr("id").toString().replace(/row/,"");m in j||j.push(m)}var n=0,o=b[0],p=$.phylo.seqLen;if(d){for(var q=827,m=0;m<j.length;m++)for(var r=f[j[m]],s=0,t=!1,k=0,l=r.length;l>k;k++)if("x"!=r[k]){for(var u=0;u<b.length;u++)if(r[k]==b[u]){s>=n&&(n=s,o=b[u],q=parseInt(e[b[u]].left.replace(/px/,""))),t=!0;break}if(t)break;s+=1}var v=e[o].left.replace(/px/,""),w=$.sequence.calcPos(n),x=v-w;parseInt(v)+g<w&&(g=-1*x)}else{o=b[b.length-1];var q=0;p=0;for(var m=0;m<j.length;m++)for(var r=f[j[m]],s=1,t=!1,k=r.length-1;k>=0;k--)if("x"!=r[k]){for(var u=$.phylo.seqLen-1;u>=0;u--)if(r[k]==b[u]&&void 0!=r[k]){s>=p&&(p=s,o=b[u],q=parseInt(e[b[u]].left.replace(/px/,""))),t=!0;break}if(t)break;s+=1}p=$.phylo.seqLen-p;var v=e[o].left.replace(/px/,""),y=$.sequence.calcPos(p),x=y-v;parseInt(v)+g>y&&(g=x)}if(0!=g){c.obj.css({left:c.old+g});for(var z=0,l=a.length;l>z;z++){var A=parseInt($(a[z]).css("left").replace(/px/,""));A+(c.new-c.old);var B=parseInt($(a[z]).attr("id"));if(d){if(void 0!=e[B-1]&&void 0!=e[B-1].left&&i(B-1)){$(a[z]).css({left:A+g});continue}}else if(void 0!=e[B+1]&&void 0!=e[B+1].left&&i(B+1)){$(a[z]).css({left:A+g});continue}if(d)for(;;){var C=B%$.phylo.seqLen;if(void 0==e[B]^0==e[B])break;if(void 0==e[B-1]^0==e[B-1]){var D=parseInt(e[B].left.replace(/px/,""))+g;e[B].left=D<$.sequence.calcPos(C)?$.sequence.calcPos(C)+"px":D+"px";break}var E=parseInt(e[B].left.replace(/px/,"")),F=parseInt(e[B-1].left.replace(/px/,""))+$.phylo.x,D=E+g;if(e[B].left=D<$.sequence.calcPos(C)?$.sequence.calcPos(C)+"px":D+"px",B-=1,!(F>D))break}else for(;;){var G=Math.floor(B/$.phylo.seqLen),C=$.phylo.seqLen-($.phylo.eachRowLength[G]-B%$.phylo.seqLen);if(void 0==e[B]^0==e[B])break;if(void 0==e[B+1]^0==e[B+1]){var D=parseInt(e[B].left.replace(/px/,""))+g;e[B].left=D>$.sequence.calcPos(C)?$.sequence.calcPos(C)+"px":D+"px";break}var E=parseInt(e[B].left.replace(/px/,"")),F=parseInt(e[B+1].left.replace(/px/,"")),D=E+g+$.phylo.x;if(e[B].left=D-$.phylo.x>$.sequence.calcPos(C)?$.sequence.calcPos(C)+"px":E+g+"px",B+=1,!(D>F))break}}return!0}},move:function(a,b){var c=parseInt($(a).css("left").replace(/px/,"")),d=parseInt($.phylo.offSet);if(b.pageX-d-$.phylo.x/2>c)this.shift(!0,parseInt(a.id),b,0);else{if(b.pageX-d-$.phylo.x/2==c)return;this.shift(!1,parseInt(a.id),b,0)}},shift:function(a,b,c,d){var e=$.phylo.domCache,f=parseInt(b),g=parseInt($.phylo.offSet),h=$.sequence.posList,i=$.sequence.posListReverse;if(a)for(;;){e[f].zIndex=100-d;var j=c.pageX,k=$.phylo.x*$.phylo.seqLen+g,l=c.pageX+(d-.5)*$.phylo.x-g;if(l>=($.phylo.seqLen-i[f])*$.phylo.x-22&&(l=($.phylo.seqLen-i[f])*$.phylo.x-22),0==e[f+1]){e[f].left=l+"px";break}if(void 0==e[f+1]){e[f].left=l+"px";break}if(!(c.pageX-g+d*$.phylo.x>parseInt(e[f+1].left)-$.phylo.x/2)){e[f].left=l+"px";break}if(e[f].left=l+"px",d+=1,f+=1,0==e[f])break;if(void 0==e[f])break}else for(;;){var j=g,k=c.pageX,l=c.pageX+(d-.5)*$.phylo.x-g;if(j>=k)break;if(l<h[f]*$.phylo.x&&(l=h[f]*$.phylo.x),h[f]*$.phylo.x>=parseInt(e[f].left))break;if(0==e[f-1]){e[f].left=l+"px";break}if(void 0==e[f-1]){e[f].left=l+"px";break}if(!(parseInt(e[f-1].left)>c.pageX-g+d*$.phylo.x-3*$.phylo.x/2)){e[f].left=l+"px";break}if(e[f].left=l+"px",d--,f-=1,void 0==e[f])break;if(0==e[f])break}},snapRandom:function(){for(var a=$.sequence.track,b=$.phylo.domCache,c=0;c<a.length;c++)for(var d=0;d<a[c].length;d++)"x"!=a[c][d]&&(b[a[c][d]].left=$.sequence.calcPos(d)+"px")},snap:function(){var a=function(a){for(var a=parseInt(a),b=0;b<$.sequence.track.length&&!(b*$.phylo.seqLen<=a&&a<b*$.phylo.seqLen+$.phylo.seqLen);b++);return b},b=$.sequence.track,c=$.phylo.domCache;$.sequence.posList;for(var d=0;d<b.length;d++)for(var e=0;e<b[d].length;e++)b[d][e]="x";$(".sequence").each(function(){var d=$(this).attr("id"),e=parseInt(c[d].left)-1,f=parseInt(e/$.phylo.x),g=a(d);for($.sequence.calcPos(f)-e<=0&&(f+=1),0>f&&(f=0);"x"!=b[g][f]&&f<2*$.phylo.seqLen;)f+=1;if(f>=$.phylo.seqLen)for(var h=b[g].length,i=d;h--;){if("x"==b[g][h]){b[g][h]=d,c[d].left=$.sequence.calcPos(h)+"px";break}i=b[g][h],b[g][h]=d,c[d].left=$.sequence.calcPos(h)+"px",d=i}else c[d].left=$.sequence.calcPos(f)+"px",b[g][f]=d}),DEBUG&&$.helper.dump(b)}}}(),function(){$.engine={deActive:function(){$(".current").each(function(){$(this).children().each(function(){if($(this).hasClass("sequence")){var a=this;$.events.untouch(a,"start")}})})},active:function(){$.events.move()}}}(),function(){$.fitch={score:function(){if("DNA"==$.main.type){void 0==$.stage.stats&&($.stage.stats={}),$.stage.stats.match=0,$.stage.stats.mismatch=0,$.stage.stats.open=0,$.stage.stats.extend=0,$.fitch.forwardBackward();var a=$.fitch.scoreRecurse($.stage.current);return a}},getLen:function(){return $.phylo.seqLen},forwardBackward:function(){for(var a=$.stage.current,b=$.fitch.getLen(),c=0;b>c;c++){var d=$.fitch.forward(a,c);$.phylo.tree[a].ancestor[c]=d.length<1?"x":1==d.length||0!=d.indexOf("x")?d[0]:d[1],$.phylo.tree[a].child>=2&&$.fitch.backward($.phylo.tree[a].node1,$.phylo.tree[a].ancestor[c],c),$.phylo.tree[a].child>=1&&$.fitch.backward($.phylo.tree[a].node2,$.phylo.tree[a].ancestor[c],c)}},forward:function(a,b){if(0==b&&($.phylo.tree[a].ancestor=[],$.phylo.tree[a].ancestorSet=[]),2==$.phylo.tree[a].child){for(var c=$.fitch.forward($.phylo.tree[a].node2,b),d=$.fitch.forward($.phylo.tree[a].node1,b),e=[],f=[],g=0;g<c.length;g++){-1==e.indexOf(c[g])&&e.push(c[g]);for(var h=0;h<d.length;h++)c[g]==d[h]&&-1==f.indexOf(c[g])&&f.push(c[g]),-1==e.indexOf(d[h])&&e.push(d[h])}$.phylo.tree[a].ancestorSet[b]=f.length<1?e:f}else if(1==$.phylo.tree[a].child){var c=$.fitch.forward($.phylo.tree[a].node2,b),d=$.sequence.nuc($.sequence.track[$.phylo.tree[a].node1][b]);$.phylo.tree[a].ancestorSet[b]=c.indexOf(d)>-1?[d]:c.concat([d])}else{var c=$.sequence.nuc($.sequence.track[$.phylo.tree[a].node1][b]),d=$.sequence.nuc($.sequence.track[$.phylo.tree[a].node2][b]);$.phylo.tree[a].ancestorSet[b]=d==c?[c]:[c,d]}return $.phylo.tree[a].ancestorSet[b]},backward:function(a,b,c){var d=$.phylo.tree[a].ancestorSet[c];$.phylo.tree[a].ancestor[c]=d.length<1?"x":1==d.length?d[0]:d.indexOf(b)>-1?b:0!=d.indexOf("x")?d[0]:d[1],$.phylo.tree[a].child>=2&&$.fitch.backward($.phylo.tree[a].node1,$.phylo.tree[a].ancestor[c],c),$.phylo.tree[a].child>=1&&$.fitch.backward($.phylo.tree[a].node2,$.phylo.tree[a].ancestor[c],c)},forwardBackward2:function(){for(var a=$.stage.current,b=$.fitch.getLen(),c=$.fitch.forward2(a,d),d=0;b>d;d++)$.phylo.tree[a].ancestor[d]=c[d].length<1?"x":1==c[d].length||0!=c[d].indexOf("x")?c[d][0]:c[d][1];$.phylo.tree[a].child>=2&&$.fitch.backward2($.phylo.tree[a].node1,$.phylo.tree[a].ancestor),$.phylo.tree[a].child>=1&&$.fitch.backward2($.phylo.tree[a].node2,$.phylo.tree[a].ancestor)},forward2:function(a){var b=$.fitch.getLen();if($.phylo.tree[a].ancestor=[],$.phylo.tree[a].ancestorSet=[],2==$.phylo.tree[a].child)for(var c=$.fitch.forward2($.phylo.tree[a].node2),d=$.fitch.forward2($.phylo.tree[a].node1),e=0;b>e;e++){for(var f=[],g=[],h=0;h<c[e].length;h++){-1==f.indexOf(c[e][h])&&f.push(c[e][h]);for(var i=0;i<d.length;i++)c[e][h]==d[e][i]&&-1==g.indexOf(c[e][h])&&g.push(c[e][h]),-1==f.indexOf(d[e][i])&&f.push(d[e][i])}$.phylo.tree[a].ancestorSet[e]=g.length<1?f:g}else if(1==$.phylo.tree[a].child)for(var c=$.fitch.forward2($.phylo.tree[a].node2),d=$.sequence.nucArray($.sequence.track[$.phylo.tree[a].node1]),e=0;b>e;e++)$.phylo.tree[a].ancestorSet[e]=c[e].indexOf(d[e])>-1?[d[e]]:c[e].concat([d[e]]);else for(var c=$.sequence.nucArray($.sequence.track[$.phylo.tree[a].node1]),d=$.sequence.nucArray($.sequence.track[$.phylo.tree[a].node2]),e=0;b>e;e++)$.phylo.tree[a].ancestorSet[e]=d==c?[c[e]]:[c[e],d[e]];return $.phylo.tree[a].ancestorSet},backward2:function(a,b){for(var c=$.phylo.tree[a].ancestorSet,d=$.fitch.getLen(),e=0;d>e;e++)$.phylo.tree[a].ancestor[e]=c[e].length<1?"x":1==c[e].length?c[e][0]:c[e].indexOf(b[e])>-1?b[e]:0!=c[e].indexOf("x")?c[e][0]:c[e][1];$.phylo.tree[a].child>=2&&$.fitch.backward2($.phylo.tree[a].node1,$.phylo.tree[a].ancestor),$.phylo.tree[a].child>=1&&$.fitch.backward2($.phylo.tree[a].node2,$.phylo.tree[a].ancestor)},scoreRecurse:function(a){function b(a){var b={match:1,mismatch:-1,open:-4,extend:-1};return a.match*b.match+a.mismatch*b.mismatch+a.open*b.open+a.extend*b.extend}function c(a,b){function c(a){return"x"==a}for(var d={match:0,mismatch:0,open:0,extend:0},e=a.length-a.filter(c).length,f=b.length-b.filter(c).length,g=0,h=0,i=0,j=0;j<a.length;j++)("x"!=a[j]||"x"!=b[j])&&("x"!=a[j]&&"x"!=b[j]?(b[j]==a[j]?d.match++:d.mismatch++,g++,h++,i=0):"x"!=a[j]&&"x"==b[j]?(h>0&&f>h&&(1==i?d.extend++:(d.open++,i=1)),g++):"x"==a[j]&&"x"!=b[j]&&(g>0&&e>g&&(2==i?d.extend++:(d.open++,i=2)),h++));return d}if(0==$.phylo.tree[a].child)var d=$.sequence.nucArray($.sequence.track[$.phylo.tree[a].node1]),e=$.sequence.nucArray($.sequence.track[$.phylo.tree[a].node2]);else if(1==$.phylo.tree[a].child)var d=$.sequence.nucArray($.sequence.track[$.phylo.tree[a].node1]),e=$.phylo.tree[$.phylo.tree[a].node2].ancestor;else var d=$.phylo.tree[$.phylo.tree[a].node1].ancestor,e=$.phylo.tree[$.phylo.tree[a].node2].ancestor;var f=c($.phylo.tree[a].ancestor,d),g=c($.phylo.tree[a].ancestor,e),h=b(f)+b(g);return $.stage.stats.match+=parseInt(f.match)+parseInt(g.match),$.stage.stats.mismatch+=parseInt(f.mismatch)+parseInt(g.mismatch),$.stage.stats.open+=parseInt(f.open)+parseInt(g.open),$.stage.stats.extend+=parseInt(f.extend)+parseInt(g.extend),$.phylo.tree[a].child>=2&&(h+=$.fitch.scoreRecurse($.phylo.tree[a].node1)),$.phylo.tree[a].child>=1&&(h+=$.fitch.scoreRecurse($.phylo.tree[a].node2)),$.phylo.tree[a].score=h,h}}}(),function(){$.tree={build:function(a){var b=0,c=0,d=[],e=function(a,f){if(void 0==a.branchset)return a.name;var g=a.branchset[0],h=a.branchset[1];if(void 0==g.branchset&&void 0==h.branchset)var i={lv:b++,depth:f,child:0,node1:c++,node2:c++,p1:g.name,p2:h.name};else if(void 0==g.branchset){var i={lv:-1,depth:f,child:1,node1:c++,node2:-1,p1:g.name};i.node2=e(h,f+1).lv,i.lv=b++}else if(void 0==h.branchset){var i={lv:-1,depth:f,child:1,node1:-1,node2:-1,p1:h.name};i.node2=e(g,f+1).lv,i.node1=c++,i.lv=b++}else{var i={lv:-1,depth:f,child:2,node1:-1,node2:-1};i.node1=e(g,f+1).lv,i.node2=e(h,f+1).lv,i.lv=b++}return d.push(i),i};return e(a,0),d},buildAncestor:function(){for(var a=$.stage.current,b="",c=this,d=$.phylo.tree[0].depth>=4?$.phylo.tree[0].depth:4,e=178,f=20,g=(e-d*f)/d,h=function(a){var b=$.phylo.tree[a];return 0==b.child?(b.node1+b.node2)/2:1==b.child?(b.node1+h(b.node2))/2:2==b.child?(h(b.node1)+h(b.node2))/2:void 0},i=function(a){var b="",c=function(a){var b=$.phylo.tree[a];if(0==b.child)return{top:34*(b.node1+.5)+7+8,depth:b.depth};if(1==b.child){var c=(b.node1+h(b.node2))/2;return c=34*c+7+8,{top:c,depth:b.depth}}if(2==b.child){var c=(h(b.node1)+h(b.node2))/2;return c=34*c+7+8,{top:c,depth:b.depth}}},d=178;if(d-=32,0==a.child){var e=a.depth*g+10.2,f=34*a.node1+17-2,i=34*a.node2+17-2,j=Math.abs(i-f);b+="<div class='vLine' style='top:"+f+"px;left:"+e+"px;height:"+j+"px'></div>",b+="<div class='hLine' style='top:"+f+"px;left:"+e+"px;width:"+(d-e)+"px'></div>",b+="<div class='hLine' style='top:"+i+"px;left:"+e+"px;width:"+(d-e)+"px'></div>"}else if(1==a.child){var e=a.depth*g+10.2,k=c(a.node2),f=34*a.node1+17-2,i=k.top,l=g*Math.abs(a.depth-k.depth),j=Math.abs(i-f);b+="<div class='vLine' style='top:"+(i>f?f:i)+"px;left:"+e+"px;height:"+j+"px'></div>",b+="<div class='hLine' style='top:"+f+"px;left:"+e+"px;width:"+(d-e)+"px'></div>",b+="<div class='hLine' style='top:"+i+"px;left:"+e+"px;width:"+l+"px'></div>"}else if(2==a.child){var e=a.depth*g+10.2,m=c(a.node1),n=c(a.node2),f=m.top,o=g*Math.abs(a.depth-m.depth),i=n.top,p=g*Math.abs(a.depth-n.depth),j=i-f;b+="<div class='vLine' style='top:"+f+"px;left:"+e+"px;height:"+j+"px'></div>",b+="<div class='hLine' style='top:"+f+"px;left:"+e+"px;width:"+o+"px'></div>",b+="<div class='hLine' style='top:"+i+"px;left:"+e+"px;width:"+p+"px'></div>"}return b},j=function(a){var d=$.phylo.tree[a];if(0==d.child)return b+="<div class='ancestorImg' style='top:"+34*d.node1+"px'><img src='"+c.getImg(d.p1)+"'/></div>",b+="<div class='ancestorImg' style='top:"+34*d.node2+"px'><img src='"+c.getImg(d.p2)+"'/></div>",b+="<div class='nodeImg' id='node"+a+"' style='left:"+d.depth*g+"px;top:"+(34*(d.node1+.5)+7)+"px'></div>",b+=i(d),void 0;if(1==d.child){var e=(d.node1+h(d.node2))/2;e=34*e+7,b+="<div class='ancestorImg' style='top:"+34*d.node1+"px'><img src='"+c.getImg(d.p1)+"'/></div>",b+="<div class='nodeImg' id='node"+a+"' style='left:"+d.depth*g+"px;top:"+e+"px'></div>",b+=i(d)}else if(2==d.child){var e=(h(d.node1)+h(d.node2))/2;e=34*e+7,b+="<div class='nodeImg' id='node"+a+"' style='left:"+d.depth*g+"px;top:"+e+"px'></div>",b+=i(d)}},k=0;a>=k;k++)j(k);$("#tree").html(b),$(".nodeImg").hover(function(){for(var a=$(this).attr("id").replace(/node/,""),b="",c=0;c<$.phylo.tree[a].ancestor.length;c++){var d=$.phylo.tree[a].ancestor[c];$.sequence,"x"!=d&&0!=d&&(b+="<div class='ancestor "+$.sequence.colorTag($.sequence.translate(d))+"' style='left:"+$.sequence.calcPos(c)+"px;'></div>")}$("#ancestorSeq").html(b),$("#ancestorSeq").show("slide",{direction:"left"},500)},function(){$("#ancestorSeq").hide()})},getImg:function(a){return"thankyou"==a?this.ty:"hg19"==a||"GRCh37"==a||"human"==a||"Human"==a?this.collect("Human"):"panTro2"==a||"gorGor1"==a||"ape"==a||"Ape"==a?this.collect("ape"):"ponAbe2"==a||"rheMac2"==a||"papHam1"==a||"calJac1"==a||"tarSyr1"==a||"micMur1"==a||"otoGar1"==a||"monkey"==a||"Monkey"==a?this.collect("Monkey"):"tupBel1"==a||"mm9"==a||"rn4"==a||"dipOrd1"==a||"cavPor3"==a||"eriEur1"==a||"sorAra1"==a||"mouse"==a||"Mouse"==a?this.collect("Mouse"):"speTri1"==a||"squirrel"==a||"Squirrel"==a?this.collect("Squirell"):"oryCun2"==a||"rabbit"==a||"Rabbit"==a?this.collect("Rabbit"):"ochPri2"==a||"ram"==a||"Ram"==a?this.collect("Ram"):"turTru2"==a||"dolphin"==a||"Dolphin"==a?this.collect("Dolphin"):"bosTau4"==a||"cow"==a||"Cow"==a||"taurus"==a||"Taurus"==a?this.collect("Cow"):"equCab2"==a||"horse"==a||"Horse"==a||"donkey"==a||"Donkey"==a?this.collect("Horse"):"felCat3"==a||"cat"==a||"Cat"==a||"lion"==a||"Lion"==a||"tiger"==a||"Tiger"==a||"panther"==a||"Panther"==a||"jaguar"==a||"Jaguar"==a||"lynx"==a||"Lynx"==a?this.collect("Cat"):"canFam2"==a||"dog"==a||"Dog"==a||"wolf"==a||"Wolf"==a?this.collect("Dog"):this.collect("bat")},collect:function(a){return"assets/img/animal/"+a.toLowerCase()+".svg"}}}(),function(){$(document).ready(function(){$.main={type:"DNA",clear:function(){$.timer.stop(),$.stage.current=-1,$("#countDown-text").html('<img src="img/loading.gif>'),$("#countDown").show(),$("#endGame").hide()},init:function(a){this.clear(),height=void 0==$("#tree").css("height")?178:$("#tree").css("height").replace(/px/,""),$.endGame.runAway(),$.phylo={seqLen:25,x:34,offSet:0,height:height,rows:10},$.lang.init(function(){$("#game").show(),$.protocal.read(a),$.protocal.request()})},callBack:function(){$.events.touch("#gameBoard",{start:function(){},move:function(){},end:function(){}});var a="onmousemove"in document.documentElement;DEBUG&&console.log($.phylo),$.phylo.tree=$.tree.build($.phylo.get.tree),$.board.build(),$.sequence.build($.phylo.get.sequence),$.sequence.prepareTracking($.phylo.get.sequence),$.phylo.origin=[];for(var b=0;8>b;b++){for(var c=[],d=0;d<$.phylo.seqLen;d++)c.push(0);$.phylo.origin.push(c)}$.helper.copy($.phylo.origin,$.sequence.track),DEBUG&&(console.log("Before Random"),console.log($.sequence.track));var e=$.sequence.randomize($.sequence.track);$.sequence.prepareTracking(e),DEBUG&&(console.log("Randomized Sequence"),console.log(e)),$.phylo.domCache=$.sequence.createCache(),$.physics.snapRandom(),DEBUG&&(console.log("original"),console.log($.phylo.origin),console.log("tracked"),console.log($.sequence.track),console.log($.phylo.tree)),$.stage.last=$.phylo.tree[$.phylo.tree.length-1].lv,window.DEV.disableSplash?($("#countDown").hide(),$.stage.end=!1,$.stage.round(),DEBUG&&$.helper.dump($.sequence.track),a&&$.multiSelect.active()):($("#countDown").show(),$.splash.countDown(function(){$.stage.end=!1,$.stage.round(),DEBUG&&$.helper.dump($.sequence.track),a&&$.multiSelect.active()})),$.sequence.checkEachRowLength(),$.board.startListener()}}})}();
+/*
+*
+* PHYLO Distribution Build v3.1.0
+* http://phylo.cs.mcgill.ca
+*
+* Copyright 2013 McGill university, Alfred Kam, Jerome Waldispuhl and other contributors
+* Under McGill Human-Computing Developer Licence
+* https://github.com/McGill-CSB/PHYLO/blob/master/McGill-LICENCE.txt
+*
+*/!function(){function a(){}a.prototype.parse=function(a){for(var b=[],c={},d=a.split(/\s*(;|\(|\)|,|:)\s*/),e=0;e<d.length;e++){var f=d[e];switch(f){case"(":var g={};c.branchset=[g],b.push(c),c=g;break;case",":var g={};b[b.length-1].branchset.push(g),c=g;break;case")":c=b.pop();break;case":":break;default:var h=d[e-1];")"==h||"("==h||","==h?c.name=f:":"==h&&(c.length=parseFloat(f))}}return c};{var b=a.prototype;[["parse",b.parse]]}$.newick={},$.newick.parse=b.parse}(),function(){$.stage={current:-1,last:0,round:function(){if(this.current<this.last)this.current+=1,this.set(this.current);else if(this.current===this.last)return this.end=!0,$.timer.stop(),document.getElementById("endGameSound").play(),$.endGame.complete(),"end game"},set:function(a){0==a&&$.timer.start(),$.engine.deActive(),$(".boardRow").removeClass("current").removeClass("blocked");var b=function(a){var b=$.phylo.tree[a];0==b.child?($("#row"+b.node1).hide().show("slide",{direction:"right"},500),$("#row"+b.node2).hide().show("slide",{direction:"right"},500)):1==b.child&&$("#row"+b.node1).hide().show("slide",{direction:"right"},500)},c=function(a){var b=$.phylo.tree[a];0==b.child?($("#row"+b.node1).removeClass("hidden").addClass("current"),$("#row"+b.node2).removeClass("hidden").addClass("current")):1==b.child?($("#row"+b.node1).removeClass("hidden").addClass("current"),c(b.node2)):2==b.child&&(c(b.node1),c(b.node2))};this.splash(a),b(a),c(a),0==a&&$("#bg").show("slide",{direction:"left"},400),$(".boardRow").each(function(){0==$(this).hasClass("hidden")&&0==$(this).hasClass("current")&&$(this).addClass("blocked")});var a=$.phylo.tree[a];$.engine.active(),$.tree.buildAncestor();var d=[];$.phylo.bestTrack=[];for(var e=0;8>e;e++){for(var f=[],g=0;25>g;g++)f.push(0);d.push(f),$.phylo.bestTrack.push(f)}$.helper.copy(d,$.sequence.track),$.helper.copy($.sequence.track,$.phylo.origin);var h=$.fitch.score();$.helper.copy($.sequence.track,d),$.sequence.par=h,$.board.par(h);var i=$.fitch.score();$.phylo.bestScore=i,$.board.score(i),$.helper.copy($.phylo.bestTrack,$.sequence.track),$.board.bestScore(i),i>=h?$.board.approve():$.board.unapprove(),$.board.stats()},end:!1,splash:function(a){$("#splash").html("Stage "+(a+1)).show(),window.setTimeout(function(){$("#splash").fadeOut("fast")},800)}}}(),function(){$.board={build:function(){$("#gameBoard").html("<canvas width='827px' height='332px' id='canvasBG'></canvas>"),this.redrawBG()},redrawBG:function(){var a=document.getElementById("canvasBG"),b=a.getContext("2d");b.globalAlpha=1,b.clearRect(0,0,827,350);for(var c=0;c<$.phylo.seqLen+1;c++)b.beginPath(),b.lineWidth=2,b.moveTo($.sequence.calcPos(c)+1,0),b.lineTo($.sequence.calcPos(c)+1,350),b.strokeStyle="#C4C4C4",b.stroke(),b.closePath();for(var c=0;c<$.phylo.rows+1;c++)b.beginPath(),b.lineWidth=2,b.moveTo(0,$.sequence.calcPos(c)+1),b.lineTo(827,$.sequence.calcPos(c)+1),b.strokeStyle="#C4C4C4",b.stroke(),b.closePath()},score:function(a){$.phylo.currentScore=a,$("#userScore").html("Score: "+a),$.html5.score.setScore(a)},bestScore:function(a){$("#bestScore").html("Best: "+a),$.stage.current==$.stage.last&&a>$.sequence.par&&$.protocal.sendHighScore()},par:function(a){$("#parScore").html("Par: "+a)},stats:function(){var a=window.lang.body.play.gameselect["game board"];void 0==$.stage.stats?$("#statsPanel").html(a["field 3"]+": "+($.stage.current+1)+"/"+($.stage.last+1)):$("#statsPanel").html("<i class='icon-puzzle'></i> ID:&nbsp;&nbsp;"+$.phylo.id+"<br>"+a["field 3"]+": "+($.stage.current+1)+"/"+($.stage.last+1)+"<span class='gap'></span>"+a["field 9"]+": "+$.stage.stats.match+"<span class='gap'></span>"+a["field 10"]+": "+$.stage.stats.mismatch+"<span class='gap'></span>"+a["field 11"]+": "+$.stage.stats.open+"<span class='gap'></span>"+a["field 12"]+": "+$.stage.stats.extend+"<span class='gap'><span>"+a["field 2"]+": "+$.sequence.par)},startListener:function(){var a=this,b=document.getElementById("starClickSound");0==window.DEV.disableMusic&&$("#musicPlayerSpot").html("<audio loop='loop' id='game-audio' preload='auto' autobuffer style='display:none'><source src='assets/sounds/Valent%20-%20The%20Buckle.ogg' type='audio/ogg'/><source src='assets/sounds/Valent%20-%20The%20Buckle.mp3' type='audio/mp3'/>Your browser does not support audio element</audio>");var c=["#customize-music","#customize-countdown","#customize-redraw","#customize-star","#customize-fxOthers"];for(var d in c)$(c[d]).trigger("click"),$(c[d]).trigger("click");$("#scorePanel").hide(),$("#cycle").unbind().click(function(){$.helper.copy($.sequence.track,$.phylo.bestTrack);var b=$.fitch.score();$.board.score(b),$.physics.snapRandom(),$.phylo.bestScore>=$.sequence.par&&$.board.approve(),a.stats()}),$("#star").unbind().click(function(){b.play(),$.phylo.currentScore>=$.sequence.par&&$.stage.round()})},approve:function(){{var a=this;document.getElementById("lightUpSound")}$("#star").addClass("pass"),$("#star").animate({opacity:1},300,function(){return $.phylo.currentScore<$.sequence.par?(a.unapprove(),void 0):(lightUpSound.play(),$("#star").animate({opacity:.2},300,function(){return $.phylo.currentScore<$.sequence.par?(a.unapprove(),void 0):($("#star").animate({opacity:1},500,function(){return $.phylo.currentScore<$.sequence.par?(a.unapprove(),void 0):($("#star").animate({opacity:.2},300,function(){return $.phylo.currentScore<$.sequence.par?(a.unapprove(),void 0):($("#star").animate({opacity:1},500,function(){return $.phylo.currentScore<$.sequence.par?(a.unapprove(),void 0):void 0}),void 0)}),void 0)}),void 0)}),void 0)})},unapprove:function(){$("#star").removeClass("pass"),$("#star").css({opacity:.4})},getJsonAlignments:function(){for(var a=this,b=$.sequence.track,c="[",d=0;d<b.length;d++){c+='{"';for(var e=0;e<b[d].length;e++)c+="x"==b[d][e]?"-":0!=d&&0==b[d][e]?"":a.convertColor($("#"+b[d][e]));c+='"}',d<b.length-2&&(c+=",")}return'{"alignments" : '+c+"]}"},convertColor:function(a){return a.hasClass("nuc-G")?"G":a.hasClass("nuc-C")?"C":a.hasClass("nuc-A")?"A":a.hasClass("nuc-T")?"T":null}}}(),function(){$.timer={elapsed:0,active:!1,count:function(){this.elapsed+=1},start:function(){0!=$("#game").length&&(this.elapsed=0,this.timer=setInterval("$.timer.count()",1e3),this.active=!0)},stop:function(){clearInterval(this.timer),this.active=!1}}}(),function(){$.html5={},$.html5.score={settings:{wBox:827,hBox:50,w:827/14.5,par:"#FF0000",current:"#6495ED",best:"#66CD00",color:"#6D6D6D",prev:0,prevMid:4},setScore:function(a){this.draw(a),document.getElementById("redrawSound").play()},draw_old:function(){var a=this,b=document.getElementById("score"),c=b.getContext("2d");c.globalAlpha=1,c.clearRect(0,0,a.settings.wBox,a.settings.hBox),this.setBorder(),this.drawCurrent(c),this.drawPar(c),this.drawBest(c),this.drawScale(c),this.dra4Key(c),this.settings.prev=$.phylo.currentScore,this.settings.prevPar=$.sequence.par},draw:function(){$.highlighter.set();var a=this,b=document.getElementById("score"),c=b.getContext("2d");c.globalAlpha=1,c.clearRect(0,0,a.settings.wBox,a.settings.hBox),this.setBorder(),this.drawScale2(c),this.settings.prev=$.phylo.currentScore},drawDelay:function(a){var b=this,c=$.phylo.currentScore,d=b.getDistance(c),e=b.getDistance(b.settings.prev),f=e-d,g=function(c){a.beginPath(),a.clearRect(0,0,765,b.settings.hBox),a.fillStyle=b.settings.current,a.fillRect(b.settings.w*b.midPoint,5,e+c,30),a.closePath(),f>0?c-=8:c+=8,b.drawPar(a),b.drawBest(a),b.drawScale(a),b.drawKey(a),0>f&&d>e+c?window.setTimeout(function(){g(c)},1):f>0&&e+c>d?window.setTimeout(function(){g(c)},1):(a.beginPath(),a.clearRect(0,0,765,b.settings.hBox),a.fillStyle=b.settings.current,a.fillRect(b.settings.w*b.midPoint,5,d,30),a.closePath(),b.drawPar(a),b.drawBest(a),b.drawScale(a),b.drawKey(a))};g(0);var h=b.settings.prev,i=$.phylo.currentScore,j=h-i,k=function(c){a.beginPath(),a.clearRect(765,0,62,50),a.font="20pt Helvetica",a.fillStyle=b.settings.current,a.fillText(h+c,770,35),a.closePath(),j>0?c-=1:c+=1,0>j&&i>h+c?window.setTimeout(function(){k(c)},1):f>0&&h+c>i?window.setTimeout(function(){k(c)},1):(a.beginPath(),a.clearRect(765,0,62,50),a.font="20pt Helvetica",a.fillStyle=b.settings.current,a.fillText(i,770,35),a.closePath())};k(0)},drawKey:function(a){var b=this,c=window.lang.body.play.gameselect["game board"];a.beginPath(),a.fillStyle=b.settings.par,a.fillRect(0,13,10,5),a.font="10.5pt Helvetica",a.fillStyle=b.settings.color,a.fillText(c["field 2"],16,20),a.fillStyle=b.settings.current,a.fillRect(0,27,10,5),a.font="10.5pt Helvetica",a.fillStyle=b.settings.color,a.fillText(c["field 1"],16,35),a.fillStyle=b.settings.best,a.fillRect(0,42,10,5),a.font="10pt Helvetica",a.fillStyle=b.settings.color,a.fillText(c["field 4"],16,50),a.closePath()},drawScale2:function(a){var b=this;if(b.midPoint-b.settings.prevMid==0)return b.drawDelay(a),void 0;var c=function(d){a.beginPath(),a.clearRect(0,0,765,b.settings.hBox);for(var e=2;14>e;e++){if(d>=e){var f;f=5==d?5*(d-e):3*(d-e),a.moveTo(b.settings.w*e,0+f),a.lineTo(b.settings.w*e,50-f)}else{var f;f=5==d?1.5*e:5*(e-d),a.moveTo(b.settings.w*e,0+f),a.lineTo(b.settings.w*e,50-f)}2==e&&(a.font="9pt Helvetica",a.fillStyle=b.settings.color,a.fillText(b.minBorder,b.settings.w*e+3,50)),e==d&&(a.font="9pt Helvetica",a.fillStyle=b.settings.color,a.fillText("0",b.settings.w*e+3,50)),13==e&&(a.font="9pt Helvetica",a.fillStyle=b.settings.color,a.fillText(b.maxBorder,b.settings.w*e+3,50))}a.strokeStyle=b.settings.color,a.stroke(),a.closePath(),b.drawKey(a),b.midPoint>b.settings.prevMid&&d!=b.midPoint?window.setTimeout(function(){c(d+1)},20):b.midPoint<b.settings.prevMid&&d!=b.midPoint?window.setTimeout(function(){c(d-1)},20):(b.settings.prevMid=b.midPoint,b.drawDelay(a))};c(parseInt(b.settings.prevMid))},drawScale:function(a){var b=this;a.beginPath();for(var c=2;14>c;c++){if(c<=b.midPoint){var d;d=5==b.midPoint?5*(b.midPoint-c):3*(b.midPoint-c),a.moveTo(b.settings.w*c,0+d),a.lineTo(b.settings.w*c,50-d)}else{var d;d=5==b.midPoint?1.5*c:5*(c-b.midPoint),a.moveTo(b.settings.w*c,0+d),a.lineTo(b.settings.w*c,50-d)}2==c&&(a.font="9pt Helvetica",a.fillStyle=b.settings.color,a.fillText(b.minBorder,b.settings.w*c+3,50)),c==b.midPoint&&(a.font="9pt Helvetica",a.fillStyle=b.settings.color,a.fillText("0",b.settings.w*c+3,50)),13==c&&(a.font="9pt Helvetica",a.fillStyle=b.settings.color,a.fillText(b.maxBorder,b.settings.w*c+3,50))}a.strokeStyle=b.settings.color,a.stroke(),a.closePath()},getDistance:function(a){var b=this;if(0>a){var c=b.settings.w*b.midPoint,d=2*b.settings.w,e=-1*(c-d)/Math.abs(b.minBorder)*Math.abs(a);return-1*(c-d)>=e?-1*(c-d)-10:e}if(a>=0){var d=b.settings.w*b.midPoint,c=13*b.settings.w;return a<=b.maxBorder?(c-d)/b.maxBorder*a:b.settings.wBox-d-1.2*b.settings.w}},setBorder:function(){var a=$.sequence.par,b=this;10>a?(b.maxBorder=30,b.midPoint=9,b.minBorder=a-50):(b.maxBorder=a+20,b.midPoint=5,b.minBorder=-30)},drawPar:function(a){var b,c=$.sequence.par,d=this;a.beginPath(),a.fillStyle=d.settings.par,a.strokeStyle=d.settings.par,b=d.getDistance(c),a.moveTo(d.settings.w*d.midPoint+b-5,0),a.lineTo(d.settings.w*d.midPoint+b+5,0),a.lineTo(d.settings.w*d.midPoint+b,5),a.lineTo(d.settings.w*d.midPoint+b-5,0),a.stroke(),a.fill(),a.closePath()},drawBest:function(a){var b,c=$.phylo.bestScore,d=this;b=d.getDistance(c),a.beginPath(),a.fillStyle=d.settings.best,a.strokeStyle=d.settings.best,a.moveTo(d.settings.w*d.midPoint+b-5,40),a.lineTo(d.settings.w*d.midPoint+b+5,40),a.lineTo(d.settings.w*d.midPoint+b,35),a.lineTo(d.settings.w*d.midPoint+b-5,40),a.stroke(),a.fill(),a.closePath()},drawCurrent:function(a){var b,c=$.phylo.currentScore,d=this;b=d.getDistance(c),a.beginPath(),a.fillStyle=d.settings.current,a.fillRect(d.settings.w*d.midPoint,5,b,30),a.closePath()}}}(),function(){$.highlighter={set:function(){if("DNA"==$.main.type){$(".sequence").removeClass("highlighter-2");for(var a=$.phylo.tree[$.stage.current].ancestor,b=$.sequence.track,c=this.getActiveRows(),d=0;d<c.length;d++)for(j=0,arr=b[c[d]],len=b[c[d]].length;len>j;j++)try{"x"==a[j].toString().toLowerCase()||0==a[j]||$("#"+arr[j]).hasClass("nuc-"+a[j].toString().toUpperCase())||$("#"+arr[j]).addClass("highlighter-2")}catch(e){console.log("Warning : Cell(s) fell off the chart"),DEV.logging&&console.notify("Warning : Cell(s) fell off the chart")}}},getActiveRows:function(){var a=[];return $(".boardRow").each(function(){$(this).hasClass("current")&&a.push(parseInt($(this).attr("id").replace(/row/,"")))}),a},remove:function(){$(".sequence").removeClass("highlighter-2")}}}(),function(){$.helper={dump:function(a){for(var b="",c=0;c<a.length;c++){for(var d=0;d<a[c].length;d++)b+="&nbsp;"+a[c][d];b+="<br>"}$("#dump").html(b)},get:function(a){var b={};return document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g,function(){function a(a){return decodeURIComponent(a.split("+").join(" "))}b[a(arguments[1])]=a(arguments[2])}),b[a]},copy:function(a,b){for(var c=0;c<b.length;c++)for(var d=0;d<b[c].length;d++)try{a[c][d]=b[c][d]}catch(e){try{a[c].push(b[c][d])}catch(e){var f=[];f.push(b[c][d]),a.push(f)}}},popUp:function(a,b,c){void 0!=c?void 0!=c.cancel&&0==c.cancel&&$(".warning-cancel").hide():$(".warning-cancel").show(),$(".warning-bg").css({height:$(document).height(),width:$(document).width()}),$(".warning-bg").fadeIn(),$(".warning").fadeIn(),$(".warning-msg").html(a),$(".warning-ok").unbind().click(function(){b("ok"),$(".warning").fadeOut(),$(".warning-bg").fadeOut()}),$(".warning-cancel").unbind().click(function(){b("cancel"),$(".warning").fadeOut(),$(".warning-bg").fadeOut()})}},window.common={exportSingleton:function(a,b,c){if(!window[a])for(var d=window[a]=new b,e=0;e<c.length;e++)try{d[c[e][0]]=c[e][1]}catch(f){}}},String.prototype.toInt=function(){return parseInt(this.replace(/px/,""))}}(),function(){$.sequence={checkEachRowLength:function(){var a=$.phylo.origin;$.phylo.eachRowLength=[];for(var b=0,c=a.length;c>b;b++){for(var d=0,e=0,f=a[b].length;f>e;e++)"x"!=a[b][e]&&(d+=1);$.phylo.eachRowLength.push(d)}},nuc:function(a){return"x"==a?"x":this.nucleotide[a]},nucArray:function(a){var b=[];for(var c in a)"x"==a[c]?b.push("x"):b.push(this.nuc(a[c]));return b},createCache:function(){for(var a=[],b=0,c=$.phylo.rows,d=$.phylo.seqLen;c*d>b;b++)a.push(0);return $(".sequence").each(function(){var b=$(this).attr("id");a[b]=document.getElementById(b).style}),a},createCache2:function(){for(var a=[],b=0,c=$.phylo.rows,d=$.phylo.seqLen;c*d>b;b++)a.push(0);return $(".sequence").each(function(){var b=$(this).attr("id");a[b]=document.getElementById(b)}),a},calcPos:function(a){return 32*a+a},build:function(a){var b="",c=this;this.posList=[],this.posListReverse=[],this.nucleotide=[];for(var d=0,e=$.phylo.rows,f=$.phylo.seqLen;e*f>d;d++)this.posList.push(0),this.posListReverse.push(0),this.nucleotide.push(0);for(var d=0;d<a.length;d++){b+="<div class='boardRow hidden' id='row"+d+"'>";for(var g=0,h=0;h<a[d].length;h++){var i=a[d].charAt(h);"_"!=i&&(this.posList[d*$.phylo.seqLen+g]=g,this.nucleotide[d*$.phylo.seqLen+g]=a[d].charAt(h),b+="<div class='sequence "+this.colorTag(this.translate(i))+"' id='"+(d*$.phylo.seqLen+g)+"' style='left:"+this.calcPos(h)+"px;'></div>",g++)}for(var j=0;g>j;j++)this.posListReverse[d*$.phylo.seqLen+j]=g-j;b+="<div class='red-line' id='red"+d+"'></div>",b+="</div>"}$("#gameBoard").append("<div id='movingParts'>"+b+"<div>"),$(".boardRow").css("height",c.calcPos(1))},colorTag:function(a){return 1==a?"nuc-A":2==a?"nuc-G":3==a?"nuc-C":4==a?"nuc-T":void 0},color:function(a){return colorTag(a)},translate:function(a){return"A"==a?1:"G"==a?2:"C"==a?3:"T"==a?4:null},buildRootAncester:function(){},track:[],prepareTracking:function(a){this.track=[];for(var b=0;b<a.length;b++){for(var c=[],d=0,e=0;e<$.phylo.seqLen;e++)b<a.length&&e<a[b].length?"_"!=a[b].charAt(e)?(c.push(b*$.phylo.seqLen+d),d+=1):c.push("x"):c.push("x");this.track.push(c)}},intify:function(a){return"x"==a?a:parseInt(0)},randomize:function(b){var c,d=[];DEBUG&&(console.log(">> in random 1"),console.log(b));for(var e=0;e<b.length;e++){c=[];for(var f=0;f<$.phylo.seqLen;f++)"_"==b[e][f]?c.push("x"):""==b[e][f].toString()?c.push("x"):c.push(b[e][f]);d.push(c)}DEBUG&&(console.log(">> in random 2"),console.log(d));for(var e=0;e<d.length;e++){for(c=d[e].toString().split("x,").join("").split(",");(a=c.length)<$.phylo.seqLen;)c.splice(Math.floor(Math.random()*a),0,"x");c=c.map($.sequence.intify),d[e]=c.slice(0)}for(var b=[],e=0;e<d.length;e++){c="";for(var f=0;f<d[e].length;f++)c+="x"==d[e][f]?"_":d[e][f];b.push(c)}return b}}}(),function(){$.splash={countDown:function(a){var b=3;$("#countDown-text").html(3),$.splash.count=function(){if($.cookie.read("music-level"))try{var c=$.cookie.read("countdownVol");document.getElementById("startSound").volume=c,document.getElementById("countdownSound").volume=c}catch(d){}0==b?(document.getElementById("startSound").play(),document.getElementById("game-audio").play(),$("#countDown").fadeOut("fast"),a()):($("#countDown-text").html(b),document.getElementById("countdownSound").play(),console.log("counting down"),b-=1,setTimeout($.splash.count,1e3))},setTimeout($.splash.count,1e3)}}}(),function(){$.events={move:function(){$(".current").each(function(){var a=parseInt(this.id.replace(/row/,""));$(this).children().each(function(){if($(this).hasClass("sequence")){var b=this;$.events.touch(b,{start:function(){$.events.touch(document,{move:function(c){$("#chosenArea").hide(),$("#red"+a).show("fast"),$.physics.move(b,c)},end:function(){$("#red"+a).hide("fast"),$.events.untouch(document,"move"),$.events.untouch(document,"end"),$.physics.snap();var b=$.fitch.score();$.phylo.bestScore<b&&($.phylo.bestScore=b,$.helper.copy($.phylo.bestTrack,$.sequence.track),$.board.bestScore(b)),$.board.score(b),$.phylo.currentScore=b,$.board.stats(),b>=$.sequence.par?$.board.approve():$.board.unapprove()}})}})}})})},untouch:function(a,b){var c="ontouchstart"in document.documentElement,d="ontouchmove"in document.documentElement,e="ontouchend"in document.documentElement,f="onmousedown"in document.documentElement,g="onmousemove"in document.documentElement,h="onmouseup"in document.documentElement;"start"==b&&(f&&$(a).unbind("mousedown"),c&&$(a).unbind("touchstart")),"move"==b&&(g&&$(a).unbind("mousemove"),d&&$(a).unbind("touchmove")),"end"==b&&(h&&$(a).unbind("mouseup"),e&&$(a).unbind("touchend"))},touch:function(a,b){var c="ontouchstart"in document.documentElement,d="ontouchmove"in document.documentElement,e="ontouchend"in document.documentElement,f="onmousedown"in document.documentElement,g="onmousemove"in document.documentElement,h="onmouseup"in document.documentElement,i=this;void 0!=b.start&&(f&&$(a).mousedown(function(a){b.start(i.getFingerPos(a))}),c&&$(a).bind("touchstart",function(a){a.preventDefault(),a.originalEvent.touches&&a.originalEvent.touches.length&&(a=a.originalEvent.touches[0]),b.start(i.getFingerPos(a))})),void 0!=b.move&&(g&&$(a).mousemove(function(a){b.move(i.getFingerPos(a))}),d&&$(a).bind("touchmove",function(a){a.preventDefault(),a.originalEvent.touches&&a.originalEvent.touches.length&&(a=a.originalEvent.touches[0]),b.move(i.getFingerPos(a))})),void 0!=b.end&&(h&&$(a).mouseup(function(a){b.end(i.getFingerPos(a))}),e&&$(a).bind("touchend",function(a){a.preventDefault(),a.originalEvent.touches&&a.originalEvent.touches.length&&(a=a.originalEvent.touches[0]),b.end(i.getFingerPos(a))}))},getFingerPos:function(a){var b=document.getElementById("game"),c=a.pageX-b.offsetLeft-185,d=a.pageY-b.offsetTop;return{pageX:c,pageY:d}},getMultiSelectFingerPos:function(a){var b=document.getElementById("game"),c=a.pageX-b.offsetLeft-5,d=a.pageY-b.offsetTop-65;return{pageX:c,pageY:d}}}}(),function(){var doc=document,win=window,url="/phpdb/openPhyloClassicDB.php";$.protocal={login:function(a,b,c){var d=7,e="mode="+d+"&user="+a+"&pass="+b;$.ajax({type:"POST",url:url,data:e}).done(function(a){c(a)}).fail(function(){$("div.login-warning").show().html("Could not connect to server, please try again later")})},register:function(a,b,c,d,e,f,g){var h=6,i="mode="+h+"&user="+a+"&displayname="+b+"&pass="+c+"&email="+d+"&network="+e+"&network_id="+f;$.ajax({type:"POST",url:url,data:i}).done(function(a){g(a)}).fail(function(){$("div.login-warning").show().html("Could not connect to server, please try again later")})},sendEndGameScore:function(status,fn){var mode=3;"completed"==status&&(mode=4);var data="mode="+mode+"&id="+$.phylo.id+"&user="+window.username+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.currentScore;$.ajax({type:"POST",url:url,data:data}).done(function(re){var json=eval("["+re+"]")[0];fn(json)}).fail(function(){console.log(">> failed to connect to database to submit end game score"),console.log(">> loading end game dummy data"),DEV.logging&&(devTools.prompts.notify({type:"error",title:"warning",text:"failed to connect to database to submit end game score"}),devTools.prompts.notify({type:"error",title:"warning",text:"loading end game dummy data"}));var dummy='{"0":"CONGENITAL PTOSIS","disease_link":"CONGENITAL PTOSIS","1":"67","play_count":"67","2":"13","fail_count":"13","3":"42","best_score":"42","4":"1375","running_score":"1375","5":"unki2aut","highscore_user":"unki2aut"}',json=eval("["+dummy+"]")[0];fn(json)})},sendHighScore:function(){return},getPuzzleInfo:function(){var data="mode=3&id="+$.phylo.id;$.ajax({type:"POST",url:url,data:data}).done(function(re){var json={};try{json=eval("["+re+"]")[0]}catch(err){return DEBUG&&console.log("@getPuzzleInfo error parsing"),void 0}}).fail(function(){})},read:function(a){if(void 0==a)this.type=$.helper.get("type"),this.score=$.helper.get(this.type);else{var b=a.type;this.tp=0,this.score=a.num,this.tp=b}},replay:function(){var data=$.protocal.previousData;DEBUG&&console.log(data);try{var j=eval("["+data+"]")[0].level}catch(err){return DEBUG&&console.log(err),void 0}$.phylo.id=j.attributes.id;for(var i=0;i<j.sequence.length;i++)j.sequence[i]=j.sequence[i].replace(/-/g,"_").toUpperCase();$.phylo.get={},$.phylo.get.sequence=j.sequence,DEBUG&&(j.sequence,j.tree),$.phylo.get.treeString=j.tree;var tree=$.newick.parse(j.tree);$.phylo.get.tree=tree,$.main.callBack()},request:function(setting){var str="",type=this.tp,score=this.score;"random"==type?str+="mode=1&diff="+score:"disease"==type?(mode=2,str+="mode=2&id="+score):"level"==type&&(mode=2,str+="mode=2&id="+score),$.ajax({url:url,data:str,type:"POST"}).done(function(data){data=data.replace("@",""),$.protocal.previousData=data,DEBUG^DEV.logging&&console.log(data);try{var j=eval("["+data+"]")[0].level}catch(err){return DEBUG&&console.log(err),void 0}$.phylo.id=j.attributes.id;for(var i=0;i<j.sequence.length;i++)j.sequence[i]=j.sequence[i].replace(/-/g,"_").toUpperCase();var numOfSeq=j.sequence.length,numOfNodes=j.tree.replace(/(\(|\)|\;)/,"").split(",").length;DEV.logging&&devTools.prompts.notify({title:"Puzzle Id",text:$.phylo.id}),numOfSeq!=numOfNodes&&(console.log(">> Detected Error -> Puzzle ("+$.phylo.id+") Sequence given ("+numOfSeq+") != phylo tree nodes ("+numOfNodes+")"),DEV.logging&&devTools.prompts.notify({type:"error",title:"warning",text:"Puzzle: "+$.phylo.id+"<br> #Seq("+numOfSeq+") / #Nodes("+numOfNodes+") mismatch"})),$.phylo.get={},$.phylo.get.sequence=j.sequence,DEBUG&&(j.sequence,j.tree),$.phylo.get.treeString=j.tree;var tree=$.newick.parse(j.tree);$.phylo.get.tree=tree,$.main.callBack()}).fail(function(){var dummy='{"level":{"attributes":{"id":"126"},"sequence":["CGGCCGCCGGGGG-------","CGGCCGCCGGGGG-------","CGGCCGCCGGGGG-------","CAACCCGTGGGTG-------","CGACCCGTGGATG-------","GCGGCGGCGGGCG-------","CGGCCGGCTGGGG-------","CCCCCCTCTCGGG-------","TCCCCCGAGGGAGGCGACCC"],"tree":"(((((hg19,gorGor1),papHam1),(((mm9,rn4),dipOrd1),cavPor3)),macEug1),ornAna1);"}}';console.log(">> Cannnot connect to database"),console.log(">> loading dummy data"),DEV.logging&&(devTools.prompts.notify({type:"error",title:"warning",text:"Cannot connect to database"}),devTools.prompts.notify({type:"error",title:"warning",text:"loading dummy data"})),$.protocal.previousData=dummy;try{var j=eval("["+dummy+"]")[0].level}catch(err){return DEBUG&&console.log(err),void 0}$.phylo.id=j.attributes.id;for(var i=0;i<j.sequence.length;i++)j.sequence[i]=j.sequence[i].replace(/-/g,"_").toUpperCase();var numOfSeq=j.sequence.length,numOfNodes=j.tree.replace(/(\(|\)|\;)/,"").split(",").length;numOfSeq!=numOfNodes&&(console.log(">> Detected Error -> Sequence given ("+numOfSeq+") != phylo tree nodes ("+numOfNodes+")"),DEV.logging&&devTools.prompts.notify({type:"error",title:"warning",text:"Puzzle: "+$.phylo.id+"<br> #Seq("+numOfSeq+") / #Nodes("+numOfNodes+") mismatch"})),$.phylo.get={},$.phylo.get.sequence=j.sequence,DEBUG&&(j.sequence,j.tree),$.phylo.get.treeString=j.tree;var tree=$.newick.parse(j.tree);$.phylo.get.tree=tree,$.main.callBack()})}}}(),function(){$.multiSelect={active:function(){var a=this;$("#movingParts").append("<div id='chosenArea'></div>"),$("#game").unbind().dblclick(function(b){b=$.events.getMultiSelectFingerPos(b),a.startTheEvents(b)})},deactive:function(){$("#game").unbind()},startTheEvents:function(a){var b=this;$("#selectBox").css({top:a.pageY,left:a.pageX,height:0,width:0});var c={Y:a.pageY,X:a.pageX};$("#selectBox").show(),$("#game").mousemove(function(a){a=$.events.getMultiSelectFingerPos(a),a.pageY-c.Y>0&&a.pageX-c.X>0?$("#selectBox").css({height:a.pageY-c.Y,width:a.pageX-c.X}):a.pageY-c.Y<0&&a.pageX-c.X<0?$("#selectBox").css({top:a.pageY-10,left:a.pageX,height:c.Y-a.pageY,width:c.X-a.pageX}):a.pageY-c.Y<0&&a.pageX-c.X>0?$("#selectBox").css({top:a.pageY,height:c.Y-a.pageY,width:a.pageX-c.X}):a.pageY-c.Y>0&&a.pageX-c.X<0&&$("#selectBox").css({left:a.pageX,height:a.pageY-c.Y,width:c.X-a.pageX})}),$("#game").click(function(){$(this).unbind("mousemove"),$(this).unbind("click"),b.capture(),$("#selectBox").hide()})},capture:function(){var a={X:parseInt($("#selectBox").css("left").replace(/px/,""))-parseInt($("#tree").css("width").replace(/px/,""))-4,Y:parseInt($("#selectBox").css("top").replace(/px/,""))-126,H:parseInt($("#selectBox").css("height").replace(/px/,"")),W:parseInt($("#selectBox").css("width").replace(/px/,""))},b={X:1e3,Y:1e3,H:-1,W:-1},c=[],d=[];return $(".current > .sequence").each(function(){var e=this,f=parseInt($(this).parent().attr("id").replace(/row/,"")),g={X:parseInt($(this).css("left").replace(/px/,"")),Y:35*f,H:parseInt($(this).css("height").replace(/px/,"")),W:parseInt($(this).css("width").replace(/px/,""))};(g.Y<=a.Y&&a.Y<=g.Y+g.H&&a.X<=g.X&&g.X<=a.X+a.W||g.Y<=a.Y&&a.Y+a.H<=g.Y+g.H&&g.X<=a.X&&a.X+a.W<=g.X+g.W||a.Y<=g.Y&&g.Y<=a.Y+a.H&&a.X<=g.X&&g.X<=a.X+a.W||g.Y<=a.Y&&a.Y<=g.Y+g.H&&g.X<=a.X&&a.X<=g.X+g.W||g.Y<=a.Y&&a.Y<=g.Y+g.H&&g.X<=a.X+a.W&&a.X+a.W<=g.X+g.W||a.Y<=g.Y&&g.Y<=a.Y+a.H&&g.X<=a.X&&a.X<=g.X+g.W||a.Y<=g.Y&&g.Y<=a.Y+a.H&&g.X<=a.X+a.W&&a.X+a.W<=g.X+g.W||g.Y<=a.Y+a.H&&a.Y+a.H<=g.Y+g.H&&a.X<=g.X&&g.X<=a.X+a.W)&&(c.push(e),d.push($(e).attr("id")),g.X<b.X&&(b.X=g.X),g.Y<b.Y&&(console.log(g),b.Y=$("#"+$(e).attr("id")).offset().top-199),g.Y+g.H>b.H&&(b.H=g.Y+g.H),g.X+g.W>b.W&&(b.W=g.X+g.W))}),b.H-=b.Y,b.W-=b.X,0==c.length?($("#chosenArea").hide(),void 0):($("#chosenArea").css({top:b.Y,left:b.X,width:b.W,height:b.H}),$("#chosenArea").show(),$.events.touch("#chosenArea",{start:function(a){var e=a.pageX-b.X;$.events.touch(document,{move:function(a){$.physics.shift_select(c,d,{old:parseInt($("#chosenArea").css("left").replace(/px/,"")),"new":a.pageX-e,obj:$("#chosenArea")})},end:function(){$.events.untouch(document,"move"),$.events.untouch("#chosenArea","start"),c=[],d=[],$("#chosenArea").hide(),$.physics.snap("mutli");var a=$.fitch.score();$.board.score(a),$.board.stats(),$.phylo.bestScore<a&&($.phylo.bestScore=a,$.helper.copy($.phylo.bestTrack,$.sequence.track),$.board.bestScore(a)),a>=$.sequence.par?$.board.approve():$.board.unapprove()}})}}),void 0)}}}(),function(){$.lang={init:function(a){return a()}}}(),function(){var a="http://phylo.cs.mcgill.ca/profile/index.php?user=";$.endGame={complete:function(){var b=this;$.multiSelect.deactive(),$.protocal.sendEndGameScore("completed",function(c){b.events(),b.score("completed",c.best_score),b.submitterLocation=a+(c.submitter?c.submitter:"jerome"),b.submitter=c.submitter;var d=20-c.puzzles_completed>0?20-c.puzzles_completed:0,e=window.lang.body.play.gameselect["end of game"],f=e.headerMessage;$("#endGame-text").html(f),$("#endGame-learnMore-content").html(b.learnMore(c)),"guest"!=window.guest&&""!=window.guest?$("#endGame-learnMode-footerContent").html(e.replayMessage+"<br>"+e.completeXMessage.replace("***",d)+"<br><b>"+e.thankyouMessage+"<b>"):$("#endGame-learnMode-footerContent").html(e.replayMessage+"<br><b>"+e.thankyouMessage+"<b>"),$("#endGame").fadeIn()})},bail:function(){var b=this;$.multiSelect.deactive(),$.protocal.sendEndGameScore("bail",function(c){b.events(),b.score("bail",c.best_score),b.submitter=c.submitter,b.submitterLocation=a+(c.submitter?c.submitter:"jerome");var d=20-c.puzzles_completed>0?20-c.puzzles_completed:0,e=window.lang.body.play.gameselect["end of game"],f=e.headerMessage;$("#endGame-text").html(f),$("#endGame-learnMore-content").html(b.learnMore(c)),"guest"!=window.guest&&""!=window.guest?$("#endGame-learnMode-footerContent").html(e.replayMessage+"<br>"+e.completeXMessage.replace("***",d)+"<br><b>"+e.thankyouMessage+"<b>"):$("#endGame-learnMode-footerContent").html(e.replayMessage+"<br><b>"+e.thankyouMessage+"<b>"),$("#endGame").fadeIn()})},split:function(a){var b=a.split(":");return"<tr><td>"+$.trim(b[0])+"&nbsp;&nbsp;&nbsp;:</td><td>&nbsp;&nbsp;&nbsp;"+$.trim(b[1])+"</td></tr>"},learnMore:function(a){var b="<table>",c=this,d=window.lang.body.play.gameselect["end of game"];return b+=c.split(d.levelId.replace("***","<b>"+$.phylo.id+"</b>")),b+=c.split(d.userScore.replace("***","<b>"+$.phylo.currentScore+"</b>")),b+=c.split(d.avgScore.replace("***","<b>"+Math.round(a.running_score/a.play_count)+"</b>")),b+=c.split(d.highscore.replace("***","<b>"+a.best_score+"</b>")),b+=c.split(d.highscoreHolder.replace("***","<b>"+a.highscore_user+"</b>")),b+=c.split(d.dnaAssociation.replace("***","<b>"+(a.disease_link||window.lang.body.footer.unclassified)+"</b>")),b+=c.split(d.completions.replace("***","<b>"+a.play_count+"</b>")),b+="<tr><td>"+d.submitter+"&nbsp;&nbsp;&nbsp;:</td><td>&nbsp;&nbsp;&nbsp;<a href='"+c.submitterLocation+"'>"+(c.submitter?c.submitter:"jerome")+"</a></td></tr>",b+="</table>"},score:function(a,b){$("#musicPlayerSpot").html("");var c="<i class='icon-star-empty'></i><i class='icon-star-empty'></i><i class='icon-star-empty'></i>";if($("#endGame-score-result").html(c),$("#endGame-share").show(),"bail"!=a){var d=$.phylo.currentScore,e=$.sequence.par;c=d>e&&b>d?"<i class='icon-star-1'></i><i class='icon-star-1'></i><i class='icon-star-empty'></i>":d>=b?"<i class='icon-star-1'></i><i class='icon-star-1'></i><i class='icon-star-1'></i>":"<i class='icon-star-1'></i><i class='icon-star-empty'></i><i class='icon-star-empty'></i>",$("#endGame-score-result").html(c)}},share:function(){if(console.log("@share function"),!$.cookie.read("username"))return bootbox.alert(window.lang.body.social["field 29"]),$.cookie.delete("username"),$.cookie.delete("fullname"),$.cookie.delete("loginmode"),$.cookie.delete("logid"),$("#logout").hide(),window.guest="guest",$("#login-box").hide(),$(".login-btn").click(function(){eClick()}),$("#login-tag").html(window.lang.body.play.gameselect.login["field 2"]),$(".showInLogin").hide(),void 0;var a=($.cookie.read("username"),$.cookie.read("fullname")),b=$.cookie.read("loginmode"),c=$.cookie.read("logid");if(console.log("Social provider",b),"Facebook"==b||"Twitter"==b||"LinkedIn"==b||"Google"==b)$.protocal.sendEndGameScore("info",function(d){{var e=d.disease_link;d.best_score}if(console.log("@protocal after send end game jax",e),"Facebook"==b){if(e)if($.phylo.currentScore>=e)var f=a.replace("+"," ")+" "+window.lang.body.social["field 7"].replace("***",e)+"\n"+window.lang.body.social["field 20"];else var f=a.replace("+"," ")+" "+window.lang.body.social["field 8"].replace("***",e)+"\n"+window.lang.body.social["field 20"];else if($.phylo.currentScore>=e)var f=a.replace("+"," ")+" "+window.lang.body.social["field 9"]+".\n"+window.lang.body.social["field 20"];
+else var f=a.replace("+"," ")+" "+window.lang.body.social["field 10"]+".";var g=window.lang.body.social["field 31"],d="provider="+b+"&id="+c+"&caption="+g+"&description="+f}else if("Twitter"==b){if(e)if($.phylo.currentScore>=e)var f=window.lang.body.social["field 20"]+" phylo.cs.mcgill.ca";else var f=window.lang.body.social["field 20"]+" phylo.cs.mcgill.ca";else if($.phylo.currentScore>=e)var f=window.lang.body.social["field 20"]+" phylo.cs.mcgill.ca";else var f=window.lang.body.social["field 20"]+" phylo.cs.mcgill.ca";var d="provider="+b+"&id="+c+"&description="+f}else if("LinkedIn"==b){if(e)if($.phylo.currentScore>=e)var f=a.replace("+"," ")+" "+window.lang.body.social["field 15"].replace("***",e)+"\n"+window.lang.body.social["field 20"];else var f=a.replace("+"," ")+" "+window.lang.body.social["field 16"].replace("***",e)+"\n"+window.lang.body.social["field 20"];else if($.phylo.currentScore>=e)var f=a.replace("+"," ")+" "+window.lang.body.social["field 17"]+".\n"+window.lang.body.social["field 20"];else var f=a.replace("+"," ")+" "+window.lang.body.social["field 18"]+".\n"+window.lang.body.social["field 20"];var d="provider="+b+"&id="+c+"&description="+f}else if("Google"==b){if(e)if($.phylo.currentScore>=e)var f=a.replace("+"," ")+" "+window.lang.body.social["field 15"].replace("***",e)+"\n"+window.lang.body.social["field 20"];else var f=a.replace("+"," ")+" "+window.lang.body.social["field 16"].replace("***",e)+"\n"+window.lang.body.social["field 20"];else if($.phylo.currentScore>=e)var f=a.replace("+"," ")+" "+window.lang.body.social["field 17"]+".\n"+window.lang.body.social["field 20"];else var f=a.replace("+"," ")+" "+window.lang.body.social["field 18"]+".\n"+window.lang.body.social["field 20"];var d="provider="+b+"&id="+c+"&description="+f}var h={message:window.lang.body.social["field 22"]+"<br/>via "+b+"<br/>\n"+f,buttons:{confirm:{label:window.lang.body.social["field 25"],"class":"btn-success",callback:function(){$.ajax({type:"POST",url:"http://phylo.cs.mcgill.ca/phpdb/social/feed.php",data:d}).done(function(){}).fail(function(){bootbox.alert(window.lang.body.social["field 23"])})}},cancel:{label:window.lang.body.social["field 27"]}}};console.log("bootbox message",h.message),bootbox.dialog(h)});else{if("Classic"!==b)return DEBUG&&console.log(window.lang.body.social["field 28"].replace("***",b)),void 0;var d={message:window.lang.body.social["field 44"],buttons:{ok:{}}};bootbox.dialog(d)}},events:function(){langFiles=window.lang.body.play.gameselect["end of game"],$("#endGame-new button").html(langFiles["field 11"]).unbind().click(function(){$("#game").hide(),$("#endGame").fadeOut(),interactiveMenu.restart(),$("#draw").show(),$("#menu").fadeIn()}),$("#endGame-replay button").html(langFiles["field 12"]).unbind().click(function(){$.main.clear(),$("#endGame").fadeOut(),$("#tree").html(""),$("#gameBoard").html("<img src='assets/img/loading.gif'/>"),$.protocal.replay(),$("#countDown-text").html("<img src='assets/img/loading.gif'/>"),$("#countDown").fadeIn()}),$("#endGame-share button").html(langFiles["field 13"]).unbind().click(function(){DEBUG&&console.log("Click share event"),$.endGame.share("test")})},runAway:function(){$("#runaway").unbind().click(function(){options={message:window.lang.body.misc["field 19"],buttons:{confirm:{label:window.lang.body.misc["field 18"],callback:function(){$.timer.active=!1,$.endGame.bail()}},cancel:{label:window.lang.body.misc["field 16"]}}},bootbox.dialog(options)})}}}(),function(){$.physics={shift_select:function(a,b,c){var d=!0,e=($.sequence.posList,$.sequence.posListReverse,$.phylo.domCache),f=$.sequence.track,g=c.new-c.old;c.new-c.old>0&&(d=!1);var h=parseInt(c.obj.css("width").replace(/px/,""));d?c.new<0&&(c.new=c.old):c.new+h>$.sequence.calcPos($.phylo.seqLen)&&(c.new=$.sequence.calcPos($.phylo.seqLen)-h);for(var i=function(b){for(var c in a)if($(a[c]).attr("id")==b)return!0;return!1},j=[],k=0,l=a.length;l>k;k++){var m=$(a[k]).parent().attr("id").toString().replace(/row/,"");m in j||j.push(m)}var n=0,o=b[0],p=$.phylo.seqLen;if(d){for(var q=827,m=0;m<j.length;m++)for(var r=f[j[m]],s=0,t=!1,k=0,l=r.length;l>k;k++)if("x"!=r[k]){for(var u=0;u<b.length;u++)if(r[k]==b[u]){s>=n&&(n=s,o=b[u],q=parseInt(e[b[u]].left.replace(/px/,""))),t=!0;break}if(t)break;s+=1}var v=e[o].left.replace(/px/,""),w=$.sequence.calcPos(n),x=v-w;parseInt(v)+g<w&&(g=-1*x)}else{o=b[b.length-1];var q=0;p=0;for(var m=0;m<j.length;m++)for(var r=f[j[m]],s=1,t=!1,k=r.length-1;k>=0;k--)if("x"!=r[k]){for(var u=$.phylo.seqLen-1;u>=0;u--)if(r[k]==b[u]&&void 0!=r[k]){s>=p&&(p=s,o=b[u],q=parseInt(e[b[u]].left.replace(/px/,""))),t=!0;break}if(t)break;s+=1}p=$.phylo.seqLen-p;var v=e[o].left.replace(/px/,""),y=$.sequence.calcPos(p),x=y-v;parseInt(v)+g>y&&(g=x)}if(0!=g){c.obj.css({left:c.old+g});for(var z=0,l=a.length;l>z;z++){var A=parseInt($(a[z]).css("left").replace(/px/,"")),B=(A+(c.new-c.old),parseInt($(a[z]).attr("id")));if(d){if(void 0!=e[B-1]&&void 0!=e[B-1].left&&i(B-1)){$(a[z]).css({left:A+g});continue}}else if(void 0!=e[B+1]&&void 0!=e[B+1].left&&i(B+1)){$(a[z]).css({left:A+g});continue}if(d)for(;;){var C=B%$.phylo.seqLen;if(void 0==e[B]^0==e[B])break;if(void 0==e[B-1]^0==e[B-1]){var D=parseInt(e[B].left.replace(/px/,""))+g;e[B].left=D<$.sequence.calcPos(C)?$.sequence.calcPos(C)+"px":D+"px";break}var E=parseInt(e[B].left.replace(/px/,"")),F=parseInt(e[B-1].left.replace(/px/,""))+$.phylo.x,D=E+g;if(e[B].left=D<$.sequence.calcPos(C)?$.sequence.calcPos(C)+"px":D+"px",B-=1,!(F>D))break}else for(;;){var G=Math.floor(B/$.phylo.seqLen),C=$.phylo.seqLen-($.phylo.eachRowLength[G]-B%$.phylo.seqLen);if(void 0==e[B]^0==e[B])break;if(void 0==e[B+1]^0==e[B+1]){var D=parseInt(e[B].left.replace(/px/,""))+g;e[B].left=D>$.sequence.calcPos(C)?$.sequence.calcPos(C)+"px":D+"px";break}var E=parseInt(e[B].left.replace(/px/,"")),F=parseInt(e[B+1].left.replace(/px/,"")),D=E+g+$.phylo.x;if(e[B].left=D-$.phylo.x>$.sequence.calcPos(C)?$.sequence.calcPos(C)+"px":E+g+"px",B+=1,!(D>F))break}}return!0}},move:function(a,b){var c=parseInt($(a).css("left").replace(/px/,"")),d=parseInt($.phylo.offSet);if(b.pageX-d-$.phylo.x/2>c)this.shift(!0,parseInt(a.id),b,0);else{if(b.pageX-d-$.phylo.x/2==c)return;this.shift(!1,parseInt(a.id),b,0)}},shift:function(a,b,c,d){var e=$.phylo.domCache,f=parseInt(b),g=parseInt($.phylo.offSet),h=$.sequence.posList,i=$.sequence.posListReverse;if(a)for(;;){e[f].zIndex=100-d;var j=c.pageX,k=$.phylo.x*$.phylo.seqLen+g,l=c.pageX+(d-.5)*$.phylo.x-g;if(l>=($.phylo.seqLen-i[f])*$.phylo.x-22&&(l=($.phylo.seqLen-i[f])*$.phylo.x-22),0==e[f+1]){e[f].left=l+"px";break}if(void 0==e[f+1]){e[f].left=l+"px";break}if(!(c.pageX-g+d*$.phylo.x>parseInt(e[f+1].left)-$.phylo.x/2)){e[f].left=l+"px";break}if(e[f].left=l+"px",d+=1,f+=1,0==e[f])break;if(void 0==e[f])break}else for(;;){var j=g,k=c.pageX,l=c.pageX+(d-.5)*$.phylo.x-g;if(j>=k)break;if(l<h[f]*$.phylo.x&&(l=h[f]*$.phylo.x),h[f]*$.phylo.x>=parseInt(e[f].left))break;if(0==e[f-1]){e[f].left=l+"px";break}if(void 0==e[f-1]){e[f].left=l+"px";break}if(!(parseInt(e[f-1].left)>c.pageX-g+d*$.phylo.x-3*$.phylo.x/2)){e[f].left=l+"px";break}if(e[f].left=l+"px",d--,f-=1,void 0==e[f])break;if(0==e[f])break}},snapRandom:function(){for(var a=$.sequence.track,b=$.phylo.domCache,c=0;c<a.length;c++)for(var d=0;d<a[c].length;d++)"x"!=a[c][d]&&(b[a[c][d]].left=$.sequence.calcPos(d)+"px")},snap:function(){for(var a=function(a){for(var a=parseInt(a),b=0;b<$.sequence.track.length&&!(b*$.phylo.seqLen<=a&&a<b*$.phylo.seqLen+$.phylo.seqLen);b++);return b},b=$.sequence.track,c=$.phylo.domCache,d=($.sequence.posList,0);d<b.length;d++)for(var e=0;e<b[d].length;e++)b[d][e]="x";$(".sequence").each(function(){var d=$(this).attr("id"),e=parseInt(c[d].left)-1,f=parseInt(e/$.phylo.x),g=a(d);for($.sequence.calcPos(f)-e<=0&&(f+=1),0>f&&(f=0);"x"!=b[g][f]&&f<2*$.phylo.seqLen;)f+=1;if(f>=$.phylo.seqLen)for(var h=b[g].length,i=d;h--;){if("x"==b[g][h]){b[g][h]=d,c[d].left=$.sequence.calcPos(h)+"px";break}i=b[g][h],b[g][h]=d,c[d].left=$.sequence.calcPos(h)+"px",d=i}else c[d].left=$.sequence.calcPos(f)+"px",b[g][f]=d}),DEBUG&&$.helper.dump(b)}}}(),function(){$.engine={deActive:function(){$(".current").each(function(){$(this).children().each(function(){if($(this).hasClass("sequence")){var a=this;$.events.untouch(a,"start")}})})},active:function(){$.events.move()}}}(),function(){$.fitch={score:function(){if("DNA"==$.main.type){void 0==$.stage.stats&&($.stage.stats={}),$.stage.stats.match=0,$.stage.stats.mismatch=0,$.stage.stats.open=0,$.stage.stats.extend=0,$.fitch.forwardBackward();var a=$.fitch.scoreRecurse($.stage.current);return a}},getLen:function(){return $.phylo.seqLen},forwardBackward:function(){for(var a=$.stage.current,b=$.fitch.getLen(),c=0;b>c;c++){var d=$.fitch.forward(a,c);$.phylo.tree[a].ancestor[c]=d.length<1?"x":1==d.length||0!=d.indexOf("x")?d[0]:d[1],$.phylo.tree[a].child>=2&&$.fitch.backward($.phylo.tree[a].node1,$.phylo.tree[a].ancestor[c],c),$.phylo.tree[a].child>=1&&$.fitch.backward($.phylo.tree[a].node2,$.phylo.tree[a].ancestor[c],c)}},forward:function(a,b){if(0==b&&($.phylo.tree[a].ancestor=[],$.phylo.tree[a].ancestorSet=[]),2==$.phylo.tree[a].child){for(var c=$.fitch.forward($.phylo.tree[a].node2,b),d=$.fitch.forward($.phylo.tree[a].node1,b),e=[],f=[],g=0;g<c.length;g++){-1==e.indexOf(c[g])&&e.push(c[g]);for(var h=0;h<d.length;h++)c[g]==d[h]&&-1==f.indexOf(c[g])&&f.push(c[g]),-1==e.indexOf(d[h])&&e.push(d[h])}$.phylo.tree[a].ancestorSet[b]=f.length<1?e:f}else if(1==$.phylo.tree[a].child){var c=$.fitch.forward($.phylo.tree[a].node2,b),d=$.sequence.nuc($.sequence.track[$.phylo.tree[a].node1][b]);$.phylo.tree[a].ancestorSet[b]=c.indexOf(d)>-1?[d]:c.concat([d])}else{var c=$.sequence.nuc($.sequence.track[$.phylo.tree[a].node1][b]),d=$.sequence.nuc($.sequence.track[$.phylo.tree[a].node2][b]);$.phylo.tree[a].ancestorSet[b]=d==c?[c]:[c,d]}return $.phylo.tree[a].ancestorSet[b]},backward:function(a,b,c){var d=$.phylo.tree[a].ancestorSet[c];$.phylo.tree[a].ancestor[c]=d.length<1?"x":1==d.length?d[0]:d.indexOf(b)>-1?b:0!=d.indexOf("x")?d[0]:d[1],$.phylo.tree[a].child>=2&&$.fitch.backward($.phylo.tree[a].node1,$.phylo.tree[a].ancestor[c],c),$.phylo.tree[a].child>=1&&$.fitch.backward($.phylo.tree[a].node2,$.phylo.tree[a].ancestor[c],c)},forwardBackward2:function(){for(var a=$.stage.current,b=$.fitch.getLen(),c=$.fitch.forward2(a,d),d=0;b>d;d++)$.phylo.tree[a].ancestor[d]=c[d].length<1?"x":1==c[d].length||0!=c[d].indexOf("x")?c[d][0]:c[d][1];$.phylo.tree[a].child>=2&&$.fitch.backward2($.phylo.tree[a].node1,$.phylo.tree[a].ancestor),$.phylo.tree[a].child>=1&&$.fitch.backward2($.phylo.tree[a].node2,$.phylo.tree[a].ancestor)},forward2:function(a){var b=$.fitch.getLen();if($.phylo.tree[a].ancestor=[],$.phylo.tree[a].ancestorSet=[],2==$.phylo.tree[a].child)for(var c=$.fitch.forward2($.phylo.tree[a].node2),d=$.fitch.forward2($.phylo.tree[a].node1),e=0;b>e;e++){for(var f=[],g=[],h=0;h<c[e].length;h++){-1==f.indexOf(c[e][h])&&f.push(c[e][h]);for(var i=0;i<d.length;i++)c[e][h]==d[e][i]&&-1==g.indexOf(c[e][h])&&g.push(c[e][h]),-1==f.indexOf(d[e][i])&&f.push(d[e][i])}$.phylo.tree[a].ancestorSet[e]=g.length<1?f:g}else if(1==$.phylo.tree[a].child)for(var c=$.fitch.forward2($.phylo.tree[a].node2),d=$.sequence.nucArray($.sequence.track[$.phylo.tree[a].node1]),e=0;b>e;e++)$.phylo.tree[a].ancestorSet[e]=c[e].indexOf(d[e])>-1?[d[e]]:c[e].concat([d[e]]);else for(var c=$.sequence.nucArray($.sequence.track[$.phylo.tree[a].node1]),d=$.sequence.nucArray($.sequence.track[$.phylo.tree[a].node2]),e=0;b>e;e++)$.phylo.tree[a].ancestorSet[e]=d==c?[c[e]]:[c[e],d[e]];return $.phylo.tree[a].ancestorSet},backward2:function(a,b){for(var c=$.phylo.tree[a].ancestorSet,d=$.fitch.getLen(),e=0;d>e;e++)$.phylo.tree[a].ancestor[e]=c[e].length<1?"x":1==c[e].length?c[e][0]:c[e].indexOf(b[e])>-1?b[e]:0!=c[e].indexOf("x")?c[e][0]:c[e][1];$.phylo.tree[a].child>=2&&$.fitch.backward2($.phylo.tree[a].node1,$.phylo.tree[a].ancestor),$.phylo.tree[a].child>=1&&$.fitch.backward2($.phylo.tree[a].node2,$.phylo.tree[a].ancestor)},scoreRecurse:function(a){function b(a){var b={match:1,mismatch:-1,open:-4,extend:-1};return a.match*b.match+a.mismatch*b.mismatch+a.open*b.open+a.extend*b.extend}function c(a,b){function c(a){return"x"==a}for(var d={match:0,mismatch:0,open:0,extend:0},e=a.length-a.filter(c).length,f=b.length-b.filter(c).length,g=0,h=0,i=0,j=0;j<a.length;j++)("x"!=a[j]||"x"!=b[j])&&("x"!=a[j]&&"x"!=b[j]?(b[j]==a[j]?d.match++:d.mismatch++,g++,h++,i=0):"x"!=a[j]&&"x"==b[j]?(h>0&&f>h&&(1==i?d.extend++:(d.open++,i=1)),g++):"x"==a[j]&&"x"!=b[j]&&(g>0&&e>g&&(2==i?d.extend++:(d.open++,i=2)),h++));return d}if(0==$.phylo.tree[a].child)var d=$.sequence.nucArray($.sequence.track[$.phylo.tree[a].node1]),e=$.sequence.nucArray($.sequence.track[$.phylo.tree[a].node2]);else if(1==$.phylo.tree[a].child)var d=$.sequence.nucArray($.sequence.track[$.phylo.tree[a].node1]),e=$.phylo.tree[$.phylo.tree[a].node2].ancestor;else var d=$.phylo.tree[$.phylo.tree[a].node1].ancestor,e=$.phylo.tree[$.phylo.tree[a].node2].ancestor;var f=c($.phylo.tree[a].ancestor,d),g=c($.phylo.tree[a].ancestor,e),h=b(f)+b(g);return $.stage.stats.match+=parseInt(f.match)+parseInt(g.match),$.stage.stats.mismatch+=parseInt(f.mismatch)+parseInt(g.mismatch),$.stage.stats.open+=parseInt(f.open)+parseInt(g.open),$.stage.stats.extend+=parseInt(f.extend)+parseInt(g.extend),$.phylo.tree[a].child>=2&&(h+=$.fitch.scoreRecurse($.phylo.tree[a].node1)),$.phylo.tree[a].child>=1&&(h+=$.fitch.scoreRecurse($.phylo.tree[a].node2)),$.phylo.tree[a].score=h,h}}}(),function(){$.tree={build:function(a){var b=0,c=0,d=[],e=function(a,f){if(void 0==a.branchset)return a.name;var g=a.branchset[0],h=a.branchset[1];if(void 0==g.branchset&&void 0==h.branchset)var i={lv:b++,depth:f,child:0,node1:c++,node2:c++,p1:g.name,p2:h.name};else if(void 0==g.branchset){var i={lv:-1,depth:f,child:1,node1:c++,node2:-1,p1:g.name};i.node2=e(h,f+1).lv,i.lv=b++}else if(void 0==h.branchset){var i={lv:-1,depth:f,child:1,node1:-1,node2:-1,p1:h.name};i.node2=e(g,f+1).lv,i.node1=c++,i.lv=b++}else{var i={lv:-1,depth:f,child:2,node1:-1,node2:-1};i.node1=e(g,f+1).lv,i.node2=e(h,f+1).lv,i.lv=b++}return d.push(i),i};return e(a,0),d},buildAncestor:function(){for(var a=$.stage.current,b="",c=this,d=$.phylo.tree[0].depth>=4?$.phylo.tree[0].depth:4,e=178,f=20,g=(e-d*f)/d,h=function(a){var b=$.phylo.tree[a];return 0==b.child?(b.node1+b.node2)/2:1==b.child?(b.node1+h(b.node2))/2:2==b.child?(h(b.node1)+h(b.node2))/2:void 0},i=function(a){var b="",c=function(a){var b=$.phylo.tree[a];if(0==b.child)return{top:34*(b.node1+.5)+7+8,depth:b.depth};if(1==b.child){var c=(b.node1+h(b.node2))/2;return c=34*c+7+8,{top:c,depth:b.depth}}if(2==b.child){var c=(h(b.node1)+h(b.node2))/2;return c=34*c+7+8,{top:c,depth:b.depth}}},d=178;if(d-=32,0==a.child){var e=a.depth*g+10.2,f=34*a.node1+17-2,i=34*a.node2+17-2,j=Math.abs(i-f);b+="<div class='vLine' style='top:"+f+"px;left:"+e+"px;height:"+j+"px'></div>",b+="<div class='hLine' style='top:"+f+"px;left:"+e+"px;width:"+(d-e)+"px'></div>",b+="<div class='hLine' style='top:"+i+"px;left:"+e+"px;width:"+(d-e)+"px'></div>"}else if(1==a.child){var e=a.depth*g+10.2,k=c(a.node2),f=34*a.node1+17-2,i=k.top,l=g*Math.abs(a.depth-k.depth),j=Math.abs(i-f);b+="<div class='vLine' style='top:"+(i>f?f:i)+"px;left:"+e+"px;height:"+j+"px'></div>",b+="<div class='hLine' style='top:"+f+"px;left:"+e+"px;width:"+(d-e)+"px'></div>",b+="<div class='hLine' style='top:"+i+"px;left:"+e+"px;width:"+l+"px'></div>"}else if(2==a.child){var e=a.depth*g+10.2,m=c(a.node1),n=c(a.node2),f=m.top,o=g*Math.abs(a.depth-m.depth),i=n.top,p=g*Math.abs(a.depth-n.depth),j=i-f;b+="<div class='vLine' style='top:"+f+"px;left:"+e+"px;height:"+j+"px'></div>",b+="<div class='hLine' style='top:"+f+"px;left:"+e+"px;width:"+o+"px'></div>",b+="<div class='hLine' style='top:"+i+"px;left:"+e+"px;width:"+p+"px'></div>"}return b},j=function(a){var d=$.phylo.tree[a];if(0==d.child)return b+="<div class='ancestorImg' style='top:"+34*d.node1+"px'><img src='"+c.getImg(d.p1)+"'/></div>",b+="<div class='ancestorImg' style='top:"+34*d.node2+"px'><img src='"+c.getImg(d.p2)+"'/></div>",b+="<div class='nodeImg' id='node"+a+"' style='left:"+d.depth*g+"px;top:"+(34*(d.node1+.5)+7)+"px'></div>",b+=i(d),void 0;if(1==d.child){var e=(d.node1+h(d.node2))/2;e=34*e+7,b+="<div class='ancestorImg' style='top:"+34*d.node1+"px'><img src='"+c.getImg(d.p1)+"'/></div>",b+="<div class='nodeImg' id='node"+a+"' style='left:"+d.depth*g+"px;top:"+e+"px'></div>",b+=i(d)}else if(2==d.child){var e=(h(d.node1)+h(d.node2))/2;e=34*e+7,b+="<div class='nodeImg' id='node"+a+"' style='left:"+d.depth*g+"px;top:"+e+"px'></div>",b+=i(d)}},k=0;a>=k;k++)j(k);$("#tree").html(b),$(".nodeImg").hover(function(){for(var a=$(this).attr("id").replace(/node/,""),b="",c=0;c<$.phylo.tree[a].ancestor.length;c++){{var d=$.phylo.tree[a].ancestor[c];$.sequence}"x"!=d&&0!=d&&(b+="<div class='ancestor "+$.sequence.colorTag($.sequence.translate(d))+"' style='left:"+$.sequence.calcPos(c)+"px;'></div>")}$("#ancestorSeq").html(b),$("#ancestorSeq").show("slide",{direction:"left"},500)},function(){$("#ancestorSeq").hide()})},getImg:function(a){return"thankyou"==a?this.ty:"hg19"==a||"GRCh37"==a||"human"==a||"Human"==a?this.collect("Human"):"panTro2"==a||"gorGor1"==a||"ape"==a||"Ape"==a?this.collect("ape"):"ponAbe2"==a||"rheMac2"==a||"papHam1"==a||"calJac1"==a||"tarSyr1"==a||"micMur1"==a||"otoGar1"==a||"monkey"==a||"Monkey"==a?this.collect("Monkey"):"tupBel1"==a||"mm9"==a||"rn4"==a||"dipOrd1"==a||"cavPor3"==a||"eriEur1"==a||"sorAra1"==a||"mouse"==a||"Mouse"==a?this.collect("Mouse"):"speTri1"==a||"squirrel"==a||"Squirrel"==a?this.collect("Squirell"):"oryCun2"==a||"rabbit"==a||"Rabbit"==a?this.collect("Rabbit"):"ochPri2"==a||"ram"==a||"Ram"==a?this.collect("Ram"):"turTru2"==a||"dolphin"==a||"Dolphin"==a?this.collect("Dolphin"):"bosTau4"==a||"cow"==a||"Cow"==a||"taurus"==a||"Taurus"==a?this.collect("Cow"):"equCab2"==a||"horse"==a||"Horse"==a||"donkey"==a||"Donkey"==a?this.collect("Horse"):"felCat3"==a||"cat"==a||"Cat"==a||"lion"==a||"Lion"==a||"tiger"==a||"Tiger"==a||"panther"==a||"Panther"==a||"jaguar"==a||"Jaguar"==a||"lynx"==a||"Lynx"==a?this.collect("Cat"):"canFam2"==a||"dog"==a||"Dog"==a||"wolf"==a||"Wolf"==a?this.collect("Dog"):this.collect("bat")},collect:function(a){return"assets/img/animal/"+a.toLowerCase()+".svg"}}}(),function(){$(document).ready(function(){$.main={type:"DNA",clear:function(){$.timer.stop(),$.stage.current=-1,$("#countDown-text").html('<img src="img/loading.gif>'),$("#countDown").show(),$("#endGame").hide()},init:function(a){this.clear(),height=void 0==$("#tree").css("height")?178:$("#tree").css("height").replace(/px/,""),$.endGame.runAway(),$.phylo={seqLen:25,x:34,offSet:0,height:height,rows:10},$.lang.init(function(){$("#game").show(),$.protocal.read(a),$.protocal.request()})},callBack:function(){$.events.touch("#gameBoard",{start:function(){},move:function(){},end:function(){}});var a="onmousemove"in document.documentElement;DEBUG&&console.log($.phylo),$.phylo.tree=$.tree.build($.phylo.get.tree),$.board.build(),$.sequence.build($.phylo.get.sequence),$.sequence.prepareTracking($.phylo.get.sequence),$.phylo.origin=[];for(var b=0;8>b;b++){for(var c=[],d=0;d<$.phylo.seqLen;d++)c.push(0);$.phylo.origin.push(c)}$.helper.copy($.phylo.origin,$.sequence.track),DEBUG&&(console.log("Before Random"),console.log($.sequence.track));var e=$.sequence.randomize($.sequence.track);$.sequence.prepareTracking(e),DEBUG&&(console.log("Randomized Sequence"),console.log(e)),$.phylo.domCache=$.sequence.createCache(),$.physics.snapRandom(),DEBUG&&(console.log("original"),console.log($.phylo.origin),console.log("tracked"),console.log($.sequence.track),console.log($.phylo.tree)),$.stage.last=$.phylo.tree[$.phylo.tree.length-1].lv,window.DEV.disableSplash?($("#countDown").hide(),$.stage.end=!1,$.stage.round(),DEBUG&&$.helper.dump($.sequence.track),a&&$.multiSelect.active()):($("#countDown").show(),$.splash.countDown(function(){$.stage.end=!1,$.stage.round(),DEBUG&&$.helper.dump($.sequence.track),a&&$.multiSelect.active()})),$.sequence.checkEachRowLength(),$.board.startListener()}}})}();
 define("phyloLib", function(){});
 
 /* old script will phase out */
@@ -18596,6 +20204,7 @@ require.config({
 		controller : 'scripts/controller',
 		tpl : "tpl",
 		nprogress : "bower_components/nprogress/nprogress",
+		modernizr : "bower_components/modernizr/modernizr"
 	},
 
 	/*
@@ -18685,7 +20294,7 @@ require.config({
 require([ 
 	"marionette", "mustache", "scripts/App","scripts/util/WebConsoleUtils",
 	//NO EXPORT
-	"jquery", "nprogress", "bootbox"
+	"jquery", "nprogress", "bootbox","modernizr"
 ], function(
 	Marionette, Mustache, App, WebConsoleUtils
 ){

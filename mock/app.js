@@ -46,37 +46,52 @@ app.get("/dist/expert/ajax/fetch", function(req, res){
 app.get("/", function(req, res){
     /* return your desired response */
     // using either res.send() or res.json()
+    res.cookie('logid','132474510',{maxAge:900000, httpOnly: false});
+    res.cookie('fullname', 'Mock+Developer', {maxAge:900000, httpOnly: false});
+    res.cookie('loginmode', 'Twitter', {maxAge:900000, httpOnly: false});
+    res.cookie('username', 'Twitter_11111111', { maxAge: 900000, httpOnly: false});
     res.json({});
 });
+app.get("/dist", function(req, res){
+    res.cookie('logid','132474510',{maxAge:900000, httpOnly: false});
+    res.cookie('fullname', 'Mock+Developer', {maxAge:900000, httpOnly: false});
+    res.cookie('loginmode', 'Twitter', {maxAge:900000, httpOnly: false});
+    res.cookie('username', 'Twitter_11111111', { maxAge: 900000, httpOnly: false});
+    res.json({});
+})
+
 app.get("/phpdb/openPhyloClassicDB.php",function(req,res){
         if(USE_REALSERVER){
-        $.ajax({
-            url:"http://phylo.cs.mcgill.ca/phpdb/openPhyloClassicDB.php",
-            //dataType:"json"
-            }).done(function(data){
-                res.send(data);
+            $.ajax({
+                url:"http://phylo.cs.mcgill.ca/phpdb/openPhyloClassicDB.php",
+                //dataType:"json"
+                }).done(function(data){
+                    res.send(data);
 
-            });
+                });
         }
         else{
-        res.send(JSON.stringify(
-
-            {"Brain":["1","2","3","50","51"],
-            "Metabolic": ["4", "5", "6", "7"],
-            "Blood": ["47", "48", "49", "61"],
-            "Heart": ["53", "54", "70"],
-            "": ["60", "64", "157", "169"],
-            "Muscles": ["65", "66", "67"],
-            "Cancer": ["89", "100", "126"],
-            "Digestive": ["99", "114"],
-            "Respiratory": ["1195", "1196"],
-            "Bone": ["1228", "1229", "1230"]
-            })
+            res.send(JSON.stringify(
+                {"Brain":["1","2","3","50","51"],
+                "Metabolic": ["4", "5", "6", "7"],
+                "Blood": ["47", "48", "49", "61"],
+                "Heart": ["53", "54", "70"],
+                "": ["60", "64", "157", "169"],
+                "Muscles": ["65", "66", "67"],
+                "Cancer": ["89", "100", "126"],
+                "Digestive": ["99", "114"],
+                "Respiratory": ["1195", "1196"],
+                "Bone": ["1228", "1229", "1230"]
+                })
             );
 
         }
 });
 app.get("/phpdb/openPhyloClassicStatus.php", function(req, res){
+    res.cookie('logid','132474510',{maxAge:900000, httpOnly: false});
+    res.cookie('fullname', 'Mock+Developer', {maxAge:900000, httpOnly: false});
+    res.cookie('loginmode', 'Twitter', {maxAge:900000, httpOnly: false});
+    res.cookie('username', 'Twitter_11111111', { maxAge: 900000, httpOnly: false});
     res.json(
         {"total":110514,"last":[{"user":"LouisSloboda","PuzzleID":"695","date":"2013-10-03","diseaseCategory":"Cancer","diseaseName":"BRCA1"},{"user":"jerome","PuzzleID":"1219","date":"2013-10-03","diseaseCategory":null,"diseaseName":"BRCA1"},{"user":"LouisSloboda","PuzzleID":"737","date":"2013-10-03","diseaseCategory":"Cancer","diseaseName":"p53-1"},{"user":"Guest","PuzzleID":"174","date":"2013-10-03","diseaseCategory":"Cancer","diseaseName":"P53-1"},{"user":"jerome","PuzzleID":"481","date":"2013-10-03","diseaseCategory":"","diseaseName":"p53-1"}]}
     );

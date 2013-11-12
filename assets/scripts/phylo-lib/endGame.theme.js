@@ -129,19 +129,20 @@
         },
         // share highscore on social network
         share: function() {
+            console.log("@share function");
             if ($.cookie.read("username")) {
                 var username = $.cookie.read("username");
                 var fullname = $.cookie.read("fullname");
                 var provider = $.cookie.read("loginmode");
                 var c_logid = $.cookie.read("logid");
-                console.log(provider);
+                // console.log("Social provider",provider);
                 if ((provider == "Facebook") || (provider == "Twitter") || (provider == "LinkedIn") || (provider == "Google")) {
 
                     $.protocal.sendEndGameScore("info", function(data) {
 
                         var puzzle_disease = data.disease_link;
                         var puzzle_highscore = data.best_score;
-
+                        // console.log("@protocal after send end game jax", puzzle_disease);
                         if (provider == "Facebook") {
                             if (puzzle_disease) {
                                 if ($.phylo.currentScore >= puzzle_disease) {
@@ -230,6 +231,7 @@
                                 }
                             }
                         };
+                        // console.log("bootbox message",options.message);
                         bootbox.dialog(options);
                     });
                 } 
