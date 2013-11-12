@@ -1,2 +1,0 @@
-console = {};
-console.log = function(){};
