@@ -37,6 +37,8 @@
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-usemin": "~2.0.0",
-    "grunt-rev": "~0.1.0"
+    "grunt-rev": "~0.1.0",
+    "matchdep": "~0.3.0",
+    "grunt-lib-contrib": "~0.6.1"
   }
 }
