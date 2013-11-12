@@ -41,9 +41,7 @@ define([
          volChanges : function(e){
             //var vol = $(e.target).prop("checked")?1:0;
             var vol = $(e.target).hasClass("musicDisabled")?1:0;
-            console.log(vol);
             var target = e.target.id.replace("customize-","")+"Vol";
-            console.log(target);
             cookie.create(target,vol,365);
             for (var i in this.volTargets[target]){
                 try{
@@ -290,7 +288,6 @@ define([
                     //$(id).prop("checked",false);
                 }
                 else{
-                    console.log("132123");
                     $(id).removeClass("musicDisabled");
                     //$(id).attr("checked",true);
                 }
