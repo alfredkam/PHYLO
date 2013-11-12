@@ -1,0 +1,16 @@
+>hg19+rheMac2+
+-------N--------NNNNNNNNNNNNNN----------NNNNN---------NN--NNN------NNNNNNNNNNNNNNNNN-N-NNN------------NNNN-NNNN--N-------NNNNN-NNNNNNNNNNNN----------------------N--N---NNNNNNNNNNNNNNNNNNNNNN------------NN--NNN----------------------NNNNNNNNNNNNNN------------NNNNNNNNNNNNNNNNNNNNNNNNNNNNN-------NNNNNNN
+>mm9+oryCun2+
+-------N--------NNNNNNNNNNNNNN----------NNNNN---------NN--NNN------NNNNNNNNNNNNNNNNN-N-NNN------------NNNN-NNNN--N------NNNNNN-NNNNNNNNNNNN----------------------N--N--------------NNNNNNNNNNN------------NN--NNN----------------------NNNNNN-NNNNNNN------------NNNNNNNNNNNNNNNNNNNNNNNNNNNNN-------NNNNNNN
+>hg19+rheMac2+mm9+oryCun2+
+-------N--------NNNNNNNNNNNNNN----------NNNNN---------NN--NNN------NNNNNNNNNNNNNNNNN-N-NNN------------NNNN-NNNN--N------NNNNNN-NNNNNNNNNNNN----------------------N--N---NNNNNNNNNNNNNNNNNNNNNN------------NN--NNN----------------------NNNNNNNNNNNNNN------------NNNNNNNNNNNNNNNNNNNNNNNNNNNNN-------NNNNNNN
+>equCab2+canFam2+
+-------N--------NNNNNNNNNNNNNN----------NNNNN---------NN--NNN------NNNNNNNNNNNNNNNNN-N-NNN------------NNNN-NNNN--N------NNNNNN-NNNNNNNNNNNN----------------------N--NNNNNNNNNNNNNNNNNNNNNNNNNN------------NN--NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN------------NNNNNNNNNN-NNNNNNNNNNNNNNNNNN-------NNNNNNN
+>bosTau4+equCab2+canFam2+
+-------N--------NNNNNNNNNNNNNN----------NNNNN---------NN--NNN------NNNNNNNNNNNNNNNNN-N-NNN------------NNNN-NNNN--N------NNNNNN-NNNNNNNNNNNN----------------------N--NNNNNNNNNNNNNNNNNNNNNNNNNN------------NN--NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN------------NNNNNNNNNN-NNNNNNNNNNNNNNNNNN-------NNNNNNN
+>hg19+rheMac2+mm9+oryCun2+bosTau4+equCab2+canFam2+
+-------N--------NNNNNNNNNNNNNN----------NNNNN---------NN--NNN------NNNNNNNNNNNNNNNNN-N-NNN------------NNNN-NNNN--N------NNNNNN-NNNNNNNNNNNN----------------------N--NNNNNNNNNNNNNNNNNNNNNNNNNN------------NN--NNN----------------------NNNNNNNNNNNNNN------------NNNNNNNNNNNNNNNNNNNNNNNNNNNNN-------NNNNNNN
+>hg19+rheMac2+mm9+oryCun2+bosTau4+equCab2+canFam2+loxAfr3+
+-------N--------NNNNNNNNNNNNNN----------NNNNN---------NN--NNN------NNNNNNNNNNNNNNNNN-N-NNN-----------------NNNN--N------NNNNNNNNNNNNNNNNNNN----------------------N--NNNNNNNNNNNNNNNNNNNNNNNNNN------------NNNNNNN----------------------NNNNNNNNNNNNNN------------NNNNNNNNNNNNNNNNNNNNNNNNNNNNN-------NNNNNNN
+>hg19+rheMac2+mm9+oryCun2+bosTau4+equCab2+canFam2+loxAfr3+monDom5+
+------------------------------------------------------NN--NNN----------------------------------------------NNNN--N-----------------------------------------------------------------NNNN------------------------------------------------NNNNNNNNNNNNNN------------NNNNNNNNNNNNNNNNNNNNNNNNNNNNN-------NNNNNNN

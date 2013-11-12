@@ -1,0 +1,9 @@
+foo.php:
+    norand
+        does not spread out randomly
+    space=short
+        no excess gaps
+    space=none
+        no gaps
+    name=NAME
+        show data of NAME. defaults to U2
