@@ -1,0 +1,12 @@
+>hg19+rheMac2+
+NN-NNNNNNNNNNNNNN-NNNNNNNNNNNNNNNNNNNNNNNN-NNNNN------NNNNNNNNNNNNN--NNN-NNNNN--NNN-----------------N---------------NNNNN-NN-----NNNNNNNNNNNNNN---NNNNNNNNNNNNNN------------------------NNNNN-----NNN--------------------------------------------NNNNNNNNNNNNNNN---------NNNNN-NNNNNNN----N-----------------
+>mm9+oryCun2+
+NN-NNNNNNNNNNNNNN-NNNNNNNNNNNNNNNNNNNNNNN----------------------------NNN-NNNNN--NNN-----------------N---------------NNNNN-NN-----NNNNN----NNNNN---NNNNNNNNNNNNNN----------------------------------NNNNN------------------------------------------NNNNNNNNNNNNNNN---------NNNNN-NNNNNNN----N-----------------
+>hg19+rheMac2+mm9+oryCun2+
+NN-NNNNNNNNNNNNNN-NNNNNNNNNNNNNNNNNNNNNNNN-NNNNN------NNNNNNN--------NNN-NNNNN--NNN-----------------N---------------NNNNN-NN-----NNNNNNNNNNNNNN---NNNNNNNNNNNNNN------------------------NNNNN-----NNN--------------------------------------------NNNNNNNNNNNNNNN---------NNNNN-NNNNNNN----N-----------------
+>equCab2+canFam2+
+NN-NNNNNNNNNNNNNN-NNNNNNNNNNNNNNNNNNNNNNNN-NNNNN------NNNNNNN--------NNN-NNNNN--NNN-----------------N---------------------------------------NNN---NNNNNNNNNNNNNNNNN--NNNNNNNNNNNNNNN----NNNNNN----NNN--------------------------------------------NNNNNNNNNNNN------------NNNNNNNNNNNNN----N-----------------
+>bosTau4+equCab2+canFam2+
+NN-NNNNNNNNNNNNNN-NNNNNNNNNNNNNNNNNNNNNNNN-NNNNN------NNNNNNN--------NNN-NNNNN--NNN-----------------N--------------------------------NNNNNNNNNN---NNNNNNNNNNNNNN-----NNNNNNNNNNNNNNN----NNNNNN----NNN--------------------------------------------NNNNNNNNNNNN------------NNNNN-NNNNNNN----N-----------------
+>hg19+rheMac2+mm9+oryCun2+bosTau4+equCab2+canFam2+
+NN-NNNNNNNNNNNNNN-NNNNNNNNNNNNNNNNNNNNNNNN-NNNNN------NNNNNNN--------NNN-NNNNN--NNN-----------------N---------------NNNNN-NN-----NNNNNNNNNNNNNN---NNNNNNNNNNNNNN------------------------NNNNN-----NNN--------------------------------------------NNNNNNNNNNNNNNN---------NNNNN-NNNNNNN----N-----------------
