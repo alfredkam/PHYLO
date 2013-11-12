@@ -161,15 +161,15 @@
                         } else if (provider == "Twitter") {
                             if (puzzle_disease) {
                                 if ($.phylo.currentScore >= puzzle_disease) {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 11"].replace("***", puzzle_disease) + " " + window.lang.body.social["field 20"] + "#PhyloDNApuzzles";
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 11"].replace("***", puzzle_disease) + " " + window.lang.body.social["field 20"] + " #PhyloDNApuzzles";
                                 } else {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 12"].replace("***", puzzle_disease) + " " + window.lang.body.social["field 20"] + "#PhyloDNApuzzles";
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 12"].replace("***", puzzle_disease) + " " + window.lang.body.social["field 20"] + " #PhyloDNApuzzles";
                                 }
                             } else {
                                 if ($.phylo.currentScore >= puzzle_disease) {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 13"] + ".\"" + window.lang.body.social["field 20"] + "#PhyloDNApuzzles";
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 13"] + ".\"" + window.lang.body.social["field 20"] + " #PhyloDNApuzzles";
                                 } else {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 14"] + ".\"" + window.lang.body.social["field 20"] + "#PhyloDNApuzzles";
+                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 14"] + ".\"" + window.lang.body.social["field 20"] + " #PhyloDNApuzzles";
                                 }
                             }
                             var data = "provider=" + provider + "&id=" + c_logid + "&description=" + message;
