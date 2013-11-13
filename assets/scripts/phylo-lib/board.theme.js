@@ -97,10 +97,10 @@
 			//disable this
 			$("#scorePanel").hide();
 			//volume control
-			$("#volume").on("click",function(){
-				$("#customize").trigger("click");
-				$("a.tag-music").trigger("click");
-			});
+			// $("#volume").on("click",function(){
+			// 	$("#customize").trigger("click");
+			// 	$("a.tag-music").trigger("click");
+			// });
 			/*$("#volumeOff").hide();
 			//cookie for music
 			if ($.cookie.read("music-level")) {

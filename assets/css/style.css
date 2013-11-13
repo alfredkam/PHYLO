@@ -153,6 +153,10 @@ a.btn {
 .customize-music {
 	/*display:none;*/
 }
+
+.customize-music {
+	/*display:none;*/
+}
 a.btn[id|='customize']{
 	margin-bottom:15px;
 	background: #71B2E2;
@@ -734,6 +738,11 @@ td.social-link {
 	top:-5px;
 	left:-10px;
 	position:relative;
+}
+#musicOptions i {
+	font-size: 30px;
+	position: relative;
+
 }
 .language-list a div{
 	display:block !important;

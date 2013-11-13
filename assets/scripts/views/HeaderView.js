@@ -37,6 +37,7 @@ define([
             // "click #options-button" : "optionsEvent",
             "click #language" : "languageEvent",
             "click #customize" : "customizeShow",
+            "click #musicOptions" : "musicShow",
             "click .zocial.facebook": function() {
                 this.socialLogin('Facebook');
             },
@@ -128,7 +129,15 @@ define([
             window.showInLogin = false;
         },
         customizeShow : function(event) {
-            $(".customize").show();
+            $(".colorOptions").show();
+            $(".customize-bg").css({
+                width: $(document).width(),
+                height: $(document).height()
+            });
+        },
+        musicShow : function(e){
+            console.log("dfdf");
+            $(".musicOptions").show();
             $(".customize-bg").css({
                 width: $(document).width(),
                 height: $(document).height()

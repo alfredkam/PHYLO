@@ -17,14 +17,6 @@ define([
          initialize : function(options) {
             this.lang = options.lang || {};
          },
-
-        volTargets: {
-            "musicVol": ["game-audio"],
-            "countdownVol": ["startSound", "countdownSound"],
-            "redrawVol": ["redrawSound"],
-            "starVol": ["lightUpSound", "starClickSound"],
-            "fxOthersVol": ["endGameSound"]
-        },
          template : tpl,
          ui  : {
             themeCell : ".customize-theme-cell",
@@ -36,43 +28,8 @@ define([
             "click .customize-tab a" : "customizeTab",
             "click .customize-theme-cell" : "customizeThemeCell",
             "click .customize-theme-reset" : "customizeThemeReset",
-            "click a.btn[id|='customize']" : "volChanges",
          },
-         volChanges : function(e){
-            //var vol = $(e.target).prop("checked")?1:0;
-            var vol = $(e.target).hasClass("musicDisabled")?1:0;
-            var target = e.target.id.replace("customize-","")+"Vol";
-            cookie.create(target,vol,365);
-            for (var i in this.volTargets[target]){
-                try{
-                    document.getElementById(this.volTargets[target][i]).volume = vol;
-                }catch (err) {}
-            }
-            if($(e.target).hasClass("musicDisabled")){
-                $(e.target).removeClass("musicDisabled");
-            }
-            else{
-                $(e.target).addClass("musicDisabled");
-            }
-            this.checkMuteStat();
-            return false;
-         },
-         checkMuteStat : function(){
-            var tot =0;
-            //checks if its all muted or not;
-            for(var i in this.volTargets){
-                for(var j in this.volTargets[i].length){
-                    tot+=document.getElementById(this.volTargets[i][j]).volume;
-                }
-            }
-            if(tot===0){
-                $("#volume i").removeClass("icon-volume-up-1").addClass("icon-volume-off-1");
-            }
-            else{
-                $("#volume i").addClass("icon-volume-up-1").removeClass("icon-volume-off-1");
-
-            }
-         },
+        
          customizeCancel : function() {
             // console.log("asda");
             var self = this;
@@ -331,8 +288,6 @@ define([
             this.customizeFnDump();
             this.colorPadDump();
             this.setPlayerDefaultColor();
-            this.getSoundSettings();
-            $(".customize-music").hide();
 
             // console.log(this.deCode("rgb%28255%2C%20255%2C%20255%29"));
         }

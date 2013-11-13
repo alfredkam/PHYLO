@@ -17,7 +17,25 @@ define([
          initialize : function(options) {
             this.lang = options.lang || {};
          },
-         template : tpl
+         template : tpl,
+         events:{
+            "click #volume i":"toggleVolume"
+
+         },
+         toggleVolume: function(e){
+            var vol=0;
+            if($(e.target).hasClass("icon-volume-up-1")){
+                $(e.target).removeClass("icon-volume-up-1").addClass("icon-volume-off-1");
+            }
+            else{
+                vol=1;
+
+                $(e.target).addClass("icon-volume-up-1").removeClass("icon-volume-off-1");
+            }
+            var cusEvent = jQuery.Event( {type:"mute",  vol: vol } );
+            $("#muteBtn").trigger(cusEvent);
+            return false;
+         },
      });
      return IndexView;
 });
