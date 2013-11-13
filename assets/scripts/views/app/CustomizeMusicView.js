@@ -76,7 +76,12 @@ define([
             //checks if its all muted or not;
             for(var i in this.volTargets){
                 for(var j in this.volTargets[i]){
+                    try{
                     tot+=document.getElementById(this.volTargets[i][j]).volume;
+                    }
+                    catch(e){
+
+                    }
                 }
             }
             if(tot===0){
