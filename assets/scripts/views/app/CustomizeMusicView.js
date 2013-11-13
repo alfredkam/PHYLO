@@ -93,7 +93,7 @@ define([
          },
         customizeSave : function() {
 
-            $(".customize").hide();
+            $(".musicOptions.customize").hide();
         },
         customizeTab : function(e) {
             $(".customize-tab .row a").each(function(){
@@ -125,7 +125,9 @@ define([
                 }
             }
         },
-     
+        templateHelpers: function(){
+            return {lang : this.lang};
+        },
         onShow: function() {
             this.getSoundSettings();
             // $(".customize-music").hide();

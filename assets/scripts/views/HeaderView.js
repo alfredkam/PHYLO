@@ -129,14 +129,15 @@ define([
             window.showInLogin = false;
         },
         customizeShow : function(event) {
-            $(".colorOptions").show();
+            $(".customize").hide();
+                        $(".colorOptions").show();
             $(".customize-bg").css({
                 width: $(document).width(),
                 height: $(document).height()
             });
         },
         musicShow : function(e){
-            console.log("dfdf");
+            $(".customize").hide();
             $(".musicOptions").show();
             $(".customize-bg").css({
                 width: $(document).width(),
