@@ -109,7 +109,7 @@ fclose($seqfile);
 exec("chmod * $seqfile");
 
 //$output = exec("/home/mcb/blanchem/phylo2/evaluateAlignment $treefilename $seqfilename",$outputarray,$returnvar);
-$output = exec("python /home/mcb/phylo/public_html/expert/scoring/score.py x $treefilename $seqfilename",$outputarray,$returnvar);
+$output = exec("python /home/mcb/phylo/public_html/edge/expert/scoring/score.py x $treefilename $seqfilename",$outputarray,$returnvar);
 preg_match_all("/:[\t ]*(?P<score>[0-9.]+)$/",$output,$matches);
 $fullscore = $matches['score'][0];
 
