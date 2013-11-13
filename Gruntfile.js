@@ -33,6 +33,14 @@ module.exports = function(grunt) {
                     src : '**/*.{png,jpg,jpeg}',
                     dest : '<%= config.dist %>/assets/img'
                 }]
+            },
+            expertBuild : {
+                files : [{
+                   expand : true,
+                   cwd : "<%= config.dist %>/expert/img",
+                   src : '**/*.{png,jpg,jpeg}',
+                   dest : '<%= config.dist %>/expert/img'
+                }]
             }
         },
         svgmin : {
@@ -146,11 +154,8 @@ module.exports = function(grunt) {
                             '<%= config.app %>/scripts/main/main.js',
                             '<%= config.app %>/img/**/*.gif',
                             '<%= config.app %>/scripts/util/options_template.js',
-                            '<%= config.app %>/bower_components/modernizr/modernizr.js',
-                            '<%= config.app %>/bower_components/requirejs/require.js',
                             '<%= config.app %>/scripts/models/**',
-                            '<%= config.app %>/css/**',
-                            '<%= config.app %>/bower_components/bootstrap/**'
+                            '<%= config.app %>/css/**'
                         ]
                     },
                     {
@@ -168,6 +173,7 @@ module.exports = function(grunt) {
             dist : {
                 files : {
                     "<%= config.dist %>/assets/scripts/phylo-lib/phylo-lib.min.js" : ['<%= config.app %>/scripts/phylo-lib/phylo-lib.js'],
+                    "<%= config.dist %>/assets/scripts/require.min.js" : ["<%= config.app %>/bower_components/requirejs/require.js"]
                 }
             },
             dev : {
@@ -216,6 +222,16 @@ module.exports = function(grunt) {
                 src: ['**/*.css', '!**/*.min.css'],
                 dest: '<%= config.dist %>/assets/css',
                 ext: '.css'
+            },
+            expertBuild : {
+                options : {
+                    banner : "<%= config.banner %>"
+                },
+                expand : true,
+                cwd : "<%= config.dist%>/expert/css",
+                src : ["**/*.css", "!**/*.min.css"],
+                dest : "<%= config.dist %>/expert/css",
+                ext : ".css"
             }
         },
         rev : {
@@ -272,20 +288,21 @@ module.exports = function(grunt) {
         'clean',
         'useminPrepare',
         'concat',
+        'imagemin:dynamic',
+        'svgmin:dist',
         'cssmin:combine',
         'uglify:dist',
         'requirejs:compile',
-        'imagemin',
-        'svgmin',
         'htmlmin:prepare',
         'copy',
         'cssmin:minify',
         'uglify:minify',
         'rev',
         'usemin',
-        'htmlmin:dist'
-         // 'copy',
-
+        'htmlmin:dist',
+        //expert build clean up
+        'imagemin:expertBuild',
+        'cssmin:expertBuild'
     ]);
     grunt.registerTask('stage',[
         'clean',

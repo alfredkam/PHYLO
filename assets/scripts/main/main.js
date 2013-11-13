@@ -105,7 +105,7 @@
 	else if(config.env === "production")
 	{
 		//script.setAttribute("src", "dist/main.min.js");
-		script.setAttribute("src", "assets/bower_components/requirejs/require.js");
+		script.setAttribute("src", "assets/scripts/require.min.js");
 		script.setAttribute("data-main", "assets/scripts/main/"+sitename+"-build.min.js");
 	}
 	
