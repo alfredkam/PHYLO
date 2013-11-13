@@ -35,6 +35,22 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        svgmin : {
+            options: {                  // Configuration that will be passed directly to SVGO
+                plugins: [{
+                    removeViewBox: false
+                }]
+            },
+            dist: {                     // Target
+                files: [{               // Dictionary of files
+                    expand: true,       // Enable dynamic expansion.
+                    cwd: '<%= config.app %>/img',     // Src matches are relative to this path.
+                    src: ['**/*.svg'],  // Actual pattern(s) to match.
+                    dest: '<%= config.dist %>/assets/img'       // Destination path prefix.
+                    // ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
+                }]
+            }
+        },
         htmlmin : {
             // https://github.com/gruntjs/grunt-contrib-htmlmin
             prepare: {                                      // Target
@@ -128,7 +144,7 @@ module.exports = function(grunt) {
                             '<%= config.app %>/../expert/**',
                             '<%= config.app %>/sounds/**',
                             '<%= config.app %>/scripts/main/main.js',
-                            '<%= config.app %>/img/**/*.{svg,gif}',
+                            '<%= config.app %>/img/**/*.gif',
                             '<%= config.app %>/scripts/util/options_template.js',
                             '<%= config.app %>/bower_components/modernizr/modernizr.js',
                             '<%= config.app %>/bower_components/requirejs/require.js',
@@ -260,6 +276,7 @@ module.exports = function(grunt) {
         'uglify:dist',
         'requirejs:compile',
         'imagemin',
+        'svgmin',
         'htmlmin:prepare',
         'copy',
         'cssmin:minify',
