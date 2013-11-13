@@ -1,0 +1,1 @@
+function Settings(){this.prefix="dcsettings-"}Settings.prototype.set=function(a,b){var c=JSON.stringify(b);localStorage.setItem(this.prefix+a,c)},Settings.prototype.get=function(a){var b=localStorage.getItem(this.prefix+a);return JSON.parse(b)},Settings.prototype.apply=function(){};
