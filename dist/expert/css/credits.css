@@ -1,0 +1,9 @@
+a.credits {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+a.credits:hover {
+    color: #0088CC;
+    text-decoration: none;
+}

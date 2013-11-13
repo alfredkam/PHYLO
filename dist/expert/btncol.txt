@@ -1,0 +1,38 @@
+background-color: #da4f49;
+*background-color: rgba(0,0,0,0);
+background-image: -ms-linear-gradient(top, #f0f0f0, rgba(0,0,0,0));
+background-image: -webkit-linear-gradient(top, #f0f0f0, rgba(0,0,0,0));
+background-image: -o-linear-gradient(top, #f0f0f0, rgba(0,0,0,0));
+background-image: -moz-linear-gradient(top, #f0f0f0, rgba(0,0,0,0));
+background-image: linear-gradient(top, #f0f0f0, rgba(0,0,0,0));
+background-repeat: repeat-x;
+
+
+<div id="button-container">
+            <table id="btns">
+                <tr>
+                    <td class="btn-border-gradient"><div class="btn-inside">Best</div></td>
+                    <td class="btn-border-solid"><div class="btn-inside"><i class="icon-download"></i></div></td>
+                    <td class="btn-border-solid"><div class="btn-inside"><i class="icon-download"></i></div></td>
+                </tr>
+                <tr class="btn-inforow">
+                    <td class="btn-border-gradient"><div class="btn-inside">&nbsp;</div></td>
+                </tr>
+                <tr>
+                    <td class="btn-border-gradient"><div class="btn-inside">1</div></td>
+                    <td class="btn-border-solid"><div class="btn-inside"><i class="icon-download"></i></div></td>
+                    <td class="btn-border-solid"><div class="btn-inside"><i class="icon-download"></i></div></td>
+                </tr>
+                <tr class="btn-inforow">
+                    <td class="btn-border-gradient"><div class="btn-inside">&nbsp;</div></td>
+                </tr>
+                <tr>
+                    <td class="btn-border-gradient"><div class="btn-inside">2</div></td>
+                    <td class="btn-border-solid"><div class="btn-inside"><i class="icon-download"></i></div></td>
+                    <td class="btn-border-solid"><div class="btn-inside"><i class="icon-download"></i></div></td>
+                </tr>
+                <tr class="btn-inforow">
+                    <td class="btn-border-gradient"><div class="btn-inside">&nbsp;</div></td>
+                </tr>
+            </table>
+        </div>

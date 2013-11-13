@@ -40,6 +40,7 @@ require.config({
 		controller : 'scripts/controller',
 		tpl : "tpl",
 		nprogress : "bower_components/nprogress/nprogress",
+		modernizr : "bower_components/modernizr/modernizr"
 	},
 
 	/*
@@ -129,7 +130,7 @@ require.config({
 require([ 
 	"marionette", "mustache", "scripts/App","scripts/util/WebConsoleUtils",
 	//NO EXPORT
-	"jquery", "nprogress", "bootbox"
+	"jquery", "nprogress", "bootbox","modernizr"
 ], function(
 	Marionette, Mustache, App, WebConsoleUtils
 ){

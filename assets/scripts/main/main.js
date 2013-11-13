@@ -16,7 +16,7 @@
 	var config = (namespace.config = namespace.config || {});
 	
 	//TODO: Change to either "dev" or "stage", "production"
-	config.env = "dev";
+	config.env = "production";
 	
 	var dev = {
 			DEBUG: true,
@@ -34,7 +34,7 @@
 			host : window.location.origin
 			
 	};	
-
+	
 	var stage = {
 		DEBUG : true,
 		social: {
