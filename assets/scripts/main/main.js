@@ -16,7 +16,7 @@
 	var config = (namespace.config = namespace.config || {});
 	
 	//TODO: Change to either "dev" or "stage", "production"
-	config.env = "production";
+	config.env = "dev";
 	
 	var dev = {
 			DEBUG: true,
