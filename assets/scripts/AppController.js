@@ -100,11 +100,6 @@ define([
 			var self = this;
 			lang = lang || "EN";
 			lang.toUpperCase();
-
-			if(!this.regions.customizeRegion.currentView) {
-				this.regions.customizeRegion.show(new CustomizeView({}));
-			}
-
 			// a good place for code that needs to be ran every page 
 			
 			if(!this.lang || this.lang != lang) {
@@ -151,6 +146,9 @@ define([
 				if(!this.regions.customizeMusicRegion.currentView) {
 					this.regions.customizeMusicRegion.show(new CustomizeMusicView({lang:langModel}));
 				}
+				if(!this.regions.customizeRegion.currentView) {
+							this.regions.customizeRegion.show(new CustomizeView({lang:langModel}));
+						}
 			}
 
 			this.currentLang = lang;

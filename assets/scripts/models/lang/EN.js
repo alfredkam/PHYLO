@@ -24,12 +24,18 @@
         "moto": "A puzzle game that contributes to genetic disease research"
     },
     "options" : {
+        "customize":"Customize",
         "music":"Music",
         "soundFX" :"Sound Effects",
         "countdown" :"Countdown",
         "redraw" :"Redraw",
         "star" :"Star",
-        "others" :"Others"
+        "others" :"Others",
+        "dnaColor" :"DNA Color:",
+        "default" :"Restore Default",
+        "save" :"Save",
+        "cancel" : "Cancel",
+        "boardColor" :"Board Color:"
     },
     "body": {
         "misc": {

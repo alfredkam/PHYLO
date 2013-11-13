@@ -290,7 +290,10 @@ define([
             this.setPlayerDefaultColor();
 
             // console.log(this.deCode("rgb%28255%2C%20255%2C%20255%29"));
-        }
+        },
+        templateHelpers: function(){
+            return {lang : this.lang};
+        },
      });
      return CustomizeView;
 });
