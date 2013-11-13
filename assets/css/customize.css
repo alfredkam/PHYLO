@@ -1,20 +1,11 @@
-.customize-wrapper .row {
-    margin:0px;
-}
-
-.customize-body {
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-}
-
-.m_theme {
-    border-top-left-radius:3px;
-    border-top-right-radius :3px;
-}
-.m_music {
-    border-top-left-radius:3px;
-    border-top-right-radius :3px;
-    left:2px;
-
-}
+/*
+*
+* PHYLO Distribution Build v3.1.0
+* http://phylo.cs.mcgill.ca
+*
+* Copyright 2013 McGill university, Alfred Kam, Jerome Waldispuhl and other contributors
+* Under McGill Human-Computing Developer Licence
+* https://github.com/McGill-CSB/PHYLO/blob/master/McGill-LICENCE.txt
+*
+*/
+.customize-wrapper .row{margin:0}.customize-body{border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px}.m_theme{border-top-left-radius:3px;border-top-right-radius:3px}.m_music{border-top-left-radius:3px;border-top-right-radius:3px;left:2px}
