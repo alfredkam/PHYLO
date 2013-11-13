@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         app : './assets',
         dist : './dist',
         phyloLib : './assets/scripts/phylo-lib',
-        banner : "/* PHYLO Dist Package v3.0.9 */"
+        banner : "/*\n*\n* PHYLO Distribution Build v3.1.0\n* http://phylo.cs.mcgill.ca\n*\n* Copyright 2013 McGill university, Alfred Kam, Jerome Waldispuhl and other contributors\n* Under McGill Human-Computing Developer Licence\n* https://github.com/McGill-CSB/PHYLO/blob/master/McGill-LICENCE.txt\n*\n*/"
     };
 
     grunt.initConfig({
@@ -191,6 +191,16 @@ module.exports = function(grunt) {
                     }
                 ]
             },
+            expertBuild : {
+                files : [
+                    {
+                        expand : true,
+                        cwd : "<%= config.dist %>/expert/js",
+                        src : ["**/*.js", "!**/*.min.js"],
+                        dest : "<%= config.dist %>/expert/js"
+                    }
+                ]
+            },
             options :  {
                 mangle : true,
                 banner : "<%= config.banner %>"
@@ -302,7 +312,8 @@ module.exports = function(grunt) {
         'htmlmin:dist',
         //expert build clean up
         'imagemin:expertBuild',
-        'cssmin:expertBuild'
+        'cssmin:expertBuild',
+        'uglify:expertBuild'
     ]);
     grunt.registerTask('stage',[
         'clean',
