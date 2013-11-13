@@ -1,7 +1,2 @@
-.dot {
-	background-color:#6d6d6d;
-}
-
-.openBracket, .closeBracket {
-	background-color: #71B2E2;
-}	
+/* PHYLO Dist Package v3.0.9 */
+.dot{background-color:#6d6d6d}.closeBracket,.openBracket{background-color:#71B2E2}

@@ -1,20 +1,2 @@
-.customize-wrapper .row {
-    margin:0px;
-}
-
-.customize-body {
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-}
-
-.m_theme {
-    border-top-left-radius:3px;
-    border-top-right-radius :3px;
-}
-.m_music {
-    border-top-left-radius:3px;
-    border-top-right-radius :3px;
-    left:2px;
-
-}
+/* PHYLO Dist Package v3.0.9 */
+.customize-wrapper .row{margin:0}.customize-body{border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px}.m_theme{border-top-left-radius:3px;border-top-right-radius:3px}.m_music{border-top-left-radius:3px;border-top-right-radius:3px;left:2px}
