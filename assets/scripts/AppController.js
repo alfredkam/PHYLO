@@ -17,6 +17,8 @@ define([
          "scripts/views/app/ranking/RankingView",
          "scripts/views/app/history/HistoryView",
          "scripts/views/app/CustomizeView",
+         "scripts/views/app/CustomizeMusicView",
+
          //tablet view
          "scripts/views/tablet/TabletView",
          "scripts/views/tablet/TabletSettingsView",
@@ -30,7 +32,7 @@ define([
 ], function(
 		$, Backbone, Marionette,
 		HeaderView, FooterLayout, IndexView, PlayByIdView, TutorialView, AboutView, CreditsView, RankingView, HistoryView, 
-		CustomizeView,
+		CustomizeView, CustomizeMusicView,
 		TabletView, TabletSettingsView,
 		AppLayout
 ) {
@@ -101,6 +103,9 @@ define([
 
 			if(!this.regions.customizeRegion.currentView) {
 				this.regions.customizeRegion.show(new CustomizeView({}));
+			}
+			if(!this.regions.customizeMusicRegion.currentView) {
+				this.regions.customizeMusicRegion.show(new CustomizeMusicView({}));
 			}
 
 			// a good place for code that needs to be ran every page 
