@@ -10,9 +10,10 @@ define([
     //tablet tpl
     "text!tpl/tablet/TabletHeader.mustache",
     //NO EXPORTS
-    "scripts/phylo-lib/protocal.core",
+    // "scripts/phylo-lib/protocal.core",
    
 ], function($, Marionette, tpl, cookie, tabletTpl) {
+    var baseUrl = "/phpdb/openPhyloClassicDB.php";
     var HeaderView = Marionette.ItemView.extend({
         initialize: function(options) {
             this.lang = options.lang;
@@ -30,6 +31,34 @@ define([
             loginBox: "#login-box",
             optionsBtn : "#options-button",
             languageList : "#language-list"
+        },
+        login : function(username, password, fn) {
+            var url = baseUrl;
+            var mode = 7;
+            var data = "mode="+mode+"&user="+username+"&pass="+password;
+            $.ajax({
+                type: "POST",
+                url : url,
+                data : data
+            }).done(function(re) {
+                fn(re);     
+            }).fail(function() {
+                $("div.login-warning").show().html("Could not connect to server, please try again later");
+            });
+        },
+        register : function(username, displayname, password, email,network,network_id, fn) {
+            var url = baseUrl;
+            var mode = 6;
+            var data = "mode="+mode+"&user="+username+"&displayname="+displayname+"&pass="+password+"&email="+email+"&network="+network+"&network_id="+network_id;
+            $.ajax({
+                type: "POST",
+                url : url,
+                data : data
+            }).done(function(re) {
+                fn(re);     
+            }).fail(function() {
+                $("div.login-warning").show().html("Could not connect to server, please try again later");
+            });
         },
         events: {
             "click div.tabletLogoutBtn" : "logoutFn",
@@ -183,7 +212,7 @@ define([
                     $("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 20"]);
                     return;
                 }
-                $.protocal.register(name, name, password, email, 'Classic', 0, function(re) {
+                self.register(name, name, password, email, 'Classic', 0, function(re) {
                     if (re == "succ") {
                         $(".login-btn").unbind("click");
                         $(".m_login").html(decodeURI(name));
@@ -231,14 +260,14 @@ define([
                             }).done(function(mypasswd) { // password generated
                                 console.log(provider + ": password generated.");
                                 var password = mypasswd;
-                                $.protocal.login(username, password, function(re) {
+                                self.login(username, password, function(re) {
                                     if (re == "succ") {
                                         console.log(provider + " login successful.");
                                         self.createLoginData(username,fullname,provider,logid);
                                         return;
                                     } else { // login not successful -> try to register user
                                         console.log(provider + ": User not found. Registering...");
-                                        $.protocal.register(username,fullname,password,email,provider,logid,function(registerout) {
+                                        self.register(username,fullname,password,email,provider,logid,function(registerout) {
                                             if (registerout == "succ") { // registration successfull
                                                 console.log(provider + ": Registering successful.");
                                                 // Prepare optional message to post on user feed
@@ -314,7 +343,7 @@ define([
 
             $("div.login-warning").hide();
 
-            $.protocal.login(username, password, function(re) {
+            self.login(username, password, function(re) {
                 if (re == "succ") {
                     console.log("Login using classic mode.");
                     cookie.create("username", username, 365);
