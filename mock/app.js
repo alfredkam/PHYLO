@@ -40,6 +40,9 @@ app.configure('development', function(){
 app.get("/expert/ajax/fetch", function(req, res){
     res.json([["TAGCACTTTGGGAGGCTGAGGTAGGCAGATTGCCTAAGCTCAGGTGTTCAAGACCACCCTAGGCAACATGGTGAAACCCTGTCTCTACTAAAATAC-------AAAAAAAAAAAAAAAAATGGTGGCACACATCTGTAGTC-CCA----GCTACTTGAGAGGCTGAAGCAGGA---GAATCGCTTGAACTCGGGAGGTGGAGGCTGTAGTGAGCCA---AG------------ACTCCAGCCTGGGTGACAGAGCAAGACCCTGTCTCAAAA---AATAAATAAATAAAATACAAAA-AA",["TAGCACTTTGGGAGGCTGAGGTAGGCAGATTGCCTAAGCTCAGGAGTTCGAGACCACCCTAGGCACCATGGTGAAACCCTGTCTCTACTAAAAAAA----AAAAAAAAAAAAAAAAAAAATGGTGGCACACATCTGTAGTC-CCA----GCTACTTGGGAGGCTGAGACAGAA---GAATCACTTAAACTCGCAAGGCGGAGGTTGTAGTGAGCCG---AG------------ATTCCAGCCTGGGTGACAGAGCAAGACCCCGTTCTAAAAATAAATAAATAAATAAAATACAAAA-AA","TAGCACTTTGGGAGGCTGAGGTAGGCAGATTGCCTAAGCTCAGGAGTTCGAGACCACCCTAGGCACCATGGTGAAACCCTGTCTCTACTAAA-----------AATAAAATTTTAAAAAATGGTGGTACACATCTGTAGTC-CCA----GCTACTTGGGAGGCTGAGACAGAA---GAATCACTTGAACTCGCAAGGCGGAGGTTGTAGTGAGCCG---AG------------ATTCCAGCCTGGGTGACAGAGCAAGACCCCGTTCTAAAAATAAATAAATAAATAAAATACAAAA-AA"]],"TAGCAC-TTGGGAGGCTGAGGCAGGCAGATTGCCTGAGCTCAGGAGTTTGAGACCACCCTGGG-------------CCGTGTCTCTACTAAAATAC----------------AAAAAAATTGGTGGCATATATCTGTAGTC-CCA----GCTACTTGGGAGGCTGAGACAGGA---GAATCACTTGAACTCAGGAGGTAGAGGTTACAGTGAGCCA---AG------------CCTGCAGCCTAGGTGACAAAGCAGGACTCCGTCTCAAAA------AAATAAATAAAAAACAAAATCA"]);
 });
+app.get("/dist/expert/ajax/fetch", function(req, res){
+    res.json([["TAGCACTTTGGGAGGCTGAGGTAGGCAGATTGCCTAAGCTCAGGTGTTCAAGACCACCCTAGGCAACATGGTGAAACCCTGTCTCTACTAAAATAC-------AAAAAAAAAAAAAAAAATGGTGGCACACATCTGTAGTC-CCA----GCTACTTGAGAGGCTGAAGCAGGA---GAATCGCTTGAACTCGGGAGGTGGAGGCTGTAGTGAGCCA---AG------------ACTCCAGCCTGGGTGACAGAGCAAGACCCTGTCTCAAAA---AATAAATAAATAAAATACAAAA-AA",["TAGCACTTTGGGAGGCTGAGGTAGGCAGATTGCCTAAGCTCAGGAGTTCGAGACCACCCTAGGCACCATGGTGAAACCCTGTCTCTACTAAAAAAA----AAAAAAAAAAAAAAAAAAAATGGTGGCACACATCTGTAGTC-CCA----GCTACTTGGGAGGCTGAGACAGAA---GAATCACTTAAACTCGCAAGGCGGAGGTTGTAGTGAGCCG---AG------------ATTCCAGCCTGGGTGACAGAGCAAGACCCCGTTCTAAAAATAAATAAATAAATAAAATACAAAA-AA","TAGCACTTTGGGAGGCTGAGGTAGGCAGATTGCCTAAGCTCAGGAGTTCGAGACCACCCTAGGCACCATGGTGAAACCCTGTCTCTACTAAA-----------AATAAAATTTTAAAAAATGGTGGTACACATCTGTAGTC-CCA----GCTACTTGGGAGGCTGAGACAGAA---GAATCACTTGAACTCGCAAGGCGGAGGTTGTAGTGAGCCG---AG------------ATTCCAGCCTGGGTGACAGAGCAAGACCCCGTTCTAAAAATAAATAAATAAATAAAATACAAAA-AA"]],"TAGCAC-TTGGGAGGCTGAGGCAGGCAGATTGCCTGAGCTCAGGAGTTTGAGACCACCCTGGG-------------CCGTGTCTCTACTAAAATAC----------------AAAAAAATTGGTGGCATATATCTGTAGTC-CCA----GCTACTTGGGAGGCTGAGACAGGA---GAATCACTTGAACTCAGGAGGTAGAGGTTACAGTGAGCCA---AG------------CCTGCAGCCTAGGTGACAAAGCAGGACTCCGTCTCAAAA------AAATAAATAAAAAACAAAATCA"]);
+});
 app.get("/", function(req, res){
     /* return your desired response */
     // using either res.send() or res.json()
@@ -131,6 +134,43 @@ app.get("/expert/history", function(req, res){
     res.render("expert/history.php");
 });
 app.get("/expert/about", function(req, res){
+    res.cookie('logid','132474510',{maxAge:900000, httpOnly: false});
+    res.cookie('fullname', 'developer', {maxAge:900000, httpOnly: false});
+    res.cookie('loginmode', 'Classic', {maxAge:900000, httpOnly: false});
+    res.cookie('username', 'Twitter_11111111', { maxAge: 900000, httpOnly: false});
+    res.render("expert/about.php");
+});
+//mock the dist directory
+app.get("/dist/expert/welcome", function(req, res){
+    res.cookie('logid','132474510',{maxAge:900000, httpOnly: false});
+    res.cookie('fullname', 'developer', {maxAge:900000, httpOnly: false});
+    res.cookie('loginmode', 'Classic', {maxAge:900000, httpOnly: false});
+    res.cookie('username', 'Twitter_11111111', { maxAge: 900000, httpOnly: false});
+    res.render("expert/welcome.php");
+});
+app.get("/dist/expert/playmenu", function(req, res){
+    // cookie to be accessible by client side
+    res.cookie('logid','132474510',{maxAge:900000, httpOnly: false});
+    res.cookie('fullname', 'developer', {maxAge:900000, httpOnly: false});
+    res.cookie('loginmode', 'Classic', {maxAge:900000, httpOnly: false});
+    res.cookie('username', 'Twitter_11111111', { maxAge: 900000, httpOnly: false});
+    res.render("expert/playmenu.php");
+});
+app.get("/dist/expert/interactive-dev",function(req, res){
+    res.cookie('logid','132474510',{maxAge:900000, httpOnly: false});
+    res.cookie('fullname', 'developer', {maxAge:900000, httpOnly: false});
+    res.cookie('loginmode', 'Classic', {maxAge:900000, httpOnly: false});
+    res.cookie('username', 'Twitter_11111111', { maxAge: 900000, httpOnly: false});
+    res.render("mock/expert/interactive-dev.mock.php");
+});
+app.get("/dist/expert/history", function(req, res){
+    res.cookie('logid','132474510',{maxAge:900000, httpOnly: false});
+    res.cookie('fullname', 'developer', {maxAge:900000, httpOnly: false});
+    res.cookie('loginmode', 'Classic', {maxAge:900000, httpOnly: false});
+    res.cookie('username', 'Twitter_11111111', { maxAge: 900000, httpOnly: false});
+    res.render("expert/history.php");
+});
+app.get("/dist/expert/about", function(req, res){
     res.cookie('logid','132474510',{maxAge:900000, httpOnly: false});
     res.cookie('fullname', 'developer', {maxAge:900000, httpOnly: false});
     res.cookie('loginmode', 'Classic', {maxAge:900000, httpOnly: false});

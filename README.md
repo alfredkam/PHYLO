@@ -27,7 +27,12 @@ Copyright (2012) McGill University, Alfred Kam, Jerome Waldispuhl and other cont
 
 Getting Started
 =====
-Fork it! Then let me know if you have a new module or bug fix and ill integrate it in :)
+Its great you want to contribute - general flow
+1. Fork it
+2. Create your feature branch
+3. Commit your changes
+4. Push to your feature branch
+5. Create a pull request
 
 Please refer to our docs page for more info https://github.com/McGill-CSB/PHYLO/blob/master/docs/README.md
 
