@@ -125,7 +125,9 @@ define([
                 }
             }
         },
-     
+        templateHelpers: function(){
+            return {lang : this.lang};
+        },
         onShow: function() {
             this.getSoundSettings();
             // $(".customize-music").hide();

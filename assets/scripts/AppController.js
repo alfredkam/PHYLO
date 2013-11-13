@@ -104,9 +104,6 @@ define([
 			if(!this.regions.customizeRegion.currentView) {
 				this.regions.customizeRegion.show(new CustomizeView({}));
 			}
-			if(!this.regions.customizeMusicRegion.currentView) {
-				this.regions.customizeMusicRegion.show(new CustomizeMusicView({}));
-			}
 
 			// a good place for code that needs to be ran every page 
 			
@@ -151,6 +148,9 @@ define([
 					lang : lang,
 					format : (this.isTablet? "tablet" : "desktop")
 				}));
+				if(!this.regions.customizeMusicRegion.currentView) {
+					this.regions.customizeMusicRegion.show(new CustomizeMusicView({lang:langModel}));
+				}
 			}
 
 			this.currentLang = lang;

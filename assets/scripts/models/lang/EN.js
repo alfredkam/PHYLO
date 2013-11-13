@@ -23,6 +23,14 @@
         "field 17": "Settings",
         "moto": "A puzzle game that contributes to genetic disease research"
     },
+    "options" : {
+        "music":"Music",
+        "soundFX" :"Sound Effects",
+        "countdown" :"Countdown",
+        "redraw" :"Redraw",
+        "star" :"Star",
+        "others" :"Others"
+    },
     "body": {
         "misc": {
             "invalidPuzzle" : "Sorry, this puzzle is no longer available.",
