@@ -1,2 +1,11 @@
-/* PHYLO Dist Package v3.0.9 */
+/*
+*
+* PHYLO Distribution Build v3.1.0
+* http://phylo.cs.mcgill.ca
+*
+* Copyright 2013 McGill university, Alfred Kam, Jerome Waldispuhl and other contributors
+* Under McGill Human-Computing Developer Licence
+* https://github.com/McGill-CSB/PHYLO/blob/master/McGill-LICENCE.txt
+*
+*/
 div.dataTables_length label{float:left;text-align:left}div.dataTables_length select{width:75px}div.dataTables_filter label{float:right}div.dataTables_info{padding-top:8px}div.dataTables_paginate{float:right;margin:0}table.table{clear:both;margin-bottom:6px!important}table.table thead .sorting,table.table thead .sorting_asc,table.table thead .sorting_asc_disabled,table.table thead .sorting_desc,table.table thead .sorting_desc_disabled{cursor:pointer;*cursor:hand}table.table thead .sorting{background:url(images/sort_both.png) no-repeat center right}table.table thead .sorting_asc{background:url(images/sort_asc.png) no-repeat center right}table.table thead .sorting_desc{background:url(images/sort_desc.png) no-repeat center right}table.table thead .sorting_asc_disabled{background:url(images/sort_asc_disabled.png) no-repeat center right}table.table thead .sorting_desc_disabled{background:url(images/sort_desc_disabled.png) no-repeat center right}table.dataTable th:active{outline:0}table.dataTable tr.odd td{background-color:#475766}table.dataTable tr.even td{background-color:#5C6977}table.dataTable tr.odd td.sorting_1{background-color:#293644}table.dataTable tr.even td.sorting_1{background-color:#345}
