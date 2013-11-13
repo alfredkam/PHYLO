@@ -418,11 +418,17 @@ buildTree(j,0); */
 			}
 			var sounds = ["#customize-music","#customize-countdown","#customize-redraw","#customize-star","#customize-fxOthers"];
 			for(var i in sounds){
-				$(sounds[i]).trigger("change");
+				$(sounds[i]).trigger("click");
+				$(sounds[i]).trigger("click");
+
 			}
 			//disable this
 			$("#scorePanel").hide();
 			//volume control
+			$("#volume").on("click",function(){
+				$("#customize").trigger("click");
+				$("a.tag-music").trigger("click");
+			});
 			/*$("#volumeOff").hide();
 			//cookie for music
 			if ($.cookie.read("music-level")) {
@@ -2245,15 +2251,15 @@ buildTree(j,0); */
                         } else if (provider == "Twitter") {
                             if (puzzle_disease) {
                                 if ($.phylo.currentScore >= puzzle_disease) {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 11"].replace("***", puzzle_disease) + " " + window.lang.body.social["field 20"] + "#PhyloDNApuzzles";
+                                    var message = window.lang.body.social["field 20"] + " phylo.cs.mcgill.ca";
                                 } else {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 12"].replace("***", puzzle_disease) + " " + window.lang.body.social["field 20"] + "#PhyloDNApuzzles";
+                                    var message = window.lang.body.social["field 20"] + " phylo.cs.mcgill.ca";
                                 }
                             } else {
                                 if ($.phylo.currentScore >= puzzle_disease) {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 13"] + ".\"" + window.lang.body.social["field 20"] + "#PhyloDNApuzzles";
+                                    var message = window.lang.body.social["field 20"] + " phylo.cs.mcgill.ca";
                                 } else {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 14"] + ".\"" + window.lang.body.social["field 20"] + "#PhyloDNApuzzles";
+                                    var message = window.lang.body.social["field 20"] + " phylo.cs.mcgill.ca";
                                 }
                             }
                             var data = "provider=" + provider + "&id=" + c_logid + "&description=" + message;

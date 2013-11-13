@@ -34,7 +34,7 @@
 			host : window.location.origin
 			
 	};	
-
+	
 	var stage = {
 		DEBUG : true,
 		social: {

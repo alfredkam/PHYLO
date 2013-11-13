@@ -73,6 +73,10 @@ Skeleton
 ======
 We've based our skeleton from this <a href='https://github.com/alfredkam/Boilerplates/tree/master/Marionette'>repo</a> 
 
+Additional Notes
+======
+subtree usage : git subtree [pull | push ]  --prefix=[location] [repo] [branch]
+
 
 
 

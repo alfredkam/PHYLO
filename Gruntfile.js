@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         app : './assets',
         dist : './dist',
         phyloLib : './assets/scripts/phylo-lib',
-        banner : "/* PHYLO Dist Package v3.0.1 */"
+        banner : "/* PHYLO Dist Package v3.0.9 */"
     };
 
     grunt.initConfig({
@@ -17,7 +17,11 @@ module.exports = function(grunt) {
             install :{}
         },
         clean : {
-            dist : ['.tmp', '<%= config.dist %>/*'],
+            dist : [
+                '.tmp',
+                '<%= config.dist %>/*',
+                '<%= config.dist %>/.*'
+            ],
             server : '.tmp'
         },
         imagemin : {
@@ -129,8 +133,16 @@ module.exports = function(grunt) {
                             '<%= config.app %>/bower_components/modernizr/modernizr.js',
                             '<%= config.app %>/bower_components/requirejs/require.js',
                             '<%= config.app %>/scripts/models/**',
-                            '<%= config.app %>/css/**'
+                            '<%= config.app %>/css/**',
+                            '<%= config.app %>/bower_components/bootstrap/**'
                         ]
+                    },
+                    {
+                        expand : true,
+                        cwd : "<%= config.app %>/bower_components/bootstrap/fonts",
+                        dest : "<%= config.dist %>/assets/fonts",
+                        src : "**",
+                        flatten : true
                     }
                 ]
             }
