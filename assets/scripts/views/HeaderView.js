@@ -62,7 +62,7 @@ define([
         },
         events: {
             "click div.tabletLogoutBtn" : "logoutFn",
-            "click div#login": "login",
+            "click div#login": "loginBtn",
             // "click #options-button" : "optionsEvent",
             "click #language" : "languageEvent",
             "click #customize" : "customizeShow",
@@ -173,7 +173,7 @@ define([
                 height: $(document).height()
             });
         },
-        login: function(e) {
+        loginBtn: function(e) {
             if($("#logout").css("display")==="block"){
 
                 return false;
