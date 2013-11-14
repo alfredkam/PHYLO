@@ -64,7 +64,7 @@ args.ui_showscore="<? echo htmlspecialchars($_GET['subscore']); ?>";
 
 <div id="messagebox-wrapper">
     <button id="stats-toggle" class="btn" data-toggle="collapse" data-target="#stats-div">Toggle Details</button>
-    <button id="stats-submit" class="btn">Submit My Best Score</button>
+    <button id="stats-submit" class="btn">Submit My DNA Puzzle</button>
     <div id="stats-div" class="collapse in">
     <table id="stats">
         <tr>
