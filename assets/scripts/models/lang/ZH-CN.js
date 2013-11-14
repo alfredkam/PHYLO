@@ -29,14 +29,15 @@
         "music":"音乐",
         "soundFX" :"效果",
         "countdown" :"倒计时",
-        "redraw" :"重绘",
+        "redraw" :"还原",
         "star" :"明星",
         "others" :"其他",
         "dnaColor" :"颜色DNA:",
         "default" :"恢复默认",
         "save" :"注册",
         "cancel" : "取消",
-        "boardColor" :"背景颜色:"
+        "boardColor" :"背景颜色:",
+        "theme":"行"
     },
     "body": {
         "misc": {

@@ -29,14 +29,15 @@
         "music":"Musique",
         "soundFX" :"Effets sonores",
         "countdown" :"Compte-à-rebours",
-        "redraw" :"Redessiner",
+        "redraw" :"Retablir",
         "star" :"Étoile",
         "others" :"Autres",
         "dnaColor" :"Couleur de l'ADN:",
         "default" :"Restauration par défaut",
         "save" :"Sauvegarder",
         "cancel" : "Annuler",
-        "boardColor" :"Couleur du plateau:"
+        "boardColor" :"Couleur du plateau:",
+        "accept":"OK"
     },
     "body": {
         "misc": {
@@ -56,7 +57,7 @@
             "field 13": "Couleur des briques",
             "field 14": "Ré-initialisation",
             "field 15": "Sauvegarder",
-            "field 16": "Abandonner",
+            "field 16": "Annuler",
             "field 17": "Retour",
             "field 18": "Ok",
             "field 19": "Etes-vous sûr de vouloir abandonner?",

@@ -29,14 +29,15 @@
         "music":"Música",
         "soundFX" :"Efectos sonoros",
         "countdown" :"Cuenta atrás",
-        "redraw" :"Redibujar",
+        "redraw" :"Revertir",
         "star" :"Estrella",
         "others" :"Otro",
         "dnaColor" :"Color de ADN:",
         "default" :"Restaurar por defecto",
         "save" :"registro",
         "cancel" : "Cancelar",
-        "boardColor" :"Color de fondo:"
+        "boardColor" :"Color de fondo:",
+        "accept":"Aceptar"
     },
     "body": {
         "misc": {

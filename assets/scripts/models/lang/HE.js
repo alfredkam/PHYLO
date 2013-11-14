@@ -29,14 +29,15 @@
         "music":"מוסיקה",
         "soundFX" :"אפקטים קוליים",
         "countdown" :"ספירה לאחור",
-        "redraw" :"לצייר מחדש",
+        "redraw" :"לחזור",
         "star" :"כוכב",
         "others" :"אחר",
         "dnaColor" :":ה-DNA הצבע",
         "default" :"שחזור ברירת מחדל",
         "save" :"לרשום",
         "cancel" : "לבטל",
-        "boardColor" :":צבע צלחת"
+        "boardColor" :":צבע צלחת",
+        "accept":"בסדר"
     },
     "body": {
         "misc": {

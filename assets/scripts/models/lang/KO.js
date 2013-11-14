@@ -29,14 +29,15 @@
         "music":"음악",
         "soundFX" :"음향 효과",
         "countdown" :"카운트 다운",
-        "redraw" :"재 설계",
+        "redraw" :"되돌리기",
         "star" :"스타",
         "others" :"다른",
         "dnaColor" :"색상 DNA:",
         "default" :"기본값을 복원",
         "save" :"등록",
         "cancel" : "취소",
-        "boardColor" :"컬러 보드 게임:"
+        "boardColor" :"컬러 보드 게임:",
+        "accept":"완료"
     },
 	"body": {
 		"misc": {

@@ -29,14 +29,15 @@
         "music":"Muzică",
         "soundFX" :"Efecte sonore",
         "countdown" :"Numărătoarea inversă",
-        "redraw" :"Redesenare",
+        "redraw" :"Reveni",
         "star" :"Steaua",
         "others" :"Altele",
         "dnaColor" :"ADN-ul de culoare:",
         "default" :"Restaurare implicite",
         "save" :"Registru",
         "cancel" : "Anula",
-        "boardColor" :"Culoare pentru jocuri:"
+        "boardColor" :"Culoare pentru jocuri:",
+        "accept":"Bine"
     },
     "body": {
         "misc": {

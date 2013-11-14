@@ -29,14 +29,15 @@
         "music":"Musik",
         "soundFX" :"Sound-Effekte",
         "countdown" :"Countdown",
-        "redraw" :"Neuaufbau",
+        "redraw" :"Zurücksetzen",
         "star" :"Sterne",
         "others" :"Andere",
         "dnaColor" :"DNA Farbe:",
         "default" :"Wiederherstellen",
         "save" :"Speichern",
         "cancel" : "Abbrechen",
-        "boardColor" :"Farbe Brettspiel:"
+        "boardColor" :"Farbe Brettspiel:",
+        "accept":"OK"
     },
 	"body": {
 		"misc" : {
