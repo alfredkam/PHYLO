@@ -139,7 +139,8 @@ function initHTMLElements(){
                     "class" : "btn-primary",
                     "icon"  : "icon-book icon-white",
                      "callback": function() {
-                        window.location = "http://phylo.cs.mcgill.ca/expert/playmenu.php";
+                        //window.location = "http://phylo.cs.mcgill.ca/expert/playmenu.php";
+                        window.location = "playmenu.php";
                     }
                 }]); // end dialog
             }, // end success

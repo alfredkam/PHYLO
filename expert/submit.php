@@ -1,7 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-include "/home/mcb/phylo/public_html/phpdb/dbExpertConnector.php"
+
+include '/home/mcb/phylo/public_html/phpdb/dbExpertConnector.php';
 
 function build($tree, &$seqs){
     if (gettype($tree) == 'array'){
@@ -106,8 +105,8 @@ foreach ($fullsequences as $k => $s) {
 fclose($seqfile);
 exec("chmod * $seqfile");
 
-$output = exec("python /home/mcb/phylo/public_html/edge/expert/scoring/score.py x $treefilename $seqfilename",$outputarray,$returnvar);
-preg_match_all("/:[\t ]*(?P<score>[0-9.]+)$/",$output,$matches);
+//$output = exec("python /home/mcb/phylo/public_html/expert/scoring/score.py x $treefilename $seqfilename",$outputarray,$returnvar);
+$output = exec("python scoring/score.py x $treefilename $seqfilename",$outputarray,$returnvar);preg_match_all("/:[\t ]*(?P<score>[0-9.]+)$/",$output,$matches);
 $fullscore = $matches['score'][0];
 
 /* submit */
