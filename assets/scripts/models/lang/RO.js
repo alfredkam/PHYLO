@@ -170,7 +170,7 @@
                     "field 10" : "Până acum *** de utilizatori au trimis *** de aliniamente pentru *** de nivele diferite.",
                     "field 11" : "Joc nou",
                     "field 12" : "Reluaţi jocul",
-                    "field 13" : "Recomandă",
+                    "field 13" : "Partaja cu prietenii tăi",
                     "field 14" : "Provoacaţi un prieten",
                     "field 15" : "Meniu",
                     "field 16" : "Apăsaţi din nou pe stea pentru a trimite scorul dumneavoastră acum, sau continuaţi să jucaţi pentru a obţine cel mai bun rezultat posibil!"

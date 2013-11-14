@@ -167,7 +167,7 @@
                     "field 10": "Até o momento, *** usuários submeteram *** alinhamentos para *** níveis diferentes.",
                     "field 11": "Novo jogo",
                     "field 12": "Jogar de novo",
-                    "field 13": "Compartilhar no Facebook",
+                    "field 13": "Compartilhe com seus amigos",
                     "field 14": "Desafiar um amigo",
                     "field 15": "Menu",
                     "field 16": "Clique na estrela novamente para enviar sua pontuação agora, ou continue jogando para tentar atingir uma pontuação melhor ainda!"
