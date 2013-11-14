@@ -1,8 +1,6 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-// define("ROOT_PATH", "/home/mcb/phylo/public_html");
-// include $ROOT_PATH.'/phpdb/dbExpertConnector.php';
 include "/home/mcb/phylo/public_html/phpdb/dbExpertConnector.php"
 
 function build($tree, &$seqs){
@@ -108,7 +106,6 @@ foreach ($fullsequences as $k => $s) {
 fclose($seqfile);
 exec("chmod * $seqfile");
 
-//$output = exec("/home/mcb/blanchem/phylo2/evaluateAlignment $treefilename $seqfilename",$outputarray,$returnvar);
 $output = exec("python /home/mcb/phylo/public_html/edge/expert/scoring/score.py x $treefilename $seqfilename",$outputarray,$returnvar);
 preg_match_all("/:[\t ]*(?P<score>[0-9.]+)$/",$output,$matches);
 $fullscore = $matches['score'][0];
@@ -120,13 +117,13 @@ $url = 'http://phylo.cs.mcgill.ca/phpdb/phyloExpertDB.php';
 $fields = array(
             'mode'=> '13',
             'id'=> urlencode($id),
-	    'user'=> $user,
-	    'align'=> json_encode(array('sequence'=>$sequences)),
-	    'score'=> $score,
-	    'bioid' => $bio_id,
-	    'tree' => $tree_struct,
-	    'treestring' => $tree_string,
-	    'bioscore' => $fullscore,
+            'user'=> $user,
+            'align'=> json_encode(array('sequence'=>$sequences)),
+            'score'=> $score,
+            'bioid' => $bio_id,
+            'tree' => $tree_struct,
+            'treestring' => $tree_string,
+            'bioscore' => $fullscore,
         );
 $fields_string="";
 foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
