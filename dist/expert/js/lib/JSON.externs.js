@@ -1,1 +1,0 @@
-var JSON={};JSON.parse=function(){},JSON.stringify=function(){};
