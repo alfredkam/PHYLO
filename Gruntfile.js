@@ -265,7 +265,8 @@ module.exports = function(grunt) {
             // https://github.com/gruntjs/grunt-contrib-jshint
             files : [
                 'Gruntfile.js',
-                '<%= config.app %>/scripts/**/*.js'
+                '<%= config.app %>/scripts/**/*.js',
+                '!<%= config.app %>/scripts/**/*.min.js'
             ],
             options : {
                 globals : {
