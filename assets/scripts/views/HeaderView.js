@@ -41,12 +41,12 @@ define([
                 url : url,
                 data : data
             }).done(function(re) {
-                fn(re);     
+                fn(re);
             }).fail(function() {
                 $("div.login-warning").show().html("Could not connect to server, please try again later");
             });
         },
-        register : function(username, displayname, password, email,network,network_id, fn) {
+        registerUser : function(username, displayname, password, email, network, network_id, fn) {
             var url = baseUrl;
             var mode = 6;
             var data = "mode="+mode+"&user="+username+"&displayname="+displayname+"&pass="+password+"&email="+email+"&network="+network+"&network_id="+network_id;
@@ -55,7 +55,7 @@ define([
                 url : url,
                 data : data
             }).done(function(re) {
-                fn(re);     
+                fn(re);
             }).fail(function() {
                 $("div.login-warning").show().html("Could not connect to server, please try again later");
             });
@@ -208,11 +208,11 @@ define([
                 var name = $("#username").val().trim();
                 var password = $("#password").val().trim();
                 var email = $("#email").val().trim();
-                if ((name == "" || password == "") || email == "") {
+                if ((name === "" || password === "") || email === "") {
                     $("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 20"]);
                     return;
                 }
-                self.register(name, name, password, email, 'Classic', 0, function(re) {
+                self.registerUser(name, name, password, email, 'Classic', 0, function(re) {
                     if (re == "succ") {
                         $(".login-btn").unbind("click");
                         $(".m_login").html(decodeURI(name));
@@ -267,7 +267,7 @@ define([
                                         return;
                                     } else { // login not successful -> try to register user
                                         console.log(provider + ": User not found. Registering...");
-                                        self.register(username,fullname,password,email,provider,logid,function(registerout) {
+                                        self.registerUser(username,fullname,password,email,provider,logid,function(registerout) {
                                             if (registerout == "succ") { // registration successfull
                                                 console.log(provider + ": Registering successful.");
                                                 // Prepare optional message to post on user feed
@@ -336,7 +336,7 @@ define([
             var username = $("#username").val().trim();
             var password = $("#password").val().trim();
             var self = this;
-            if ((username == "" || password == "")) {
+            if ((username === "" || password === "")) {
                 $("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 20"]);
                 return;
             }
