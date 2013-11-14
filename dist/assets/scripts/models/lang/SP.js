@@ -23,6 +23,22 @@
         "field 17": "Escenario de juego",
         "moto": "Un puzzle que contribuye a la investigación de enfermedades genéticas"
     },
+    "options" : {
+        "theme":"Tema",
+        "customize":"Personalización",
+        "music":"Música",
+        "soundFX" :"Efectos sonoros",
+        "countdown" :"Cuenta atrás",
+        "redraw" :"Revertir",
+        "star" :"Estrella",
+        "others" :"Otro",
+        "dnaColor" :"Color de ADN:",
+        "default" :"Restaurar por defecto",
+        "save" :"registro",
+        "cancel" : "Cancelar",
+        "boardColor" :"Color de fondo:",
+        "accept":"Aceptar"
+    },
     "body": {
         "misc": {
             "invalidPuzzle" : "Lo sentimos, este puzzle ya no está disponible.",
@@ -154,7 +170,7 @@
                     "field 10": "De lejos *** usuarios han enviado *** alineamientos para *** diferentes niveles.",
                     "field 11": "Nuevo juego ",
                     "field 12": "Repetir juego ",
-                    "field 13": "Compartir",
+                    "field 13": "Comparte con tus amigos",
                     "field 14": "Retar a un amigo ",
                     "field 15": "Menu",
                     "field 16": "Presione comenzar de nuevo para enviar su puntaje, o continue jugando para obtener el mejor puntaje posible!"

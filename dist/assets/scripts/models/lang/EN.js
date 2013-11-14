@@ -24,18 +24,20 @@
         "moto": "A puzzle game that contributes to genetic disease research"
     },
     "options" : {
+        "theme":"Theme",
         "customize":"Customize",
         "music":"Music",
         "soundFX" :"Sound Effects",
         "countdown" :"Countdown",
-        "redraw" :"Redraw",
+        "redraw" :"Revert",
         "star" :"Star",
         "others" :"Others",
         "dnaColor" :"DNA Color:",
         "default" :"Restore Default",
         "save" :"Save",
         "cancel" : "Cancel",
-        "boardColor" :"Board Color:"
+        "boardColor" :"Board Color:",
+        "accept":"OK"
     },
     "body": {
         "misc": {
@@ -163,7 +165,7 @@
                     "field 10": "So far *** users have submitted *** alignments for *** different levels.",
                     "field 11": "New Game",
                     "field 12": "Replay Game",
-                    "field 13": "Share",
+                    "field 13": "Share with your friends",
                     "field 14": "Challenge a friend",
                     "field 15": "Menu",
                     "field 16": "Press the star again to submit your score now,  or keep playing to try and get the best score possible!"
