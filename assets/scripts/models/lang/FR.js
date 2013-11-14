@@ -23,6 +23,22 @@
         "field 17": "Paramètres",
         "moto": "Un puzzle pour contribuer à la recherche sur les maladies génétiques"
     },
+    "options" : {
+        "theme":"Thème",
+        "customize":"Personnalisation",
+        "music":"Musique",
+        "soundFX" :"Effets sonores",
+        "countdown" :"Compte-à-rebours",
+        "redraw" :"Retablir",
+        "star" :"Étoile",
+        "others" :"Autres",
+        "dnaColor" :"Couleur de l'ADN:",
+        "default" :"Restauration par défaut",
+        "save" :"Sauvegarder",
+        "cancel" : "Annuler",
+        "boardColor" :"Couleur du plateau:",
+        "accept":"OK"
+    },
     "body": {
         "misc": {
             "invalidPuzzle" : "Désolé, ce puzzle n'est plus disponible.",
@@ -41,7 +57,7 @@
             "field 13": "Couleur des briques",
             "field 14": "Ré-initialisation",
             "field 15": "Sauvegarder",
-            "field 16": "Abandonner",
+            "field 16": "Annuler",
             "field 17": "Retour",
             "field 18": "Ok",
             "field 19": "Etes-vous sûr de vouloir abandonner?",
@@ -154,7 +170,7 @@
                     "field 10": "À ce jour, *** joueurs ont soumis *** alignements pour *** puzzles différents.",
                     "field 11": "Nouveau puzzle",
                     "field 12": "Rejoue le puzzle",
-                    "field 13": "Partage sur Facebook",
+                    "field 13": "Partage avec tes amis",
                     "field 14": "Challenge un ami",
                     "field 15": "Menu",
                     "field 16": "Clique encore sur l’étoile pour soumettre ton score maintenant,  ou continue a jouer pour essayer d’obtenir le meilleur score possible!"

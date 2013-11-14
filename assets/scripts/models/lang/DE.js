@@ -23,6 +23,22 @@
         "field 17": "Einstellungen",
         "moto": "Ein Puzzle-Spiel das die genetische Erforschung von Krankheiten beiträgt"
     },
+    "options" : {
+        "theme":"Theme",
+        "customize":"Personalisierung",
+        "music":"Musik",
+        "soundFX" :"Sound-Effekte",
+        "countdown" :"Countdown",
+        "redraw" :"Zurücksetzen",
+        "star" :"Sterne",
+        "others" :"Andere",
+        "dnaColor" :"DNA Farbe:",
+        "default" :"Wiederherstellen",
+        "save" :"Speichern",
+        "cancel" : "Abbrechen",
+        "boardColor" :"Farbe Brettspiel:",
+        "accept":"OK"
+    },
 	"body": {
 		"misc" : {
            "invalidPuzzle" : "Leider ist dieses Rätsel nicht mehr verfügbar.",
@@ -154,7 +170,7 @@
                         "field 10": "Bis jetzt haben *** Nutzer *** Anordnungen für *** verschiedene Level abgeschickt.",
                         "field 11": "Neues Spiel",
                         "field 12": "Spiel wiederholen",
-                        "field 13": "Teilen",
+                        "field 13": "Teilen Sie mit Ihren Freunden",
                         "field 14": "Einen Freund herausfordern",
                         "field 15": "Menü",
                         "field 16": "Klicken Sie auf den Stern, um Ihr Ergebnis abzuschicken, oder spielen Sie weiter und finden Sie das bestmögliche Ergebnis!"
