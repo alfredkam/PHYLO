@@ -39,12 +39,14 @@
                     {{user}}
                 </div>
                 <div id='login-box' class='logoutBtn'>
-                    Logout
+                    {{! Logout }}
+                    {{body.play.gameselect.login.field 5}}
                 </div>
                 {{/user}}
                 {{^user}}
                  <div id='login-tag' class='m_login'>
-                     Login
+                     {{! Login }}
+                     {{body.play.gameselect.login.field 2}}
                  </div>
                  <div id='login-box'>
                      <div class='login-warning'></div>
