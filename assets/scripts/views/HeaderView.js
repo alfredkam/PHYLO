@@ -350,7 +350,7 @@ define([
                     cookie.create("fullname", username, 365);
                     cookie.create("loginmode", "Classic", 365);
                     cookie.create("logid", -1, 365);
-                    self.createLoginData(username,username,provider,logid);
+                    self.createLoginData(username,username,"Classic",logid);
                 } else {
                     $("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 16"]);
                     console.log("Classic login test failed.");
