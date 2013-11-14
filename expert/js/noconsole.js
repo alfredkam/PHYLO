@@ -1,2 +1,1 @@
-console = {};
-console.log = function(){};
+console={},console.log=function(){};
