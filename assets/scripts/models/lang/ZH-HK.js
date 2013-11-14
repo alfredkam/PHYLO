@@ -23,6 +23,21 @@
         "field 17": "設定",
         "moto": "遺傳性疾病的研究，有助於一個益智遊戲"
     },
+    "options" : {
+        "theme":"主題",
+        "customize":"定制",
+        "music":"音樂",
+        "soundFX" :"效果",
+        "countdown" :"倒計時",
+        "redraw" :"重繪",
+        "star" :"明星",
+        "others" :"其他",
+        "dnaColor" :"顏色DNA:",
+        "default" :"恢復默認",
+        "save" :"註冊",
+        "cancel" : "取消",
+        "boardColor" :"背景顏色:"
+    },
     "body": {
         "misc": {
             "invalidPuzzle" : "對不起，這讓人不解的是不再可用。",

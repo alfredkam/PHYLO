@@ -23,6 +23,21 @@
 		"field 17": "설정",
         "moto": "유전 질환의 연구에 기여 퍼즐 게임"
 	},
+    "options" : {
+        "theme":"테마",
+        "customize":"사용자 지정",
+        "music":"음악",
+        "soundFX" :"음향 효과",
+        "countdown" :"카운트 다운",
+        "redraw" :"재 설계",
+        "star" :"스타",
+        "others" :"다른",
+        "dnaColor" :"색상 DNA:",
+        "default" :"기본값을 복원",
+        "save" :"등록",
+        "cancel" : "취소",
+        "boardColor" :"컬러 보드 게임:"
+    },
 	"body": {
 		"misc": {
             "invalidPuzzle" : "죄송합니다,이 퍼즐은 더 이상 사용할 수 없습니다.",

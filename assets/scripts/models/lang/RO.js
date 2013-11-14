@@ -23,6 +23,21 @@
         "field 17" : "Setări",
         "moto": "Un joc de puzzle care contribuie la cercetarea bolilor genetice"
     },
+    "options" : {
+        "theme":"Temă",
+        "customize":"Personalizare",
+        "music":"Muzică",
+        "soundFX" :"Efecte sonore",
+        "countdown" :"Numărătoarea inversă",
+        "redraw" :"Redesenare",
+        "star" :"Steaua",
+        "others" :"Altele",
+        "dnaColor" :"ADN-ul de culoare:",
+        "default" :"Restaurare implicite",
+        "save" :"Registru",
+        "cancel" : "Anula",
+        "boardColor" :"Culoare pentru jocuri:"
+    },
     "body": {
         "misc": {
             "invalidPuzzle" : "Ne pare rău, acest puzzle nu mai este disponibil.",

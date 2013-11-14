@@ -23,6 +23,21 @@
         "field 17": "Configurações",
         "moto": "Um jogo de puzzle que contribui para a pesquisa de doenças genéticas"
     },
+    "options" : {
+        "theme","Tema",
+        "customize":"Personalização",
+        "music":"Música",
+        "soundFX" :"Efeitos sonoros",
+        "countdown" :"Contagem Regressiva",
+        "redraw" :"Redesenhar",
+        "star" :"Estrela",
+        "others" :"Outro",
+        "dnaColor" :"DNA Cor:",
+        "default" :"Restaurar padrão",
+        "save" :"Salvar",
+        "cancel" : "Cancelar",
+        "boardColor" :"Do tabuleiro de cores:"
+    },
     "body": {
         "misc": {
             "invalidPuzzle" : "Desculpe, este puzzle não está mais disponível.",

@@ -23,6 +23,21 @@
         "field 17": "Paramètres",
         "moto": "Un puzzle pour contribuer à la recherche sur les maladies génétiques"
     },
+    "options" : {
+        "theme":"Thème",
+        "customize":"Personnalisation",
+        "music":"Musique",
+        "soundFX" :"Effets sonores",
+        "countdown" :"Compte-à-rebours",
+        "redraw" :"Redessiner",
+        "star" :"Étoile",
+        "others" :"Autres",
+        "dnaColor" :"Couleur de l'ADN:",
+        "default" :"Restauration par défaut",
+        "save" :"Sauvegarder",
+        "cancel" : "Annuler",
+        "boardColor" :"Couleur du plateau:"
+    },
     "body": {
         "misc": {
             "invalidPuzzle" : "Désolé, ce puzzle n'est plus disponible.",

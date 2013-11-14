@@ -23,6 +23,21 @@
         "field 17": "设置",
         "moto": "遗传性疾病的研究，有助于一个益智游戏"
     },
+    "options" : {
+        "theme":"主题",
+        "customize":"定制",
+        "music":"音乐",
+        "soundFX" :"效果",
+        "countdown" :"倒计时",
+        "redraw" :"重绘",
+        "star" :"明星",
+        "others" :"其他",
+        "dnaColor" :"颜色DNA:",
+        "default" :"恢复默认",
+        "save" :"注册",
+        "cancel" : "取消",
+        "boardColor" :"背景颜色:"
+    },
     "body": {
         "misc": {
             "invalidPuzzle" : "对不起，这让人不解的是不再可用。",
