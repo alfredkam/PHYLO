@@ -25,11 +25,10 @@ define([
         events: {
             "click a.customize-cancel": "customizeCancel",
             "click .customize-save": "customizeSave",
-            "click .customize-tab a": "customizeTab",
+            // "click .customize-tab a": "customizeTab",
             "click .customize-theme-cell": "customizeThemeCell",
             "click .customize-theme-reset": "customizeThemeReset",
         },
-
         customizeCancel: function() {
             // console.log("asda");
             var self = this;
@@ -73,20 +72,20 @@ define([
 
             $(".customize").hide();
         },
-        customizeTab: function(e) {
-            $(".customize-tab .row a").each(function() {
-                $(this).removeClass("customize-tab-onselect");
-            })
-            // $(".customize-tab .row").
-            $(e.target).addClass("customize-tab-onselect");
-            if ($(e.target).hasClass("tag-theme")) {
-                $(".customize-theme").show();
-                $(".customize-music").hide();
-            } else {
-                $(".customize-theme").hide();
-                $(".customize-music").show();
-            }
-        },
+        // customizeTab: function(e) {
+        //     $(".customize-tab .row a").each(function() {
+        //         $(this).removeClass("customize-tab-onselect");
+        //     })
+        //     // $(".customize-tab .row").
+        //     $(e.target).addClass("customize-tab-onselect");
+        //     if ($(e.target).hasClass("tag-theme")) {
+        //         $(".customize-theme").show();
+        //         $(".customize-music").hide();
+        //     } else {
+        //         $(".customize-theme").hide();
+        //         $(".customize-music").show();
+        //     }
+        // },
         customizeThemeCell: function(e) {
             console.log(e.target);
             this.ui.themeCell.each(function() {

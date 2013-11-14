@@ -307,7 +307,7 @@ module.exports = function(grunt) {
         'copy',
         'cssmin:minify',
         'uglify:minify',
-        'rev',
+        // 'rev',
         'usemin',
         'htmlmin:dist',
         //expert build clean up

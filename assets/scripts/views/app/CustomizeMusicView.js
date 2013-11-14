@@ -28,7 +28,7 @@ define([
         ui: {},
         events: {
             "click .customize-save": "customizeSave",
-            "click .customize-tab a": "customizeTab",
+            // "click .customize-tab a": "customizeTab",
             "click a.btn[id|='customize']": "volChanges",
             "mute #muteBtn": "muteToggle",
         },
@@ -91,20 +91,20 @@ define([
 
             $(".musicOptions.customize").hide();
         },
-        customizeTab: function(e) {
-            $(".customize-tab .row a").each(function() {
-                $(this).removeClass("customize-tab-onselect");
-            })
-            // $(".customize-tab .row").
-            $(e.target).addClass("customize-tab-onselect");
-            if ($(e.target).hasClass("tag-theme")) {
-                $(".customize-theme").show();
-                $(".customize-music").hide();
-            } else {
-                $(".customize-theme").hide();
-                $(".customize-music").show();
-            }
-        },
+        // customizeTab: function(e) {
+        //     $(".customize-tab .row a").each(function() {
+        //         $(this).removeClass("customize-tab-onselect");
+        //     })
+        //     // $(".customize-tab .row").
+        //     $(e.target).addClass("customize-tab-onselect");
+        //     if ($(e.target).hasClass("tag-theme")) {
+        //         $(".customize-theme").show();
+        //         $(".customize-music").hide();
+        //     } else {
+        //         $(".customize-theme").hide();
+        //         $(".customize-music").show();
+        //     }
+        // },
         getSoundSettings: function() {
             var sounds = ["musicVol", "countdownVol", "redrawVol", "starVol", "fxOthersVol"];
             for (var i in sounds) {

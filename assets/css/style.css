@@ -765,7 +765,9 @@ td.social-link {
 	z-index:29;
 	left:7px;
 }
-.dropDown-OptionOnSelect, .dropDown-OptionOnSelect:hover {
+
+.dropDown-OptionOnSelect, {
+	/*.dropDown-OptionOnSelect:hover {*/
 	background-color:#08c;
 	color:whitesmoke;
 }
