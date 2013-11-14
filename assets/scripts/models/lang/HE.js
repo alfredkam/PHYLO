@@ -23,6 +23,22 @@
         "field 17": "הגדרות",
         "moto": "משחק פאזל שתורם למחקר מחלה גנטי"
     },
+    "options" : {
+        "theme":"נושא",
+        "customize":"התאמה אישית",
+        "music":"מוסיקה",
+        "soundFX" :"אפקטים קוליים",
+        "countdown" :"ספירה לאחור",
+        "redraw" :"לחזור",
+        "star" :"כוכב",
+        "others" :"אחר",
+        "dnaColor" :":ה-DNA הצבע",
+        "default" :"שחזור ברירת מחדל",
+        "save" :"לרשום",
+        "cancel" : "לבטל",
+        "boardColor" :":צבע צלחת",
+        "accept":"בסדר"
+    },
     "body": {
         "misc": {
             "invalidPuzzle" : "מצטער, הפאזל הזה אינו זמין יותר",
