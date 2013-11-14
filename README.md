@@ -27,12 +27,12 @@ Copyright (2012) McGill University, Alfred Kam, Jerome Waldispuhl and other cont
 
 Getting Started
 =====
-Its great you want to contribute - general flow
-1. Fork it
-2. Create your feature branch
-3. Commit your changes
-4. Push to your feature branch
-5. Create a pull request
+Its great you want to contribute - general flow<br>
+1. Fork it<br>
+2. Create your feature branch<br>
+3. Commit your changes<br>
+4. Push to your feature branch<br>
+5. Create a pull request<br>
 
 Please refer to our docs page for more info https://github.com/McGill-CSB/PHYLO/blob/master/docs/README.md
 
