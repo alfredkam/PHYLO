@@ -299,8 +299,8 @@ module.exports = function(grunt) {
     // });
     grunt.registerTask('build',[
         'clean',
-        'concat',
         'useminPrepare',
+        'concat',
         'imagemin:dynamic',
         'svgmin:dist',
         'cssmin:combine',
