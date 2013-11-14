@@ -145,70 +145,70 @@
                         if (provider == "Facebook") {
                             if (puzzle_disease) {
                                 if ($.phylo.currentScore >= puzzle_disease) {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 7"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
+                                    var messageToPrompt = fullname.replace("+", " ") + " " + window.lang.body.social["field 7"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
                                 } else {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 8"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
+                                    var messageToPrompt = fullname.replace("+", " ") + " " + window.lang.body.social["field 8"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
                                 }
                             } else {
                                 if ($.phylo.currentScore >= puzzle_disease) {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 9"] + ".\n" + window.lang.body.social["field 20"];
+                                    var messageToPrompt = fullname.replace("+", " ") + " " + window.lang.body.social["field 9"] + ".\n" + window.lang.body.social["field 20"];
                                 } else {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 10"] + ".";
+                                    var messageToPrompt = fullname.replace("+", " ") + " " + window.lang.body.social["field 10"] + ".";
                                 }
                             }
                             var caption = window.lang.body.social["field 31"];
-                            var data = "provider=" + provider + "&id=" + c_logid + "&caption=" + caption + "&description=" + message;
+                            var data = "provider=" + provider + "&id=" + c_logid + "&caption=" + caption + "&description=" + messageToPrompt;
                         } else if (provider == "Twitter") {
                             if (puzzle_disease) {
                                 if ($.phylo.currentScore >= puzzle_disease) {
-                                    var message = window.lang.body.social["field 20"] + " phylo.cs.mcgill.ca";
+                                    var messageToPrompt = window.lang.body.social["field 20"] + " phylo.cs.mcgill.ca";
                                 } else {
-                                    var message = window.lang.body.social["field 20"] + " phylo.cs.mcgill.ca";
+                                    var messageToPrompt = window.lang.body.social["field 20"] + " phylo.cs.mcgill.ca";
                                 }
                             } else {
                                 if ($.phylo.currentScore >= puzzle_disease) {
-                                    var message = window.lang.body.social["field 20"] + " phylo.cs.mcgill.ca";
+                                    var messageToPrompt = window.lang.body.social["field 20"] + " phylo.cs.mcgill.ca";
                                 } else {
-                                    var message = window.lang.body.social["field 20"] + " phylo.cs.mcgill.ca";
+                                    var messageToPrompt = window.lang.body.social["field 20"] + " phylo.cs.mcgill.ca";
                                 }
                             }
-                            var data = "provider=" + provider + "&id=" + c_logid + "&description=" + message;
+                            var data = "provider=" + provider + "&id=" + c_logid + "&description=" + messageToPrompt;
                         } else if (provider == "LinkedIn") {
                             if (puzzle_disease) {
                                 if ($.phylo.currentScore >= puzzle_disease) {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 15"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
+                                    var messageToPrompt = fullname.replace("+", " ") + " " + window.lang.body.social["field 15"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
                                 } else {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 16"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
+                                    var messageToPrompt = fullname.replace("+", " ") + " " + window.lang.body.social["field 16"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
                                 }
                             } else {
                                 if ($.phylo.currentScore >= puzzle_disease) {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 17"] + ".\n" + window.lang.body.social["field 20"];
+                                    var messageToPrompt = fullname.replace("+", " ") + " " + window.lang.body.social["field 17"] + ".\n" + window.lang.body.social["field 20"];
                                 } else {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 18"] + ".\n" + window.lang.body.social["field 20"];
+                                    var messageToPrompt = fullname.replace("+", " ") + " " + window.lang.body.social["field 18"] + ".\n" + window.lang.body.social["field 20"];
                                 }
                             } //var caption = window.lang.body.social["field 26"];
                             //var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
-                            var data = "provider=" + provider + "&id=" + c_logid + "&description=" + message;
+                            var data = "provider=" + provider + "&id=" + c_logid + "&description=" + messageToPrompt;
                         } else if (provider == "Google") {
                             if (puzzle_disease) {
                                 if ($.phylo.currentScore >= puzzle_disease) {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 15"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
+                                    var messageToPrompt = fullname.replace("+", " ") + " " + window.lang.body.social["field 15"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
                                 } else {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 16"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
+                                    var messageToPrompt = fullname.replace("+", " ") + " " + window.lang.body.social["field 16"].replace("***", puzzle_disease) + "\n" + window.lang.body.social["field 20"];
                                 }
                             } else {
                                 if ($.phylo.currentScore >= puzzle_disease) {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 17"] + ".\n" + window.lang.body.social["field 20"];
+                                    var messageToPrompt = fullname.replace("+", " ") + " " + window.lang.body.social["field 17"] + ".\n" + window.lang.body.social["field 20"];
                                 } else {
-                                    var message = fullname.replace("+", " ") + " " + window.lang.body.social["field 18"] + ".\n" + window.lang.body.social["field 20"];
+                                    var messageToPrompt = fullname.replace("+", " ") + " " + window.lang.body.social["field 18"] + ".\n" + window.lang.body.social["field 20"];
                                 }
                             }
                             //var caption = window.lang.body.social["field 26"];
                             //var data = "provider="+provider+"&id="+c_logid+"&caption="+caption+"&description="+message;
-                            var data = "provider=" + provider + "&id=" + c_logid + "&description=" + message;
+                            var data = "provider=" + provider + "&id=" + c_logid + "&description=" + messageToPrompt;
                         }
                         var options = {
-                            message: window.lang.body.social["field 22"] + "<br/>via "+provider +"<br/>\n" + message,
+                            message: window.lang.body.social["field 22"] + "<br/>via "+provider +"<br/>\n" + messageToPrompt,
                             buttons: {
                                 confirm: {
                                     label: window.lang.body.social["field 25"],
