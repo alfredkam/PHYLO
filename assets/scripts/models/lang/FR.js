@@ -170,7 +170,7 @@
                     "field 10": "À ce jour, *** joueurs ont soumis *** alignements pour *** puzzles différents.",
                     "field 11": "Nouveau puzzle",
                     "field 12": "Rejoue le puzzle",
-                    "field 13": "Partage sur Facebook",
+                    "field 13": "Partage avec tes amis",
                     "field 14": "Challenge un ami",
                     "field 15": "Menu",
                     "field 16": "Clique encore sur l’étoile pour soumettre ton score maintenant,  ou continue a jouer pour essayer d’obtenir le meilleur score possible!"

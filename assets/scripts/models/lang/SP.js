@@ -170,7 +170,7 @@
                     "field 10": "De lejos *** usuarios han enviado *** alineamientos para *** diferentes niveles.",
                     "field 11": "Nuevo juego ",
                     "field 12": "Repetir juego ",
-                    "field 13": "Compartir",
+                    "field 13": "Comparte con tus amigos",
                     "field 14": "Retar a un amigo ",
                     "field 15": "Menu",
                     "field 16": "Presione comenzar de nuevo para enviar su puntaje, o continue jugando para obtener el mejor puntaje posible!"

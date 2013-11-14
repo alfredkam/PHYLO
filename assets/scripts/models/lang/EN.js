@@ -165,7 +165,7 @@
                     "field 10": "So far *** users have submitted *** alignments for *** different levels.",
                     "field 11": "New Game",
                     "field 12": "Replay Game",
-                    "field 13": "Share",
+                    "field 13": "Share with your friends",
                     "field 14": "Challenge a friend",
                     "field 15": "Menu",
                     "field 16": "Press the star again to submit your score now,  or keep playing to try and get the best score possible!"
