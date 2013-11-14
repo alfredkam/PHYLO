@@ -143,12 +143,14 @@ define([
 					lang : lang,
 					format : (this.isTablet? "tablet" : "desktop")
 				}));
-				if(!this.regions.customizeMusicRegion.currentView) {
+				//if(!this.regions.customizeMusicRegion.currentView ) {
+				this.regions.customizeRegion.reset();
+				this.regions.customizeMusicRegion.reset();
 					this.regions.customizeMusicRegion.show(new CustomizeMusicView({lang:langModel}));
-				}
-				if(!this.regions.customizeRegion.currentView) {
+				//}
+				//if(!this.regions.customizeRegion.currentView) {
 							this.regions.customizeRegion.show(new CustomizeView({lang:langModel}));
-						}
+				//		}
 			}
 
 			this.currentLang = lang;
