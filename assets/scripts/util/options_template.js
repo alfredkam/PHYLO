@@ -1,12 +1,1 @@
-window.DEBUG = false;
-window.guest = "guest";
-window.showInLogin = false;
-window.showExpertOptions = false;
-window.username = "guest";
-window.DEV = {
-	disableMenu : true,
-	disableSplash : false,
-	disableMusic : false,
-	enableTableMode : false,
-	logging : false
-};
+window.DEBUG=!1,window.guest="guest",window.showInLogin=!1,window.showExpertOptions=!1,window.username="guest",window.DEV={disableMenu:!0,disableSplash:!1,disableMusic:!1,enableTableMode:!1,logging:!1};
