@@ -266,7 +266,8 @@ module.exports = function(grunt) {
             files : [
                 'Gruntfile.js',
                 '<%= config.app %>/scripts/**/*.js',
-                '!<%= config.app %>/scripts/**/*.min.js'
+                '!<%= config.app %>/scripts/**/*.min.js',
+                '!<%= config.app %>/scripts/models/lang/**'
             ],
             options : {
                 globals : {
