@@ -656,8 +656,8 @@ a.btn.musicDisabled:hover{
 	color: #333;
 }
 .option-list:hover, .logoutBtn:hover {
-	background-color: #08c;
-	color: whitesmoke;
+	background-color: #08c !important;
+	color: whitesmoke !important;
 }
 
 #logout:hover {
