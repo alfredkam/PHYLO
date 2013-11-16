@@ -106,7 +106,7 @@ define([
 				this.lang = lang;
 
 				$.ajax({
-					url :"assets/scripts/models/lang/"+lang+".js",
+					url :"assets/scripts/models/lang/"+lang+".json",
 					async: false,
 					dataType: 'json',
 					// contentType	: 'application/x-www-form-urlencoded; charset=UTF-8'
@@ -195,58 +195,7 @@ define([
             var language = userLang.substring(0,2).toUpperCase();
             var validLang = false;
             var lang = lang || language;
-   //          switch (lang) {
-   //              case "EN":
-   //              case "FR":
-   //              case "SP":
-   //              case "DE":
-   //              case "PT":
-   //              case "RO":
-   //              case "RU":
-   //              case "KO":
-   //              case "HE":
-   //              case "ZH-HK":
-   //              case "ZH-CN":
-   //                  validLang = true;
-   //                  break;
-   //              default:
-   //              	validLang=false;
-   //              	break;
-   //           }
-             
-			// if (!validLang) {
-			// 	lang = "EN";
-			// 	switch (language) {
-			// 		case "EN":
-			// 		case "FR":
-			// 		case "SP":
-			// 		case "DE":
-			// 		case "PT":
-			// 		case "RO":
-			// 		case "RU":
-			// 		case "KO":
-			// 		case "HE":
-			// 			lang = language;
-			// 			break;
-
-			// 		case "ZH":
-			// 			var languageExtension = headers['Accept-Language'].substring(0, 5).toUpperCase();
-			// 			if (languageExtension == "ZH-HK") {
-			// 				lang = "ZH-HK";
-			// 			} else {
-			// 				lang = "ZH-CN";
-			// 			};
-			// 			break;
-			// 		default:
-			// 			lang = "EN";
-			// 			break;
-			// 	}
-			// }
-
-			// var playView = new Views.Play;
-			// navBar.set(lang,"play");
-			// playView.render(lang);
-			// 
+   
 			this.initHeaderFooter("Play", lang);
 			this.regions.contentRegion.reset();
 			this.regions.contentRegion.show(new IndexView({
@@ -314,7 +263,7 @@ define([
 		tutorial : function(lang){
 			this.initHeaderFooter("Tutorial", lang);
 			$.ajax({
-				url :"assets/scripts/models/tutorial/"+this.lang+"-tutorial.js",
+				url :"assets/scripts/models/tutorial/"+this.lang+"-tutorial.json",
 				async: false,
 				dataType: 'json'
 			}).done(function(data,resp){
