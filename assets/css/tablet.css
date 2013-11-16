@@ -1,0 +1,11 @@
+/*
+*
+* PHYLO Distribution Build v3.1.0
+* http://phylo.cs.mcgill.ca
+*
+* Copyright 2013 McGill university, Alfred Kam, Jerome Waldispuhl and other contributors
+* Under McGill Human-Computing Developer Licence
+* https://github.com/McGill-CSB/PHYLO/blob/master/McGill-LICENCE.txt
+*
+*/
+#tabletBackBtn div{display:inline-block;font-size:30px}#tabletBackBtn>div{padding-top:20px;padding-left:20px}#tabletBackBtn{position:absolute;top:-8px;z-index:999;left:-13px}#login{float:right;background-color:#c85e36;color:#fff;text-align:center;border-radius:3px;top:12px;position:relative;left:-14px}#login .row{margin-left:0;margin-right:0;margin-bottom:5px}#login #login-box.tabletLogoutBtn{border:0;box-shadow:0 0 1px #999;background:#FFF;border-radius:3px}
