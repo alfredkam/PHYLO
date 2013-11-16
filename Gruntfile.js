@@ -154,7 +154,7 @@ module.exports = function(grunt) {
                             '<%= config.app %>/scripts/main/main.js',
                             '<%= config.app %>/img/**/*.gif',
                             '<%= config.app %>/scripts/util/options_template.js',
-                            '<%= config.app %>/scripts/models/**/*.json',
+                            '<%= config.app %>/scripts/models/**',
                             '<%= config.app %>/css/**',
                             '<%= config.app %>/img/disease/**/*.svg'
                         ]
