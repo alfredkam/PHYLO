@@ -37,7 +37,7 @@
         "save" :"注册",
         "cancel" : "取消",
         "boardColor" :"背景颜色:",
-        "theme":"行"
+        "accept":"行"
     },
     "body": {
         "misc": {

@@ -154,7 +154,7 @@ module.exports = function(grunt) {
                             '<%= config.app %>/scripts/main/main.js',
                             '<%= config.app %>/img/**/*.gif',
                             '<%= config.app %>/scripts/util/options_template.js',
-                            '<%= config.app %>/scripts/models/**',
+                            '<%= config.app %>/scripts/models/**/*.json',
                             '<%= config.app %>/css/**',
                             '<%= config.app %>/img/disease/**/*.svg'
                         ]
@@ -187,7 +187,7 @@ module.exports = function(grunt) {
                     {
                         expand : true,
                         cwd : "<%= config.dist %>/assets/scripts",
-                        src : ['*/*.js', '!*/*.min.js'],
+                        src : ['**/*.js', '!**/*.min.js'],
                         dest : "<%= config.dist %>/assets/scripts",
                     }
                 ]
@@ -262,6 +262,17 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        minjson : {
+            minify : {
+               options: {
+                   banner : "<%= config.banner %>",
+               },
+               expand: true,
+               cwd: '<%= config.dist %>/assets/scripts/models',
+               src: ['**/*.json'],
+               dest: '<%= config.dist %>/assets/scripts/models'
+            }
+        },
         jshint : {
             // https://github.com/gruntjs/grunt-contrib-jshint
             files : [
@@ -311,6 +322,7 @@ module.exports = function(grunt) {
         'copy',
         'cssmin:minify',
         'uglify:minify',
+        'minjson:minify',
         // 'rev',
         'usemin',
         'htmlmin:dist',
