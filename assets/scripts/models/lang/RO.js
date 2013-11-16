@@ -126,7 +126,7 @@
                         "Digestive": "boli ale sistemului digestiv și respirator",
                         "Heart": "inimii și al mușchilor boli",
                         "Metabolic": "Boli metabolice",
-                        "Infecțious": "boli infecțioase",
+                        "Infectious": "boli infecțioase",
                         "Misc": "Alte boli"
                     }
                 },
