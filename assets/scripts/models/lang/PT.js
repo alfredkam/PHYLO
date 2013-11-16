@@ -24,7 +24,7 @@
         "moto": "Um jogo de puzzle que contribui para a pesquisa de doenças genéticas"
     },
     "options" : {
-        "theme","Tema",
+        "theme":"Tema",
         "customize":"Personalização",
         "music":"Música",
         "soundFX" :"Efeitos sonoros",
