@@ -15,7 +15,7 @@ General flow for creating / push distribution copy
 last - 1. git rm -r --cache dist <br>
 last. git c 'ommited dist snapshot'
 
-General Flow for creating a repo to deploy on server
+General flow for cloning a repo to deploy on server
 =====
 1. ssh to your remote server
 2. git clone --bare [repo url] [repo name]
