@@ -60,7 +60,7 @@ foreach ($blockmenu as $level_id => $info) {
 	   $hsflag = "";
 	   $hscount = 0;
 	}
-	echo "<tr><td>" . $level_id . "</td><td><a href=\"interactive-dev.php?id=s" . $level_id . "\">" . $level_id . "</a></td><td>" . $info['numseqs']. "</td><td>" . $info['disease_category'] . "</td><td>" . $info['play_count'] . "</td><td>" . $info['game_par']. "</td><td><a href=\"interactive-dev.php?id=s" . $level_id . "\">" . $info['game_par'] . "</a></td><td>" . $info['game_highscore'] . "</td><td><a href=\"interactive-dev.php?id=x" . $info['highscore_id'] . "\">" . $info['game_highscore'] . "</a></td><td>" . $info['submitted_score'] . "</td><td><a href=\"interactive-dev.php?id=x" . $info['submit_id'] . "\">" . $info['submitted_score'] . "</a></td><td>" . $hscount . "</td><td>" . $hsflag . "</td></tr>\n";
+	echo "<tr><td>" . $level_id . "</td><td><a href=\"interactive.php?id=s" . $level_id . "\">" . $level_id . "</a></td><td>" . $info['numseqs']. "</td><td>" . $info['disease_category'] . "</td><td>" . $info['play_count'] . "</td><td>" . $info['game_par']. "</td><td><a href=\"interactive.php?id=s" . $level_id . "\">" . $info['game_par'] . "</a></td><td>" . $info['game_highscore'] . "</td><td><a href=\"interactive.php?id=x" . $info['highscore_id'] . "\">" . $info['game_highscore'] . "</a></td><td>" . $info['submitted_score'] . "</td><td><a href=\"interactive.php?id=x" . $info['submit_id'] . "\">" . $info['submitted_score'] . "</a></td><td>" . $hscount . "</td><td>" . $hsflag . "</td></tr>\n";
 }
 ?>
 </tbody>

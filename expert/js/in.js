@@ -16,6 +16,8 @@ function getSequences(callback) {
         url,
         function(data){
             var parsed = parseInput(data);
+            console.log(parsed);
+            console.log(data);
             callback(parsed, data);
         }
     );

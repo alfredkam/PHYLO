@@ -50,7 +50,6 @@ $out = json_encode($fancy);
 /* WARNING: interface wont work if sequences are too long. If needed, use command below to check. */
 /* echo strlen($obj['level']['sequence'][0]); */
 
-
 echo $out;
 
 ?>
