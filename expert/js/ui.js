@@ -152,15 +152,13 @@ function loadImages(callback){
 function findMaxLength(){
     var max = 0;
     for (var i = 0; i < pos.length; i++){
-        console.log(pos + " / " + pos[i].length + " / " + pos[i][pos[i].length - 1] + " / " + pos[i][pos[i].length - 1].left);
-        console.log(pos[i]);
         if (pos[i][pos[i].length - 1].left > max){
             max = pos[i][pos[i].length - 1].left;
         }
     }
     var c = Math.ceil(max / G_W + 1);
     console.log("max " + c + "(" + max + "," + G_W + ")");
-    return 400;
+    return c;
 }
 
 function GameState(stage, tree, override){
