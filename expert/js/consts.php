@@ -119,7 +119,7 @@ $G_COL = 600;
 
 // Change to alter max/min size of playing area from window resize
 $SIZE_MAX_WIDTH = 1000;
-$SIZE_MIN_WIDTH = 500;
+$SIZE_MIN_WIDTH = 300;
 
 // Box properties
 // Change these to alter the size of individual boxes

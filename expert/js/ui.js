@@ -157,7 +157,7 @@ function findMaxLength(){
         }
     }
     var c = Math.ceil(max / G_W + 1);
-    console.log("max " + c);
+    console.log("max " + c + "(" + max + "," + G_W + ")");
     return c;
 }
 
