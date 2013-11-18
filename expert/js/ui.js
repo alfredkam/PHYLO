@@ -152,7 +152,7 @@ function loadImages(callback){
 function findMaxLength(){
     var max = 0;
     for (var i = 0; i < pos.length; i++){
-        console.log(pos + " / " + pos[i].length);
+        console.log(pos + " / " + pos[i].length + " / " + pos[i][pos[i].length - 1] + " / " + pos[i][pos[i].length - 1].left);
         console.log(pos[i]);
         if (pos[i][pos[i].length - 1].left > max){
             max = pos[i][pos[i].length - 1].left;
