@@ -1,6 +1,6 @@
 var norand = false;
 
-var SIZE_MIN_WIDTH = 300;
+var SIZE_MIN_WIDTH = 500;
 var SIZE_MAX_WIDTH = 1000;
 
 var S_MINX = 0;	// screen min x
