@@ -343,7 +343,7 @@ function setDrag(){
             var row = ~~(y / G_H);
             currentBox = null;
             isMouseDown = true;
-            if (row != V_ANCESTOR_ROW){  // currently row 8 specially reserved for ancestor
+            if (row != V_ANCESTOR_ROW){  // currently row 10 specially reserved for ancestor
                 if (row >= 0 && row < pos.length){
                     for (var i = 0; i < pos[row].length; i++){
                         if (pos[row][i].left + G_W > x && pos[row][i].left < x){

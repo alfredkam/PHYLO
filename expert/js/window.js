@@ -38,6 +38,7 @@ function resizeBoxes(boxsize){
     
     B_W = B_H = boxsize;
     T_SIZE_V = G_W = G_H = boxsize + G_BORDER_SIZE;
+    S_W = G_W * G_COL;
     BC_BUTTON_H = G_W - 2;
     //BC_BUTTON_W = ~~(1.5 * BC_BUTTON_H);
     T_H = BC_H = V_H = V_H = G_H * V_ROW;
