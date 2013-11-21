@@ -66,7 +66,7 @@
     <ul>
         <li>
             D. Kwak, A. Kam, D. Becerra, Q. Zhou, A. Hops, E. Zarour, A. Kam, L. Sarmenta, J. Waldisp&uuml;hl<br/>
-            <strong>Open-Phylo: a customizable crowd-computing platform for multiple sequence alignment</strong><br/>
+            Open-Phylo: a customizable crowd-computing platform for multiple sequence alignment<br/>
             Genome Biology 2013, 14:R116. <a href="http://dx.doi.org/10.1186/gb-2013-14-10-r116">doi:10.1186/gb-2013-14-10-r116
         </li>
     </ul>
