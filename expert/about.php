@@ -63,15 +63,16 @@
 
     <h3>Publication</h3>
 
-    <p>
-        D. Kwak, A. Kam, D. Becerra, Q. Zhou, A. Hops, E. Zarour, A. Kam, L. Sarmenta, J. Waldisp&uuml;hl<br/>
-        <b>Open-Phylo: a customizable crowd-computing platform for multiple sequence alignment</p><br/>
-        Genome Biology 2013, 14:R116.<br/>
-        <a href="http://dx.doi.org/10.1186/gb-2013-14-10-r116">doi:10.1186/gb-2013-14-10-r116
-    </p>
+    <ul>
+        <li>
+            D. Kwak, A. Kam, D. Becerra, Q. Zhou, A. Hops, E. Zarour, A. Kam, L. Sarmenta, J. Waldisp&uuml;hl<br/>
+            <b>Open-Phylo: a customizable crowd-computing platform for multiple sequence alignment</b><br/>
+            Genome Biology 2013, 14:R116.<br/>
+            <a href="http://dx.doi.org/10.1186/gb-2013-14-10-r116">doi:10.1186/gb-2013-14-10-r116
+        </li>
+    </ul>
 
-
-      <h3>Follow us</h3>
+    <h3>Follow us</h3>
       <ul>
         <li><a class="credits" href="https://www.facebook.com/phyloDNApuzzles">Facebook</a></li>
         <li><a class="credits" href="https://plus.google.com/u/0/b/111453047184263548841/111453047184263548841/posts">Google+</a></li>
