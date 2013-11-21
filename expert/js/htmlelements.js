@@ -93,7 +93,7 @@ function initHTMLElements(){
                                     }
                                 });
                             } else if (provider=="Twitter") {
-                                var message = "I improved a DNA alignments related to \"" + puzzle_disease + "\". phylo.cs.mcgill.ca";
+                                var message = "Play Phylo and help genetic research! phylo.cs.mcgill.ca #PhyloDNApuzzles";
                                 var data = "provider="+provider+"&id="+c_logid+"&description="+message;
                                 bootbox.confirm("Phylo will update your status: " + message,"Cancel","Tweet", function(result) {
                                     if (result) {
@@ -126,6 +126,8 @@ function initHTMLElements(){
                                         });
                                     }
                                 });
+                            } else {
+                                bootbox.alert("Please, login with a social network provider to enable this function.");
                             }
                         }
                     } // end callback

@@ -25,14 +25,15 @@
       <h3>Project leaders (Media and scientific contact)</h3>
 
       <ul>
-	<li><a class="credits" href="mailto:jerome.waldispuhl@mcgill.ca">J&eacute;r&ocirc;me Waldisp&uuml;hl</a></li>
-	<li><a class="credits" href="blanchem@mcb.mcgill.ca">Mathieu Blanchette</a></li>
+        <li><a class="credits" href="mailto:jerome.waldispuhl@mcgill.ca">J&eacute;r&ocirc;me Waldisp&uuml;hl</a></li>
+        <li><a class="credits" href="blanchem@mcb.mcgill.ca">Mathieu Blanchette</a></li>
       </ul>
 
       <h3>Scientific advisor</h3>
       
       <ul>
-	<li>Luis Sarmenta</li>
+        <li>Luis Sarmenta</li>
+        <li>David Becerra</li>
       </ul>
 
       <h3>Developement team</h3>
@@ -40,6 +41,7 @@
       <ul>
 	<li>Qikuan Zhou</li> 
 	<li>Alfred Kam</li>
+    <li>Arthur Kam</li>
 	<li>Daniel Kwak</li>
 	<li>Eleyine Zarour</li>
       </ul>
@@ -48,23 +50,35 @@
 
       <ul>
         <li>Andrew Bogecho</li>
-	<li>Ron Simpson</li>
+        <li>Ron Simpson</li>
       </ul>
 
       <h3>Funding</h3>
 
       <ul>
-        <li><a class="credits" href="http://http://www.nserc-crsng.gc.ca/">Natural Sciences and Engineering Research Council of Canada (NSERC)</a></li>
-	<li><a class="credits" href="http://www.innovation.ca/">Canadian Foundation for Innovation (CFI)</a></li>
-	<li><a class="credits" href="http://www.nokia.com/">Nokia Inc.</a></li>
+        <li><a class="credits" href="http://www.genomecanada.ca/">Genome Canada</a></li>
+        <li><a class="credits" href="http://www.cihr-irsc.gc.ca/">Canadian Institute of Health Research</a></li>
+        <li><a class="credits" href="http://www.innovation.ca/">Canadian Foundation for Innovation (CFI)</a></li>
       </ul>
+
+    <h3>Publication</h3>
+
+    <p>
+        D. Kwak, A. Kam, D. Becerra, Q. Zhou, A. Hops, E. Zarour, A. Kam, L. Sarmenta, J. Waldisp&uuml;hl<br/>
+        <b>Open-Phylo: a customizable crowd-computing platform for multiple sequence alignment</p><br/>
+        Genome Biology 2013, 14:R116.<br/>
+        <a href="http://dx.doi.org/10.1186/gb-2013-14-10-r116">doi:10.1186/gb-2013-14-10-r116
+    </p>
+
 
       <h3>Follow us</h3>
       <ul>
-	<li><a class="credits" href="http://www.facebook.com/group.php?gid=127713783941517">Facebook</a></li>
-	<li><a class="credits" href="https://plus.google.com/u/0/b/111453047184263548841/111453047184263548841/posts">Google+</a></li>
-	<li><a class="credits" href="#">Twitter</a></li>
+        <li><a class="credits" href="https://www.facebook.com/phyloDNApuzzles">Facebook</a></li>
+        <li><a class="credits" href="https://plus.google.com/u/0/b/111453047184263548841/111453047184263548841/posts">Google+</a></li>
+        <li><a class="credits" href="https://twitter.com/phylo_game">Twitter</a></li>
       </ul>
+
+
 
     </div>
   </div>
