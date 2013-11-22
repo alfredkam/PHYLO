@@ -1,22 +1,18 @@
 
-General flow for creating / push distribution copy
-=====
+##General flow for creating / push distribution copy
 1. git add dist -f
-2. git subtree pull --prefix=dist [dist repo url] [refs spec]
-3. git commit -am 'merged dist with conflict'
-4. grunt build
-5. Test dist build @localhost:XXXX/dist
-6. git add dist -f
-7. git commit -am 'new dist snapshot'
-8. git subtree push --prefix=dist [dist repo url] [refs spec] <br>
-. <br>
-. <br>
-. <br>
-last - 1. git rm -r --cache dist <br>
-last. git c 'ommited dist snapshot'
+2. git commit -am 'added dist snapshot'
+3. git subtree pull --prefix=dist [dist repo url] [refs spec]
+4. git commit -am 'merged dist with conflict'
+5. grunt build
+6. Test dist build @localhost:XXXX/dist
+7. git add dist -f
+8. git commit -am 'new dist snapshot'
+9. git subtree push --prefix=dist [dist repo url] [refs spec]
+10. git rm -r --cache dist
+11. git c 'ommited dist snapshot'
 
-General flow for cloning a repo to deploy on server
-=====
+##General flow for cloning a repo to deploy on server
 1. ssh to your remote server
 2. git clone --bare [repo url] [repo name]
 3. edit [repo name]/hooks/post-recieve - here is a sample https://gist.github.com/alfredkam/6383071#file-gistfile1-txt-L8, remember to change line 8

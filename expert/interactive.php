@@ -51,7 +51,6 @@ args.ui_showscore="<? echo htmlspecialchars($_GET['subscore']); ?>";
       
     </div>
 </div>
-
 <div id='inner-wrapper'>
 <div id="main-wrapper">
     <canvas id="scorebar-area" width="1400" height="100"></canvas>
@@ -90,6 +89,30 @@ args.ui_showscore="<? echo htmlspecialchars($_GET['subscore']); ?>";
         </tr>
     </table>
     </div>
+    <!--
+    <div id="stats" class="row">
+        <div class="span2"><label for="stats-mismatches">Matches</label><span id="stats-mismatches"></span></div>
+        <div class="span2"><label for="stats-matches">Mismatches</label><span id="stats-matches"></span></div>
+        <div class="span2"><label for="stats-gaps">Gaps</label><span id="stats-gaps"></span></div>
+        <div class="span2"><label for="stats-gapexts">Gap Extends</label><span id="stats-gapexts"></span></div>
+        <div class="span2"><label for="scores-score">Score:</label><span id="scores-score"></span></div>
+        <div class="span2"><label for="scores-best">Best:</label><span id="scores-best"></span></div>
+        <div class="span2"><label for="stats-stage">Stage</label><span id="stats-stage"><? echo ( isset($_GET['id']) ? htmlspecialchars($_GET['id']) : $_GET['id'] = '3871'); ?></span></div>
+        <div class="span2"><label for="stats-par">Par</label><span id="stats-par">0</span></div>
+    </div>-->
+
+    <!--<table id="stats">
+        <tr>
+            <td><label for="stats-matches">Mismatches</label><span id="stats-matches"></span></td>
+            <td><label for="stats-gapexts">Gap Extends</label><span id="stats-gapexts"></span></td>
+            <td><label for="stats-stage">Stage</label><span id="stats-stage"><? echo ( isset($_GET['id']) ? htmlspecialchars($_GET['id']) : '3871'); ?></span></td>
+        </tr>
+        <tr>
+            <td><label for="stats-mismatches">Matches</label><span id="stats-mismatches"></span></td>
+            <td><label for="stats-gaps">Gaps</label><span id="stats-gaps"></span></td>
+            <td><label for="stats-par">Par</label><span id="stats-par"></span></td>
+        </tr>
+    </table>-->
 </div>
 
 </div>

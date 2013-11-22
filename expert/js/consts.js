@@ -35,7 +35,7 @@ var T_IMAGES_H = 86;
 var T_IMAGES_DRAW_W = 30;
 var T_IMAGES_DRAW_H = 30;
 
-var S_W = 6446;	// screen width
+var S_W = 13200;	// screen width
 var S_H = 220;	// screen height
 var B_W = 20;	// box width
 var B_H = 20;	// box height
