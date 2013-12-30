@@ -6,8 +6,9 @@ Set up environment for OSX
 2. brew install node
 3. brew install npm
 4. npm install node-dev
-5. npm install grunt -g
+5. npm install grunt-cli -g
 6. npm install bower -g
+7. cd PHYLO
 7. npm install
 
 Running a local server
