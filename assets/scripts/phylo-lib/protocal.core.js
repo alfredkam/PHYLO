@@ -36,7 +36,7 @@
 			if(status == "completed") {
 				mode = 4;
 			}
-			var data = "mode="+mode+"&id="+$.phylo.id+"&user="+window.username+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.currentScore;
+			var data = "mode="+mode+"&id="+$.phylo.id+"&user="+window.username+"&align="+$.board.getSubmissionAlignments()+"&score="+$.phylo.currentScore;
             $.ajax({
 				type: "POST",
 				url : url,
@@ -63,7 +63,7 @@
 			//this function is currently turned off.
 			return;
 			var self = this;
-			var data = "mode=4&id="+$.phylo.id+"&user="+window.username+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.bestScore;
+			var data = "mode=4&id="+$.phylo.id+"&user="+window.username+"&align="+$.board.getSubmissionAlignments()+"&score="+$.phylo.bestScore;
 			$.ajax({
 				type : "POST",
 				url : url,
