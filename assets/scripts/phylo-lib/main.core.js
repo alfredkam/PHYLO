@@ -121,6 +121,10 @@
 				}
 				$.sequence.checkEachRowLength();
 				$.board.startListener();
+				//create first step for undo/redo
+				$("moveListener").trigger("newGame");
+				$("#moveListener").trigger("newMove",{seq: $.sequence.track});
+
 			},
 		};
 

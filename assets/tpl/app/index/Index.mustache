@@ -69,6 +69,13 @@
                 
             </div>
             <div id='controlPanel'>
+                <div id="undo">
+                    <i class='icon-fast-bw' title="undo"></i>
+                </div>
+                <div id="redo">
+                    <i class='icon-fast-fw' title="redo"></i>
+
+                </div>
                 <div id='star'>
                     <i class='icon-star-1' title='move to next stage'></i>
                 </div>
@@ -121,6 +128,7 @@
 </div>
 <div class='hide' id='svgPreload'>
 </div>
+<div class="hide" id="moveListener"></div>
 <script>
     require(['phyloStart','http://canvg.googlecode.com/svn/trunk/rgbcolor.js','http://canvg.googlecode.com/svn/trunk/StackBlur.js','http://canvg.googlecode.com/svn/trunk/canvg.js'], function() {
        interactiveMenu.start();

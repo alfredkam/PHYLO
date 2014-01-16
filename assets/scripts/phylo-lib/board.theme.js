@@ -161,11 +161,12 @@
 				self.stats();
 
 			});
+			console.log("bindings are done!");
 			$("#undo").unbind().click(function(){
-				$("").trigger("phylo_undo");
+				$("#moveListener").trigger("undoMove");
 			});
-			$("redo").unbind().click(function(){
-				$("").trigger("phylo_redo");
+			$("#redo").unbind().click(function(){
+				$("#moveListener").trigger("redoMove");
 			})
 			//next stage
 			$("#star").unbind().click(function() {
