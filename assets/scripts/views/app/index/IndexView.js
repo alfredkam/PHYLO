@@ -32,17 +32,26 @@ define([
             //a function to detect new move if the vboard is diffrent from the old board
             //also pushes something the board to the queue as well.
             //will need to experiment on what size to limit the queue to
-            //if(DEBUG){
+            if(DEBUG){
             console.log("move made :");
             console.log(move.seq);
 
             // if(this.currMove!=0){
             //     console.log(JSON.stringify(move));
 
-            // }
+            }
             //deep copy
             this.moveQueue[this.currMove] = $.extend(true,[],move.seq);
             this.currMove++;
+            if(this.moveQueue.length>this.currMove){
+                console.log("length reduced");
+                this.moveQueue = this.moveQueue.slice(this.currMove-5>1?this.currMove-5:0,this.currMove);
+                this.currMove  = this.moveQueue.length+1;
+
+            }
+            if(DEBUG){
+                console.log(this.currMove);
+            }
             //}            
          },
          newGame : function(){
@@ -51,10 +60,15 @@ define([
             this.moveQueue = [];
          },
          undoMove: function(){
+            if(DEBUG){
+
+                console.log(this.currMove);
+            }
+
             if(this.currMove-2<0){
                 return;
             }
-            console.log(this.currMove-2, this.moveQueue[this.currMove-2]);
+            // console.log(this.currMove-2, this.moveQueue[this.currMove-2]);
             
             $.helper.copy($.sequence.track, this.moveQueue[this.currMove-2]);
                             var score = $.fitch.score();
@@ -62,14 +76,18 @@ define([
                             $.physics.snapRandom();
                             if ($.phylo.bestScore >= $.sequence.par)
                                 $.board.approve();
-                            $.board.stats()
+                            $.board.stats();
             this.currMove--;
          },
          redoMove: function(){
+            if(DEBUG){
+
+                console.log(this.currMove);
+            }
             if(this.currMove+1>this.moveQueue.length){
                             return;
                         }
-            console.log(this.currMove, this.moveQueue[this.currMove]);
+            // console.log(this.currMove, this.moveQueue[this.currMove]);
                        
                        $.helper.copy($.sequence.track, this.moveQueue[this.currMove]);
                                        var score = $.fitch.score();

@@ -161,7 +161,9 @@
 				self.stats();
 
 			});
-			console.log("bindings are done!");
+			if(DEBUG){
+				console.log("bindings are done!");
+			}
 			$("#undo").unbind().click(function(){
 				$("#moveListener").trigger("undoMove");
 			});
