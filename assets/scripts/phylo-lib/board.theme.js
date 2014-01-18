@@ -161,6 +161,15 @@
 				self.stats();
 
 			});
+			if(DEBUG){
+				console.log("bindings are done!");
+			}
+			$("#undo").unbind().click(function(){
+				$("#moveListener").trigger("undoMove");
+			});
+			$("#redo").unbind().click(function(){
+				$("#moveListener").trigger("redoMove");
+			})
 			//next stage
 			$("#star").unbind().click(function() {
 				starClickSound.play();
@@ -224,8 +233,8 @@
 				opacity: 0.4
 			});
 		},
-		//builds json alignments of the current score
-		getJsonAlignments: function() {
+		//builds json alignments of the current score (but its not json)
+		getSubmissionAlignments: function() {
 			var self = this;
 			var track = $.sequence.track;
 			var str = "[";
@@ -244,6 +253,27 @@
 					str += ',';
 			}
 			return '{"alignments" : ' + str + ']}';
+		},
+		//builds a json object of the current board
+		getJsonAlignments : function(){
+			var self = this;
+			var track = $.extend(true,[],$.sequence.track);
+			// var track = $.sequence.slice();
+			// var arr = [];
+			// for(var i =0; i<track.length;i++){
+			// 	var str="";
+			// 	for (var j = 0; j < track[i].length; j++) {
+			// 		if (track[i][j] == "x")
+			// 			str += "-";
+			// 		else if (i != 0 && track[i][j] == 0)
+			// 			str += "";
+			// 		else
+			// 			str += self.convertColor($("#" + track[i][j]));
+			// 	}
+			// 	arr[i] = str;
+			// }
+			return {alignments : track,
+				stage: $.stage.current};
 		},
 		//translates the grid color to its respected nucletide
 		convertColor: function(nuc) {

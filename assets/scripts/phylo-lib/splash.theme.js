@@ -27,7 +27,9 @@
 				} else {
 					$("#countDown-text").html(i);
 					document.getElementById("countdownSound").play();
-					console.log("counting down")
+					if(DEBUG){
+						console.log("counting down")
+					}
 					i -= 1;
 
 					setTimeout($.splash.count, 1000);
