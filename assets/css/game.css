@@ -329,8 +329,15 @@
 	position:relative;
 
 }
+#undo.on i, #redo.on i{
+	opacity: 1;
+	cursor: pointer;
+
+}
 #undo i, #redo i{
 	font-size:30px;
+	opacity : 0.4;
+
 }
 #star {
 	position:relative;
