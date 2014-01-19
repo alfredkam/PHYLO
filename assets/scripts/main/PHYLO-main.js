@@ -39,7 +39,9 @@ require.config({
 		tpl : "tpl",
 		nprogress : "bower_components/nprogress/nprogress",
 		phyloStart : 'scripts/phylo-lib/menu/gameMenu.actions',
-		modernizr : "bower_components/modernizr/modernizr"
+		modernizr : "bower_components/modernizr/modernizr",
+		//mocks for canvg
+		canvg : "bower_components/canvg"
 	},
 
 	/*
