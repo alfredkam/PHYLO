@@ -31,6 +31,8 @@ define([
 			"!/:lang/" : "defaultRoute",
 			"!/:lang" : "defaultRoute",
 			// "!*path" : "defaultRoute",
+			"_=_" : "defaultRoute",
+			"" : "defaultRoute",	
 			"*path" :"defaultRoute"
 		}
 	});
