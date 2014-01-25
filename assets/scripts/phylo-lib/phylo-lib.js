@@ -489,6 +489,15 @@ buildTree(j,0); */
 				self.stats();
 
 			});
+			if(DEBUG){
+				console.log("bindings are done!");
+			}
+			$("#undo").unbind().click(function(){
+				$("#moveListener").trigger("undoMove");
+			});
+			$("#redo").unbind().click(function(){
+				$("#moveListener").trigger("redoMove");
+			})
 			//next stage
 			$("#star").unbind().click(function() {
 				starClickSound.play();
@@ -552,8 +561,8 @@ buildTree(j,0); */
 				opacity: 0.4
 			});
 		},
-		//builds json alignments of the current score
-		getJsonAlignments: function() {
+		//builds json alignments of the current score (but its not json)
+		getSubmissionAlignments: function() {
 			var self = this;
 			var track = $.sequence.track;
 			var str = "[";
@@ -572,6 +581,27 @@ buildTree(j,0); */
 					str += ',';
 			}
 			return '{"alignments" : ' + str + ']}';
+		},
+		//builds a json object of the current board
+		getJsonAlignments : function(){
+			var self = this;
+			var track = $.extend(true,[],$.sequence.track);
+			// var track = $.sequence.slice();
+			// var arr = [];
+			// for(var i =0; i<track.length;i++){
+			// 	var str="";
+			// 	for (var j = 0; j < track[i].length; j++) {
+			// 		if (track[i][j] == "x")
+			// 			str += "-";
+			// 		else if (i != 0 && track[i][j] == 0)
+			// 			str += "";
+			// 		else
+			// 			str += self.convertColor($("#" + track[i][j]));
+			// 	}
+			// 	arr[i] = str;
+			// }
+			return {alignments : track,
+				stage: $.stage.current};
 		},
 		//translates the grid color to its respected nucletide
 		convertColor: function(nuc) {
@@ -625,8 +655,9 @@ buildTree(j,0); */
 			prev : 0,
 			prevMid : 4
 		},
+		undoArray : [],
 		setScore : function(newScore) {
-			this.draw(newScore);			
+			this.draw(newScore);	
 			document.getElementById("redrawSound").play();
 		},
 		draw_old : function(score) {
@@ -1334,7 +1365,9 @@ buildTree(j,0); */
 				} else {
 					$("#countDown-text").html(i);
 					document.getElementById("countdownSound").play();
-					console.log("counting down")
+					if(DEBUG){
+						console.log("counting down")
+					}
 					i -= 1;
 
 					setTimeout($.splash.count, 1000);
@@ -1370,6 +1403,8 @@ buildTree(j,0); */
 										$.events.untouch(document, "end");
 										$.physics.snap();
 										var score = $.fitch.score();
+										$("#moveListener").trigger("newMove",{seq: $.sequence.track});
+
 										if($.phylo.bestScore < score) {
 											$.phylo.bestScore = score;
 											$.helper.copy($.phylo.bestTrack, $.sequence.track);
@@ -1527,7 +1562,7 @@ buildTree(j,0); */
 			if(status == "completed") {
 				mode = 4;
 			}
-			var data = "mode="+mode+"&id="+$.phylo.id+"&user="+window.username+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.currentScore;
+			var data = "mode="+mode+"&id="+$.phylo.id+"&user="+window.username+"&align="+$.board.getSubmissionAlignments()+"&score="+$.phylo.currentScore;
             $.ajax({
 				type: "POST",
 				url : url,
@@ -1554,7 +1589,7 @@ buildTree(j,0); */
 			//this function is currently turned off.
 			return;
 			var self = this;
-			var data = "mode=4&id="+$.phylo.id+"&user="+window.username+"&align="+$.board.getJsonAlignments()+"&score="+$.phylo.bestScore;
+			var data = "mode=4&id="+$.phylo.id+"&user="+window.username+"&align="+$.board.getSubmissionAlignments()+"&score="+$.phylo.bestScore;
 			$.ajax({
 				type : "POST",
 				url : url,
@@ -3560,6 +3595,10 @@ buildTree(j,0); */
 				}
 				$.sequence.checkEachRowLength();
 				$.board.startListener();
+				//create first step for undo/redo
+				$("moveListener").trigger("newGame");
+				$("#moveListener").trigger("newMove",{seq: $.sequence.track});
+
 			},
 		};
 
