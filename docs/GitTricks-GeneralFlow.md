@@ -10,7 +10,7 @@
 8. git commit -am 'new dist snapshot'
 9. git subtree push --prefix=dist [dist repo url] [refs spec]
 10. git rm -r --cache dist
-11. git c 'ommited dist snapshot'
+11. git commit 'ommited dist snapshot'
 
 ##General flow for cloning a repo to deploy on server
 1. ssh to your remote server
