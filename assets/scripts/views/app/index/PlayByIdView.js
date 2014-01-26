@@ -50,10 +50,13 @@ define([
             self.$el.html(Marionette.Renderer.render(self.template, json));
             $("#mid-panel").fadeIn();
             $("#loading-panel").hide();
-            require(["scripts/phylo-lib/menu/gameMenu.actions", "DNA/main.core"], function() {
-                if ($.main == undefined) {
+            require(['phyloStart',
+                'http://canvg.googlecode.com/svn/trunk/rgbcolor.js',
+                'http://canvg.googlecode.com/svn/trunk/StackBlur.js',
+                'http://canvg.googlecode.com/svn/trunk/canvg.js'], function() {
+                if ($.main === undefined) {
                     var fn = function() {
-                        if ($.main == undefined) {
+                        if ($.main === undefined) {
                             window.setTimeout(function() {
                                 fn();
                             }, 100);
