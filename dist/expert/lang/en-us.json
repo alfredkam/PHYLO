@@ -1,0 +1,238 @@
+{
+    "info": {
+        "lang": "English",
+        "author": "Jerome Waldispuhl"
+    },
+    "error": {
+        "bug1" : "Oops! We couldnt conenct to the srver.<br>We suspect you are not connected to the internet!",
+        "bug2" : "Oops! The Server Crashed!<br> Please Try again later"
+    },
+    "header": {
+        "field_1": "Play",
+        "field_2": "Tutorial",
+        "field_3": "About",
+        "field_4": "Credits",
+        "field_5": "Ranking",
+        "field_6": "Live ranking",
+        "field_7": "Highscores",
+        "field_8": "Results",
+        "field_9": "Back",
+        "field_10": "A human computing framework for comparative genomics",
+        "field_11": "Mobile",
+        "field_12": "Classic",
+        "field_13": "Want to contribute? Click here",
+        "field_14": "Go back to non-mobile edition"
+    },
+    "body": {
+        "play": {
+            "gameselect": {
+                "login": {
+                    "field_1": "Guest Login",
+                    "field_2": "Login",
+                    "field_3": "Register",
+                    "field_4": "Or just sign in instantly with",
+                    "field_5": "logout",
+                    "field_6": "Please login or register so you can keep track of your contribution to science",
+                    "field_7": "Username",
+                    "field_8": "Password",
+                    "field_9": "Email address (optional)",
+                    "field_10": "Confirm",
+                    "field_11": "Challenge your friends, share alignments, and more!",
+                    "field_12": "Connect to Phylo with Facebook",
+                    "field_13": "Not logged in. playing as a guest.",
+                    "field_14": "Welcome ***",
+                    "field_15": "You are now logged out",
+                    "field_16": "Could not login: Wrong username/password.",
+                    "field_17": "Logout",
+                    "field_18": "Registration",
+                    "field_19": "Welcome back! Not ***?"
+                },
+                "levelselect": {
+                    "header": "Level select. Choose a level by difficulty, ID or associated disease",
+                    "random": {
+                        "field_1": "Select the number of sequences.",
+                        "field_2": "Random",
+                        "field_3": "Easy - Hard"
+                    },
+                    "level_id": {
+                        "field_1": "Enter the ID of the level you wish to play",
+                        "field_2": "Level ID",
+                        "field_3": "Enter Level ID",
+                        "field_4": "Submit"
+                    },
+                    "disease": {
+                        "field_1": "Select a disease to get an associated level",
+                        "field_2": "Disease",
+                        "field_3": "BLOOD AND IMMUNE SYSTEM",
+                        "field_4": "BONE AND SKIN",
+                        "field_5": "BRAIN AND NERVOUS SYSTEM",
+                        "field_6": "CANCER",
+                        "field_7": "DIGESTIVE SYSTEM",
+                        "field_8": "HEART AND CIRCULATORY SYSTEM",
+                        "field_9": "METABOLIC DISORDERS",
+                        "field_10": "MUSCLES",
+                        "field_11": "REPRODUCTION SYSTEM",
+                        "field_12": "RESPIRATORY SYSTEM",
+                        "field_13": "SENSORY SYSTEM"
+                    }
+                },
+                "short_tutorial": {
+                    "field_1": "Move the squares left and right. Try to match colours vertically while avoiding gaps. Double-click to create a selection box for multiple blocks.",
+                    "field_2": "Continue",
+                    "field_3": "Check here to see how you're doing. Red scores mean that you can improve that branch!",
+                    "field_4": "Look here for the par score. That is the minimum score you need to move to the next stage. Click the jumping star here when you are ready!",
+                    "field_5": "I am ready!",
+                    "field_6": "It is highly recommended that you complete the tutorial. Click again anyway."
+                },
+                "video_tutorial": {
+                    "field_1": "Learn the basics of Phylo"
+                },
+                "game_board": {
+                    "field_1": "Score",
+                    "field_2": "Par",
+                    "field_3": "Stage",
+                    "field_4": "Best Score",
+                    "field_5": "Level",
+                    "field_6": "Difficulty",
+                    "field_7": "Music on - Music off - mute",
+                    "field_8": "Stats",
+                    "field_9": "Matches",
+                    "field_10": "Mismatches",
+                    "field_11": "Gaps",
+                    "field_12": "Gap extends",
+                    "field_13": "Score now"
+                },
+                "end_of_game": {
+                    "field_1": "Thank you",
+                    "field_2": "We appreciate your contribution to science. Did you know:",
+                    "field_3": "Congratulations! You've completed the final stage, and we just submitted your alignment for this session.",
+                    "field_4": "Unfortunately, you ran out of time before reaching the final stage, so your alignment was not submitted this session.",
+                    "field_5": "You played level ***. Remember this ID if you wish to play this level again later! The DNA in this puzzle has been linked to:",
+                    "field_6": "This level has been completed *** times. Users have failed to reach this level *** times.",
+                    "field_7": "The high score for this level is: ***",
+                    "field_8": "The average score for this level is: ***",
+                    "field_9": "*** has the highest score for this level.",
+                    "field_10": "So far *** users have submitted *** alignments for *** different levels.",
+                    "field_11": "New Game",
+                    "field_12": "Replay Game",
+                    "field_13": "Share on Facebook",
+                    "field_14": "Challenge a friend",
+                    "field_15": "Menu",
+                    "field_16": "Press the star again to submit your score now,  or keep playing to try and get the best score possible!"
+                }
+            },	
+            "tutorial": {
+                "basics": {
+                    "field_1": "Basics: Rules and tips",
+                    "field_2": "In Phylo, your goal is to move sequences of  blocks horizontally in order to create the maximum number of columns of similar colors. Each color match gives you a bonus.",
+                    "field_3": "However, the sequences are not identical. Thus, color mismatches and gaps are unavoidable and you receive penalties for that. Your challenge is to find the  best trade-off between bonuses and penalties.",
+                    "field_4": "Bonuses and penalties for color matches and mismatches are small. But the cost of gaps is big! It is usually preferable to have a long gap rather than several small ones. Try to minimize the number of gaps in priority.",
+                    "field_5": "Did you notice the tree on the left? It tells you which sequences must be aligned in priority. This is helpful when you have to favor one color match versus another one. It is more important to conserve identical patterns for sequences in the same group than increasing similarities between different groups.",
+                    "field_6": "To reach the final stage, you need to pass the levels. This requires to beat the par (i.e. the computer score). When your score is equal or higher than the par, a shiny star appears at the bottom right corner. Click on it to reach the next stage. When all sequences are on the board, try to get the higher score possible and submit it by clicking the star again!",
+                    "field_7": "Basic information are available at the bottom right corner of your game board. There, you will find your current score, the par (i.e. the computer score to beat), your advancement in the game (i.e. stages) and the best score you obtained so far. You can revert at anytime to the best solution you found by clicking the multi-color wheel. Above you also see your timer and the time left to finish the puzzle."
+                },
+                "scoring": {
+                    "field_1": "Advanced: Scoring.",
+                    "field_2": "Each node of the phylogenetic tree stores an ancestor sequence. Ancestors are computed automatically and represent a consensus of all sequences derived from it. Point at any node of the tree to display the corresponding sequence at the bottom of the grid. By default, we display the ancestor at the root of the tree",
+                    "field_3": "The alignment score estimates the similarity between a sequence and its ancestor. A color match brings you a bonus of +1 and a color mismatch costs you a penalty of -1. The creation of a gap has a penalty of -5 and its extension by one unit costs -1. Here, the alignment score between the sequence of the bat and its ancestor is -4 (12 matches, 5 mismatches, 1 gap of length 1 and 1 gap of length 2).",
+                    "field_4": "Your score is the sum of the alignment scores of each sequences with their immediate ancestor. Here, the score is the sum of the comparisons between the ancestor of B with human and chimp, the ancestor C with dog and bat, and the ancestor A with B and C."
+                },
+                "example": {
+                    "field_1": "Getting ready: An example.",
+                    "field_2": "You are starting with two sequences (human and chimp). Push everything on the left and check out the ancestor. Aligning this ancestor with your two sequences gives you 13 matches for the first sequence (human), and 5 matches, 1 mismatch, and one gap of length 7 for the second sequence (chimp). Thus a total of 18 ? (+1) + 1 ? (-1) + (-5 + 6 ? (-1)) = 6. You beat the par. Click on the star and jump to the next stage!",
+                    "field_3": "Two new sequences (dog and bat) appear. Again, push them all to the left. Your score is 4. 18 matches and 1 gap of length 1 between the dog's sequence and its ancestor, and 5 matches and 14 mismatches between the bat sequence and the same ancestor (Thus a total of 23 ? (+1) + 14 ? (-1) + (-5) = 4). You can do better. How?",
+                    "field_4": "Shift the bottom sequence by one unit to the right starting from the seventh brick. You create an additional gap but you also create many matches. Did you notice? The ancestor changed. You have now 18 matches and 1 gap of length 2 with the dog's sequence, and 12 matches, 7 mismatches and 1 gap of length 1 with the bat's sequence. Your score is 30 ? (+1) + 7 ? (-1) + ( 2 ? -5 + 1 ? (-1)) = 12. Move to the next stage.",
+                    "field_5": "Now, you have to assemble your previous alignments. Your initial score is 14. It does not beat the par (19)? Intuitively, we want to find a better alignment of the 1st block (the two top sequences) and the 2nd block (the two lower sequences). How?",
+                    "field_6": "Shift the first block by 4 units to the right. This move creates two complete green columns. It also improves the similarity between the human's sequence and those of the dog and the bat. Your total score is now 26. How is it calculated?",
+                    "field_7": "Let's have a look at the human and chimp ancestor. Its alignment score with the human sequence is 11 (12 matches and 1 mismatch), and -5 with the chimp sequence (6 matches and 1 gap of length 7). Thus the score at this ancestor node is 11 + (-5) = 6.",
+                    "field_8": "We do the same thing for the dog and bat ancestor. Its alignment score with the dog sequence is 14 (16 matches and 2 mismatches) and -4 with the bat sequence (12 matches, 5 mismatches, 1 gap of length 1, and 1 gap of length 2). Thus, the score at this ancestor node is 14 + (-4) = 10.",
+                    "field_9": "To complete your score, you need to compute the alignment score of the human/chimp ancestor and dog/bat ancestor with the ancestor at the root of the tree. First, we compute the alignment score of the human/chimp ancestor with the global ancestor. There are 9 matches, 4 mismatches, 1 gap of length 4 and 1 gap of length 1. The score is 9 ? (+1) + 4 ? (-1) + ( 2 ? -5 + 3 ? (-1)) = -8.",
+                    "field_10": "Then, we compute the alignment score of the dog/bat ancestor with the global ancestor. There is 18 matches and the score is 18. Therefore, the score associated with the root is (-8) + 18 = 10.",
+                    "field_11": "Your final score is the sum of all individual scores previously computed. It is summarized in the tree, where each node is labeled with the score of the alignment of its descendants. Here, the score of the alignment of human and chimp is 6, the score  of the alignment of dog and bat is 10, the score of the alignment of ancestors with the root is 10. Thus, your total score is 26 and it is displayed at the root of the tree.",
+                    "field_12": "You have the highest score. Click the star and submit your puzzle. You are done! The level id for this puzzle is 3847. Now, you are ready to play!"
+                },
+                "misc": {
+                    "field_1": "match",
+                    "field_2": "mismatch",
+                    "field_3": "gap",
+                    "field_4": "phylogenetic tree"
+                }
+            },
+            "about": {
+                "field_1":"What's Phylo all about?",
+                "field_2":"Though it may appear to be just a game, Phylo is actually a framework for harnessing the computing power of mankind to solve a common problem; Multiple Sequence Alignments.",
+                "field_3": "What is a Multiple Sequence Alignment?",
+                "field_4": "A sequence alignment is a way of arranging the sequences of D.N.A, R.N.A or protein to identify regions of similarity. These similarities may be consequences of functional, structural, or evolutionary relationships between the sequences. From such an alignment, biologists may infer shared evolutionary origins, identify functionally important sites, and illustrate mutation events. More importantly, biologists can trace the source of certain genetic diseases.",
+                "field_5": "The Problem",
+                "field_6": "Traditionally, multiple sequence alignment algorithms use computationally complex heuristics to align the sequences. Unfortunately, the use of heuristics do not guarantee global optimization as it would be prohibitively computationally expensive to achieve an optimal alignment. This is due in part to the sheer size of the genome, which consists of roughly three billion base pairs, and the increasing computational complexity resulting from each additional sequence in an alignment.",
+                "field_7": "Our Approach",
+                "field_8": "Humans have evolved to recognize patterns and solve visual problems efficiently. By abstracting multiple sequence alignment to manipulating patterns consisting of coloured shapes, we have adapted the problem to benefit from human capabilities. <br>By taking data which has already been aligned by a heuristic algorithm, we allow the user to optimize where the algorithm may have failed.",
+                "field_9": "The Data",
+                "field_10": "All alignments were generously made available through UCSC Genome Browser. Infact, all alignments contain sections of human DNA which have been speculated to be linked to various genetic disorders, such as breast cancer. Every alignment is received, analyzed, and stored in a database, where it will eventually be re-introduced back into the global alignment as an optimization.",
+                "field_11": "For more information about any one of these topics, click here."
+            },
+            "credit": {
+                "field_1": "Project leaders (Media and scientific contact)",
+                "field_2": "Development team",
+                "field_3": "Original designers",
+                "field_4": "Supported by",
+                "field_5": "Follow us on",
+                "field_6": "Music",
+                "field_7": "Special Thanks",
+                "field_8": "Scientific Advisor",
+                "field_9": "Translation"
+            },
+            "ranking": {
+                "field_1": "2011 Phylo Ranking",
+                "field_2": "Rank, Username, Score",
+                "field_3": "General ranking",
+                "field_4": "2011 contributor",
+                "field_5": "First contributor",
+                "field_6": "Ranking per disease category",
+                "field_7": "BLOOD AND IMMUNE SYSTEM",
+                "field_8": "BONE AND SKIN",
+                "field_9": "BRAIN AND NERVOUS SYSTEM",
+                "field_10": "CANCER",
+                "field_11": "DIGESTIVE SYSTEM",
+                "field_12": "HEART AND CIRCULATORY SYSTEM",
+                "field_13": "METABOLIC DISORDERS",
+                "field_14": "MUSCLES",
+                "field_15": "REPRODUCTION SYSTEM",
+                "field_16": "RESPIRATORY SYSTEM",
+                "field_17": "SENSORY SYSTEM",
+                "field_18": "Information",
+                "field_19": "Disease classification",
+                "field_20": "Disease classification used in Phylo on November 29th, 2011.",
+                "field_21": "NB: the classification is subject to change.",
+                "field_22": "Scoring System",
+                "field_23": "Description of the scoring system",
+                "field_24": "The scores of registered users is based on the number of puzzles that improve the original DNA sequence alignment.",
+                "field_25": "We re-inserted all puzzle solutions at their original position in the 44-species multiple sequence alignment. Players have been credited of 1 point for every solution that increased the score of the complete genome alignment. Of course, duplicates have been removed. We report various rankings:",
+                "field_26": "General ranking: All puzzles considered. The players are sorted according to their total score.",
+                "field_27": "First contribution ranking: Only the first player who found the solution that have been inserted received 1 point for the puzzle. Other received 0 points.",
+                "field_28": "Disease category ranking: Only the puzzles whose sequences correspond to one gene related to a disease belonging to the specified category are considered. The list of categories and related diseases is described in the disease classification section."
+            },
+            "live_ranking": {
+                "field_1": "Phylo live ranking",
+                "field_2": "live ranking",
+                "field_3": "Monthly",
+                "field_4": "Weekly",
+                "field_5": "Levels completed"		
+            },
+            "results": {
+                "field_1": "2011 results",
+                "field_2": "A tarball will all data can be downloaded at"
+            },
+            "challenge": {
+                "field_1": "Challenges",
+                "field_2": "Challenge open",
+                "field_3": "Enter the name of a friend above, or just hit Play Now to challenge a random player!",
+                "field_4": "Play Now"
+            }
+        },
+        "footer": {
+            "field_1": "Phylo is a challenging flash game in which every puzzle completed contributes to mapping diseases within human DNA. Learn more.",
+            "field_2": "Join the phylo <a href='https://www.facebook.com/groups/127713783941517/'>community</a> on facebook or give us a thumbs up."
+        }
+    }
+}
