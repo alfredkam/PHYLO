@@ -6,6 +6,7 @@ define([
     "marionette",
     "mustache",
     "scripts/util/Request",
+    "scripts/views/app/index/IndexView",
     //TEMPLATES
     "text!tpl/app/index/Index.mustache",
     //this one is the jquery one
@@ -14,10 +15,10 @@ define([
     "bootbox"
 ], function(
     $, _, Backbone, Marionette, Mustache,
-    Request,
+    Request, IndexView,
     tpl
 ) {
-    var IndexView = Marionette.ItemView.extend({
+    var IndexView = IndexView.extend({
         initialize: function(options) {
             this.lang = options.lang || {};
             this.puzzle_id = options.puzzle_id;
