@@ -1,0 +1,1 @@
+window.fbAsyncInit=function(){FB.init({appId:"254079141380941",channelUrl:"//phylo.cs.mcgill.ca/channel.html",status:!0,cookie:!0,xfbml:!0})},function(a){var b,c="facebook-jssdk",d=a.getElementsByTagName("script")[0];a.getElementById(c)||(b=a.createElement("script"),b.id=c,b.async=!0,b.src="//connect.facebook.net/en_US/all.js",d.parentNode.insertBefore(b,d))}(document);
