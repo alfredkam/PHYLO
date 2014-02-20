@@ -102,6 +102,8 @@ define([
             self.user.set("name",decodeURI(myfullname));
             $("#login-box").hide();
             $(".login-btn").unbind("click");
+            cookie.create("hasPlayed",true,365);
+
             // show buttons. NB: hide expert button if necessary
             $.ajax({
                 type: "POST",
@@ -127,6 +129,7 @@ define([
             cookie.delete("fullname");
             cookie.delete("loginmode");
             cookie.delete("logid");
+            cookie.delete("hasPlayed");
             $("#logout").hide();
             window.guest = "guest";
             window.username ="guest";
@@ -236,7 +239,7 @@ define([
             $("#logout").hide();
             // init page: check cookie and register user if login using social account for the first time
             if (cookie.read("username")) {
-                console.log("user found");
+                // console.log("user found");
                 $(".login-btn").unbind("click");
                 // collect cookies data
                 var username = cookie.read("username");
@@ -325,6 +328,8 @@ define([
                     });
                 }
             }
+
+
         },
         socialLogin: function(provider) {
             console.log("Try social login with " + provider);
@@ -351,6 +356,7 @@ define([
                     cookie.create("loginmode", "Classic", 365);
                     cookie.create("logid", -1, 365);
                     self.createLoginData(username,username,"Classic",-1);
+
                 } else {
                     $("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 16"]);
                     console.log("Classic login test failed.");

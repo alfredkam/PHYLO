@@ -16,6 +16,7 @@ define([
      var IndexView = Marionette.ItemView.extend({
          initialize : function(options) {
             this.lang = options.lang || {};
+            this.langKey = options.langKey || "EN";
          },
          template : tpl,
          moveQueue : [],
@@ -26,7 +27,30 @@ define([
             "newMove #moveListener":"newMove",
             "newGame #moveListener" : "newGame",
             "undoMove #moveListener" :"undoMove",
-            "redoMove #moveListener" : "redoMove"
+            "redoMove #moveListener" : "redoMove",
+            "showTut #moveListener" : "showTut"
+         },
+         showTut : function(e){
+            var langKey = this.langKey;
+            cookie.create("hasPlayed",true,365000000);
+            bootbox.dialog({
+                message:"Would you like to try out our tutorial?",
+                title:"",
+                buttons:{
+                    success:{
+                        label:"Okay!",
+                        className:"btn-success",
+                        callback: function(){
+                            //console.log("dfdf");
+                            window.location = "#!/"+langKey+"/Tutorial";
+                        }
+                    },
+                    cancel:{
+                        label:"I know what I'm doing!",
+                        className:"btn-danger"
+                    }
+                }
+            })
 
          },
          newMove: function(e,move){

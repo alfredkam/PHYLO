@@ -1,9 +1,5 @@
 (function() {
-	// var startSound = new Audio("assets/sounds/startSound.wav"); // buffers automatically when created
 
-	// var countdownSound = new Audio("assets/sounds/countdownComplete.wav"); // buffers automatically when created
-	//var startSound = document.getElementById("startSound");
-	//var countdownSound = document.getElementById("countdownSound");
 	$.splash = {
 		//does the splash screen count down to start the game
 		countDown: function(fn) {
@@ -23,6 +19,10 @@
 					document.getElementById("startSound").play();
 					document.getElementById("game-audio").play();
 					$("#countDown").fadeOut("fast");
+					console.log($.cookie.read("hasPlayed"));
+					if($.cookie.read("hasPlayed")===""){
+						$("#moveListener").trigger("showTut");
+					}
 					fn();
 				} else {
 					$("#countDown-text").html(i);

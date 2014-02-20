@@ -339,7 +339,8 @@ define([
 			this.initHeaderFooter("Play", lang);
 			this.regions.contentRegion.reset();
 			this.regions.contentRegion.show(new IndexView({
-				lang : this.lang
+				lang : this.lang,
+				langKey : lang
 			}));
 			// NProgress.done();
 		},
