@@ -292,7 +292,7 @@
 	font-size: 28px;
 	position:relative;
 	top:3px;
-	margin-left:10px;
+	margin-left:5px;
 	cursor: pointer;
 }
 #runaway:hover {
@@ -316,6 +316,7 @@
 #volumePanel {
 	position:relative;
 	top:5px;
+	max-width: 50%;
 }
 #cycle:hover {
 	opacity: 1;
