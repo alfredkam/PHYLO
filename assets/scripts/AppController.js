@@ -68,7 +68,7 @@ define([
 				var browserLanguage = (navigator.language[0]+navigator.language[1])||"EN";
 				browserLanguage = browserLanguage.toUpperCase();
 				if(browserLanguage ==="ZH"){
-					language = navigator.language.toUpperCase();
+					currentLanguage = navigator.language.toUpperCase();
 				} else {
 					for (var i in langList) {
 						if (langList[i] === browserLanguage) {
@@ -77,7 +77,7 @@ define([
 						}
 					}
 				}
-				console.log(browserLanguage);
+				console.log(currentLanguage);
 
 				this.currentLang = this.currentLang||"EN";
 				this.currentPage = "";
