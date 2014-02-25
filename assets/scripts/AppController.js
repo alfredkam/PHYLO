@@ -78,7 +78,6 @@ define([
 					}
 				}
 				console.log(currentLang);
-
 				this.currentLang = this.currentLang||"EN";
 				this.currentPage = "";
 				this.regions = this.regions || new AppLayout({
