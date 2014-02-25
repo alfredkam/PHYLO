@@ -64,7 +64,22 @@ define([
 
 			if (!this.isInit)
 			{
-				this.currentLang = "EN";
+				var langList = ["DE","EN","FR","HE","KO","PT","RO","RU","SP","ZH-CN","ZH-HK"];
+				var browserLanguage = (navigator.language[0]+navigator.language[1])||"EN";
+				browserLanguage = browserLanguage.toUpperCase();
+				if(browserLanguage ==="ZH"){
+					language = navigator.language.toUpperCase();
+				} else {
+					for (var i in langList) {
+						if (langList[i] === browserLanguage) {
+							this.currentLang = browserLanguage;
+							break;
+						}
+					}
+				}
+				console.log(browserLanguage);
+
+				this.currentLang = this.currentLang||"EN";
 				this.currentPage = "";
 				this.regions = this.regions || new AppLayout({
 					el : "#app"
