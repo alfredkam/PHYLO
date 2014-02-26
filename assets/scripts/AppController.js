@@ -68,7 +68,7 @@ define([
 				var browserLanguage = (navigator.language[0]+navigator.language[1])||"EN";
 				browserLanguage = browserLanguage.toUpperCase();
 				if(browserLanguage ==="ZH"){
-					currentLang = navigator.language.toUpperCase();
+					this.currentLang = navigator.language.toUpperCase();
 				} else {
 					for (var i in langList) {
 						if (langList[i] === browserLanguage) {
@@ -77,7 +77,7 @@ define([
 						}
 					}
 				}
-				console.log(currentLang);
+				console.log(this.currentLang);
 				this.currentLang = this.currentLang||"EN";
 				this.currentPage = "";
 				this.regions = this.regions || new AppLayout({
@@ -112,7 +112,7 @@ define([
 			NProgress.start();
 			var langModel = {};
 			var self = this;
-			lang = lang || "EN";
+			lang = lang || currentLang ||"EN";
 			lang.toUpperCase();
 			// a good place for code that needs to be ran every page 
 			
