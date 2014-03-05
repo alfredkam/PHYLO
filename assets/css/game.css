@@ -516,10 +516,34 @@
 	position:relative;
 	display:block;
 	left:182px;
+	top:-30px;
 }
 /* end of score */
 /*highlighting */
+#postMove{
 
+	width:827px;
+	height:28px;
+	position:relative;
+	display:block;
+	left:182px;
+	-moz-border-radius: 1em 4em 1em 4em;
+	border-radius: 1em 4em 1em 4em;
+	/*top:-30px;*/
+	-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+	transition: width 2s;
+}
+#postMove .nonSequence{
+	height:28px;
+	width:28px;
+	position:absolute;
+	display:inline-block;
+	border:0px solid #383838;
+	z-index: 11;
+	/*margin-top: 2px;*/
+	margin-left: 1px;
+	border-radius: 3px;
+}
 .highlighter-2 {
 	box-shadow: inset 0px 0px 0px 4px white;
 	-ms-box-shadow: inset 0px 0px 0px 4px white;
@@ -528,4 +552,13 @@
 	-o-box-shadow: inset 0px 0px 0px 4px white;
 	-khtml-box-shadow: inset 0px 0px 0px 4px white;
 }
+.highlighter-3 {
+	box-shadow: inset 0px 0px 0px 4px black;
+	-ms-box-shadow: inset 0px 0px 0px 4px black;
+	-moz-box-shadow: inset 0px 0px 0px 4px black;
+	-webkit-box-shadow: inset 0px 0px 0px 4px black;
+	-o-box-shadow: inset 0px 0px 0px 4px black;
+	-khtml-box-shadow: inset 0px 0px 0px 4px black;
+}
 /* end of highligher */
+

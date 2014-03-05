@@ -14,7 +14,9 @@
 			for(var i=0;i < active.length;i++) {
 				for(j=0, arr = track[active[i]], len = track[active[i]].length;j< len;j++) {
 					try {
+						//ancestor is not empty
 						if(ancestor[j].toString().toLowerCase() != "x" && ancestor[j] != 0 
+							//sequence is not equal to ancestor
 						&& (!$("#"+arr[j]).hasClass("nuc-"+ancestor[j].toString().toUpperCase()))) {
 							$("#"+arr[j]).addClass("highlighter-2");
 						}

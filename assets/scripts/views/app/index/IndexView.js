@@ -21,6 +21,7 @@ define([
          template : tpl,
          moveQueue : [],
          currMove : 0,
+         currScore:0,
          queueSize: 6,
          events:{
             "click #volume i":"toggleVolume",
@@ -51,15 +52,14 @@ define([
                     }
                 }
             })
-
          },
          newMove: function(e,move){
             //a function to detect new move if the vboard is diffrent from the old board
             //also pushes something the board to the queue as well.
             //will need to experiment on what size to limit the queue to
             if(DEBUG){
-            console.log("move made :");
-            console.log(move.seq);
+                console.log("move made :");
+                console.log(move.seq);
 
             // if(this.currMove!=0){
             //     console.log(JSON.stringify(move));
@@ -79,6 +79,8 @@ define([
             }
             //} 
             this.undoRedoButtonsStatus();
+            this.diffHighlighting();
+            this.currScore = $.fitch.score();
          },
          newGame : function(){
             //quick reset for the move queue and position holder
@@ -105,6 +107,7 @@ define([
             $.board.stats();
             this.currMove--;
             this.undoRedoButtonsStatus();
+            this.currScore = $.fitch.score();
 
         },
          redoMove: function(){
@@ -126,6 +129,7 @@ define([
            $.board.stats();
            this.currMove++;
            this.undoRedoButtonsStatus();
+           this.currScore = $.fitch.score();
          },
          //a function to use so the buttons are in the right state
          undoRedoButtonsStatus : function(){
@@ -158,6 +162,33 @@ define([
             $("#muteBtn").trigger(cusEvent);
             return false;
          },
+         diffHighlighting : function(){
+            if(this.currMove<=1){
+                return;
+            }
+            var score = $.fitch.score();
+            // var lightCol  = this.currScore<score?"green":"red";
+            var lightCol = this.currScore<score?"rgba(33, 127, 29, 0.35)":"rgba(127, 29, 29, 0.35)";
+            lightCol = score==this.currScore?"white":lightCol;
+            $("#postMove").css("background-color",lightCol);
+            console.log(this.currMove);
+            var newMove = this.moveQueue[this.currMove-1];
+            var oldMove = this.moveQueue[this.currMove-2];
+            var len = oldMove.length;
+            $("#postMove").html("");
+            for(var i=0;i<len;i++){
+                for(var j=0;j<oldMove[i].length;j++){
+                    if(newMove[i][j]!=oldMove[i][j] && oldMove[i][j]!=="x"){
+                        // console.log(i+":"+j+","+newMove[i][j]+"+"+oldMove[i][j]);
+                        var d = document.createElement("div");
+                        $(d).addClass($("#"+oldMove[i][j]).attr("class")+" nonSequence").removeClass("sequence").removeClass("highlighter-2");
+                        $(d).attr("style","left: "+j*33+"px;");
+                        $(d).appendTo($("#postMove"));
+                    }
+                }
+            }
+            return;
+         }
      });
      return IndexView;
 });

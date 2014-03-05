@@ -14,7 +14,6 @@
 			prev : 0,
 			prevMid : 4
 		},
-		undoArray : [],
 		setScore : function(newScore) {
 			this.draw(newScore);	
 			document.getElementById("redrawSound").play();
