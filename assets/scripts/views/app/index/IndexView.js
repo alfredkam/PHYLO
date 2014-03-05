@@ -167,11 +167,9 @@ define([
                 return;
             }
             var score = $.fitch.score();
-            // var lightCol  = this.currScore<score?"green":"red";
             var lightCol = this.currScore<score?"rgba(33, 127, 29, 0.35)":"rgba(127, 29, 29, 0.35)";
             lightCol = score==this.currScore?"white":lightCol;
             $("#postMove").css("background-color",lightCol);
-            console.log(this.currMove);
             var newMove = this.moveQueue[this.currMove-1];
             var oldMove = this.moveQueue[this.currMove-2];
             var len = oldMove.length;
@@ -184,11 +182,24 @@ define([
                         $(d).addClass($("#"+oldMove[i][j]).attr("class")+" nonSequence").removeClass("sequence").removeClass("highlighter-2");
                         $(d).attr("style","left: "+j*33+"px;");
                         $(d).appendTo($("#postMove"));
+                        $(oldMove[i][j]).css
                     }
                 }
             }
+            this.lineHighlighting();
             return;
-         }
+         },
+         lineHighlighting : function(){
+            var len = this.moveQueue[this.currMove-1].length;
+            $(".glowTreeLine").removeClass("glowTreeLine");
+            for(var i =0;i<len;i++){
+                if(!$("#row"+i+" div.sequence").hasClass("highlighter-2")){
+                    console.log(i);
+                    $(".h"+i).addClass("glowTreeLine");
+                }
+            }
+         },
+
      });
      return IndexView;
 });

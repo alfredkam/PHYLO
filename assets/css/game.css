@@ -544,6 +544,7 @@
 	margin-left: 1px;
 	border-radius: 3px;
 }
+
 .highlighter-2 {
 	box-shadow: inset 0px 0px 0px 4px white;
 	-ms-box-shadow: inset 0px 0px 0px 4px white;
@@ -559,6 +560,21 @@
 	-webkit-box-shadow: inset 0px 0px 0px 4px black;
 	-o-box-shadow: inset 0px 0px 0px 4px black;
 	-khtml-box-shadow: inset 0px 0px 0px 4px black;
+}
+.glowTreeLine{
+	background: #ff00aa;
+	animation: glow 0.5s infinite;
+	-webkit-animation: glow 1s infinite; /* Safari and Chrome */
+	animation-direction:alternate;
+	-webkit-animation-direction:alternate; /* Safari and Chrome */
+}
+@keyframe glow{
+	from{background: #ff00aa;}
+	to{background: #ff00ff;}
+}
+@-webkit-keyframes glow{
+	from{background: #ff00aa;}
+	to{background: #ff00ff;}
 }
 /* end of highligher */
 

@@ -23,7 +23,6 @@
 										$.events.untouch(document, "end");
 										$.physics.snap();
 										var score = $.fitch.score();
-										$("#moveListener").trigger("newMove",{seq: $.sequence.track});
 
 										if($.phylo.bestScore < score) {
 											$.phylo.bestScore = score;
@@ -38,7 +37,8 @@
 										} else {
 											$.board.unapprove();
 										}
-											
+										$("#moveListener").trigger("newMove",{seq: $.sequence.track});
+	
 									}
 								});
 							}

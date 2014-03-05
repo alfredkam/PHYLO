@@ -84,9 +84,9 @@
 					var hTop_2 = n.node2*34 + 34/2 - 2;
 					var vTop_1 = Math.abs(hTop_2-hTop_1);
 					str+= "<div class='vLine' style='top:"+hTop_1+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
-					str+= "<div class='hLine' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
+					str+= "<div class='hLine h"+n.node1+"' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
 					//build bot		
-					str+= "<div class='hLine' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
+					str+= "<div class='hLine h"+n.node2+"' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
 				} else if(n.child == 1) {
 					var hLeft = n.depth*assignWidth+34*.3;
 					var dist = getDist(n.node2);
@@ -96,8 +96,8 @@
 					var vTop_1 = Math.abs(hTop_2-hTop_1);
 					
 					str+= "<div class='vLine' style='top:"+(hTop_2>hTop_1?hTop_1:hTop_2)+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
-					str+= "<div class='hLine' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
-					str+= "<div class='hLine' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(hWidth)+"px'></div>";
+					str+= "<div class='hLine h"+n.node1+"' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
+					str+= "<div class='hLine h"+n.node2+"' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(hWidth)+"px'></div>";
 					
 				} else if(n.child == 2) {
 					var hLeft = n.depth*assignWidth+34*.3;
@@ -111,8 +111,8 @@
 					var vTop_1 = hTop_2 - hTop_1;
 					
 					str+= "<div class='vLine' style='top:"+(hTop_1)+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
-					str+= "<div class='hLine' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(hWidth_1)+"px'></div>";
-					str+= "<div class='hLine' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(hWidth_2)+"px'></div>";
+					str+= "<div class='hLine h"+n.node1+"' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(hWidth_1)+"px'></div>";
+					str+= "<div class='hLine  h"+n.node2+"' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(hWidth_2)+"px'></div>";
 				}
 			
 				return str;
