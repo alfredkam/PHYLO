@@ -196,7 +196,13 @@ define([
                 if(!$("#row"+i+" div.sequence").hasClass("highlighter-2")){
                     console.log(i);
                     $(".h"+i).addClass("glowTreeLine");
+                    for(j=i+1;j<len;j++){
+                        if (!$("#row"+j+" div.sequence").hasClass("highlighter-2")){
+                            $("."+i+"v"+j).addClass("glowTreeLine");
+                        }
+                    }
                 }
+                //not sure if its worth it
             }
          },
 

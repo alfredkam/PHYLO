@@ -77,13 +77,14 @@
 				
 				var mWidth = 178;
 				mWidth-=32;
+				var vName = n.node1<n.node2?n.node1+"v"+n.node2:n.node2+"v"+n.node1;
 				if(n.child == 0) {
 					//build top
 					var hLeft = n.depth*assignWidth+34*.3;
 					var hTop_1 = n.node1*34 + 34/2 - 2;
 					var hTop_2 = n.node2*34 + 34/2 - 2;
 					var vTop_1 = Math.abs(hTop_2-hTop_1);
-					str+= "<div class='vLine' style='top:"+hTop_1+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
+					str+= "<div class='vLine "+vName+"' style='top:"+hTop_1+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
 					str+= "<div class='hLine h"+n.node1+"' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
 					//build bot		
 					str+= "<div class='hLine h"+n.node2+"' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
@@ -95,7 +96,7 @@
 					var hWidth = assignWidth*Math.abs((n.depth-dist.depth));
 					var vTop_1 = Math.abs(hTop_2-hTop_1);
 					
-					str+= "<div class='vLine' style='top:"+(hTop_2>hTop_1?hTop_1:hTop_2)+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
+					str+= "<div class='vLine "+vName+"' style='top:"+(hTop_2>hTop_1?hTop_1:hTop_2)+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
 					str+= "<div class='hLine h"+n.node1+"' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
 					str+= "<div class='hLine h"+n.node2+"' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(hWidth)+"px'></div>";
 					
@@ -110,7 +111,7 @@
 					var hWidth_2 = assignWidth*Math.abs((n.depth-dist_2.depth));
 					var vTop_1 = hTop_2 - hTop_1;
 					
-					str+= "<div class='vLine' style='top:"+(hTop_1)+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
+					str+= "<div class='vLine "+vName+"' style='top:"+(hTop_1)+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
 					str+= "<div class='hLine h"+n.node1+"' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(hWidth_1)+"px'></div>";
 					str+= "<div class='hLine  h"+n.node2+"' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(hWidth_2)+"px'></div>";
 				}
