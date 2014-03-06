@@ -567,6 +567,12 @@
 	-webkit-animation: glow 1s infinite; /* Safari and Chrome */
 	animation-direction:alternate;
 	-webkit-animation-direction:alternate; /* Safari and Chrome */
+
+	-moz-animation: glow 1s infinite; /* ff */
+	-moz-animation-direction:alternate; /* ff */
+
+	-o-animation: glow 1s infinite; /* opera? */
+	-o-animation-direction:alternate; /* opera? MDN said so? */
 }
 @keyframe glow{
 	0%	{background: #6D6D6D;}
@@ -574,6 +580,16 @@
 	100% {background: #ff00aa;}
 }
 @-webkit-keyframes glow{
+	0%	{background: #6D6D6D;}
+	50% {background: #ff00aa;}
+	100% {background: #ff00aa;}
+}
+@-moz-keyframes glow{
+	0%	{background: #6D6D6D;}
+	50% {background: #ff00aa;}
+	100% {background: #ff00aa;}
+}
+@-o-keyframes glow{
 	0%	{background: #6D6D6D;}
 	50% {background: #ff00aa;}
 	100% {background: #ff00aa;}
