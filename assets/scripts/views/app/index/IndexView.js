@@ -23,13 +23,15 @@ define([
          currMove : 0,
          currScore:0,
          queueSize: 6,
+         geneTree:{},
          events:{
             "click #volume i":"toggleVolume",
             "newMove #moveListener":"newMove",
             "newGame #moveListener" : "newGame",
             "undoMove #moveListener" :"undoMove",
             "redoMove #moveListener" : "redoMove",
-            "showTut #moveListener" : "showTut"
+            "showTut #moveListener" : "showTut",
+            "newStage #moveListener" :"newStage"
          },
          showTut : function(e){
             var langKey = this.langKey;
@@ -79,9 +81,48 @@ define([
             }
             //} 
             this.undoRedoButtonsStatus();
-            this.diffHighlighting();
+            // this.diffHighlighting();
             this.currScore = $.fitch.score();
+            this.blockHL();
          },
+
+         blockHL :function(){
+            var tree = $.phylo.tree;
+            var stage = this.moveQueue[this.currMove - 1]; //contains the div
+            var stageVal = $.sequence.nucleotide;
+            var lvl = $.stage.current;
+            var groups = [];
+            var col = 0;
+            for (k = 0; k < 25; k++) {
+                //instead of all of the tree, we do a few
+                groups[k] = []
+                for (var i = 0; i <= lvl; i++) {
+                    //tree[i].node1 gives the row
+                    //stage[x] = gives the corresponding row array
+                    //give us the div number
+                    var n1 = stage[tree[i].node1][k];
+                    var n2 = stage[tree[i].node2][k];
+                    if (tree[i].child === 0) {
+                        if (stageVal[n1] === stageVal[n2]) {
+                            // $("#"+n1).addClass("hl"+col);
+                            // $("#"+n2).addClass("hl"+col);
+                            groups[k][i] = [stageVal[n1]];
+                        } else {
+                            groups[k][i] = [stageVal[n1], stageVal[n2]];
+                        }
+
+                    } else if (tree[i].child === 1) {
+                        //n1 is the leave
+                        groups[k][i] = $.extend(true,[],groups[k][tree[i].node2]);
+                        groups[k][i].push(stageVal[n1]);
+                    } else {
+                        //merge the two together
+                        groups[k][i] = _.union(groups[k][tree[i].node1], groups[k][tree[i].node2]);
+                    }
+                }
+            }
+            console.log(groups);
+        },
          newGame : function(){
             //quick reset for the move queue and position holder
             this.currMove = 0;
@@ -182,7 +223,6 @@ define([
                         $(d).addClass($("#"+oldMove[i][j]).attr("class")+" nonSequence").removeClass("sequence").removeClass("highlighter-2");
                         $(d).attr("style","left: "+j*33+"px;");
                         $(d).appendTo($("#postMove"));
-                        $(oldMove[i][j]).css
                     }
                 }
             }
