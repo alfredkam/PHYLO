@@ -92,7 +92,7 @@ define([
             var stageVal = $.sequence.nucleotide;
             var lvl = $.stage.current;
             var groups = [];
-            var col = 0;
+            var top = [];
             for (k = 0; k < 25; k++) {
                 //instead of all of the tree, we do a few
                 groups[k] = []
@@ -103,25 +103,70 @@ define([
                     var n1 = stage[tree[i].node1][k];
                     var n2 = stage[tree[i].node2][k];
                     if (tree[i].child === 0) {
-                        if (stageVal[n1] === stageVal[n2]) {
-                            // $("#"+n1).addClass("hl"+col);
-                            // $("#"+n2).addClass("hl"+col);
-                            groups[k][i] = [stageVal[n1]];
-                        } else {
-                            groups[k][i] = [stageVal[n1], stageVal[n2]];
-                        }
+                        // if (stageVal[n1] === stageVal[n2]) {
+                        //     // $("#"+n1).addClass("hl"+col);
+                        //     // $("#"+n2).addClass("hl"+col);
+                        //     groups[k][i] = [stageVal[n1]];
+                        // } else {
+                        groups[k][i] = [stageVal[n1], stageVal[n2]];
+                        // }
 
                     } else if (tree[i].child === 1) {
                         //n1 is the leave
                         groups[k][i] = $.extend(true,[],groups[k][tree[i].node2]);
-                        groups[k][i].push(stageVal[n1]);
+                        groups[k][i] = _.union([stageVal[n1]],[groups[k][i]]);
+
+                        
                     } else {
                         //merge the two together
-                        groups[k][i] = _.union(groups[k][tree[i].node1], groups[k][tree[i].node2]);
+                        groups[k][i] = _.union([groups[k][tree[i].node1]], [groups[k][tree[i].node2]]);
                     }
                 }
             }
+            console.log(top);
             console.log(groups);
+            var visited={};
+            var tops = this.getTops(lvl,stage);
+
+        },
+        getTops : function(lvl){
+            //int lvl, $.phylo.tree stage
+            // console.log(stage);
+            var stage = $.phylo.tree;
+            var findTop = function(node,depth,stage){
+                var top =0;
+                for (var i = 0; i <= lvl; i++) {
+                    if ((stage[i].node1 === node || stage[i].node2 === node)) {
+                        if (depth > stage[i].depth) {
+                            depth = stage[i].depth;
+                            top = i;
+                            console.log(i,node,depth,lvl);
+
+                            i = 0; //not sure how the tree is made
+                        }
+                        else if(depth===stage[i].depth){
+                            top=i;
+                        }
+                    }
+                }
+                return {depth:depth,top:top};
+            }
+            var top ={};
+            for(var i=0;i<=lvl;i++){
+                var t1= findTop(stage[i].node1,stage[i].depth,stage);
+                console.log(t1);
+                var t2= findTop(stage[i].node2,stage[i].depth,stage);
+
+                console.log(t2);
+                top[t1.depth<t2.depth?t1.top:t2.top]=true;
+                console.log(t1.deth<t2.depth?t1.top:t2.top);
+
+            }
+
+            console.log(top);
+
+            return top;
+
         },
          newGame : function(){
             //quick reset for the move queue and position holder
