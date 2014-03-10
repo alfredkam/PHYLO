@@ -71,102 +71,167 @@ define([
             this.moveQueue[this.currMove] = $.extend(true,[],move.seq);
             this.currMove++;
             if(this.moveQueue.length>this.currMove){
-                console.log("length reduced");
                 this.moveQueue = this.moveQueue.slice(this.moveQueue.length-this.queueSize>0?this.moveQueue.length-this.queueSize:0,this.currMove);
                 this.currMove  = this.moveQueue.length;
-
             }
             if(DEBUG){
                 console.log(this.currMove);
             }
-            //} 
             this.undoRedoButtonsStatus();
             // this.diffHighlighting();
-            this.currScore = $.fitch.score();
-            this.blockHL();
-         },
+            this.lineHighlighting();
 
-         blockHL :function(){
+            this.currScore = $.fitch.score();
+            this.blockTree();
+         },
+         blockTree :function(){
             var tree = $.phylo.tree;
             var stage = this.moveQueue[this.currMove - 1]; //contains the div
             var stageVal = $.sequence.nucleotide;
             var lvl = $.stage.current;
+            var tops = this.getTops(lvl);
             var groups = [];
-            var top = [];
+            var highlightNo=0;
+            var alignments = $.board.getJsonAlignments().alignments;
+            $("#hlCSS").html("");
+            this.removeCSS();
             for (k = 0; k < 25; k++) {
                 //instead of all of the tree, we do a few
                 groups[k] = []
                 for (var i = 0; i <= lvl; i++) {
+                    groups[k][i]={G:[],C:[],A:[],T:[],"":[]};
                     //tree[i].node1 gives the row
                     //stage[x] = gives the corresponding row array
-                    //give us the div number
-                    var n1 = stage[tree[i].node1][k];
-                    var n2 = stage[tree[i].node2][k];
+                    var n1 = stageVal[stage[tree[i].node1][k]];
+                    var n2 = stageVal[stage[tree[i].node2][k]];
+                    if(n1===undefined){
+                        n1="";
+                    }
+                    if(n2===undefined){
+                        n2="";
+                    }
                     if (tree[i].child === 0) {
-                        // if (stageVal[n1] === stageVal[n2]) {
-                        //     // $("#"+n1).addClass("hl"+col);
-                        //     // $("#"+n2).addClass("hl"+col);
-                        //     groups[k][i] = [stageVal[n1]];
-                        // } else {
-                        groups[k][i] = [stageVal[n1], stageVal[n2]];
-                        // }
+                        // groups[k][i] = [stageVal[n1], stageVal[n2]];
+                        // groups[k][i][n1].push(tree[i].node1);
+                        // groups[k][i][n1].push(tree[i].node1);
+                        if(alignments[tree[i].node1][k]!=="x"){
+                            groups[k][i][n1].push(alignments[tree[i].node1][k]);
+                        }
+                        // groups[k][i][n2].push(tree[i].node2);
+                        if(alignments[tree[i].node2][k]!=="x"){
+                            groups[k][i][n2].push(alignments[tree[i].node2][k]);
+                        }
 
                     } else if (tree[i].child === 1) {
                         //n1 is the leave
-                        groups[k][i] = $.extend(true,[],groups[k][tree[i].node2]);
-                        groups[k][i] = _.union([stageVal[n1]],[groups[k][i]]);
-
-                        
+                        // groups[k][i] = $.extend(true,[],groups[k][tree[i].node2]);
+                        // groups[k][i] = _.union([stageVal[n1]],[groups[k][i]]);
+                        if(alignments[tree[i].node1][k]!=="x"){
+                            groups[k][i][n1].push(alignments[tree[i].node1][k]);
+                        }                        //copy the values over
+                        var loc = tree[i].node2;
+                        for(var a in groups[k][i]){
+                            // group[k][i][a]+=groups[k][loc][a];
+                            groups[k][i][a] = _.union(groups[k][i][a],groups[k][loc][a]);
+                        }
                     } else {
-                        //merge the two together
-                        groups[k][i] = _.union([groups[k][tree[i].node1]], [groups[k][tree[i].node2]]);
+                        // groups[k][i] = _.union([groups[k][tree[i].node1]], [groups[k][tree[i].node2]]);
+                        var loc1 = tree[i].node1;
+                        var loc2 = tree[i].node2;
+                        for(var a in groups[k][i]){
+                            groups[k][i][a] = _.union(groups[k][i][a],groups[k][loc1][a]);
+                            groups[k][i][a] = _.union(groups[k][i][a],groups[k][loc2][a]);
+                        }
+                    }
+                    delete groups[k][i][""];
+                    if(tops[i]){
+                        highlightNo = this.groupHighlight(groups[k][i],highlightNo);
                     }
                 }
             }
-            console.log(top);
-            console.log(groups);
-            var visited={};
-            var tops = this.getTops(lvl,stage);
+        },
+        groupHighlight : function(group,highlightNo){
+            //we first find max
+            var max=-1;
+            var maxLoc=0;
+            for(var i in group){
+                if(max<group[i].length){
+                    maxLoc =i;
+                    max = group[i].length;
+                }
+            }
+            // console.log(maxLoc);
+            // console.log(max);
+            if(max>1){
+                console.log(group);
+
+                for(var i=0;i<group[maxLoc].length;i++){
+                    console.log(group[maxLoc][i]);
+
+                    $("#"+group[maxLoc][i]).addClass("hl-"+highlightNo);
+                    // console.log(highlightNo);
+                }
+                this.addCSS(".hl-"+highlightNo+"{ "+
+                    "outline-color: "+
+                    'rgb('
+                                + (Math.floor(Math.random() * 256)) + ','
+                                + (Math.floor(Math.random() * 256)) + ','
+                                + (Math.floor(Math.random() * 256)) + ');'
+                    +"outline-style: solid;"+
+                    "outline-width: 2px;"+"}");
+                highlightNo++;
+
+
+            }
+
+            return highlightNo;
 
         },
-        getTops : function(lvl){
-            //int lvl, $.phylo.tree stage
-            // console.log(stage);
+        addCSS : function(str){
+            $("#hlCSS").append(str);
+        },
+        removeCSS : function(){
+            var x = $("[class*='hl-']");
+            for(var i=0;i<x.length;i++){
+                x[i].className = x[i].className.replace(/\bhl.\d{1,3}-*?\b/g, '');
+            }
+        },
+        // recurHighlight : function(node,cols){
+        //     //two childs
+        //     if(typeof node[0] ==="object"){
+        //         cols = this.recurHighlight(node[0],cols);
+        //         cols = this.recurHighlight(node[1],cols);
+        //     }
+        //     //one child
+        //     else if (typeof node[1] ==="object"){
+        //         cols = this.recurHighlight(node[1],cols);
+        //         cols[node[0]]++;
+        //     }
+        //     //only leaves
+        //     else{
+        //         cols[node[1]]++;
+        //         cols[node[0]]++;
+        //     }
+        //     return cols;
+        // },
+        getTops: function(lvl){
             var stage = $.phylo.tree;
-            var findTop = function(node,depth,stage){
-                var top =0;
-                for (var i = 0; i <= lvl; i++) {
-                    if ((stage[i].node1 === node || stage[i].node2 === node)) {
-                        if (depth > stage[i].depth) {
-                            depth = stage[i].depth;
-                            top = i;
-                            console.log(i,node,depth,lvl);
-
-                            i = 0; //not sure how the tree is made
-                        }
-                        else if(depth===stage[i].depth){
-                            top=i;
-                        }
-                    }
-                }
-                return {depth:depth,top:top};
-            }
-            var top ={};
+            var tops = {};
             for(var i=0;i<=lvl;i++){
-                var t1= findTop(stage[i].node1,stage[i].depth,stage);
-                console.log(t1);
-                var t2= findTop(stage[i].node2,stage[i].depth,stage);
-
-                console.log(t2);
-                top[t1.depth<t2.depth?t1.top:t2.top]=true;
-                console.log(t1.deth<t2.depth?t1.top:t2.top);
-
+                if(stage[i].child===0){
+                    tops[i]=true;
+                }
+                if(stage[i].child===1){
+                    tops[i]=true;
+                    tops[stage[i].node2]=false;
+                }
+                if(stage[i].child===2){
+                    tops[i]=true;
+                    tops[stage[i].node2]=false;
+                    tops[stage[i].node1]=false;
+                }
             }
-
-            console.log(top);
-
-            return top;
-
+            return tops;
         },
          newGame : function(){
             //quick reset for the move queue and position holder
@@ -175,10 +240,8 @@ define([
          },
          undoMove: function(){
             if(DEBUG){
-
                 console.log(this.currMove);
             }
-
             if(this.currMove-2<0){
                 return;
             }
@@ -196,7 +259,7 @@ define([
             this.currScore = $.fitch.score();
 
         },
-         redoMove: function(){
+        redoMove: function(){
             if(DEBUG){
 
                 console.log(this.currMove);
@@ -271,7 +334,6 @@ define([
                     }
                 }
             }
-            this.lineHighlighting();
             return;
          },
          lineHighlighting : function(){
@@ -279,7 +341,7 @@ define([
             $(".glowTreeLine").removeClass("glowTreeLine");
             for(var i =0;i<len;i++){
                 if(!$("#row"+i+" div.sequence").hasClass("highlighter-2")){
-                    console.log(i);
+                    // console.log(i);
                     $(".h"+i).addClass("glowTreeLine");
                     for(j=i+1;j<len;j++){
                         if (!$("#row"+j+" div.sequence").hasClass("highlighter-2")){
