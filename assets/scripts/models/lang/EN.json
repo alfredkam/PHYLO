@@ -39,6 +39,9 @@
         "boardColor" :"Board Color:",
         "accept":"OK"
     },
+    "guide":{
+
+    },
     "body": {
         "misc": {
             "invalidPuzzle" : "Sorry, this puzzle is no longer available.",
