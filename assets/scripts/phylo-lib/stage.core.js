@@ -99,7 +99,13 @@
 		end : false,
 		//the next stage splash notification
 		splash: function(x) {
-			$("#splash").html("Stage "+(x+1)).show();
+			var stageString = "Stage"
+			try {
+				stageString = window.lang.body.play.gameselect["game board"]["field 3"]
+			}
+			catch(e){
+			}
+			$("#splash").html(stageString+" "+(x+1)).show();
 			window.setTimeout(function(){
 				$("#splash").fadeOut("fast");
 			},800);
