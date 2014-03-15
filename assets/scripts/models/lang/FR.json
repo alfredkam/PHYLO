@@ -39,6 +39,12 @@
         "boardColor" :"Couleur du plateau:",
         "accept":"OK"
     },
+    "guide":{
+        "objective" : "Ton but est de déplacer les séquences de blocs horizontalement dans le but de créer le maximum de colonnes de couleurs similaires. Chaque alignement de couleur te donne un bonus.",
+        "penalty" : "Les disparités de couleurs et les espaces vides sont inévitables et tu es pénalisé pour cela. Ton challenge est de trouver la meilleur balance entre les bonus et les pénalités.",
+        "tree" : "As-tu remarqué l’arbre sur la gauche? Il indique quelles séquences doivent être alignées en priorité.",
+        "stage":"Quand ton score est égal ou supérieur au par, une étoile s’illumine en bas a droite. Clique dessus pour atteindre le niveau suivant."
+    },
     "body": {
         "misc": {
             "invalidPuzzle" : "Désolé, ce puzzle n'est plus disponible.",

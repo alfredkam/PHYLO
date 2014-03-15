@@ -39,6 +39,12 @@
         "boardColor" :"Culoare pentru jocuri:",
         "accept":"Bine"
     },
+    "guide":{
+        "objective" : "Obiectivul dumneavoastră este de a muta secvenţa de blocuri în direcţie orizontală pentru a crea numărul maxim de coloane din culori similare. Fiecare potrivire de culoare vă oferă un bonus.",
+        "penalty" : "Nepotrivirile dintre culori şi decalajele sunt inevitabile, în consecinţă veţi fi penalizat. Provocarea dumneavoastră este să găsiţi compromisul optim dintre bonusuri şi penalităţi.",
+        "tree" : "Aţi observat arborele din stânga? El vă spune care secvenţe trebuiesc aliniate după prioritate.",
+        "stage":"Când scorul vostru este egal sau mai mare decât scorul de egalitate, o stea strălucitoare va apărea în colţul dreapta jos. Apăsaţi pe ea să promovaţi la următorul stadiu."
+    },
     "body": {
         "misc": {
             "invalidPuzzle" : "Ne pare rău, acest puzzle nu mai este disponibil.",
