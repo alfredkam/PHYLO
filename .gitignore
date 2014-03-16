@@ -64,3 +64,9 @@ local.properties
 .DS_Store
 
 *.pnm
+
+assets/img/guide/guide-objective-tmp.png
+
+assets/img/guide/guide-penalty-tmp.png
+
+assets/img/guide/guide-stage-tmp.png
