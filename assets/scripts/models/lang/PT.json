@@ -39,6 +39,12 @@
         "boardColor" :"Do tabuleiro de cores:",
         "accept":"OK"
     },
+    "guide":{
+        "objective" : "Tu objetivo es mover las secuencias de bloques horizontalmente para crear el máximo número de columnas de colores similares. Cada color apareado te da una bonificación.",
+        "penalty" : "Siempre habra colores sin aparear y espacios, por los que recibirás sanciones. Tu reto es encontrar la mejor combinación entre bonificaciones y sanciones.",
+        "tree" : "¿Te diste cuenta del árbol a la izquierda? Te dice que secuencias tienen prioridad de alinearse.",
+        "stage":"Cuando tu puntuación es igual o más alta que la de la computadora, un estrella brillante aparece en la esquina inferior derecha. Hazle click para ir a la siguiente etapa."
+    },
     "body": {
         "misc": {
             "invalidPuzzle" : "Desculpe, este puzzle não está mais disponível.",
