@@ -18,18 +18,24 @@
              </li><li>
              <a id='tutorial' class='isTab' href='#!/{{lang}}/Tutorial'><div>{{header.field 2}}</div></a>
              </li>
-             <li>
-                <a id='about' class='isTab' href='#!/{{lang}}/About'><div>{{header.field 3}}</div></a>
-            </li>
+
              <li>
              <a id='ranking' class='isTab' href='#!/{{lang}}/Ranking'><div>{{header.field 5}}</div></a>
             </li>
-             <li class='showInLogin'>
-             <a id='history' class='isTab' href='#!/{{lang}}/History'><div>{{header.field 15}}</div></a>
-             </li>
-             <li class='showInLogin showExpertOptions'>
-             <a id='expert' class='isTab' href='#!/{{lang}}/Expert'><div>{{header.field 16}}</div></a>
-             </li>
+            <li>
+                <a id='blog' class='isTab' href='http://blogs.cs.mcgill.ca/phylo/'><div>{{body.footer.field 3}}</div></a>
+            </li>
+            {{#body.footer.education}}
+            <li>
+            <a id="teachers" class="isTab" href="http://phylo.cs.mcgill.ca/teaching/"><div>{{body.footer.education}}</div></a>
+            </li>
+            {{/body.footer.education}}
+            <li class='showInLogin'>
+                <a id='history' class='isTab' href='#!/{{lang}}/History'><div>{{header.field 15}}</div></a>
+            </li>
+            <li class='showInLogin showExpertOptions'>
+                <a id='expert' class='isTab' href='#!/{{lang}}/Expert'><div>{{header.field 16}}</div></a>
+            </li>
          </ul>
      </div>
          <div id='top-panel-right'>

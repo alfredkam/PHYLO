@@ -478,7 +478,7 @@ a.btn.musicDisabled:hover{
 #nav #tutorial div:hover, #nav #tutorial div.onSelect, .tablet-tutorial-btn div {
 	background-color: darkOrchid;
 }
-#nav #about div:hover, #nav #about div.onSelect, .tablet-about-btn div, .tablet-feedback-btn div {
+#nav #blog div:hover, #nav #blog div.onSelect, .tablet-blog-btn div, .tablet-feedback-btn div {
 	background-color: green;
 }
 /*#nav #credits div:hover, #nav #credits div.onSelect, .tablet-credits-btn div {
@@ -487,6 +487,9 @@ a.btn.musicDisabled:hover{
 #nav #ranking div:hover, #nav #ranking div.onSelect, .tablet-ranking-btn div {
 	/*background-color:#EF4136;*/
 	background-color: orange;
+}
+#nav #teachers div:hover, #nav #teachers div.onSelect, .tablet-teachers-btn div {
+	background-color: rgb(241, 89, 115);
 }
 #nav #history div:hover, #nav #history div.onSelect, .tablet-settings-btn div{
 	/*background-color: #71B2E2;*/

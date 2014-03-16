@@ -77,7 +77,6 @@ define([
 						}
 					}
 				}
-				console.log(this.currentLang);
 				this.currentLang = this.currentLang||"EN";
 				this.currentPage = "";
 				this.regions = this.regions || new AppLayout({
@@ -112,7 +111,7 @@ define([
 			NProgress.start();
 			var langModel = {};
 			var self = this;
-			lang = lang || currentLang ||"EN";
+			lang = lang || this.currentLang ||"EN";
 			lang.toUpperCase();
 			// a good place for code that needs to be ran every page 
 			
