@@ -486,10 +486,10 @@ a.btn.musicDisabled:hover{
 }*/
 #nav #ranking div:hover, #nav #ranking div.onSelect, .tablet-ranking-btn div {
 	/*background-color:#EF4136;*/
-	background-color: orange;
+	background-color: rgb(241, 89, 115);
 }
 #nav #teachers div:hover, #nav #teachers div.onSelect, .tablet-teachers-btn div {
-	background-color: rgb(241, 89, 115);
+	background-color: orange;
 }
 #nav #history div:hover, #nav #history div.onSelect, .tablet-settings-btn div{
 	/*background-color: #71B2E2;*/
