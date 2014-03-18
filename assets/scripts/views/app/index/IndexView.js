@@ -35,6 +35,20 @@ define([
             "showTut #moveListener": "showTut",
             "newStage #moveListener": "newStage",
             "click .clickNext":"showTut",
+            "click #memo span" :"showMemo"
+        },
+        showMemo : function(e){
+            var image = "<img src='assets/img/guide/memo.png'/>";
+            var msg=this.model.get("guide")["memo"];
+            bootbox.dialog({
+                className:"wideModal",
+                message:image+msg,
+                buttons: {
+                    okay:{
+                        label:"Ok"
+                    }
+                }
+            });
         },
         showTut: function(e) {
             if(this.tutStage+1>this.tutStages.length){
@@ -45,7 +59,7 @@ define([
             var prevClass = this.tutStage===0?"disabled":"btn-danger";
             var nextLabel = this.tutStage+1===this.tutStages.length?"Okay":"->";
             var langKey = this.langKey;
-            var image = "<img src='assets/img/guide/guide-"+this.tutStages[this.tutStage]+".png'/>'";
+            var image = "<img src='assets/img/guide/guide-"+this.tutStages[this.tutStage]+".png'/>";
             cookie.create("hasPlayed", true, 365000000);
             bootbox.dialog({
                 className:"wideModal",

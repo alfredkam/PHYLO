@@ -233,8 +233,17 @@
 	position:absolute;
 	display:inline-block;
 	height:80px;
-	margin-left:175px;
-	width:836px;
+	margin-left:137px;
+	width:900px;
+}
+#memo span.glyphicon{
+	color: #6D6D6D;
+	font-size: 25px;
+	cursor: pointer;
+	top: 5px;
+}
+#memo span.glyphicon:hover{
+	color:black;
 }
 #utilPanel {
 	width:15%;
