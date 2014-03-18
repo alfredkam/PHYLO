@@ -45,8 +45,9 @@
         "btnOkay":"Okay!",
         "objective" : "Your goal is to move sequences of  blocks horizontally in order to create the maximum number of columns of similar colors. Each color match gives you a bonus.",
         "penalty" : "Color mismatches and gaps are unavoidable and you receive penalties for that. Your challenge is to find the  best trade-off between bonuses and penalties.",
-        "tree" : "Did you notice the tree on the left? It tells you which sequences must be aligned in priority.",
-        "stage":"When your score is equal or higher than the par, a shiny star appears at the bottom right corner. Click on it to reach the next stage."
+        "stage":"When your score is equal or higher than the par, a shiny star appears at the bottom right corner. Click on it to reach the next stage.",
+        "tree" : "Did you notice the tree on the left? It tells you which sequences must be aligned in priority. Now, you are ready to play!",
+        "memo" : "A: Your goal is to move sequences of  blocks horizontally in order to create the maximum number of columns of similar colors.<br/>B: Each color match gives you a bonus.<br/>C+D: Color mismatches and gaps are unavoidable and you receive penalties for that.<br/>E: The tree tells you which sequences must be aligned in priority."
     },
     "body": {
         "misc": {
