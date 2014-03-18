@@ -486,20 +486,24 @@ a.btn.musicDisabled:hover{
 }*/
 #nav #ranking div:hover, #nav #ranking div.onSelect, .tablet-ranking-btn div {
 	/*background-color:#EF4136;*/
-	background-color: orange;
+	background-color: rgb(241, 89, 115);
 }
 #nav #teachers div:hover, #nav #teachers div.onSelect, .tablet-teachers-btn div {
-	background-color: rgb(241, 89, 115);
+	background-color: orange;
 }
 #nav #history div:hover, #nav #history div.onSelect, .tablet-settings-btn div{
 	/*background-color: #71B2E2;*/
 	background-color:#EF4136;
 }
-#nav #expert div:hover, #nav #expert div.onSelect, .tablet-expert-btn div {
-	background-color: #71B2E2;
-	/*background-color: darkOrchid;*/
+#nav #expert div{
+	color: #fff;
+	background: rgb(93, 95, 92);
+	box-shadow: 0px 0px 10px #888888;
 }
-
+#nav #expert div:hover, #nav #expert div.onSelect, .tablet-expert-btn div {
+	/*background-color: darkOrchid;*/
+	box-shadow: 1px 1px 11px #777777;
+}
 #menu {
 	position:relative;
 	width:100%;
