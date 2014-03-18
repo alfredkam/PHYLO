@@ -15,7 +15,7 @@ define([
 ) {
     var IndexView = Marionette.ItemView.extend({
         initialize: function(options) {
-            this.lang = options.lang || {};
+            // this.lang = options.lang || {};
             this.langKey = options.langKey || "EN";
         },
         template: tpl,
@@ -24,6 +24,8 @@ define([
         currScore: 0,
         queueSize: 6,
         geneTree: {},
+        tutStages :["objective","penalty","tree","stage"],
+        tutStage:0,
         events: {
             "click #volume i": "toggleVolume",
             "newMove #moveListener": "newMove",
@@ -31,29 +33,79 @@ define([
             "undoMove #moveListener": "undoMove",
             "redoMove #moveListener": "redoMove",
             "showTut #moveListener": "showTut",
-            "newStage #moveListener": "newStage"
+            "newStage #moveListener": "newStage",
+            "click .clickNext":"showTut",
         },
         showTut: function(e) {
+            if(this.tutStage+1>this.tutStages.length){
+                this.tutStages=0;
+                return false;
+            }
+            var self =this;
+            var prevClass = this.tutStage===0?"disabled":"btn-danger";
+            var nextLabel = this.tutStage+1===this.tutStages.length?"Okay":"->";
             var langKey = this.langKey;
+            var image = "<img src='assets/img/guide/guide-"+this.tutStages[this.tutStage]+".png'/>'";
             cookie.create("hasPlayed", true, 365000000);
             bootbox.dialog({
-                message: "Would you like to try out our tutorial?",
+                className:"wideModal",
+                message: image+"<p>"+this.model.get("guide")[this.tutStages[this.tutStage]]+"</p>",
                 title: "",
                 buttons: {
-                    success: {
-                        label: "Okay!",
-                        className: "btn-success",
-                        callback: function() {
-                            //console.log("dfdf");
-                            window.location = "#!/" + langKey + "/Tutorial";
+                    previous: {
+                        label: "<-",
+                        className: prevClass,
+                        callback:function(){
+                            self.showPreviousTut();
                         }
                     },
-                    cancel: {
-                        label: "I know what I'm doing!",
-                        className: "btn-danger"
-                    }
+                    next: {
+                        label: nextLabel,
+                        className: "btn-success clickNext",
+                        callback:function(){
+                            self.showTut();
+                        }
+                    },
                 }
-            })
+            });
+            this.tutStage++;
+            return false;
+        },
+        showPreviousTut: function(e) {
+            this.tutStage -= 2;
+
+            if (this.tutStages<=-1) {
+                this.tutStages = 0;
+                return false;
+            }
+            var self = this;
+            console.log(this.tutStage);
+            var prevClass = this.tutStage === 0 ? "disabled" : "btn-danger";
+            var nextLabel = this.tutStage+1 >this.tutStages.length ? "Okay" : "->";
+            var image = "<img src='assets/img/guide/guide-"+this.tutStages[this.tutStage]+".png'/>";
+            cookie.create("hasPlayed", true, 365000000);
+            bootbox.dialog({
+                className:"wideModal",
+                message: image+"<p>"+this.model.get("guide")[this.tutStages[this.tutStage]]+"</p>",
+                title: "",
+                buttons: {
+                    previous: {
+                        label: "<-",
+                        className: prevClass,
+                        callback: function() {
+                            self.showPreviousTut();
+                        }
+                    },
+                    next: {
+                        label: nextLabel,
+                        className: "btn-success clickNext",
+                        callback: function() {
+                            self.showTut();
+                        }
+                    },
+                }
+            });
+            return false;
         },
         newMove: function(e, move) {
             //a function to detect new move if the vboard is diffrent from the old board
@@ -82,7 +134,11 @@ define([
             this.lineHighlighting();
 
             this.currScore = $.fitch.score();
-            this.blockTree();
+            // this.blockTree();
+        },
+        serializeData: function(){
+            console.log(this.model.toJSON());
+            return this.model.toJSON();
         },
         blockTree: function() {
             var tree = $.phylo.tree;

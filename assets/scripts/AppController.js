@@ -212,7 +212,8 @@ define([
 			this.initHeaderFooter("Play", lang);
 			this.regions.contentRegion.reset();
 			this.regions.contentRegion.show(new IndexView({
-				lang: this.lang
+				langkey: this.lang,
+				model:this.langModel,
 			}));
 			// NProgress.done();
             // END FIXME
@@ -353,7 +354,9 @@ define([
 			this.regions.contentRegion.reset();
 			this.regions.contentRegion.show(new IndexView({
 				lang : this.lang,
-				langKey : lang
+				langKey : lang,
+				model:this.langModel,
+
 			}));
 			// NProgress.done();
 		},

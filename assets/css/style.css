@@ -1004,4 +1004,9 @@ h2.slide-caption {
 .modal-footer .footerButton.zocial:hover{
 	color:whitesmoke;
 }
-
+.wideModal .modal-dialog{
+	min-width:800px;
+}
+.wideModal img{
+	max-width:750px;
+}
