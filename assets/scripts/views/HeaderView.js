@@ -362,6 +362,7 @@ define([
                     $("div.login-warning").show().html(window.lang.body.play.gameselect.login["field 16"]);
                     console.log("Classic login test failed.");
                     self.deleteLoginData();
+                    $("div.login-box").show();
                 }
             });
         }
