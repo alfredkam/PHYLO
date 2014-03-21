@@ -328,12 +328,12 @@
 								return;
 							case 2:
 								var diseaseorder = [];
-							
-								var imageCache={};
-								for(var imgs in diseaseImages){
-									imageCache[imgs]={};
-									imageCache[imgs].normal = $("#svg-"+imgs)[0];
-									imageCache[imgs].hover = $("#svg-"+imgs+"-hover")[0];
+
+								var imageCache = {};
+								for (var imgs in diseaseImages) {
+									imageCache[imgs] = {};
+									imageCache[imgs].normal = $("#svg-" + imgs)[0];
+									imageCache[imgs].hover = $("#svg-" + imgs + "-hover")[0];
 								}
 								// console.log(imageCache);
 								$.ajax({
@@ -341,36 +341,24 @@
 									dataType: "json",
 									async: false
 								}).done(function(data) {
-									//i need to do some arranging myself
-									for (var x in data) {
-										//console.log(x);
-										//console.log(data[x]);
-										//console.log(diseaseImages[x]);
-										//if it exists in the array
-										if (diseaseImages[x])
+									for (var x in diseaseImages) {
+										if (data[x]) {
 											diseaseorder.push({
 												name: x,
 												data: data[x],
 												image: imageCache[x],
 												localName: lang.body.play.gameselect.levelselect.disease[x] || x
 											});
-										delete diseaseImages[x];
+										} else {
+											diseaseorder.push({
+												name: x,
+												data: [],
+												image: imageCache[x],
+												localName: lang.body.play.gameselect.levelselect.disease[x] || x
+											});
+										}
 									}
-									//adding in the null ones
-									for (var y in diseaseImages) {
-										diseaseorder.push({
-											name: y,
-											data: [],
-											image: imageCache[y],
-											localName: lang.body.play.gameselect.levelselect.disease[y] || y
-										});
-										delete diseaseImages[y];
-
-									}
-
-
 									// diseaseorder = data;
-
 									// console.log("data added in!");
 								});
 								ctx.beginPath();
@@ -383,6 +371,7 @@
 								ctx.closePath();
 								selection = [];
 								window.setTimeout(function() {
+									console.log(diseaseorder);
 									for (var j = 0; j < diseaseorder.length && j < 8; j++) {
 										// if (diseaseList[diseaseorder[j].name].length == 0)
 										// selection.push(new emptyDisease(ctx, diseaseorder[j], j))d
