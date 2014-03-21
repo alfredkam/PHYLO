@@ -346,10 +346,11 @@ define([
                 return;
             }
 
-            $("div.login-warning").hide();
 
             self.login(username, password, function(re) {
                 if (re == "succ") {
+                    $("div.login-warning").hide();
+
                     console.log("Login using classic mode.");
                     cookie.create("username", username, 365);
                     cookie.create("fullname", username, 365);
