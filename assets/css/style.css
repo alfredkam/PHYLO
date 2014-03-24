@@ -400,7 +400,7 @@ a.btn.musicDisabled:hover{
 }
 
 #login-tag {
-	font-size:20px;
+	font-size:1em;
 	padding: 9px 10px;
 	white-space:nowrap;
 	text-overflow: ellipsis;
@@ -442,7 +442,7 @@ a.btn.musicDisabled:hover{
 }
 
 #nav {
-	font-size:17px;
+	font-size:1em;
 	position:relative;
 	margin-left:0px !important;
 	/*display:none;*/
