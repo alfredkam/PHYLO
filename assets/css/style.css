@@ -573,7 +573,7 @@ a.btn.musicDisabled:hover{
 	-moz-user-select: text;
 	-ms-user-select: text;
 	user-select: text;
-	padding:50px 100px;
+	padding:35px 50px;
 	background-color:white;
 	text-align:left;
 	width:800px;
@@ -1013,4 +1013,8 @@ h2.slide-caption {
 }
 .wideModal img{
 	max-width:750px;
+}
+.carousel-inner>.item>img, .carousel-inner>.item>a>img{
+	margin-left:auto;
+	margin-right:auto;
 }
