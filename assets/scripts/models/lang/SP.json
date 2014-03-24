@@ -283,8 +283,8 @@
             "puzzleID" : "Puzzle ID",
             "user" : "Usuario",
             "unclassified" : "Sin clasificar",
-            "openPhylo" : "Para los investigadores",
-            "education" : "Para los profesores"
+            "openPhylo" : "Open-Phylo",
+            "education" : "Enseñanza"
         }
     }
 }

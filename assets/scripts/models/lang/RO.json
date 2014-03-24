@@ -282,8 +282,8 @@
             "puzzleID" : "ID-ul de puzzle",
             "user" : "Utilizator",
             "unclassified" : "Neclasificate",
-            "openPhylo" : "Pentru cercetători",
-            "education" : "Pentru profesori"
+            "openPhylo" : "Open-Phylo",
+            "education" : "De predare"
         }
     }
 }

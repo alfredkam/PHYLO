@@ -282,8 +282,8 @@
             "puzzleID" : "Puzzle ID",
             "user" : "Benutzer",
             "unclassified" : "Nicht klassifiziert",
-            "openPhylo" : "Für Forscher",
-            "education" : "Für Lehrerinnen und Lehrer"
+            "openPhylo" : "Open-Phylo",
+            "education" : "Lehre"
         }
     }
 }

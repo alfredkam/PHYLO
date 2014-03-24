@@ -279,8 +279,8 @@
             "puzzleID" : "Головоломки ID",
             "user" : "Игрок",
             "unclassified" : "неклассифицированный",
-            "openPhylo" : "Для исследователей",
-            "education" : "Для преподавателей"
+            "openPhylo" : "Open-Phylo",
+            "education" : "Преподавание"
         }
     }
 }

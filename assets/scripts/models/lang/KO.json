@@ -282,8 +282,8 @@
             "puzzleID" : "퍼즐의 ID",
             "user" : "사용자",
             "unclassified" : "분류되지 않음",
-            "openPhylo" : "연구원",
-            "education" : "교사를위한"
+            "openPhylo" : "Open-Phylo",
+            "education" : "교육"
 		}
 	}
 }
