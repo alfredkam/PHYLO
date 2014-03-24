@@ -40,7 +40,7 @@
         "accept":"OK"
     },
     "guide":{
-        "tutorialMsg":"Would you like to try out the tutorial?",
+        "tutorialMsg":"Do you want to try the tutorial?",
         "btnIgnore":"No thanks",
         "btnOkay":"Ok",
         "objective" : "Your goal is to move sequences of  blocks horizontally in order to create the maximum number of columns of similar colors. Each color match gives you a bonus.",

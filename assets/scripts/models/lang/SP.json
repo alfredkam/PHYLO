@@ -40,10 +40,14 @@
         "accept":"Aceptar"
     },
     "guide":{
+        "tutorialMsg":"¿Quieres probar el tutorial?",
+        "btnIgnore":"No gracias",
+        "btnOkay":"Aceptar",
         "objective" : "Tu objetivo es mover las secuencias de bloques horizontalmente para crear el máximo número de columnas de colores similares. Cada color apareado te da una bonificación.",
         "penalty" : "Siempre habra colores sin aparear y espacios, por los que recibirás sanciones. Tu reto es encontrar la mejor combinación entre bonificaciones y sanciones.",
         "tree" : "¿Te diste cuenta del árbol a la izquierda? Te dice que secuencias tienen prioridad de alinearse.",
-        "stage":"Cuando tu puntuación es igual o más alta que la de la computadora, un estrella brillante aparece en la esquina inferior derecha. Hazle click para ir a la siguiente etapa."
+        "stage":"Cuando tu puntuación es igual o más alta que la de la computadora, un estrella brillante aparece en la esquina inferior derecha. Hazle click para ir a la siguiente etapa.",
+        "memo" : "A: Tu objetivo es mover las secuencias de bloques horizontalmente para crear el máximo número de columnas de colores similares.<br/>B: Cada color apareado te da una bonificación.<br/>C: El costo de los espacios es grande.<br/>D: Las sanciones por discordancia de colores son pequeñas.<br/>E: El árbol dice que secuencias tienen prioridad de alinearse."
     },
     "body": {
         "misc": {
