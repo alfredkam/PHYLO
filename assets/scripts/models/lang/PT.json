@@ -40,10 +40,14 @@
         "accept":"OK"
     },
     "guide":{
-        "objective" : "Tu objetivo es mover las secuencias de bloques horizontalmente para crear el máximo número de columnas de colores similares. Cada color apareado te da una bonificación.",
-        "penalty" : "Siempre habra colores sin aparear y espacios, por los que recibirás sanciones. Tu reto es encontrar la mejor combinación entre bonificaciones y sanciones.",
-        "tree" : "¿Te diste cuenta del árbol a la izquierda? Te dice que secuencias tienen prioridad de alinearse.",
-        "stage":"Cuando tu puntuación es igual o más alta que la de la computadora, un estrella brillante aparece en la esquina inferior derecha. Hazle click para ir a la siguiente etapa."
+        "tutorialMsg":"Você quer experimentar o tutorial?",
+        "btnIgnore":"Não, obrigado",
+        "btnOkay":"OK",
+        "objective" : "Seu objetivo é mover seqüências de blocos horizontalmente de forma a criar um número máximo de colunas de cores semelhantes. Cada par de quadrados de uma mesma cor (concordância) numa coluna vale um bônus.",
+        "penalty" : "Cores diferentes numa coluna (discordância) e lacunas são inevitáveis, e você é penalizado por elas. Seu desafio é encontrar o alinhamento que dá a maior pontuação na soma de bônus (positivos) e penalidades (negativas).",
+        "tree" : "Você notou a árvore à esquerda? Ela diz que seqüências devem ser alinhadas prioritáriamente.",
+        "stage":"Quando sua pontuação é maior ou igual a este mínimo, a estrela dourada aparece no canto inferior direito. Clique nela para iniciar a fase seguinte.",
+        "memo" : "A: Seu objetivo é mover seqüências de blocos horizontalmente de forma a criar um número máximo de colunas de cores semelhantes.<br/>B: Cada par de quadrados de uma mesma cor (concordância) numa coluna vale um bônus.<br/>C: O custo para lacunas é grande.<br/>D: Penalidades para discordâncias são pequenos.<br/>E: Ela diz que seqüências devem ser alinhadas prioritáriamente."
     },
     "body": {
         "misc": {
