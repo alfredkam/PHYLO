@@ -40,9 +40,9 @@
         "accept":"OK"
     },
     "guide":{
-        "tutorialMsg":"Would you like to try out our tutorial?",
-        "btnIgnore":"I know what I am doing!",
-        "btnOkay":"Okay!",
+        "tutorialMsg":"Would you like to try out the tutorial?",
+        "btnIgnore":"No thanks",
+        "btnOkay":"Ok",
         "objective" : "Your goal is to move sequences of  blocks horizontally in order to create the maximum number of columns of similar colors. Each color match gives you a bonus.",
         "penalty" : "Color mismatches and gaps are unavoidable and you receive penalties for that. Your challenge is to find the  best trade-off between bonuses and penalties.",
         "stage":"When your score is equal or higher than the par, a shiny star appears at the bottom right corner. Click on it to reach the next stage.",

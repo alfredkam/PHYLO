@@ -40,10 +40,15 @@
         "accept":"OK"
     },
     "guide":{
+        "tutorialMsg":"Voulez vous essayer le tutoriel?",
+        "btnIgnore":"Non merci.",
+        "btnOkay":"Ok",
         "objective" : "Ton but est de déplacer les séquences de blocs horizontalement dans le but de créer le maximum de colonnes de couleurs similaires. Chaque alignement de couleur te donne un bonus.",
         "penalty" : "Les disparités de couleurs et les espaces vides sont inévitables et tu es pénalisé pour cela. Ton challenge est de trouver la meilleur balance entre les bonus et les pénalités.",
         "tree" : "As-tu remarqué l’arbre sur la gauche? Il indique quelles séquences doivent être alignées en priorité.",
-        "stage":"Quand ton score est égal ou supérieur au par, une étoile s’illumine en bas a droite. Clique dessus pour atteindre le niveau suivant."
+        "stage":"Quand ton score est égal ou supérieur au par, une étoile s’illumine en bas a droite. Clique dessus pour atteindre le niveau suivant.",
+        "memo" : "A: Ton but est de déplacer les séquences de blocs horizontalement dans le but de créer le maximum de colonnes de couleurs similaires.<br/>B: Chaque alignement de couleur te donne un bonus.<br/>C: Le coût d'un  espace est grand.<br/>D: Les pénalties pour les disparités de couleurs sont faibles.<br/>E: L'arbre indique quelles séquences doivent être alignées en priorité."
+
     },
     "body": {
         "misc": {
