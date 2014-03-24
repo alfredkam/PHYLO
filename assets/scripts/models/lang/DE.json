@@ -40,10 +40,14 @@
         "accept":"OK"
     },
     "guide":{
+        "tutorialMsg":"Wollen Sie das Tutorial ausprobieren?",
+        "btnIgnore":"Nein Danke",
+        "btnOkay":"Ok",
         "objective" : "Sequenzen von Blöcken horizontal zu verschieben, um die maximale Zahl von Spalten gleicher Farbe zu finden. Jede  Farbübereinstimmung wird mit einem Bonus belohnt.",
         "penalty" : "Die Sequenzen sind leider nicht identisch. Fehlstellen und Lücken sind unvermeidbar, wofür es Strafpunkte gibt. Ihre Herausforderung ist es, die beste Balance zwischen Bonus- und Strafpunkten zu finden.",
         "tree" : "Haben Sie die Baumstruktur links bemerkt? Sie zeigt, welche Sequenzen bevorzugt angeordnet werden sollen.",
-        "stage":"Der Par-Wert (das berechnete Ergebnis) gekämpft werden. Wenn Ihr Wert gleich oder besser ist, erscheint unten rechts ein Stern. Klicken Sie auf den Stern, um die nächste Stufe zu erreichen."
+        "stage":"Der Par-Wert (das berechnete Ergebnis) gekämpft werden. Wenn Ihr Wert gleich oder besser ist, erscheint unten rechts ein Stern. Klicken Sie auf den Stern, um die nächste Stufe zu erreichen.",
+        "memo" : "A: Sequenzen von Blöcken horizontal zu verschieben, um die maximale Zahl von Spalten gleicher Farbe zu finden.<br/>B: Jede  Farbübereinstimmung wird mit einem Bonus belohnt.<br/>C: Die Strafe für Lücken ist groß.<br/>D: Es gibt wenig Strafpunkte für unpassende Farben.<br/>E: Die baumstruktur zeigt, welche Sequenzen bevorzugt angeordnet werden sollen."
     },
 	"body": {
 		"misc" : {
