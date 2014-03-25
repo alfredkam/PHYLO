@@ -59,12 +59,14 @@
 }
 
 #language-tag i.icon-language {
-    top:2px;
-    left:0px;
+    top:6px;
+    left:-3px;
 }
 
 #language:hover #language-list {
+    top:56px;
     display:block;
+    width:77px;
 }
 
 #options:hover #option-list {
