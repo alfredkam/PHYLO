@@ -52,9 +52,11 @@ define([
         },
         showTut: function(e) {
             if(this.tutStage+1>this.tutStages.length){
-                this.tutStages=0;
+                this.tutStage=0;
                 return false;
             }
+            console.log(this.tutStage);
+
             var self =this;
             var prevClass = this.tutStage===0?"disabled":"btn-danger";
             var nextLabel = this.tutStage+1===this.tutStages.length?"Okay":"->";
@@ -89,7 +91,7 @@ define([
             this.tutStage -= 2;
 
             if (this.tutStages<=-1) {
-                this.tutStages = 0;
+                this.tutStage = 0;
                 return false;
             }
             var self = this;
@@ -119,6 +121,7 @@ define([
                     },
                 }
             });
+            this.tutStage+=1;
             return false;
         },
         newMove: function(e, move) {
