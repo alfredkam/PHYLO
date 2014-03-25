@@ -1,3 +1,1 @@
-$(document).ready(function(){
-	$(".showlogout").hide();
-    });
+$(document).ready(function(){$(".showlogout").hide()});
