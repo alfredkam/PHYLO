@@ -32,6 +32,7 @@
                     );
                 }
 				$("#endGame").fadeIn();
+                csb.complete()
 			});
 
 		},
@@ -70,6 +71,7 @@
                     );
                 }
 				$("#endGame").fadeIn();
+                csb.complete()
 			});
 
         },
