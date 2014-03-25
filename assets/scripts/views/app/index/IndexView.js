@@ -147,7 +147,7 @@ define([
                 console.log(this.currMove);
             }
             this.undoRedoButtonsStatus();
-            // this.diffHighlighting();
+            this.diffHighlighting();
             this.lineHighlighting();
 
             this.currScore = $.fitch.score();
@@ -363,22 +363,17 @@ define([
             if (this.currMove <= 1) {
                 return;
             }
-            var score = $.fitch.score();
-            var lightCol = this.currScore < score ? "rgba(33, 127, 29, 0.35)" : "rgba(127, 29, 29, 0.35)";
-            lightCol = score == this.currScore ? "white" : lightCol;
-            $("#postMove").css("background-color", lightCol);
+            var alignments = $.sequence.track;
             var newMove = this.moveQueue[this.currMove - 1];
             var oldMove = this.moveQueue[this.currMove - 2];
             var len = oldMove.length;
-            $("#postMove").html("");
+            $(".sequence").removeClass("glowShadow");
             for (var i = 0; i < len; i++) {
                 for (var j = 0; j < oldMove[i].length; j++) {
-                    if (newMove[i][j] != oldMove[i][j] && oldMove[i][j] !== "x") {
-                        // console.log(i+":"+j+","+newMove[i][j]+"+"+oldMove[i][j]);
-                        var d = document.createElement("div");
-                        $(d).addClass($("#" + oldMove[i][j]).attr("class") + " nonSequence").removeClass("sequence").removeClass("highlighter-2");
-                        $(d).attr("style", "left: " + j * 33 + "px;");
-                        $(d).appendTo($("#postMove"));
+                    if (newMove[i][j] != oldMove[i][j] && newMove[i][j] !== "x") {
+                        console.log(alignments[i][j]);
+                        console.log(i,j);
+                        $("#"+alignments[i][j]).toggleClass("glowShadow",true);
                     }
                 }
             }
@@ -397,7 +392,6 @@ define([
                         }
                     }
                 }
-                //not sure if its worth it
             }
         },
 
