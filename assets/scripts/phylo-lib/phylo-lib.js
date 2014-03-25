@@ -317,7 +317,13 @@ buildTree(j,0); */
 		end : false,
 		//the next stage splash notification
 		splash: function(x) {
-			$("#splash").html("Stage "+(x+1)).show();
+			var stageString = "Stage"
+			try {
+				stageString = window.lang.body.play.gameselect["game board"]["field 3"]
+			}
+			catch(e){
+			}
+			$("#splash").html(stageString+" "+(x+1)).show();
 			window.setTimeout(function(){
 				$("#splash").fadeOut("fast");
 			},800);
@@ -655,7 +661,6 @@ buildTree(j,0); */
 			prev : 0,
 			prevMid : 4
 		},
-		undoArray : [],
 		setScore : function(newScore) {
 			this.draw(newScore);	
 			document.getElementById("redrawSound").play();
@@ -994,7 +999,9 @@ buildTree(j,0); */
 			for(var i=0;i < active.length;i++) {
 				for(j=0, arr = track[active[i]], len = track[active[i]].length;j< len;j++) {
 					try {
+						//ancestor is not empty
 						if(ancestor[j].toString().toLowerCase() != "x" && ancestor[j] != 0 
+							//sequence is not equal to ancestor
 						&& (!$("#"+arr[j]).hasClass("nuc-"+ancestor[j].toString().toUpperCase()))) {
 							$("#"+arr[j]).addClass("highlighter-2");
 						}
@@ -1337,11 +1344,7 @@ buildTree(j,0); */
 })();
 
 (function() {
-	// var startSound = new Audio("assets/sounds/startSound.wav"); // buffers automatically when created
 
-	// var countdownSound = new Audio("assets/sounds/countdownComplete.wav"); // buffers automatically when created
-	//var startSound = document.getElementById("startSound");
-	//var countdownSound = document.getElementById("countdownSound");
 	$.splash = {
 		//does the splash screen count down to start the game
 		countDown: function(fn) {
@@ -1361,6 +1364,10 @@ buildTree(j,0); */
 					document.getElementById("startSound").play();
 					document.getElementById("game-audio").play();
 					$("#countDown").fadeOut("fast");
+					console.log($.cookie.read("hasPlayed"));
+					if($.cookie.read("hasPlayed")===""){
+						$("#moveListener").trigger("showTut");
+					}
 					fn();
 				} else {
 					$("#countDown-text").html(i);
@@ -1403,7 +1410,6 @@ buildTree(j,0); */
 										$.events.untouch(document, "end");
 										$.physics.snap();
 										var score = $.fitch.score();
-										$("#moveListener").trigger("newMove",{seq: $.sequence.track});
 
 										if($.phylo.bestScore < score) {
 											$.phylo.bestScore = score;
@@ -1418,7 +1424,8 @@ buildTree(j,0); */
 										} else {
 											$.board.unapprove();
 										}
-											
+										$("#moveListener").trigger("newMove",{seq: $.sequence.track});
+	
 									}
 								});
 							}
@@ -2157,6 +2164,7 @@ buildTree(j,0); */
                     );
                 }
 				$("#endGame").fadeIn();
+                csb.complete()
 			});
 
 		},
@@ -2195,6 +2203,7 @@ buildTree(j,0); */
                     );
                 }
 				$("#endGame").fadeIn();
+                csb.complete()
 			});
 
         },
@@ -3270,16 +3279,17 @@ buildTree(j,0); */
 				
 				var mWidth = 178;
 				mWidth-=32;
+				var vName = n.node1<n.node2?n.node1+"v"+n.node2:n.node2+"v"+n.node1;
 				if(n.child == 0) {
 					//build top
 					var hLeft = n.depth*assignWidth+34*.3;
 					var hTop_1 = n.node1*34 + 34/2 - 2;
 					var hTop_2 = n.node2*34 + 34/2 - 2;
 					var vTop_1 = Math.abs(hTop_2-hTop_1);
-					str+= "<div class='vLine' style='top:"+hTop_1+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
-					str+= "<div class='hLine' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
+					str+= "<div class='vLine "+vName+"' style='top:"+hTop_1+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
+					str+= "<div class='hLine h"+n.node1+"' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
 					//build bot		
-					str+= "<div class='hLine' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
+					str+= "<div class='hLine h"+n.node2+"' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
 				} else if(n.child == 1) {
 					var hLeft = n.depth*assignWidth+34*.3;
 					var dist = getDist(n.node2);
@@ -3288,9 +3298,9 @@ buildTree(j,0); */
 					var hWidth = assignWidth*Math.abs((n.depth-dist.depth));
 					var vTop_1 = Math.abs(hTop_2-hTop_1);
 					
-					str+= "<div class='vLine' style='top:"+(hTop_2>hTop_1?hTop_1:hTop_2)+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
-					str+= "<div class='hLine' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
-					str+= "<div class='hLine' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(hWidth)+"px'></div>";
+					str+= "<div class='vLine "+vName+"' style='top:"+(hTop_2>hTop_1?hTop_1:hTop_2)+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
+					str+= "<div class='hLine h"+n.node1+"' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(mWidth-hLeft)+"px'></div>";
+					str+= "<div class='hLine h"+n.node2+"' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(hWidth)+"px'></div>";
 					
 				} else if(n.child == 2) {
 					var hLeft = n.depth*assignWidth+34*.3;
@@ -3303,9 +3313,9 @@ buildTree(j,0); */
 					var hWidth_2 = assignWidth*Math.abs((n.depth-dist_2.depth));
 					var vTop_1 = hTop_2 - hTop_1;
 					
-					str+= "<div class='vLine' style='top:"+(hTop_1)+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
-					str+= "<div class='hLine' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(hWidth_1)+"px'></div>";
-					str+= "<div class='hLine' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(hWidth_2)+"px'></div>";
+					str+= "<div class='vLine "+vName+"' style='top:"+(hTop_1)+"px;left:"+hLeft+"px;height:"+vTop_1+"px'></div>";
+					str+= "<div class='hLine h"+n.node1+"' style='top:"+hTop_1+"px;left:"+hLeft+"px;width:"+(hWidth_1)+"px'></div>";
+					str+= "<div class='hLine  h"+n.node2+"' style='top:"+hTop_2+"px;left:"+hLeft+"px;width:"+(hWidth_2)+"px'></div>";
 				}
 			
 				return str;
