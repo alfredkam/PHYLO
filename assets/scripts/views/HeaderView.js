@@ -11,7 +11,7 @@ define([
     "text!tpl/tablet/TabletHeader.mustache",
     //NO EXPORTS
     // "scripts/phylo-lib/protocal.core",
-   
+
 ], function($, Marionette, tpl, cookie, tabletTpl) {
     var baseUrl = "/phpdb/openPhyloClassicDB.php";
     var HeaderView = Marionette.ItemView.extend({
@@ -20,7 +20,8 @@ define([
             this.user = options.user;
             this.model.set({
                 lang: this.lang,
-                user : this.user.toJSON().name.replace("+"," ")
+                user : this.user.toJSON().name.replace("+"," "),
+                isCSB :window.csb.isIframe()
             });
             if(this.options.format == "tablet") {
                 this.template = tabletTpl;
@@ -365,13 +366,7 @@ define([
                     $("div#login-box").show();
                 }
             });
-        },
-        templateHelper: {
-            isCSB : function(){
-                return window.csb.isIframe();
-            }
-        },
-
+        }
     });
 
     return HeaderView;

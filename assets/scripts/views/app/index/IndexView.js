@@ -340,7 +340,6 @@ define([
                 $("#undo").removeClass("on");
             } else {
                 $("#undo").addClass("on");
-
             }
         },
         toggleVolume: function(e) {
