@@ -365,7 +365,13 @@ define([
                     $("div#login-box").show();
                 }
             });
-        }
+        },
+        templateHelper: {
+            isCSB : function(){
+                return window.csb.isIframe();
+            }
+        },
+
     });
 
     return HeaderView;
