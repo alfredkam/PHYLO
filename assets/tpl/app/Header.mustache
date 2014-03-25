@@ -2,7 +2,7 @@
  <link rel='stylesheet' href='assets/css/media1180.css'/>
  <link rel='styhesheet' href='assets/css/media1024.css'/>
  <link rel='stylesheet' href="assets/css/header.css"/>
- <div id='top-panel' style="{{#isCSB}}display:none;{{/isCSB}}">
+ <div id='top-panel' >
      <div class='container'>
      <div id='logo' class='col-3 col-sm-3 col-lg-3'><a href="#!/{{lang}}"><div>PHYLO | DNA Puzzles</div></a></div>
      <!-- <div id='logo' class='col-md-3'><div>PHYLO | DNA Puzzles</div><div class='beta2'>Beta</div></div> -->
@@ -11,7 +11,7 @@
          --> 
          <div id='dropDown-logo' class='col-md-3'>PHYLO | Research</div>
      </a>
-     <div id='nav' class='col-9 col-sm-9 col-lg-9 col-xs-12'>
+     <div id='nav' class='col-9 col-sm-9 col-lg-9 col-xs-12' style="{{#isCSB}}display:none;{{/isCSB}}">
          <ul>
              <li>
              <a id='play' class='isTab' href="#!/{{lang}}/Play"><div>{{header.field 1}}</div></a>
@@ -38,7 +38,7 @@
             </li>
          </ul>
      </div>
-     <div id='top-panel-right' class="">
+     <div id='top-panel-right' class="" style="{{#isCSB}}display:none;{{/isCSB}}">
          <div id='login'>
             {{#user}}
             <div id='login-tag'>
