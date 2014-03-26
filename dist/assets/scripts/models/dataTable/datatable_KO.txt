@@ -1,0 +1,17 @@
+{
+	"sProcessing":   "처리...",
+	"sLengthMenu":   "_MENU_ 항목을 표시",
+	"sZeroRecords":  "일치하는 레코드를 찾을 수 없습니다",
+	"sInfo":         "_TOTAL_ 항목의 _END_에 _START_보기",
+	"sInfoEmpty":    "0 항목 0-0보기",
+	"sInfoFiltered": "(_MAX_ 총 항목에서 제외)",
+	"sInfoPostFix":  "",
+	"sSearch":       "검색 :",
+	"sUrl":          "",
+	"oPaginate": {
+		"sFirst":    "<b>처음으로</b>",
+		"sPrevious": "이전",
+		"sNext":     "다음",
+		"sLast":     "마지막"
+	}
+}
