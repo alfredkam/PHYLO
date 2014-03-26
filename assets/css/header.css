@@ -79,7 +79,6 @@
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
 }
-
 @media(max-width:1280px) {
     #options .icon-cog {
         left:0px;
@@ -104,7 +103,6 @@
         top:6px;
     }
     #logo {
-        width:25%;
         display:inline-block;
         float:left;
         left:-25px;
@@ -120,7 +118,6 @@
         top:8px;
     }
     #logo {
-        width:25%;
         display:inline-block;
         float:left;
         left:-25px;
@@ -132,24 +129,27 @@
     #nav ul li a div{
         padding-left: 17px;
         padding-right:17px;
-        font-size: 1.25em;
+        font-size:1em;
+        /*font-size: 1.25em;*/
     }
 }
 
 @media(max-width:768px) {
     #logo {
-        width:25%;
         display:inline-block;
         float:left;
+        left:-62px;
+        font-size:1em;
+
     }
     #nav {
-        width:75%;
-        left:0px;
+        left:-235px;
         display:inherit;
     }
     #nav ul li a div{
         padding-left: 17px;
         padding-right:17px;
-        font-size: 1.25em;
+        font-size: 1em;
     }
 }
+

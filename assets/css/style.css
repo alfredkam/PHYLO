@@ -493,7 +493,8 @@ a.btn.musicDisabled:hover{
 }
 #nav #history div:hover, #nav #history div.onSelect, .tablet-settings-btn div{
 	/*background-color: #71B2E2;*/
-	background-color:#EF4136;
+	/*background-color:#EF4136;*/
+	background-color: #51CFCA;
 }
 #nav #expert div{
 	color: #fff;
