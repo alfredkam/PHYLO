@@ -21,7 +21,7 @@ define([
         template: tpl,
         moveQueue: [],
         currMove: 0,
-        currScore: 0,
+        // currScore: 0,
         queueSize: 6,
         geneTree: {},
         tutStages :["objective","penalty","tree","stage"],
@@ -150,7 +150,7 @@ define([
             // this.diffHighlighting();
             // this.lineHighlighting();
 
-            this.currScore = $.fitch.score();
+            // this.currScore = $.fitch.score();
             // this.blockTree();
         },
         serializeData: function(){
@@ -305,7 +305,7 @@ define([
             $.board.stats();
             this.currMove--;
             this.undoRedoButtonsStatus();
-            this.currScore = $.fitch.score();
+            // this.currScore = $.fitch.score();
         },
         redoMove: function() {
             if (DEBUG) {
@@ -326,7 +326,7 @@ define([
             $.board.stats();
             this.currMove++;
             this.undoRedoButtonsStatus();
-            this.currScore = $.fitch.score();
+            // this.currScore = $.fitch.score();
         },
         //a function to use so the buttons are in the right state
         undoRedoButtonsStatus: function() {
