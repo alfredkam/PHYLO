@@ -147,7 +147,7 @@ define([
                 console.log(this.currMove);
             }
             this.undoRedoButtonsStatus();
-            this.diffHighlighting();
+            // this.diffHighlighting();
             // this.lineHighlighting();
 
             this.currScore = $.fitch.score();
