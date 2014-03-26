@@ -13,7 +13,7 @@
     color: rgb(113, 178, 226);
 }
 
-#login-box {
+#box {
     font-size:12px;
 }
 
@@ -55,7 +55,7 @@
 
 #options .icon-cog {
     left: 6px;
-    top:3px;
+    /*top:3px;*/
 }
 
 #language-tag i.icon-language {
@@ -79,11 +79,11 @@
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
 }
+#options-button i{
+    font-size:30px;
+    top: 8px;
+}
 @media(max-width:1280px) {
-    #options .icon-cog {
-        left:0px;
-        top:8px;
-    }
     #logo {
         width:25%;
         display:inline-block;
@@ -131,6 +131,10 @@
         padding-right:17px;
         font-size:1em;
         /*font-size: 1.25em;*/
+    }
+    #top-panel-right #login #login-tag{
+        min-width:75px;
+        max-width:100px;
     }
 }
 
