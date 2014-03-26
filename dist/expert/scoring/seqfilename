@@ -1,0 +1,16 @@
+>hg19
+TAGCTGGAGCGGCACCACGCCCGGCTAATTTTTGTATTTTTAGTAGAGACG-GAGTTTCACCACGTTGGTCAGGCTGGTCTGGAACTCCTGACCTCATGACCAGCCGACGTTTTTAAAGACATA-----------GTGTCCCCCTCAAGGCAT-ATTCCAG-----------TTCCTATCACGAGGAT-----TC---CCCCACG----------GACACTCAGTGCCCCC--TTCCTGATCCTCAGCGCTT-----CCCT--------CGCGACC-----TACAA---ACTGCCCCCC
+>rheMac2
+TAGCTGGAGCGCCACCACGCCCGGCTAATTTCTGTATTTTTAGTGGAGACG-GAGTTCCACCATGTTGGTCAGGCTGGTCTGGAAGTCCTGACCTCGTGACCAGCCGATGTTTTTATAGACGTG-----------GTGTCCCCCTCAAGGCAT-ATTTCAG-----------TTCCTATCACGATGAT-----TC---CCCCTCG----------GACACACCGTGCCCCC--TTCCTGATCCTCAGAGCTT-----CCCT--------CGCGACC-----TACAA---ACTG-CCCCT
+>mm9
+--------------------------------------------------------------------------------------------------------------------------------------------CCTT-CAAGATACGAT--------------------TACAGCCAGAAC-----TC---CCCCTCG----------TAGA------TCCTTT--GCCCTCTTCCTCACAGCTG-----CCCC--------CGGGAATG----CACAA---ACTGCACCCT
+>oryCun2
+----------------------------------------------------------------------------------------------------------------------GGCATTCTTACGCTCAAGGTGTCCCCTGCACATCC-----------------------GGTCACCCGGAT-----TC---CCTCGGA----------CACAC---CGTGGCCT--GTCCTTATCCTCGGTGCC------CGCC-------TGGTGACT-------CAA---ACTGCCCCCC
+>bosTau4
+----------------------------------------------------------------------------------------------------------------------------------------GTCCCCCT--CAGGAC--------------------------CCATCAGGAT-----TC---CCCCTAG----------GACACACCCTGCCCCC--GCCCTTATCATCTGCACCT-----CCCCCTAGATCCCGTGACC-----CACAA---ATAGACCCTT
+>equCab2
+-------------------------------------------------------------------------------------------------------------------------ATG-----------GTGTCCCCCT-CAAGACACATTCCAG-----------TTCCTATCATCAGGAT-----TT---CCCCTCG----------GACACACCCTGGCCCC--TCCTCTATCCTCAGTGCCC-----CCC---------------------------------------
+>canFam2
+--------------------------------------------------------------------------------------------------------------------ATACTATG---------ATGTTACCCT---CAGGATACATTCCAG-----------TTCTTGCCATTAGGAT-----TC---CCCCTCG----------GACACACCCTGCCCCCCTTGCCTTATCCTCAGTGCCT-----CCCC-T-GCT-CAGGGACC-----CACAA---AGTGCCCCTG
+>loxAfr3
+-------------------------------------------------------------------------------------------------------------------------------------------CCCCC---AAGACACATTCCAG-----------TCCCTATCAT---GAT-----CCACGCCCCCCC----------GACACACCGCGCCCTC--TTCCTCTTCCTCAGTCTCT-----CTCC--------CGCGAGC-----CGCAC----CTGCCCACC
