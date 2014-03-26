@@ -85,6 +85,16 @@
         left:0px;
         top:8px;
     }
+    #logo {
+        width:25%;
+        display:inline-block;
+        float:left;
+        left:-25px;
+    }
+    #nav {
+        left:-95px;
+        display:inherit;
+    }
 }
 @media(max-width:1200px) {
     .container {
@@ -93,11 +103,36 @@
     #options:hover #option-list {
         top:6px;
     }
+    #logo {
+        width:25%;
+        display:inline-block;
+        float:left;
+        left:-25px;
+    }
+    #nav {
+        left:-95px;
+        display:inherit;
+    }
 }
 
 @media(max-width:1180px) {
     #options .icon-cog {
         top:8px;
+    }
+    #logo {
+        width:25%;
+        display:inline-block;
+        float:left;
+        left:-25px;
+    }
+    #nav {
+        left:-95px;
+        display:inherit;
+    }
+    #nav ul li a div{
+        padding-left: 17px;
+        padding-right:17px;
+        font-size: 1.25em;
     }
 }
 
@@ -111,5 +146,10 @@
         width:75%;
         left:0px;
         display:inherit;
+    }
+    #nav ul li a div{
+        padding-left: 17px;
+        padding-right:17px;
+        font-size: 1.25em;
     }
 }
