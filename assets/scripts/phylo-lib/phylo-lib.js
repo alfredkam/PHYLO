@@ -1825,6 +1825,8 @@ buildTree(j,0); */
 			var self= this;
 			$("#movingParts").append("<div id='chosenArea'></div>");
 			$("#game").unbind().dblclick(function(e) {
+				$("#chosenArea").hide();
+
 				e = $.events.getMultiSelectFingerPos(e);
 				self.startTheEvents(e);								
 			});	
@@ -1891,7 +1893,7 @@ buildTree(j,0); */
 		capture : function() {
 			var box = {
 				X: parseInt($("#selectBox").css("left").replace(/px/,"")) - parseInt($("#tree").css("width").replace(/px/,""))-4,
-				Y: parseInt($("#selectBox").css("top").replace(/px/,"")) - 126,
+				Y: parseInt($("#selectBox").css("top").replace(/px/,"")) - 150,
 				H: parseInt($("#selectBox").css("height").replace(/px/,"")),
 				W: parseInt($("#selectBox").css("width").replace(/px/,"")),
 			};	
@@ -1909,7 +1911,7 @@ buildTree(j,0); */
 				var row = parseInt($(this).parent().attr("id").replace(/row/,""));
 				var curr = {
 					X: parseInt($(this).css("left").replace(/px/,"")),
-					Y: 35*row,//(window.isFF?35.5:34.5)*row,
+					Y: 33*row,//(window.isFF?35.5:34.5)*row,
 					H: parseInt($(this).css("height").replace(/px/,"")),
 					W: parseInt($(this).css("width").replace(/px/,""))
 				};
@@ -1975,10 +1977,10 @@ buildTree(j,0); */
 				return;
 			}
 			$("#chosenArea").css({
-				top : select.Y,
+				top : select.Y-25,
 				left : select.X,
 				width : select.W,
-				height : select.H,
+				height : select.H+25,
 			});
 			$("#chosenArea").show();
 
