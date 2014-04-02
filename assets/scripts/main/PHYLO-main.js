@@ -1,5 +1,5 @@
 require.config({
-	waitSeconds : 15,
+	waitSeconds : 40,
 	baseUrl : "assets/",
 
 	paths : {
@@ -41,7 +41,8 @@ require.config({
 		phyloStart : 'scripts/phylo-lib/menu/gameMenu.actions',
 		modernizr : "bower_components/modernizr/modernizr",
 		//mocks for canvg
-		canvg : "bower_components/canvg"
+		canvg : "bower_components/canvg",
+		csb : 'http://132.206.3.203/jsapi/csb'
 	},
 
 	/*
@@ -167,7 +168,7 @@ require.config({
 require([ 
 	"marionette", "mustache", "scripts/App", "scripts/util/WebConsoleUtils", 
 	//NO EXPORT
-	"jquery", "nprogress", "bootbox", "modernizr"
+	"jquery", "nprogress", "bootbox", "modernizr", "csb"
 ], function(
 	Marionette, Mustache, App, WebConsoleUtils
 ){
