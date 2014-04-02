@@ -21,7 +21,7 @@ define([
             this.model.set({
                 lang: this.lang,
                 user : this.user.toJSON().name.replace("+"," "),
-                isCSB :window.csb.isIframe()
+                isCSB :window.csb.inSession()
             });
             if(this.options.format == "tablet") {
                 this.template = tabletTpl;
